@@ -1,2 +1,5 @@
-# global-military-trade-visual
-Visualizing data about military trading all around the world
+#VA Project
+
+data from:
+
+https://www.sipri.org/databases/armstransfers -> Trade registers
