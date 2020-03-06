@@ -1,8 +1,9 @@
 
 import csv
+import os
 
 PATH="./data/"
-
+RTF_FILE="Trade-Register-2010-2018.rtf"
 #flags
 
 
@@ -13,25 +14,23 @@ CEND = '\033[0m'
 def main():
     STARTED=False
 
+    print("Starting opening:",PATH,RTF_FILE)
+    if(RTF_FILE[:-4]+".txt" not in os.listdir(PATH)):
+        createTxt()
        
     # Writing header on csv                
-    csv_file= open(PATH+"table_2010-2018.csv","w")
+    csv_file= open(PATH + RTF_FILE[:-4] + ".csv","w")
     writer = csv.writer(csv_file)
-    writer.writerow([ "supplier","recipient","ordered","designation_num",	
-        "weapon_description",	"delivery_year",	"delivered_num",	"comments"])
+    writer.writerow([ "Supplier","Recipient","Ordered","Designation num.",	
+        "Weapon description",	"Delivery year",	"Delivered num.",	"Comments"])
     
-    out_file = open(PATH+"trade_out_2010-2018.txt","w") 
-    with open(PATH + "Trade-Register-2010-2018.rtf","r") as file:
+    
+    with open(PATH + RTF_FILE[:-4] + ".txt","r") as file:
         supplier=""
         recipient=""
         for line in file:
             
             #print(line)
-            
-            if("generated" in line and not STARTED):
-                continue
-            else:
-                STARTED=True
 
             old_line=line
             
@@ -99,12 +98,27 @@ def main():
                 writer.writerow([ supplier,recipient,ordered,designation_num,
                 weapon_description,	delivery_year,	delivered_num,	comments])
 
-                out_file.write(supplier+ '\t' +old_line)
-    out_file.close()
+
     csv_file.close()
+
 def printC(str):
     print(CRED + str + CEND)
 
+def createTxt():
+    print("Creating txt...")
+    out_file = open(PATH + RTF_FILE[:-4] + ".txt","w") 
+
+    with open(PATH + "Trade-Register-2010-2018.rtf","r") as file:
+        for line in file:
+            if("generated" in line and not STARTED):
+                continue
+            else:
+                STARTED=True
+
+            line=line.replace("}","}\n")
+            out_file.write(line)
+
+    out_file.close()
 
 
 main()
