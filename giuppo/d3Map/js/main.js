@@ -1,6 +1,6 @@
 function main() {
     var margin = { top:50, left: 50, right: 50, bottom: 50},
-    height = 400 - margin.top - margin.bottom,
+    height = 460 - margin.top - margin.bottom,
     width = 800 - margin.left - margin.right;
     
     var svg = d3.select("#map")
@@ -16,29 +16,30 @@ function main() {
     */            
     d3.queue()
     .defer(d3.json,"data/world.topojson")
-    .defer(d3.csv,"data/capitals.csv")
-    .defer(d3.csv,"data/table_2010-2018.csv")
+    .defer(d3.csv,"data/merged.csv")
+    .defer(d3.csv,"data/countries.csv")
     .await(ready)
     
     //We need to do a projection from round globe to screen flat map
     var projection = d3.geoMercator()
     .translate([ width/2 , height/2 ])
     .scale(100) //the bigger the closer
-
+    
     var path = d3.geoPath()
-        .projection(projection) //create a path using the projection
-        
-    function ready(error,data,capitals,table){
+    .projection(projection) //create a path using the projection
+    
+    function ready(error,data,merged,country_locations){
         console.log(data)
-        console.log(capitals)
-
+        
         // Extract countries from 
         
         var countries = topojson.feature(data, data.objects.countries ).features
         
         console.log(countries)
-        console.log(table)
         
+        /*
+        Draw all countries on map
+        */
         svg.selectAll(".country")
         .data(countries)
         .enter().append("path")
@@ -48,14 +49,75 @@ function main() {
             c=d3.select(this)
             if(!c.classed("selected"))
             //Add the class selected 
-                c.classed("selected", true)
+            c.classed("selected", true)
             else{
-            //Remove the class selected
+                //Remove the class selected
                 c.classed("selected", false)
-                console.log(false)
             }
             
         })
+        
+        /*
+        Draw icons with flag for suppliers and recipients
+        */
+        
+        svg.selectAll(".countries-icons")
+        .data(country_locations)
+        .enter().append("image")
+        .text(function(d)  { return d.name})
+        .attr("width",16)
+        .attr("height",16)
+        .attr("xlink:href",function(d){ return "../icons/flag-icons/png/"+d.name+".png";        })
+        .attr("x",function(d){
+            
+            var coords = projection([d.longitude,d.latitude])
+            return coords[0];
+        })
+        .attr("y",function(d){
+            var coords = projection([d.longitude,d.latitude])
+            return coords[1];
+        })
+        
+        /*
+        Draw lines from suppliers to recipients
+        */
+        console.log(merged)
+        // const curve = d3.line().curve(d3.curveNatural);
+        svg.selectAll("trade-line")
+        .data(merged)
+        .enter().append("line")
+        .attr("x1",d => projectIfPossible(d,"x","supplier") )
+        .attr("y1",d => projectIfPossible(d,"y","supplier") )
+        .attr("x2",d => projectIfPossible(d,"x","recipient") )
+        .attr("y2",d => projectIfPossible(d,"y","recipient") )
+        .attr("stroke","red")
+        
+        
+    }
+    function projectIfPossible(d,axis,subject){
+        if (isNumeric(d.latS) && isNumeric(d.longS) && isNumeric(d.latR) && isNumeric(d.longR)){
+            if(subject=="supplier"){
+            if(axis=="x"){
+                return projection([d.latS,d.longS])[0]}
+            else{
+                return projection([d.latS,d.longS])[1]}
+            }
+            else{
+            if(axis=="x"){
+                return projection([d.latR,d.longR])[0]}
+            else{
+                return projection([d.latR,d.longR])[1]}
+            }
+        }
+        return [0,0]
     }
     
 }
+
+
+// Helper
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+
