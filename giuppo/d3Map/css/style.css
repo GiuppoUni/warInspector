@@ -9,17 +9,36 @@ p {
 svg{
     background: #efefef;
 }
-.country{
-    fill: #87CEEB;
-    stroke:black;
-}
-.selected{
-    fill: red;
-    stroke: yellow;
-}
 
-.trade-line{
-    fill: #87CEEB;
-    stroke:black;
-    
-}
+
+  .sphere {
+    fill: #21cd94;
+  }
+
+  .land {
+    fill: #000;
+  }
+
+  .boundary {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+
+
+  path.link {
+    fill: red;
+    stroke: #666666;
+    stroke-width: 1.5px;
+  }
+  
+  .stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 3px;
+  }
+  
+  
