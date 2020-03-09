@@ -1,4 +1,4 @@
-Supplier,Recipient,Ordered,Designation num.,Weapon description,Ordered year,Delivery year,Delivered num.,Comments , latS, longS, latR, longR
+Supplier,Recipient,Ordered,Designation num.,Weapon description,Ordered year,Delivery year,Delivered num.,Comments ,latS,longS,latR,longR
 Albania,Burkina Faso,(12),M-43 120mm,Mortar,(2011),2011,12,Probably second-hand,41.153332,20.168331,12.238333,-1.561593
 Algeria,Western Sahara,(3),BTR-60PB,APC,(2016),2016,(3),Second-hand | aid,28.033886,1.659626,24.215527,-12.885834
 Argentina,Paraguay,20,M-3/M-5 Half-track,APC,2007,2011,(20),Second-hand | aid | M-9 version,-38.416097,-63.616672,-23.442503,-58.443832

@@ -30,12 +30,12 @@ function main() {
     
     function ready(error,data,merged,country_locations){
         //console.log(data)
+        //console.log(countries)
         
         // Extract countries from 
         
         var countries = topojson.feature(data, data.objects.countries ).features
         
-        console.log(countries)
         
         /*
             Draw all countries on map
@@ -61,40 +61,59 @@ function main() {
             Draw icons with flag for suppliers and recipients
         */
         
-        svg.selectAll(".countries-icons")
-        .data(country_locations)
-        .enter().append("image")
-        .text(function(d)  { return d.name})
-        .attr("width",16)
-        .attr("height",16)
-        .attr("xlink:href",function(d){ return "../icons/flag-icons/png/"+d.name+".png";        })
-        .attr("x",function(d){
+        // svg.selectAll(".countries-icons")
+        // .data(country_locations)
+        // .enter().append("image")
+        // .text(function(d)  { return d.name})
+        // .attr("width",16)
+        // .attr("height",16)
+        // .attr("xlink:href",function(d){ return "../icons/flag-icons/png/"+d.name+".png";        })
+        // .attr("x",function(d){
             
-            var coords = projection([d.longitude,d.latitude])
-            return coords[0];
-        })
-        .attr("y",function(d){
-            var coords = projection([d.longitude,d.latitude])
-            return coords[1];
-        })
+        //     var coords = projection([d.longitude,d.latitude])
+        //     return coords[0];
+        // })
+        // .attr("y",function(d){
+        //     var coords = projection([d.longitude,d.latitude])
+        //     return coords[1];
+        // })
         
+        for (const trade in merged) {
+            svg.select("trade-icon")
+            .data(trade)
+            .enter()
+            .append("image")
+            .text(function(d)  { return d[0] })
+        }
+
+
         /*
         Draw lines from suppliers to recipients
         */
         //console.log(merged)
         // const curve = d3.line().curve(d3.curveNatural);
-        svg.selectAll("trade-line")
+    
+        svg.selectAll(".trade-line")
         .data(merged)
         .enter().append("line")
         .attr("x1",d => projectIfPossible(d,"x","supplier") )
         .attr("y1",d => projectIfPossible(d,"y","supplier") )
         .attr("x2",d => projectIfPossible(d,"x","recipient") )
         .attr("y2",d => projectIfPossible(d,"y","recipient") )
-        .attr("stroke","red")
-        
+        .attr('id', 'arrow')
+        .attr('refX', refX)
+        .attr('refY', refY)
+        .attr('markerWidth', markerBoxWidth)
+        .attr('markerHeight', markerBoxHeight)
+        .attr('orient', 'auto-start-reverse')
+        .append('path')
+        .attr('d', d3.line()(arrowPoints))
+        .attr('stroke', 'black'); 
         
     }
     function projectIfPossible(d,axis,subject){
+        
+        console.log(d.latS)
         if (isNumeric(d.latS) && isNumeric(d.longS) && isNumeric(d.latR) && isNumeric(d.longR)){
             if(subject=="supplier"){
             if(axis=="x"){
@@ -108,9 +127,6 @@ function main() {
             else{
                 return projection([d.latR,d.longR])[1]}
             }
-        }
-        else{
-            console.log(d)
         }
         return projection([0,0])[0]
     }

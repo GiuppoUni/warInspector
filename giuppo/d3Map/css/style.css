@@ -17,3 +17,9 @@ svg{
     fill: red;
     stroke: yellow;
 }
+
+.trade-line{
+    fill: #87CEEB;
+    stroke:black;
+    
+}
