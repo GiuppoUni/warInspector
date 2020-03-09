@@ -29,7 +29,7 @@ function main() {
     .projection(projection) //create a path using the projection
     
     function ready(error,data,merged,country_locations){
-        console.log(data)
+        //console.log(data)
         
         // Extract countries from 
         
@@ -38,7 +38,7 @@ function main() {
         console.log(countries)
         
         /*
-        Draw all countries on map
+            Draw all countries on map
         */
         svg.selectAll(".country")
         .data(countries)
@@ -58,7 +58,7 @@ function main() {
         })
         
         /*
-        Draw icons with flag for suppliers and recipients
+            Draw icons with flag for suppliers and recipients
         */
         
         svg.selectAll(".countries-icons")
@@ -81,7 +81,7 @@ function main() {
         /*
         Draw lines from suppliers to recipients
         */
-        console.log(merged)
+        //console.log(merged)
         // const curve = d3.line().curve(d3.curveNatural);
         svg.selectAll("trade-line")
         .data(merged)
@@ -109,7 +109,10 @@ function main() {
                 return projection([d.latR,d.longR])[1]}
             }
         }
-        return [0,0]
+        else{
+            console.log(d)
+        }
+        return projection([0,0])[0]
     }
     
 }
