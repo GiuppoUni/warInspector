@@ -23,11 +23,12 @@ def main():
     original1 = open("./Trade-Register-2010-2018.csv","r")
     # suppliers=[]
     # recipients=[]
+    regex = re.compile('[^a-zA-Z]')
     losts=[]
     for idx,line in enumerate(original1):
         # Header
         if (idx==0):
-            out.write(line.replace("\n","")+" ,"+" latS"+","+" longS"+","+" latR"+","+" longR" + "\n")
+            out.write(line.replace("\n","")+","+"latS"+","+"longS"+","+"latR"+","+"longR" + "\n")
             continue
 
         l1=line.split(",")
@@ -49,11 +50,25 @@ def main():
             
             l2=line2.split(",") 
             #print("l2",l2[-1],l2[1],l2[2])
-            if(l1[0].strip() == l2[-1].strip() and not foundS): #trovato il nome del sup 
+            
+            #Supplier
+            sup=l1[0]
+            sup=" ".join(sup.split() )
+            sup=regex.sub("",sup)
+            #Recipient
+            rec=l1[1]
+            rec=" ".join(rec.split() )
+            rec=regex.sub("",rec)
+            #Country name
+            con=l2[-1].strip()
+            con=" ".join(con.split() )
+            con=regex.sub("",con)
+
+            if(sup == con and not foundS): #trovato il nome del sup 
                 latS=l2[1]
                 longS=l2[2]
                 foundS=True
-            if(l1[1].strip() == l2[-1].strip() and not foundR): #trovato il nome del rec
+            if(rec == con and not foundR): #trovato il nome del rec
                 latR=l2[1]
                 longR=l2[2]
                 foundR=True
@@ -63,9 +78,14 @@ def main():
 
         if(not foundS):
             original2 = open("./countries.csv","r")
+            #Altro giro questa volta mi basta in anziche ==
             for line2 in original2:
-                l2=line2.split(",") 
-                if(l2[-1].strip() in l1[0].strip() and not foundS): #trovato il nome del sup 
+                l2=line2.split(",")
+                #Country name
+                con=l2[-1].strip()
+                con=" ".join(con.split() )
+                con=regex.sub("",con) 
+                if(con in sup and not foundS): #trovato il nome del sup 
                     latS=l2[1]
                     longS=l2[2]
                     foundS=True
@@ -73,10 +93,14 @@ def main():
 
         if(not foundR):
             original2 = open("./countries.csv","r")
+            #Altro giro questa volta mi basta in anziche ==
             for line2 in original2:
-
+                
                 l2=line2.split(",") 
-                if(l2[-1].strip() in l1[1].strip() and not foundR): #trovato il nome del sup 
+                con=l2[-1].strip()
+                con=" ".join(con.split() )
+                con=regex.sub("",con)
+                if(con in rec and not foundR): #trovato il nome del sup 
                     latR=l2[1]
                     longR=l2[2]
                     foundR=True

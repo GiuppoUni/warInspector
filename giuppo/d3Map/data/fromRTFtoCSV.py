@@ -93,7 +93,8 @@ def createCsv():
         for idx,line in enumerate(file):
             
            # if(idx>30): break
-           
+            if(line=="\n"):
+                continue
             row=""
             if(line[0]!=" " ):
                 supplier=line
