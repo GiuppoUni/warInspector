@@ -57,8 +57,8 @@ create_azle(function() {
 		"border": 3
 	})
 	az.add_layout('my_sections', 1, {
+		"this_id":"map",
         "this_class": "visual_layout",
-        "this_id":"map",
 		"row_class": "visual_layout_rows",
 		"cell_class": "visual_layout_cells",
 		"number_of_rows": 1,
@@ -73,4 +73,23 @@ create_azle(function() {
 		"column_widths": ['65%', '35%'],
 		"border": 3
 	})
+
+
+	// az.style_layout("visual_layout_cells",1, {
+	// 	"this_id":"map"
+	// })
+
+	//For a new section
+	// az.add_sections({
+	// 	"this_class": "my_sections",
+	// 	"sections": 1
+	// })
+
+
+	// az.add_d3_visual('visual_layout_cells', 2, {
+    //     "this_class": "my_d3",
+    //     "html_path": "visuals/barchart.html",
+    //     "wrapper_arguments": barchart_wrapper_args,
+    //     "extra_functions": barchart_extras
+    // })
 })

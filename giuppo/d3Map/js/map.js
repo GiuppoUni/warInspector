@@ -1,7 +1,14 @@
-function map(){
+function drawMap(){
 
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+
+    
+
+    const map_section=d3.select('#map')
+    .select('tr')
+    .select('tr > td')
+
+    const width = map_section.node().getBoundingClientRect().width;
+    const height = map_section.node().getBoundingClientRect().height;
 
     const projection = d3.geoMercator()
       .translate([width / 2, height / 2])
@@ -14,7 +21,8 @@ function map(){
       .scaleExtent([1, 8])
       .on('zoom', zoomed);
     
-    const svg = d3.select('body').append('svg')
+    const svg = map_section
+    .append('svg')
       .attr('width', width)
       .attr('height', height);
 
@@ -76,6 +84,8 @@ function map(){
                 name: transaction.Supplier+"-"+transaction.Recipient,
                 coo:[ projection([transaction.longS,transaction.latS]),
                 projection([transaction.longR,transaction.latR])]
+                // year1:transaction,
+                // year2
             });
         
         }
@@ -94,7 +104,7 @@ function map(){
             .data([l.coo])
             .attr("class", "line")
             .text(d=>d.name)
-            .attr("style","stroke:rgb(249, 250, 3);stroke-width:20")
+            .attr("style","stroke:rgb(249, 250, 3);stroke-width:2")
             .attr("d", line_gen )
             .attr("marker-end","url(#arrow)")
 
@@ -117,7 +127,7 @@ function map(){
             .append("textPath") //append a textPath to the text element
              .attr("xlink:href", "#link"+i) //place the ID of the path here
              .style("text-anchor","middle") //place the text halfway on the arc
-             .attr("style","color:red;font-size:300%;")
+             .attr("style","color:red;font-size: 50%;")
              .attr("startOffset", "50%")
              .text(l.name)
 
