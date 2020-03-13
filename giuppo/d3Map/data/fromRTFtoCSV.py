@@ -84,7 +84,7 @@ def createCsv():
     csv_file= open(PATH + RTF_FILE[:-4] + ".csv","w")
     writer = csv.writer(csv_file)
     writer.writerow([ "Supplier","Recipient","Ordered","Designation num.",	
-        "Weapon description",	"Ordered year","Delivery year",	"Delivered num.",	"Comments"])
+        "Weapon description",	"Ordered year","Delivered year",	"Delivered num.",	"Comments"])
     
     
     with open(PATH + RTF_FILE[:-4] + "_MOD.txt","r") as file:

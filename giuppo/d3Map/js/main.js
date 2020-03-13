@@ -1,7 +1,8 @@
 //Global vars
-var year_interval=[2016,2018]
 
 function main() {
-    drawSlider()
-    drawMap();
+    var mcm = MapComponentsManager();
+    mcm.drawSlider()
+    var mm = MapManager();
+    mm.drawMap();
 }
