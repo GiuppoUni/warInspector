@@ -1,33 +1,348 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="=utf-8">
-
-        <!-- <<<<< Imports -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
-        <script src="https://unpkg.com/d3-simple-slider"></script>
-        <script src="http://d3js.org/topojson.v1.min.js"></script>
-        <script src='https://azlejs.com/v2/azle.min.js'></script>
-        <!-- My Modules  -->
-        <script src="./js/map_components.js"></script>
-        <script src="./js/azle.js"></script>
-        <script src="./js/main.js"></script>
-        <script src="./js/map.js"></script>
-        <!-- >>>>> -->
-        <link rel="stylesheet" href="./css/style.css">
-
-    </head>
-    <body onload="main()">
-        <select id="selection">
-            <option>First</option>
-           
-       </select>
+<head>
+    <meta charset="=utf-8">
+    
+    <!-- <<<<< Imports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src='https://azlejs.com/v2/azle.min.js'></script>
+    
+    
+    <link
+    rel="stylesheet"
+    href="bootstrap/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous"
+    />
+    
+    
+    <!-- My Modules  -->
+    <script src="./js/MapComponentsManager.js"></script>
+    <script src="./js/azle.js"></script>
+    <script src="./js/Main.js"></script>
+    <script src="./js/MapManager.js"></script>
+    
+    <!-- >>>>> -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body onload="main()">
+    <select id="selection">
+        <option>First</option>
         
+    </select>
+    
+    
+    <div id="map_slider" class="row">
+        <div class="column">
+            <h2>Supplier country:</h2>
+            <table id="country-choice" style="width:100%;background-color:black">
+                <tr align="center">
+                    <td><input type="image"  id="0" width="20px" src="icons/flag-icons/png/Albania.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Albania</span> </td>
 
-       <div id="map_slider" class="row align-items-center">
-         <div class="col-sm-2"><p style="color:white;"id="value-range"></p></div>
-         <div class="col-sm"><div id="slider-range"></div></div>
-       </div>
-        
-    </body>
+                    
+
+                    <td><input type="image" id="1" width="20px" src="icons/flag-icons/png/Algeria.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Algeria</span> </td>
+
+                    
+
+                    <td><input type="image" id="2" width="20px" src="icons/flag-icons/png/Argentina.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Argentina</span> </td>
+
+                    
+
+                    <td><input type="image" id="3" width="20px" src="icons/flag-icons/png/Australia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Australia</span> </td>
+
+                    
+
+                    <td><input type="image" id="4" width="20px" src="icons/flag-icons/png/Austria.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Austria</span> </td>
+
+                    
+
+                    <td><input type="image" id="5" width="20px" src="icons/flag-icons/png/Bahamas.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Bahamas</span> </td>
+
+                    
+
+                    <td><input type="image" id="6" width="20px" src="icons/flag-icons/png/Belarus.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Belarus</span> </td>
+
+                    
+
+                    <td><input type="image" id="7" width="20px" src="icons/flag-icons/png/Belgium.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Belgium</span> </td>
+
+                    
+
+                </tr>
+
+                <tr align="center">
+
+                    <td><input type="image" id="8" width="20px" src="icons/flag-icons/png/Bosnia-Herzegovina.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Bosnia-Herzegovina</span> </td>
+
+                    <td><input type="image" id="9" width="20px" src="icons/flag-icons/png/Brazil.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Brazil</span> </td>
+
+                    
+
+                    <td><input type="image" id="10" width="20px" src="icons/flag-icons/png/Brunei.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Brunei</span> </td>
+
+                    
+
+                    <td><input type="image" id="11" width="20px" src="icons/flag-icons/png/Bulgaria.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Bulgaria</span> </td>
+
+                    
+
+                    <td><input type="image" id="12" width="20px" src="icons/flag-icons/png/Canada.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Canada</span> </td>
+
+                    
+
+                    <td><input type="image" id="13" width="20px" src="icons/flag-icons/png/Chile.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Chile</span> </td>
+
+                    
+
+                    <td><input type="image" id="14" width="20px" src="icons/flag-icons/png/China.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">China</span> </td>
+
+                    
+
+                    <td><input type="image" id="15" width="20px" src="icons/flag-icons/png/Colombia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Colombia</span> </td>
+
+                    
+
+                    </tr>
+                    <tr align="center">
+
+
+                    <td><input type="image" id="16" width="20px" src="icons/flag-icons/png/Cote d'Ivoire.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Cote d'Ivoire</span> </td>
+
+                    <td><input type="image" id="17" width="20px" src="icons/flag-icons/png/Croatia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Croatia</span> </td>
+
+                    
+
+                    <td><input type="image" id="18" width="20px" src="icons/flag-icons/png/Czechia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Czechia</span> </td>
+
+                    
+
+                    <td><input type="image" id="19" width="20px" src="icons/flag-icons/png/Denmark.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Denmark</span> </td>
+
+                    
+
+                    <td><input type="image" id="20" width="20px" src="icons/flag-icons/png/Dominican Republic.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Dominican Republic</span> </td>
+
+                    
+
+                    <td><input type="image" id="21" width="20px" src="icons/flag-icons/png/Ecuador.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Ecuador</span> </td>
+
+                    
+
+                    <td><input type="image" id="22" width="20px" src="icons/flag-icons/png/Egypt.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Egypt</span> </td>
+
+                    
+
+                    <td><input type="image" id="23" width="20px" src="icons/flag-icons/png/Estonia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Estonia</span> </td>
+
+                    
+
+                </tr><tr align="center">
+
+                    <td><input type="image" id="24" width="20px" src="icons/flag-icons/png/Europe multi-state.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Europe multi-state</span> </td>
+
+                    <td><input type="image" id="25" width="20px" src="icons/flag-icons/png/Finland.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Finland</span> </td>
+
+                    
+
+                    <td><input type="image" id="26" width="20px" src="icons/flag-icons/png/France.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">France</span> </td>
+
+                    
+
+                    <td><input type="image" id="27" width="20px" src="icons/flag-icons/png/Georgia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Georgia</span> </td>
+
+                    
+
+                    <td><input type="image" id="28" width="20px" src="icons/flag-icons/png/Germany.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Germany</span> </td>
+
+                    
+
+                    <td><input type="image" id="29" width="20px" src="icons/flag-icons/png/Greece.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Greece</span> </td>
+
+                    
+
+                    <td><input type="image" id="30" width="20px" src="icons/flag-icons/png/Hungary.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Hungary</span> </td>
+
+                    
+
+                    <td><input type="image" id="31" width="20px" src="icons/flag-icons/png/India.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">India</span> </td>
+
+                    
+
+                </tr><tr align="center">
+
+                    <td><input type="image" id="32" width="20px" src="icons/flag-icons/png/Indonesia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Indonesia</span> </td>
+
+                    <td><input type="image" id="33" width="20px" src="icons/flag-icons/png/Iran.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Iran</span> </td>
+
+                    
+
+                    <td><input type="image" id="34" width="20px" src="icons/flag-icons/png/Ireland.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Ireland</span> </td>
+
+                    
+
+                    <td><input type="image" id="35" width="20px" src="icons/flag-icons/png/Israel.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Israel</span> </td>
+
+                    
+
+                    <td><input type="image" id="36" width="20px" src="icons/flag-icons/png/Italy.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Italy</span> </td>
+
+                    
+
+                    <td><input type="image" id="37" width="20px" src="icons/flag-icons/png/Japan.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Japan</span> </td>
+
+                    
+
+                    <td><input type="image" id="38" width="20px" src="icons/flag-icons/png/Jordan.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Jordan</span> </td>
+
+                    
+
+                    <td><input type="image" id="39" width="20px" src="icons/flag-icons/png/Kyrgyzstan.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Kyrgyzstan</span> </td>
+
+                    
+
+                </tr><tr align="center">
+
+                    <td><input type="image" id="40" width="20px" src="icons/flag-icons/png/Libya.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Libya</span> </td>
+
+                    <td><input type="image" id="41" width="20px" src="icons/flag-icons/png/Malaysia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Malaysia</span> </td>
+
+                    
+
+                    <td><input type="image" id="42" width="20px" src="icons/flag-icons/png/Malta.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Malta</span> </td>
+
+                    
+
+                    <td><input type="image" id="43" width="20px" src="icons/flag-icons/png/Moldova.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Moldova</span> </td>
+
+                    
+
+                    <td><input type="image" id="44" width="20px" src="icons/flag-icons/png/Montenegro.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Montenegro</span> </td>
+
+                    
+
+                    <td><input type="image" id="45" width="20px" src="icons/flag-icons/png/(multiple sellers).png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">(multiple sellers)</span> </td>
+
+                    
+
+                    <td><input type="image" id="46" width="20px" src="icons/flag-icons/png/Netherlands.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Netherlands</span> </td>
+
+                    
+
+                    <td><input type="image" id="47" width="20px" src="icons/flag-icons/png/New Zealand.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">New Zealand</span> </td>
+
+                    
+
+                </tr><tr align="center">
+
+                    <td><input type="image" id="48" width="20px" src="icons/flag-icons/png/North Korea.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">North Korea</span> </td>
+
+                    <td><input type="image" id="49" width="20px" src="icons/flag-icons/png/Norway.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Norway</span> </td>
+
+                    
+
+                    <td><input type="image" id="50" width="20px" src="icons/flag-icons/png/Oman.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Oman</span> </td>
+
+                    
+
+                    <td><input type="image" id="51" width="20px" src="icons/flag-icons/png/Pakistan.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Pakistan</span> </td>
+
+                    
+
+                    <td><input type="image" id="52" width="20px" src="icons/flag-icons/png/Poland.svg" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Poland</span> </td>
+
+                    
+
+                    <td><input type="image" id="53" width="20px" src="icons/flag-icons/png/Portugal.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Portugal</span> </td>
+
+                    
+
+                    <td><input type="image" id="54" width="20px" src="icons/flag-icons/png/Qatar.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Qatar</span> </td>
+
+                    
+
+                    <td><input type="image" id="55" width="20px" src="icons/flag-icons/png/Romania.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Romania</span> </td>
+
+                    
+
+                </tr><tr align="center">
+
+                    <td><input type="image" id="56" width="20px" src="icons/flag-icons/png/Russia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Russia</span> </td>
+
+                    <td><input type="image" id="57" width="20px" src="icons/flag-icons/png/Saudi Arabia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Saudi Arabia</span> </td>
+
+                    
+
+                    <td><input type="image" id="58" width="20px" src="icons/flag-icons/png/Serbia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Serbia</span> </td>
+
+                    
+
+                    <td><input type="image" id="59" width="20px" src="icons/flag-icons/png/Singapore.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Singapore</span> </td>
+
+                    
+
+                    <td><input type="image" id="60" width="20px" src="icons/flag-icons/png/Slovakia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Slovakia</span> </td>                    
+
+                    <td><input type="image" id="61" width="20px" src="icons/flag-icons/png/Slovenia.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Slovenia</span> </td>                    
+
+                    <td><input type="image" id="62" width="20px" src="icons/flag-icons/png/South Africa.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">South Africa</span> </td>
+                    
+                    <td><input type="image" id="63" width="20px" src="icons/flag-icons/png/South Korea.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">South Korea</span> </td>
+                    
+                </tr><tr align="center">
+
+                    <td><input type="image" id="64" width="20px" src="icons/flag-icons/png/Spain.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Spain</span> </td>
+
+                    <td><input type="image" id="65" width="20px" src="icons/flag-icons/png/Sudan.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Sudan</span> </td>
+                    
+                    <td><input type="image" id="66" width="20px" src="icons/flag-icons/png/Sweden.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Sweden</span> </td>
+                    
+                    <td><input type="image" id="67" width="20px" src="icons/flag-icons/png/Switzerland.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Switzerland</span> </td>
+                    
+                    <td><input type="image" id="68" width="20px" src="icons/flag-icons/png/Syria.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Syria</span> </td>
+                    
+                    <td><input type="image" id="69" width="20px" src="icons/flag-icons/png/Taiwan.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Taiwan</span> </td>
+                    
+                    <td><input type="image" id="70" width="20px" src="icons/flag-icons/png/Thailand.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Thailand</span> </td>                    
+                    <td><input type="image" id="71" width="20px" src="icons/flag-icons/png/Turkey.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Turkey</span> </td>
+                    
+                </tr><tr align="center">
+
+                    <td><input type="image" id="72" width="20px" src="icons/flag-icons/png/UAE.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">UAE</span> </td>
+
+                    <td><input type="image" id="73" width="20px" src="icons/flag-icons/png/Uganda.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Uganda</span> </td>
+                    
+                    <td><input type="image" id="74" width="20px" src="icons/flag-icons/png/Ukraine.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Ukraine</span> </td>
+                  
+                    <td><input type="image" id="75" width="20px" src="icons/flag-icons/png/United Kingdom.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">United Kingdom</span> </td>             
+
+                    <td><input type="image" id="76" width="20px" src="icons/flag-icons/png/United States.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">United States</span> </td>                    
+
+                    <td><input type="image" id="77" width="20px" src="icons/flag-icons/png/Unknown supplier(s).png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Unknown supplier(s)</span> </td>
+
+                    <td><input type="image" id="78" width="20px" src="icons/flag-icons/png/Uzbekistan.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Uzbekistan</span> </td>
+                    
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <h2>Range of years:</h2>
+            <div  class="row align-items-center">
+                <div class="col-sm-2">
+                    <p id="value-range"></p>
+                </div>
+                <div class="col-sm">
+                    <div id="slider-range"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</body>
 </html>

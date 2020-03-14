@@ -41,4 +41,76 @@ svg{
     stroke-width: 3px;
   }
   
+  h2{
+
+    color: white
+  }
+  h3{
+
+    border: white;
+    color: black;
+  }
+
+
+  .column {
+    float: left;
+    width: 50%;
+  }
   
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #value-range,#value-step{
+    color:white
+  }
+
+
+  input {
+    
+    text-align: center;
+    
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    
+  }
+  
+  input:hover {background-color: #3e8e41}
+  
+  input:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  input:disabled{   
+    opacity: 0.5;
+  }
+
+  /* Tooltip container */
+
+
+/* Tooltip text */
+ .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #69696999;
+  
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+ td:hover > .tooltiptext {
+  visibility: visible;
+}
+
