@@ -98,7 +98,7 @@ var MapComponentsManager= function(){
         }
 
         function update() {
-            d3.selectAll(".arches").remove()
+           // d3.selectAll(".arches").remove()
             mm.drawArches()
         }
         

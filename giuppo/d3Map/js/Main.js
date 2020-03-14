@@ -14,10 +14,10 @@ function main() {
 function clickedNation(id){
     var but=document.getElementById(id)
     
-    d3.selectAll(".arches").remove()
+    // d3.selectAll(".arches").remove()
     const str = but.src        
-    mm.setCountry = str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf("."))
+    mm.setCountry( str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")).replace("%20"," ") )
     mm.drawArches()
-
-console.log("Clicked",str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")) )  
+    
+    console.log("Clicked",str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")).replace("%20"," ") )  
 }

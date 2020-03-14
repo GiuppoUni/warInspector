@@ -769,8 +769,8 @@ Ecuador,Uruguay,4,T-34C Turbo Mentor,Trainer aircraft,2018,2018,(4),Second-hand,
 Egypt,Libya HoR,(3),Mi-8T,Transport helicopter,2014,2014,(3),Second-hand | aid, 26.820553, 30.802498, 26.3351, 17.228331
 Egypt,Libya HoR,(5),MiG-21MF,Fighter aircraft,2014,2015,(5),Second-hand | aid, 26.820553, 30.802498, 26.3351, 17.228331
 Estonia,Iraq,12,M-43 120mm,Mortar,(2015),2015,12,Second-hand | designation uncertain (reported as 120mm mortar) | aid, 58.595272, 25.013607, 33.223191, 43.679291
-Europe multi-state,Spain,7,NH-90 NFH,ASW helicopter,(2018),,,Part of EUR1.5 b deal (incl 16 NH-90 TTH version | incl production in Spain) | selected 2018 but not yet ordered by end-2018, 30.602278,-44.134617, 40.463667, -3.74922
-Europe multi-state,Spain,16,NH-90 TTH,Transport helicopter,(2018),,,Part of EUR1.5 b deal (incl 7 NH-90 NFH version | incl production in Spain) | selected 2018 but not yet ordered by end-2018, 30.602278,-44.134617, 40.463667, -3.74922
+Europe multi-state,Spain,7,NH-90 NFH,ASW helicopter,(2018),,,Part of EUR1.5 b deal (incl 16 NH-90 TTH version | incl production in Spain) | selected 2018 but not yet ordered by end-2018,,, 40.463667, -3.74922
+Europe multi-state,Spain,16,NH-90 TTH,Transport helicopter,(2018),,,Part of EUR1.5 b deal (incl 7 NH-90 NFH version | incl production in Spain) | selected 2018 but not yet ordered by end-2018,,, 40.463667, -3.74922
 Finland,Croatia,84,AMV,APC,2007,2008-2012,(84),EUR170 m deal (incl EUR112 m for vehicles only), 61.92411, 25.748151, 45.1, 15.2
 Finland,Croatia,42,AMV,APC,2008,2012,(42),EUR68 m deal, 61.92411, 25.748151, 45.1, 15.2
 Finland,Poland,332,AMV,APC,2003,2004-2014,(332),Part of PLN4.9 b ($1.45 b) Suhak programme (incl $308 m for turrets from Italy | offsets 133% incl production of most in Poland) | XC-360P version | incl command post and 32 reconnaissance version | Polish designation Rosomak, 61.92411, 25.748151, 51.919438, 19.145136
@@ -2114,7 +2114,7 @@ Montenegro,Armenia,(16),D-30 122mm,Towed gun,(2010),2010,16,Second-hand, 42.7086
 Montenegro,Kenya,1,AK-630 30mm,Naval gun,(2016),2017,1,Second-hand | for modernization of Jasiri OPV, 42.708678, 19.37439, -0.023559, 37.906193
 Montenegro,Serbia,(16),BOV-3,SPAAG,(2010),2010,16,Second-hand, 42.708678, 19.37439, 44.016521, 21.005859
 Montenegro,Serbia,6,G-4 Super Galeb,Trainer/combat ac,2010,2010,6,Second-hand, 42.708678, 19.37439, 44.016521, 21.005859
-(multiple sellers),Brazil,(56),V2500,Turbofan,(2014),,,For 28 KC-390 transport aircraft produced in Brazil, 30.602278,-44.134617, -14.235004, -51.92528
+(multiple sellers),Brazil,(56),V2500,Turbofan,(2014),,,For 28 KC-390 transport aircraft produced in Brazil,,, -14.235004, -51.92528
 Netherlands,Tunisia,(4),OPV-1400,OPV,2016,2018,4,From Romanian production line | Tunisian designation Jugartha, 52.132633, 5.291266, 33.886917, 9.537499
 Netherlands,Canada,13,Sirius,EO system,2006,2008-2018,(13),CAD134 m ($97 m) deal (incl CAD23 m for spare parts | incl production of components in Canada) | for modernization of 12 Halifax frigates and 1 for training, 52.132633, 5.291266, 56.130366, -106.346771
 Netherlands,Ecuador,4,Stan Patrol-2606,Patrol craft,2011,2012-2014,(4),For coast guard | produced in Ecuador, 52.132633, 5.291266, -1.831239, -78.183406

@@ -1,4 +1,6 @@
 country, latitude, longitude, name
+ZZ, 30.602278,-44.134617, Europe multi-state
+ZZ, 30.602278,-44.134617, (multiple sellers)
 AD, 42.546245, 1.601554, Andorra
 AE, 23.424076, 53.847818, UAE
 AE, 23.424076, 53.847818, United Arab Emirates
@@ -17,6 +19,7 @@ AU, -25.274398, 133.775136, Australia
 AW, 12.52111, -69.968338, Aruba
 AZ, 40.143105, 47.576927, Azerbaijan
 BA, 43.915886, 17.679076, BosniaHerzegovina
+BA, 43.915886, 17.679076, Bosnia-Herzegovina
 BA, 43.915886, 17.679076, Bosnia and Herzegovina
 BB, 13.193887, -59.543198, Barbados
 BD, 23.684994, 90.356331, Bangladesh

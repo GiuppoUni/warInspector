@@ -2,8 +2,8 @@
 
 
 var MapManager = function (){
-
-
+  
+  
   const map_section=d3.select('#map')
   .select('tr')
   .select('tr > td')
@@ -35,18 +35,19 @@ var MapManager = function (){
   var sphere=stateGroup.append("g")
   var land=stateGroup.append("g")
   var boundaries=stateGroup.append("g")
-
+  
   var archesGroup= stateGroup.append("g")
-
+  
   var line_gen = d3.line()
-      .x(function(d){return d[0];})
-      .y(function(d){return d[1];});
-      
-    //Default values
-      var year_interval = [1970,2018]
-      var country = "United States"
-
-  var links = [];
+  .x(function(d){return d[0];})
+  .y(function(d){return d[1];});
+  
+  //Default values
+  var year_interval = [1970,2018]
+  var country = "France"
+  
+  var transactions ;
+  var linked;
   var drawMap = function (){
     
     
@@ -71,7 +72,7 @@ var MapManager = function (){
       /*
       >>>>        DEBUG ONLY
       */
-      
+      transactions = merged;
       
       sphere
       .append('path')
@@ -93,27 +94,6 @@ var MapManager = function (){
       
       
       
-      
-      
-      for (let i = 0; i < merged.length; i++) {
-        const transaction =merged[i]
-        
-        
-        links.push({
-          name: transaction.Supplier+"-"+transaction.Recipient,
-          coo:[ projection([transaction.longS,transaction.latS]),
-          projection([transaction.longR,transaction.latR])],
-          yearOrd: parseInt(transaction["Ordered year"].replace(/\(|\)/g,"") ),
-          yearDel: parseInt(transaction["Delivered year"].substring(transaction["Delivered year"].length-4, transaction["Delivered year"].length ) )
-        });
-        
-      }
-
-      //console.log(links)
-      //console.log(merged)
-      
-      
-      
       drawArches()
       
       
@@ -124,7 +104,7 @@ var MapManager = function (){
     
     
   }
-
+  
   function zoomed() {
     g
     .selectAll('path') // To prevent stroke width from scaling
@@ -135,18 +115,29 @@ var MapManager = function (){
   
   
   var  drawArches = function(){
+    
+    //To reset:
+    d3.selectAll(".arches").remove()
+    linked=[]
+    
     var localGroup = archesGroup.append("g").attr("class","arches")
-      console.log(country)
-      i=0
-      links.forEach(l => {
-
-        //console.log(country,year_interval,l.name.split("-")[0],l.yearOrd,l.yearDel)
-        if ( year_interval[0] <= l.yearOrd 
-          && l.yearDel <= year_interval[1] && l.name.split("-")[0] == country ){
-
+    console.log(country)
+    i=0
+    transactions.forEach( transaction => {
+      
+      var name = transaction.Supplier+"-"+transaction.Recipient 
+      var coo = [ projection([transaction.longS,transaction.latS]),
+      projection([transaction.longR,transaction.latR])]
+      var yearOrd = parseInt(transaction["Ordered year"].replace(/\(|\)/g,"") )
+      var yearDel = parseInt(transaction["Delivered year"].substring(transaction["Delivered year"].length-4, transaction["Delivered year"].length ) )
+      
+      
+      if ( year_interval[0] <= yearOrd 
+        && yearDel <= year_interval[1] && name.split("-")[0] == country ){
+          if( ! linked.includes(name) ){
             var lin=localGroup.append("path")
             .attr("id","link"+i)
-            .data([l.coo])
+            .data([coo])
             .attr("class", "line")
             //.text(d=>d.name)
             .attr("style","stroke:rgb(249, 250, 3);stroke-width:2")
@@ -175,29 +166,34 @@ var MapManager = function (){
             .style("text-anchor","middle") //place the text halfway on the arc
             .attr("style","color:red;font-size: 50%;")
             .attr("startOffset", "50%")
-            .text(l.name)
+            .text(name)
+            
+            linked.push(name) 
+            i++;
           }
-          // console.log(l) 
-          
-          i++;
-        });
+        }
         
-      }
+      });
       
-      
-      var setYearInterval = function(yi){
-        year_interval=yi
-      }
-
-      var setCountry = function (c){
-        country=c
-      }
-      
-      return{
-        drawMap:drawMap,
-        drawArches:drawArches,
-        setYearInterval:setYearInterval,
-        setCountry:setCountry,
-      }
     }
     
+    
+    var setYearInterval = function(yi){
+      console.log("set interval to", yi)
+      year_interval=yi
+    }
+    
+    var setCountry = function (c){
+      console.log("set country to", c)
+      country=c
+    }
+    
+    
+    return{
+      drawMap:drawMap,
+      drawArches:drawArches,
+      setYearInterval:setYearInterval,
+      setCountry:setCountry,
+    }
+  }
+  
