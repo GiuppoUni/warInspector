@@ -48,7 +48,11 @@ var MapManager = function (){
   
   var transactions ;
   var linked;
-  var drawMap = function (){
+
+/*
+  Load data and draw world map
+*/
+  var drawMap = function (callback){
     
     
     
@@ -91,12 +95,11 @@ var MapManager = function (){
       .datum(topojson.mesh(world, world.objects.countries, (a, b) => a !== b))
       .attr('class', 'boundary')
       .attr('d', path);
-      
-      
-      
-      drawArches()
-      
-      
+            
+    
+      if (typeof callback == "function") 
+                callback(); 
+    
     }
     
     
@@ -174,6 +177,7 @@ var MapManager = function (){
         }
         
       });
+
       
     }
     
@@ -187,11 +191,18 @@ var MapManager = function (){
       console.log("set country to", c)
       country=c
     }
+
+
+
+    var drawCircles = function(){
+
+    }
     
     
     return{
       drawMap:drawMap,
       drawArches:drawArches,
+      drawCircles:drawCircles,
       setYearInterval:setYearInterval,
       setCountry:setCountry,
     }
