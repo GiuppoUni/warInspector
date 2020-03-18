@@ -45,7 +45,7 @@ var MapManager = function (){
   .y(function(d){return d[1];});
   
   //Default values
-  var year_interval = [1970,2018]
+  var year_interval = [2016,2018]
   var country = "France"
   
   var transactions ;
@@ -111,6 +111,8 @@ var MapManager = function (){
   var  drawArches = function(){
     
     updateTexts()
+
+    document.getElementsByClassName("sphere")[0].style.fill="#bef7e4"
 
     //To reset:
     d3.selectAll("#arches").remove()
@@ -223,19 +225,18 @@ var MapManager = function (){
     resetZoom()
     updateTexts()
 
+    document.getElementsByClassName("sphere")[0].style.fill="#313131"
+    
     d3.queue()
     .defer(d3.csv,"data/merged.csv")
+    .defer(d3.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
     .await(ready)
     
-    function ready(error,transactions){
+    function ready(error,transactions,topo){
       console.log(transactions)
       // Data and color scale
       var data = d3.map();
-      var colorScheme = d3.schemeReds[6];
-      colorScheme.unshift("#eee")
-      var colorScale = d3.scaleThreshold()
-      .domain([1, 6, 11, 26, 101, 1001])
-      .range(colorScheme);
+      
       
       var grouped = d3
       .nest()
@@ -245,22 +246,25 @@ var MapManager = function (){
         parseInt( d["Ordered year"].replace(/\(|\)/g,"") ) >= year_interval[0] 
         && parseInt( d["Ordered year"].replace(/\(|\)/g,"") ) <= year_interval[1] ));
       
+      
+      const max_from_grouped=Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
+      
+      // var colorScale = d3.scaleThreshold()
+      // .domain([ max_from_grouped/3,  max_from_grouped/3*2, max_from_grouped])
+      // .range(colorScheme);
+      console.log("Max_from_grouped",max_from_grouped)
+      var colorScale = d3.scaleThreshold()
+        .domain([ 1, max_from_grouped==-Infinity?1000:max_from_grouped])
+        .range(d3.schemeGreens[4]);
 
+      
       for (let i = 0; i < grouped.length; i++) {
         const element = grouped[i];
         data.set(element.key,+element.value)
       }
       console.log(grouped)
       
-      // Load external data and boot
-      d3.queue()
-      .defer(d3.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
-      //.defer(d3.json, "data/world.topojson")
-      //.defer(d3.csv, "data/mooc-countries.csv", function(d) { data.set(d.code, +d.total); })
-      .await(ready2);
       
-      function ready2(error,topo) {
-        if (error) throw error;
         console.log(g_world)
         // Draw the map
         
@@ -284,24 +288,27 @@ var MapManager = function (){
         
         
         // Legend
-        var g = heatsGroup.append("g")
+        var lgnd = heatsGroup.append("g")
         .attr("class", "legendThreshold")
         .attr("id","legendThreshold")
         .attr("transform", "translate(20,20)");
-        g.append("text")
+        
+        lgnd.append("text")
         .attr("class", "caption")
         .attr("x", 0)
         .attr("y", -6)
         .text("N. of weapons exchanged");
-        var labels = ['0', '1-5', '6-10', '11-25', '26-100', '101-1000', '> 1000'];
+
+        var labels = ['0', "","", '> 1000'];
         var legend = d3.legendColor()
         .labels(function (d) { return labels[d.i]; })
         .shapePadding(4)
         .scale(colorScale);
+
         heatsGroup.select(".legendThreshold")
         .call(legend);
         
-      }
+    
       
     }
   }

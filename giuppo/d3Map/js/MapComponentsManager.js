@@ -101,7 +101,9 @@ var MapComponentsManager= function(){
             
             
         }
-        
+        /*
+            Called on years slider change
+        */
         function update() {
             // d3.selectAll(".arches").remove()
             if(document.getElementById("arches")!=null ){ 

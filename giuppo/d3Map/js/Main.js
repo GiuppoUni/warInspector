@@ -15,7 +15,10 @@ function main() {
     mcm.drawSlider()
 }
 
-//Helpers
+//---Helpers
+/*
+    Called on nation icon click
+*/
 function clickedNation(id){
     var but=document.getElementById(id)
     
@@ -29,12 +32,16 @@ function clickedNation(id){
 
         d3.selectAll("#heatmap").remove()
         d3.selectAll("#legendThreshold").remove()
+        d3.selectAll(".legendCells").remove()
 
         mm.drawHeatMap()
     }
     console.log("Clicked",str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")).replace("%20"," ") )  
 }
 
+/*
+    Called on selection change
+*/
 function changeView(value){
     console.log("Changed selection")
     if(value=="Cloropeth view"){
@@ -44,6 +51,7 @@ function changeView(value){
     else if(value=="Arrows view"){
         d3.selectAll(".heatmap").remove()
         d3.selectAll(".legendThreshold").remove()
-        mm.drawMap(mm.drawArches)
+        mm.drawArches()
     }
 }
+
