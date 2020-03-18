@@ -4,6 +4,8 @@
 // .select('tr > td')
 
 var MapComponentsManager= function(){
+
+    var sliderTimer;
     var drawSlider=function (){
         var div = document.getElementById("map_slider");                       // Create a <p> node
         var map_component_section = document.getElementById("map")
@@ -38,7 +40,10 @@ var MapComponentsManager= function(){
             d3.select('p#value-range').text(val.map( d3.timeFormat('%Y') ).join('-'));
             var year_interval = val.map( d3.timeFormat('%Y') ).map( s => parseInt(s));
             mm.setYearInterval(year_interval)
-            update()
+            if(sliderTimer!=undefined)
+                clearTimeout(sliderTimer)
+            sliderTimer = setTimeout(function(){ update() }, 250);
+            
             
         });
         
@@ -65,7 +70,7 @@ var MapComponentsManager= function(){
             /* 
             Step
             */
-           
+            
             // data = ["Gino","Er","Grilli"]
             // var sliderStep = d3
             // .sliderLeft()
@@ -96,13 +101,21 @@ var MapComponentsManager= function(){
             
             
         }
-
+        
         function update() {
-           // d3.selectAll(".arches").remove()
-            mm.drawArches()
+            // d3.selectAll(".arches").remove()
+            if(document.getElementById("arches")!=null ){ 
+                d3.selectAll("#arches").remove()
+                mm.drawArches()
+            }
+            else{
+                d3.selectAll(".arches").remove()
+                d3.selectAll(".heatmap").remove()
+                mm.drawHeatMap()
+            }
         }
         
-
+        
         
         return {
             drawSlider:drawSlider,

@@ -1,10 +1,19 @@
-*{
+/* *{
     font-family:  "Helvetica Neue";
+} */
+@import url('https://fonts.googleapis.com/css?family=Archivo&display=swap');
+
+*{
+  font-family: Archivo, Verdana, Tahoma;
+
 }
+
 p {
     font-size: 0.85em;
     margin-left: 50%;
-    color:blue;
+    color:white;
+    font-family: Archivo, Verdana, Tahoma;
+
 }
 svg{
     background: #efefef;
@@ -115,3 +124,23 @@ svg{
   visibility: visible;
 }
 
+textPath{
+  background-color: #69696999;
+  border-radius: 6px;
+}
+
+
+.heatmap {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+.legendThreshold {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.caption {
+    fill: #000;
+    text-anchor: start;
+    font-weight: bold;
+}

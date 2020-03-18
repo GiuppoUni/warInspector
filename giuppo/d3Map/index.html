@@ -8,7 +8,9 @@
     <script src="https://unpkg.com/d3-simple-slider"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
     <script src='https://azlejs.com/v2/azle.min.js'></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
     
     <link
     rel="stylesheet"
@@ -31,8 +33,15 @@
 <body onload="main()">
     <select id="selection" onChange="changeView(this.value);"">
         <option>Arrows view</option>
-        <option>Circles view</option>
+        <option>Cloropeth view</option>
     </select>
+
+    <div id="curr_data">
+    <p id="curr_country">
+    </p>
+    <p id="curr_years">
+    </p>
+    </div>
     
     
     <div id="map_slider" class="row">

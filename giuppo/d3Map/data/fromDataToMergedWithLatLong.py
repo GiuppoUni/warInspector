@@ -28,7 +28,8 @@ def main():
     for idx,line in enumerate(original1):
         # Header
         if (idx==0):
-            out.write(line.replace("\n","")+","+"latS"+","+"longS"+","+"latR"+","+"longR" + "\n")
+            out.write(line.replace("\n","")+","+"latS"+","+"longS"+","+"codeS"+
+            ","+"latR"+","+"longR" +","+"codeR"+ "\n")
             continue
 
         l1=line.split(",")
@@ -39,17 +40,19 @@ def main():
         # if(l1[1] not in recipients):
         #     recipients.append(l1[1])
 
-        original2 = open("./countries.csv","r")
+        original2 = open("./countriesAlpha3.csv","r")
         latS=""
         longS=""
+        codeS=""
         latR=""
         longR=""
+        codeR=""
         foundS=False
         foundR=False
         for line2 in original2:
             
             l2=line2.split(",") 
-            #print("l2",l2[-1],l2[1],l2[2])
+            #print("l2",l2[-2],l2[1],l2[2])
             
             #Supplier
             sup=l1[0]
@@ -60,17 +63,19 @@ def main():
             rec=" ".join(rec.split() )
             rec=regex.sub("",rec)
             #Country name
-            con=l2[-1].strip()
+            con=l2[-2].strip()
             con=" ".join(con.split() )
             con=regex.sub("",con)
 
             if(sup == con and not foundS): #trovato il nome del sup 
                 latS=l2[1]
                 longS=l2[2]
+                codeS=l2[-1].strip()
                 foundS=True
             if(rec == con and not foundR): #trovato il nome del rec
                 latR=l2[1]
                 longR=l2[2]
+                codeR=l2[-1].strip()
                 foundR=True
             if(foundR and foundS):
                 break        
@@ -82,12 +87,13 @@ def main():
             for line2 in original2:
                 l2=line2.split(",")
                 #Country name
-                con=l2[-1].strip()
+                con=l2[-2].strip()
                 con=" ".join(con.split() )
                 con=regex.sub("",con) 
                 if(con in sup and not foundS): #trovato il nome del sup 
                     latS=l2[1]
                     longS=l2[2]
+                    codeS=l2[-1].strip()
                     foundS=True
             original2.close()
 
@@ -97,12 +103,13 @@ def main():
             for line2 in original2:
                 
                 l2=line2.split(",") 
-                con=l2[-1].strip()
+                con=l2[-2].strip()
                 con=" ".join(con.split() )
                 con=regex.sub("",con)
                 if(con in rec and not foundR): #trovato il nome del sup 
                     latR=l2[1]
                     longR=l2[2]
+                    codeR=l2[-1].strip()
                     foundR=True
             original2.close()
             
@@ -117,7 +124,7 @@ def main():
         commas=line.count(",")
         if(commas < 8):
             print(line)
-        mrgd_row=line.replace("\n","") +","+latS+","+longS+","+latR+","+longR+"\n"
+        mrgd_row=line.replace("\n","") +","+latS+","+longS+","+codeS+","+latR+","+longR+","+codeR+"\n"
 
         out.write(mrgd_row)
     # print("supplier",suppliers)
