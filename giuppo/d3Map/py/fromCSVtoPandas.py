@@ -3,7 +3,7 @@ from iso3166 import countries
 # Read data from file 'filename.csv' 
 # (in the same directory that your python process is based)
 # Control delimiters, rows, column names with read_csv (see later) 
-data = pd.read_csv("merged.csv") 
+data = pd.read_csv("../data/merged.csv") 
 # Preview the first 5 lines of the loaded data 
 print(data.head())
 
@@ -16,8 +16,8 @@ print(grouped.loc[grouped["Recipient"]=="United States"])
 
 # #grouped.to_csv("grouped.csv")
 
-# fout=open("countriesAlpha3.csv","w")
-# with open("countries.csv","r") as file:
+# fout=open("../data/countriesAlpha3.csv","w")
+# with open("../data/countries.csv","r") as file:
 #     for idx,line in enumerate(file):
 #         code=line.split(",")[0]
         

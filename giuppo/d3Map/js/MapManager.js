@@ -47,9 +47,10 @@ var MapManager = function (){
   //Default values
   var year_interval = [2016,2018]
   var country = "France"
-  
+  var g_country_locations;
   var transactions ;
   var linked;
+  var circle;
   
   /*
   Load data and draw world map
@@ -65,7 +66,7 @@ var MapManager = function (){
     .await(ready)
     
     function ready(error,world,country_locations){
-      
+      g_country_locations = country_locations
       
       g_world=world;
       
@@ -79,7 +80,12 @@ var MapManager = function (){
       .append('path')
       .datum(topojson.merge(world, world.objects.countries.geometries))
       .attr('class', 'land')
-      .attr('d', path);
+      .attr('d', path)
+      .append("title")
+      .text(d => console.log(d))  
+      //.text(d => `${d.properties.name}
+        //${data.has(d.id) ? data.get(d.id) : "N/A"}`);
+      console.log(topojson.merge(world, world.objects.countries.geometries))
       
       boundaries
       .append('path')
@@ -103,6 +109,9 @@ var MapManager = function (){
     g
     .selectAll('path') // To prevent stroke width from scaling
     .attr('transform', d3.event.transform);
+    if(circle != undefined)
+      circle.attr('transform', d3.event.transform);
+    
     
   }
   
@@ -111,9 +120,9 @@ var MapManager = function (){
   var  drawArches = function(){
     
     updateTexts()
-
+    
     document.getElementsByClassName("sphere")[0].style.fill="#bef7e4"
-
+    
     //To reset:
     d3.selectAll("#arches").remove()
     linked=[]
@@ -142,13 +151,15 @@ var MapManager = function (){
       //Reset zoom
       resetZoom()
       
-      
+      var circle_coo=undefined;
       for (let i = 0; i < transactions.length; i++) {
         
         const transaction = transactions[i];
         
         var name = transaction.Supplier+"-"+transaction.Recipient 
-        
+        var sup = name.split("-")[0]
+        var rec = name.split("-")[1]
+
         if(linked.includes(name)){
           continue
         }
@@ -161,13 +172,14 @@ var MapManager = function (){
         
         if ( (year_interval[0] <= yearOrd || yearOrd==NaN ) 
         && (yearDel <= year_interval[1] || yearDel == NaN)
-        && name.split("-")[0] == country ){
+        && sup == country ){
+          
           var lin=localGroup.append("path")
           .attr("id","link"+i)
           .data([coo])
           .attr("class", "line")
           //.text(d=>d.name)
-          .attr("style","stroke:rgb(249, 250, 3);stroke-width:2")
+          .attr("style","stroke:rgb(249, 250, 3);stroke-width:0.7;")
           .attr("d", line_gen )
           .attr("marker-end","url(#arrow"+i+")")
           
@@ -186,20 +198,50 @@ var MapManager = function (){
           .attr('fill', '#ef8b12')
           .style('stroke','none');
           
-          localGroup.append("text")
-          .append("textPath") //append a textPath to the text element
+
+          const text=localGroup.append("text")
+          text.append("textPath") //append a textPath to the text element
           .attr("class", "archText")
           .attr("xlink:href", "#link"+i) //place the ID of the path here
           .style("text-anchor","middle") //place the text halfway on the arc
           .attr("style","font-size: 50%;")
           .attr("startOffset", "50%")
-          .text(name)
-          
+          .text("To "+rec)
+          .attr("fill","red")
+
+          //Flip vertical
+          // if(parseFloat(coo[1][0])-parseFloat(coo[0][0]) < 0){
+          //   text.attr("class","archText vertical-mirror-text")
+          //   //console.log("flipping")
+          //   .attr("transform", function() {
+          //     console.log(text.node())
+          //   return "rotate(" + ((this.angle * 180) / Math.PI - 180) + ", 225, 225)"
+          //   })    
+          // }
           linked.push(name) 
+          
+          
+          if(circle_coo==undefined){
+            circle_coo=coo[0];  
+          }
           
         }
         
       }
+      if(circle_coo==undefined){
+        const tt = transactions.find( x => x.Supplier == country )
+        circle_coo= projection([tt.longS,tt.latS])
+        //console.log("no arrows")
+      }
+      circle=localGroup
+      .append("g")
+      .attr("id","origin-point")          
+      .append("circle").attr("r", 4)
+      .attr("fill","red")
+      
+      .attr("cx", circle_coo[0] )
+      .attr("cy", circle_coo[1] )
+      console.log(circle_coo)
       
     }
   }
@@ -224,7 +266,7 @@ var MapManager = function (){
     // boundaries.remove()
     resetZoom()
     updateTexts()
-
+    
     document.getElementsByClassName("sphere")[0].style.fill="#313131"
     
     d3.queue()
@@ -245,26 +287,26 @@ var MapManager = function (){
       .entries(transactions.filter(d => d.Supplier==country).filter(d => 
         parseInt( d["Ordered year"].replace(/\(|\)/g,"") ) >= year_interval[0] 
         && parseInt( d["Ordered year"].replace(/\(|\)/g,"") ) <= year_interval[1] ));
-      
-      
-      const max_from_grouped=Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
-      
-      // var colorScale = d3.scaleThreshold()
-      // .domain([ max_from_grouped/3,  max_from_grouped/3*2, max_from_grouped])
-      // .range(colorScheme);
-      console.log("Max_from_grouped",max_from_grouped)
-      var colorScale = d3.scaleThreshold()
+        
+        
+        const max_from_grouped=Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
+        
+        // var colorScale = d3.scaleThreshold()
+        // .domain([ max_from_grouped/3,  max_from_grouped/3*2, max_from_grouped])
+        // .range(colorScheme);
+        console.log("Max_from_grouped",max_from_grouped)
+        var colorScale = d3.scaleThreshold()
         .domain([ 1, max_from_grouped==-Infinity?1000:max_from_grouped])
         .range(d3.schemeGreens[4]);
-
-      
-      for (let i = 0; i < grouped.length; i++) {
-        const element = grouped[i];
-        data.set(element.key,+element.value)
-      }
-      console.log(grouped)
-      
-      
+        
+        
+        for (let i = 0; i < grouped.length; i++) {
+          const element = grouped[i];
+          data.set(element.key,+element.value)
+        }
+        console.log(grouped)
+        
+        
         console.log(g_world)
         // Draw the map
         
@@ -298,40 +340,40 @@ var MapManager = function (){
         .attr("x", 0)
         .attr("y", -6)
         .text("N. of weapons exchanged");
-
+        
         var labels = ['0', "","", '> 1000'];
         var legend = d3.legendColor()
         .labels(function (d) { return labels[d.i]; })
         .shapePadding(4)
         .scale(colorScale);
-
+        
         heatsGroup.select(".legendThreshold")
         .call(legend);
         
+        
+        
+      }
+    }
     
+    
+    function updateTexts(){
+      document.getElementById("curr_country").innerText = country;
+      document.getElementById("curr_years").innerText=year_interval[0]+"-"+ year_interval[1];
       
     }
-  }
-  
-
-  function updateTexts(){
-    document.getElementById("curr_country").innerText = country;
-    document.getElementById("curr_years").innerText=year_interval[0]+"-"+ year_interval[1];
     
+    var resetZoom = function(){
+      svg.transition()
+      .duration(100)
+      .call(zoom.transform, d3.zoomIdentity);
+    }
+    
+    return{
+      drawMap:drawMap,
+      drawArches:drawArches,
+      drawHeatMap:drawHeatMap,
+      setYearInterval:setYearInterval,
+      setCountry:setCountry,
+      resetZoom:resetZoom,
+    }
   }
-  
-  var resetZoom = function(){
-    svg.transition()
-    .duration(100)
-    .call(zoom.transform, d3.zoomIdentity);
-  }
-  
-  return{
-    drawMap:drawMap,
-    drawArches:drawArches,
-    drawHeatMap:drawHeatMap,
-    setYearInterval:setYearInterval,
-    setCountry:setCountry,
-    resetZoom:resetZoom,
-  }
-}

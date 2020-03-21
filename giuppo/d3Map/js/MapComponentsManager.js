@@ -113,6 +113,7 @@ var MapComponentsManager= function(){
             else{
                 d3.selectAll(".arches").remove()
                 d3.selectAll(".heatmap").remove()
+                
                 mm.drawHeatMap()
             }
         }

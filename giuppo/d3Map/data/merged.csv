@@ -72,7 +72,7 @@ Austria,Libya,4,Camcopter S-100,UAV,2009,2011,4,, 47.516231, 14.550072,AUT, 26.3
 Austria,Montenegro,(4),Survivor-2,APC,2014,2015,(4),, 47.516231, 14.550072,AUT, 42.708678, 19.37439,MNE
 Austria,Nigeria,(1),DA42MPP,Reconnaissance ac,(2011),2012,(1),, 47.516231, 14.550072,AUT, 9.081999, 8.675277,NGA
 Austria,Nigeria,(5),DA40,Light aircraft,(2016),2017,(5),For training, 47.516231, 14.550072,AUT, 9.081999, 8.675277,NGA
-Austria,OSCE**,(6),Camcopter S-100,UAV,2014,2014-2015,(6),For OSCE observation misison in eastern Ukraine, 47.516231, 14.550072,AUT, 30.602278,-44.134617,Europe multi-state
+Austria,OSCE**,(6),Camcopter S-100,UAV,2014,2014-2015,(6),For OSCE observation misison in eastern Ukraine, 47.516231, 14.550072,AUT,48.210033, 16.363449,OSC
 Austria,Poland,5,DA20,Light aircraft,2012,2013,(5),For training, 47.516231, 14.550072,AUT, 51.919438, 19.145136,POL
 Austria,Saudi Arabia,(37),M12 120mm,Mortar,(2008),2010,37,, 47.516231, 14.550072,AUT, 23.885942, 45.079162,SAU
 Austria,Thailand,3,DA42MPP,Reconnaissance ac,(2010),2011,(3),, 47.516231, 14.550072,AUT, 15.870032, 100.992541,THA
@@ -102,7 +102,7 @@ Belarus,Cote dIvoire,(8),Kaiman,APV,2017,2018,(8),Incl for police, 53.709807, 27
 Belarus,Cote dIvoire,(2),BTR-70,APC,(2018),2018,(2),Second-hand but modernized to BTR-70MP before delivery, 53.709807, 27.953389,BLR, 7.539989, -5.54708,CIV
 Belarus,Iran,(2),Vostok-E,Air search radar,(2010),2011,(2),, 53.709807, 27.953389,BLR, 32.427908, 53.688046,IRN
 Belarus,Iraq,(9),Su-25,Ground attack ac,2015,2015-2016,9,Second-hand, 53.709807, 27.953389,BLR, 33.223191, 43.679291,IRQ
-Belarus,Libya HoR,4,Mi-24P/Mi-35P,Combat helicopter,2014,2015,4,Second-hand | acquired and financed via UAE, 53.709807, 27.953389,BLR, 30.602278,-44.134617,Europe multi-state
+Belarus,Libya HoR,4,Mi-24P/Mi-35P,Combat helicopter,2014,2015,4,Second-hand | acquired and financed via UAE, 53.709807, 27.953389,BLR, 26.3351, 17.228331,LBY
 Belarus,Myanmar,(100),3M9/SA-6,SAM,(2014),2015-2016,(100),Second-hand (but modernized before delivery) | for Kvadrat-M SAM systems | supplier uncertain, 53.709807, 27.953389,BLR, 21.913965, 95.956223,MMR
 Belarus,Myanmar,(2),Kvadrat-M,SAM system,2014,2016,(2),Second-hand Kvadrat SAM system rebuilt to Kvadrat-M, 53.709807, 27.953389,BLR, 21.913965, 95.956223,MMR
 Belarus,Nigeria,(2),Mi-24P/Mi-35P,Combat helicopter,2009,2010,2,Second-hand, 53.709807, 27.953389,BLR, 9.081999, 8.675277,NGA
@@ -173,7 +173,7 @@ Brazil,Paraguay,3,EMB-312 Tucano,Trainer aircraft,(2009),2010,3,Second-hand | ex
 Brazil,Philippines,6,EMB-314 Super Tucano,Trainer/combat ac,2017,,,PHP5 b ($100 m) deal | incl for combat role | delivery planned 2019, -14.235004, -51.92528,BRA, 12.879721, 121.774017,PHL
 Brazil,Portugal,5,KC-390,Transport aircraft,(2017),,,Selected but not yet ordered by end-2018, -14.235004, -51.92528,BRA, 39.399872, -8.224454,PRT
 Brazil,United Kingdom,5,Phenom-100,Light transport ac,2016,2017-2018,(5),Part of MFTS programme | for UK company for training of UK armed forces in MFTS programme, -14.235004, -51.92528,BRA, 55.378051, -3.435973,GBR
-Brazil,Unknown recipient(s),(50),SMKB,Guided bomb,(2010),2013,(50),Recipient is South American country (possibly Ecuador or Peru), -14.235004, -51.92528,BRA, 30.602278,-44.134617,Europe multi-state
+Brazil,Unknown recipient(s),(50),SMKB,Guided bomb,(2010),2013,(50),Recipient is South American country (possibly Ecuador or Peru), -14.235004, -51.92528,BRA, 30.602278,-44.134617,ZZZ
 Brazil,Uruguay,15,M-41B,Light tank,(2013),2018,15,Second-hand (deal incl 10 more for spare parts) | aid | M-41C version, -14.235004, -51.92528,BRA, -32.522779, -55.765835,URY
 Brunei,Indonesia,2,Waspada,FAC,2010,2011,2,Second-hand | aid | for training, 4.535277, 114.727669,BRN, -0.789275, 113.921327,IDN
 Brunei,Malaysia,4,S-70/UH-60L,Helicopter,(2014),2016,4,Second-hand, 4.535277, 114.727669,BRN, 4.210484, 101.975766,MYS
@@ -206,7 +206,7 @@ Bulgaria,Uganda,(3),L-39Z Albatros,Trainer/combat ac,2010,2012,(3),Second-hand b
 Bulgaria,Uganda,10,2B11 120mm,Mortar,2015,2015,10,Probably second-hand | designation uncertain (reported as 120mm mortar), 42.733883, 25.48583,BGR, 1.373333, 32.290275,UGA
 Bulgaria,Uganda,(12),9M115 Metis/AT-7,Anti-tank missile,(2015),2016,12,9M115M version | possibly for evaluation, 42.733883, 25.48583,BGR, 1.373333, 32.290275,UGA
 Bulgaria,United States,(610),9M111 Fagot/AT-4,Anti-tank missile,(2013),2014,610,Possibly second-hand | possibly for US aid to Syrian rebels or Iraq, 42.733883, 25.48583,BGR, 37.09024, -95.712891,USA
-Bulgaria,Unknown recipient(s),(3),L-39Z Albatros,Trainer/combat ac,(2011),2013,(3),Second-hand | L-39ZA version, 42.733883, 25.48583,BGR, 30.602278,-44.134617,Europe multi-state
+Bulgaria,Unknown recipient(s),(3),L-39Z Albatros,Trainer/combat ac,(2011),2013,(3),Second-hand | L-39ZA version, 42.733883, 25.48583,BGR, 30.602278,-44.134617,ZZZ
 Canada,United States,615,Piranha-3,APC,2008,2009-2011,(615),$1.2 b deal | LAV-3 (LAV-25/Stryker) version | incl APC command post and mortar carrier versions, 56.130366, -106.346771,CAN, 37.09024, -95.712891,USA
 Canada,United States,352,Piranha-3,APC,2009,2011-2012,(352),$647 m deal | LAV-3 (LAV-25/Stryker) version | incl APC command post and mortar carrier versions, 56.130366, -106.346771,CAN, 37.09024, -95.712891,USA
 Canada,United States,103,Piranha-3,APC,2010,2012,103,$176 m deal | LAV-3 (LAV-25/Stryker) version, 56.130366, -106.346771,CAN, 37.09024, -95.712891,USA
@@ -608,7 +608,7 @@ China,Seychelles,1,Type-62,Patrol craft,2013,2014,1,Aid | Seychelles designation
 China,Sierra Leone,6,Type-83 122mm,Towed gun,2010,2011,6,Possibly second-hand | aid | Type-96 version, 35.86166, 104.195397,CHN, 8.460555, -11.779889,SLE
 China,Sierra Leone,(10),VN-4,APV/APC,(2015),2015-2016,(10),For use by Sierra Leone peacekeeping forces in Mali | designation uncertain (reported as MRAP)., 35.86166, 104.195397,CHN, 8.460555, -11.779889,SLE
 China,Slovakia,1,A319,Transport aircraft,2016,2017,1,Second-hand (from Hong Kong-based civilian operator) | A319-100 version | incl for government VIP transport, 35.86166, 104.195397,CHN, 48.669026, 19.699024,SVK
-China,South Sudan,1200,Red Arrow-73,Anti-tank missile,(2013),2014,1200,$14.5 m deal (incl 100 launchers) | Red Arrow-73D version, 35.86166, 104.195397,CHN, 30.602278,-44.134617,Europe multi-state
+China,South Sudan,1200,Red Arrow-73,Anti-tank missile,(2013),2014,1200,$14.5 m deal (incl 100 launchers) | Red Arrow-73D version, 35.86166, 104.195397,CHN, 12.862807, 30.217636,SDN
 China,Sri Lanka,2,Y-12,Light transport ac,(2009),2010,2,, 35.86166, 104.195397,CHN, 7.873054, 80.771797,LKA
 China,Sri Lanka,,Type-053H2G/Jiangwei-1,OPV,2016,,,Second-hand Type-053H2G (Jangwei-1) frigate modified to OPV before delivery | RMB120 m deal, 35.86166, 104.195397,CHN, 7.873054, 80.771797,LKA
 China,Sudan,(50),WZ-551/Type-92,IFV,(2003),2006-2015,(50),Assembled of produced in Sudan as Shateef-2, 35.86166, 104.195397,CHN, 12.862807, 30.217636,SDN
@@ -710,7 +710,7 @@ Czechia,Iraq,1,L-159B,Trainer/combat ac,(2014),2017,1,Part of $200 m deal | L-15
 Czechia,Iraq,(60),T-72M1,Tank,(2014),2014-2016,(60),Second-hand, 49.817492, 15.472962,CZE, 33.223191, 43.679291,IRQ
 Czechia,Mexico,(20),Z-142/Z-242L,Trainer aircraft,2013,2013-2014,(20),Z-242L version, 49.817492, 15.472962,CZE, 23.634501, -102.552784,MEX
 Czechia,Mexico,2,Z-143L,Light aircraft,2014,2015,(2),Z-143LSi version, 49.817492, 15.472962,CZE, 23.634501, -102.552784,MEX
-Czechia,NATO**,2,VERA-E,Air search system,2014,2016-2017,(2),EUR16 m deal | VERA-NG version, 49.817492, 15.472962,CZE, 30.602278,-44.134617,Europe multi-state
+Czechia,NATO**,2,VERA-E,Air search system,2014,2016-2017,(2),EUR16 m deal | VERA-NG version, 49.817492, 15.472962,CZE, 50.503887, 4.469936,NAT
 Czechia,Nigeria,(20),BMP-1,IFV,(2014),2014-2015,20,Second-hand | BVP-1 version, 49.817492, 15.472962,CZE, 9.081999, 8.675277,NGA
 Czechia,Nigeria,(7),RM-70 122mm,Self-propelled MRL,(2014),2015,7,Second-hand, 49.817492, 15.472962,CZE, 9.081999, 8.675277,NGA
 Czechia,Nigeria,(20),T-72M1,Tank,(2014),2015,20,Second-hand, 49.817492, 15.472962,CZE, 9.081999, 8.675277,NGA
@@ -766,8 +766,8 @@ Denmark,Ukraine,3,StanFlex-300,FAC/MCM ship,2017,,,Second-hand, 56.26392, 9.5017
 Dominican Republic,Colombia,2,A-37B Dragonfly,Ground attack ac,2017,2017,2,Second-hand | OA-37B version, 18.735693, -70.162651,DOM, 4.570868, -74.297333,COL
 Ecuador,Uruguay,3,A-37B Dragonfly,Ground attack ac,2014,2014,3,Second-hand | 3 more delivered for spare parts only, -1.831239, -78.183406,ECU, -32.522779, -55.765835,URY
 Ecuador,Uruguay,4,T-34C Turbo Mentor,Trainer aircraft,2018,2018,(4),Second-hand, -1.831239, -78.183406,ECU, -32.522779, -55.765835,URY
-Egypt,Libya HoR,(3),Mi-8T,Transport helicopter,2014,2014,(3),Second-hand | aid, 26.820553, 30.802498,EGY, 30.602278,-44.134617,Europe multi-state
-Egypt,Libya HoR,(5),MiG-21MF,Fighter aircraft,2014,2015,(5),Second-hand | aid, 26.820553, 30.802498,EGY, 30.602278,-44.134617,Europe multi-state
+Egypt,Libya HoR,(3),Mi-8T,Transport helicopter,2014,2014,(3),Second-hand | aid, 26.820553, 30.802498,EGY, 26.3351, 17.228331,LBY
+Egypt,Libya HoR,(5),MiG-21MF,Fighter aircraft,2014,2015,(5),Second-hand | aid, 26.820553, 30.802498,EGY, 26.3351, 17.228331,LBY
 Estonia,Iraq,12,M-43 120mm,Mortar,(2015),2015,12,Second-hand | designation uncertain (reported as 120mm mortar) | aid, 58.595272, 25.013607,EST, 33.223191, 43.679291,IRQ
 Europe multi-state,Spain,7,NH-90 NFH,ASW helicopter,(2018),,,Part of EUR1.5 b deal (incl 16 NH-90 TTH version | incl production in Spain) | selected 2018 but not yet ordered by end-2018, 30.602278,-44.134617,ZZZ, 40.463667, -3.74922,ESP
 Europe multi-state,Spain,16,NH-90 TTH,Transport helicopter,(2018),,,Part of EUR1.5 b deal (incl 7 NH-90 NFH version | incl production in Spain) | selected 2018 but not yet ordered by end-2018, 30.602278,-44.134617,ZZZ, 40.463667, -3.74922,ESP
@@ -795,7 +795,7 @@ Finland,Ireland,4,W-16,Diesel engine,2010,2014-2015,4,For 2 PV-90 OPV from UK, 6
 Finland,Ireland,2,W-16,Diesel engine,2014,2016,2,For 1 PV-90 OPV from UK, 61.92411, 25.748151,FIN, 53.41291, -8.24389,IRL
 Finland,Ireland,2,W-16,Diesel engine,2016,2018,2,For PV-90 OPV from UK, 61.92411, 25.748151,FIN, 53.41291, -8.24389,IRL
 Finland,Morocco,2,W-12,Diesel engine,2008,2011,2,For 1 OPV-70 OPV from France, 61.92411, 25.748151,FIN, 31.791702, -7.09262,MAR
-Finland,NATO**,1,Boeing-757-200,Transport aircraft,(2012),2012,1,Second-hand | Boeing-757-28A version | owned and operated by civilian company for lease to NATO, 61.92411, 25.748151,FIN, 30.602278,-44.134617,Europe multi-state
+Finland,NATO**,1,Boeing-757-200,Transport aircraft,(2012),2012,1,Second-hand | Boeing-757-28A version | owned and operated by civilian company for lease to NATO, 61.92411, 25.748151,FIN, 50.503887, 4.469936,NAT
 Finland,Norway,2,6L46,Diesel engine,2013,2018,2,For 1 DSME LSV support ship from South Korea, 61.92411, 25.748151,FIN, 60.472024, 8.468946,NOR
 Finland,Portugal,4,W-12,Diesel engine,(2002),2010-2013,4,For 2 NPO-2000 (Do Castelo) OPV produced in Portugal, 61.92411, 25.748151,FIN, 39.399872, -8.224454,PRT
 Finland,Portugal,4,W-12,Diesel engine,(2015),,,For 2 NPO-2000 (Do Castelo) OPV produced in Portugal, 61.92411, 25.748151,FIN, 39.399872, -8.224454,PRT
@@ -1578,7 +1578,7 @@ Indonesia,Senegal,1,CN-235,Transport aircraft,(2013),2017,1,, -0.789275, 113.921
 Indonesia,Viet Nam,2,C-212,Transport aircraft,(2010),2018,2,NC-212I version, -0.789275, 113.921327,IDN, 14.058324, 108.277199,VNM
 Iran,Syria,(1000),Fateh-110,SSM,(2007),2008-2014,(1000),Syrian designation probably Tishirin, 32.427908, 53.688046,IRN, 34.802075, 38.996815,SYR
 Iran,Venezuela,(12),Mohajer,UAV,(2007),2012-2013,(12),Probably Mohajer-3 version | Venezuelan designation probably Sant Arpia, 32.427908, 53.688046,IRN, 6.42375, -66.58973,VEN
-Iran,Huthi rebels (Yemen)*,(10),Qiam-1,SSM,(2015),2017,(10),Yemeni rebels designations Burkan and/or Burkan-2, 32.427908, 53.688046,IRN, 30.602278,-44.134617,Europe multi-state
+Iran,Huthi rebels (Yemen)*,(10),Qiam-1,SSM,(2015),2017,(10),Yemeni rebels designations Burkan and/or Burkan-2, 32.427908, 53.688046,IRN, 15.552727, 48.516388,YEM
 Iran,Iraq,(7),Su-25,Ground attack ac,2014,2014,(7),Second-hand (incl originally Iraqi aircraft flown to Iran 1991 to escape destruction in Gulf War and confiscated by Iran as payment for Iraqi war debts from Iran-Iraq War) | aid against Islamic State rebels | Su-25KM version | incl 3 Su-25UBKM version, 32.427908, 53.688046,IRN, 33.223191, 43.679291,IRQ
 Iran,Iraq,(20),Type-63 107mm,Towed MRL,2014,2014,(20),Probably second-hand | aid for Shia militias, 32.427908, 53.688046,IRN, 33.223191, 43.679291,IRQ
 Iran,Iraq,(2),Su-25,Ground attack ac,2015,2015,(2),Second-hand | aid against Islamic State rebels | Su-25KM version, 32.427908, 53.688046,IRN, 33.223191, 43.679291,IRQ
@@ -1588,7 +1588,7 @@ Iran,Syria,(1),C-801/C-802 CDS,Coast defence system,(2010),2011,(1),, 32.427908,
 Iran,Syria,(25),C-802/CSS-N-8,Anti-ship missile,(2010),2011,(25),For C-802 coast defence system, 32.427908, 53.688046,IRN, 34.802075, 38.996815,SYR
 Iran,Syria,(5),Yasir,UAV,(2012),2012,(5),, 32.427908, 53.688046,IRN, 34.802075, 38.996815,SYR
 Iran,Syria,(10),Shahed-129,UAV/UCAV,(2013),2014-2016,(10),, 32.427908, 53.688046,IRN, 34.802075, 38.996815,SYR
-Iran,Unknown recipient(s),(10),Misagh-2,Portable SAM,(2012),2013,(10),Captured by Yemen before final delivery | reportedly for Huthi rebels in Yemen, 32.427908, 53.688046,IRN, 30.602278,-44.134617,Europe multi-state
+Iran,Unknown recipient(s),(10),Misagh-2,Portable SAM,(2012),2013,(10),Captured by Yemen before final delivery | reportedly for Huthi rebels in Yemen, 32.427908, 53.688046,IRN, 30.602278,-44.134617,ZZZ
 Ireland,Australia,(253),Bushmaster,APC,2007,2008-2010,(253),, 53.41291, -8.24389,IRL, -25.274398, 133.775136,AUS
 Ireland,Australia,41,Bushmaster,APC,2008,2010,(41),, 53.41291, -8.24389,IRL, -25.274398, 133.775136,AUS
 Ireland,Australia,101,Bushmaster,APC,2011,2012,(101),, 53.41291, -8.24389,IRL, -25.274398, 133.775136,AUS
@@ -1829,16 +1829,16 @@ Israel,Turkey,10,Heron,UAV,2005,2010,(10),$183 m deal (offsets 30%) | delivery d
 Israel,Turkmenistan,1,Combat Guard,APV,(2015),2016,1,, 31.046051, 34.851612,ISR, 38.969719, 59.556278,TKM
 Israel,United Kingdom,(200),Spike-NLOS,SSM/ASM,(2009),2010-2012,(200),Spike-NLOS Mk-5 version | development partly financed by UK | for use in Afghanistan | UK designation Exactor, 31.046051, 34.851612,ISR, 55.378051, -3.435973,GBR
 Israel,United Kingdom,5,Hermes-450,UAV,2012,2012,5,Part of Project Lydian | for use in Afghanistan, 31.046051, 34.851612,ISR, 55.378051, -3.435973,GBR
-Israel,United Nations**,3,Hermes-900,UAV,2015,2016,3,3-year lease | for use with UN peacekeeping forces in Mali, 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
+Israel,United Nations**,3,Hermes-900,UAV,2015,2016,3,3-year lease | for use with UN peacekeeping forces in Mali, 31.046051, 34.851612,ISR,40.730610,-73.935242,ONU
 Israel,United States,(453),CARDOM 120mm,Mortar,(2002),2002-2010,(453),For Stryker (Piranha-3) mortar carrier from Canada, 31.046051, 34.851612,ISR, 37.09024, -95.712891,USA
-Israel,Unknown recipient(s),(4),CoMPASS,EO system,2007,2010-2011,(4),$37 m deal | for combat and transport helicopters | option on more, 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
-Israel,Unknown recipient(s),(2),EL/M-2055,AGS radar,2008,2013,(2),Recipient is Far Eastern country | for use on UAV, 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
-Israel,Unknown recipient(s),1,EL/M-2022,MP aircraft radar,(2010),2013,(1),For use on aerostat, 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
-Israel,Unknown recipient(s),(1),EL/M-2022,MP aircraft radar,(2013),2014,(1),, 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
-Israel,Unknown recipient(s),(45),RAM,APV,(2014),2015-2016,(45),RAM Mk-3 version | for an African country (probably Chad or Gabon), 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
-Israel,Unknown recipient(s),2,Hermes-900,UAV,2015,2016,(2),Part of $70 m deal | recipient is Latin America country, 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
-Israel,Unknown recipient(s),2,RPS-42,Air search radar,2016,2016,(2),Recipient is Asian country, 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
-Israel,Unknown recipient(s),,Condor-2,Aircraft EO system,2017,,,$82 m deal | recipient is Asia-Pacific country, 31.046051, 34.851612,ISR, 30.602278,-44.134617,Europe multi-state
+Israel,Unknown recipient(s),(4),CoMPASS,EO system,2007,2010-2011,(4),$37 m deal | for combat and transport helicopters | option on more, 31.046051, 34.851612,ISR, 30.602278,-44.134617,ZZZ
+Israel,Unknown recipient(s),(2),EL/M-2055,AGS radar,2008,2013,(2),Recipient is Far Eastern country | for use on UAV, 31.046051, 34.851612,ISR, 30.602278,-44.134617,ZZZ
+Israel,Unknown recipient(s),1,EL/M-2022,MP aircraft radar,(2010),2013,(1),For use on aerostat, 31.046051, 34.851612,ISR, 30.602278,-44.134617,ZZZ
+Israel,Unknown recipient(s),(1),EL/M-2022,MP aircraft radar,(2013),2014,(1),, 31.046051, 34.851612,ISR, 30.602278,-44.134617,ZZZ
+Israel,Unknown recipient(s),(45),RAM,APV,(2014),2015-2016,(45),RAM Mk-3 version | for an African country (probably Chad or Gabon), 31.046051, 34.851612,ISR, 30.602278,-44.134617,ZZZ
+Israel,Unknown recipient(s),2,Hermes-900,UAV,2015,2016,(2),Part of $70 m deal | recipient is Latin America country, 31.046051, 34.851612,ISR, 30.602278,-44.134617,ZZZ
+Israel,Unknown recipient(s),2,RPS-42,Air search radar,2016,2016,(2),Recipient is Asian country, 31.046051, 34.851612,ISR, 30.602278,-44.134617,ZZZ
+Israel,Unknown recipient(s),,Condor-2,Aircraft EO system,2017,,,$82 m deal | recipient is Asia-Pacific country, 31.046051, 34.851612,ISR, 30.602278,-44.134617,ZZZ
 Israel,Viet Nam,(100),AccuLAR,Guided rocket,(2010),2014-2016,(100),, 31.046051, 34.851612,ISR, 14.058324, 108.277199,VNM
 Israel,Viet Nam,100,EXTRA,Guided rocket/SSM,(2010),2014-2016,(100),For coastal defence, 31.046051, 34.851612,ISR, 14.058324, 108.277199,VNM
 Israel,Viet Nam,3,EL/M-2022,MP aircraft radar,(2012),2014,3,For 3 DHC-6 MP aircraft from Canada (aircraft produced in Canada and modified to MP version in USA with systems from Israel), 31.046051, 34.851612,ISR, 14.058324, 108.277199,VNM
@@ -1961,7 +1961,7 @@ Italy,Libya,10,A-109K,Light helicopter,(2005),2006-2010,(10),EUR80 m deal | for 
 Italy,Libya,1,AW139,Helicopter,(2009),2011,1,, 41.87194, 12.56738,ITA, 26.3351, 17.228331,LBY
 Italy,Libya,6,Bigliani,Patrol craft,2009,2009-2010,6,Second-hand | aid | for coast guard, 41.87194, 12.56738,ITA, 26.3351, 17.228331,LBY
 Italy,Libya,20,Puma,APV,(2012),2013,20,Probably second-hand | aid | 6X6 version, 41.87194, 12.56738,ITA, 26.3351, 17.228331,LBY
-Italy,Libya GNC,2,Bigliani,Patrol craft,(2016),2018,2,Second-hand but modernized before delivery | aid | Bigliani-2 version, 41.87194, 12.56738,ITA, 30.602278,-44.134617,Europe multi-state
+Italy,Libya GNC,2,Bigliani,Patrol craft,(2016),2018,2,Second-hand but modernized before delivery | aid | Bigliani-2 version, 41.87194, 12.56738,ITA, 26.3351, 17.228331,LBY
 Italy,Malaysia,6,Super Rapid 76mm,Naval gun,(2000),2006-2010,(6),For 6 MEKO-A100 (Kedah) frigates from FRG, 41.87194, 12.56738,ITA, 4.210484, 101.975766,MYS
 Italy,Malaysia,6,TMX,Fire control radar,(2000),2006-2010,(6),For 6 MEKO-A100 (Kedah) frigates from FRG, 41.87194, 12.56738,ITA, 4.210484, 101.975766,MYS
 Italy,Malaysia,12,TMX,Fire control radar,(2014),,,For 6 Gowind frigates from France, 41.87194, 12.56738,ITA, 4.210484, 101.975766,MYS
@@ -2077,11 +2077,11 @@ Italy,UAE,2,Falaj-2,Corvette,2010,2013,2,Option on 2 more, 41.87194, 12.56738,IT
 Italy,UAE,(9),AW139,Helicopter,2015,2015,(9),AED732 b ($199 m) deal | incl 6 for SAR and 3 for VIP transport, 41.87194, 12.56738,ITA, 23.424076, 53.847818,ARE
 Italy,UAE,(50),Marte-2,Anti-ship missile,2017,2018,(25),Marte-2/N version | for 12 Ghannatha FAC, 41.87194, 12.56738,ITA, 23.424076, 53.847818,ARE
 Italy,Ukraine,(4),Super Rapid 76mm,Naval gun,(2010),,,For 4 Project-58250 frigates produced in Ukraine, 41.87194, 12.56738,ITA, 48.379433, 31.16558,UKR
-Italy,United Nations**,(3),Falco,UAV,2013,2013,(3),EUR10 m 3-year lease | for use with UN peacekeeping forces in DRC, 41.87194, 12.56738,ITA, 30.602278,-44.134617,Europe multi-state
+Italy,United Nations**,(3),Falco,UAV,2013,2013,(3),EUR10 m 3-year lease | for use with UN peacekeeping forces in DRC, 41.87194, 12.56738,ITA,40.730610,-73.935242,ONU
 Italy,United States,21,C-27J Spartan,Transport aircraft,2007,2008-2014,(21),JCA (formerly FCA or C-XX) programme | original plan for over 100 reduced to 78 then to 38 and in 2013 to 21, 41.87194, 12.56738,ITA, 37.09024, -95.712891,USA
-Italy,Unknown country,,Falco,UAV,2017,,,Recipient is Middle Eastern country | Falco EVO version, 41.87194, 12.56738,ITA, 30.602278,-44.134617,Europe multi-state
-Italy,Unknown recipient(s),25,A244 324mm,ASW torpedo,2011,2014,(25),For country in the Mediterranean, 41.87194, 12.56738,ITA, 30.602278,-44.134617,Europe multi-state
-Italy,Unknown recipient(s),(1),Falco,UAV,(2016),2017,(1),Recipient is Middle Eastern country | Falco EVO version, 41.87194, 12.56738,ITA, 30.602278,-44.134617,Europe multi-state
+Italy,Unknown country,,Falco,UAV,2017,,,Recipient is Middle Eastern country | Falco EVO version, 41.87194, 12.56738,ITA, 30.602278,-44.134617,ZZZ
+Italy,Unknown recipient(s),25,A244 324mm,ASW torpedo,2011,2014,(25),For country in the Mediterranean, 41.87194, 12.56738,ITA, 30.602278,-44.134617,ZZZ
+Italy,Unknown recipient(s),(1),Falco,UAV,(2016),2017,(1),Recipient is Middle Eastern country | Falco EVO version, 41.87194, 12.56738,ITA, 30.602278,-44.134617,ZZZ
 Italy,Uruguay,2,Bell-412,Helicopter,(2017),2018,(2),Second-hand | AB-412 version, 41.87194, 12.56738,ITA, -32.522779, -55.765835,URY
 Italy,Venezuela,8,Compact 76mm,Naval gun,(2006),2009-2012,7,For 4 POVZEE (Carib\u0233?) and 4 BVL (Guaicamacuto) OPV from Spain, 41.87194, 12.56738,ITA, 6.42375, -66.58973,VEN
 Italy,Zambia,(6),SF-260TP,Trainer aircraft,(2011),2011-2012,(6),, 41.87194, 12.56738,ITA, -13.133897, 27.849332,ZMB
@@ -2203,7 +2203,7 @@ Netherlands,Jordan,(5),PiPz-1,AEV,2013,2014-2015,(5),Second-hand | part of EUR21
 Netherlands,Jordan,5,AIFV,IFV,2016,2016,5,Second-hand | aid, 52.132633, 5.291266,NLD, 30.585164, 36.238414,JOR
 Netherlands,Jordan,15,AIFV-APC,APC,2016,2016,(15),Second-hand | aid, 52.132633, 5.291266,NLD, 30.585164, 36.238414,JOR
 Netherlands,Latvia,5,Tripartite,MCM ship,2005,2007-2011,5,Second-hand | EUR57 m deal | Latvian designation Imanta, 52.132633, 5.291266,NLD, 56.879635, 24.603189,LVA
-Netherlands,Libya HoR,1,Emer,OPV,2017,2018,1,Second-hand | sold via UAE company | Libyan designation Al-Karama, 52.132633, 5.291266,NLD, 30.602278,-44.134617,Europe multi-state
+Netherlands,Libya HoR,1,Emer,OPV,2017,2018,1,Second-hand | sold via UAE company | Libyan designation Al-Karama, 52.132633, 5.291266,NLD, 26.3351, 17.228331,LBY
 Netherlands,Malaysia,2,MIRADOR,EO search/fire control,2009,2013-2014,2,For modernization of 2 FS-1500 (Kasturi) frigates, 52.132633, 5.291266,NLD, 4.210484, 101.975766,MYS
 Netherlands,Malaysia,24,SQUIRE,Ground surv radar,(2011),2018,(6),For 24 Pars (AV-8) APC from Turkey, 52.132633, 5.291266,NLD, 4.210484, 101.975766,MYS
 Netherlands,Morocco,1,SIGMA-105,Frigate,2008,2012,1,Part of EUR510 m FMMM deal | SIGMA-10513 version, 52.132633, 5.291266,NLD, 31.791702, -7.09262,MAR
@@ -2275,9 +2275,9 @@ New Zealand,UAE,1,P-750,Light transport ac,2014,2015,1,For SAR, -40.900557, 174.
 New Zealand,United States,(8),A-4K Skyhawk-2,FGA aircraft,2012,2012,8,Second-hand | for US company for training of US armed forces, -40.900557, 174.885971,NZL, 37.09024, -95.712891,USA
 New Zealand,United States,20,J-52,Turbojet,2012,2012,20,Second-hand | spare for A-4K combat aircraft, -40.900557, 174.885971,NZL, 37.09024, -95.712891,USA
 New Zealand,United States,9,MB-339C,Trainer/combat ac,2012,2012,9,Second-hand | for US company for training of US armed forces, -40.900557, 174.885971,NZL, 37.09024, -95.712891,USA
-North Korea,Hamas (Palestine)*,(25),9M111 Fagot/AT-4,Anti-tank missile,(2014),2014,(25),Bulsae-2 version | supplier uncertain | possibly delivered via Iran Sudan and/or Egypt, 40.339852, 127.510093,PRK, 30.602278,-44.134617,Europe multi-state
+North Korea,Hamas (Palestine)*,(25),9M111 Fagot/AT-4,Anti-tank missile,(2014),2014,(25),Bulsae-2 version | supplier uncertain | possibly delivered via Iran Sudan and/or Egypt, 40.339852, 127.510093,PRK, 31.952162, 35.233154,PSE
 North Korea,Myanmar,(26),M-1985 240mm,Self-propelled MRL,2007,2009-2010,(26),Possibly M-1991 version | possibly assembled or produced in Myanmar as MAM-02, 40.339852, 127.510093,PRK, 21.913965, 95.956223,MMR
-North Korea,PRC (Israel/Palestine)*,(25),9M111 Fagot/AT-4,Anti-tank missile,(2014),2014,(25),Bulsae-2 version | supplier uncertain | possibly delivered via Iran Sudan and/or Egypt, 40.339852, 127.510093,PRK, 30.602278,-44.134617,Europe multi-state
+North Korea,PRC (Israel/Palestine)*,(25),9M111 Fagot/AT-4,Anti-tank missile,(2014),2014,(25),Bulsae-2 version | supplier uncertain | possibly delivered via Iran Sudan and/or Egypt, 40.339852, 127.510093,PRK, 31.952162, 35.233154,PSE
 Norway,Canada,(500),Protector,APC turret,2012,2016-2017,(500),For 500 TAPV APC from USA, 60.472024, 8.468946,NOR, 56.130366, -106.346771,CAN
 Norway,Finland,12,NASAMS-2,SAM system,2009,2013-2015,(12),NOK3 b ($458 m) MRADMS programme, 60.472024, 8.468946,NOR, 61.92411, 25.748151,FIN
 Norway,Poland,2,NSM CDS,Coast defence system,2008,2012-2013,2,Part of NOK800 m ($112 m) deal, 60.472024, 8.468946,NOR, 51.919438, 19.145136,POL
@@ -2359,9 +2359,9 @@ Poland,United States,9,M28 Skytruck,Light transport ac,2009,2009-2011,(9),US des
 Poland,United States,(5),M28 Skytruck,Light transport ac,(2011),2012,(5),US designation C-145A, 51.919438, 19.145136,POL, 37.09024, -95.712891,USA
 Poland,United States,21,MiG-21bis,Fighter aircraft,(2012),2013,21,Second-hand | for US company for training of US forces, 51.919438, 19.145136,POL, 37.09024, -95.712891,USA
 Poland,United States,4,MiG-21PFM,Fighter aircraft,2012,2013,4,Second-hand | MiG-21UM version | for US company for training of US forces, 51.919438, 19.145136,POL, 37.09024, -95.712891,USA
-Poland,Unknown recipient(s),(100),Warmate,Loitering munition,(2016),2018,(100),Recipient is Middle Eastern or Asian country, 51.919438, 19.145136,POL, 30.602278,-44.134617,Europe multi-state
-Poland,Unknown recipient(s),(50),Warmate,Loitering munition,(2016),2017,(50),Recipient is NATO member state, 51.919438, 19.145136,POL, 30.602278,-44.134617,Europe multi-state
-Poland,Unknown recipient(s),(100),Warmate,Loitering munition,2017,2018,(100),Recipient is Middle Eastern country, 51.919438, 19.145136,POL, 30.602278,-44.134617,Europe multi-state
+Poland,Unknown recipient(s),(100),Warmate,Loitering munition,(2016),2018,(100),Recipient is Middle Eastern or Asian country, 51.919438, 19.145136,POL, 30.602278,-44.134617,ZZZ
+Poland,Unknown recipient(s),(50),Warmate,Loitering munition,(2016),2017,(50),Recipient is NATO member state, 51.919438, 19.145136,POL, 30.602278,-44.134617,ZZZ
+Poland,Unknown recipient(s),(100),Warmate,Loitering munition,2017,2018,(100),Recipient is Middle Eastern country, 51.919438, 19.145136,POL, 30.602278,-44.134617,ZZZ
 Portugal,Belgium,1,A321,Transport aicraft,2014,2014,1,Second-hand | leased via French company | A-321-231 version, 39.399872, -8.224454,PRT, 50.503887, 4.469936,BEL
 Portugal,Colombia,2,AS365/AS565 Panther,Helicopter,2018,2018,2,Second-hand | $7 m deal | AS-365N3 version, 39.399872, -8.224454,PRT, 4.570868, -74.297333,COL
 Portugal,Mozambique,2,Cessna-337/O-2,Light aircraft,2010,2011-2012,2,Second-hand | aid, 39.399872, -8.224454,PRT, -18.665695, 35.529562,MOZ
@@ -2369,7 +2369,7 @@ Portugal,Romania,(2),F110,Turbofan,2013,2016,(2),Probably second-hand | spares f
 Portugal,Romania,12,F-16C,FGA aircraft,2013,2016-2017,12,Second-hand but probably modernized before delivery | EUR186 m deal | F-16AM version (incl 3 F-16BM), 39.399872, -8.224454,PRT, 45.943161, 24.96676,ROU
 Portugal,Uruguay,2,C-212MP,MP aircraft,2014,2015,2,Second-hand | EUR1.5 m ($1.7 m) deal | C-212-300 version, 39.399872, -8.224454,PRT, -32.522779, -55.765835,URY
 Qatar,Mali,24,Storm,APC/APV,2018,2018,24,Aid, 25.354826, 51.183884,QAT, 17.570692, -3.996166,MLI
-Qatar,NTC (Libya)*,(50),MILAN,Anti-tank missile,2011,2011,(50),Second-hand | aid, 25.354826, 51.183884,QAT, 30.602278,-44.134617,Europe multi-state
+Qatar,NTC (Libya)*,(50),MILAN,Anti-tank missile,2011,2011,(50),Second-hand | aid, 25.354826, 51.183884,QAT, 26.3351, 17.228331,LBY
 Qatar,Somalia,68,Storm,APC/APV,2018,,,Aid | delivery 2019, 25.354826, 51.183884,QAT, 5.152149, 46.199616,SOM
 Romania,Mozambique,(2),R40S Festival,Light aircraft,(2012),2013,(2),, 45.943161, 24.96676,ROU, -18.665695, 35.529562,MOZ
 Romania,Netherlands,2,Holland,OPV,2007,2012-2013,(2),Designed in Netherlands and produced in Romania for Netherlands, 45.943161, 24.96676,ROU, 52.132633, 5.291266,NLD
@@ -2752,8 +2752,8 @@ Russia,Slovenia,1,Project-10412/Svetlyak,Patrol craft,2008,2010,1,$43 m deal (in
 Russia,Slovenia,(6),9M120 Ataka/AT-9,Anti-tank missile,(2009),2010,6,, 61.52401, 105.318756,RUS, 46.151241, 14.995463,SVN
 Russia,Slovenia,(122),Igla-S/SA-24,Portable SAM,(2009),2010,(122),, 61.52401, 105.318756,RUS, 46.151241, 14.995463,SVN
 Russia,South Africa,1,Kondor-E,Recce satellite,2006,2014,1,ZAR1.2 b ($186 m) Project Consolidated Flute deal, 61.52401, 105.318756,RUS, -30.559482, 22.937506,ZAF
-Russia,South Sudan,9,Mi-8MT/Mi-17,Transport helicopter,2007,2011,9,Mi-17V-5 version (not incl 1 Mi-172 version for government VIP transport), 61.52401, 105.318756,RUS, 30.602278,-44.134617,Europe multi-state
-Russia,South Sudan,(6),Mi-24P/Mi-35P,Combat helicopter,2014,2015-2016,(6),Second-hand | $42.8 m deal | sold via Ukraine, 61.52401, 105.318756,RUS, 30.602278,-44.134617,Europe multi-state
+Russia,South Sudan,9,Mi-8MT/Mi-17,Transport helicopter,2007,2011,9,Mi-17V-5 version (not incl 1 Mi-172 version for government VIP transport), 61.52401, 105.318756,RUS, 12.862807, 30.217636,SDN
+Russia,South Sudan,(6),Mi-24P/Mi-35P,Combat helicopter,2014,2015-2016,(6),Second-hand | $42.8 m deal | sold via Ukraine, 61.52401, 105.318756,RUS, 12.862807, 30.217636,SDN
 Russia,Sri Lanka,(3),Mi-8MT/Mi-17,Transport helicopter,(2012),2013,(3),Mi-171E version, 61.52401, 105.318756,RUS, 7.873054, 80.771797,LKA
 Russia,Sudan,(60),BTR-80A,IFV,2004,2009-2010,(60),Sudanese designation Shareef-1 | possibly assembled in Sudan, 61.52401, 105.318756,RUS, 12.862807, 30.217636,SDN
 Russia,Sudan,(50),V-55,Diesel engine,(2007),2008-2012,(50),V-55B or V-55V version for modernization of T-54 and T-55 tanks to Digna | supplier uncertain, 61.52401, 105.318756,RUS, 12.862807, 30.217636,SDN
@@ -2813,10 +2813,10 @@ Russia,Uganda,1000,Kornet/AT-14,Anti-tank missile,2010,2012-2013,(1000),Kornet-E
 Russia,Uganda,(75),R-73/AA-11,SRAAM,(2010),2011-2012,(75),For Su-30 combat aircraft, 61.52401, 105.318756,RUS, 1.373333, 32.290275,UGA
 Russia,Uganda,6,Su-30MK,FGA aircraft,2010,2011-2012,6,UGX1.8 tr ($635 m) deal | Su-30MK2 version, 61.52401, 105.318756,RUS, 1.373333, 32.290275,UGA
 Russia,Uganda,(44),T-90S,Tank,2010,2011,44,, 61.52401, 105.318756,RUS, 1.373333, 32.290275,UGA
-Russia,Ukraine Rebels*,(5),BTR-82A,IFV,2014,2014,(5),Probably second-hand (but less than 2 years old) | BTR-82AM version | aid, 61.52401, 105.318756,RUS, 30.602278,-44.134617,Europe multi-state
-Russia,Ukraine Rebels*,(10),Grom-2,Portable SAM,2014,2014,(10),Second-hand | aid, 61.52401, 105.318756,RUS, 30.602278,-44.134617,Europe multi-state
-Russia,Ukraine Rebels*,(100),Kornet/AT-14,Anti-tank missile,2014,2014,(100),Second-hand | aid, 61.52401, 105.318756,RUS, 30.602278,-44.134617,Europe multi-state
-Russia,Ukraine Rebels*,(10),T-72B,Tank,2014,2014,(10),Second-hand but modernized to T-72B3 before delivery (or less than 2 years before delivery) | aid, 61.52401, 105.318756,RUS, 30.602278,-44.134617,Europe multi-state
+Russia,Ukraine Rebels*,(5),BTR-82A,IFV,2014,2014,(5),Probably second-hand (but less than 2 years old) | BTR-82AM version | aid, 61.52401, 105.318756,RUS, 48.379433, 31.16558,UKR
+Russia,Ukraine Rebels*,(10),Grom-2,Portable SAM,2014,2014,(10),Second-hand | aid, 61.52401, 105.318756,RUS, 48.379433, 31.16558,UKR
+Russia,Ukraine Rebels*,(100),Kornet/AT-14,Anti-tank missile,2014,2014,(100),Second-hand | aid, 61.52401, 105.318756,RUS, 48.379433, 31.16558,UKR
+Russia,Ukraine Rebels*,(10),T-72B,Tank,2014,2014,(10),Second-hand but modernized to T-72B3 before delivery (or less than 2 years before delivery) | aid, 61.52401, 105.318756,RUS, 48.379433, 31.16558,UKR
 Russia,United States,6,Mi-8MT/Mi-17,Transport helicopter,(2009),2012,(6),Second-hand | for training, 61.52401, 105.318756,RUS, 37.09024, -95.712891,USA
 Russia,Uzbekistan,(12),Mi-35M,Combat helicopter,(2018),,,, 61.52401, 105.318756,RUS, 41.377491, 64.585262,UZB
 Russia,Venezuela,(18),Mi-8MT/Mi-17,Transport helicopter,(2006),2009-2010,(18),Part of $484 m deal | Mi-17-1V armed version | Venezuelan designation Panare, 61.52401, 105.318756,RUS, 6.42375, -66.58973,VEN
@@ -2892,7 +2892,7 @@ Singapore,UAE,48,SRAMS 120mm,Mortar,2007,2009-2012,(48),Part of AED390 m ($106 m
 Singapore,UAE,(72),SRAMS 120mm,Mortar,2011,2013-2015,(72),Part of AED786 m ($214 m) deal | for use on Agrab-2 (RG-31) mortar carrier from South Africa, 1.352083, 103.819836,SGP, 23.424076, 53.847818,ARE
 Singapore,UAE,24,SRAMS 120mm,Mortar,2015,2016,24,for use on Agrab-2 (RG-31) mortar carrier from South Africa, 1.352083, 103.819836,SGP, 23.424076, 53.847818,ARE
 Singapore,United Kingdom,115,Bronco,APC,2008,2010-2011,(115),GBP150 m ($233 m) deal | UK designation Warthog | incl ambulance CP and ARV version, 1.352083, 103.819836,SGP, 55.378051, -3.435973,GBR
-Singapore,Unknown recipient(s),(25),SRAMS 120mm,Mortar,2012,2013-2014,(25),SGD58 m ($46 m) deal, 1.352083, 103.819836,SGP, 30.602278,-44.134617,Europe multi-state
+Singapore,Unknown recipient(s),(25),SRAMS 120mm,Mortar,2012,2013-2014,(25),SGD58 m ($46 m) deal, 1.352083, 103.819836,SGP, 30.602278,-44.134617,ZZZ
 Slovakia,Azerbaijan,(36),DANA 152mm,Self-propelled gun,(2012),2017-2018,(36),Second-hand | refurbished before delivery, 48.669026, 19.699024,SVK, 40.143105, 47.576927,AZE
 Slovakia,Cambodia,(8),BMP-1,IFV,2012,2012,8,Second-hand | BVP-1 version, 48.669026, 19.699024,SVK, 12.565679, 104.990963,KHM
 Slovakia,Cambodia,(5),RM-70 122mm,Self-propelled MRL,(2012),2012,5,Second-hand, 48.669026, 19.699024,SVK, 12.565679, 104.990963,KHM
@@ -2978,7 +2978,7 @@ South Africa,Senegal,(26),Ratel-20,IFV,(2008),2008-2010,26,Second-hand, -30.5594
 South Africa,Senegal,(55),Puma M-26,APC,(2013),2014-2016,(55),, -30.559482, 22.937506,ZAF, 14.497401, -14.452362,SEN
 South Africa,Sierra Leone,(5),Mamba,APC,(2012),2012-2013,(5),Mamba Mk-5 version, -30.559482, 22.937506,ZAF, 8.460555, -11.779889,SLE
 South Africa,Somalia,1,SA-316B Alouette-3,Light helicopter,(2013),2013,1,Second-hand | for Puntland maritime police, -30.559482, 22.937506,ZAF, 5.152149, 46.199616,SOM
-South Africa,South Sudan,(10),Mamba,APC,(2012),2012,10,Reva-3 version, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,Europe multi-state
+South Africa,South Sudan,(10),Mamba,APC,(2012),2012,10,Reva-3 version, -30.559482, 22.937506,ZAF, 12.862807, 30.217636,SDN
 South Africa,Spain,100,RG-31 Nyala,APC,2008,2009-2010,100,EUR65 m deal | assembled in Spain | RG-31 Mk-5E version | incl 10 ambulance and 5 CP version, -30.559482, 22.937506,ZAF, 40.463667, -3.74922,ESP
 South Africa,Sweden,60,RG-32 Scout,APV,2009,2012,60,EUR18 m deal | RG-32M version | Swedish designation Galten | for use in Afghanistan, -30.559482, 22.937506,ZAF, 60.128161, 18.643501,SWE
 South Africa,Sweden,(120),RG-32 Scout,APV,2012,2013,(120),GBP43 m deal | RG-32M version | Swedish designation Galten, -30.559482, 22.937506,ZAF, 60.128161, 18.643501,SWE
@@ -2993,13 +2993,13 @@ South Africa,UAE,24,RG-31 Nyala,APC,2015,2016,(24),Mortar carrier version (with 
 South Africa,UAE,,Seeker-200,UAV,2017,,,AED48 m/ZAR182 m deal, -30.559482, 22.937506,ZAF, 23.424076, 53.847818,ARE
 South Africa,Uganda,(42),Casspir,APC,(2009),2010-2012,42,Probably second-hand but probably modernized before delivery, -30.559482, 22.937506,ZAF, 1.373333, 32.290275,UGA
 South Africa,Uganda,(1),Springbuck,APV/APC,(2009),2010,1,, -30.559482, 22.937506,ZAF, 1.373333, 32.290275,UGA
-South Africa,United Nations**,20,Casspir,APC,(2012),2013,20,Casspir-2000 version, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,Europe multi-state
-South Africa,United Nations**,(5),Casspir,APC,(2012),2013,(5),Second-hand | modernized before delivery | for UN peacekeeping forces in Sudan and South Sudan, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,Europe multi-state
-South Africa,United Nations**,115,Puma M-26,APC,2013,2014-2015,(115),For UN peacekeeping forces in Mali | from Mozambique assembly line, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,Europe multi-state
+South Africa,United Nations**,20,Casspir,APC,(2012),2013,20,Casspir-2000 version, -30.559482, 22.937506,ZAF,40.730610,-73.935242,ONU
+South Africa,United Nations**,(5),Casspir,APC,(2012),2013,(5),Second-hand | modernized before delivery | for UN peacekeeping forces in Sudan and South Sudan, -30.559482, 22.937506,ZAF,40.730610,-73.935242,ONU
+South Africa,United Nations**,115,Puma M-26,APC,2013,2014-2015,(115),For UN peacekeeping forces in Mali | from Mozambique assembly line, -30.559482, 22.937506,ZAF,40.730610,-73.935242,ONU
 South Africa,United States,(12),Cheetah-C,FGA aircraft,2017,2018,(12),Second-hand | for US company for training of US armed forces, -30.559482, 22.937506,ZAF, 37.09024, -95.712891,USA
-South Africa,Unknown recipient(s),(5),Seeker,UAV,2009,2011,(5),, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,Europe multi-state
-South Africa,Unknown recipient(s),24,RG-31 Nyala,APC,2015,2016,(24),Mortar carrier version, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,Europe multi-state
-South Africa,Unknown recipient(s),,Seeker-400,UAV/armed UAV,2018,,,Recipient is possibly Middle Eastern country, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,Europe multi-state
+South Africa,Unknown recipient(s),(5),Seeker,UAV,2009,2011,(5),, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,ZZZ
+South Africa,Unknown recipient(s),24,RG-31 Nyala,APC,2015,2016,(24),Mortar carrier version, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,ZZZ
+South Africa,Unknown recipient(s),,Seeker-400,UAV/armed UAV,2018,,,Recipient is possibly Middle Eastern country, -30.559482, 22.937506,ZAF, 30.602278,-44.134617,ZZZ
 South Africa,Yemen,(50),Leopard,APV,2007,2009-2010,(50),Yemeni designation Qutaish-1 | assembled in Yemen, -30.559482, 22.937506,ZAF, 15.552727, 48.516388,YEM
 South Africa,Yemen,(112),Mamba,APC,(2010),2010,112,Reva-3 version, -30.559482, 22.937506,ZAF, 15.552727, 48.516388,YEM
 South Africa,Zambia,(14),Ratel-20,IFV,(2011),2012,14,Second-hand but probably modernized before delivery | designation uncertain (reported as Ratel series APC), -30.559482, 22.937506,ZAF, -13.133897, 27.849332,ZMB
@@ -3131,7 +3131,7 @@ Spain,Mexico,2,CN-235MP,MP aircraft,(2013),2015,2,CN-235-300MPA version, 40.4636
 Spain,Mexico,2,C-295,Transport aircraft,(2014),2015,2,C-295W version, 40.463667, -3.74922,ESP, 23.634501, -102.552784,MEX
 Spain,Mexico,2,C-295,Transport aircraft,2014,2015,2,C-295W version, 40.463667, -3.74922,ESP, 23.634501, -102.552784,MEX
 Spain,Mozambique,1,Conejera,Patrol craft,2011,2013,1,Second-hand but modernized before delivery | aid | Mozambique designation Pebane, 40.463667, -3.74922,ESP, -18.665695, 35.529562,MOZ
-Spain,NATO**,2,Lanza-LTR,Air search radar,2015,2017-2018,(2),Lanza-LTR-25 version, 40.463667, -3.74922,ESP, 30.602278,-44.134617,Europe multi-state
+Spain,NATO**,2,Lanza-LTR,Air search radar,2015,2017-2018,(2),Lanza-LTR-25 version, 40.463667, -3.74922,ESP, 50.503887, 4.469936,NAT
 Spain,Netherlands,2,A-330 MRTT,Tanker/transport ac,2016,,,Ordered in cooperation with Luxembourg as part of EU/NATO MMF programme | delivery planned 2020, 40.463667, -3.74922,ESP, 52.132633, 5.291266,NLD
 Spain,Oman,4,C-295,Transport aircraft,2012,2013-2014,(4),, 40.463667, -3.74922,ESP, 21.512583, 55.923255,OMN
 Spain,Oman,4,C-295MPA,MP aircraft,2012,2015-2016,4,, 40.463667, -3.74922,ESP, 21.512583, 55.923255,OMN
@@ -3286,11 +3286,11 @@ Sweden,United States,(12),Giraffe AMB,Air search radar,(2004),2010-2017,(6),Sea 
 Sweden,United States,2,Giraffe AMB,Air search radar,2017,,,$17 m deal | for 2 Heritage (OPC) OPV produced in USA, 60.128161, 18.643501,SWE, 37.09024, -95.712891,USA
 Sweden,United States,(3141),BONUS-2,Guided shell,2018,2018,(500),, 60.128161, 18.643501,SWE, 37.09024, -95.712891,USA
 Sweden,United States,1,Giraffe AMB,Air search radar,2018,,,Sea Giraffe AMB version | for Expeditionary Sea Base (ESB) support ship produced in USA | US designation SPS-77, 60.128161, 18.643501,SWE, 37.09024, -95.712891,USA
-Sweden,Unknown recipient(s),(2),ARTHUR,Arty locating radar,2010,2013,(2),, 60.128161, 18.643501,SWE, 30.602278,-44.134617,Europe multi-state
-Sweden,Unknown recipient(s),(2),ARTHUR,Arty locating radar,2013,2014,(2),, 60.128161, 18.643501,SWE, 30.602278,-44.134617,Europe multi-state
-Sweden,Unknown recipient(s),(1),Giraffe AMB,Air search radar,(2014),2016,1,Giraffe-4A land-based air defence radar version, 60.128161, 18.643501,SWE, 30.602278,-44.134617,Europe multi-state
-Sweden,Unknown recipient(s),,Giraffe-1X,Air search radar,2017,,,, 60.128161, 18.643501,SWE, 30.602278,-44.134617,Europe multi-state
-Sweden,Unknown recipient(s),,Giraffe AMB,Air search radar,2018,,,, 60.128161, 18.643501,SWE, 30.602278,-44.134617,Europe multi-state
+Sweden,Unknown recipient(s),(2),ARTHUR,Arty locating radar,2010,2013,(2),, 60.128161, 18.643501,SWE, 30.602278,-44.134617,ZZZ
+Sweden,Unknown recipient(s),(2),ARTHUR,Arty locating radar,2013,2014,(2),, 60.128161, 18.643501,SWE, 30.602278,-44.134617,ZZZ
+Sweden,Unknown recipient(s),(1),Giraffe AMB,Air search radar,(2014),2016,1,Giraffe-4A land-based air defence radar version, 60.128161, 18.643501,SWE, 30.602278,-44.134617,ZZZ
+Sweden,Unknown recipient(s),,Giraffe-1X,Air search radar,2017,,,, 60.128161, 18.643501,SWE, 30.602278,-44.134617,ZZZ
+Sweden,Unknown recipient(s),,Giraffe AMB,Air search radar,2018,,,, 60.128161, 18.643501,SWE, 30.602278,-44.134617,ZZZ
 Switzerland,Saudi Arabia,55,PC-21,Trainer aircraft,2012,2014-2016,55,Part of GBP1.6 b ($2.5 b) deal | ordered via UK company, 46.818188, 8.227512,CHE, 23.885942, 45.079162,SAU
 Switzerland,Belgium,242,Piranha-3,APC,2006,2008-2015,(242),EUR700-800 m AIV programme (offsets incl production of components and assembly in Belgium) | incl 32 IFV 40 AFSV 24 command post 12 ambulance 17 ARV and 18 AEV version, 46.818188, 8.227512,CHE, 50.503887, 4.469936,BEL
 Switzerland,China,(400),GDF 35mm,AA gun,(1995),1997-2018,(400),Produced in China | probably GDF-2 version | Chinese designation Type-90 and Type-99, 46.818188, 8.227512,CHE, 35.86166, 104.195397,CHN
@@ -3348,13 +3348,13 @@ Switzerland,Thailand,4,Skyguard,Fire control radar,2015,2017,4,Skyguard-3 versio
 Switzerland,UAE,25,PC-21,Trainer aircraft,2009,2011-2012,25,Part of CHF520 m ($515 m) deal, 46.818188, 8.227512,CHE, 23.424076, 53.847818,ARE
 Switzerland,United States,(15),Hunter,FGA aircraft,2004,2004-2010,(15),Second-hand | Hunter FGA-58 version | for civilian company for training of US forces, 46.818188, 8.227512,CHE, 37.09024, -95.712891,USA
 Switzerland,United States,4,PC-9,Trainer aircraft,2013,2015,4,T-6D version, 46.818188, 8.227512,CHE, 37.09024, -95.712891,USA
-Switzerland,Unknown recipient(s),4,GDF 35mm,AA gun,2017,,,GDF-009 version | part of Skyguard air-defence system | delivery planned by 2021, 46.818188, 8.227512,CHE, 30.602278,-44.134617,Europe multi-state
-Switzerland,Unknown recipient(s),,GDF 35mm,AA gun,2017,,,Part of Skyguard air-defence system | delivery planned by 2021, 46.818188, 8.227512,CHE, 30.602278,-44.134617,Europe multi-state
-Switzerland,Unknown recipient(s),2,Skyguard,Fire control radar,2017,,,Skyguard-3 version for use with GDF-007 35mm AA guns | delivery planned by 2021, 46.818188, 8.227512,CHE, 30.602278,-44.134617,Europe multi-state
-Switzerland,Unknown recipient(s),,Skyguard,Fire control radar,2017,,,Skyguard-1 version for use with GDF-009 35mm AA guns | delivery planned by 2021, 46.818188, 8.227512,CHE, 30.602278,-44.134617,Europe multi-state
-Switzerland,Unknown supplier(s),4,Fieldguard-3,Fire control radar,2018,,,For 2 unidentified recipients | for use with Astros-2020 MRL, 46.818188, 8.227512,CHE, 30.602278,-44.134617,Europe multi-state
+Switzerland,Unknown recipient(s),4,GDF 35mm,AA gun,2017,,,GDF-009 version | part of Skyguard air-defence system | delivery planned by 2021, 46.818188, 8.227512,CHE, 30.602278,-44.134617,ZZZ
+Switzerland,Unknown recipient(s),,GDF 35mm,AA gun,2017,,,Part of Skyguard air-defence system | delivery planned by 2021, 46.818188, 8.227512,CHE, 30.602278,-44.134617,ZZZ
+Switzerland,Unknown recipient(s),2,Skyguard,Fire control radar,2017,,,Skyguard-3 version for use with GDF-007 35mm AA guns | delivery planned by 2021, 46.818188, 8.227512,CHE, 30.602278,-44.134617,ZZZ
+Switzerland,Unknown recipient(s),,Skyguard,Fire control radar,2017,,,Skyguard-1 version for use with GDF-009 35mm AA guns | delivery planned by 2021, 46.818188, 8.227512,CHE, 30.602278,-44.134617,ZZZ
+Switzerland,Unknown supplier(s),4,Fieldguard-3,Fire control radar,2018,,,For 2 unidentified recipients | for use with Astros-2020 MRL, 46.818188, 8.227512,CHE, 30.602278,-44.134617,ZZZ
 Switzerland,Venezuela,8,GDM-008 35mm,CIWS,(2006),2009-2012,7,For 4 POVZEE (Carib\u0233?) and 4 BVL (Guaicamacuto) OPV from Spain, 46.818188, 8.227512,CHE, 6.42375, -66.58973,VEN
-Syria,Hezbollah (Lebanon)*,(200),Fateh-110,SSM,(2009),2009-2010,(200),M-600 version, 34.802075, 38.996815,SYR, 30.602278,-44.134617,Europe multi-state
+Syria,Hezbollah (Lebanon)*,(200),Fateh-110,SSM,(2009),2009-2010,(200),M-600 version, 34.802075, 38.996815,SYR, 33.854721, 35.862285,LBN
 Taiwan,Burkina Faso,2,Bell-205/UH-1H,Helicopter,2017,2017,2,Second-hand | $8 m aid, 23.69781, 120.960515,TWN, 12.238333, -1.561593,BFA
 Taiwan,Guatemala,(2),Bell-205/UH-1H,Helicopter,2012,2012,(2),Second-hand | aid, 23.69781, 120.960515,TWN, 15.783471, -90.230759,GTM
 Taiwan,Honduras,4,Bell-205/UH-1H,Helicopter,2013,2015,4,Second-hand | $12 m aid, 23.69781, 120.960515,TWN, 15.199999, -86.241905,HND
@@ -3414,7 +3414,7 @@ Turkey,Saudi Arabia,(312),M-113A300,APC,2010,2010-2013,(312),$324 m deal | Saudi
 Turkey,Saudi Arabia,(320),M-113A300,APC,2011,2013-2015,(320),$200 m deal | Saudi M-113 rebuilt to M-113A300 (M-113A4) | assembled in Saudi Arabia, 38.963745, 35.243322,TUR, 23.885942, 45.079162,SAU
 Turkey,Saudi Arabia,(350),M-113A300,APC,(2013),2015-2017,(350),$360 m deal | Saudi M-113 rebuilt to M-113A300 (M-113A4) | assembled in Saudi Arabia, 38.963745, 35.243322,TUR, 23.885942, 45.079162,SAU
 Turkey,Senegal,25,Ejder Yalcin,APC,(2017),2018,(25),, 38.963745, 35.243322,TUR, 14.497401, -14.452362,SEN
-Turkey,Syria rebels*,(12),Commando V-150,APC,2017,2017,12,For Free Syrian Army Coalition | second-hand | aid, 38.963745, 35.243322,TUR, 30.602278,-44.134617,Europe multi-state
+Turkey,Syria rebels*,(12),Commando V-150,APC,2017,2017,12,For Free Syrian Army Coalition | second-hand | aid, 38.963745, 35.243322,TUR, 34.802075, 38.996815,SYR
 Turkey,Tunisia,(100),Navigator,APC,2014,2014-2016,(100),Kirpi version, 38.963745, 35.243322,TUR, 33.886917, 9.537499,TUN
 Turkey,Tunisia,(70),Ejder Yalcin,APC,(2016),2017,(70),, 38.963745, 35.243322,TUR, 33.886917, 9.537499,TUN
 Turkey,Turkmenistan,2,YTBK,Patrol craft,2011,2011-2012,2,EUR55 m deal, 38.963745, 35.243322,TUR, 38.969719, 59.556278,TKM
@@ -3448,34 +3448,34 @@ UAE,Kuwait,1,L-42,Landing craft,(2013),2017,1,Kuwaiti designation Sabhan, 23.424
 UAE,Lebanon,10,SA-330 Puma,Helicopter,2009,2010,10,Second-hand | aid | IAR-330SM version, 23.424076, 53.847818,ARE, 33.854721, 35.862285,LBN
 UAE,Libya,(750),Spartan,APC/APV,(2012),2012-2013,(750),Financed by UAE or USA, 23.424076, 53.847818,ARE, 26.3351, 17.228331,LBY
 UAE,Libya,(50),Typhoon,APC,(2012),2012,(50),Financed by UAE or USA, 23.424076, 53.847818,ARE, 26.3351, 17.228331,LBY
-UAE,Libya GNC,(8),Typhoon,APC,(2015),2016,(8),Supplier uncertain, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
-UAE,Libya HoR,(38),Typhoon,APC,(2013),2014,(38),Typhoon GSS-300 version, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
-UAE,Libya HoR,(103),Panthera T6,APV,(2014),2015-2016,(103),Including 18 Tygra version, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
-UAE,Libya HoR,(10),N35,APC,(2017),2017,(10),, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
+UAE,Libya GNC,(8),Typhoon,APC,(2015),2016,(8),Supplier uncertain, 23.424076, 53.847818,ARE, 26.3351, 17.228331,LBY
+UAE,Libya HoR,(38),Typhoon,APC,(2013),2014,(38),Typhoon GSS-300 version, 23.424076, 53.847818,ARE, 26.3351, 17.228331,LBY
+UAE,Libya HoR,(103),Panthera T6,APV,(2014),2015-2016,(103),Including 18 Tygra version, 23.424076, 53.847818,ARE, 26.3351, 17.228331,LBY
+UAE,Libya HoR,(10),N35,APC,(2017),2017,(10),, 23.424076, 53.847818,ARE, 26.3351, 17.228331,LBY
 UAE,Nigeria,(10),Spartan,APC/APV,(2013),2014,(10),Spartan Mk-3 version, 23.424076, 53.847818,ARE, 9.081999, 8.675277,NGA
 UAE,Nigeria,(90),Spartan,APC/APV,2016,2017,(40),, 23.424076, 53.847818,ARE, 9.081999, 8.675277,NGA
 UAE,Nigeria,(87),Typhoon,APC,(2016),2017,(40),, 23.424076, 53.847818,ARE, 9.081999, 8.675277,NGA
 UAE,Seychelles,2,Rodman-101,Patrol craft,2010,2011,2,Second-hand | aid against Somali pirates, 23.424076, 53.847818,ARE, -4.679574, 55.491977,SYC
 UAE,Somalia,(9),Mamba,APC,2015,2015,(9),Second-hand | aid | Reva-3 version, 23.424076, 53.847818,ARE, 5.152149, 46.199616,SOM
 UAE,Somalia,(6),RG-31 Nyala,APC,2015,2015,(6),Second-hand | aid, 23.424076, 53.847818,ARE, 5.152149, 46.199616,SOM
-UAE,South Sudan,(88),Typhoon,APC,2012,2013-2014,(88),Possibly for police, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
-UAE,South Sudan,(85),Cougar,APV,2014,2014,(85),, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
+UAE,South Sudan,(88),Typhoon,APC,2012,2013-2014,(88),Possibly for police, 23.424076, 53.847818,ARE, 12.862807, 30.217636,SDN
+UAE,South Sudan,(85),Cougar,APV,2014,2014,(85),, 23.424076, 53.847818,ARE, 12.862807, 30.217636,SDN
 UAE,Sudan,(30),Typhoon,APC,(2012),2013,(30),, 23.424076, 53.847818,ARE, 12.862807, 30.217636,SDN
 UAE,Tunisia,(10),Typhoon,APC,(2016),2016,(10),, 23.424076, 53.847818,ARE, 33.886917, 9.537499,TUN
 UAE,Turkmenistan,(12),Nimr Armored,APV,(2016),2016,(12),, 23.424076, 53.847818,ARE, 38.969719, 59.556278,TKM
 UAE,Ukraine,10,Cougar,APV,(2015),2015,10,, 23.424076, 53.847818,ARE, 48.379433, 31.16558,UKR
 UAE,Ukraine,6,Shrek,APC,(2015),2015,6,, 23.424076, 53.847818,ARE, 48.379433, 31.16558,UKR
 UAE,Ukraine,31,Spartan,APC/APV,2015,2015,31,, 23.424076, 53.847818,ARE, 48.379433, 31.16558,UKR
-UAE,United Nations**,(36),Shrek,APC,(2013),2014,(36),Incl from Ukrainian production lines | incl AEV and ambulance version | for UN peacekeeping forces in Mali, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
-UAE,Unknown recipient(s),(10),Warrior,APC,(2013),2014,(10),Anti-tank version (with Shershen-DM system from Belarus and R-2 missiles from Ukraine) | probably for North or East African country, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
-UAE,Unknown recipient(s),(480),Cougar,APV,2014,2014-2018,(360),Designation uncertain | recipient possibly Egypt, 23.424076, 53.847818,ARE, 30.602278,-44.134617,Europe multi-state
+UAE,United Nations**,(36),Shrek,APC,(2013),2014,(36),Incl from Ukrainian production lines | incl AEV and ambulance version | for UN peacekeeping forces in Mali, 23.424076, 53.847818,ARE,40.730610,-73.935242,ONU
+UAE,Unknown recipient(s),(10),Warrior,APC,(2013),2014,(10),Anti-tank version (with Shershen-DM system from Belarus and R-2 missiles from Ukraine) | probably for North or East African country, 23.424076, 53.847818,ARE, 30.602278,-44.134617,ZZZ
+UAE,Unknown recipient(s),(480),Cougar,APV,2014,2014-2018,(360),Designation uncertain | recipient possibly Egypt, 23.424076, 53.847818,ARE, 30.602278,-44.134617,ZZZ
 UAE,Yemen,(3),AT-802U,Ground attack ac,2015,2015,(3),Second-hand (but barely used) | aid, 23.424076, 53.847818,ARE, 15.552727, 48.516388,YEM
 UAE,Yemen,(25),M-ATV,APV,2015,2015,(25),Probably second-hand | aid | for armed groups supporting government, 23.424076, 53.847818,ARE, 15.552727, 48.516388,YEM
 UAE,Yemen,(25),Caiman,APC,2016,2016,(25),Second-hand | aid, 23.424076, 53.847818,ARE, 15.552727, 48.516388,YEM
 UAE,Yemen,(20),Cougar,APV,2016,2016,(20),Supplier uncertain, 23.424076, 53.847818,ARE, 15.552727, 48.516388,YEM
 UAE,Yemen,(50),Nimr Armored,APV,(2017),2017-2018,(50),Aid | Nimr Ajban version, 23.424076, 53.847818,ARE, 15.552727, 48.516388,YEM
 UAE,Yemen,(25),MaxxPro,APC,2018,2018,(25),Second-hand | aidfor armed groups supporting government, 23.424076, 53.847818,ARE, 15.552727, 48.516388,YEM
-Uganda,South Sudan,(2),L-39Z Albatros,Trainer/combat ac,(2015),2016,2,Second-hand, 1.373333, 32.290275,UGA, 30.602278,-44.134617,Europe multi-state
+Uganda,South Sudan,(2),L-39Z Albatros,Trainer/combat ac,(2015),2016,2,Second-hand, 1.373333, 32.290275,UGA, 12.862807, 30.217636,SDN
 Ukraine,Algeria,(32),AI-222,Turbofan,2006,2011,(32),For Yak-130 trainer/combat aircraft from Russia | from Russian production line, 48.379433, 31.16558,UKR, 28.033886, 1.659626,DZA
 Ukraine,Bangladesh,(32),AI-222,Turbofan,2013,2015-2016,(32),For 16 Yak-130 trainer/combat aircraft from Russia, 48.379433, 31.16558,UKR, 23.684994, 90.356331,BGD
 Ukraine,Senegal,2,Dozor-B,APV,(2016),2017,2,Oncilla version from Polish production line, 48.379433, 31.16558,UKR, 14.497401, -14.452362,SEN
@@ -3614,7 +3614,7 @@ Ukraine,Turkmenistan,(6),M-46 130mm,Towed gun,(2011),2011,6,Second-hand, 48.3794
 Ukraine,Uganda,4,S-125-2D/SA-3,SAM system,2008,2010-2012,(4),Second-hand S-125 (SA-3) rebuilt to S-125-2D | status uncertain (possibly ordered and delivered via Uganda for South Sudan), 48.379433, 31.16558,UKR, 1.373333, 32.290275,UGA
 Ukraine,Uganda,(300),V-601/SA-3B,SAM,2008,2010-2012,(300),Probably second-hand but possibly modernized before delivery | for S-125-2D SAM systems, 48.379433, 31.16558,UKR, 1.373333, 32.290275,UGA
 Ukraine,Uganda,(15),R-2,Anti-tank missile,(2011),2011,(15),Designation uncertain (reported as portable anti-tank missile and/or launcher), 48.379433, 31.16558,UKR, 1.373333, 32.290275,UGA
-Ukraine,Unknown recipient(s),(200),R-2,Anti-tank missile,(2013),2014,(200),For Warrior APC from UAE (with Shershen-DM anti-tank missile system from Belarus) | probably for North or East African country, 48.379433, 31.16558,UKR, 30.602278,-44.134617,Europe multi-state
+Ukraine,Unknown recipient(s),(200),R-2,Anti-tank missile,(2013),2014,(200),For Warrior APC from UAE (with Shershen-DM anti-tank missile system from Belarus) | probably for North or East African country, 48.379433, 31.16558,UKR, 30.602278,-44.134617,ZZZ
 Ukraine,Venezuela,(18),AI-25,Turbofan,2008,2010,18,For 18 K-8 trainer aircraft from China, 48.379433, 31.16558,UKR, 6.42375, -66.58973,VEN
 Ukraine,Venezuela,4,Stan Lander-5612,Landing craft,2009,2012-2014,4,From Cuban production line, 48.379433, 31.16558,UKR, 6.42375, -66.58973,VEN
 Ukraine,Venezuela,(9),AI-25,Turbofan,(2014),2016,(9),For 9 K-8 trainer aircraft from China, 48.379433, 31.16558,UKR, 6.42375, -66.58973,VEN
@@ -4584,8 +4584,8 @@ United States,Lebanon,(1500),BGM-71F TOW-2B,Anti-tank missile,2017,2018,(500),In
 United States,Lebanon,6,ScanEagle,UAV,2017,,,Building Partner Capacity aid (worth $11 m), 37.09024, -95.712891,USA, 33.854721, 35.862285,LBN
 United States,Lebanon,6,MD-530G,Combat helicopter,2018,,,Building Partner Capacity aid (worth $94 m), 37.09024, -95.712891,USA, 33.854721, 35.862285,LBN
 United States,Libya,50,VT-400,Diesel engine,(2012),2012,(50),For 50 Typhoon APC from UAE, 37.09024, -95.712891,USA, 26.3351, 17.228331,LBY
-United States,Libya GNC,(8),VT-400,Diesel engine,(2015),2016,(8),For 8 Typhoon APC from UAE, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
-United States,Libya HoR,(38),VT-400,Diesel engine,(2013),2014,(38),For 38 Typhoon APC from UAE, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
+United States,Libya GNC,(8),VT-400,Diesel engine,(2015),2016,(8),For 8 Typhoon APC from UAE, 37.09024, -95.712891,USA, 26.3351, 17.228331,LBY
+United States,Libya HoR,(38),VT-400,Diesel engine,(2013),2014,(38),For 38 Typhoon APC from UAE, 37.09024, -95.712891,USA, 26.3351, 17.228331,LBY
 United States,Lithuania,(5),ScanEagle,UAV,(2012),2012,(5),, 37.09024, -95.712891,USA, 55.169438, 23.881275,LTU
 United States,Lithuania,(400),AIM-120C AMRAAM,BVRAAM,(2016),,,For NASAMS SAM systems, 37.09024, -95.712891,USA, 55.169438, 23.881275,LTU
 United States,Lithuania,(50),FGM-148 Javelin,Anti-tank missile,2016,2016-2017,(50),, 37.09024, -95.712891,USA, 55.169438, 23.881275,LTU
@@ -4676,8 +4676,8 @@ United States,Morocco,6,RGM-84L Harpoon-2,Anti-ship MI/SSM,(2016),2017,6,, 37.09
 United States,Morocco,(1200),BGM-71 TOW,Anti-tank missile,2017,2018,(400),TOW-2A-RF version, 37.09024, -95.712891,USA, 31.791702, -7.09262,MAR
 United States,Morocco,162,M-1A1 Abrams,Tank,(2018),,,Second-hand M-1A1 rebuilt to M-1A1SA before delivery, 37.09024, -95.712891,USA, 31.791702, -7.09262,MAR
 United States,Namibia,2,C280-16,Diesel engine,2010,2012,2,For 1 Elephant OPV from China, 37.09024, -95.712891,USA, -22.95764, 18.49041,NAM
-United States,NATO**,5,RQ-4A Global Hawk,UAV,2012,,,Part of EUR1.2 b NATO AGS programme | delivery planned 2019, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
-United States,NATO**,420,JDAM,Guided bomb,2017,2018,(420),For NATO Single Procurement Agency | final recipients are unknown NATO member states, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
+United States,NATO**,5,RQ-4A Global Hawk,UAV,2012,,,Part of EUR1.2 b NATO AGS programme | delivery planned 2019, 37.09024, -95.712891,USA, 50.503887, 4.469936,NAT
+United States,NATO**,420,JDAM,Guided bomb,2017,2018,(420),For NATO Single Procurement Agency | final recipients are unknown NATO member states, 37.09024, -95.712891,USA, 50.503887, 4.469936,NAT
 United States,Nepal,2,CT7,Turboprop,2017,,,For 1 CN-235 transport aircraft from Indonesia, 37.09024, -95.712891,USA, 28.394857, 84.124008,NPL
 United States,Netherlands,(13),HELRAS,ASW sonar,2003,2010-2016,(13),For 12 NH-90 ASW helicopters from multi-national (incl Dutch) production (incl 1 spare HELRAS) | from FRG production line, 37.09024, -95.712891,USA, 52.132633, 5.291266,NLD
 United States,Netherlands,2,C-130H Hercules,Transport aircraft,2005,2010,2,Second-hand | EUR54 m deal | EC-130Q version modernized in UK to C-130H before delivery, 37.09024, -95.712891,USA, 52.132633, 5.291266,NLD
@@ -5104,7 +5104,7 @@ United States,South Korea,,GMLRS,Guided rocket,2018,,,Delivery by 2020, 37.09024
 United States,South Korea,(64),MIM-104F PAC-3,ABM,(2018),,,, 37.09024, -95.712891,USA, 35.907757, 127.766922,KOR
 United States,South Korea,6,P-8A Poseidon,ASW aircraft,(2018),,,Selected 2018 but contract not yet signed by end 2018, 37.09024, -95.712891,USA, 35.907757, 127.766922,KOR
 United States,South Korea,,Standard Missile-2MR,SAM,(2018),,,For KDX-3 destroyers | selected 2018 but not yet ordered by end-2018, 37.09024, -95.712891,USA, 35.907757, 127.766922,KOR
-United States,South Sudan,(25),VT-400,Diesel engine,2012,2012-2013,(25),For 25 Typhoon APC from UAE, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
+United States,South Sudan,(25),VT-400,Diesel engine,2012,2012-2013,(25),For 25 Typhoon APC from UAE, 37.09024, -95.712891,USA, 12.862807, 30.217636,SDN
 United States,Spain,5,DE-1160,ASW sonar,1996,2002-2012,5,DE-1160LF version (possibly older Spanish DE-1160B modernized to DE-1160F) for 5 De Bazan (F-100) frigates produced in Spain |, 37.09024, -95.712891,USA, 40.463667, -3.74922,ESP
 United States,Spain,10,LM-2500,Gas turbine,1996,2002-2012,10,For 5 De Bazan (F-100) frigates produced in Spain, 37.09024, -95.712891,USA, 40.463667, -3.74922,ESP
 United States,Spain,10,SPG-62,Fire control radar,(1996),2002-2012,10,For use with Standard and ESSM SAM on 5 De Bazan (F-100) frigates produced in Spain, 37.09024, -95.712891,USA, 40.463667, -3.74922,ESP
@@ -5140,8 +5140,8 @@ United States,Switzerland,(12),C-9,Diesel engine,(2009),2010-2012,(12),For 12 Pi
 United States,Switzerland,(420),ISB5.9,Diesel engine,2009,2010-2017,(420),For 420 Duro-3P (GMTF or RP-13) APC produced in Switzerland, 37.09024, -95.712891,USA, 46.818188, 8.227512,CHE
 United States,Switzerland,1,Centaur,Light aircraft/UAV,2012,2012,1,For testing of sensors and UAV technologies, 37.09024, -95.712891,USA, 46.818188, 8.227512,CHE
 United States,Switzerland,(150),AIM-120C AMRAAM,BVRAAM,(2013),2016-2017,(150),AIM-120C-7 version, 37.09024, -95.712891,USA, 46.818188, 8.227512,CHE
-United States,Syria rebels*,(5),Guardian,APC,(2016),2017,(5),For Syrian-Arab Coalition | supplier uncertain (possibly from UAE production line) | aid, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
-United States,Syria rebels*,(2),BearCat,APV,2017,2017,(2),Aid, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
+United States,Syria rebels*,(5),Guardian,APC,(2016),2017,(5),For Syrian-Arab Coalition | supplier uncertain (possibly from UAE production line) | aid, 37.09024, -95.712891,USA, 34.802075, 38.996815,SYR
+United States,Syria rebels*,(2),BearCat,APV,2017,2017,(2),Aid, 37.09024, -95.712891,USA, 34.802075, 38.996815,SYR
 United States,Taiwan,(650),C-9,Diesel engine,(2005),2014-2018,(605),For 650 CM-32 APC/IFV produced in Taiwan, 37.09024, -95.712891,USA, 23.69781, 120.960515,TWN
 United States,Taiwan,1,FPS-115 Pave Paws,Air search radar,2005,2013,1,Part of $1.4 b SRP programme, 37.09024, -95.712891,USA, 23.69781, 120.960515,TWN
 United States,Taiwan,(218),AIM-120C AMRAAM,BVRAAM,(2007),2013-2014,(218),, 37.09024, -95.712891,USA, 23.69781, 120.960515,TWN
@@ -5366,9 +5366,9 @@ United States,United Kingdom,(16),Protector CPB,UAV/UCAV,2016,,,GBP415 m ($607 m
 United States,United Kingdom,(8),Mk-41,Naval SAM system,2017,,,For Type-26 frigate produced on UK, 37.09024, -95.712891,USA, 55.378051, -3.435973,GBR
 United States,United Kingdom,(737),L-ATV,APV,2018,,,Multi Role Vehicle Protected (MRV-P) Group-1 programme | selected but not yet ordered end-2018, 37.09024, -95.712891,USA, 55.378051, -3.435973,GBR
 United States,United Kingdom,,Mk-54 MAKO,ASW torpedo,(2018),,,For P-8A ASW aircraft, 37.09024, -95.712891,USA, 55.378051, -3.435973,GBR
-United States,United Nations**,(115),ISB5.9,Diesel engine,2013,2014-2015,(115),For 115 Puma M-26 APC from South Africa, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
-United States,Unknown recipient(s),(10),MaxxPro,APC,2010,2010,(10),MaxxPro Dash version | for use in Afhganistan, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
-United States,Unknown recipient(s),(6),RQ-21A Blackjack,UAV,2013,2014-2015,(6),Recipient is Middle Eastern country, 37.09024, -95.712891,USA, 30.602278,-44.134617,Europe multi-state
+United States,United Nations**,(115),ISB5.9,Diesel engine,2013,2014-2015,(115),For 115 Puma M-26 APC from South Africa, 37.09024, -95.712891,USA,40.730610,-73.935242,ONU
+United States,Unknown recipient(s),(10),MaxxPro,APC,2010,2010,(10),MaxxPro Dash version | for use in Afhganistan, 37.09024, -95.712891,USA, 30.602278,-44.134617,ZZZ
+United States,Unknown recipient(s),(6),RQ-21A Blackjack,UAV,2013,2014-2015,(6),Recipient is Middle Eastern country, 37.09024, -95.712891,USA, 30.602278,-44.134617,ZZZ
 United States,Uzbekistan,(50),Cougar,APC,2014,2015,(50),Second-hand | aid, 37.09024, -95.712891,USA, 41.377491, 64.585262,UZB
 United States,Uzbekistan,159,M-ATV,APV,2014,2015,(159),Second-hand | aid, 37.09024, -95.712891,USA, 41.377491, 64.585262,UZB
 United States,Uzbekistan,(70),MaxxPro,APC,2014,2015,(70),Second-hand | aid | incl 20 ARV version, 37.09024, -95.712891,USA, 41.377491, 64.585262,UZB
@@ -5381,46 +5381,46 @@ United States,Yemen,(2),CT7,Turboprop,2011,2013,2,For 1 CN-235 transport aircraf
 United States,Yemen,2,Cessna-208 Caravan,Light transport ac,2012,2013,2,Cessna-208B-ISR surveillance version or AC-208B armed version | aid, 37.09024, -95.712891,USA, 15.552727, 48.516388,YEM
 United States,Yemen,(1),King Air-350 ISR,AGS aircraft,2014,2015,(1),Designation uncertain (possibly King Air-350 SPYDR version), 37.09024, -95.712891,USA, 15.552727, 48.516388,YEM
 United States,Zambia,4,AE-2100,Turboprop,2015,,,For 2 C-27J transport aircraft from Italy, 37.09024, -95.712891,USA, -13.133897, 27.849332,ZMB
-Unknown supplier(s),Argentina,1,Learjet-35/36,Light transport ac,2013,2013,1,Learjet-35A version | supplier uncertain | possibly second-hand | modified in Argentina to SIGINT aircraft, 30.602278,-44.134617,Europe multi-state, -38.416097, -63.616672,ARG
-Unknown supplier(s),Azerbaijan,(2),Bell-412,Helicopter,2018,2018,(2),Second-hand, 30.602278,-44.134617,Europe multi-state, 40.143105, 47.576927,AZE
-Unknown supplier(s),Bolivia,(1),Jetstream,Light transport ac,(2012),2013,(1),Second-hand, 30.602278,-44.134617,Europe multi-state, -16.290154, -63.588653,BOL
-Unknown supplier(s),Canada,(3),Mi-8MT/Mi-17,Transport helicopter,2010,2010,(3),Possibly second-hand | lease for use in Afghanistan | Canadian designation CH-178, 30.602278,-44.134617,Europe multi-state, 56.130366, -106.346771,CAN
-Unknown supplier(s),Chile,(1),Bell-412,Helicopter,(2016),2017,(1),, 30.602278,-44.134617,Europe multi-state, -35.675147, -71.542969,CHL
-Unknown supplier(s),Colombia,1,Turbo Commander,Light transport ac,2013,2013,1,Second-hand | Commander-690B version, 30.602278,-44.134617,Europe multi-state, 4.570868, -74.297333,COL
-Unknown supplier(s),Denmark,1,BN-2 Islander,Light transport ac,(2015),2015,1,Second-hand | BN-2A version, 30.602278,-44.134617,Europe multi-state, 56.26392, 9.501785,DNK
-Unknown supplier(s),Djibouti,4,AS365/AS565 Panther,Helicopter,(2015),2016,(4),Possibly second-hand | financed by Saudi Arabia, 30.602278,-44.134617,Europe multi-state, 11.825138, 42.590275,DJI
-Unknown supplier(s),Equatorial Guinea,1,Ka-32,Helicopter,2009,2010,(1),Probably second-hand | Ka-29 armed version | supplier possibly Ukraine, 30.602278,-44.134617,Europe multi-state, 1.650801, 10.267895,GNQ
-Unknown supplier(s),Guinea,1,CN-235,Transport aircraft,(2009),2010,(1),Second-hand, 30.602278,-44.134617,Europe multi-state, 9.945587, -9.696645,GIN
-Unknown supplier(s),Guinea,1,CN-235,Transport aircraft,2012,2012,1,Second-hand, 30.602278,-44.134617,Europe multi-state, 9.945587, -9.696645,GIN
-Unknown supplier(s),Guyana,2,Skyvan,Light transport ac,(2018),2018,(2),Second-hand, 30.602278,-44.134617,Europe multi-state, 4.860416, -58.93018,GUY
-Unknown supplier(s),Hamas (Palestine)*,(10),9M113 Konkurs/AT-5,Anti-tank missile,(2010),2010,(10),Supplier possibly Iran, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),Hamas (Palestine)*,(25),Kornet/AT-14,Anti-tank missile,(2010),2010,(25),Supplier possibly Iran, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),Hamas (Palestine)*,(100),Strela-2/SA-7,Portable SAM,(2011),2011,(100),Probably second-hand stolen from stocks during Libyan civil war 2011 and smuggled to Hamas via Egypt, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),Honduras,2,L-410 Turbolet,Light transport ac,(2014),2015,2,L-410UVP-E20 version, 30.602278,-44.134617,Europe multi-state, 15.199999, -86.241905,HND
-Unknown supplier(s),Iraq,(100),Red Arrow-8,Anti-tank missile,(2014),2014,(100),For Kurdish Regional Government to use against Islamic State rebels, 30.602278,-44.134617,Europe multi-state, 33.223191, 43.679291,IRQ
-Unknown supplier(s),Iraq,(10),M-ATV,APV,(2016),2016,(10),Probably second-hand | supplier could be USA or UAE, 30.602278,-44.134617,Europe multi-state, 33.223191, 43.679291,IRQ
-Unknown supplier(s),Jamaica,2,Bell-206/OH-58,Light helicopter,(2018),,,Second-hand | Bell-206B-3 version | for training, 30.602278,-44.134617,Europe multi-state, 18.109581, -77.297508,JAM
-Unknown supplier(s),Libya HoR,(10),Caiman,APC,(2017),2017,(10),Second-hand | supplier UAE or Egypt | aid, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),Malaysia,9,Guardian,APC,2017,2017,9,For use by UN peacekeepers in Lebanon, 30.602278,-44.134617,Europe multi-state, 4.210484, 101.975766,MYS
-Unknown supplier(s),Myanmar,(10),M-3 VTT,APC,(2010),2011,(10),Second-hand but modernized before delivery | supplier probably Israel, 30.602278,-44.134617,Europe multi-state, 21.913965, 95.956223,MMR
-Unknown supplier(s),Myanmar,(3),AS365/AS565 Panther,Helicopter,(2013),2015,(3),Probably second-hand | AS365 version, 30.602278,-44.134617,Europe multi-state, 21.913965, 95.956223,MMR
-Unknown supplier(s),Myanmar,3,EC-120 Colibri,Light helicopter,(2016),2016,3,Probably second-hand, 30.602278,-44.134617,Europe multi-state, 21.913965, 95.956223,MMR
-Unknown supplier(s),NTC (Libya)*,(1),Ratel-20,IFV,2011,2011,(1),Second-hand | aid (possibly financed by Qatar) | delivered without armament, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),PIJ (Israel/Palestine)*,(10),Kornet/AT-14,Anti-tank missile,(2012),2012,(10),Supplier possibly Iran, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),PKK (Turkey)*,(10),Igla/SA-18,Portable SAM,(2015),2015,(10),Second-hand | designation uncertain (could be Igla-1/SA-16), 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),Russia,(1),Georgiy Agafonov,Cargo ship,2015,2015,(1),Second-hand | Ukrainian merchant ship sold to Turkish company for scrap or civilian use resold to UK company and bought by Russian navy via Mongolian and/or Russian company for transport of military equipment to Syria | Russian designation Kazan-60, 30.602278,-44.134617,Europe multi-state, 61.52401, 105.318756,RUS
-Unknown supplier(s),South Sudan,1,Beech-1900/C-12J,Light transport ac,(2009),2010,1,, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),South Sudan,(1),DA42MPP,Reconnaissance ac,(2014),2015,1,, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),South Sudan,(50),QW-2,Portable SAM,(2014),2014,(50),Designation uncertain | supplier probably China, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),Sudan,(4),9K33 Osa/SA-8,Mobile SAM system,(2013),2014,(4),Second-hand but possibly modernized before delivery, 30.602278,-44.134617,Europe multi-state, 12.862807, 30.217636,SDN
-Unknown supplier(s),Sudan,(120),9M33/SA-8,SAM,(2013),2014,(120),Probably second-hand but possibly modernized before delivery, 30.602278,-44.134617,Europe multi-state, 12.862807, 30.217636,SDN
-Unknown supplier(s),Syria rebels*,(10),FN-6,Portable SAM,(2012),2012,(10),Possibly second-hand missiles delivered by Sudan via Qatar and Turkey and financed by Qatar, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),Syria rebels*,(100),Red Arrow-8,Anti-tank missile,(2013),2013,(100),Supplier probably Qatar (probably from Sudan production) | aid, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),Syria rebels*,50,BGM-71 TOW,Anti-tank missile,(2014),2014,(50),Second-hand | aid | for Harakat Hazm rebel group, 30.602278,-44.134617,Europe multi-state, 30.602278,-44.134617,Europe multi-state
-Unknown supplier(s),United States,5,L-39C Albatros,Trainer aircraft,(2011),2012,(5),Second-hand | for US company for training of US forces, 30.602278,-44.134617,Europe multi-state, 37.09024, -95.712891,USA
-Unknown supplier(s),Uruguay,(1),King Air Maritime,MP aircraft,2012,2013,(1),Probably second-hand King Air B-200T version | probably bought via Swiss company | possibly modified to MP aircraft before delivery | $1.5 m deal | delivery probably 2013, 30.602278,-44.134617,Europe multi-state, -32.522779, -55.765835,URY
-Unknown supplier(s),Venezuela,2,F-28,Light helicopter,(2011),2011,2,Second-hand | F-280FX version | for training, 30.602278,-44.134617,Europe multi-state, 6.42375, -66.58973,VEN
-Unknown supplier(s),Viet Nam,(10),Guardian,APC,(2016),2016,(10),, 30.602278,-44.134617,Europe multi-state, 14.058324, 108.277199,VNM
-Unknown supplier(s),Yemen,(5),Ratel-20,IFV,2016,2016,(5),Second-hand | aid | supplier possibly Jordan, 30.602278,-44.134617,Europe multi-state, 15.552727, 48.516388,YEM
+Unknown supplier(s),Argentina,1,Learjet-35/36,Light transport ac,2013,2013,1,Learjet-35A version | supplier uncertain | possibly second-hand | modified in Argentina to SIGINT aircraft, 30.602278,-44.134617,ZZZ, -38.416097, -63.616672,ARG
+Unknown supplier(s),Azerbaijan,(2),Bell-412,Helicopter,2018,2018,(2),Second-hand, 30.602278,-44.134617,ZZZ, 40.143105, 47.576927,AZE
+Unknown supplier(s),Bolivia,(1),Jetstream,Light transport ac,(2012),2013,(1),Second-hand, 30.602278,-44.134617,ZZZ, -16.290154, -63.588653,BOL
+Unknown supplier(s),Canada,(3),Mi-8MT/Mi-17,Transport helicopter,2010,2010,(3),Possibly second-hand | lease for use in Afghanistan | Canadian designation CH-178, 30.602278,-44.134617,ZZZ, 56.130366, -106.346771,CAN
+Unknown supplier(s),Chile,(1),Bell-412,Helicopter,(2016),2017,(1),, 30.602278,-44.134617,ZZZ, -35.675147, -71.542969,CHL
+Unknown supplier(s),Colombia,1,Turbo Commander,Light transport ac,2013,2013,1,Second-hand | Commander-690B version, 30.602278,-44.134617,ZZZ, 4.570868, -74.297333,COL
+Unknown supplier(s),Denmark,1,BN-2 Islander,Light transport ac,(2015),2015,1,Second-hand | BN-2A version, 30.602278,-44.134617,ZZZ, 56.26392, 9.501785,DNK
+Unknown supplier(s),Djibouti,4,AS365/AS565 Panther,Helicopter,(2015),2016,(4),Possibly second-hand | financed by Saudi Arabia, 30.602278,-44.134617,ZZZ, 11.825138, 42.590275,DJI
+Unknown supplier(s),Equatorial Guinea,1,Ka-32,Helicopter,2009,2010,(1),Probably second-hand | Ka-29 armed version | supplier possibly Ukraine, 30.602278,-44.134617,ZZZ, 1.650801, 10.267895,GNQ
+Unknown supplier(s),Guinea,1,CN-235,Transport aircraft,(2009),2010,(1),Second-hand, 30.602278,-44.134617,ZZZ, 9.945587, -9.696645,GIN
+Unknown supplier(s),Guinea,1,CN-235,Transport aircraft,2012,2012,1,Second-hand, 30.602278,-44.134617,ZZZ, 9.945587, -9.696645,GIN
+Unknown supplier(s),Guyana,2,Skyvan,Light transport ac,(2018),2018,(2),Second-hand, 30.602278,-44.134617,ZZZ, 4.860416, -58.93018,GUY
+Unknown supplier(s),Hamas (Palestine)*,(10),9M113 Konkurs/AT-5,Anti-tank missile,(2010),2010,(10),Supplier possibly Iran, 30.602278,-44.134617,ZZZ, 31.952162, 35.233154,PSE
+Unknown supplier(s),Hamas (Palestine)*,(25),Kornet/AT-14,Anti-tank missile,(2010),2010,(25),Supplier possibly Iran, 30.602278,-44.134617,ZZZ, 31.952162, 35.233154,PSE
+Unknown supplier(s),Hamas (Palestine)*,(100),Strela-2/SA-7,Portable SAM,(2011),2011,(100),Probably second-hand stolen from stocks during Libyan civil war 2011 and smuggled to Hamas via Egypt, 30.602278,-44.134617,ZZZ, 31.952162, 35.233154,PSE
+Unknown supplier(s),Honduras,2,L-410 Turbolet,Light transport ac,(2014),2015,2,L-410UVP-E20 version, 30.602278,-44.134617,ZZZ, 15.199999, -86.241905,HND
+Unknown supplier(s),Iraq,(100),Red Arrow-8,Anti-tank missile,(2014),2014,(100),For Kurdish Regional Government to use against Islamic State rebels, 30.602278,-44.134617,ZZZ, 33.223191, 43.679291,IRQ
+Unknown supplier(s),Iraq,(10),M-ATV,APV,(2016),2016,(10),Probably second-hand | supplier could be USA or UAE, 30.602278,-44.134617,ZZZ, 33.223191, 43.679291,IRQ
+Unknown supplier(s),Jamaica,2,Bell-206/OH-58,Light helicopter,(2018),,,Second-hand | Bell-206B-3 version | for training, 30.602278,-44.134617,ZZZ, 18.109581, -77.297508,JAM
+Unknown supplier(s),Libya HoR,(10),Caiman,APC,(2017),2017,(10),Second-hand | supplier UAE or Egypt | aid, 30.602278,-44.134617,ZZZ, 26.3351, 17.228331,LBY
+Unknown supplier(s),Malaysia,9,Guardian,APC,2017,2017,9,For use by UN peacekeepers in Lebanon, 30.602278,-44.134617,ZZZ, 4.210484, 101.975766,MYS
+Unknown supplier(s),Myanmar,(10),M-3 VTT,APC,(2010),2011,(10),Second-hand but modernized before delivery | supplier probably Israel, 30.602278,-44.134617,ZZZ, 21.913965, 95.956223,MMR
+Unknown supplier(s),Myanmar,(3),AS365/AS565 Panther,Helicopter,(2013),2015,(3),Probably second-hand | AS365 version, 30.602278,-44.134617,ZZZ, 21.913965, 95.956223,MMR
+Unknown supplier(s),Myanmar,3,EC-120 Colibri,Light helicopter,(2016),2016,3,Probably second-hand, 30.602278,-44.134617,ZZZ, 21.913965, 95.956223,MMR
+Unknown supplier(s),NTC (Libya)*,(1),Ratel-20,IFV,2011,2011,(1),Second-hand | aid (possibly financed by Qatar) | delivered without armament, 30.602278,-44.134617,ZZZ, 26.3351, 17.228331,LBY
+Unknown supplier(s),PIJ (Israel/Palestine)*,(10),Kornet/AT-14,Anti-tank missile,(2012),2012,(10),Supplier possibly Iran, 30.602278,-44.134617,ZZZ, 31.952162, 35.233154,PSE
+Unknown supplier(s),PKK (Turkey)*,(10),Igla/SA-18,Portable SAM,(2015),2015,(10),Second-hand | designation uncertain (could be Igla-1/SA-16), 30.602278,-44.134617,ZZZ, 38.963745, 35.243322,TUR
+Unknown supplier(s),Russia,(1),Georgiy Agafonov,Cargo ship,2015,2015,(1),Second-hand | Ukrainian merchant ship sold to Turkish company for scrap or civilian use resold to UK company and bought by Russian navy via Mongolian and/or Russian company for transport of military equipment to Syria | Russian designation Kazan-60, 30.602278,-44.134617,ZZZ, 61.52401, 105.318756,RUS
+Unknown supplier(s),South Sudan,1,Beech-1900/C-12J,Light transport ac,(2009),2010,1,, 30.602278,-44.134617,ZZZ, 12.862807, 30.217636,SDN
+Unknown supplier(s),South Sudan,(1),DA42MPP,Reconnaissance ac,(2014),2015,1,, 30.602278,-44.134617,ZZZ, 12.862807, 30.217636,SDN
+Unknown supplier(s),South Sudan,(50),QW-2,Portable SAM,(2014),2014,(50),Designation uncertain | supplier probably China, 30.602278,-44.134617,ZZZ, 12.862807, 30.217636,SDN
+Unknown supplier(s),Sudan,(4),9K33 Osa/SA-8,Mobile SAM system,(2013),2014,(4),Second-hand but possibly modernized before delivery, 30.602278,-44.134617,ZZZ, 12.862807, 30.217636,SDN
+Unknown supplier(s),Sudan,(120),9M33/SA-8,SAM,(2013),2014,(120),Probably second-hand but possibly modernized before delivery, 30.602278,-44.134617,ZZZ, 12.862807, 30.217636,SDN
+Unknown supplier(s),Syria rebels*,(10),FN-6,Portable SAM,(2012),2012,(10),Possibly second-hand missiles delivered by Sudan via Qatar and Turkey and financed by Qatar, 30.602278,-44.134617,ZZZ, 34.802075, 38.996815,SYR
+Unknown supplier(s),Syria rebels*,(100),Red Arrow-8,Anti-tank missile,(2013),2013,(100),Supplier probably Qatar (probably from Sudan production) | aid, 30.602278,-44.134617,ZZZ, 34.802075, 38.996815,SYR
+Unknown supplier(s),Syria rebels*,50,BGM-71 TOW,Anti-tank missile,(2014),2014,(50),Second-hand | aid | for Harakat Hazm rebel group, 30.602278,-44.134617,ZZZ, 34.802075, 38.996815,SYR
+Unknown supplier(s),United States,5,L-39C Albatros,Trainer aircraft,(2011),2012,(5),Second-hand | for US company for training of US forces, 30.602278,-44.134617,ZZZ, 37.09024, -95.712891,USA
+Unknown supplier(s),Uruguay,(1),King Air Maritime,MP aircraft,2012,2013,(1),Probably second-hand King Air B-200T version | probably bought via Swiss company | possibly modified to MP aircraft before delivery | $1.5 m deal | delivery probably 2013, 30.602278,-44.134617,ZZZ, -32.522779, -55.765835,URY
+Unknown supplier(s),Venezuela,2,F-28,Light helicopter,(2011),2011,2,Second-hand | F-280FX version | for training, 30.602278,-44.134617,ZZZ, 6.42375, -66.58973,VEN
+Unknown supplier(s),Viet Nam,(10),Guardian,APC,(2016),2016,(10),, 30.602278,-44.134617,ZZZ, 14.058324, 108.277199,VNM
+Unknown supplier(s),Yemen,(5),Ratel-20,IFV,2016,2016,(5),Second-hand | aid | supplier possibly Jordan, 30.602278,-44.134617,ZZZ, 15.552727, 48.516388,YEM
 Uzbekistan,China,3,Il-76M,Transport aircraft,2014,2015-2016,(3),Second-hand (but modernized in Russia before delivery) | Il-76MD version, 41.377491, 64.585262,UZB, 35.86166, 104.195397,CHN
 Uzbekistan,India,3,A-50EhI,AEW&C aircraft,2004,2009-2011,3,Part of $1.1 b deal (incl $350 m advance payment) | ordered via Israel and Russia | fitted with Israeli Phalcon AEW system in Israel, 41.377491, 64.585262,UZB, 20.593684, 78.96288,IND

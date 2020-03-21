@@ -3,7 +3,7 @@ import csv
 import os
 import string
 
-PATH="./"
+PATH="../data/"
 RTF_FILE="Trade-Register-2010-2018.rtf"
 #flags
 
@@ -108,7 +108,8 @@ def createCsv():
                     recipient=line.partition(",")[0]
                 row =  [supplier.replace("\n","")] + [' '.join(x.split()) for x in splitted] 
                 
-            
+
+            recipient.replace("supplier","recipient")
 
             c=",".join(row).count(",")
             if(c!=8 ):
@@ -123,7 +124,7 @@ def createCsv():
                 printC(row[4])
                 print(row)   
                  
-
+            
             writer.writerow( row )
             
                 

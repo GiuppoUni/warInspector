@@ -1,6 +1,23 @@
 country, latitude, longitude, name,code3
 ZZ, 30.602278,-44.134617, Europe multi-state,ZZZ
 ZZ, 30.602278,-44.134617, (multiple sellers),ZZZ
+ZZ, 30.602278,-44.134617, Unknown recipient(s),ZZZ
+ZZ, 30.602278,-44.134617, Unknown supplier(s),ZZZ
+ZZ, 30.602278,-44.134617, Unknown country,ZZZ
+LY, 26.3351, 17.228331, Libya GNC,LBY
+LY, 26.3351, 17.228331, NTC (Libya)*,LBY
+YE, 15.552727, 48.516388, Huthi rebels (Yemen)*,YEM
+SD, 12.862807, 30.217636, South Sudan,SDN
+PS, 31.952162, 35.233154, Hamas (Palestine)*,PSE
+PS, 31.952162, 35.233154, PRC (Israel/Palestine)*,PSE
+PS, 31.952162, 35.233154, PIJ (Israel/Palestine)*,PSE
+UA, 48.379433, 31.16558, Ukraine Rebels*,UKR
+LB, 33.854721, 35.862285, Hezbollah (Lebanon)*,LBN
+SY, 34.802075, 38.996815, Syria rebels*,SYR
+TR, 38.963745, 35.243322, PKK (Turkey)*,TUR
+OS,48.210033, 16.363449,OSCE**,OSC
+ON,40.730610,-73.935242,United Nations**,ONU
+BE, 50.503887, 4.469936, NATO**,NAT
 AD, 42.546245, 1.601554, Andorra,AND
 AE, 23.424076, 53.847818, UAE,ARE
 AE, 23.424076, 53.847818, United Arab Emirates,ARE
@@ -144,6 +161,7 @@ LT, 55.169438, 23.881275, Lithuania,LTU
 LU, 49.815273, 6.129583, Luxembourg,LUX
 LV, 56.879635, 24.603189, Latvia,LVA
 LY, 26.3351, 17.228331, Libya,LBY
+LY, 26.3351, 17.228331, Libya HoR,LBY
 MA, 31.791702, -7.09262, Morocco,MAR
 MC, 43.750298, 7.412841, Monaco,MCO
 MD, 47.411631, 28.369885, Moldova,MDA

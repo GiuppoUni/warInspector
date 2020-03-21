@@ -3,8 +3,8 @@ import re
 
 def createCountryCSV():
     print("creating csv for countries...")
-    cf=open("./countries-clean.txt","r")
-    csv=open("./countries.csv","w")
+    cf=open("../data/countries-clean.txt","r")
+    csv=open("../data/countries.csv","w")
     
     for line in cf:
         cc=0
@@ -21,7 +21,7 @@ def main():
      
     #createCountryCSV()
 
-    tf=open("./Trade-Register-2010-2018.csv","r") #file1
+    tf=open("../data/Trade-Register-2010-2018.csv","r") #file1
     
     regex = re.compile('[^a-zA-Z]')
     countries=[]
@@ -43,7 +43,7 @@ def main():
 
     
     for c in countries:
-        cf=open("./countries.csv","r") #file2
+        cf=open("../data/countries.csv","r") #file2
         
         found=False
         for line2 in cf:
@@ -59,7 +59,7 @@ def main():
         if(found):
             continue
 
-        cf=open("./countries.csv","r") #file2
+        cf=open("../data/countries.csv","r") #file2
         for line2 in cf:
             name= regex.sub("",   " ".join( ( line2.split(",")[-1] ).split() ) )
         #print(c,name,c==name)
@@ -75,7 +75,7 @@ def main():
  
  
     # countries=[]
-    # with open('./Trade-Register-2010-2018.csv', newline='') as csvfile:
+    # with open('../data/Trade-Register-2010-2018.csv', newline='') as csvfile:
     #     spamreader = csv.reader(csvfile, delimiter=',')
     #     for i,row in enumerate(spamreader):
     #         #print(i,row[0],row[1])
@@ -86,7 +86,7 @@ def main():
 
 
     # print(countries)
-    # with open('./countries.csv', newline='') as csvfile2:
+    # with open('../data/countries.csv', newline='') as csvfile2:
     #     spamreader2 = csv.reader(csvfile2, delimiter=',')
     #     for c in countries[2:7]:
     #         print(c)

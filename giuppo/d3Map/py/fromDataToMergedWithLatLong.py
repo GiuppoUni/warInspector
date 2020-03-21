@@ -4,14 +4,14 @@ import csv
 import re
 
 def main():
-    # df_tab=pd.read_csv("./table_2010-2018.csv")
-    # df_co = pd.read_csv("./countries.csv")
+    # df_tab=pd.read_csv("../data/table_2010-2018.csv")
+    # df_co = pd.read_csv("../data/countries.csv")
 
     # pd.merge(df_tab,df_co)
 
 
-        # out=open("./table_2010-2018-clean.csv","w")
-    # with open("./table_2010-2018.csv","r") as file:
+        # out=open("../data/table_2010-2018-clean.csv","w")
+    # with open("../data/table_2010-2018.csv","r") as file:
     #     for line in file:
     #         line=line.replace('"',"")
     #         if("," not in line):
@@ -19,8 +19,8 @@ def main():
     #         out.write(line)            
 
 
-    out = open("merged.csv","w")
-    original1 = open("./Trade-Register-2010-2018.csv","r")
+    out = open("../data/merged.csv","w")
+    original1 = open("../data/Trade-Register-2010-2018.csv","r")
     # suppliers=[]
     # recipients=[]
     regex = re.compile('[^a-zA-Z]')
@@ -40,7 +40,7 @@ def main():
         # if(l1[1] not in recipients):
         #     recipients.append(l1[1])
 
-        original2 = open("./countriesAlpha3.csv","r")
+        original2 = open("../data/countriesAlpha3.csv","r")
         latS=""
         longS=""
         codeS=""
@@ -81,37 +81,37 @@ def main():
                 break        
         original2.close()
 
-        if(not foundS):
-            original2 = open("./countries.csv","r")
-            #Altro giro questa volta mi basta in anziche ==
-            for line2 in original2:
-                l2=line2.split(",")
-                #Country name
-                con=l2[-2].strip()
-                con=" ".join(con.split() )
-                con=regex.sub("",con) 
-                if(con in sup and not foundS): #trovato il nome del sup 
-                    latS=l2[1]
-                    longS=l2[2]
-                    codeS=l2[-1].strip()
-                    foundS=True
-            original2.close()
+        # if(not foundS):
+        #     original2 = open("../data/countriesAlpha3.csv","r")
+        #     #Altro giro questa volta mi basta in anziche ==
+        #     for line2 in original2:
+        #         l2=line2.split(",")
+        #         #Country name
+        #         con=l2[-2].strip()
+        #         con=" ".join(con.split() )
+        #         con=regex.sub("",con) 
+        #         if(con in sup and not foundS): #trovato il nome del sup 
+        #             latS=l2[1]
+        #             longS=l2[2]
+        #             codeS=l2[-1].strip()
+        #             foundS=True
+        #     original2.close()
 
-        if(not foundR):
-            original2 = open("./countries.csv","r")
-            #Altro giro questa volta mi basta in anziche ==
-            for line2 in original2:
+        # if(not foundR):
+        #     original2 = open("../data/countriesAlpha3.csv","r")
+        #     #Altro giro questa volta mi basta in anziche ==
+        #     for line2 in original2:
                 
-                l2=line2.split(",") 
-                con=l2[-2].strip()
-                con=" ".join(con.split() )
-                con=regex.sub("",con)
-                if(con in rec and not foundR): #trovato il nome del sup 
-                    latR=l2[1]
-                    longR=l2[2]
-                    codeR=l2[-1].strip()
-                    foundR=True
-            original2.close()
+        #         l2=line2.split(",") 
+        #         con=l2[-2].strip()
+        #         con=" ".join(con.split() )
+        #         con=regex.sub("",con)
+        #         if(con in rec and not foundR): #trovato il nome del sup 
+        #             latR=l2[1]
+        #             longR=l2[2]
+        #             codeR=l2[-1].strip()
+        #             foundR=True
+        #     original2.close()
             
         if( not foundS and l1[0] not in losts):
             losts.append(l1[0])
