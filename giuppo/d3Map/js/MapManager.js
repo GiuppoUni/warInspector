@@ -247,16 +247,6 @@ var MapManager = function (){
   }
   
   
-  var setYearInterval = function(yi){
-    console.log("set interval to", yi)
-    year_interval=yi
-  }
-  
-  var setCountry = function (c){
-    console.log("set country to", c)
-    country=c
-  }
-  
   
   /*  
   Draw cloropeth on map (SECOND VIEW)
@@ -368,12 +358,35 @@ var MapManager = function (){
       .call(zoom.transform, d3.zoomIdentity);
     }
     
+  var setYearInterval = function(yi){
+    console.log("set interval to", yi)
+    year_interval=yi
+  }
+  
+  var setCountry = function (c){
+    console.log("set country to", c)
+    country=c
+  }
+  
+  var getCountry = function(){
+    return country
+  }
+  var getYearInterval = function(){
+    return year_interval
+  }
+  
     return{
       drawMap:drawMap,
       drawArches:drawArches,
       drawHeatMap:drawHeatMap,
+
+      getYearInterval:getYearInterval,
       setYearInterval:setYearInterval,
+
+      getCountry:getCountry,
       setCountry:setCountry,
+      
       resetZoom:resetZoom,
+      
     }
   }

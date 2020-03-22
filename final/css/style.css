@@ -1,0 +1,250 @@
+/* *{
+    font-family:  "Helvetica Neue";
+} */
+@import url('https://fonts.googleapis.com/css?family=Archivo&display=swap');
+
+*{
+  font-family: 'Open Sans', sans-serif;
+  
+  /* font-family: Archivo, Verdana, Tahoma; */
+
+}
+
+p {
+    font-size: 0.85em;
+    color:white;
+    font-family: Archivo, Verdana, Tahoma;
+  
+}
+
+p:not(.layoutp){
+
+  margin-left: 50%;
+ 
+}
+
+#slider-range svg{
+    background: black;
+}
+
+#slider-range svg{
+  background: black;
+}
+
+
+  .sphere {
+    fill: #bef7e4;
+  }
+
+  .land {
+    fill: #000;
+  }
+
+  .boundary {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+
+
+  path.link {
+    fill: red;
+    stroke: #666666;
+    stroke-width: 1.5px;
+  }
+  
+  .stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 3px;
+  }
+  
+  h2{
+
+    color: white
+  }
+  h3{
+
+    border: white;
+    color: black;
+  }
+
+
+  .column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #value-range,#value-step{
+    color:white
+  }
+
+
+  input {
+    
+    text-align: center;
+    
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    
+  }
+  
+  input:hover {background-color: #3e8e41}
+  
+  input:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  input:disabled{   
+    opacity: 0.5;
+  }
+
+  /* Tooltip container */
+
+
+/* Tooltip text */
+ .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #69696999;
+  
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+ td:hover > .tooltiptext {
+  visibility: visible;
+}
+
+textPath{
+  background-color: #69696999;
+  border-radius: 6px;
+}
+
+
+.heatmap {
+  fill: none;
+  stroke: black;
+  stroke-linejoin: round;
+}
+.legendThreshold {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.caption {
+    fill: #000;
+    text-anchor: start;
+    font-weight: bold;
+}
+
+
+.vertical-mirror-text{
+  -moz-transform: scale(1, -1);
+-webkit-transform: scale(1, -1);
+-o-transform: scale(1, -1);
+-ms-transform: scale(1, -1);
+transform: scale(1, -1);
+}
+
+
+/*
+
+Charts
+
+
+*/
+
+#charts-div h3#title {
+  color: #fff;
+}
+
+div#layout {
+  text-align: center;
+}
+
+div#container {
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+  background-color: #2F4A6D;
+}
+
+#charts-div svg {
+  width: 100%;
+  height: 100%;
+}
+
+#charts-div .bar {
+  fill: #80cbc4;
+}
+
+#charts-div text {
+  font-size: 12px;
+  fill: #fff;
+}
+
+#charts-div path {
+  stroke: gray;
+}
+
+#charts-div line {
+  stroke: gray;
+}
+
+#charts-div line#limit {
+  stroke: #FED966;
+  stroke-width: 3;
+  stroke-dasharray: 3 6;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.grid .tick line {
+  stroke: #9FAAAE;
+  stroke-opacity: 0.3;
+}
+
+text.divergence {
+  font-size: 14px;
+  fill: #FED966;
+}
+
+text.value {
+  font-size: 14px;
+}
+
+text.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+text.label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+text.source {
+  font-size: 10px;
+}
