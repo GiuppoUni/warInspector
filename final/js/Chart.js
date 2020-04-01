@@ -125,9 +125,15 @@ var ChartManager = function () {
             chart.append('g')
             .attr('transform', `translate(0, ${height})`)
             .call(d3.axisBottom(xScale));
+
+            const yAxisTicks = yScale.ticks()
+            .filter(Number.isInteger);
             
             chart.append('g')
-            .call(d3.axisLeft(yScale));
+            .call(d3.axisLeft(yScale)
+            .tickValues(yAxisTicks)
+            .tickFormat(d3.format('d'))
+            );
             
             // vertical grid lines
             // chart.append('g')
@@ -142,6 +148,7 @@ var ChartManager = function () {
             .attr('class', 'grid')
             .call(makeYLines()
             .tickSize(-width, 0, 0)
+            .tickValues(yAxisTicks)
             .tickFormat('')
             )
             
