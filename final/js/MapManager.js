@@ -193,7 +193,7 @@ var MapManager = function (){
           .data([coo])
           .attr("class", "line")
           //.text(d=>d.name)
-          .attr("style","stroke:rgb(249, 250, 3);stroke-width:0.7;")
+          .attr("style","stroke:rgba(255, 255, 0, 0.702);stroke-width:0.7;")
           .attr("d", line_gen )
           .attr("marker-end","url(#arrow"+i+")")
           
@@ -209,7 +209,7 @@ var MapManager = function (){
           .attr( 'xoverflow','visible')
           .append('svg:path')
           .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-          .attr('fill', '#ef8b12')
+          .attr('fill', "rgba(255, 140, 0, 0.73)")
           .style('stroke','none');
           
 
@@ -221,7 +221,7 @@ var MapManager = function (){
           .attr("style","font-size: 50%;")
           .attr("startOffset", "50%")
           .text("To "+rec)
-          .attr("fill","red")
+          .attr("fill","rgba(255, 0, 0, 0.687)")
 
           //Flip vertical
           // if(parseFloat(coo[1][0])-parseFloat(coo[0][0]) < 0){
@@ -251,7 +251,7 @@ var MapManager = function (){
       .append("g")
       .attr("id","origin-point")          
       .append("circle").attr("r", 4)
-      .attr("fill","red")
+      .attr("fill","rgba(255, 0, 0, 0.687)")
       
       .attr("cx", circle_coo[0] )
       .attr("cy", circle_coo[1] )
@@ -271,7 +271,7 @@ var MapManager = function (){
     resetZoom()
     updateTexts()
     
-    document.getElementsByClassName("sphere")[0].style.fill="#313131"
+    document.getElementsByClassName("sphere")[0].style.fill="#fff"
     
     d3.queue()
     .defer(d3.csv,"data/merged.csv")
@@ -288,7 +288,7 @@ var MapManager = function (){
       .nest()
       .key(function(d) { return d.codeR; })
       //.rollup(function(v) { return v.length; })
-      .rollup(function(v) { return d3.sum(v, function(d) { return d.Ordered.replace(/\(|\)/g,""); }) })
+      .rollup(function(v) { return d3.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g,""); }) })
       .entries(transactions.filter(d => d.Supplier==country).filter(d => 
         parseInt( d["Ordered year"].replace(/\(|\)/g,"") ) >= year_interval[0] 
         && parseInt( d["Ordered year"].replace(/\(|\)/g,"") ) <= year_interval[1] ));
@@ -300,9 +300,10 @@ var MapManager = function (){
         // .domain([ max_from_grouped/3,  max_from_grouped/3*2, max_from_grouped])
         // .range(colorScheme);
         console.log("Max_from_grouped",max_from_grouped)
-        var colorScale = d3.scaleThreshold()
-        .domain([ 1, max_from_grouped==-Infinity?1000:max_from_grouped])
-        .range(d3.schemeGreens[4]);
+        max_from_grouped==-Infinity?1000:max_from_grouped
+        var colorScale = d3.scaleLinear()
+        .domain([ 1,10,100,1000,10000,100000])
+        .range( ["#edf8e9", "#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c"] )
         
         
         for (let i = 0; i < grouped.length; i++) {
@@ -325,7 +326,7 @@ var MapManager = function (){
           // Pull data for this country
           d.total = data.get(d.id) || 0;
           // Set the color
-          return colorScale(d.total);
+          return d.total==0?"#696969":colorScale(d.total);
         })
         .attr("d", path)
         .append("title")
@@ -344,9 +345,9 @@ var MapManager = function (){
         .attr("class", "caption")
         .attr("x", 0)
         .attr("y", -6)
-        .text("N. of weapons exchanged");
+        .text("N. of weapons "+ country+" delivered to nation during " + year_interval[0]+"-"+year_interval[1]);
         
-        var labels = ['0', "","", '> 1000'];
+        var labels = ['> 1', "> 10","> 100", "> 1000","> 10000","> 100000"];
         var legend = d3.legendColor()
         .labels(function (d) { return labels[d.i]; })
         .shapePadding(4)

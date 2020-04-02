@@ -83,8 +83,8 @@ def createCsv():
  # Writing header on csv                
     csv_file= open(PATH + RTF_FILE[:-4] + ".csv","w")
     writer = csv.writer(csv_file)
-    writer.writerow([ "Supplier","Recipient","Ordered","Designation num.",	
-        "Weapon description",	"Ordered year","Delivered year",	"Delivered num.",	"Comments"])
+    writer.writerow([ "Supplier","Recipient","Ordered","Weapon model",	
+        "Weapon category",	"Ordered year","Delivered year",	"Delivered num.",	"Comments"])
     
     
     with open(PATH + RTF_FILE[:-4] + "_MOD.txt","r") as file:
@@ -139,8 +139,8 @@ def createCsv():
 #  # Writing header on csv                
 #     csv_file= open(PATH + RTF_FILE[:-4] + ".csv","w")
 #     writer = csv.writer(csv_file)
-#     writer.writerow([ "Supplier","Recipient","Ordered","Designation num.",	
-#         "Weapon description",	"Delivery year",	"Delivered num.",	"Comments"])
+#     writer.writerow([ "Supplier","Recipient","Ordered","Weapon model",	
+#         "Weapon category",	"Delivery year",	"Delivered num.",	"Comments"])
     
     
 #     with open(PATH + RTF_FILE[:-4] + ".txt","r") as file:
