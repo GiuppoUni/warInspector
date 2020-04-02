@@ -1,7 +1,7 @@
 var country_selected;
 
 var ChartManager = function () {
-    var years = [2000,2020];
+    var years = [2000,2018];
     country_selected = "";
 
     // on change handler
@@ -14,16 +14,15 @@ var ChartManager = function () {
         if (DEBUG) console.log("Chosen country: "+country_selected)
     });
 
-    /*$('#country-selection').on('change', function(){
+    /**$(PUT HERE YEARS SLIDER ID).on('change', function(){
         
-        country_selected = $('#country-selection').val()
+        years[0] = $(PUT HERE YEARS SLIDER ID).left_value
+        years[1] = $(PUT HERE YEARS SLIDER ID).right_value
 
-        d3.select('svg').remove()
-        $('#container').append('<svg></svg>')
-        drawChart()
+        update()
         
-        if (DEBUG) console.log("Chosen country: "+country_selected)
-    });*/
+        if (DEBUG) console.log("Years: "+years[0]+"-"+"years[1]")
+    });**/
 
 
     const margin = 80;
@@ -121,8 +120,13 @@ var ChartManager = function () {
                 .attr('transform', `translate(0, ${height})`)
                 .call(d3.axisBottom(xScale));
 
+            const yAxisTicks = yScale.ticks()
+                                    .filter(Number.isInteger);
+            
             chart.append('g')
-                .call(d3.axisLeft(yScale));
+                .call(d3.axisLeft(yScale)
+                        .tickValues(yAxisTicks)
+                        .tickFormat(d3.format('d')));
 
             // vertical grid lines
             // chart.append('g')
@@ -137,6 +141,7 @@ var ChartManager = function () {
                 .attr('class', 'grid')
                 .call(makeYLines()
                     .tickSize(-width, 0, 0)
+                    .tickValues(yAxisTicks)
                     .tickFormat('')
                 )
 
