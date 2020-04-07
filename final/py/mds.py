@@ -20,30 +20,12 @@ We use the dissimilarity functions
 print(__doc__)
 import numpy as np
 import pandas as pd
-from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt,mpld3
 from sklearn import manifold
-import math
 from numpy import dot
 from numpy.linalg import norm
 
-def jaccard(s1,s2):
-    u=set(s1.lower()).union(set(s2.lower()))
-    i=set(s1.lower()).intersection(set(s2.lower()))
-    return(len(i)/len(u))
 
-def samePosition(s1,s2):
-    tot=0
-    for i in range( min(len(s1),len(s2))):
-        if s1[i]==s2[i]:
-            tot+=1
-    return(tot/min(len(s1),len(s2)))
-
-def sameStart(s1,s2):
-    tot=0
-    i=0
-    while i <( min(len(s1),len(s2))) and s1[i]==s2[i]:
-            i+=1
-    return(i/min(len(s1),len(s2)))
 
 data = pd.io.parsers.read_csv(
      '../data/importNumbers2000-2018.csv' 

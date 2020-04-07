@@ -7,8 +7,14 @@ var DEBUG = true;
 function main() {
     //Layout movements
     var holdUpper=document.getElementsByClassName("hold_dropdowns_layout_cells")
+    var holdTop=document.getElementsByClassName("top_banner_layout_rows")[0].children[1]
+    
+    
     holdUpper[0].appendChild(document.getElementById("selection"));
     holdUpper[1].appendChild(document.getElementById("curr_data"));
+    holdUpper[2].appendChild(document.getElementById("sipriImage"));
+
+    holdTop.appendChild(document.getElementById("description"))
 
     var csec=d3.select("#chart-section").select('tr')
     .select('tr > td').node()

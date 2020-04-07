@@ -34,11 +34,16 @@
     
 </head>
 <body onload="main()">
-    <select id="selection" onChange="changeView(this.value);"">
-        <option>Arrows view</option>
-        <option>Cloropeth view</option>
+    <image id="sipriImage" src="https://www.thehagueinstituteforglobaljustice.org/wp-content/uploads/2015/12/sipri-335x190.jpg"></image>
+    <p id="description">This is a desc</p>
+
+    <div class="bootstrap-select-wrapper" id="selection">
+        <label for="exampleFormControlSelect1" style="color:white">Select view:</label>
+        <select  class="form-control"   onChange="changeView(this.value);"">
+        <option  >Arrows view</option>
+        <option  >Cloropeth view</option>
     </select>
-    
+    </div>
     <div id="curr_data">
         <p class="layoutp " align=center style="font-size:125%">Currently displaying:</p> 
         <div class="container">
@@ -55,6 +60,7 @@
             </div>
         </div>
     </div>
+    
         
         <div id="charts-div">
             <!--
@@ -73,10 +79,10 @@
             </div>
         </div>
         
-        <div id="map_slider" class="row">
-            <div class="col">
+        <div id="map_slider" class="row" style="width: 100%; margin: 0 auto; background-color: black;">
+            <div class="col" style=" margin: 0 auto; background-color: black;">
                 <h2>Select the supplier country:</h2>
-                <table id="country-choice" style="width:100%;background-color:black">
+                <table id="country-choice" style="width:100%; ">
                     <tr align="center">
                         <td><input type="image"  id="0" width="20px" src="icons/flag-icons/png/Albania.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Albania</span> </td>
                         <td><input type="image" id="1" width="20px" src="icons/flag-icons/png/Algeria.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Algeria</span> </td>
@@ -175,18 +181,18 @@
             </div>
             <div class="col">
                 <h2>Select range of years:</h2>
-                <div  class="row ">
-                    <div class="col">
+                <div  class="row " style=" width:50%; margin: 0 auto; " >
+                    <div class="col" >
                         <div id="slider-range"></div>
                     </div>
+                    <!--
                     <div class="col">
-                        <p id="value-range"></p>
+                        <p id="value-range" style="visibility:hidden"></p>
                     </div>
-                    
+                    -->
                 </div>
             </div>
         </div>
-        
         
         
     </body>

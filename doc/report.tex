@@ -1,0 +1,103 @@
+\documentclass[twocolumn]{article}
+\setlength{\columnsep}{20pt}
+%\usepackage{url}
+%\usepackage{algorithmic}
+\usepackage[a4paper]{geometry}
+\usepackage{datetime}
+\usepackage[font=small,labelfont=it]{caption}
+\usepackage{graphicx}
+\usepackage{mathpazo} % use palatino
+\usepackage[scaled]{helvet} % helvetica
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{subfigure}
+
+% Letterspacing macros
+\newcommand{\spacecaps}[1]{\textls[200]{\MakeUppercase{#1}}}
+\newcommand{\spacesc}[1]{\textls[50]{\textsc{\MakeLowercase{#1}}}}
+
+\title{\spacecaps{WarMonopoly}\\ \normalsize \spacesc{Visual Analytics Course Sapienza University of Rome} }
+
+\author{Giuseppe Capaldi 1699498\\Gianmarco Cariggi}
+%\date{\today\\\currenttime}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+%
+In this report, we present results and design process from "WarMonopoly", an html local page embedding D3.js to visualize some SIPRI (Stockholm International Peace Research Institute) datasets. The page contains user interactive views as barcharts, choropleth map and arc map due to the geographical nature of the data involved. It is present also a scatter plot result of MDS (Multi-Dimensional scaling), computed in python and visualized on the same page, not to preprocess the data but to add new informations to the user.
+
+%
+\end{abstract}
+
+
+\section{Introduction}
+%
+Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+
+Perchè lo utilizziamo?
+È universalmente riconosciuto che un lettore che osserva il layout di una pagina viene distratto dal contenuto testuale se questo è leggibile. Lo scopo dell’utilizzo del Lorem Ipsum è che offre una normale distribuzione delle lettere (al contrario di quanto avviene se si utilizzano brevi frasi ripetute, ad esempio “testo qui”), apparendo come un normale blocco di testo leggibile. Molti software di impaginazione e di web design utilizzano Lorem Ipsum come testo modello. Molte versioni del testo sono state prodotte negli anni, a volte casualmente, a volte di proposito (ad esempio inserendo passaggi ironici).
+
+
+
+\section{Dataset}
+%
+Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+
+Perchè lo utilizziamo?
+È universalmente riconosciuto che un lettore che osserva il layout di una pagina viene distratto dal contenuto testuale se questo è leggibile. Lo scopo dell’utilizzo del Lorem Ipsum è che offre una normale distribuzione delle lettere (al contrario di quanto avviene se si utilizzano brevi frasi ripetute, ad esempio “testo qui”), apparendo come un normale blocco di testo leggibile. Molti software di impaginazione e di web design utilizzano Lorem Ipsum come testo modello. Molte versioni del testo sono state prodotte negli anni, a volte casualmente, a volte di proposito (ad esempio inserendo passaggi ironici).
+
+
+
+\section{Design process}
+%
+
+
+\section{Visualization}
+
+\section{Interaction}
+
+
+\begin{align}
+    r &= e \cdot \Delta_t \label{eq:abc}
+\end{align}
+
+
+\section{Results}
+
+
+\begin{figure}[t]
+\centering
+    \subfigure[]{\includegraphics[width=.3\linewidth]{fig/black.jpg}\label{fig:demo-standard}}
+    \subfigure[]{\includegraphics[width=.3\linewidth]{fig/black.jpg}\label{fig:demo-fancy}}
+    \caption{Result from task X showing \subref{fig:demo-standard} standard rendering compared to fancy rendering in \subref{fig:demo-fancy}. Notice the improved smoothness of the fancy rendering which was achieved through the use of Equation~\ref{eq:abc} and \emph{knowledge}. Shading is typically a trade-off between computation time and visual quality.}
+    \label{fig:demo}
+\end{figure}
+
+
+\section{Conclusion}
+
+
+\onecolumn{
+\begin{thebibliography}{9}
+\bibitem{latexcompanion} 
+Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+\textit{The \LaTeX\ Companion}. 
+Addison-Wesley, Reading, Massachusetts, 1993.
+
+\bibitem{einstein} 
+Albert Einstein. 
+\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+[\textit{On the electrodynamics of moving bodies}]. 
+Annalen der Physik, 322(10):891–921, 1905.
+
+\bibitem{knuthwebsite} 
+Knuth: Computers and Typesetting,
+\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+\end{thebibliography}
+}
+
+\end{document}
+

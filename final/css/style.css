@@ -23,13 +23,23 @@ p:not(.layoutp){
  
 }
 
+
+::selection			{ background:#c3effd; color:#000; /* Safari and Opera */ }
+::-moz-selection  { background:#c3effd; color:#000; /* Firefox */ }
+html { overflow-y:scroll; }
+input		{ -moz-border-radius:10px; -webkit-border-radius:10px; }
+input[type=submit],label,select,.pointer	{ cursor:pointer; }
+#navigation li a	{ display:block; }
+
+
+
+#slider-range{
+  background-color: rgb(39, 36, 36);
+}
 #slider-range svg{
-    background: black;
+    background: rgb(39, 36, 36);
 }
 
-#slider-range svg{
-  background: black;
-}
 
 
   .sphere {
@@ -118,8 +128,8 @@ p:not(.layoutp){
  .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: #69696999;
   
+  background-color: #69696999;
   color: #fff;
   text-align: center;
   padding: 5px 0;
@@ -187,6 +197,10 @@ div#container {
   height: 600px;
   margin: auto;
   background-color: #2F4A6D;
+}
+
+#country-choice{
+  background-color: rgb(39, 36, 36)
 }
 
 #charts-div svg {

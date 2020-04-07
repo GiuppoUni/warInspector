@@ -27,6 +27,7 @@ var MapComponentsManager= function(){
         
         var sliderRange = d3
         .sliderLeft()
+        .select("#sliderLeft")
         .min(d3.min(dataTime))
         .max(d3.max(dataTime))
         .step(1000 * 60 * 60 * 24 * 365)
@@ -34,7 +35,7 @@ var MapComponentsManager= function(){
         .tickFormat(d3.timeFormat('%Y'))
         .tickValues(dataTime)
         .default([new Date(2016, 1, 1),new Date(2018, 1, 1)])
-        .fill('#2196f3')
+        .fill('#f4e04d')
         .on('onchange', val => {
             //d3.select('p#value-time').text(d3.timeFormat('%Y')(val));
             d3.select('p#value-range').text(val.map( d3.timeFormat('%Y') ).join('-'));
