@@ -15,6 +15,7 @@ function main() {
     holdUpper[2].appendChild(document.getElementById("sipriImage"));
 
     holdTop.appendChild(document.getElementById("description"))
+    
 
     var csec=d3.select("#chart-section").select('tr')
     .select('tr > td').node()

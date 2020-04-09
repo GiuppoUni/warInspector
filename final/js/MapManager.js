@@ -4,10 +4,12 @@
 var MapManager = function (){
   
   
-  const map_section=d3.select('#map')
+  const map_section=d3.select('#mapCont')
   .select('tr')
   .select('tr > td')
-  
+
+  const instr = "You can zoom in/out and move using the mouse."
+
   const width = map_section.node().getBoundingClientRect().width;
   const height = map_section.node().getBoundingClientRect().height;
   
@@ -27,9 +29,13 @@ var MapManager = function (){
   .attr("id","map")
   .attr('width', width)
   .attr('height', height);
+  	
+  $( "#map" ).after( "<div id='mapInstr'><h6 > You can zoom in/out and move using the mouse.    </h6></div>" );
   
   svg.call(zoom);
   
+
+
   var g = svg.append('g');
   var g_world;
   var stateGroup = g.append('g');
@@ -112,7 +118,7 @@ var MapManager = function (){
     .attr('transform', d3.event.transform);
     if(circle != undefined)
       circle.attr('transform', d3.event.transform);
-    
+    d3.selectAll("textPath").attr('transform', d3.event.transform)
     
   }
   
@@ -143,7 +149,8 @@ var MapManager = function (){
             .text('Expeditions from '+country+
             ' during '+year_interval[0]+' to '+year_interval[1])
 
-            
+    
+    
     d3.queue()
     .defer(d3.csv,"data/merged.csv")
     .await(ready)
@@ -218,9 +225,9 @@ var MapManager = function (){
           .attr("class", "archText")
           .attr("xlink:href", "#link"+i) //place the ID of the path here
           .style("text-anchor","middle") //place the text halfway on the arc
-          .attr("style","font-size: 50%;")
+          .attr("style","font-size: 90%;")
           .attr("startOffset", "50%")
-          .text("To "+rec)
+          .text("To "+ rec)
           .attr("fill","rgba(255, 0, 0, 0.687)")
 
           //Flip vertical

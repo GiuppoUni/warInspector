@@ -13,20 +13,21 @@ create_azle(function() {
         "background": "rgb(51, 47, 47)",
         "height": "auto"
 	})
-	az.add_image('my_sections', 1, {
-		"this_class": "app_logo",
-		"image_path": "https://www.thehagueinstituteforglobaljustice.org/wp-content/uploads/2015/12/sipri-335x190.jpg"
-	})
-	az.style_image('app_logo', 1, {
-		"align": "center",
-		"width": "100px"
-	})
+	// az.add_image('my_sections', 1, {
+	// 	"this_class": "app_logo",
+	// 	"image_path": "https://www.thehagueinstituteforglobaljustice.org/wp-content/uploads/2015/12/sipri-335x190.jpg"
+	// })
+	// az.style_image('app_logo', 1, {
+	// 	"align": "center",
+	// 	"width": "100px"
+	// })
 	az.add_text('my_sections', 1, {
 		"this_class": "app_title",
 		"text": "WarMonopoly",
 	})
 	az.style_text('app_title', 1, {
 		"color": "white",
+		"id":"title",
 		"align": "center",
         "font-size": "50px",
 		"font-family": "Bahianita"
@@ -57,7 +58,7 @@ create_azle(function() {
 		"border": 3
 	})
 	az.add_layout('my_sections', 1, {
-		"this_id":"map",
+		"this_id":"mapCont",
         "this_class": "visual_layout",
 		"row_class": "visual_layout_rows",
 		"cell_class": "visual_layout_cells",

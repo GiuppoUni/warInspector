@@ -2,9 +2,10 @@
     font-family:  "Helvetica Neue";
 } */
 @import url('https://fonts.googleapis.com/css?family=Archivo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Ubuntu&display=swap');
 
 *{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Ubuntu','Open Sans', sans-serif;
   
   /* font-family: Archivo, Verdana, Tahoma; */
 
@@ -33,11 +34,8 @@ input[type=submit],label,select,.pointer	{ cursor:pointer; }
 
 
 
-#slider-range{
-  background-color: rgb(39, 36, 36);
-}
 #slider-range svg{
-    background: rgb(39, 36, 36);
+    background: rgb(0, 0, 0);
 }
 
 
@@ -73,9 +71,12 @@ input[type=submit],label,select,.pointer	{ cursor:pointer; }
   }
   
   h2{
-
     color: white
   }
+  h6{
+    color: white
+  }
+  
   h3{
 
     border: white;
@@ -200,7 +201,7 @@ div#container {
 }
 
 #country-choice{
-  background-color: rgb(39, 36, 36)
+  background-color: rgb(0, 0, 0)
 }
 
 #charts-div svg {
@@ -261,4 +262,29 @@ text.label {
 
 text.source {
   font-size: 10px;
+}
+
+
+#sipriImage{
+  text-align: center;
+  
+}
+#myImage{
+  width:40px;
+  
+}
+
+#curr_flag{
+  width: 80px;
+  vertical-align: middle;
+}
+
+#mapInstr{
+text-align: center;
+vertical-align: middle;
+margin-top: 20px;
+}
+
+.app_title{
+  font-family: 'Bungee Inline', cursive;
 }

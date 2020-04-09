@@ -34,11 +34,18 @@
     
 </head>
 <body onload="main()">
-    <image id="sipriImage" src="https://www.thehagueinstituteforglobaljustice.org/wp-content/uploads/2015/12/sipri-335x190.jpg"></image>
-    <p id="description">This is a desc</p>
+    <div id="sipriImage">
+        <h6 style="text-align: center;"> Powered by SIPRI data
+        <image  id="myImage" src="../icons/SipriLogo.jpg" ></image>
+    </h6>
+    <href>https://www.sipri.org/databases/armstransfers</href>
+    </div>
+    <p id="description">The page contains three views, each one containing information about military trade between countries. 
+        Views can be customized using buttons and slider you find belove. Arch map will contain supplier and recipient, cloropeth 
+        the countries that imported most and a bar chart to visualize easier the data. </p>
 
     <div class="bootstrap-select-wrapper" id="selection">
-        <label for="exampleFormControlSelect1" style="color:white">Select view:</label>
+        <label for="exampleFormControlSelect1" style="color:white; margin-left: 10px">Select view:</label>
         <select  class="form-control"   onChange="changeView(this.value);"">
         <option  >Arrows view</option>
         <option  >Cloropeth view</option>
@@ -60,7 +67,6 @@
             </div>
         </div>
     </div>
-    
         
         <div id="charts-div">
             <!--
@@ -71,14 +77,14 @@
                 </div>
                 <hr>
             -->
-            <div id="chart" style="height: 100%;">
+            <div id="chart" style="height: 100%; text-align: center;">
                 <h3 id="title">Number of weapons ordered during the years</h3>
                 <div id="container">
                     <svg id="chart-svg"></svg>
                 </div>     
             </div>
         </div>
-        
+
         <div id="map_slider" class="row" style="width: 100%; margin: 0 auto; background-color: black;">
             <div class="col" style=" margin: 0 auto; background-color: black;">
                 <h2>Select the supplier country:</h2>
@@ -178,6 +184,8 @@
                         
                     </tr>
                 </table>
+                <h6> &#8599; You can click on a country flag to select it as the supplier.</h6>
+                <h6> You can select range of years moving the slider. &#8594;</h6>
             </div>
             <div class="col">
                 <h2>Select range of years:</h2>
