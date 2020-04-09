@@ -9,7 +9,7 @@ var ChartManager = function () {
         
         country_selected = $('#country-selection').val()
 
-        update()
+        update("svgbarchart")
         
         if (DEBUG) console.log("Chosen country: "+country_selected)
     });
@@ -19,7 +19,7 @@ var ChartManager = function () {
         years[0] = $(PUT HERE YEARS SLIDER ID).left_value
         years[1] = $(PUT HERE YEARS SLIDER ID).right_value
 
-        update()
+        update("svgbarchart")
         
         if (DEBUG) console.log("Years: "+years[0]+"-"+"years[1]")
     });**/
@@ -32,7 +32,7 @@ var ChartManager = function () {
     
     // function 
     var drawChart = function() {
-        const svg = d3.select('svg');
+        const svg = d3.select('#svgbarchart');
         const svgContainer = d3.select('#container');
 
         const chart = svg.append('g')
@@ -283,9 +283,9 @@ var ChartManager = function () {
         
     }
 
-    function update() {
-        d3.select('svg').remove()
-        $('#container').append('<svg></svg>')
+    function update(svg_id) {
+        d3.select("#"+svg_id).remove()
+        $('#container').append('<svg id="'+svg_id+'"></svg>')
         drawChart()
     }
 
