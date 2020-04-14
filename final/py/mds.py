@@ -20,7 +20,7 @@ We use the dissimilarity functions
 print(__doc__)
 import numpy as np
 import pandas as pd
-from matplotlib import pyplot as plt,mpld3
+from matplotlib import pyplot as plt
 from sklearn import manifold
 from numpy import dot
 from numpy.linalg import norm
@@ -54,10 +54,10 @@ for i in range(len(d)):
         else:
             dissM2[i][j]= abs (d[i]-d[j])
 
-        if( norm(d[i])*norm(d[j]) !=0):
-            dissM3[i][j]=cos_sim = dot(d[i], d[j])/(norm(d[i])*norm(d[j]))
+        if( (d[i]+d[j]) !=0 ):
+            dissM3[i][j]= abs (d[i]-d[j])/( (d[i]+d[j])*4 )
         else:
-            dissM3[i][j]=cos_sim = dot(d[i], d[j])
+            dissM3[i][j]= abs (d[i]-d[j])
 
         
 
@@ -65,8 +65,12 @@ for i in range(len(d)):
 mds = manifold.MDS(n_components=2, max_iter=300, eps=1e-9,
                    dissimilarity="precomputed")
 pos1 = mds.fit(dissM1).embedding_
+stress1 = mds.fit(dissM1).stress_
 pos2 = mds.fit(dissM2).embedding_
+stress2 = mds.fit(dissM2).stress_
 pos3 = mds.fit(dissM3).embedding_
+stress3 = mds.fit(dissM3).stress_
+
 s = 50
 
 plt.scatter(pos1[:, 0], pos1[:, 1], color='red',s=s, lw=0, label='d[i]-d[j]')
@@ -79,7 +83,7 @@ for label, x, y in zip(countries, pos1[:, 0], pos1[:, 1]):
         arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
 plt.legend()   
 plt.show()
-
+print("Stress 1:",stress1)
 
 plt.scatter(pos2[:, 0], pos2[:, 1], color='red',s=s, lw=0, label='d[i]-d[j]/(d[i]+d[j])')
 for label, x, y in zip(countries, pos2[:, 0], pos2[:, 1]):
@@ -91,15 +95,18 @@ for label, x, y in zip(countries, pos2[:, 0], pos2[:, 1]):
         arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
 plt.legend()   
 plt.show()
+print("Stress 2:",stress2)
 
-plt.scatter(pos3[:, 0], pos3[:, 1], color='red',s=s, lw=0, label='abs(math.log10(d[i])-math.log10(d[j])')
+
+plt.scatter(pos3[:, 0], pos3[:, 1], color='red',s=s, lw=0, label='abs (d[i]-d[j])/( (d[i]+d[j])/2 )')
 for label, x, y in zip(countries, pos3[:, 0], pos3[:, 1]):
    plt.annotate(
        label,
-       xy = (x, y), xytext = (20, 20),
+       xy = (x, y), xytext = (-20, 20),
        textcoords = 'offset points', ha = 'right', va = 'bottom',
        bbox = dict(boxstyle = 'round,pad=0.3', fc = 'yellow', alpha = 0.5),
        arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
 plt.legend()   
 plt.show()
+print("Stress 3:",stress3)
 

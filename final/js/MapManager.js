@@ -27,7 +27,7 @@ var MapManager = function (){
   const svg = map_section
   .append('svg')
   .attr("id","map")
-  .attr('width', width)
+  .attr('width', width-5)
   .attr('height', height);
   	
   $( "#map" ).after( "<div id='mapInstr'><h6 > You can zoom in/out and move using the mouse.    </h6></div>" );
@@ -370,8 +370,8 @@ var MapManager = function (){
     
     
     function updateTexts(){
-      document.getElementById("curr_country").innerText = country;
-      document.getElementById("curr_years").innerText=year_interval[0]+"-"+ year_interval[1];
+      document.getElementById("curr_country").innerText = "Supplier: " + country;
+      document.getElementById("curr_years").innerText="Years:\n"+ year_interval[0]+"-"+ year_interval[1];
       document.getElementById("curr_flag").src="icons/flag-icons/png/"+country+".png";
       d3.select("#curr_flag").attr("width","70px")
     }

@@ -231,7 +231,7 @@ var ChartManager = function () {
             .attr('y', margin / 2.4)
             .attr('transform', 'rotate(-90)')
             .attr('text-anchor', 'middle')
-            .text('Provided units')
+            .text('Supplied units')
             
             svg.append('text')
             .attr('class', 'label')
@@ -245,7 +245,7 @@ var ChartManager = function () {
             .attr('x', width / 2 + margin)
             .attr('y', 40)
             .attr('text-anchor', 'middle')
-            .text('Units provided by '+country_selected+
+            .text('Units supplied by '+country_selected+
             ' from '+years[0]+' to '+years[1])
             
             svg.append('text')

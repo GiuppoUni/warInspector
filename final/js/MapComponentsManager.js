@@ -20,8 +20,8 @@ var MapComponentsManager= function(){
         Range
         */
         
-        var dataTime = d3.range(0, 49).map(function(d) {
-            return new Date(1970 + d, 1, 1);
+        var dataTime = d3.range(0, 30).map(function(d) {
+            return new Date(1989 + d, 1, 1);
         });
         
         
@@ -30,7 +30,7 @@ var MapComponentsManager= function(){
         .min(d3.min(dataTime))
         .max(d3.max(dataTime))
         .step(1000 * 60 * 60 * 24 * 365)
-        .height(600)
+        .height(350)
         .tickFormat(d3.timeFormat('%Y'))
         .tickValues(dataTime)
         .default([new Date(2016, 1, 1),new Date(2018, 1, 1)])

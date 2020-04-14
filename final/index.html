@@ -35,12 +35,12 @@
 </head>
 <body onload="main()">
     <div id="sipriImage">
-        <h6 style="text-align: center;"> Powered by SIPRI data
+        <h6 style="text-align: center;"> Source: 
         <image  id="myImage" src="../icons/SipriLogo.jpg" ></image>
     </h6>
-    <href>https://www.sipri.org/databases/armstransfers</href>
+    <a href="https://www.sipri.org/databases/armstransfers" style="color:aliceblue">SIPRI database</href>
     </div>
-    <p id="description">The page contains three views, each one containing information about military trade between countries. 
+    <p id="description" >The page contains three views, each one containing information about military trade between countries. 
         Views can be customized using buttons and slider you find belove. Arch map will contain supplier and recipient, cloropeth 
         the countries that imported most and a bar chart to visualize easier the data. </p>
 
@@ -50,6 +50,7 @@
         <option  >Arrows view</option>
         <option  >Cloropeth view</option>
     </select>
+    <p> &#8599; You can click here to change the view </p>.
     </div>
     <div id="curr_data">
         <p class="layoutp " align=center style="font-size:125%">Currently displaying:</p> 
@@ -59,9 +60,9 @@
                 <img  id="curr_flag" class="mx-auto d-block"></img>
                 </div>
                 <div class="col text-center">
-                    <p class="layoutp " align=center id="curr_country">
+                    <p class="layoutp " align=center id="curr_country">Supplier:
                     </p>
-                    <p class="layoutp " align=center id="curr_years">
+                    <p class="layoutp " align=center id="curr_years">Years:
                     </p>
                 </div>
             </div>
@@ -78,7 +79,9 @@
                 <hr>
             -->
             <div id="chart" style="height: 100%; text-align: center;">
+                <!-- 
                 <h3 id="title">Number of weapons ordered during the years</h3>
+                -->
                 <div id="container">
                     <svg id="chart-svg"></svg>
                 </div>     
@@ -184,8 +187,8 @@
                         
                     </tr>
                 </table>
-                <h6> &#8599; You can click on a country flag to select it as the supplier.</h6>
-                <h6> You can select range of years moving the slider. &#8594;</h6>
+                <h6> <bold>&#8599;</bold> You can click on a country flag to select it as the supplier.</h6>
+                <h6> You can select range of years moving the slider. <bold> &#8594; </bold></h6>
             </div>
             <div class="col">
                 <h2>Select range of years:</h2>

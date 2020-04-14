@@ -18,11 +18,6 @@ p {
   
 }
 
-p:not(.layoutp){
-
-  margin-left: 50%;
- 
-}
 
 
 ::selection			{ background:#c3effd; color:#000; /* Safari and Opera */ }
@@ -287,4 +282,9 @@ margin-top: 20px;
 
 .app_title{
   font-family: 'Bungee Inline', cursive;
+}
+
+#description{
+  margin-left: 10px;
+  margin-right: 10px;
 }
