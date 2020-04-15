@@ -113,10 +113,10 @@ var MapComponentsManager= function(){
                 d3.selectAll("#arches").remove()
                 mm.drawArches()
             }
-            else{
-                d3.selectAll(".arches").remove()
-                d3.selectAll(".heatmap").remove()
-                
+            else{ 
+                d3.selectAll("#heatmap").remove()
+                d3.selectAll("#legendThreshold").remove()
+                d3.selectAll(".legendCells").remove()
                 mm.drawHeatMap()
             }
         }

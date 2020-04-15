@@ -30,7 +30,7 @@ var MapManager = function (){
   .attr('width', width-5)
   .attr('height', height);
   	
-  $( "#map" ).after( "<div id='mapInstr'><h6 > You can zoom in/out and move using the mouse.    </h6></div>" );
+  $( "#map" ).after( "<div id='mapInstr'><h6 class='instr'> You can zoom in/out and move using the mouse.    </h6></div>" );
   
   svg.call(zoom);
   
@@ -140,7 +140,7 @@ var MapManager = function (){
     localGroup.append('text')
             .attr('class', 'title')
             .attr('id', 'arrows-title')
-            .attr("fill","white")
+            .attr("fill","yellow")
             .attr("stroke","black")
             .attr("stroke-width","0.5")
             .attr('x', width / 2 + 10)
@@ -270,7 +270,7 @@ var MapManager = function (){
   
   
   /*  
-  Draw cloropeth on map (SECOND VIEW)
+  Draw cloropleth on map (SECOND VIEW)
   */
   var drawHeatMap = function(){
     // land.remove()
@@ -278,7 +278,7 @@ var MapManager = function (){
     resetZoom()
     updateTexts()
     
-    document.getElementsByClassName("sphere")[0].style.fill="#fff"
+    document.getElementsByClassName("sphere")[0].style.fill="#01010e"
     
     d3.queue()
     .defer(d3.csv,"data/merged.csv")
@@ -303,14 +303,12 @@ var MapManager = function (){
         
         const max_from_grouped=Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
         
-        // var colorScale = d3.scaleThreshold()
-        // .domain([ max_from_grouped/3,  max_from_grouped/3*2, max_from_grouped])
         // .range(colorScheme);
         console.log("Max_from_grouped",max_from_grouped)
         max_from_grouped==-Infinity?1000:max_from_grouped
-        var colorScale = d3.scaleLinear()
+        var colorScale = d3.scaleThreshold()
         .domain([ 1,10,100,1000,10000,100000])
-        .range( ["#edf8e9", "#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c"] )
+        .range( ["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"] )
         
         
         for (let i = 0; i < grouped.length; i++) {
@@ -323,7 +321,7 @@ var MapManager = function (){
         console.log(g_world)
         // Draw the map
         
-        heatsGroup.append("g")
+        var hm=heatsGroup.append("g")
         .attr("class", "heatmap")
         .attr("id", "heatmap")
         .selectAll("path")
@@ -349,12 +347,17 @@ var MapManager = function (){
         .attr("transform", "translate(20,20)");
         
         lgnd.append("text")
-        .attr("class", "caption")
-        .attr("x", 0)
-        .attr("y", -6)
+        .attr('class', 'title')
+            .attr('id', 'arrows-title')
+            .attr("fill","white")
+            .attr("stroke","black")
+            .attr("stroke-width","0.5")
+            .attr('x', width / 2 + 10)
+            .attr('y', 10)
+            .attr('text-anchor', 'middle')
         .text("N. of weapons "+ country+" delivered to nation during " + year_interval[0]+"-"+year_interval[1]);
         
-        var labels = ['> 1', "> 10","> 100", "> 1000","> 10000","> 100000"];
+        var labels = ['>=	 1', ">= 10",">= 100", ">= 1000",">= 10000",">= 100000"];
         var legend = d3.legendColor()
         .labels(function (d) { return labels[d.i]; })
         .shapePadding(4)

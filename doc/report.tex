@@ -1,4 +1,5 @@
-\documentclass[twocolumn]{article}
+
+\documentclass{article}
 \setlength{\columnsep}{20pt}
 %\usepackage{url}
 %\usepackage{algorithmic}
@@ -12,29 +13,45 @@
 \usepackage{amsmath}
 \usepackage{subfigure}
 \usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}% http://ctan.org/pkg/multicols
+
 
 % Letterspacing macros
 \newcommand{\spacecaps}[1]{\textls[200]{\MakeUppercase{#1}}}
 \newcommand{\spacesc}[1]{\textls[50]{\textsc{\MakeLowercase{#1}}}}
 
-\title{\spacecaps{WarMonopoly}\\ \normalsize \spacesc{Visual Analytics Course Sapienza University of Rome} }
+\title{\vspace{-2.0cm}\spacecaps{WarMonopoly: Visual Analytics of Arms Transfer}\\ \normalsize \spacesc{Visual Analytics Course Sapienza University of Rome} }
 
 \author{Giuseppe Capaldi 1699498\\ Gianmarco Cariggi}
-%\date{\today\\\currenttime}
+%\date{\today\\\currenttime}%
 \date{\today}
 
 \begin{document}
 \maketitle
 
+
+
+
+%%% Big Figure
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.25,center]{fig/va.png}
+   \label{fig:va}
+    \caption{System interface of the web application homepage. I1, I2, I3 are interactive elements whereas V1, V2 are visual elements. }
+
+\end{figure}
+    
+    
 \begin{abstract}
 %
-
 In this report, we present results and design process from "WarMonopoly", an html local page embedding D3.js to visualize some SIPRI (Stockholm International Peace Research Institute) datasets. The page contains user interactive views as barcharts, choropleth map and arc map due to the geographical nature of the data involved. It is present also a scatter plot result of MDS (Multi-Dimensional scaling), computed in python and visualized on the same page, not to preprocess the data but to add new informations to the user. Python program to compute and visualize in real-time MDS depending on user parameters, is hosted on an "Heroku dyno" (a cloud container to host python codes).
 
 
 %
 \end{abstract}
 
+\begin{multicols}{2}
 
 \section{Introduction}
 %
@@ -47,8 +64,10 @@ We started from this to think of what visual analytics technique would have fit 
 
 \section{Dataset}
 %
+
+
 To have a dataset ready to be visualized easily we needed a well formatted file, a CSV (Comma Separated Values) would have been ideal, but the only format offered for our specific dataset of interest (the army transfer database) was RTF (Rich Text Format), that is better to visualize a text due to the presence of text formatting elements, less for storing and visualize a dataset. So we downloaded from: \url{http://armstrade.sipri.org/armstrade/page/trade_register.php} selecting all suppliers and all recipients from 2000 to 2018 (2019 was not present at the time), all weapon system and from supplier register. So after a quick analyis of its content, some Python scripts helped us to reach our CSV file containing a dataset with this format [Table 1]:
-\begin{list}{•}{•}
+\begin{itemize}
 \item \textbf{Ordered}: the number of items ordered under the deal
 \item \textbf{Weapon model}: the designation of the weapon system concerned
 \item \textbf{Weapon category}: description of the weapon system concerned
@@ -57,9 +76,7 @@ To have a dataset ready to be visualized easily we needed a well formatted file,
 \item \textbf{Delivered num}: the number of items delivered or produced under the deal
 \item \textbf{Comments}: any additional information that is known about the deal. This can include the financial value of the deal, what the weapons will ostensibly be used for, whether the weapons are being donated as military aid, and any information on offsets linked to the deal.
  
-\item 
-\item
-\end{list}
+\end{itemize}
 
 
 
@@ -67,10 +84,12 @@ In a second phase in order to draw arrows from a supplier country towards the Re
 
 In order to apply a dimensionality reduction technique, comparing different distance measures and analyzing useful results we used a second dataset [Table 2] from SIPRI, that is obtained using a trend-indicator value (TIV) in order to have for each year an integer number representing how many weapons a country exported. This value takes into account several factors in order to have a consistent measure to compare trades different for number of units, type of weapon ecc.
 
-\onecolumn
-\begin{center}
 
-\begin{table}[hbt!]
+
+%%% Big Tables
+
+\begin{center}
+\begin{table*}[ht]
 \resizebox{\textwidth}{!}{
 \begin{tabular}{||c|c|c|c|c|c|c|c|c||}
 \hline
@@ -83,30 +102,40 @@ Supplier & Recipient & Ordered & Weapon model & Weapon category & Ordered year &
 ...         &              &         &              &                 &              &                &                &             \\ 
 \hline       
 \end{tabular}}
-\end{table}
-\label{tab1}Table 1
 
+\label{tab: d1}
+\caption { \label { tab:d1} Attributes of dataset in \texttt{Trade-Register-2010-2018.csv} file.  }
+
+\end{table*}
 \end{center}
 
 \begin{center}
-\begin{table}[hbt!]
+\begin{table*}[hbt!]
 \resizebox{\textwidth}{!}{
 \begin{tabular}{||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l||}
+
+
 \hline
-          & 2000 & 2001 & 2002 & 2003 & 2004 & 2005 & 2006 & 2007 & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 & 2015 & 2016 & 2017 & 2018 & 2019 \\
+          & 1989 & ... & 2002 & 2003 & 2004 & 2005 & 2006 & 2007 & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 & 2015 & 2016 & 2017 & 2018 & 2019 \\
           \hline
 ...       &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      \\
 \hline
-Australia &      & 43   & 47   & 44   & 2    & 49   & 14   & 18   & 26   & 80   & 115  & 143  & 45   & 54   & 97   & 87   & 134  & 98   & 38   & 148  \\
+Australia &    13  & ...   & 47   & 44   & 2    & 49   & 14   & 18   & 26   & 80   & 115  & 143  & 45   & 54   & 97   & 87   & 134  & 98   & 38   & 148  \\
 \hline
 ...       &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &     \\
 \hline
+
 \end{tabular}
 }
-\end{table}
-\label{Table 2} Table 2
+\label{tab:d2}
+
+\caption { \label { tab:d2} Attributes of dataset in \texttt{importNumbers1989-2018.csv} file.   }
+
+\end{table*}
+
+
 \end{center}
-\twocolumn
+
 
 \section{Design process}
 %
@@ -136,46 +165,69 @@ Finally we chose to add MDS analysis using a the already mentioned second datase
 
 \section{Visualization}
 \subsection{Arc map}
-Arc map shows a world map using Mercator projection object to draw states and keep proportions when a zoom or a drag on the map is applied. We chose to use an high contrast palette to make easier to see yellow arrows connecting the different states.  
-\section{Interaction}
+The Arc map (which is the one showed on main page)shows a world map using Mercator projection object to draw states and keep proportions when a zoom or a drag on the map is applied. We chose to use an high contrast palette to make easier to see yellow arrows connecting the different states. Countries have been drawn using \textit{topojson} mesh of a local file. Then at start and every time a slider/button changes the range of years and/or the supplier country of interest, a \textit{drawArches} function is called, to remove any possible previous arc and add to the svg new d3 elements which are the arrows (a path with the coordinates of its start and end point) and the text corresponding to each transaction that is covered by the filtering. In a second moment a circle was added to make easier to distinguish the state from which the order was shipped from.
 
-
+\subsection{Cloropleth map}
+The clorepleth map uses the same method of the map presented above to draw the different states but instead of arches here we chose to color each state with different gradient of green proportional to the sum of the number of delivered units (computed using a group by and storing the result in a data structure) from the specified supplier to each state, always respecting the filtering. The range of colors, written also on the legend visible to the user, is written in (4). Several colors have been considered to be used, but green was chosen at the end for the ability of every user to see it clearly more than any other colors, but it has the drawback to give the user an implicit idea of “positive message” (whereas we are talking about war trading and in this case, possible military alliances, even with not democratic countries), but also a color like red one could have sent the opposite message (whereas not every possible alliance should be considered dangerous, e.g. with border countries or in the same continent).
 \begin{align}
-    r &= e \cdot \Delta_t \label{eq:abc}
+	range=\{1,10,100,1000,10000,100000\}
 \end{align}
 
 
-\section{Results}
+\subsection{Bar chart}
+
+The bar chart view was introduced to make possible a more clear comparison and it uses the same dataset of the other two views. Here 
+
+\subsection{Mds}
+
+\section{Interaction}
+User can interact with both views (V1,V2 on \textit{Figure 1}) that are coordinated, acting on buttons (I2 on \textit{Figure 1}) to select the country he wants to choose as the supplier of transaction and on slider to choose the years between which the transactions happened (I2 on \textit{Figure 1}). Also, a $<$select$>$ HTML element is present on top of the page (I1 on \textit{Figure 1}), clicking it will display a two elements drop-down list to choose between arc map and cloropleth map. Other possible interactions for the user are  to act on both maps using the mouse, dragging (moving while click down) to move and zooming (using the mouse wheel) in or out. 
 
 
-\begin{figure}[hbt!]
-\centering
-    \subfigure[]{\includegraphics[width=.3\linewidth]{fig/black.jpg}\label{fig:demo-standard}}
-    \subfigure[]{\includegraphics[width=.3\linewidth]{fig/black.jpg}\label{fig:demo-fancy}}
-    \caption{Result from task X showing \subref{fig:demo-standard} standard rendering compared to fancy rendering in \subref{fig:demo-fancy}. Notice the improved smoothness of the fancy rendering which was achieved through the use of Equation~\ref{eq:abc} and \emph{knowledge}. Shading is typically a trade-off between computation time and visual quality.}
-    \label{fig:demo}
-\end{figure}
+
+\section{Discussion}
+
+This section discusses the implications and limitations of our work and some design lessons we learned.
+\subsection{Implications}
+To the best of our knowledge, WarMonopoly is the first visual analytics interactive system that efficiently incorporates  global data of world arms trading. The availability of WarMonopoly together with some improvements and further SIPRI data could 
+significantly promotes the exploration of global military trading in order to increase trasparency in this field and show possible alliances that should move public opinion. 
+
+\subsection{Limitations}
+
+Some limitations are observed in our work. First, data found on SIPRI can be considered highly accurate but it is missing data from some countries (e.g. North Korea) that are unavailable for different reasons or deliberately distorted data. Second, MDS analysis uses rough distance measures that could show some patterns when big countries (e.g United States) stand out as expected but could not  give room to deeper analysis.
+Third, as already mentioned in our work we sum up number of delivered units without considering the value of the units (e.g. hundreds of portable radio equipment is worth much less than one single fighter jet). This could lead easily, especially comparing low number exporter/importer to false considerations. However should be considered how just a simple economic analisys and report about the economic value of a weapon model or category could significantly improve the results.
+
+
 
 
 \section{Conclusion}
+Through the development of this project we learned more about the considerations and design choices that take place when working on a visual analitycs but also we faced the importance of a well formatted data to make comparisons and analysis easier and more reasonable.
 
+\end{multicols}
 
 \onecolumn{
 \begin{thebibliography}{9}
+
+\bibitem{d3} 
+d3.js official page:
+\\\texttt{https://d3js.org/}
+
+
 \bibitem{latexcompanion} 
-Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
-\textit{The \LaTeX\ Companion}. 
-Addison-Wesley, Reading, Massachusetts, 1993.
+SIPRI datasets page:
+\\\texttt{https://www.sipri.org/databases/armstransfers}
 
 \bibitem{einstein} 
-Albert Einstein. 
-\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
-[\textit{On the electrodynamics of moving bodies}]. 
-Annalen der Physik, 322(10):891–921, 1905.
+SIPRI page about sources and methods used:
+\\\texttt{https://www.sipri.org/databases/milex/sources-and-methods}
 
-\bibitem{knuthwebsite} 
-Knuth: Computers and Typesetting,
-\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+
+\bibitem{einstein} 
+Source suggesting azle.js for layout:
+\\\texttt{https://towardsdatascience.com/creating-web-applications-with-d3-observable-d5c53467ff12}
+
+
+
 \end{thebibliography}
 }
 

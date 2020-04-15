@@ -28,10 +28,10 @@ from numpy.linalg import norm
 
 
 data = pd.io.parsers.read_csv(
-     '../data/importNumbers2000-2018.csv' 
+     '../data/importNumbers1989-2018.csv' 
     )
 print(data.columns, data)
-d=data["2019"] 
+d=data["2018"] 
 d=d.fillna(0)
 
 print( "\n\n",np.all(np.isfinite(d)), not np.any(np.isnan(d)))

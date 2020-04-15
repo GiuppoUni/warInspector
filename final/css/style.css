@@ -253,6 +253,9 @@ text.title {
 text.label {
   font-size: 14px;
   font-weight: 400;
+  fill: white;
+  stroke:black;
+  stroke-width:0.4;
 }
 
 text.source {
@@ -287,4 +290,10 @@ margin-top: 20px;
 #description{
   margin-left: 10px;
   margin-right: 10px;
+  font-size: 14px;
 }
+
+.instr{
+  font-size: 12px;
+}
+

@@ -36,21 +36,21 @@
 <body onload="main()">
     <div id="sipriImage">
         <h6 style="text-align: center;"> Source: 
-        <image  id="myImage" src="../icons/SipriLogo.jpg" ></image>
+        <image  id="myImage" src="icons/SipriLogo.jpg" ></image>
     </h6>
     <a href="https://www.sipri.org/databases/armstransfers" style="color:aliceblue">SIPRI database</href>
     </div>
-    <p id="description" >The page contains three views, each one containing information about military trade between countries. 
-        Views can be customized using buttons and slider you find belove. Arch map will contain supplier and recipient, cloropeth 
+    <p id="description" >The page contains three views, each one visualizing information about military trade between countries. 
+        Views can be customized using buttons and slider you find belove. Arch map will contain supplier and recipient, cloropleth 
         the countries that imported most and a bar chart to visualize easier the data. </p>
 
     <div class="bootstrap-select-wrapper" id="selection">
-        <label for="exampleFormControlSelect1" style="color:white; margin-left: 10px">Select view:</label>
+        <label for="exampleFormControlSelect1" style="color:white; margin-left: 10px">Current map</label>
         <select  class="form-control"   onChange="changeView(this.value);"">
         <option  >Arrows view</option>
-        <option  >Cloropeth view</option>
+        <option  >Cloropleth view</option>
     </select>
-    <p> &#8599; You can click here to change the view </p>.
+    <p class=instr> &#8599; You can click here to change the view </p>.
     </div>
     <div id="curr_data">
         <p class="layoutp " align=center style="font-size:125%">Currently displaying:</p> 
@@ -88,9 +88,11 @@
             </div>
         </div>
 
-        <div id="map_slider" class="row" style="width: 100%; margin: 0 auto; background-color: black;">
+        <div id="map_slider" class="row" style="width: 100%; height:100%; margin: 0 auto; background-color: black;">
             <div class="col" style=" margin: 0 auto; background-color: black;">
-                <h2>Select the supplier country:</h2>
+            </br>
+                <h2 class="title" style="text-align: center;">Supplier country</h2>
+            </br>
                 <table id="country-choice" style="width:100%; ">
                     <tr align="center">
                         <td><input type="image"  id="0" width="20px" src="icons/flag-icons/png/Albania.png" onclick="clickedNation(this.id)" /> <span class="tooltiptext">Albania</span> </td>
@@ -187,11 +189,12 @@
                         
                     </tr>
                 </table>
-                <h6> <bold>&#8599;</bold> You can click on a country flag to select it as the supplier.</h6>
-                <h6> You can select range of years moving the slider. <bold> &#8594; </bold></h6>
+                <h6 class="instr"> <bold>&#8599;</bold> You can click on a country flag to select it as the supplier.</h6>
+                <h6 class="instr"> You can select range of years moving the slider. <bold> &#8594; </bold></h6>
             </div>
             <div class="col">
-                <h2>Select range of years:</h2>
+            </br>
+                <h2 style="text-align: center;">Years</h2>
                 <div  class="row " style=" width:50%; margin: 0 auto; " >
                     <div class="col" >
                         <div id="slider-range"></div>

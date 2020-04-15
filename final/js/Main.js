@@ -21,7 +21,7 @@ function main() {
     .select('tr > td').node()
   
     csec.appendChild(document.getElementById("charts-div") )
-    
+    $('#title').html("Hello World");
 
     mcm = MapComponentsManager();
     mm = MapManager();
@@ -65,7 +65,7 @@ function clickedNation(id){
 */
 function changeView(value){
     console.log("Changed selection")
-    if(value=="Cloropeth view"){
+    if(value=="Cloropleth view"){
         d3.selectAll("#arches").remove()
         mm.drawHeatMap()
     }

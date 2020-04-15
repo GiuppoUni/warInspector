@@ -240,10 +240,12 @@ var ChartManager = function () {
             .attr('text-anchor', 'middle')
             .text('Years')
             
-            svg.append('text')
-            .attr('class', 'title')
-            .attr('x', width / 2 + margin)
-            .attr('y', 40)
+            svg.append('text')   
+            .attr("fill","yellow")
+            .attr("stroke","black")
+            .attr("stroke-width","0.5")
+            .attr('x', width / 2 + 10)
+            .attr('y', 30)
             .attr('text-anchor', 'middle')
             .text('Units supplied by '+country_selected+
             ' from '+years[0]+' to '+years[1])
