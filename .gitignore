@@ -1,1 +1,7 @@
 ./mds-heroku/images/*
+
+# documentation's temp files
+*.aux
+*.log
+*.synctex.gz
+
