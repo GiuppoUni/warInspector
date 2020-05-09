@@ -115,9 +115,11 @@ function getDataFromPost(){
             // console.log(root[3])
             
             script_str = root[3]
-            .substring(root[3].indexOf("<div id"),root[3].length ) 
+            //.substring(root[3].indexOf("<div id"),root[3].length ) 
+            .replace("<style>","")
+            .replace("</style>","")
             
-           // console.log(script_str)
+            console.log(script_str)
             
             $("div[id*='fig']").remove();            
             
