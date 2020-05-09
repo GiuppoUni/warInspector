@@ -3,7 +3,7 @@ var ChartManager = function () {
     var years = [2016,2020];
     var country_selected = "France";
     
-    const chart_section = d3.select('#chart-section')
+    const chart_section = d3v4.select('#chart-section')
     console.log(chart_section.node().getAttribute("height") )
     const margin = 80;
     const width = 1000 - 2 * margin;
@@ -24,7 +24,7 @@ var ChartManager = function () {
         
         country_selected = $('#country-selection').val()
         
-        d3.select('svg').remove()
+        d3v4.select('svg').remove()
         $('#container').append('<svg></svg>')
         drawChart()
         
@@ -38,15 +38,15 @@ var ChartManager = function () {
     var drawChart = function() {
         
         
-        const svg = d3.select("#chart-svg");
-        const svgContainer = d3.select('#container');
+        const svg = d3v4.select("#chart-svg");
+        const svgContainer = d3v4.select('#container');
         
         const chart = svg.append('g')
         .attr('transform', `translate(${margin}, ${margin})`);
         
         //data loading
-        d3.queue()
-        .defer(d3.csv, 'static/data/merged.csv')
+        d3v4.queue()
+        .defer(d3v4.csv, 'static/data/merged.csv')
         .await(ready)
         
         
@@ -106,33 +106,33 @@ var ChartManager = function () {
             list_years.push(i);
             
             
-            const xScale = d3.scaleBand()
+            const xScale = d3v4.scaleBand()
             .range([0, width])
             .domain(list_years)
             .paddingInner(0.4)
             
-            const yScale = d3.scaleLinear()
+            const yScale = d3v4.scaleLinear()
             .range([height, 0])
             .domain([0, max_value]);
             
             // vertical grid lines
-            // const makeXLines = () => d3.axisBottom()
+            // const makeXLines = () => d3v4.axisBottom()
             //                              .scale(xScale)
             
-            const makeYLines = () => d3.axisLeft()
+            const makeYLines = () => d3v4.axisLeft()
             .scale(yScale)
             
             chart.append('g')
             .attr('transform', `translate(0, ${height})`)
-            .call(d3.axisBottom(xScale));
+            .call(d3v4.axisBottom(xScale));
 
             const yAxisTicks = yScale.ticks()
             .filter(Number.isInteger);
             
             chart.append('g')
-            .call(d3.axisLeft(yScale)
+            .call(d3v4.axisLeft(yScale)
             .tickValues(yAxisTicks)
-            .tickFormat(d3.format('d'))
+            .tickFormat(d3v4.format('d'))
             );
             
             // vertical grid lines
@@ -165,10 +165,10 @@ var ChartManager = function () {
             .attr('height', (g) => height - yScale(g[1]))
             .attr('width', xScale.bandwidth())
             .on('mouseenter', function (actual, i) {
-                d3.selectAll('.value')
+                d3v4.selectAll('.value')
                 .attr('opacity', 0)
                 
-                d3.select(this)
+                d3v4.select(this)
                 .transition()
                 .duration(300)
                 .attr('opacity', 0.6)
@@ -202,10 +202,10 @@ var ChartManager = function () {
                 
             })
             .on('mouseleave', function () {
-                d3.selectAll('.value')
+                d3v4.selectAll('.value')
                 .attr('opacity', 1)
                 
-                d3.select(this)
+                d3v4.select(this)
                 .transition()
                 .duration(300)
                 .attr('opacity', 1)
@@ -293,7 +293,7 @@ var ChartManager = function () {
     }
     
     function update() {
-        d3.select('#chart-svg').remove()
+        d3v4.select('#chart-svg').remove()
         $('#container').append('<svg id="chart-svg"></svg>')
         drawChart()
     }

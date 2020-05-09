@@ -4,7 +4,7 @@
 var MapManager = function (){
   
   
-  const map_section=d3.select('#mapCont')
+  const map_section=d3v4.select('#mapCont')
   .select('tr')
   .select('tr > td')
 
@@ -13,14 +13,14 @@ var MapManager = function (){
   const width = map_section.node().getBoundingClientRect().width;
   const height = map_section.node().getBoundingClientRect().height;
   
-  const projection = d3.geoMercator()
+  const projection = d3v4.geoMercator()
   .translate([width / 2, height / 2])
   .scale((width - 1) / 2 / Math.PI);
   
-  const path = d3.geoPath()
+  const path = d3v4.geoPath()
   .projection(projection);
   
-  const zoom = d3.zoom()
+  const zoom = d3v4.zoom()
   .scaleExtent([1, 8])
   .on('zoom', zoomed);
   
@@ -47,7 +47,7 @@ var MapManager = function (){
   var heatsGroup= stateGroup.append("g")
   var palette = ['#009933','#669900','#99cc00','#cccc00','#c7dc09','#edf933','#ffcc00', '#ff9933', '#ff6600','#ff5050'];
   
-  var line_gen = d3.line()
+  var line_gen = d3v4.line()
   .x(function(d){return d[0];})
   .y(function(d){return d[1];});
   
@@ -66,10 +66,10 @@ var MapManager = function (){
     
     
     
-    d3.queue()
-    .defer(d3.json,"static/data/world.json")
-    //.defer(d3.csv,"static/data/merged.csv")
-    .defer(d3.csv,"static/data/countries.csv")
+    d3v4.queue()
+    .defer(d3v4.json,"static/data/world.json")
+    //.defer(d3v4.csv,"static/data/merged.csv")
+    .defer(d3v4.csv,"static/data/countries.csv")
     .await(ready)
     
     function ready(error,world,country_locations){
@@ -115,10 +115,10 @@ var MapManager = function (){
   function zoomed() {
     g
     .selectAll('path') // To prevent stroke width from scaling
-    .attr('transform', d3.event.transform);
+    .attr('transform', d3v4.event.transform);
     if(circle != undefined)
-      circle.attr('transform', d3.event.transform);
-    d3.selectAll("textPath").attr('transform', d3.event.transform)
+      circle.attr('transform', d3v4.event.transform);
+    d3v4.selectAll("textPath").attr('transform', d3v4.event.transform)
     
   }
   
@@ -131,7 +131,7 @@ var MapManager = function (){
     document.getElementsByClassName("sphere")[0].style.fill="#bef7e4"
     
     //To reset:
-    d3.selectAll("#arches").remove()
+    d3v4.selectAll("#arches").remove()
     linked=[]
     
     var localGroup = archesGroup.append("g").attr("id","arches")
@@ -151,8 +151,8 @@ var MapManager = function (){
 
     
     
-    d3.queue()
-    .defer(d3.csv,"static/data/merged.csv")
+    d3v4.queue()
+    .defer(d3v4.csv,"static/data/merged.csv")
     .await(ready)
     
     function ready(error,transactions){
@@ -280,22 +280,22 @@ var MapManager = function (){
     
     document.getElementsByClassName("sphere")[0].style.fill="#01010e"
     
-    d3.queue()
-    .defer(d3.csv,"static/data/merged.csv")
-    .defer(d3.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
+    d3v4.queue()
+    .defer(d3v4.csv,"static/data/merged.csv")
+    .defer(d3v4.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
     .await(ready)
     
     function ready(error,transactions,topo){
       console.log(transactions)
       // Data and color scale
-      var data = d3.map();
+      var data = d3v4.map();
       
       
-      var grouped = d3
+      var grouped = d3v4
       .nest()
       .key(function(d) { return d.codeR; })
       //.rollup(function(v) { return v.length; })
-      .rollup(function(v) { return d3.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g,""); }) })
+      .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g,""); }) })
       .entries(transactions.filter(d => d.Supplier==country).filter(d => 
         parseInt( d["Ordered year"].replace(/\(|\)/g,"") ) >= year_interval[0] 
         && parseInt( d["Ordered year"].replace(/\(|\)/g,"") ) <= year_interval[1] ));
@@ -306,7 +306,7 @@ var MapManager = function (){
         // .range(colorScheme);
         console.log("Max_from_grouped",max_from_grouped)
         max_from_grouped==-Infinity?1000:max_from_grouped
-        var colorScale = d3.scaleThreshold()
+        var colorScale = d3v4.scaleThreshold()
         .domain([ 1,10,100,1000,10000,100000])
         .range( ["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"] )
         
@@ -358,7 +358,7 @@ var MapManager = function (){
         .text("N. of weapons "+ country+" delivered to nation during " + year_interval[0]+"-"+year_interval[1]);
         
         var labels = ['>=	 1', ">= 10",">= 100", ">= 1000",">= 10000",">= 100000"];
-        var legend = d3.legendColor()
+        var legend = d3v4.legendColor()
         .labels(function (d) { return labels[d.i]; })
         .shapePadding(4)
         .scale(colorScale);
@@ -376,13 +376,13 @@ var MapManager = function (){
       document.getElementById("curr_country").innerText = "Supplier: " + country;
       document.getElementById("curr_years").innerText="Years:\n"+ year_interval[0]+"-"+ year_interval[1];
       document.getElementById("curr_flag").src="static/icons/flag-icons/png/"+country+".png";
-      d3.select("#curr_flag").attr("width","70px")
+      d3v4.select("#curr_flag").attr("width","70px")
     }
     
     var resetZoom = function(){
       svg.transition()
       .duration(100)
-      .call(zoom.transform, d3.zoomIdentity);
+      .call(zoom.transform, d3v4.zoomIdentity);
     }
     
   var setYearInterval = function(yi){

@@ -1,5 +1,5 @@
 
-// const map_components_section=d3.select('#map')
+// const map_components_section=d3v4.select('#map')
 // .select('tr')
 // .select('tr > td')
 
@@ -20,25 +20,25 @@ var MapComponentsManager= function(){
         Range
         */
         
-        var dataTime = d3.range(0, 30).map(function(d) {
+        var dataTime = d3v4.range(0, 30).map(function(d) {
             return new Date(1989 + d, 1, 1);
         });
         
         
-        var sliderRange = d3
+        var sliderRange = d3v4
         .sliderLeft()
-        .min(d3.min(dataTime))
-        .max(d3.max(dataTime))
+        .min(d3v4.min(dataTime))
+        .max(d3v4.max(dataTime))
         .step(1000 * 60 * 60 * 24 * 365)
         .height(350)
-        .tickFormat(d3.timeFormat('%Y'))
+        .tickFormat(d3v4.timeFormat('%Y'))
         .tickValues(dataTime)
         .default([new Date(2016, 1, 1),new Date(2018, 1, 1)])
         .fill('#FFD300')
         .on('onchange', val => {
-            //d3.select('p#value-time').text(d3.timeFormat('%Y')(val));
-            d3.select('p#value-range').text(val.map( d3.timeFormat('%Y') ).join('-'));
-            var year_interval = val.map( d3.timeFormat('%Y') ).map( s => parseInt(s));
+            //d3v4.select('p#value-time').text(d3v4.timeFormat('%Y')(val));
+            d3v4.select('p#value-range').text(val.map( d3v4.timeFormat('%Y') ).join('-'));
+            var year_interval = val.map( d3v4.timeFormat('%Y') ).map( s => parseInt(s));
             mm.setYearInterval(year_interval)
             if(sliderTimer!=undefined)
                 clearTimeout(sliderTimer)
@@ -52,7 +52,7 @@ var MapComponentsManager= function(){
         
         
         
-        var gRange = d3
+        var gRange = d3v4
         .select('div#slider-range')
         .append('svg')
         .attr('width', 100)
@@ -62,10 +62,10 @@ var MapComponentsManager= function(){
         
         gRange.call(sliderRange);
         
-        d3.select('p#value-range').text(
+        d3v4.select('p#value-range').text(
             sliderRange
             .value()
-            .map( d3.timeFormat('%Y') )
+            .map( d3v4.timeFormat('%Y') )
             .join('-')
             );
             
@@ -75,20 +75,20 @@ var MapComponentsManager= function(){
             */
             
             // data = ["Gino","Er","Grilli"]
-            // var sliderStep = d3
+            // var sliderStep = d3v4
             // .sliderLeft()
             // .min(data[0])
             // .max(data[data.length-1])
             // .width(300)
-            // .tickFormat(d3.format('.2%'))
+            // .tickFormat(d3v4.format('.2%'))
             // .ticks(5)
             // .step(0.005)
             // .default(0.015)
             // .on('onchange', val => {
-            //     d3.select('p#value-step').text(val);
+            //     d3v4.select('p#value-step').text(val);
             // });
             
-            // var gStep = d3
+            // var gStep = d3v4
             // .select('div#slider-step')
             // .append('svg')
             // .attr('width', 100)
@@ -98,7 +98,7 @@ var MapComponentsManager= function(){
             
             // gStep.call(sliderStep);
             
-            // d3.select('p#value-step').text( (sliderStep.value()) );
+            // d3v4.select('p#value-step').text( (sliderStep.value()) );
             
             
             
@@ -108,15 +108,15 @@ var MapComponentsManager= function(){
             Called on years slider change
         */
         function update() {
-            // d3.selectAll(".arches").remove()
+            // d3v4.selectAll(".arches").remove()
             if(document.getElementById("arches")!=null ){ 
-                d3.selectAll("#arches").remove()
+                d3v4.selectAll("#arches").remove()
                 mm.drawArches()
             }
             else{ 
-                d3.selectAll("#heatmap").remove()
-                d3.selectAll("#legendThreshold").remove()
-                d3.selectAll(".legendCells").remove()
+                d3v4.selectAll("#heatmap").remove()
+                d3v4.selectAll("#legendThreshold").remove()
+                d3v4.selectAll(".legendCells").remove()
                 mm.drawHeatMap()
             }
         }

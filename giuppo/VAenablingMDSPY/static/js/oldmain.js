@@ -4,12 +4,12 @@ function main() {
     width = 800 - margin.left - margin.right;
     
 
-    const zoom = d3.zoom()
+    const zoom = d3v4.zoom()
     .scaleExtent([1, 8])
     .on('zoom', zoomed);
 
 
-    var svg = d3.select("#map")
+    var svg = d3v4.select("#map")
     .append("svg")
     .attr("height", height + margin.top + margin.bottom)
     .attr("width", width + margin.left + margin.right)
@@ -21,18 +21,18 @@ function main() {
     /*
     Read geojson kind file
     */            
-    d3.queue()
-    .defer(d3.json,"static/data/world.topojson")
-    .defer(d3.csv,"static/data/merged.csv")
-    .defer(d3.csv,"static/data/countries.csv")
+    d3v4.queue()
+    .defer(d3v4.json,"static/data/world.topojson")
+    .defer(d3v4.csv,"static/data/merged.csv")
+    .defer(d3v4.csv,"static/data/countries.csv")
     .await(ready)
     
     //We need to do a projection from round globe to screen flat map
-    var projection = d3.geoMercator()
+    var projection = d3v4.geoMercator()
     .translate([ width/2 , height/2 ])
     .scale(100) //the bigger the closer
     
-    var path = d3.geoPath()
+    var path = d3v4.geoPath()
     .projection(projection) //create a path using the projection
     
     function ready(error,data,merged,country_locations){
@@ -52,7 +52,7 @@ function main() {
         .attr("class","country")
         .attr("d",path) //d = list of coordinates to draw a shape
         .on('click',function(d){
-            c=d3.select(this)
+            c=d3v4.select(this)
             if(!c.classed("selected"))
             //Add the class selected 
             c.classed("selected", true)
@@ -117,7 +117,7 @@ function main() {
         Draw lines from suppliers to recipients
         */
         //console.log(merged)
-        // const curve = d3.line().curve(d3.curveNatural);
+        // const curve = d3v4.line().curve(d3v4.curveNatural);
         
         g.selectAll(".trade-line")
         .data(merged)
@@ -174,7 +174,7 @@ function main() {
     function zoomed() {
         g
           .selectAll('path') // To prevent stroke width from scaling
-          .attr('transform', d3.event.transform);
+          .attr('transform', d3v4.event.transform);
       }
 
 }
