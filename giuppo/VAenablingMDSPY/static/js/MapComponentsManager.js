@@ -37,6 +37,7 @@ var MapComponentsManager= function(){
         .fill('#FFD300')
         .on('onchange', val => {
             //d3v4.select('p#value-time').text(d3v4.timeFormat('%Y')(val));
+            console.log(val)
             d3v4.select('p#value-range').text(val.map( d3v4.timeFormat('%Y') ).join('-'));
             var year_interval = val.map( d3v4.timeFormat('%Y') ).map( s => parseInt(s));
             mm.setYearInterval(year_interval)

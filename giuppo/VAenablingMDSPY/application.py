@@ -48,8 +48,6 @@ class DataStore():
     CountryName=None
     Year1=None
     Year2=None
-    Prod= None
-    Loss=None
 data=DataStore()
 
 
@@ -169,10 +167,8 @@ def homepage():
     data.Year1=Year1
     data.Year2=Year2
     
-    data.Prod=[1,2]
-    data.Loss=[3,4]
 
-    return render_template("myIndex.html",CountryName=CountryName,Year1=Year1,Year2=Year2,Prod=data.Prod,Loss=data.Loss)
+    return render_template("myIndex.html",CountryName=CountryName,Year1=Year1,Year2=Year2)
 
 
 @application.route("/get-data",methods=["GET","POST"])
