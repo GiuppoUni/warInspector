@@ -8,8 +8,7 @@ var MapComponentsManager= function(){
     var sliderTimer;
     var drawSlider=function (){
         var div = document.getElementById("map_slider");                       // Create a <p> node
-        var map_component_section = document.getElementById("mapCont")
-        .childNodes[0].childNodes[1];
+        var map_component_section = document.body
         map_component_section.appendChild(div);                                          // Append the text to <p>
         
         // var countries_slider = document.getElementById("country_slider");
@@ -74,16 +73,13 @@ var MapComponentsManager= function(){
         */
         function update() {
             // d3v4.selectAll(".arches").remove()
-            if(document.getElementById("arches")!=null ){ 
-                d3v4.selectAll("#arches").remove()
-                mm.drawArches()
-            }
-            else{ 
-                d3v4.selectAll("#heatmap").remove()
-                d3v4.selectAll("#legendThreshold").remove()
-                d3v4.selectAll(".legendCells").remove()
-                mm.drawHeatMap()
-            }
+            
+            d3v4.selectAll("#heatmap").remove()
+            d3v4.selectAll("#legendThreshold").remove()
+            d3v4.selectAll(".legendCells").remove()
+            mm.drawCloroExp()
+            mm.drawCloroImp()
+            
         }
         
         

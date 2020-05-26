@@ -80,8 +80,10 @@ print(year_range_str)
 #         print(c)
 
 # Merging with alpha3 Countries
-df_imp = df_imp.merge(df_countries,left_on="Country Name",right_on="name")
-df_imp[all_years] = df_imp.groupby(['code3'])[all_years].transform('sum')
+# df_imp = df_imp.merge(df_countries,left_on="Country Name",right_on="name")
+# df_imp[all_years] = df_imp.groupby(['code3'])[all_years].transform('sum')
+df_imp = pd.read_csv("df_imp_clean.csv")
+
 
 df_mrgd_imp = df_imp.iloc[:,[0,-1,-2,-3,-4]] 
 df_mrgd_imp.rename(columns={"code3":"Country Code"}, inplace=True)
@@ -124,8 +126,9 @@ df_mrgd_imp['POP_TOTAL'] = df_mrgd_imp.groupby(['Country Code'])['POP_TOTAL'].tr
 df_mrgd_imp = df_mrgd_imp.drop_duplicates(subset=["Country Name","Country Code"])
 
 # Merging for final EXP
-df_exp = df_exp.merge(df_countries,left_on="Country Name",right_on="name")
-df_exp[all_years] = df_exp.groupby(['code3'])[all_years].transform('sum')
+# df_exp = df_exp.merge(df_countries,left_on="Country Name",right_on="name")
+# df_exp[all_years] = df_exp.groupby(['code3'])[all_years].transform('sum')
+df_exp = pd.read_csv("df_exp_clean.csv")
 
 df_mrgd_exp = df_exp.iloc[:,[0,-1,-2,-3,-4]] 
 df_mrgd_exp.rename(columns={"code3":"Country Code"}, inplace=True)
@@ -204,29 +207,32 @@ colors = ['y', 'b']
 
 indicesToKeep = finalDf["target"].apply(lambda x: x in selected)
 
-pc1 = finalDf.loc[indicesToKeep, 'principal component 1'].to_list()
-pc2 = finalDf.loc[indicesToKeep, 'principal component 2'].to_list()
-names = finalDf.loc[indicesToKeep, "target"].to_list()
 
-ax.scatter( pc1, pc2 
-        , c = "y"
-        , s = 50)
-for i,r in enumerate(zip(names, pc1, pc2)):
-    ax.annotate(r[0], (pc1[i], pc2[i] ))
 
-indicesToKeep = ~ indicesToKeep
-pc1 = finalDf.loc[indicesToKeep, 'principal component 1'].to_list()
-pc2 = finalDf.loc[indicesToKeep, 'principal component 2'].to_list()
-names = finalDf.loc[indicesToKeep, "target"].to_list()
+indicesToKeep2 = ~ indicesToKeep
+pc1 = finalDf.loc[indicesToKeep2, 'principal component 1'].to_list()
+pc2 = finalDf.loc[indicesToKeep2, 'principal component 2'].to_list()
+names = finalDf.loc[indicesToKeep2, "target"].to_list()
 ax.scatter( pc1, pc2 
         , c = "b"
         , s = 50)
 
 ax.legend(selected)
 ax.grid()
-# for t in names:
+# non targets:
 for i,r in enumerate(zip(names, pc1, pc2)):
-    ax.annotate(r[0], (pc1[i], pc2[i] ))
+    if( pc1[i] > 0.2 and pc2[i] > 0.2):
+        ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
+
+pc1 = finalDf.loc[indicesToKeep, 'principal component 1'].to_list()
+pc2 = finalDf.loc[indicesToKeep, 'principal component 2'].to_list()
+names = finalDf.loc[indicesToKeep, "target"].to_list()
+
+ax.scatter( pc1, pc2 
+        , c = "y"
+        , s = 100)
+for i,r in enumerate(zip(names, pc1, pc2)):
+    ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
 
 print(names)
 plt.show()

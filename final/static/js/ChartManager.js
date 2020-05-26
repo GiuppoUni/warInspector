@@ -3,8 +3,6 @@ var ChartManager = function () {
     var years = [2016,2020];
     var country_selected = "France";
     
-    const chart_section = d3v4.select('#chart-section')
-    console.log(chart_section.node().getAttribute("height") )
     const margin = 80;
     const width = 1000 - 2 * margin;
     const height = 600 - 2 * margin;

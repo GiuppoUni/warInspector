@@ -10,20 +10,11 @@ function main() {
     //Layout movements
     
    getDataFromPost();
-    var holdUpper=document.getElementsByClassName("hold_dropdowns_layout_cells")
-    var holdTop=document.getElementsByClassName("top_banner_layout_rows")[0].children[1]
-    
-    holdUpper[1].appendChild(document.getElementById("curr_data"));
-    holdUpper[2].appendChild(document.getElementById("sipriImage"));
-    
-    holdTop.appendChild(document.getElementById("description"))
     
     
-    var csec=d3v4.select("#chart-section").select('tr')
-    .select('tr > td').node()
+
     
-    csec.appendChild(document.getElementById("charts-div") )
-    $('#title');
+
 
     document.body.appendChild(document.getElementById("load-anim"))
     
@@ -32,7 +23,8 @@ function main() {
     cm = ChartManager();
     
     
-    mm.drawHeatMap(); 
+    mm.drawCloroExp(); 
+    mm.drawCloroImp();
 
     mcm.drawSlider()
     
@@ -51,17 +43,15 @@ function clickedNation(id){
     const str = but.src        
     const cur_name_country=str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")).replace("%20"," ")
     mm.setCountry( cur_name_country  )
-    if(document.getElementById("arches")!=null ){ 
-        mm.drawArches()
-    }
-    else{
+    
         
-        d3v4.selectAll("#heatmap").remove()
-        d3v4.selectAll("#legendThreshold").remove()
-        d3v4.selectAll(".legendCells").remove()
-        
-        mm.drawHeatMap()
-    }
+    d3v4.selectAll("#heatmap").remove()
+    d3v4.selectAll("#legendThreshold").remove()
+    d3v4.selectAll(".legendCells").remove()
+    
+    mm.drawCloroExp()
+    mm.drawCloroImp()
+    
     cm.updateCountry(cur_name_country)
     // getDataFromPost();
     console.log("Clicked",str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")).replace("%20"," ") )  
