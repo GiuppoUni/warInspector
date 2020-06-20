@@ -42,8 +42,10 @@ import matplotlib.pyplot as plt, mpld3
 
 
 DEFAULT_YEARS = [2016,2019]
-DEFAULT_STATE = "France"
-selected = ["France"]
+DEFAULT_STATE = "Italy"
+selected = ["Italy"]
+PCA_WIDTH="400.0"
+PCA_HEIGHT="300.0"
 
 #1. Declare application
 # application= Flask(__name__)
@@ -166,18 +168,12 @@ def MDSMain(year,country):
 PCA
 =========
 '''
-def PCAMain():
+def PCAMain(year1=2016,year2=2019,countries=["Italy"]):
 
-
-
-    year1=1990
-    year2=2018
-    country="France"
 
     folder="static/data/"
 
-    all_years = [str(x) for x in range(1950,2020) ]
-
+    
 
     #refugees
     df_ref = pd.read_csv(folder+"ref.csv", header=4 )
@@ -195,15 +191,10 @@ def PCAMain():
     df_gdp = pd.read_csv(folder +  "gdp.csv", header=4)
     df_gdp = df_gdp.rename(columns=lambda x: x.strip())
 
-    #import def
-    df_imp = pd.read_csv(folder +  "imp.csv", header=10)
-
-    #export def
-    df_exp = pd.read_csv(folder +  "exp.csv", header=10)
-
+  
     #countries list
     df_countries = pd.read_csv(folder + "countriesAlpha3.csv")
-    df_countries["name"]=df_countries["name"].apply(lambda x: x.strip() )
+    df_countries["name"] = df_countries["name"].apply(lambda x: x.strip() )
 
     year_range=[year1]
     if(year2!=year1):
@@ -215,8 +206,8 @@ def PCAMain():
 
 
     df_imp = pd.read_csv(folder + "df_imp_clean.csv")
-
-
+    
+    
     df_mrgd_imp = df_imp.iloc[:,[0,-1,-2,-3,-4]] 
     df_mrgd_imp.rename(columns={"code3":"Country Code"}, inplace=True)
 
@@ -296,8 +287,7 @@ def PCAMain():
 
 
 
-
-
+    print("Plotting",countries)
     def pca_plot(df):
         # df['target']= df["Country Name"].apply(lambda x: "selected" if x.strip() in selected
         #     else "not selected")
@@ -334,7 +324,7 @@ def PCAMain():
         ax.set_title('2 component PCA', fontsize = 20)
         colors = ['y', 'b']
 
-        indicesToKeep = finalDf["target"].apply(lambda x: x in selected)
+        indicesToKeep = finalDf["target"].apply(lambda x: x in countries)
 
 
 
@@ -346,7 +336,7 @@ def PCAMain():
                 , c = "b"
                 , s = 50)
 
-        ax.legend(selected)
+        ax.legend(countries)
         ax.grid()
         # non targets:
         for i,r in enumerate(zip(names, pc1, pc2)):
@@ -372,7 +362,7 @@ def PCAMain():
 
     s_imp = pca_plot(df_mrgd_imp)
     s_exp = pca_plot(df_mrgd_exp)
-    return s_imp + s_exp
+    return s_imp , s_exp
     
 
 @application.route("/main",methods=["GET","POST"])
@@ -385,21 +375,22 @@ def homepage():
     print("--------------- Rendering index")
 
 
-    CountryName = request.form.get('Country_field',DEFAULT_STATE)
-    Year1 = request.form.get('Year_field1', DEFAULT_YEARS[0])
-    Year2 = request.form.get('Year_field2', DEFAULT_YEARS[1])
+    # CountryName = request.form.get('Country_field',DEFAULT_STATE)
+    # Year1 = request.form.get('Year_field1', DEFAULT_YEARS[0])
+    # Year2 = request.form.get('Year_field2', DEFAULT_YEARS[1])
 
-    data.CountryName=CountryName
-    data.Year1=Year1
-    data.Year2=Year2
+    # data.CountryName=CountryName
+    # data.Year1=Year1
+    # data.Year2=Year2
     
+    return render_template("gridIndex.html")
+    # return render_template("myIndex.html")
 
-    return render_template("myIndex.html",CountryName=CountryName,Year1=Year1,Year2=Year2)
 
+@application.route("/get-data",methods=["POST"])
+def returnPCAData():
 
-@application.route("/get-data",methods=["GET","POST"])
-def returnMDSData():
-
+    print("[S] Received request for pca")
     json_data=request.data 
     # print(json_data)
     parsed_json = (json.loads(json_data))
@@ -408,15 +399,24 @@ def returnMDSData():
     country = parsed_json['country']
     year1 =  parsed_json['year1']
     year2 = parsed_json['year2']
+    print("[S] Params:",year1,year2,country)
 
-
-    print(country,year1,year2)
 
 
     #s =  MDSMain(year1,None) 
-    s = PCAMain()
+    s1,s2 = PCAMain(year1,year2,[country] )
+
+    old_dimensions_string = '"width": 800.0, "height": 800.0'
+    new_dimensions_string = '"width":' + PCA_WIDTH + ',"height":' + PCA_HEIGHT
+    
+    s1 = s1.replace("<style>","").replace("</style>","")\
+    .replace(old_dimensions_string,new_dimensions_string)
+    
+    s2 = s2.replace("<style>","").replace("</style>","")\
+    .replace(old_dimensions_string,new_dimensions_string)
+
     #print(s)
-    return jsonify(data.CountryName,data.Year1,data.Year2,s)
+    return jsonify(data.CountryName,data.Year1,data.Year2,s1,s2)
 
 if __name__ == "__main__":
     application.run(debug=True)

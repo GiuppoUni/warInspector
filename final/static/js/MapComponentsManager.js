@@ -25,11 +25,13 @@ var MapComponentsManager= function(){
         
         
         var sliderRange = d3v4
-        .sliderLeft()
+        //.sliderLeft() // Vertical slider
+        .sliderBottom() // Orizontal slider
         .min(d3v4.min(dataTime))
         .max(d3v4.max(dataTime))
         .step(1000 * 60 * 60 * 24 * 365)
         .height(350)
+        .width(1000) //if orizontal
         .tickFormat(d3v4.timeFormat('%Y'))
         .tickValues(dataTime)
         .default([new Date(2016, 1, 1),new Date(2018, 1, 1)])
@@ -56,8 +58,8 @@ var MapComponentsManager= function(){
         var gRange = d3v4
         .select('div#slider-range')
         .append('svg')
-        .attr('width', 100)
-        .attr('height', 400)
+        .attr('width', 1500)
+        .attr('height', 100)
         .append('g')
         .attr('transform', 'translate(60,30)');
         
@@ -74,8 +76,8 @@ var MapComponentsManager= function(){
         function update() {
             // d3v4.selectAll(".arches").remove()
             
-            d3v4.selectAll("#heatmap").remove()
-            d3v4.selectAll("#legendThreshold").remove()
+            d3v4.selectAll(".heatmap").remove()
+            d3v4.selectAll(".legendThreshold").remove()
             d3v4.selectAll(".legendCells").remove()
             mm.drawCloroExp()
             mm.drawCloroImp()

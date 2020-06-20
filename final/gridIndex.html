@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="=utf-8">
+
+    <!-- <<<<< Imports -->
+    <script src='https://azlejs.com/v2/azle.min.js'></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+    <script src="static/js/libraries/d3v4.js"></script>
+    <script src="static/js/libraries/d3-simple-slider.min.js"></script>
+    <script src="static/js/libraries/d3-legend.js"></script>
+    <script src="static/js/libraries/d3-scale-chromatic.v1.min.js"></script>
+
+
+    <link rel="stylesheet" href="static/bootstrap4.5/css/bootstrap.min.css" crossorigin="anonymous" />
+
+
+    <!-- My Modules  -->
+    <script src="static/js/MapComponentsManager.js"></script>
+    <script src="static/js/Main.js"></script>
+    <script src="static/js/ChartManager.js"></script>
+    <script src="static/js/MapManager.js"></script>
+    <script src="static/js/RankRaceManager.js"></script>
+
+    <!-- >>>>> -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+
+
+
+</head>
+
+
+<body onload="main()">
+
+    <div><input type="image" id="homeButton" width="50px" src="static/icons/home.png" onclick="callResetZoom()" /> <span class="tooltiptext">Reset Zoom</span></div>
+    <input type="image" id="resetButton" width="50px" src="static/icons/reset3.png" onclick="resetSelect()" />
+    </div>
+
+    <div id="map_slider" class="row" style="width: 100%; height:100%; margin: 0 auto; background-color: black;"></div>
+    <div id="slider-range"></div>
+
+    <div class="container-fluid my-container">
+
+        <div class="row my-row">
+            <div class="col-md-auto my-col-up" id="map-imp-col">
+                <h1 class="center-text">IMPORT Row 1 Col 1</h1>
+            </div>
+            <div class="col-md-auto my-col-up" id="map-exp-col">
+                <h1 class="center-text">EXPORT Row 1 Col 2</h1>
+            </div>
+            <div class="col my-col-up">
+                Row 1 Col 3
+
+            </div>
+        </div>
+
+        <!-- Seconda riga -->
+        <div class="row my-row">
+            <div class="col-5 my-col-down">
+                Row 2 Col 1
+                <div class="row">
+                    <div class="col" id="charts-div">
+                        <div class="lds-facebook justify-content-center" id="load-anim">
+                            Loading PCA...
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="chart" style=" border: 1px solid white; height: 100%; text-align: center;">
+
+                            <div id="chart-container">
+                                <svg id="chart-svg"></svg>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col" id="pca-import-col"> </div>
+                </div>
+
+            </div>
+
+            <div class="col-5 my-col-down">
+                Row 2 Col 2
+                <div class="row">
+                    <div class="col" id="charts-div">
+
+                        <div class="lds-facebook justify-content-center" id="load-anim">
+                            Loading PCA...
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <div id="chart" style="border: 1px solid yellow; height: 100%; text-align: center;">
+
+                            <div id="chart-container">
+                                <svg id="chart-svg-exp"></svg>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col" id="pca-export-col"> </div>
+                </div>
+            </div>
+            <div class="col my-col-down" id="pca-export-col">
+                Row 2 Col 3
+
+            </div>
+            <!-- <div class="col my-col-down">      
+            Row 2 Col 1  
+        </div>
+        <div class="col my-col-down" id="pca-import-col">        
+            Row 2 Col 2  
+            
+        </div>
+        <div class="col my-col-down">
+            Row 2 Col 3  
+            
+        </div>
+        <div class="col my-col-down" id="pca-export-col">      
+            Row 2 Col 4  
+        </div>
+        <div class="col my-col-down" >        
+            Row 2 Col 5  
+            
+        </div> -->
+        </div>
+    </div>
+
+
+    <div class="lds-facebook justify-content-center" id="load-anim"> Loading MDS...
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <p class="layoutp " align=center style="font-size:125%">Currently displaying:</p>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img id="curr_flag" class="mx-auto d-block"></img>
+            </div>
+            <div class="col text-center">
+                <p class="layoutp " align=center id="curr_country">Supplier:
+                </p>
+                <p class="layoutp " align=center id="curr_years">Years:
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,5798 @@
+name,value,year,lastValue,rank,code3
+Afghanistan,2165,1989,0.0,3.0,AFG
+Afghanistan,1873,1990,2165.0,4.0,AFG
+Afghanistan,1411,1991,1873.0,3.0,AFG
+Afghanistan,0,1992,1411.0,71.0,AFG
+Afghanistan,0,1993,0.0,74.0,AFG
+Afghanistan,0,1994,0.0,77.0,AFG
+Afghanistan,0,1995,0.0,75.0,AFG
+Afghanistan,0,1996,0.0,80.0,AFG
+Afghanistan,0,1997,0.0,79.0,AFG
+Afghanistan,0,1998,0.0,69.0,AFG
+Afghanistan,0,1999,0.0,77.0,AFG
+Afghanistan,0,2000,0.0,75.0,AFG
+Afghanistan,0,2001,0.0,73.0,AFG
+Afghanistan,34,2002,0.0,52.0,AFG
+Afghanistan,0,2003,34.0,70.0,AFG
+Afghanistan,0,2004,0.0,76.0,AFG
+Afghanistan,35,2005,0.0,53.0,AFG
+Afghanistan,3,2006,35.0,79.0,AFG
+Afghanistan,41,2007,3.0,56.0,AFG
+Afghanistan,150,2008,41.0,37.0,AFG
+Afghanistan,344,2009,150.0,22.0,AFG
+Afghanistan,377,2010,344.0,20.0,AFG
+Afghanistan,660,2011,377.0,15.0,AFG
+Afghanistan,521,2012,660.0,16.0,AFG
+Afghanistan,235,2013,521.0,26.0,AFG
+Afghanistan,288,2014,235.0,23.0,AFG
+Afghanistan,116,2015,288.0,44.0,AFG
+Afghanistan,176,2016,116.0,37.0,AFG
+Afghanistan,252,2017,176.0,31.0,AFG
+Afghanistan,361,2018,252.0,21.0,AFG
+Afghanistan,391,2019,361.0,18.0,AFG
+Albania,0,1989,0.0,89.0,ALB
+Albania,0,1990,0.0,81.0,ALB
+Albania,0,1991,0.0,79.0,ALB
+Albania,0,1992,0.0,71.0,ALB
+Albania,0,1993,0.0,74.0,ALB
+Albania,0,1994,0.0,77.0,ALB
+Albania,26,1995,0.0,57.0,ALB
+Albania,0,1996,26.0,80.0,ALB
+Albania,0,1997,0.0,79.0,ALB
+Albania,0,1998,0.0,69.0,ALB
+Albania,0,1999,0.0,77.0,ALB
+Albania,0,2000,0.0,75.0,ALB
+Albania,0,2001,0.0,73.0,ALB
+Albania,0,2002,0.0,75.0,ALB
+Albania,2,2003,0.0,68.0,ALB
+Albania,0,2004,2.0,76.0,ALB
+Albania,7,2005,0.0,69.0,ALB
+Albania,0,2006,7.0,82.0,ALB
+Albania,5,2007,0.0,74.0,ALB
+Albania,0,2008,5.0,80.0,ALB
+Albania,0,2009,0.0,87.0,ALB
+Albania,0,2010,0.0,85.0,ALB
+Albania,0,2011,0.0,82.0,ALB
+Albania,15,2012,0.0,72.0,ALB
+Albania,7,2013,15.0,75.0,ALB
+Albania,7,2014,7.0,73.0,ALB
+Albania,7,2015,7.0,77.0,ALB
+Albania,0,2016,7.0,86.0,ALB
+Albania,4,2017,0.0,82.0,ALB
+Albania,1,2018,4.0,76.0,ALB
+Albania,5,2019,1.0,72.0,ALB
+Algeria,455,1989,0.0,23.0,DZA
+Algeria,735,1990,455.0,12.0,DZA
+Algeria,1035,1991,735.0,7.0,DZA
+Algeria,20,1992,1035.0,57.0,DZA
+Algeria,20,1993,20.0,57.0,DZA
+Algeria,182,1994,20.0,32.0,DZA
+Algeria,295,1995,182.0,23.0,DZA
+Algeria,83,1996,295.0,44.0,DZA
+Algeria,37,1997,83.0,59.0,DZA
+Algeria,98,1998,37.0,38.0,DZA
+Algeria,370,1999,98.0,18.0,DZA
+Algeria,408,2000,370.0,14.0,DZA
+Algeria,542,2001,408.0,9.0,DZA
+Algeria,249,2002,542.0,20.0,DZA
+Algeria,195,2003,249.0,21.0,DZA
+Algeria,242,2004,195.0,24.0,DZA
+Algeria,159,2005,242.0,31.0,DZA
+Algeria,340,2006,159.0,22.0,DZA
+Algeria,509,2007,340.0,21.0,DZA
+Algeria,1529,2008,509.0,4.0,DZA
+Algeria,1075,2009,1529.0,7.0,DZA
+Algeria,834,2010,1075.0,9.0,DZA
+Algeria,1126,2011,834.0,8.0,DZA
+Algeria,663,2012,1126.0,14.0,DZA
+Algeria,362,2013,663.0,18.0,DZA
+Algeria,616,2014,362.0,15.0,DZA
+Algeria,896,2015,616.0,7.0,DZA
+Algeria,2899,2016,896.0,3.0,DZA
+Algeria,962,2017,2899.0,10.0,DZA
+Algeria,1253,2018,962.0,6.0,DZA
+Algeria,140,2019,1253.0,36.0,DZA
+Angola,152,1989,0.0,41.0,AGO
+Angola,140,1990,152.0,43.0,AGO
+Angola,0,1991,140.0,79.0,AGO
+Angola,0,1992,0.0,71.0,AGO
+Angola,122,1993,0.0,35.0,AGO
+Angola,111,1994,122.0,39.0,AGO
+Angola,1,1995,111.0,74.0,AGO
+Angola,44,1996,1.0,55.0,AGO
+Angola,7,1997,44.0,72.0,AGO
+Angola,149,1998,7.0,35.0,AGO
+Angola,358,1999,149.0,20.0,AGO
+Angola,147,2000,358.0,34.0,AGO
+Angola,156,2001,147.0,26.0,AGO
+Angola,148,2002,156.0,31.0,AGO
+Angola,48,2003,148.0,43.0,AGO
+Angola,8,2004,48.0,69.0,AGO
+Angola,39,2005,8.0,51.0,AGO
+Angola,7,2006,39.0,76.0,AGO
+Angola,31,2007,7.0,57.0,AGO
+Angola,29,2008,31.0,60.0,AGO
+Angola,20,2009,29.0,70.0,AGO
+Angola,0,2010,20.0,85.0,AGO
+Angola,0,2011,0.0,82.0,AGO
+Angola,0,2012,0.0,85.0,AGO
+Angola,31,2013,0.0,57.0,AGO
+Angola,2,2014,31.0,78.0,AGO
+Angola,47,2015,2.0,54.0,AGO
+Angola,142,2016,47.0,41.0,AGO
+Angola,108,2017,142.0,38.0,AGO
+Angola,270,2018,108.0,28.0,AGO
+Angola,166,2019,270.0,33.0,AGO
+Argentina,14,1989,0.0,78.0,ARG
+Argentina,169,1990,14.0,39.0,ARG
+Argentina,0,1991,169.0,79.0,ARG
+Argentina,27,1992,0.0,53.0,ARG
+Argentina,14,1993,27.0,60.0,ARG
+Argentina,209,1994,14.0,29.0,ARG
+Argentina,43,1995,209.0,49.0,ARG
+Argentina,28,1996,43.0,65.0,ARG
+Argentina,105,1997,28.0,42.0,ARG
+Argentina,172,1998,105.0,30.0,ARG
+Argentina,276,1999,172.0,25.0,ARG
+Argentina,213,2000,276.0,26.0,ARG
+Argentina,6,2001,213.0,68.0,ARG
+Argentina,15,2002,6.0,64.0,ARG
+Argentina,11,2003,15.0,60.0,ARG
+Argentina,169,2004,11.0,32.0,ARG
+Argentina,3,2005,169.0,73.0,ARG
+Argentina,9,2006,3.0,74.0,ARG
+Argentina,24,2007,9.0,61.0,ARG
+Argentina,23,2008,24.0,63.0,ARG
+Argentina,11,2009,23.0,76.0,ARG
+Argentina,11,2010,11.0,75.0,ARG
+Argentina,15,2011,11.0,70.0,ARG
+Argentina,3,2012,15.0,82.0,ARG
+Argentina,12,2013,3.0,71.0,ARG
+Argentina,7,2014,12.0,73.0,ARG
+Argentina,21,2015,7.0,65.0,ARG
+Argentina,17,2016,21.0,72.0,ARG
+Argentina,43,2017,17.0,57.0,ARG
+Argentina,25,2018,43.0,56.0,ARG
+Argentina,53,2019,25.0,46.0,ARG
+Armenia,0,1989,0.0,89.0,ARM
+Armenia,0,1990,0.0,81.0,ARM
+Armenia,0,1991,0.0,79.0,ARM
+Armenia,0,1992,0.0,71.0,ARM
+Armenia,2,1993,0.0,72.0,ARM
+Armenia,181,1994,2.0,33.0,ARM
+Armenia,47,1995,181.0,47.0,ARM
+Armenia,70,1996,47.0,48.0,ARM
+Armenia,0,1997,70.0,79.0,ARM
+Armenia,0,1998,0.0,69.0,ARM
+Armenia,2,1999,0.0,75.0,ARM
+Armenia,0,2000,2.0,75.0,ARM
+Armenia,0,2001,0.0,73.0,ARM
+Armenia,0,2002,0.0,75.0,ARM
+Armenia,0,2003,0.0,70.0,ARM
+Armenia,118,2004,0.0,36.0,ARM
+Armenia,0,2005,118.0,76.0,ARM
+Armenia,0,2006,0.0,82.0,ARM
+Armenia,1,2007,0.0,78.0,ARM
+Armenia,0,2008,1.0,80.0,ARM
+Armenia,46,2009,0.0,54.0,ARM
+Armenia,52,2010,46.0,52.0,ARM
+Armenia,5,2011,52.0,78.0,ARM
+Armenia,0,2012,5.0,85.0,ARM
+Armenia,16,2013,0.0,68.0,ARM
+Armenia,0,2014,16.0,80.0,ARM
+Armenia,0,2015,0.0,83.0,ARM
+Armenia,110,2016,0.0,46.0,ARM
+Armenia,18,2017,110.0,71.0,ARM
+Armenia,0,2018,18.0,77.0,ARM
+Armenia,248,2019,0.0,25.0,ARM
+Australia,693,1989,0.0,17.0,AUS
+Australia,352,1990,693.0,26.0,AUS
+Australia,213,1991,352.0,32.0,AUS
+Australia,365,1992,213.0,22.0,AUS
+Australia,449,1993,365.0,19.0,AUS
+Australia,262,1994,449.0,25.0,AUS
+Australia,64,1995,262.0,44.0,AUS
+Australia,597,1996,64.0,12.0,AUS
+Australia,35,1997,597.0,60.0,AUS
+Australia,542,1998,35.0,14.0,AUS
+Australia,673,1999,542.0,13.0,AUS
+Australia,338,2000,673.0,16.0,AUS
+Australia,1236,2001,338.0,3.0,AUS
+Australia,663,2002,1236.0,6.0,AUS
+Australia,801,2003,663.0,4.0,AUS
+Australia,472,2004,801.0,11.0,AUS
+Australia,459,2005,472.0,12.0,AUS
+Australia,727,2006,459.0,8.0,AUS
+Australia,677,2007,727.0,14.0,AUS
+Australia,445,2008,677.0,19.0,AUS
+Australia,777,2009,445.0,11.0,AUS
+Australia,1511,2010,777.0,3.0,AUS
+Australia,1559,2011,1511.0,3.0,AUS
+Australia,868,2012,1559.0,10.0,AUS
+Australia,236,2013,868.0,25.0,AUS
+Australia,919,2014,236.0,8.0,AUS
+Australia,1464,2015,919.0,3.0,AUS
+Australia,1025,2016,1464.0,8.0,AUS
+Australia,1671,2017,1025.0,4.0,AUS
+Australia,1575,2018,1671.0,4.0,AUS
+Australia,1399,2019,1575.0,5.0,AUS
+Austria,84,1989,0.0,53.0,AUT
+Austria,5,1990,84.0,76.0,AUT
+Austria,6,1991,5.0,74.0,AUT
+Austria,5,1992,6.0,66.0,AUT
+Austria,9,1993,5.0,65.0,AUT
+Austria,40,1994,9.0,55.0,AUT
+Austria,24,1995,40.0,58.0,AUT
+Austria,10,1996,24.0,72.0,AUT
+Austria,182,1997,10.0,35.0,AUT
+Austria,228,1998,182.0,25.0,AUT
+Austria,48,1999,228.0,52.0,AUT
+Austria,25,2000,48.0,56.0,AUT
+Austria,15,2001,25.0,59.0,AUT
+Austria,69,2002,15.0,40.0,AUT
+Austria,42,2003,69.0,45.0,AUT
+Austria,56,2004,42.0,47.0,AUT
+Austria,24,2005,56.0,57.0,AUT
+Austria,4,2006,24.0,78.0,AUT
+Austria,269,2007,4.0,28.0,AUT
+Austria,190,2008,269.0,31.0,AUT
+Austria,286,2009,190.0,26.0,AUT
+Austria,7,2010,286.0,79.0,AUT
+Austria,8,2011,7.0,75.0,AUT
+Austria,8,2012,8.0,77.0,AUT
+Austria,6,2013,8.0,76.0,AUT
+Austria,2,2014,6.0,78.0,AUT
+Austria,1,2015,2.0,82.0,AUT
+Austria,13,2016,1.0,75.0,AUT
+Austria,8,2017,13.0,79.0,AUT
+Austria,4,2018,8.0,73.0,AUT
+Austria,14,2019,4.0,66.0,AUT
+Azerbaijan,0,1989,0.0,89.0,AZE
+Azerbaijan,0,1990,0.0,81.0,AZE
+Azerbaijan,0,1991,0.0,79.0,AZE
+Azerbaijan,0,1992,0.0,71.0,AZE
+Azerbaijan,50,1993,0.0,46.0,AZE
+Azerbaijan,25,1994,50.0,61.0,AZE
+Azerbaijan,0,1995,25.0,75.0,AZE
+Azerbaijan,0,1996,0.0,80.0,AZE
+Azerbaijan,0,1997,0.0,79.0,AZE
+Azerbaijan,0,1998,0.0,69.0,AZE
+Azerbaijan,0,1999,0.0,77.0,AZE
+Azerbaijan,3,2000,0.0,72.0,AZE
+Azerbaijan,0,2001,3.0,73.0,AZE
+Azerbaijan,89,2002,0.0,35.0,AZE
+Azerbaijan,0,2003,89.0,70.0,AZE
+Azerbaijan,4,2004,0.0,73.0,AZE
+Azerbaijan,53,2005,4.0,47.0,AZE
+Azerbaijan,159,2006,53.0,35.0,AZE
+Azerbaijan,213,2007,159.0,32.0,AZE
+Azerbaijan,33,2008,213.0,58.0,AZE
+Azerbaijan,145,2009,33.0,35.0,AZE
+Azerbaijan,155,2010,145.0,36.0,AZE
+Azerbaijan,557,2011,155.0,20.0,AZE
+Azerbaijan,339,2012,557.0,22.0,AZE
+Azerbaijan,404,2013,339.0,17.0,AZE
+Azerbaijan,612,2014,404.0,16.0,AZE
+Azerbaijan,335,2015,612.0,22.0,AZE
+Azerbaijan,274,2016,335.0,28.0,AZE
+Azerbaijan,275,2017,274.0,30.0,AZE
+Azerbaijan,322,2018,275.0,23.0,AZE
+Azerbaijan,25,2019,322.0,59.0,AZE
+Bahamas,0,1989,0.0,89.0,BHS
+Bahamas,2,1990,0.0,79.0,BHS
+Bahamas,3,1991,2.0,76.0,BHS
+Bahamas,0,1992,3.0,71.0,BHS
+Bahamas,0,1993,0.0,74.0,BHS
+Bahamas,0,1994,0.0,77.0,BHS
+Bahamas,0,1995,0.0,75.0,BHS
+Bahamas,0,1996,0.0,80.0,BHS
+Bahamas,0,1997,0.0,79.0,BHS
+Bahamas,0,1998,0.0,69.0,BHS
+Bahamas,0,1999,0.0,77.0,BHS
+Bahamas,33,2000,0.0,52.0,BHS
+Bahamas,0,2001,33.0,73.0,BHS
+Bahamas,0,2002,0.0,75.0,BHS
+Bahamas,0,2003,0.0,70.0,BHS
+Bahamas,0,2004,0.0,76.0,BHS
+Bahamas,3,2005,0.0,73.0,BHS
+Bahamas,0,2006,3.0,82.0,BHS
+Bahamas,0,2007,0.0,79.0,BHS
+Bahamas,0,2008,0.0,80.0,BHS
+Bahamas,1,2009,0.0,86.0,BHS
+Bahamas,0,2010,1.0,85.0,BHS
+Bahamas,0,2011,0.0,82.0,BHS
+Bahamas,0,2012,0.0,85.0,BHS
+Bahamas,0,2013,0.0,81.0,BHS
+Bahamas,30,2014,0.0,59.0,BHS
+Bahamas,16,2015,30.0,69.0,BHS
+Bahamas,20,2016,16.0,70.0,BHS
+Bahamas,12,2017,20.0,77.0,BHS
+Bahamas,0,2018,12.0,77.0,BHS
+Bahamas,0,2019,0.0,77.0,BHS
+Bahrain,71,1989,0.0,54.0,BHR
+Bahrain,362,1990,71.0,24.0,BHR
+Bahrain,68,1991,362.0,53.0,BHR
+Bahrain,42,1992,68.0,48.0,BHR
+Bahrain,1,1993,42.0,73.0,BHR
+Bahrain,8,1994,1.0,70.0,BHR
+Bahrain,71,1995,8.0,43.0,BHR
+Bahrain,51,1996,71.0,53.0,BHR
+Bahrain,198,1997,51.0,32.0,BHR
+Bahrain,9,1998,198.0,60.0,BHR
+Bahrain,0,1999,9.0,77.0,BHR
+Bahrain,299,2000,0.0,19.0,BHR
+Bahrain,28,2001,299.0,51.0,BHR
+Bahrain,54,2002,28.0,44.0,BHR
+Bahrain,1,2003,54.0,69.0,BHR
+Bahrain,10,2004,1.0,67.0,BHR
+Bahrain,66,2005,10.0,43.0,BHR
+Bahrain,63,2006,66.0,50.0,BHR
+Bahrain,26,2007,63.0,60.0,BHR
+Bahrain,20,2008,26.0,65.0,BHR
+Bahrain,0,2009,20.0,87.0,BHR
+Bahrain,103,2010,0.0,41.0,BHR
+Bahrain,1,2011,103.0,81.0,BHR
+Bahrain,26,2012,1.0,66.0,BHR
+Bahrain,72,2013,26.0,46.0,BHR
+Bahrain,1,2014,72.0,79.0,BHR
+Bahrain,17,2015,1.0,68.0,BHR
+Bahrain,26,2016,17.0,66.0,BHR
+Bahrain,28,2017,26.0,65.0,BHR
+Bahrain,65,2018,28.0,47.0,BHR
+Bahrain,16,2019,65.0,64.0,BHR
+Bangladesh,301,1989,0.0,28.0,BGD
+Bangladesh,187,1990,301.0,38.0,BGD
+Bangladesh,79,1991,187.0,50.0,BGD
+Bangladesh,113,1992,79.0,34.0,BGD
+Bangladesh,44,1993,113.0,48.0,BGD
+Bangladesh,61,1994,44.0,49.0,BGD
+Bangladesh,119,1995,61.0,36.0,BGD
+Bangladesh,7,1996,119.0,74.0,BGD
+Bangladesh,26,1997,7.0,63.0,BGD
+Bangladesh,1,1998,26.0,68.0,BGD
+Bangladesh,186,1999,1.0,31.0,BGD
+Bangladesh,203,2000,186.0,28.0,BGD
+Bangladesh,280,2001,203.0,17.0,BGD
+Bangladesh,33,2002,280.0,53.0,BGD
+Bangladesh,8,2003,33.0,63.0,BGD
+Bangladesh,32,2004,8.0,55.0,BGD
+Bangladesh,10,2005,32.0,67.0,BGD
+Bangladesh,221,2006,10.0,29.0,BGD
+Bangladesh,88,2007,221.0,45.0,BGD
+Bangladesh,13,2008,88.0,69.0,BGD
+Bangladesh,0,2009,13.0,87.0,BGD
+Bangladesh,36,2010,0.0,60.0,BGD
+Bangladesh,117,2011,36.0,42.0,BGD
+Bangladesh,184,2012,117.0,36.0,BGD
+Bangladesh,645,2013,184.0,12.0,BGD
+Bangladesh,206,2014,645.0,28.0,BGD
+Bangladesh,632,2015,206.0,12.0,BGD
+Bangladesh,443,2016,632.0,17.0,BGD
+Bangladesh,322,2017,443.0,27.0,BGD
+Bangladesh,149,2018,322.0,35.0,BGD
+Bangladesh,743,2019,149.0,11.0,BGD
+Barbados,0,1989,0.0,89.0,BRB
+Barbados,0,1990,0.0,81.0,BRB
+Barbados,0,1991,0.0,79.0,BRB
+Barbados,0,1992,0.0,71.0,BRB
+Barbados,0,1993,0.0,74.0,BRB
+Barbados,0,1994,0.0,77.0,BRB
+Barbados,0,1995,0.0,75.0,BRB
+Barbados,0,1996,0.0,80.0,BRB
+Barbados,0,1997,0.0,79.0,BRB
+Barbados,0,1998,0.0,69.0,BRB
+Barbados,0,1999,0.0,77.0,BRB
+Barbados,0,2000,0.0,75.0,BRB
+Barbados,0,2001,0.0,73.0,BRB
+Barbados,0,2002,0.0,75.0,BRB
+Barbados,0,2003,0.0,70.0,BRB
+Barbados,0,2004,0.0,76.0,BRB
+Barbados,0,2005,0.0,76.0,BRB
+Barbados,0,2006,0.0,82.0,BRB
+Barbados,10,2007,0.0,70.0,BRB
+Barbados,10,2008,10.0,72.0,BRB
+Barbados,10,2009,10.0,77.0,BRB
+Barbados,0,2010,10.0,85.0,BRB
+Barbados,0,2011,0.0,82.0,BRB
+Barbados,0,2012,0.0,85.0,BRB
+Barbados,0,2013,0.0,81.0,BRB
+Barbados,0,2014,0.0,80.0,BRB
+Barbados,0,2015,0.0,83.0,BRB
+Barbados,0,2016,0.0,86.0,BRB
+Barbados,0,2017,0.0,86.0,BRB
+Barbados,0,2018,0.0,77.0,BRB
+Barbados,0,2019,0.0,77.0,BRB
+Belarus,0,1989,0.0,89.0,BLR
+Belarus,0,1990,0.0,81.0,BLR
+Belarus,0,1991,0.0,79.0,BLR
+Belarus,0,1992,0.0,71.0,BLR
+Belarus,0,1993,0.0,74.0,BLR
+Belarus,0,1994,0.0,77.0,BLR
+Belarus,0,1995,0.0,75.0,BLR
+Belarus,0,1996,0.0,80.0,BLR
+Belarus,0,1997,0.0,79.0,BLR
+Belarus,41,1998,0.0,48.0,BLR
+Belarus,41,1999,41.0,55.0,BLR
+Belarus,0,2000,41.0,75.0,BLR
+Belarus,0,2001,0.0,73.0,BLR
+Belarus,0,2002,0.0,75.0,BLR
+Belarus,0,2003,0.0,70.0,BLR
+Belarus,0,2004,0.0,76.0,BLR
+Belarus,6,2005,0.0,70.0,BLR
+Belarus,140,2006,6.0,36.0,BLR
+Belarus,0,2007,140.0,79.0,BLR
+Belarus,0,2008,0.0,80.0,BLR
+Belarus,3,2009,0.0,84.0,BLR
+Belarus,0,2010,3.0,85.0,BLR
+Belarus,75,2011,0.0,51.0,BLR
+Belarus,75,2012,75.0,52.0,BLR
+Belarus,75,2013,75.0,44.0,BLR
+Belarus,66,2014,75.0,48.0,BLR
+Belarus,96,2015,66.0,47.0,BLR
+Belarus,115,2016,96.0,45.0,BLR
+Belarus,147,2017,115.0,36.0,BLR
+Belarus,142,2018,147.0,36.0,BLR
+Belarus,331,2019,142.0,20.0,BLR
+Belgium,218,1989,0.0,35.0,BEL
+Belgium,321,1990,218.0,28.0,BEL
+Belgium,134,1991,321.0,41.0,BEL
+Belgium,49,1992,134.0,46.0,BEL
+Belgium,77,1993,49.0,41.0,BEL
+Belgium,50,1994,77.0,52.0,BEL
+Belgium,17,1995,50.0,62.0,BEL
+Belgium,3,1996,17.0,77.0,BEL
+Belgium,53,1997,3.0,55.0,BEL
+Belgium,55,1998,53.0,45.0,BEL
+Belgium,58,1999,55.0,50.0,BEL
+Belgium,35,2000,58.0,51.0,BEL
+Belgium,29,2001,35.0,50.0,BEL
+Belgium,48,2002,29.0,47.0,BEL
+Belgium,21,2003,48.0,53.0,BEL
+Belgium,15,2004,21.0,62.0,BEL
+Belgium,3,2005,15.0,73.0,BEL
+Belgium,27,2006,3.0,60.0,BEL
+Belgium,174,2007,27.0,36.0,BEL
+Belgium,203,2008,174.0,30.0,BEL
+Belgium,91,2009,203.0,42.0,BEL
+Belgium,32,2010,91.0,63.0,BEL
+Belgium,21,2011,32.0,67.0,BEL
+Belgium,33,2012,21.0,63.0,BEL
+Belgium,46,2013,33.0,55.0,BEL
+Belgium,104,2014,46.0,39.0,BEL
+Belgium,56,2015,104.0,52.0,BEL
+Belgium,4,2016,56.0,82.0,BEL
+Belgium,7,2017,4.0,80.0,BEL
+Belgium,1,2018,7.0,76.0,BEL
+Belgium,5,2019,1.0,72.0,BEL
+Belize,0,1989,0.0,89.0,BLZ
+Belize,0,1990,0.0,81.0,BLZ
+Belize,0,1991,0.0,79.0,BLZ
+Belize,0,1992,0.0,71.0,BLZ
+Belize,0,1993,0.0,74.0,BLZ
+Belize,0,1994,0.0,77.0,BLZ
+Belize,0,1995,0.0,75.0,BLZ
+Belize,0,1996,0.0,80.0,BLZ
+Belize,0,1997,0.0,79.0,BLZ
+Belize,0,1998,0.0,69.0,BLZ
+Belize,0,1999,0.0,77.0,BLZ
+Belize,1,2000,0.0,74.0,BLZ
+Belize,0,2001,1.0,73.0,BLZ
+Belize,0,2002,0.0,75.0,BLZ
+Belize,0,2003,0.0,70.0,BLZ
+Belize,0,2004,0.0,76.0,BLZ
+Belize,0,2005,0.0,76.0,BLZ
+Belize,0,2006,0.0,82.0,BLZ
+Belize,0,2007,0.0,79.0,BLZ
+Belize,0,2008,0.0,80.0,BLZ
+Belize,0,2009,0.0,87.0,BLZ
+Belize,0,2010,0.0,85.0,BLZ
+Belize,0,2011,0.0,82.0,BLZ
+Belize,0,2012,0.0,85.0,BLZ
+Belize,0,2013,0.0,81.0,BLZ
+Belize,0,2014,0.0,80.0,BLZ
+Belize,0,2015,0.0,83.0,BLZ
+Belize,0,2016,0.0,86.0,BLZ
+Belize,0,2017,0.0,86.0,BLZ
+Belize,0,2018,0.0,77.0,BLZ
+Belize,0,2019,0.0,77.0,BLZ
+Benin,0,1989,0.0,89.0,BEN
+Benin,0,1990,0.0,81.0,BEN
+Benin,0,1991,0.0,79.0,BEN
+Benin,0,1992,0.0,71.0,BEN
+Benin,0,1993,0.0,74.0,BEN
+Benin,0,1994,0.0,77.0,BEN
+Benin,0,1995,0.0,75.0,BEN
+Benin,1,1996,0.0,79.0,BEN
+Benin,0,1997,1.0,79.0,BEN
+Benin,0,1998,0.0,69.0,BEN
+Benin,0,1999,0.0,77.0,BEN
+Benin,0,2000,0.0,75.0,BEN
+Benin,0,2001,0.0,73.0,BEN
+Benin,7,2002,0.0,69.0,BEN
+Benin,0,2003,7.0,70.0,BEN
+Benin,0,2004,0.0,76.0,BEN
+Benin,0,2005,0.0,76.0,BEN
+Benin,0,2006,0.0,82.0,BEN
+Benin,3,2007,0.0,76.0,BEN
+Benin,0,2008,3.0,80.0,BEN
+Benin,1,2009,0.0,86.0,BEN
+Benin,0,2010,1.0,85.0,BEN
+Benin,0,2011,0.0,82.0,BEN
+Benin,20,2012,0.0,69.0,BEN
+Benin,2,2013,20.0,79.0,BEN
+Benin,0,2014,2.0,80.0,BEN
+Benin,0,2015,0.0,83.0,BEN
+Benin,0,2016,0.0,86.0,BEN
+Benin,0,2017,0.0,86.0,BEN
+Benin,0,2018,0.0,77.0,BEN
+Benin,0,2019,0.0,77.0,BEN
+Bhutan,0,1989,0.0,89.0,BTN
+Bhutan,0,1990,0.0,81.0,BTN
+Bhutan,0,1991,0.0,79.0,BTN
+Bhutan,0,1992,0.0,71.0,BTN
+Bhutan,0,1993,0.0,74.0,BTN
+Bhutan,0,1994,0.0,77.0,BTN
+Bhutan,0,1995,0.0,75.0,BTN
+Bhutan,0,1996,0.0,80.0,BTN
+Bhutan,0,1997,0.0,79.0,BTN
+Bhutan,0,1998,0.0,69.0,BTN
+Bhutan,0,1999,0.0,77.0,BTN
+Bhutan,0,2000,0.0,75.0,BTN
+Bhutan,0,2001,0.0,73.0,BTN
+Bhutan,0,2002,0.0,75.0,BTN
+Bhutan,0,2003,0.0,70.0,BTN
+Bhutan,0,2004,0.0,76.0,BTN
+Bhutan,0,2005,0.0,76.0,BTN
+Bhutan,0,2006,0.0,82.0,BTN
+Bhutan,0,2007,0.0,79.0,BTN
+Bhutan,0,2008,0.0,80.0,BTN
+Bhutan,0,2009,0.0,87.0,BTN
+Bhutan,0,2010,0.0,85.0,BTN
+Bhutan,0,2011,0.0,82.0,BTN
+Bhutan,0,2012,0.0,85.0,BTN
+Bhutan,0,2013,0.0,81.0,BTN
+Bhutan,0,2014,0.0,80.0,BTN
+Bhutan,1,2015,0.0,82.0,BTN
+Bhutan,1,2016,1.0,85.0,BTN
+Bhutan,0,2017,1.0,86.0,BTN
+Bhutan,0,2018,0.0,77.0,BTN
+Bhutan,0,2019,0.0,77.0,BTN
+Bolivia,66,1989,0.0,56.0,BOL
+Bolivia,0,1990,66.0,81.0,BOL
+Bolivia,11,1991,0.0,70.0,BOL
+Bolivia,25,1992,11.0,55.0,BOL
+Bolivia,16,1993,25.0,59.0,BOL
+Bolivia,9,1994,16.0,69.0,BOL
+Bolivia,2,1995,9.0,73.0,BOL
+Bolivia,0,1996,2.0,80.0,BOL
+Bolivia,0,1997,0.0,79.0,BOL
+Bolivia,0,1998,0.0,69.0,BOL
+Bolivia,9,1999,0.0,70.0,BOL
+Bolivia,19,2000,9.0,61.0,BOL
+Bolivia,0,2001,19.0,73.0,BOL
+Bolivia,0,2002,0.0,75.0,BOL
+Bolivia,5,2003,0.0,66.0,BOL
+Bolivia,1,2004,5.0,75.0,BOL
+Bolivia,1,2005,1.0,75.0,BOL
+Bolivia,9,2006,1.0,74.0,BOL
+Bolivia,2,2007,9.0,77.0,BOL
+Bolivia,3,2008,2.0,77.0,BOL
+Bolivia,5,2009,3.0,82.0,BOL
+Bolivia,1,2010,5.0,84.0,BOL
+Bolivia,25,2011,1.0,66.0,BOL
+Bolivia,12,2012,25.0,73.0,BOL
+Bolivia,1,2013,12.0,80.0,BOL
+Bolivia,46,2014,1.0,54.0,BOL
+Bolivia,0,2015,46.0,83.0,BOL
+Bolivia,27,2016,0.0,65.0,BOL
+Bolivia,7,2017,27.0,80.0,BOL
+Bolivia,1,2018,7.0,76.0,BOL
+Bolivia,34,2019,1.0,54.0,BOL
+Bosnia-Herzegovina,0,1989,0.0,89.0,BIH
+Bosnia-Herzegovina,0,1990,0.0,81.0,BIH
+Bosnia-Herzegovina,0,1991,0.0,79.0,BIH
+Bosnia-Herzegovina,0,1992,0.0,71.0,BIH
+Bosnia-Herzegovina,6,1993,0.0,68.0,BIH
+Bosnia-Herzegovina,6,1994,6.0,71.0,BIH
+Bosnia-Herzegovina,0,1995,6.0,75.0,BIH
+Bosnia-Herzegovina,58,1996,0.0,52.0,BIH
+Bosnia-Herzegovina,70,1997,58.0,48.0,BIH
+Bosnia-Herzegovina,2,1998,70.0,67.0,BIH
+Bosnia-Herzegovina,25,1999,2.0,61.0,BIH
+Bosnia-Herzegovina,0,2000,25.0,75.0,BIH
+Bosnia-Herzegovina,0,2001,0.0,73.0,BIH
+Bosnia-Herzegovina,0,2002,0.0,75.0,BIH
+Bosnia-Herzegovina,0,2003,0.0,70.0,BIH
+Bosnia-Herzegovina,0,2004,0.0,76.0,BIH
+Bosnia-Herzegovina,0,2005,0.0,76.0,BIH
+Bosnia-Herzegovina,0,2006,0.0,82.0,BIH
+Bosnia-Herzegovina,0,2007,0.0,79.0,BIH
+Bosnia-Herzegovina,0,2008,0.0,80.0,BIH
+Bosnia-Herzegovina,0,2009,0.0,87.0,BIH
+Bosnia-Herzegovina,0,2010,0.0,85.0,BIH
+Bosnia-Herzegovina,0,2011,0.0,82.0,BIH
+Bosnia-Herzegovina,0,2012,0.0,85.0,BIH
+Bosnia-Herzegovina,0,2013,0.0,81.0,BIH
+Bosnia-Herzegovina,0,2014,0.0,80.0,BIH
+Bosnia-Herzegovina,0,2015,0.0,83.0,BIH
+Bosnia-Herzegovina,0,2016,0.0,86.0,BIH
+Bosnia-Herzegovina,0,2017,0.0,86.0,BIH
+Bosnia-Herzegovina,0,2018,0.0,77.0,BIH
+Bosnia-Herzegovina,0,2019,0.0,77.0,BIH
+Botswana,4,1989,0.0,85.0,BWA
+Botswana,22,1990,4.0,66.0,BWA
+Botswana,2,1991,22.0,77.0,BWA
+Botswana,2,1992,2.0,69.0,BWA
+Botswana,11,1993,2.0,63.0,BWA
+Botswana,0,1994,11.0,77.0,BWA
+Botswana,11,1995,0.0,65.0,BWA
+Botswana,32,1996,11.0,62.0,BWA
+Botswana,71,1997,32.0,47.0,BWA
+Botswana,2,1998,71.0,67.0,BWA
+Botswana,0,1999,2.0,77.0,BWA
+Botswana,53,2000,0.0,48.0,BWA
+Botswana,15,2001,53.0,59.0,BWA
+Botswana,1,2002,15.0,74.0,BWA
+Botswana,10,2003,1.0,61.0,BWA
+Botswana,9,2004,10.0,68.0,BWA
+Botswana,0,2005,9.0,76.0,BWA
+Botswana,0,2006,0.0,82.0,BWA
+Botswana,0,2007,0.0,79.0,BWA
+Botswana,0,2008,0.0,80.0,BWA
+Botswana,13,2009,0.0,75.0,BWA
+Botswana,10,2010,13.0,76.0,BWA
+Botswana,0,2011,10.0,82.0,BWA
+Botswana,6,2012,0.0,79.0,BWA
+Botswana,8,2013,6.0,74.0,BWA
+Botswana,0,2014,8.0,80.0,BWA
+Botswana,0,2015,0.0,83.0,BWA
+Botswana,5,2016,0.0,81.0,BWA
+Botswana,3,2017,5.0,83.0,BWA
+Botswana,4,2018,3.0,73.0,BWA
+Botswana,2,2019,4.0,75.0,BWA
+Brazil,745,1989,0.0,15.0,BRA
+Brazil,150,1990,745.0,42.0,BRA
+Brazil,168,1991,150.0,35.0,BRA
+Brazil,90,1992,168.0,37.0,BRA
+Brazil,58,1993,90.0,44.0,BRA
+Brazil,313,1994,58.0,22.0,BRA
+Brazil,248,1995,313.0,28.0,BRA
+Brazil,545,1996,248.0,16.0,BRA
+Brazil,473,1997,545.0,20.0,BRA
+Brazil,239,1998,473.0,24.0,BRA
+Brazil,365,1999,239.0,19.0,BRA
+Brazil,121,2000,365.0,39.0,BRA
+Brazil,631,2001,121.0,8.0,BRA
+Brazil,223,2002,631.0,24.0,BRA
+Brazil,110,2003,223.0,31.0,BRA
+Brazil,86,2004,110.0,39.0,BRA
+Brazil,224,2005,86.0,22.0,BRA
+Brazil,179,2006,224.0,33.0,BRA
+Brazil,189,2007,179.0,34.0,BRA
+Brazil,180,2008,189.0,33.0,BRA
+Brazil,156,2009,180.0,33.0,BRA
+Brazil,311,2010,156.0,21.0,BRA
+Brazil,306,2011,311.0,26.0,BRA
+Brazil,328,2012,306.0,23.0,BRA
+Brazil,223,2013,328.0,27.0,BRA
+Brazil,209,2014,223.0,27.0,BRA
+Brazil,219,2015,209.0,30.0,BRA
+Brazil,109,2016,219.0,47.0,BRA
+Brazil,100,2017,109.0,40.0,BRA
+Brazil,272,2018,100.0,27.0,BRA
+Brazil,169,2019,272.0,32.0,BRA
+Brunei,0,1989,0.0,89.0,BRN
+Brunei,3,1990,0.0,78.0,BRN
+Brunei,3,1991,3.0,76.0,BRN
+Brunei,0,1992,3.0,71.0,BRN
+Brunei,0,1993,0.0,74.0,BRN
+Brunei,0,1994,0.0,77.0,BRN
+Brunei,0,1995,0.0,75.0,BRN
+Brunei,17,1996,0.0,70.0,BRN
+Brunei,31,1997,17.0,62.0,BRN
+Brunei,7,1998,31.0,62.0,BRN
+Brunei,5,1999,7.0,72.0,BRN
+Brunei,0,2000,5.0,75.0,BRN
+Brunei,4,2001,0.0,70.0,BRN
+Brunei,1,2002,4.0,74.0,BRN
+Brunei,0,2003,1.0,70.0,BRN
+Brunei,0,2004,0.0,76.0,BRN
+Brunei,1,2005,0.0,75.0,BRN
+Brunei,2,2006,1.0,80.0,BRN
+Brunei,0,2007,2.0,79.0,BRN
+Brunei,0,2008,0.0,80.0,BRN
+Brunei,33,2009,0.0,63.0,BRN
+Brunei,33,2010,33.0,62.0,BRN
+Brunei,229,2011,33.0,33.0,BRN
+Brunei,22,2012,229.0,67.0,BRN
+Brunei,15,2013,22.0,69.0,BRN
+Brunei,122,2014,15.0,37.0,BRN
+Brunei,36,2015,122.0,59.0,BRN
+Brunei,0,2016,36.0,86.0,BRN
+Brunei,0,2017,0.0,86.0,BRN
+Brunei,0,2018,0.0,77.0,BRN
+Brunei,0,2019,0.0,77.0,BRN
+Bulgaria,334,1989,0.0,25.0,BGR
+Bulgaria,758,1990,334.0,10.0,BGR
+Bulgaria,340,1991,758.0,25.0,BGR
+Bulgaria,41,1992,340.0,49.0,BGR
+Bulgaria,1,1993,41.0,73.0,BGR
+Bulgaria,1,1994,1.0,76.0,BGR
+Bulgaria,1,1995,1.0,74.0,BGR
+Bulgaria,122,1996,1.0,37.0,BGR
+Bulgaria,0,1997,122.0,79.0,BGR
+Bulgaria,0,1998,0.0,69.0,BGR
+Bulgaria,7,1999,0.0,71.0,BGR
+Bulgaria,0,2000,7.0,75.0,BGR
+Bulgaria,0,2001,0.0,73.0,BGR
+Bulgaria,0,2002,0.0,75.0,BGR
+Bulgaria,2,2003,0.0,68.0,BGR
+Bulgaria,12,2004,2.0,65.0,BGR
+Bulgaria,132,2005,12.0,33.0,BGR
+Bulgaria,22,2006,132.0,64.0,BGR
+Bulgaria,48,2007,22.0,55.0,BGR
+Bulgaria,116,2008,48.0,41.0,BGR
+Bulgaria,119,2009,116.0,38.0,BGR
+Bulgaria,8,2010,119.0,78.0,BGR
+Bulgaria,29,2011,8.0,63.0,BGR
+Bulgaria,5,2012,29.0,80.0,BGR
+Bulgaria,0,2013,5.0,81.0,BGR
+Bulgaria,0,2014,0.0,80.0,BGR
+Bulgaria,3,2015,0.0,80.0,BGR
+Bulgaria,0,2016,3.0,86.0,BGR
+Bulgaria,0,2017,0.0,86.0,BGR
+Bulgaria,0,2018,0.0,77.0,BGR
+Bulgaria,2,2019,0.0,75.0,BGR
+Burkina Faso,0,1989,0.0,89.0,BFA
+Burkina Faso,0,1990,0.0,81.0,BFA
+Burkina Faso,2,1991,0.0,77.0,BFA
+Burkina Faso,0,1992,2.0,71.0,BFA
+Burkina Faso,7,1993,0.0,67.0,BFA
+Burkina Faso,0,1994,7.0,77.0,BFA
+Burkina Faso,0,1995,0.0,75.0,BFA
+Burkina Faso,0,1996,0.0,80.0,BFA
+Burkina Faso,0,1997,0.0,79.0,BFA
+Burkina Faso,0,1998,0.0,69.0,BFA
+Burkina Faso,0,1999,0.0,77.0,BFA
+Burkina Faso,0,2000,0.0,75.0,BFA
+Burkina Faso,0,2001,0.0,73.0,BFA
+Burkina Faso,0,2002,0.0,75.0,BFA
+Burkina Faso,0,2003,0.0,70.0,BFA
+Burkina Faso,0,2004,0.0,76.0,BFA
+Burkina Faso,12,2005,0.0,66.0,BFA
+Burkina Faso,3,2006,12.0,79.0,BFA
+Burkina Faso,4,2007,3.0,75.0,BFA
+Burkina Faso,0,2008,4.0,80.0,BFA
+Burkina Faso,2,2009,0.0,85.0,BFA
+Burkina Faso,0,2010,2.0,85.0,BFA
+Burkina Faso,15,2011,0.0,70.0,BFA
+Burkina Faso,4,2012,15.0,81.0,BFA
+Burkina Faso,0,2013,4.0,81.0,BFA
+Burkina Faso,5,2014,0.0,75.0,BFA
+Burkina Faso,0,2015,5.0,83.0,BFA
+Burkina Faso,7,2016,0.0,79.0,BFA
+Burkina Faso,2,2017,7.0,84.0,BFA
+Burkina Faso,23,2018,2.0,57.0,BFA
+Burkina Faso,7,2019,23.0,71.0,BFA
+Burundi,6,1989,0.0,83.0,BDI
+Burundi,6,1990,6.0,75.0,BDI
+Burundi,0,1991,6.0,79.0,BDI
+Burundi,0,1992,0.0,71.0,BDI
+Burundi,0,1993,0.0,74.0,BDI
+Burundi,0,1994,0.0,77.0,BDI
+Burundi,0,1995,0.0,75.0,BDI
+Burundi,0,1996,0.0,80.0,BDI
+Burundi,0,1997,0.0,79.0,BDI
+Burundi,0,1998,0.0,69.0,BDI
+Burundi,0,1999,0.0,77.0,BDI
+Burundi,0,2000,0.0,75.0,BDI
+Burundi,1,2001,0.0,72.0,BDI
+Burundi,3,2002,1.0,72.0,BDI
+Burundi,0,2003,3.0,70.0,BDI
+Burundi,0,2004,0.0,76.0,BDI
+Burundi,0,2005,0.0,76.0,BDI
+Burundi,0,2006,0.0,82.0,BDI
+Burundi,0,2007,0.0,79.0,BDI
+Burundi,0,2008,0.0,80.0,BDI
+Burundi,1,2009,0.0,86.0,BDI
+Burundi,2,2010,1.0,83.0,BDI
+Burundi,0,2011,2.0,82.0,BDI
+Burundi,5,2012,0.0,80.0,BDI
+Burundi,0,2013,5.0,81.0,BDI
+Burundi,0,2014,0.0,80.0,BDI
+Burundi,1,2015,0.0,82.0,BDI
+Burundi,2,2016,1.0,84.0,BDI
+Burundi,0,2017,2.0,86.0,BDI
+Burundi,0,2018,0.0,77.0,BDI
+Burundi,0,2019,0.0,77.0,BDI
+Cambodia,119,1989,0.0,47.0,KHM
+Cambodia,45,1990,119.0,59.0,KHM
+Cambodia,0,1991,45.0,79.0,KHM
+Cambodia,0,1992,0.0,71.0,KHM
+Cambodia,2,1993,0.0,72.0,KHM
+Cambodia,72,1994,2.0,47.0,KHM
+Cambodia,1,1995,72.0,74.0,KHM
+Cambodia,28,1996,1.0,65.0,KHM
+Cambodia,21,1997,28.0,64.0,KHM
+Cambodia,0,1998,21.0,69.0,KHM
+Cambodia,0,1999,0.0,77.0,KHM
+Cambodia,0,2000,0.0,75.0,KHM
+Cambodia,0,2001,0.0,73.0,KHM
+Cambodia,0,2002,0.0,75.0,KHM
+Cambodia,0,2003,0.0,70.0,KHM
+Cambodia,0,2004,0.0,76.0,KHM
+Cambodia,0,2005,0.0,76.0,KHM
+Cambodia,14,2006,0.0,70.0,KHM
+Cambodia,56,2007,14.0,53.0,KHM
+Cambodia,0,2008,56.0,80.0,KHM
+Cambodia,4,2009,0.0,83.0,KHM
+Cambodia,34,2010,4.0,61.0,KHM
+Cambodia,0,2011,34.0,82.0,KHM
+Cambodia,77,2012,0.0,51.0,KHM
+Cambodia,67,2013,77.0,48.0,KHM
+Cambodia,0,2014,67.0,80.0,KHM
+Cambodia,0,2015,0.0,83.0,KHM
+Cambodia,0,2016,0.0,86.0,KHM
+Cambodia,0,2017,0.0,86.0,KHM
+Cambodia,5,2018,0.0,72.0,KHM
+Cambodia,2,2019,5.0,75.0,KHM
+Cameroon,3,1989,0.0,86.0,CMR
+Cameroon,8,1990,3.0,74.0,CMR
+Cameroon,0,1991,8.0,79.0,CMR
+Cameroon,3,1992,0.0,68.0,CMR
+Cameroon,0,1993,3.0,74.0,CMR
+Cameroon,0,1994,0.0,77.0,CMR
+Cameroon,0,1995,0.0,75.0,CMR
+Cameroon,4,1996,0.0,76.0,CMR
+Cameroon,6,1997,4.0,73.0,CMR
+Cameroon,9,1998,6.0,60.0,CMR
+Cameroon,4,1999,9.0,73.0,CMR
+Cameroon,0,2000,4.0,75.0,CMR
+Cameroon,7,2001,0.0,67.0,CMR
+Cameroon,6,2002,7.0,70.0,CMR
+Cameroon,0,2003,6.0,70.0,CMR
+Cameroon,0,2004,0.0,76.0,CMR
+Cameroon,5,2005,0.0,71.0,CMR
+Cameroon,2,2006,5.0,80.0,CMR
+Cameroon,0,2007,2.0,79.0,CMR
+Cameroon,1,2008,0.0,79.0,CMR
+Cameroon,0,2009,1.0,87.0,CMR
+Cameroon,10,2010,0.0,76.0,CMR
+Cameroon,0,2011,10.0,82.0,CMR
+Cameroon,9,2012,0.0,76.0,CMR
+Cameroon,139,2013,9.0,36.0,CMR
+Cameroon,122,2014,139.0,37.0,CMR
+Cameroon,9,2015,122.0,75.0,CMR
+Cameroon,20,2016,9.0,70.0,CMR
+Cameroon,8,2017,20.0,79.0,CMR
+Cameroon,2,2018,8.0,75.0,CMR
+Cameroon,15,2019,2.0,65.0,CMR
+Canada,67,1989,0.0,55.0,CAN
+Canada,160,1990,67.0,40.0,CAN
+Canada,751,1991,160.0,14.0,CAN
+Canada,410,1992,751.0,19.0,CAN
+Canada,201,1993,410.0,27.0,CAN
+Canada,482,1994,201.0,15.0,CAN
+Canada,411,1995,482.0,16.0,CAN
+Canada,431,1996,411.0,19.0,CAN
+Canada,362,1997,431.0,23.0,CAN
+Canada,130,1998,362.0,36.0,CAN
+Canada,198,1999,130.0,30.0,CAN
+Canada,570,2000,198.0,10.0,CAN
+Canada,538,2001,570.0,10.0,CAN
+Canada,436,2002,538.0,13.0,CAN
+Canada,152,2003,436.0,26.0,CAN
+Canada,353,2004,152.0,15.0,CAN
+Canada,118,2005,353.0,34.0,CAN
+Canada,105,2006,118.0,40.0,CAN
+Canada,446,2007,105.0,22.0,CAN
+Canada,398,2008,446.0,20.0,CAN
+Canada,101,2009,398.0,39.0,CAN
+Canada,228,2010,101.0,27.0,CAN
+Canada,336,2011,228.0,24.0,CAN
+Canada,197,2012,336.0,34.0,CAN
+Canada,202,2013,197.0,29.0,CAN
+Canada,316,2014,202.0,21.0,CAN
+Canada,408,2015,316.0,19.0,CAN
+Canada,233,2016,408.0,33.0,CAN
+Canada,334,2017,233.0,26.0,CAN
+Canada,157,2018,334.0,34.0,CAN
+Canada,200,2019,157.0,27.0,CAN
+Central African Republic,0,1989,0.0,89.0,CAF
+Central African Republic,0,1990,0.0,81.0,CAF
+Central African Republic,0,1991,0.0,79.0,CAF
+Central African Republic,1,1992,0.0,70.0,CAF
+Central African Republic,0,1993,1.0,74.0,CAF
+Central African Republic,0,1994,0.0,77.0,CAF
+Central African Republic,0,1995,0.0,75.0,CAF
+Central African Republic,0,1996,0.0,80.0,CAF
+Central African Republic,0,1997,0.0,79.0,CAF
+Central African Republic,0,1998,0.0,69.0,CAF
+Central African Republic,0,1999,0.0,77.0,CAF
+Central African Republic,0,2000,0.0,75.0,CAF
+Central African Republic,0,2001,0.0,73.0,CAF
+Central African Republic,0,2002,0.0,75.0,CAF
+Central African Republic,0,2003,0.0,70.0,CAF
+Central African Republic,0,2004,0.0,76.0,CAF
+Central African Republic,0,2005,0.0,76.0,CAF
+Central African Republic,9,2006,0.0,74.0,CAF
+Central African Republic,0,2007,9.0,79.0,CAF
+Central African Republic,0,2008,0.0,80.0,CAF
+Central African Republic,0,2009,0.0,87.0,CAF
+Central African Republic,0,2010,0.0,85.0,CAF
+Central African Republic,7,2011,0.0,76.0,CAF
+Central African Republic,0,2012,7.0,85.0,CAF
+Central African Republic,0,2013,0.0,81.0,CAF
+Central African Republic,0,2014,0.0,80.0,CAF
+Central African Republic,0,2015,0.0,83.0,CAF
+Central African Republic,0,2016,0.0,86.0,CAF
+Central African Republic,0,2017,0.0,86.0,CAF
+Central African Republic,1,2018,0.0,76.0,CAF
+Central African Republic,0,2019,1.0,77.0,CAF
+Chad,57,1989,0.0,60.0,TCD
+Chad,0,1990,57.0,81.0,TCD
+Chad,0,1991,0.0,79.0,TCD
+Chad,0,1992,0.0,71.0,TCD
+Chad,0,1993,0.0,74.0,TCD
+Chad,3,1994,0.0,74.0,TCD
+Chad,1,1995,3.0,74.0,TCD
+Chad,0,1996,1.0,80.0,TCD
+Chad,0,1997,0.0,79.0,TCD
+Chad,7,1998,0.0,62.0,TCD
+Chad,7,1999,7.0,71.0,TCD
+Chad,0,2000,7.0,75.0,TCD
+Chad,16,2001,0.0,58.0,TCD
+Chad,0,2002,16.0,75.0,TCD
+Chad,0,2003,0.0,70.0,TCD
+Chad,0,2004,0.0,76.0,TCD
+Chad,0,2005,0.0,76.0,TCD
+Chad,17,2006,0.0,67.0,TCD
+Chad,20,2007,17.0,62.0,TCD
+Chad,75,2008,20.0,50.0,TCD
+Chad,35,2009,75.0,61.0,TCD
+Chad,38,2010,35.0,58.0,TCD
+Chad,1,2011,38.0,81.0,TCD
+Chad,4,2012,1.0,81.0,TCD
+Chad,59,2013,4.0,50.0,TCD
+Chad,58,2014,59.0,50.0,TCD
+Chad,1,2015,58.0,82.0,TCD
+Chad,2,2016,1.0,84.0,TCD
+Chad,6,2017,2.0,81.0,TCD
+Chad,3,2018,6.0,74.0,TCD
+Chad,1,2019,3.0,76.0,TCD
+Chile,141,1989,0.0,42.0,CHL
+Chile,130,1990,141.0,45.0,CHL
+Chile,111,1991,130.0,45.0,CHL
+Chile,173,1992,111.0,31.0,CHL
+Chile,88,1993,173.0,40.0,CHL
+Chile,82,1994,88.0,44.0,CHL
+Chile,342,1995,82.0,20.0,CHL
+Chile,178,1996,342.0,31.0,CHL
+Chile,296,1997,178.0,26.0,CHL
+Chile,87,1998,296.0,40.0,CHL
+Chile,207,1999,87.0,29.0,CHL
+Chile,202,2000,207.0,29.0,CHL
+Chile,60,2001,202.0,45.0,CHL
+Chile,74,2002,60.0,38.0,CHL
+Chile,187,2003,74.0,23.0,CHL
+Chile,70,2004,187.0,45.0,CHL
+Chile,449,2005,70.0,13.0,CHL
+Chile,1095,2006,449.0,6.0,CHL
+Chile,662,2007,1095.0,15.0,CHL
+Chile,397,2008,662.0,21.0,CHL
+Chile,335,2009,397.0,24.0,CHL
+Chile,475,2010,335.0,15.0,CHL
+Chile,326,2011,475.0,25.0,CHL
+Chile,62,2012,326.0,56.0,CHL
+Chile,54,2013,62.0,52.0,CHL
+Chile,141,2014,54.0,35.0,CHL
+Chile,144,2015,141.0,39.0,CHL
+Chile,40,2016,144.0,59.0,CHL
+Chile,50,2017,40.0,52.0,CHL
+Chile,70,2018,50.0,46.0,CHL
+Chile,15,2019,70.0,65.0,CHL
+China,201,1989,0.0,37.0,CHN
+China,303,1990,201.0,30.0,CHN
+China,481,1991,303.0,22.0,CHN
+China,1225,1992,481.0,5.0,CHN
+China,1237,1993,1225.0,5.0,CHN
+China,325,1994,1237.0,21.0,CHN
+China,730,1995,325.0,11.0,CHN
+China,1545,1996,730.0,3.0,CHN
+China,951,1997,1545.0,7.0,CHN
+China,403,1998,951.0,17.0,CHN
+China,1749,1999,403.0,1.0,CHN
+China,2521,2000,1749.0,1.0,CHN
+China,2819,2001,2521.0,1.0,CHN
+China,2875,2002,2819.0,1.0,CHN
+China,2342,2003,2875.0,2.0,CHN
+China,3284,2004,2342.0,1.0,CHN
+China,3582,2005,3284.0,1.0,CHN
+China,2862,2006,3582.0,1.0,CHN
+China,1654,2007,2862.0,4.0,CHN
+China,1856,2008,1654.0,1.0,CHN
+China,1387,2009,1856.0,4.0,CHN
+China,1020,2010,1387.0,6.0,CHN
+China,1088,2011,1020.0,9.0,CHN
+China,1604,2012,1088.0,2.0,CHN
+China,1323,2013,1604.0,4.0,CHN
+China,1063,2014,1323.0,7.0,CHN
+China,1267,2015,1063.0,5.0,CHN
+China,1142,2016,1267.0,6.0,CHN
+China,1371,2017,1142.0,5.0,CHN
+China,1633,2018,1371.0,3.0,CHN
+China,887,2019,1633.0,9.0,CHN
+Colombia,220,1989,0.0,34.0,COL
+Colombia,13,1990,220.0,72.0,COL
+Colombia,72,1991,13.0,52.0,COL
+Colombia,36,1992,72.0,51.0,COL
+Colombia,68,1993,36.0,42.0,COL
+Colombia,42,1994,68.0,54.0,COL
+Colombia,35,1995,42.0,52.0,COL
+Colombia,49,1996,35.0,54.0,COL
+Colombia,190,1997,49.0,34.0,COL
+Colombia,162,1998,190.0,32.0,COL
+Colombia,44,1999,162.0,54.0,COL
+Colombia,60,2000,44.0,47.0,COL
+Colombia,268,2001,60.0,18.0,COL
+Colombia,171,2002,268.0,26.0,COL
+Colombia,147,2003,171.0,27.0,COL
+Colombia,18,2004,147.0,59.0,COL
+Colombia,16,2005,18.0,62.0,COL
+Colombia,52,2006,16.0,53.0,COL
+Colombia,227,2007,52.0,31.0,COL
+Colombia,110,2008,227.0,42.0,COL
+Colombia,248,2009,110.0,27.0,COL
+Colombia,255,2010,248.0,26.0,COL
+Colombia,145,2011,255.0,40.0,COL
+Colombia,207,2012,145.0,33.0,COL
+Colombia,164,2013,207.0,32.0,COL
+Colombia,160,2014,164.0,33.0,COL
+Colombia,205,2015,160.0,32.0,COL
+Colombia,21,2016,205.0,69.0,COL
+Colombia,99,2017,21.0,41.0,COL
+Colombia,16,2018,99.0,62.0,COL
+Colombia,10,2019,16.0,68.0,COL
+Comoros,0,1989,0.0,89.0,COM
+Comoros,0,1990,0.0,81.0,COM
+Comoros,0,1991,0.0,79.0,COM
+Comoros,0,1992,0.0,71.0,COM
+Comoros,0,1993,0.0,74.0,COM
+Comoros,0,1994,0.0,77.0,COM
+Comoros,0,1995,0.0,75.0,COM
+Comoros,0,1996,0.0,80.0,COM
+Comoros,0,1997,0.0,79.0,COM
+Comoros,0,1998,0.0,69.0,COM
+Comoros,0,1999,0.0,77.0,COM
+Comoros,0,2000,0.0,75.0,COM
+Comoros,0,2001,0.0,73.0,COM
+Comoros,0,2002,0.0,75.0,COM
+Comoros,0,2003,0.0,70.0,COM
+Comoros,0,2004,0.0,76.0,COM
+Comoros,0,2005,0.0,76.0,COM
+Comoros,0,2006,0.0,82.0,COM
+Comoros,0,2007,0.0,79.0,COM
+Comoros,6,2008,0.0,75.0,COM
+Comoros,0,2009,6.0,87.0,COM
+Comoros,0,2010,0.0,85.0,COM
+Comoros,0,2011,0.0,82.0,COM
+Comoros,1,2012,0.0,84.0,COM
+Comoros,0,2013,1.0,81.0,COM
+Comoros,0,2014,0.0,80.0,COM
+Comoros,0,2015,0.0,83.0,COM
+Comoros,0,2016,0.0,86.0,COM
+Comoros,0,2017,0.0,86.0,COM
+Comoros,0,2018,0.0,77.0,COM
+Comoros,0,2019,0.0,77.0,COM
+Congo,44,1989,0.0,64.0,COD
+Congo,48,1990,44.0,58.0,COD
+Congo,0,1991,48.0,79.0,COD
+Congo,2,1992,0.0,69.0,COD
+Congo,0,1993,2.0,74.0,COD
+Congo,0,1994,0.0,77.0,COD
+Congo,0,1995,0.0,75.0,COD
+Congo,61,1996,0.0,51.0,COD
+Congo,33,1997,61.0,61.0,COD
+Congo,10,1998,33.0,59.0,COD
+Congo,47,1999,10.0,53.0,COD
+Congo,88,2000,47.0,44.0,COD
+Congo,15,2001,88.0,59.0,COD
+Congo,12,2002,15.0,66.0,COD
+Congo,0,2003,12.0,70.0,COD
+Congo,0,2004,0.0,76.0,COD
+Congo,23,2005,0.0,58.0,COD
+Congo,18,2006,23.0,66.0,COD
+Congo,0,2007,18.0,79.0,COD
+Congo,18,2008,0.0,66.0,COD
+Congo,45,2009,18.0,55.0,COD
+Congo,178,2010,45.0,34.0,COD
+Congo,0,2011,178.0,82.0,COD
+Congo,33,2012,0.0,63.0,COD
+Congo,13,2013,33.0,70.0,COD
+Congo,13,2014,13.0,69.0,COD
+Congo,4,2015,13.0,79.0,COD
+Congo,43,2016,4.0,58.0,COD
+Congo,0,2017,43.0,86.0,COD
+Congo,0,2018,0.0,77.0,COD
+Congo,0,2019,0.0,77.0,COD
+Costa Rica,2,1989,0.0,87.0,CRI
+Costa Rica,0,1990,2.0,81.0,CRI
+Costa Rica,0,1991,0.0,79.0,CRI
+Costa Rica,0,1992,0.0,71.0,CRI
+Costa Rica,3,1993,0.0,71.0,CRI
+Costa Rica,0,1994,3.0,77.0,CRI
+Costa Rica,0,1995,0.0,75.0,CRI
+Costa Rica,0,1996,0.0,80.0,CRI
+Costa Rica,0,1997,0.0,79.0,CRI
+Costa Rica,0,1998,0.0,69.0,CRI
+Costa Rica,0,1999,0.0,77.0,CRI
+Costa Rica,0,2000,0.0,75.0,CRI
+Costa Rica,0,2001,0.0,73.0,CRI
+Costa Rica,0,2002,0.0,75.0,CRI
+Costa Rica,0,2003,0.0,70.0,CRI
+Costa Rica,0,2004,0.0,76.0,CRI
+Costa Rica,0,2005,0.0,76.0,CRI
+Costa Rica,0,2006,0.0,82.0,CRI
+Costa Rica,0,2007,0.0,79.0,CRI
+Costa Rica,0,2008,0.0,80.0,CRI
+Costa Rica,0,2009,0.0,87.0,CRI
+Costa Rica,0,2010,0.0,85.0,CRI
+Costa Rica,0,2011,0.0,82.0,CRI
+Costa Rica,1,2012,0.0,84.0,CRI
+Costa Rica,0,2013,1.0,81.0,CRI
+Costa Rica,1,2014,0.0,79.0,CRI
+Costa Rica,0,2015,1.0,83.0,CRI
+Costa Rica,0,2016,0.0,86.0,CRI
+Costa Rica,0,2017,0.0,86.0,CRI
+Costa Rica,0,2018,0.0,77.0,CRI
+Costa Rica,0,2019,0.0,77.0,CRI
+Cote d'Ivoire,2,1989,0.0,87.0,CIV
+Cote d'Ivoire,0,1990,2.0,81.0,CIV
+Cote d'Ivoire,0,1991,0.0,79.0,CIV
+Cote d'Ivoire,0,1992,0.0,71.0,CIV
+Cote d'Ivoire,0,1993,0.0,74.0,CIV
+Cote d'Ivoire,0,1994,0.0,77.0,CIV
+Cote d'Ivoire,2,1995,0.0,73.0,CIV
+Cote d'Ivoire,0,1996,2.0,80.0,CIV
+Cote d'Ivoire,0,1997,0.0,79.0,CIV
+Cote d'Ivoire,0,1998,0.0,69.0,CIV
+Cote d'Ivoire,2,1999,0.0,75.0,CIV
+Cote d'Ivoire,0,2000,2.0,75.0,CIV
+Cote d'Ivoire,0,2001,0.0,73.0,CIV
+Cote d'Ivoire,31,2002,0.0,54.0,CIV
+Cote d'Ivoire,61,2003,31.0,39.0,CIV
+Cote d'Ivoire,9,2004,61.0,68.0,CIV
+Cote d'Ivoire,0,2005,9.0,76.0,CIV
+Cote d'Ivoire,0,2006,0.0,82.0,CIV
+Cote d'Ivoire,0,2007,0.0,79.0,CIV
+Cote d'Ivoire,0,2008,0.0,80.0,CIV
+Cote d'Ivoire,0,2009,0.0,87.0,CIV
+Cote d'Ivoire,0,2010,0.0,85.0,CIV
+Cote d'Ivoire,0,2011,0.0,82.0,CIV
+Cote d'Ivoire,0,2012,0.0,85.0,CIV
+Cote d'Ivoire,0,2013,0.0,81.0,CIV
+Cote d'Ivoire,5,2014,0.0,75.0,CIV
+Cote d'Ivoire,5,2015,5.0,78.0,CIV
+Cote d'Ivoire,5,2016,5.0,81.0,CIV
+Cote d'Ivoire,14,2017,5.0,75.0,CIV
+Cote d'Ivoire,9,2018,14.0,69.0,CIV
+Cote d'Ivoire,14,2019,9.0,66.0,CIV
+Croatia,0,1989,0.0,89.0,HRV
+Croatia,0,1990,0.0,81.0,HRV
+Croatia,1,1991,0.0,78.0,HRV
+Croatia,27,1992,1.0,53.0,HRV
+Croatia,27,1993,27.0,54.0,HRV
+Croatia,53,1994,27.0,51.0,HRV
+Croatia,1,1995,53.0,74.0,HRV
+Croatia,15,1996,1.0,71.0,HRV
+Croatia,31,1997,15.0,62.0,HRV
+Croatia,0,1998,31.0,69.0,HRV
+Croatia,0,1999,0.0,77.0,HRV
+Croatia,0,2000,0.0,75.0,HRV
+Croatia,57,2001,0.0,46.0,HRV
+Croatia,2,2002,57.0,73.0,HRV
+Croatia,24,2003,2.0,51.0,HRV
+Croatia,8,2004,24.0,69.0,HRV
+Croatia,0,2005,8.0,76.0,HRV
+Croatia,0,2006,0.0,82.0,HRV
+Croatia,19,2007,0.0,63.0,HRV
+Croatia,99,2008,19.0,44.0,HRV
+Croatia,4,2009,99.0,83.0,HRV
+Croatia,11,2010,4.0,75.0,HRV
+Croatia,19,2011,11.0,69.0,HRV
+Croatia,19,2012,19.0,70.0,HRV
+Croatia,0,2013,19.0,81.0,HRV
+Croatia,27,2014,0.0,61.0,HRV
+Croatia,11,2015,27.0,74.0,HRV
+Croatia,20,2016,11.0,70.0,HRV
+Croatia,13,2017,20.0,76.0,HRV
+Croatia,2,2018,13.0,75.0,HRV
+Croatia,5,2019,2.0,72.0,HRV
+Cuba,94,1989,0.0,51.0,CUB
+Cuba,169,1990,94.0,39.0,CUB
+Cuba,159,1991,169.0,37.0,CUB
+Cuba,0,1992,159.0,71.0,CUB
+Cuba,0,1993,0.0,74.0,CUB
+Cuba,0,1994,0.0,77.0,CUB
+Cuba,0,1995,0.0,75.0,CUB
+Cuba,0,1996,0.0,80.0,CUB
+Cuba,0,1997,0.0,79.0,CUB
+Cuba,0,1998,0.0,69.0,CUB
+Cuba,0,1999,0.0,77.0,CUB
+Cuba,0,2000,0.0,75.0,CUB
+Cuba,0,2001,0.0,73.0,CUB
+Cuba,0,2002,0.0,75.0,CUB
+Cuba,0,2003,0.0,70.0,CUB
+Cuba,8,2004,0.0,69.0,CUB
+Cuba,0,2005,8.0,76.0,CUB
+Cuba,0,2006,0.0,82.0,CUB
+Cuba,0,2007,0.0,79.0,CUB
+Cuba,0,2008,0.0,80.0,CUB
+Cuba,0,2009,0.0,87.0,CUB
+Cuba,0,2010,0.0,85.0,CUB
+Cuba,0,2011,0.0,82.0,CUB
+Cuba,0,2012,0.0,85.0,CUB
+Cuba,0,2013,0.0,81.0,CUB
+Cuba,0,2014,0.0,80.0,CUB
+Cuba,0,2015,0.0,83.0,CUB
+Cuba,0,2016,0.0,86.0,CUB
+Cuba,0,2017,0.0,86.0,CUB
+Cuba,0,2018,0.0,77.0,CUB
+Cuba,0,2019,0.0,77.0,CUB
+Cyprus,29,1989,0.0,69.0,CYP
+Cyprus,70,1990,29.0,55.0,CYP
+Cyprus,82,1991,70.0,47.0,CYP
+Cyprus,26,1992,82.0,54.0,CYP
+Cyprus,10,1993,26.0,64.0,CYP
+Cyprus,39,1994,10.0,56.0,CYP
+Cyprus,33,1995,39.0,53.0,CYP
+Cyprus,170,1996,33.0,33.0,CYP
+Cyprus,98,1997,170.0,44.0,CYP
+Cyprus,7,1998,98.0,62.0,CYP
+Cyprus,113,1999,7.0,41.0,CYP
+Cyprus,4,2000,113.0,71.0,CYP
+Cyprus,115,2001,4.0,35.0,CYP
+Cyprus,1,2002,115.0,74.0,CYP
+Cyprus,6,2003,1.0,65.0,CYP
+Cyprus,16,2004,6.0,61.0,CYP
+Cyprus,20,2005,16.0,60.0,CYP
+Cyprus,26,2006,20.0,61.0,CYP
+Cyprus,17,2007,26.0,65.0,CYP
+Cyprus,0,2008,17.0,80.0,CYP
+Cyprus,0,2009,0.0,87.0,CYP
+Cyprus,44,2010,0.0,56.0,CYP
+Cyprus,41,2011,44.0,61.0,CYP
+Cyprus,6,2012,41.0,79.0,CYP
+Cyprus,0,2013,6.0,81.0,CYP
+Cyprus,0,2014,0.0,80.0,CYP
+Cyprus,0,2015,0.0,83.0,CYP
+Cyprus,0,2016,0.0,86.0,CYP
+Cyprus,30,2017,0.0,63.0,CYP
+Cyprus,0,2018,30.0,77.0,CYP
+Cyprus,0,2019,0.0,77.0,CYP
+Czech Republic,872,1989,0.0,13.0,CZE
+Czech Republic,277,1990,872.0,32.0,CZE
+Czech Republic,57,1991,277.0,57.0,CZE
+Czech Republic,0,1992,57.0,71.0,CZE
+Czech Republic,0,1993,0.0,74.0,CZE
+Czech Republic,0,1994,0.0,77.0,CZE
+Czech Republic,1,1995,0.0,74.0,CZE
+Czech Republic,25,1996,1.0,67.0,CZE
+Czech Republic,6,1997,25.0,73.0,CZE
+Czech Republic,0,1998,6.0,69.0,CZE
+Czech Republic,1,1999,0.0,76.0,CZE
+Czech Republic,13,2000,1.0,65.0,CZE
+Czech Republic,57,2001,13.0,46.0,CZE
+Czech Republic,42,2002,57.0,50.0,CZE
+Czech Republic,94,2003,42.0,34.0,CZE
+Czech Republic,7,2004,94.0,70.0,CZE
+Czech Republic,594,2005,7.0,9.0,CZE
+Czech Republic,45,2006,594.0,55.0,CZE
+Czech Republic,10,2007,45.0,70.0,CZE
+Czech Republic,23,2008,10.0,63.0,CZE
+Czech Republic,6,2009,23.0,81.0,CZE
+Czech Republic,13,2010,6.0,74.0,CZE
+Czech Republic,71,2011,13.0,52.0,CZE
+Czech Republic,22,2012,71.0,67.0,CZE
+Czech Republic,15,2013,22.0,69.0,CZE
+Czech Republic,0,2014,15.0,80.0,CZE
+Czech Republic,0,2015,0.0,83.0,CZE
+Czech Republic,0,2016,0.0,86.0,CZE
+Czech Republic,0,2017,0.0,86.0,CZE
+Czech Republic,7,2018,0.0,70.0,CZE
+Czech Republic,8,2019,7.0,70.0,CZE
+Denmark,185,1989,0.0,40.0,DNK
+Denmark,124,1990,185.0,46.0,DNK
+Denmark,151,1991,124.0,38.0,DNK
+Denmark,71,1992,151.0,39.0,DNK
+Denmark,46,1993,71.0,47.0,DNK
+Denmark,85,1994,46.0,43.0,DNK
+Denmark,133,1995,85.0,35.0,DNK
+Denmark,71,1996,133.0,47.0,DNK
+Denmark,77,1997,71.0,46.0,DNK
+Denmark,116,1998,77.0,37.0,DNK
+Denmark,68,1999,116.0,47.0,DNK
+Denmark,50,2000,68.0,49.0,DNK
+Denmark,146,2001,50.0,30.0,DNK
+Denmark,45,2002,146.0,48.0,DNK
+Denmark,54,2003,45.0,41.0,DNK
+Denmark,224,2004,54.0,28.0,DNK
+Denmark,116,2005,224.0,35.0,DNK
+Denmark,84,2006,116.0,43.0,DNK
+Denmark,147,2007,84.0,40.0,DNK
+Denmark,93,2008,147.0,45.0,DNK
+Denmark,130,2009,93.0,37.0,DNK
+Denmark,17,2010,130.0,71.0,DNK
+Denmark,0,2011,17.0,82.0,DNK
+Denmark,105,2012,0.0,45.0,DNK
+Denmark,38,2013,105.0,56.0,DNK
+Denmark,173,2014,38.0,32.0,DNK
+Denmark,42,2015,173.0,57.0,DNK
+Denmark,102,2016,42.0,48.0,DNK
+Denmark,52,2017,102.0,51.0,DNK
+Denmark,46,2018,52.0,50.0,DNK
+Denmark,43,2019,46.0,49.0,DNK
+Djibouti,0,1989,0.0,89.0,DJI
+Djibouti,0,1990,0.0,81.0,DJI
+Djibouti,1,1991,0.0,78.0,DJI
+Djibouti,19,1992,1.0,58.0,DJI
+Djibouti,5,1993,19.0,69.0,DJI
+Djibouti,0,1994,5.0,77.0,DJI
+Djibouti,2,1995,0.0,73.0,DJI
+Djibouti,0,1996,2.0,80.0,DJI
+Djibouti,0,1997,0.0,79.0,DJI
+Djibouti,0,1998,0.0,69.0,DJI
+Djibouti,0,1999,0.0,77.0,DJI
+Djibouti,1,2000,0.0,74.0,DJI
+Djibouti,0,2001,1.0,73.0,DJI
+Djibouti,3,2002,0.0,72.0,DJI
+Djibouti,0,2003,3.0,70.0,DJI
+Djibouti,4,2004,0.0,73.0,DJI
+Djibouti,7,2005,4.0,69.0,DJI
+Djibouti,0,2006,7.0,82.0,DJI
+Djibouti,0,2007,0.0,79.0,DJI
+Djibouti,0,2008,0.0,80.0,DJI
+Djibouti,0,2009,0.0,87.0,DJI
+Djibouti,0,2010,0.0,85.0,DJI
+Djibouti,0,2011,0.0,82.0,DJI
+Djibouti,6,2012,0.0,79.0,DJI
+Djibouti,5,2013,6.0,77.0,DJI
+Djibouti,14,2014,5.0,68.0,DJI
+Djibouti,1,2015,14.0,82.0,DJI
+Djibouti,18,2016,1.0,71.0,DJI
+Djibouti,0,2017,18.0,86.0,DJI
+Djibouti,0,2018,0.0,77.0,DJI
+Djibouti,8,2019,0.0,70.0,DJI
+Dominican Republic,0,1989,0.0,89.0,DOM
+Dominican Republic,0,1990,0.0,81.0,DOM
+Dominican Republic,0,1991,0.0,79.0,DOM
+Dominican Republic,0,1992,0.0,71.0,DOM
+Dominican Republic,0,1993,0.0,74.0,DOM
+Dominican Republic,0,1994,0.0,77.0,DOM
+Dominican Republic,0,1995,0.0,75.0,DOM
+Dominican Republic,4,1996,0.0,76.0,DOM
+Dominican Republic,0,1997,4.0,79.0,DOM
+Dominican Republic,6,1998,0.0,63.0,DOM
+Dominican Republic,1,1999,6.0,76.0,DOM
+Dominican Republic,13,2000,1.0,65.0,DOM
+Dominican Republic,5,2001,13.0,69.0,DOM
+Dominican Republic,0,2002,5.0,75.0,DOM
+Dominican Republic,8,2003,0.0,63.0,DOM
+Dominican Republic,35,2004,8.0,53.0,DOM
+Dominican Republic,2,2005,35.0,74.0,DOM
+Dominican Republic,0,2006,2.0,82.0,DOM
+Dominican Republic,0,2007,0.0,79.0,DOM
+Dominican Republic,0,2008,0.0,80.0,DOM
+Dominican Republic,10,2009,0.0,77.0,DOM
+Dominican Republic,51,2010,10.0,53.0,DOM
+Dominican Republic,12,2011,51.0,72.0,DOM
+Dominican Republic,0,2012,12.0,85.0,DOM
+Dominican Republic,0,2013,0.0,81.0,DOM
+Dominican Republic,0,2014,0.0,80.0,DOM
+Dominican Republic,1,2015,0.0,82.0,DOM
+Dominican Republic,0,2016,1.0,86.0,DOM
+Dominican Republic,0,2017,0.0,86.0,DOM
+Dominican Republic,0,2018,0.0,77.0,DOM
+Dominican Republic,0,2019,0.0,77.0,DOM
+Ecuador,20,1989,0.0,73.0,ECU
+Ecuador,3,1990,20.0,78.0,ECU
+Ecuador,139,1991,3.0,40.0,ECU
+Ecuador,4,1992,139.0,67.0,ECU
+Ecuador,18,1993,4.0,58.0,ECU
+Ecuador,9,1994,18.0,69.0,ECU
+Ecuador,36,1995,9.0,51.0,ECU
+Ecuador,30,1996,36.0,63.0,ECU
+Ecuador,95,1997,30.0,45.0,ECU
+Ecuador,27,1998,95.0,51.0,ECU
+Ecuador,17,1999,27.0,66.0,ECU
+Ecuador,0,2000,17.0,75.0,ECU
+Ecuador,10,2001,0.0,64.0,ECU
+Ecuador,1,2002,10.0,74.0,ECU
+Ecuador,0,2003,1.0,70.0,ECU
+Ecuador,15,2004,0.0,62.0,ECU
+Ecuador,48,2005,15.0,49.0,ECU
+Ecuador,17,2006,48.0,67.0,ECU
+Ecuador,2,2007,17.0,77.0,ECU
+Ecuador,102,2008,2.0,43.0,ECU
+Ecuador,77,2009,102.0,44.0,ECU
+Ecuador,90,2010,77.0,44.0,ECU
+Ecuador,68,2011,90.0,53.0,ECU
+Ecuador,88,2012,68.0,49.0,ECU
+Ecuador,11,2013,88.0,72.0,ECU
+Ecuador,53,2014,11.0,52.0,ECU
+Ecuador,27,2015,53.0,62.0,ECU
+Ecuador,26,2016,27.0,66.0,ECU
+Ecuador,20,2017,26.0,69.0,ECU
+Ecuador,5,2018,20.0,72.0,ECU
+Ecuador,2,2019,5.0,75.0,ECU
+Egypt,295,1989,0.0,29.0,EGY
+Egypt,562,1990,295.0,17.0,EGY
+Egypt,884,1991,562.0,13.0,EGY
+Egypt,972,1992,884.0,9.0,EGY
+Egypt,1255,1993,972.0,4.0,EGY
+Egypt,2020,1994,1255.0,1.0,EGY
+Egypt,1716,1995,2020.0,2.0,EGY
+Egypt,981,1996,1716.0,7.0,EGY
+Egypt,1038,1997,981.0,6.0,EGY
+Egypt,480,1998,1038.0,15.0,EGY
+Egypt,514,1999,480.0,14.0,EGY
+Egypt,837,2000,514.0,6.0,EGY
+Egypt,832,2001,837.0,5.0,EGY
+Egypt,719,2002,832.0,5.0,EGY
+Egypt,630,2003,719.0,9.0,EGY
+Egypt,654,2004,630.0,8.0,EGY
+Egypt,797,2005,654.0,7.0,EGY
+Egypt,722,2006,797.0,9.0,EGY
+Egypt,690,2007,722.0,13.0,EGY
+Egypt,333,2008,690.0,25.0,EGY
+Egypt,159,2009,333.0,32.0,EGY
+Egypt,686,2010,159.0,10.0,EGY
+Egypt,630,2011,686.0,16.0,EGY
+Egypt,281,2012,630.0,25.0,EGY
+Egypt,675,2013,281.0,11.0,EGY
+Egypt,420,2014,675.0,20.0,EGY
+Egypt,1438,2015,420.0,4.0,EGY
+Egypt,1684,2016,1438.0,5.0,EGY
+Egypt,2406,2017,1684.0,3.0,EGY
+Egypt,1674,2018,2406.0,2.0,EGY
+Egypt,1193,2019,1674.0,6.0,EGY
+El Salvador,1,1989,0.0,88.0,SLV
+El Salvador,2,1990,1.0,79.0,SLV
+El Salvador,21,1991,2.0,65.0,SLV
+El Salvador,4,1992,21.0,67.0,SLV
+El Salvador,2,1993,4.0,72.0,SLV
+El Salvador,0,1994,2.0,77.0,SLV
+El Salvador,4,1995,0.0,71.0,SLV
+El Salvador,4,1996,4.0,76.0,SLV
+El Salvador,0,1997,4.0,79.0,SLV
+El Salvador,2,1998,0.0,67.0,SLV
+El Salvador,0,1999,2.0,77.0,SLV
+El Salvador,0,2000,0.0,75.0,SLV
+El Salvador,0,2001,0.0,73.0,SLV
+El Salvador,19,2002,0.0,60.0,SLV
+El Salvador,10,2003,19.0,61.0,SLV
+El Salvador,0,2004,10.0,76.0,SLV
+El Salvador,0,2005,0.0,76.0,SLV
+El Salvador,0,2006,0.0,82.0,SLV
+El Salvador,0,2007,0.0,79.0,SLV
+El Salvador,3,2008,0.0,77.0,SLV
+El Salvador,0,2009,3.0,87.0,SLV
+El Salvador,0,2010,0.0,85.0,SLV
+El Salvador,0,2011,0.0,82.0,SLV
+El Salvador,2,2012,0.0,83.0,SLV
+El Salvador,0,2013,2.0,81.0,SLV
+El Salvador,20,2014,0.0,64.0,SLV
+El Salvador,0,2015,20.0,83.0,SLV
+El Salvador,1,2016,0.0,85.0,SLV
+El Salvador,0,2017,1.0,86.0,SLV
+El Salvador,0,2018,0.0,77.0,SLV
+El Salvador,0,2019,0.0,77.0,SLV
+Equatorial Guinea,0,1989,0.0,89.0,GNQ
+Equatorial Guinea,0,1990,0.0,81.0,GNQ
+Equatorial Guinea,0,1991,0.0,79.0,GNQ
+Equatorial Guinea,0,1992,0.0,71.0,GNQ
+Equatorial Guinea,0,1993,0.0,74.0,GNQ
+Equatorial Guinea,0,1994,0.0,77.0,GNQ
+Equatorial Guinea,0,1995,0.0,75.0,GNQ
+Equatorial Guinea,0,1996,0.0,80.0,GNQ
+Equatorial Guinea,0,1997,0.0,79.0,GNQ
+Equatorial Guinea,0,1998,0.0,69.0,GNQ
+Equatorial Guinea,3,1999,0.0,74.0,GNQ
+Equatorial Guinea,0,2000,3.0,75.0,GNQ
+Equatorial Guinea,7,2001,0.0,67.0,GNQ
+Equatorial Guinea,0,2002,7.0,75.0,GNQ
+Equatorial Guinea,0,2003,0.0,70.0,GNQ
+Equatorial Guinea,7,2004,0.0,70.0,GNQ
+Equatorial Guinea,12,2005,7.0,66.0,GNQ
+Equatorial Guinea,7,2006,12.0,76.0,GNQ
+Equatorial Guinea,28,2007,7.0,58.0,GNQ
+Equatorial Guinea,30,2008,28.0,59.0,GNQ
+Equatorial Guinea,68,2009,30.0,47.0,GNQ
+Equatorial Guinea,3,2010,68.0,82.0,GNQ
+Equatorial Guinea,57,2011,3.0,57.0,GNQ
+Equatorial Guinea,65,2012,57.0,55.0,GNQ
+Equatorial Guinea,2,2013,65.0,79.0,GNQ
+Equatorial Guinea,92,2014,2.0,43.0,GNQ
+Equatorial Guinea,0,2015,92.0,83.0,GNQ
+Equatorial Guinea,0,2016,0.0,86.0,GNQ
+Equatorial Guinea,0,2017,0.0,86.0,GNQ
+Equatorial Guinea,7,2018,0.0,70.0,GNQ
+Equatorial Guinea,0,2019,7.0,77.0,GNQ
+Eritrea,0,1989,0.0,89.0,ERI
+Eritrea,0,1990,0.0,81.0,ERI
+Eritrea,0,1991,0.0,79.0,ERI
+Eritrea,0,1992,0.0,71.0,ERI
+Eritrea,21,1993,0.0,56.0,ERI
+Eritrea,18,1994,21.0,63.0,ERI
+Eritrea,7,1995,18.0,68.0,ERI
+Eritrea,41,1996,7.0,56.0,ERI
+Eritrea,53,1997,41.0,55.0,ERI
+Eritrea,214,1998,53.0,27.0,ERI
+Eritrea,31,1999,214.0,59.0,ERI
+Eritrea,20,2000,31.0,60.0,ERI
+Eritrea,57,2001,20.0,46.0,ERI
+Eritrea,18,2002,57.0,61.0,ERI
+Eritrea,17,2003,18.0,55.0,ERI
+Eritrea,80,2004,17.0,40.0,ERI
+Eritrea,98,2005,80.0,39.0,ERI
+Eritrea,0,2006,98.0,82.0,ERI
+Eritrea,4,2007,0.0,75.0,ERI
+Eritrea,0,2008,4.0,80.0,ERI
+Eritrea,0,2009,0.0,87.0,ERI
+Eritrea,0,2010,0.0,85.0,ERI
+Eritrea,0,2011,0.0,82.0,ERI
+Eritrea,0,2012,0.0,85.0,ERI
+Eritrea,0,2013,0.0,81.0,ERI
+Eritrea,0,2014,0.0,80.0,ERI
+Eritrea,0,2015,0.0,83.0,ERI
+Eritrea,0,2016,0.0,86.0,ERI
+Eritrea,0,2017,0.0,86.0,ERI
+Eritrea,0,2018,0.0,77.0,ERI
+Eritrea,0,2019,0.0,77.0,ERI
+Estonia,0,1989,0.0,89.0,EST
+Estonia,0,1990,0.0,81.0,EST
+Estonia,0,1991,0.0,79.0,EST
+Estonia,2,1992,0.0,69.0,EST
+Estonia,3,1993,2.0,71.0,EST
+Estonia,15,1994,3.0,65.0,EST
+Estonia,17,1995,15.0,62.0,EST
+Estonia,1,1996,17.0,79.0,EST
+Estonia,12,1997,1.0,68.0,EST
+Estonia,4,1998,12.0,65.0,EST
+Estonia,1,1999,4.0,76.0,EST
+Estonia,27,2000,1.0,54.0,EST
+Estonia,0,2001,27.0,73.0,EST
+Estonia,1,2002,0.0,74.0,EST
+Estonia,13,2003,1.0,58.0,EST
+Estonia,8,2004,13.0,69.0,EST
+Estonia,20,2005,8.0,60.0,EST
+Estonia,7,2006,20.0,76.0,EST
+Estonia,19,2007,7.0,63.0,EST
+Estonia,29,2008,19.0,60.0,EST
+Estonia,43,2009,29.0,56.0,EST
+Estonia,13,2010,43.0,74.0,EST
+Estonia,1,2011,13.0,81.0,EST
+Estonia,2,2012,1.0,83.0,EST
+Estonia,18,2013,2.0,67.0,EST
+Estonia,2,2014,18.0,78.0,EST
+Estonia,18,2015,2.0,67.0,EST
+Estonia,29,2016,18.0,63.0,EST
+Estonia,33,2017,29.0,61.0,EST
+Estonia,17,2018,33.0,61.0,EST
+Estonia,30,2019,17.0,57.0,EST
+Ethiopia,47,1989,0.0,62.0,ETH
+Ethiopia,3,1990,47.0,78.0,ETH
+Ethiopia,80,1991,3.0,49.0,ETH
+Ethiopia,0,1992,80.0,71.0,ETH
+Ethiopia,0,1993,0.0,74.0,ETH
+Ethiopia,0,1994,0.0,77.0,ETH
+Ethiopia,0,1995,0.0,75.0,ETH
+Ethiopia,0,1996,0.0,80.0,ETH
+Ethiopia,69,1997,0.0,49.0,ETH
+Ethiopia,211,1998,69.0,28.0,ETH
+Ethiopia,155,1999,211.0,36.0,ETH
+Ethiopia,140,2000,155.0,35.0,ETH
+Ethiopia,0,2001,140.0,73.0,ETH
+Ethiopia,20,2002,0.0,59.0,ETH
+Ethiopia,174,2003,20.0,24.0,ETH
+Ethiopia,239,2004,174.0,25.0,ETH
+Ethiopia,53,2005,239.0,47.0,ETH
+Ethiopia,9,2006,53.0,74.0,ETH
+Ethiopia,0,2007,9.0,79.0,ETH
+Ethiopia,10,2008,0.0,72.0,ETH
+Ethiopia,0,2009,10.0,87.0,ETH
+Ethiopia,54,2010,0.0,51.0,ETH
+Ethiopia,76,2011,54.0,50.0,ETH
+Ethiopia,193,2012,76.0,35.0,ETH
+Ethiopia,155,2013,193.0,33.0,ETH
+Ethiopia,33,2014,155.0,58.0,ETH
+Ethiopia,12,2015,33.0,73.0,ETH
+Ethiopia,5,2016,12.0,81.0,ETH
+Ethiopia,1,2017,5.0,85.0,ETH
+Ethiopia,10,2018,1.0,68.0,ETH
+Ethiopia,75,2019,10.0,40.0,ETH
+Fiji,0,1989,0.0,89.0,FJI
+Fiji,1,1990,0.0,80.0,FJI
+Fiji,0,1991,1.0,79.0,FJI
+Fiji,3,1992,0.0,68.0,FJI
+Fiji,0,1993,3.0,74.0,FJI
+Fiji,6,1994,0.0,71.0,FJI
+Fiji,12,1995,6.0,64.0,FJI
+Fiji,0,1996,12.0,80.0,FJI
+Fiji,0,1997,0.0,79.0,FJI
+Fiji,0,1998,0.0,69.0,FJI
+Fiji,0,1999,0.0,77.0,FJI
+Fiji,0,2000,0.0,75.0,FJI
+Fiji,0,2001,0.0,73.0,FJI
+Fiji,0,2002,0.0,75.0,FJI
+Fiji,0,2003,0.0,70.0,FJI
+Fiji,0,2004,0.0,76.0,FJI
+Fiji,0,2005,0.0,76.0,FJI
+Fiji,0,2006,0.0,82.0,FJI
+Fiji,0,2007,0.0,79.0,FJI
+Fiji,0,2008,0.0,80.0,FJI
+Fiji,0,2009,0.0,87.0,FJI
+Fiji,0,2010,0.0,85.0,FJI
+Fiji,0,2011,0.0,82.0,FJI
+Fiji,0,2012,0.0,85.0,FJI
+Fiji,0,2013,0.0,81.0,FJI
+Fiji,0,2014,0.0,80.0,FJI
+Fiji,0,2015,0.0,83.0,FJI
+Fiji,0,2016,0.0,86.0,FJI
+Fiji,1,2017,0.0,85.0,FJI
+Fiji,0,2018,1.0,77.0,FJI
+Fiji,0,2019,0.0,77.0,FJI
+Finland,85,1989,0.0,52.0,FIN
+Finland,90,1990,85.0,51.0,FIN
+Finland,65,1991,90.0,54.0,FIN
+Finland,435,1992,65.0,16.0,FIN
+Finland,407,1993,435.0,20.0,FIN
+Finland,246,1994,407.0,26.0,FIN
+Finland,197,1995,246.0,32.0,FIN
+Finland,553,1996,197.0,15.0,FIN
+Finland,398,1997,553.0,21.0,FIN
+Finland,552,1998,398.0,12.0,FIN
+Finland,770,1999,552.0,11.0,FIN
+Finland,474,2000,770.0,12.0,FIN
+Finland,9,2001,474.0,65.0,FIN
+Finland,12,2002,9.0,66.0,FIN
+Finland,227,2003,12.0,19.0,FIN
+Finland,77,2004,227.0,42.0,FIN
+Finland,107,2005,77.0,37.0,FIN
+Finland,136,2006,107.0,37.0,FIN
+Finland,108,2007,136.0,41.0,FIN
+Finland,135,2008,108.0,39.0,FIN
+Finland,42,2009,135.0,57.0,FIN
+Finland,52,2010,42.0,52.0,FIN
+Finland,58,2011,52.0,56.0,FIN
+Finland,77,2012,58.0,51.0,FIN
+Finland,296,2013,77.0,22.0,FIN
+Finland,196,2014,296.0,30.0,FIN
+Finland,293,2015,196.0,25.0,FIN
+Finland,160,2016,293.0,39.0,FIN
+Finland,76,2017,160.0,47.0,FIN
+Finland,135,2018,76.0,38.0,FIN
+Finland,70,2019,135.0,41.0,FIN
+France,107,1989,0.0,49.0,FRA
+France,60,1990,107.0,56.0,FRA
+France,944,1991,60.0,10.0,FRA
+France,420,1992,944.0,18.0,FRA
+France,91,1993,420.0,39.0,FRA
+France,75,1994,91.0,45.0,FRA
+France,97,1995,75.0,38.0,FRA
+France,64,1996,97.0,50.0,FRA
+France,223,1997,64.0,29.0,FRA
+France,174,1998,223.0,29.0,FRA
+France,110,1999,174.0,42.0,FRA
+France,107,2000,110.0,43.0,FRA
+France,66,2001,107.0,43.0,FRA
+France,43,2002,66.0,49.0,FRA
+France,57,2003,43.0,40.0,FRA
+France,93,2004,57.0,38.0,FRA
+France,2,2005,93.0,74.0,FRA
+France,67,2006,2.0,48.0,FRA
+France,74,2007,67.0,49.0,FRA
+France,5,2008,74.0,76.0,FRA
+France,76,2009,5.0,45.0,FRA
+France,103,2010,76.0,41.0,FRA
+France,48,2011,103.0,59.0,FRA
+France,91,2012,48.0,48.0,FRA
+France,107,2013,91.0,40.0,FRA
+France,17,2014,107.0,65.0,FRA
+France,42,2015,17.0,57.0,FRA
+France,45,2016,42.0,57.0,FRA
+France,76,2017,45.0,47.0,FRA
+France,185,2018,76.0,30.0,FRA
+France,102,2019,185.0,38.0,FRA
+Gabon,10,1989,0.0,81.0,GAB
+Gabon,29,1990,10.0,64.0,GAB
+Gabon,0,1991,29.0,79.0,GAB
+Gabon,0,1992,0.0,71.0,GAB
+Gabon,0,1993,0.0,74.0,GAB
+Gabon,0,1994,0.0,77.0,GAB
+Gabon,0,1995,0.0,75.0,GAB
+Gabon,0,1996,0.0,80.0,GAB
+Gabon,0,1997,0.0,79.0,GAB
+Gabon,0,1998,0.0,69.0,GAB
+Gabon,0,1999,0.0,77.0,GAB
+Gabon,0,2000,0.0,75.0,GAB
+Gabon,0,2001,0.0,73.0,GAB
+Gabon,0,2002,0.0,75.0,GAB
+Gabon,0,2003,0.0,70.0,GAB
+Gabon,6,2004,0.0,71.0,GAB
+Gabon,0,2005,6.0,76.0,GAB
+Gabon,20,2006,0.0,65.0,GAB
+Gabon,18,2007,20.0,64.0,GAB
+Gabon,0,2008,18.0,80.0,GAB
+Gabon,0,2009,0.0,87.0,GAB
+Gabon,22,2010,0.0,68.0,GAB
+Gabon,5,2011,22.0,78.0,GAB
+Gabon,1,2012,5.0,84.0,GAB
+Gabon,2,2013,1.0,79.0,GAB
+Gabon,0,2014,2.0,80.0,GAB
+Gabon,5,2015,0.0,78.0,GAB
+Gabon,3,2016,5.0,83.0,GAB
+Gabon,0,2017,3.0,86.0,GAB
+Gabon,0,2018,0.0,77.0,GAB
+Gabon,7,2019,0.0,71.0,GAB
+Gambia,12,1989,0.0,80.0,GMB
+Gambia,0,1990,12.0,81.0,GMB
+Gambia,0,1991,0.0,79.0,GMB
+Gambia,0,1992,0.0,71.0,GMB
+Gambia,0,1993,0.0,74.0,GMB
+Gambia,0,1994,0.0,77.0,GMB
+Gambia,0,1995,0.0,75.0,GMB
+Gambia,0,1996,0.0,80.0,GMB
+Gambia,0,1997,0.0,79.0,GMB
+Gambia,0,1998,0.0,69.0,GMB
+Gambia,0,1999,0.0,77.0,GMB
+Gambia,0,2000,0.0,75.0,GMB
+Gambia,0,2001,0.0,73.0,GMB
+Gambia,0,2002,0.0,75.0,GMB
+Gambia,0,2003,0.0,70.0,GMB
+Gambia,5,2004,0.0,72.0,GMB
+Gambia,0,2005,5.0,76.0,GMB
+Gambia,0,2006,0.0,82.0,GMB
+Gambia,0,2007,0.0,79.0,GMB
+Gambia,0,2008,0.0,80.0,GMB
+Gambia,16,2009,0.0,72.0,GMB
+Gambia,0,2010,16.0,85.0,GMB
+Gambia,0,2011,0.0,82.0,GMB
+Gambia,0,2012,0.0,85.0,GMB
+Gambia,0,2013,0.0,81.0,GMB
+Gambia,0,2014,0.0,80.0,GMB
+Gambia,0,2015,0.0,83.0,GMB
+Gambia,0,2016,0.0,86.0,GMB
+Gambia,0,2017,0.0,86.0,GMB
+Gambia,0,2018,0.0,77.0,GMB
+Gambia,0,2019,0.0,77.0,GMB
+Georgia,0,1989,0.0,89.0,GEO
+Georgia,0,1990,0.0,81.0,GEO
+Georgia,0,1991,0.0,79.0,GEO
+Georgia,0,1992,0.0,71.0,GEO
+Georgia,4,1993,0.0,70.0,GEO
+Georgia,0,1994,4.0,77.0,GEO
+Georgia,0,1995,0.0,75.0,GEO
+Georgia,0,1996,0.0,80.0,GEO
+Georgia,4,1997,0.0,75.0,GEO
+Georgia,28,1998,4.0,50.0,GEO
+Georgia,23,1999,28.0,62.0,GEO
+Georgia,6,2000,23.0,70.0,GEO
+Georgia,85,2001,6.0,40.0,GEO
+Georgia,0,2002,85.0,75.0,GEO
+Georgia,1,2003,0.0,69.0,GEO
+Georgia,37,2004,1.0,51.0,GEO
+Georgia,92,2005,37.0,40.0,GEO
+Georgia,97,2006,92.0,42.0,GEO
+Georgia,161,2007,97.0,38.0,GEO
+Georgia,132,2008,161.0,40.0,GEO
+Georgia,38,2009,132.0,59.0,GEO
+Georgia,0,2010,38.0,85.0,GEO
+Georgia,2,2011,0.0,80.0,GEO
+Georgia,0,2012,2.0,85.0,GEO
+Georgia,5,2013,0.0,77.0,GEO
+Georgia,1,2014,5.0,79.0,GEO
+Georgia,0,2015,1.0,83.0,GEO
+Georgia,0,2016,0.0,86.0,GEO
+Georgia,7,2017,0.0,80.0,GEO
+Georgia,39,2018,7.0,51.0,GEO
+Georgia,4,2019,39.0,73.0,GEO
+Germany,1403,1989,0.0,7.0,DEU
+Germany,1120,1990,1403.0,7.0,DEU
+Germany,694,1991,1120.0,15.0,DEU
+Germany,685,1992,694.0,12.0,DEU
+Germany,535,1993,685.0,18.0,DEU
+Germany,423,1994,535.0,19.0,DEU
+Germany,228,1995,423.0,29.0,DEU
+Germany,246,1996,228.0,25.0,DEU
+Germany,61,1997,246.0,53.0,DEU
+Germany,543,1998,61.0,13.0,DEU
+Germany,129,1999,543.0,39.0,DEU
+Germany,113,2000,129.0,41.0,DEU
+Germany,133,2001,113.0,32.0,DEU
+Germany,71,2002,133.0,39.0,DEU
+Germany,64,2003,71.0,37.0,DEU
+Germany,238,2004,64.0,26.0,DEU
+Germany,199,2005,238.0,24.0,DEU
+Germany,409,2006,199.0,18.0,DEU
+Germany,75,2007,409.0,48.0,DEU
+Germany,285,2008,75.0,27.0,DEU
+Germany,339,2009,285.0,23.0,DEU
+Germany,282,2010,339.0,24.0,DEU
+Germany,84,2011,282.0,47.0,DEU
+Germany,131,2012,84.0,40.0,DEU
+Germany,113,2013,131.0,38.0,DEU
+Germany,95,2014,113.0,42.0,DEU
+Germany,96,2015,95.0,47.0,DEU
+Germany,55,2016,96.0,55.0,DEU
+Germany,43,2017,55.0,57.0,DEU
+Germany,14,2018,43.0,64.0,DEU
+Germany,39,2019,14.0,51.0,DEU
+Ghana,2,1989,0.0,87.0,GHA
+Ghana,4,1990,2.0,77.0,GHA
+Ghana,1,1991,4.0,78.0,GHA
+Ghana,0,1992,1.0,71.0,GHA
+Ghana,0,1993,0.0,74.0,GHA
+Ghana,11,1994,0.0,67.0,GHA
+Ghana,0,1995,11.0,75.0,GHA
+Ghana,7,1996,0.0,74.0,GHA
+Ghana,5,1997,7.0,74.0,GHA
+Ghana,0,1998,5.0,69.0,GHA
+Ghana,7,1999,0.0,71.0,GHA
+Ghana,1,2000,7.0,74.0,GHA
+Ghana,12,2001,1.0,62.0,GHA
+Ghana,1,2002,12.0,74.0,GHA
+Ghana,6,2003,1.0,65.0,GHA
+Ghana,35,2004,6.0,53.0,GHA
+Ghana,0,2005,35.0,76.0,GHA
+Ghana,0,2006,0.0,82.0,GHA
+Ghana,16,2007,0.0,66.0,GHA
+Ghana,0,2008,16.0,80.0,GHA
+Ghana,11,2009,0.0,76.0,GHA
+Ghana,2,2010,11.0,83.0,GHA
+Ghana,76,2011,2.0,50.0,GHA
+Ghana,39,2012,76.0,61.0,GHA
+Ghana,63,2013,39.0,49.0,GHA
+Ghana,14,2014,63.0,68.0,GHA
+Ghana,13,2015,14.0,72.0,GHA
+Ghana,22,2016,13.0,68.0,GHA
+Ghana,0,2017,22.0,86.0,GHA
+Ghana,0,2018,0.0,77.0,GHA
+Ghana,4,2019,0.0,73.0,GHA
+Greece,1216,1989,0.0,9.0,GRC
+Greece,903,1990,1216.0,8.0,GRC
+Greece,484,1991,903.0,21.0,GRC
+Greece,2130,1992,484.0,2.0,GRC
+Greece,864,1993,2130.0,12.0,GRC
+Greece,1182,1994,864.0,3.0,GRC
+Greece,874,1995,1182.0,8.0,GRC
+Greece,382,1996,874.0,21.0,GRC
+Greece,807,1997,382.0,10.0,GRC
+Greece,1719,1998,807.0,4.0,GRC
+Greece,842,1999,1719.0,10.0,GRC
+Greece,708,2000,842.0,8.0,GRC
+Greece,787,2001,708.0,6.0,GRC
+Greece,400,2002,787.0,15.0,GRC
+Greece,2167,2003,400.0,3.0,GRC
+Greece,1106,2004,2167.0,5.0,GRC
+Greece,411,2005,1106.0,16.0,GRC
+Greece,721,2006,411.0,10.0,GRC
+Greece,1703,2007,721.0,3.0,GRC
+Greece,483,2008,1703.0,18.0,GRC
+Greece,1224,2009,483.0,5.0,GRC
+Greece,631,2010,1224.0,12.0,GRC
+Greece,71,2011,631.0,52.0,GRC
+Greece,19,2012,71.0,70.0,GRC
+Greece,28,2013,19.0,60.0,GRC
+Greece,204,2014,28.0,29.0,GRC
+Greece,750,2015,204.0,10.0,GRC
+Greece,323,2016,750.0,25.0,GRC
+Greece,52,2017,323.0,51.0,GRC
+Greece,39,2018,52.0,51.0,GRC
+Greece,165,2019,39.0,34.0,GRC
+Grenada,0,1989,0.0,89.0,GRD
+Grenada,0,1990,0.0,81.0,GRD
+Grenada,0,1991,0.0,79.0,GRD
+Grenada,0,1992,0.0,71.0,GRD
+Grenada,0,1993,0.0,74.0,GRD
+Grenada,0,1994,0.0,77.0,GRD
+Grenada,0,1995,0.0,75.0,GRD
+Grenada,0,1996,0.0,80.0,GRD
+Grenada,0,1997,0.0,79.0,GRD
+Grenada,0,1998,0.0,69.0,GRD
+Grenada,0,1999,0.0,77.0,GRD
+Grenada,0,2000,0.0,75.0,GRD
+Grenada,0,2001,0.0,73.0,GRD
+Grenada,0,2002,0.0,75.0,GRD
+Grenada,0,2003,0.0,70.0,GRD
+Grenada,0,2004,0.0,76.0,GRD
+Grenada,0,2005,0.0,76.0,GRD
+Grenada,0,2006,0.0,82.0,GRD
+Grenada,0,2007,0.0,79.0,GRD
+Grenada,0,2008,0.0,80.0,GRD
+Grenada,0,2009,0.0,87.0,GRD
+Grenada,0,2010,0.0,85.0,GRD
+Grenada,0,2011,0.0,82.0,GRD
+Grenada,0,2012,0.0,85.0,GRD
+Grenada,0,2013,0.0,81.0,GRD
+Grenada,0,2014,0.0,80.0,GRD
+Grenada,0,2015,0.0,83.0,GRD
+Grenada,0,2016,0.0,86.0,GRD
+Grenada,0,2017,0.0,86.0,GRD
+Grenada,0,2018,0.0,77.0,GRD
+Grenada,0,2019,0.0,77.0,GRD
+Guatemala,4,1989,0.0,85.0,GTM
+Guatemala,0,1990,4.0,81.0,GTM
+Guatemala,0,1991,0.0,79.0,GTM
+Guatemala,0,1992,0.0,71.0,GTM
+Guatemala,13,1993,0.0,61.0,GTM
+Guatemala,4,1994,13.0,73.0,GTM
+Guatemala,4,1995,4.0,71.0,GTM
+Guatemala,2,1996,4.0,78.0,GTM
+Guatemala,0,1997,2.0,79.0,GTM
+Guatemala,1,1998,0.0,68.0,GTM
+Guatemala,0,1999,1.0,77.0,GTM
+Guatemala,0,2000,0.0,75.0,GTM
+Guatemala,0,2001,0.0,73.0,GTM
+Guatemala,0,2002,0.0,75.0,GTM
+Guatemala,0,2003,0.0,70.0,GTM
+Guatemala,0,2004,0.0,76.0,GTM
+Guatemala,0,2005,0.0,76.0,GTM
+Guatemala,0,2006,0.0,82.0,GTM
+Guatemala,0,2007,0.0,79.0,GTM
+Guatemala,0,2008,0.0,80.0,GTM
+Guatemala,0,2009,0.0,87.0,GTM
+Guatemala,0,2010,0.0,85.0,GTM
+Guatemala,0,2011,0.0,82.0,GTM
+Guatemala,2,2012,0.0,83.0,GTM
+Guatemala,0,2013,2.0,81.0,GTM
+Guatemala,0,2014,0.0,80.0,GTM
+Guatemala,33,2015,0.0,60.0,GTM
+Guatemala,0,2016,33.0,86.0,GTM
+Guatemala,0,2017,0.0,86.0,GTM
+Guatemala,3,2018,0.0,74.0,GTM
+Guatemala,13,2019,3.0,67.0,GTM
+Guinea,60,1989,0.0,58.0,GIN
+Guinea,1,1990,60.0,80.0,GIN
+Guinea,1,1991,1.0,78.0,GIN
+Guinea,0,1992,1.0,71.0,GIN
+Guinea,0,1993,0.0,74.0,GIN
+Guinea,0,1994,0.0,77.0,GIN
+Guinea,0,1995,0.0,75.0,GIN
+Guinea,0,1996,0.0,80.0,GIN
+Guinea,0,1997,0.0,79.0,GIN
+Guinea,4,1998,0.0,65.0,GIN
+Guinea,0,1999,4.0,77.0,GIN
+Guinea,18,2000,0.0,62.0,GIN
+Guinea,6,2001,18.0,68.0,GIN
+Guinea,0,2002,6.0,75.0,GIN
+Guinea,2,2003,0.0,68.0,GIN
+Guinea,0,2004,2.0,76.0,GIN
+Guinea,1,2005,0.0,75.0,GIN
+Guinea,0,2006,1.0,82.0,GIN
+Guinea,0,2007,0.0,79.0,GIN
+Guinea,0,2008,0.0,80.0,GIN
+Guinea,0,2009,0.0,87.0,GIN
+Guinea,4,2010,0.0,81.0,GIN
+Guinea,1,2011,4.0,81.0,GIN
+Guinea,4,2012,1.0,81.0,GIN
+Guinea,0,2013,4.0,81.0,GIN
+Guinea,6,2014,0.0,74.0,GIN
+Guinea,0,2015,6.0,83.0,GIN
+Guinea,0,2016,0.0,86.0,GIN
+Guinea,2,2017,0.0,84.0,GIN
+Guinea,0,2018,2.0,77.0,GIN
+Guinea,0,2019,0.0,77.0,GIN
+Guinea-Bissau,0,1989,0.0,89.0,GNB
+Guinea-Bissau,20,1990,0.0,67.0,GNB
+Guinea-Bissau,6,1991,20.0,74.0,GNB
+Guinea-Bissau,0,1992,6.0,71.0,GNB
+Guinea-Bissau,5,1993,0.0,69.0,GNB
+Guinea-Bissau,0,1994,5.0,77.0,GNB
+Guinea-Bissau,0,1995,0.0,75.0,GNB
+Guinea-Bissau,0,1996,0.0,80.0,GNB
+Guinea-Bissau,0,1997,0.0,79.0,GNB
+Guinea-Bissau,0,1998,0.0,69.0,GNB
+Guinea-Bissau,0,1999,0.0,77.0,GNB
+Guinea-Bissau,0,2000,0.0,75.0,GNB
+Guinea-Bissau,0,2001,0.0,73.0,GNB
+Guinea-Bissau,0,2002,0.0,75.0,GNB
+Guinea-Bissau,0,2003,0.0,70.0,GNB
+Guinea-Bissau,0,2004,0.0,76.0,GNB
+Guinea-Bissau,0,2005,0.0,76.0,GNB
+Guinea-Bissau,0,2006,0.0,82.0,GNB
+Guinea-Bissau,0,2007,0.0,79.0,GNB
+Guinea-Bissau,0,2008,0.0,80.0,GNB
+Guinea-Bissau,0,2009,0.0,87.0,GNB
+Guinea-Bissau,0,2010,0.0,85.0,GNB
+Guinea-Bissau,0,2011,0.0,82.0,GNB
+Guinea-Bissau,0,2012,0.0,85.0,GNB
+Guinea-Bissau,0,2013,0.0,81.0,GNB
+Guinea-Bissau,0,2014,0.0,80.0,GNB
+Guinea-Bissau,0,2015,0.0,83.0,GNB
+Guinea-Bissau,0,2016,0.0,86.0,GNB
+Guinea-Bissau,0,2017,0.0,86.0,GNB
+Guinea-Bissau,0,2018,0.0,77.0,GNB
+Guinea-Bissau,0,2019,0.0,77.0,GNB
+Guyana,0,1989,0.0,89.0,GUY
+Guyana,0,1990,0.0,81.0,GUY
+Guyana,0,1991,0.0,79.0,GUY
+Guyana,0,1992,0.0,71.0,GUY
+Guyana,0,1993,0.0,74.0,GUY
+Guyana,0,1994,0.0,77.0,GUY
+Guyana,0,1995,0.0,75.0,GUY
+Guyana,0,1996,0.0,80.0,GUY
+Guyana,0,1997,0.0,79.0,GUY
+Guyana,0,1998,0.0,69.0,GUY
+Guyana,0,1999,0.0,77.0,GUY
+Guyana,0,2000,0.0,75.0,GUY
+Guyana,7,2001,0.0,67.0,GUY
+Guyana,2,2002,7.0,73.0,GUY
+Guyana,0,2003,2.0,70.0,GUY
+Guyana,0,2004,0.0,76.0,GUY
+Guyana,0,2005,0.0,76.0,GUY
+Guyana,0,2006,0.0,82.0,GUY
+Guyana,0,2007,0.0,79.0,GUY
+Guyana,0,2008,0.0,80.0,GUY
+Guyana,0,2009,0.0,87.0,GUY
+Guyana,0,2010,0.0,85.0,GUY
+Guyana,0,2011,0.0,82.0,GUY
+Guyana,0,2012,0.0,85.0,GUY
+Guyana,0,2013,0.0,81.0,GUY
+Guyana,0,2014,0.0,80.0,GUY
+Guyana,0,2015,0.0,83.0,GUY
+Guyana,0,2016,0.0,86.0,GUY
+Guyana,0,2017,0.0,86.0,GUY
+Guyana,0,2018,0.0,77.0,GUY
+Guyana,2,2019,0.0,75.0,GUY
+Haiti,0,1989,0.0,89.0,HTI
+Haiti,0,1990,0.0,81.0,HTI
+Haiti,0,1991,0.0,79.0,HTI
+Haiti,0,1992,0.0,71.0,HTI
+Haiti,0,1993,0.0,74.0,HTI
+Haiti,0,1994,0.0,77.0,HTI
+Haiti,0,1995,0.0,75.0,HTI
+Haiti,0,1996,0.0,80.0,HTI
+Haiti,0,1997,0.0,79.0,HTI
+Haiti,0,1998,0.0,69.0,HTI
+Haiti,0,1999,0.0,77.0,HTI
+Haiti,0,2000,0.0,75.0,HTI
+Haiti,0,2001,0.0,73.0,HTI
+Haiti,0,2002,0.0,75.0,HTI
+Haiti,0,2003,0.0,70.0,HTI
+Haiti,0,2004,0.0,76.0,HTI
+Haiti,0,2005,0.0,76.0,HTI
+Haiti,0,2006,0.0,82.0,HTI
+Haiti,0,2007,0.0,79.0,HTI
+Haiti,0,2008,0.0,80.0,HTI
+Haiti,0,2009,0.0,87.0,HTI
+Haiti,0,2010,0.0,85.0,HTI
+Haiti,0,2011,0.0,82.0,HTI
+Haiti,0,2012,0.0,85.0,HTI
+Haiti,0,2013,0.0,81.0,HTI
+Haiti,0,2014,0.0,80.0,HTI
+Haiti,0,2015,0.0,83.0,HTI
+Haiti,0,2016,0.0,86.0,HTI
+Haiti,0,2017,0.0,86.0,HTI
+Haiti,0,2018,0.0,77.0,HTI
+Haiti,0,2019,0.0,77.0,HTI
+Honduras,17,1989,0.0,75.0,HND
+Honduras,0,1990,17.0,81.0,HND
+Honduras,0,1991,0.0,79.0,HND
+Honduras,0,1992,0.0,71.0,HND
+Honduras,0,1993,0.0,74.0,HND
+Honduras,0,1994,0.0,77.0,HND
+Honduras,0,1995,0.0,75.0,HND
+Honduras,0,1996,0.0,80.0,HND
+Honduras,0,1997,0.0,79.0,HND
+Honduras,0,1998,0.0,69.0,HND
+Honduras,0,1999,0.0,77.0,HND
+Honduras,0,2000,0.0,75.0,HND
+Honduras,0,2001,0.0,73.0,HND
+Honduras,0,2002,0.0,75.0,HND
+Honduras,0,2003,0.0,70.0,HND
+Honduras,0,2004,0.0,76.0,HND
+Honduras,0,2005,0.0,76.0,HND
+Honduras,0,2006,0.0,82.0,HND
+Honduras,0,2007,0.0,79.0,HND
+Honduras,0,2008,0.0,80.0,HND
+Honduras,0,2009,0.0,87.0,HND
+Honduras,0,2010,0.0,85.0,HND
+Honduras,0,2011,0.0,82.0,HND
+Honduras,0,2012,0.0,85.0,HND
+Honduras,20,2013,0.0,65.0,HND
+Honduras,13,2014,20.0,69.0,HND
+Honduras,8,2015,13.0,76.0,HND
+Honduras,0,2016,8.0,86.0,HND
+Honduras,10,2017,0.0,78.0,HND
+Honduras,1,2018,10.0,76.0,HND
+Honduras,23,2019,1.0,60.0,HND
+Hungary,59,1989,0.0,59.0,HUN
+Hungary,14,1990,59.0,71.0,HUN
+Hungary,22,1991,14.0,64.0,HUN
+Hungary,0,1992,22.0,71.0,HUN
+Hungary,925,1993,0.0,11.0,HUN
+Hungary,2,1994,925.0,75.0,HUN
+Hungary,1,1995,2.0,74.0,HUN
+Hungary,156,1996,1.0,34.0,HUN
+Hungary,99,1997,156.0,43.0,HUN
+Hungary,46,1998,99.0,47.0,HUN
+Hungary,72,1999,46.0,46.0,HUN
+Hungary,14,2000,72.0,64.0,HUN
+Hungary,14,2001,14.0,60.0,HUN
+Hungary,0,2002,14.0,75.0,HUN
+Hungary,0,2003,0.0,70.0,HUN
+Hungary,72,2004,0.0,43.0,HUN
+Hungary,13,2005,72.0,65.0,HUN
+Hungary,253,2006,13.0,28.0,HUN
+Hungary,196,2007,253.0,33.0,HUN
+Hungary,5,2008,196.0,76.0,HUN
+Hungary,4,2009,5.0,83.0,HUN
+Hungary,18,2010,4.0,70.0,HUN
+Hungary,9,2011,18.0,74.0,HUN
+Hungary,0,2012,9.0,85.0,HUN
+Hungary,2,2013,0.0,79.0,HUN
+Hungary,7,2014,2.0,73.0,HUN
+Hungary,0,2015,7.0,83.0,HUN
+Hungary,14,2016,0.0,74.0,HUN
+Hungary,6,2017,14.0,81.0,HUN
+Hungary,36,2018,6.0,52.0,HUN
+Hungary,13,2019,36.0,67.0,HUN
+Iceland,0,1989,0.0,89.0,ISL
+Iceland,0,1990,0.0,81.0,ISL
+Iceland,0,1991,0.0,79.0,ISL
+Iceland,0,1992,0.0,71.0,ISL
+Iceland,0,1993,0.0,74.0,ISL
+Iceland,0,1994,0.0,77.0,ISL
+Iceland,0,1995,0.0,75.0,ISL
+Iceland,0,1996,0.0,80.0,ISL
+Iceland,0,1997,0.0,79.0,ISL
+Iceland,0,1998,0.0,69.0,ISL
+Iceland,0,1999,0.0,77.0,ISL
+Iceland,0,2000,0.0,75.0,ISL
+Iceland,0,2001,0.0,73.0,ISL
+Iceland,0,2002,0.0,75.0,ISL
+Iceland,0,2003,0.0,70.0,ISL
+Iceland,0,2004,0.0,76.0,ISL
+Iceland,0,2005,0.0,76.0,ISL
+Iceland,0,2006,0.0,82.0,ISL
+Iceland,0,2007,0.0,79.0,ISL
+Iceland,0,2008,0.0,80.0,ISL
+Iceland,0,2009,0.0,87.0,ISL
+Iceland,0,2010,0.0,85.0,ISL
+Iceland,50,2011,0.0,58.0,ISL
+Iceland,0,2012,50.0,85.0,ISL
+Iceland,0,2013,0.0,81.0,ISL
+Iceland,0,2014,0.0,80.0,ISL
+Iceland,0,2015,0.0,83.0,ISL
+Iceland,0,2016,0.0,86.0,ISL
+Iceland,0,2017,0.0,86.0,ISL
+Iceland,0,2018,0.0,77.0,ISL
+Iceland,0,2019,0.0,77.0,ISL
+India,3577,1989,0.0,1.0,IND
+India,2715,1990,3577.0,1.0,IND
+India,1878,1991,2715.0,2.0,IND
+India,1200,1992,1878.0,6.0,IND
+India,735,1993,1200.0,14.0,IND
+India,883,1994,735.0,9.0,IND
+India,1479,1995,883.0,4.0,IND
+India,862,1996,1479.0,8.0,IND
+India,1665,1997,862.0,3.0,IND
+India,758,1998,1665.0,9.0,IND
+India,1216,1999,758.0,7.0,IND
+India,995,2000,1216.0,4.0,IND
+India,1200,2001,995.0,4.0,IND
+India,2031,2002,1200.0,2.0,IND
+India,2758,2003,2031.0,1.0,IND
+India,2225,2004,2758.0,2.0,IND
+India,1204,2005,2225.0,3.0,IND
+India,1488,2006,1204.0,4.0,IND
+India,2277,2007,1488.0,1.0,IND
+India,1855,2008,2277.0,2.0,IND
+India,1863,2009,1855.0,1.0,IND
+India,2909,2010,1863.0,1.0,IND
+India,3596,2011,2909.0,1.0,IND
+India,4395,2012,3596.0,1.0,IND
+India,5378,2013,4395.0,1.0,IND
+India,3341,2014,5378.0,1.0,IND
+India,3045,2015,3341.0,2.0,IND
+India,2985,2016,3045.0,1.0,IND
+India,2931,2017,2985.0,2.0,IND
+India,1488,2018,2931.0,5.0,IND
+India,2964,2019,1488.0,2.0,IND
+Indonesia,248,1989,0.0,32.0,IDN
+Indonesia,202,1990,248.0,37.0,IDN
+Indonesia,11,1991,202.0,70.0,IDN
+Indonesia,52,1992,11.0,45.0,IDN
+Indonesia,215,1993,52.0,25.0,IDN
+Indonesia,473,1994,215.0,16.0,IDN
+Indonesia,286,1995,473.0,25.0,IDN
+Indonesia,380,1996,286.0,22.0,IDN
+Indonesia,106,1997,380.0,41.0,IDN
+Indonesia,90,1998,106.0,39.0,IDN
+Indonesia,165,1999,90.0,34.0,IDN
+Indonesia,151,2000,165.0,32.0,IDN
+Indonesia,27,2001,151.0,52.0,IDN
+Indonesia,68,2002,27.0,41.0,IDN
+Indonesia,356,2003,68.0,13.0,IDN
+Indonesia,79,2004,356.0,41.0,IDN
+Indonesia,36,2005,79.0,52.0,IDN
+Indonesia,65,2006,36.0,49.0,IDN
+Indonesia,587,2007,65.0,17.0,IDN
+Indonesia,244,2008,587.0,28.0,IDN
+Indonesia,441,2009,244.0,16.0,IDN
+Indonesia,225,2010,441.0,28.0,IDN
+Indonesia,250,2011,225.0,30.0,IDN
+Indonesia,214,2012,250.0,32.0,IDN
+Indonesia,800,2013,214.0,7.0,IDN
+Indonesia,1188,2014,800.0,5.0,IDN
+Indonesia,438,2015,1188.0,18.0,IDN
+Indonesia,381,2016,438.0,21.0,IDN
+Indonesia,1178,2017,381.0,6.0,IDN
+Indonesia,338,2018,1178.0,22.0,IDN
+Indonesia,219,2019,338.0,26.0,IDN
+Iran,192,1989,0.0,39.0,IRN
+Iran,454,1990,192.0,21.0,IRN
+Iran,1022,1991,454.0,8.0,IRN
+Iran,432,1992,1022.0,17.0,IRN
+Iran,987,1993,432.0,10.0,IRN
+Iran,450,1994,987.0,18.0,IRN
+Iran,294,1995,450.0,24.0,IRN
+Iran,615,1996,294.0,11.0,IRN
+Iran,178,1997,615.0,36.0,IRN
+Iran,381,1998,178.0,18.0,IRN
+Iran,323,1999,381.0,21.0,IRN
+Iran,418,2000,323.0,13.0,IRN
+Iran,524,2001,418.0,11.0,IRN
+Iran,435,2002,524.0,14.0,IRN
+Iran,282,2003,435.0,16.0,IRN
+Iran,121,2004,282.0,35.0,IRN
+Iran,57,2005,121.0,46.0,IRN
+Iran,423,2006,57.0,17.0,IRN
+Iran,331,2007,423.0,25.0,IRN
+Iran,62,2008,331.0,53.0,IRN
+Iran,97,2009,62.0,40.0,IRN
+Iran,99,2010,97.0,42.0,IRN
+Iran,100,2011,99.0,44.0,IRN
+Iran,46,2012,100.0,59.0,IRN
+Iran,13,2013,46.0,70.0,IRN
+Iran,13,2014,13.0,69.0,IRN
+Iran,13,2015,13.0,72.0,IRN
+Iran,413,2016,13.0,20.0,IRN
+Iran,4,2017,413.0,82.0,IRN
+Iran,4,2018,4.0,73.0,IRN
+Iran,3,2019,4.0,74.0,IRN
+Iraq,1494,1989,0.0,6.0,IRQ
+Iraq,779,1990,1494.0,9.0,IRQ
+Iraq,0,1991,779.0,79.0,IRQ
+Iraq,0,1992,0.0,71.0,IRQ
+Iraq,0,1993,0.0,74.0,IRQ
+Iraq,0,1994,0.0,77.0,IRQ
+Iraq,0,1995,0.0,75.0,IRQ
+Iraq,0,1996,0.0,80.0,IRQ
+Iraq,0,1997,0.0,79.0,IRQ
+Iraq,0,1998,0.0,69.0,IRQ
+Iraq,0,1999,0.0,77.0,IRQ
+Iraq,0,2000,0.0,75.0,IRQ
+Iraq,0,2001,0.0,73.0,IRQ
+Iraq,0,2002,0.0,75.0,IRQ
+Iraq,0,2003,0.0,70.0,IRQ
+Iraq,71,2004,0.0,44.0,IRQ
+Iraq,186,2005,71.0,25.0,IRQ
+Iraq,312,2006,186.0,25.0,IRQ
+Iraq,275,2007,312.0,27.0,IRQ
+Iraq,378,2008,275.0,23.0,IRQ
+Iraq,398,2009,378.0,18.0,IRQ
+Iraq,434,2010,398.0,16.0,IRQ
+Iraq,574,2011,434.0,19.0,IRQ
+Iraq,476,2012,574.0,18.0,IRQ
+Iraq,353,2013,476.0,20.0,IRQ
+Iraq,665,2014,353.0,14.0,IRQ
+Iraq,1464,2015,665.0,3.0,IRQ
+Iraq,1789,2016,1464.0,4.0,IRQ
+Iraq,989,2017,1789.0,8.0,IRQ
+Iraq,543,2018,989.0,17.0,IRQ
+Iraq,175,2019,543.0,30.0,IRQ
+Ireland,0,1989,0.0,89.0,IRL
+Ireland,0,1990,0.0,81.0,IRL
+Ireland,11,1991,0.0,70.0,IRL
+Ireland,0,1992,11.0,71.0,IRL
+Ireland,0,1993,0.0,74.0,IRL
+Ireland,43,1994,0.0,53.0,IRL
+Ireland,0,1995,43.0,75.0,IRL
+Ireland,0,1996,0.0,80.0,IRL
+Ireland,0,1997,0.0,79.0,IRL
+Ireland,3,1998,0.0,66.0,IRL
+Ireland,35,1999,3.0,58.0,IRL
+Ireland,0,2000,35.0,75.0,IRL
+Ireland,45,2001,0.0,47.0,IRL
+Ireland,22,2002,45.0,57.0,IRL
+Ireland,0,2003,22.0,70.0,IRL
+Ireland,19,2004,0.0,58.0,IRL
+Ireland,5,2005,19.0,71.0,IRL
+Ireland,13,2006,5.0,71.0,IRL
+Ireland,19,2007,13.0,63.0,IRL
+Ireland,22,2008,19.0,64.0,IRL
+Ireland,0,2009,22.0,87.0,IRL
+Ireland,5,2010,0.0,80.0,IRL
+Ireland,2,2011,5.0,80.0,IRL
+Ireland,2,2012,2.0,83.0,IRL
+Ireland,0,2013,2.0,81.0,IRL
+Ireland,40,2014,0.0,57.0,IRL
+Ireland,43,2015,40.0,56.0,IRL
+Ireland,43,2016,43.0,58.0,IRL
+Ireland,2,2017,43.0,84.0,IRL
+Ireland,7,2018,2.0,70.0,IRL
+Ireland,36,2019,7.0,53.0,IRL
+Israel,24,1989,0.0,71.0,ISR
+Israel,81,1990,24.0,52.0,ISR
+Israel,1209,1991,81.0,5.0,ISR
+Israel,1303,1992,1209.0,4.0,ISR
+Israel,716,1993,1303.0,15.0,ISR
+Israel,757,1994,716.0,12.0,ISR
+Israel,364,1995,757.0,18.0,ISR
+Israel,117,1996,364.0,39.0,ISR
+Israel,67,1997,117.0,50.0,ISR
+Israel,1291,1998,67.0,7.0,ISR
+Israel,1191,1999,1291.0,8.0,ISR
+Israel,353,2000,1191.0,15.0,ISR
+Israel,116,2001,353.0,34.0,ISR
+Israel,349,2002,116.0,16.0,ISR
+Israel,189,2003,349.0,22.0,ISR
+Israel,845,2004,189.0,7.0,ISR
+Israel,1133,2005,845.0,4.0,ISR
+Israel,1122,2006,1133.0,5.0,ISR
+Israel,832,2007,1122.0,8.0,ISR
+Israel,676,2008,832.0,11.0,ISR
+Israel,153,2009,676.0,34.0,ISR
+Israel,67,2010,153.0,48.0,ISR
+Israel,85,2011,67.0,46.0,ISR
+Israel,120,2012,85.0,42.0,ISR
+Israel,209,2013,120.0,28.0,ISR
+Israel,541,2014,209.0,19.0,ISR
+Israel,681,2015,541.0,11.0,ISR
+Israel,605,2016,681.0,15.0,ISR
+Israel,536,2017,605.0,17.0,ISR
+Israel,543,2018,536.0,17.0,ISR
+Israel,507,2019,543.0,15.0,ISR
+Italy,196,1989,0.0,38.0,ITA
+Italy,158,1990,196.0,41.0,ITA
+Italy,206,1991,158.0,33.0,ITA
+Italy,188,1992,206.0,29.0,ITA
+Italy,208,1993,188.0,26.0,ITA
+Italy,201,1994,208.0,30.0,ITA
+Italy,334,1995,201.0,21.0,ITA
+Italy,286,1996,334.0,24.0,ITA
+Italy,519,1997,286.0,16.0,ITA
+Italy,56,1998,519.0,44.0,ITA
+Italy,25,1999,56.0,61.0,ITA
+Italy,241,2000,25.0,23.0,ITA
+Italy,221,2001,241.0,20.0,ITA
+Italy,239,2002,221.0,22.0,ITA
+Italy,564,2003,239.0,11.0,ITA
+Italy,451,2004,564.0,12.0,ITA
+Italy,162,2005,451.0,29.0,ITA
+Italy,423,2006,162.0,17.0,ITA
+Italy,515,2007,423.0,20.0,ITA
+Italy,214,2008,515.0,29.0,ITA
+Italy,101,2009,214.0,39.0,ITA
+Italy,103,2010,101.0,41.0,ITA
+Italy,286,2011,103.0,28.0,ITA
+Italy,207,2012,286.0,33.0,ITA
+Italy,81,2013,207.0,41.0,ITA
+Italy,139,2014,81.0,36.0,ITA
+Italy,251,2015,139.0,27.0,ITA
+Italy,759,2016,251.0,13.0,ITA
+Italy,734,2017,759.0,15.0,ITA
+Italy,317,2018,734.0,24.0,ITA
+Italy,186,2019,317.0,29.0,ITA
+Jamaica,4,1989,0.0,85.0,JAM
+Jamaica,0,1990,4.0,81.0,JAM
+Jamaica,0,1991,0.0,79.0,JAM
+Jamaica,0,1992,0.0,71.0,JAM
+Jamaica,0,1993,0.0,74.0,JAM
+Jamaica,0,1994,0.0,77.0,JAM
+Jamaica,0,1995,0.0,75.0,JAM
+Jamaica,0,1996,0.0,80.0,JAM
+Jamaica,0,1997,0.0,79.0,JAM
+Jamaica,10,1998,0.0,59.0,JAM
+Jamaica,10,1999,10.0,69.0,JAM
+Jamaica,0,2000,10.0,75.0,JAM
+Jamaica,0,2001,0.0,73.0,JAM
+Jamaica,0,2002,0.0,75.0,JAM
+Jamaica,0,2003,0.0,70.0,JAM
+Jamaica,0,2004,0.0,76.0,JAM
+Jamaica,10,2005,0.0,67.0,JAM
+Jamaica,10,2006,10.0,73.0,JAM
+Jamaica,13,2007,10.0,68.0,JAM
+Jamaica,2,2008,13.0,78.0,JAM
+Jamaica,0,2009,2.0,87.0,JAM
+Jamaica,1,2010,0.0,84.0,JAM
+Jamaica,0,2011,1.0,82.0,JAM
+Jamaica,0,2012,0.0,85.0,JAM
+Jamaica,1,2013,0.0,80.0,JAM
+Jamaica,0,2014,1.0,80.0,JAM
+Jamaica,2,2015,0.0,81.0,JAM
+Jamaica,22,2016,2.0,68.0,JAM
+Jamaica,0,2017,22.0,86.0,JAM
+Jamaica,13,2018,0.0,65.0,JAM
+Jamaica,3,2019,13.0,74.0,JAM
+Japan,2297,1989,0.0,2.0,JPN
+Japan,2703,1990,2297.0,2.0,JPN
+Japan,2953,1991,2703.0,1.0,JPN
+Japan,2520,1992,2953.0,1.0,JPN
+Japan,2138,1993,2520.0,3.0,JPN
+Japan,1025,1994,2138.0,4.0,JPN
+Japan,1241,1995,1025.0,6.0,JPN
+Japan,857,1996,1241.0,9.0,JPN
+Japan,824,1997,857.0,9.0,JPN
+Japan,1474,1998,824.0,5.0,JPN
+Japan,1267,1999,1474.0,6.0,JPN
+Japan,494,2000,1267.0,11.0,JPN
+Japan,442,2001,494.0,14.0,JPN
+Japan,446,2002,442.0,12.0,JPN
+Japan,483,2003,446.0,12.0,JPN
+Japan,403,2004,483.0,13.0,JPN
+Japan,398,2005,403.0,17.0,JPN
+Japan,480,2006,398.0,15.0,JPN
+Japan,517,2007,480.0,19.0,JPN
+Japan,692,2008,517.0,10.0,JPN
+Japan,621,2009,692.0,13.0,JPN
+Japan,403,2010,621.0,19.0,JPN
+Japan,304,2011,403.0,27.0,JPN
+Japan,223,2012,304.0,30.0,JPN
+Japan,277,2013,223.0,23.0,JPN
+Japan,293,2014,277.0,22.0,JPN
+Japan,329,2015,293.0,23.0,JPN
+Japan,330,2016,329.0,24.0,JPN
+Japan,453,2017,330.0,21.0,JPN
+Japan,572,2018,453.0,15.0,JPN
+Japan,891,2019,572.0,8.0,JPN
+Jordan,59,1989,0.0,59.0,JOR
+Jordan,16,1990,59.0,70.0,JOR
+Jordan,24,1991,16.0,63.0,JOR
+Jordan,0,1992,24.0,71.0,JOR
+Jordan,1,1993,0.0,73.0,JOR
+Jordan,5,1994,1.0,72.0,JOR
+Jordan,19,1995,5.0,61.0,JOR
+Jordan,75,1996,19.0,46.0,JOR
+Jordan,77,1997,75.0,46.0,JOR
+Jordan,248,1998,77.0,23.0,JOR
+Jordan,64,1999,248.0,48.0,JOR
+Jordan,133,2000,64.0,36.0,JOR
+Jordan,160,2001,133.0,25.0,JOR
+Jordan,132,2002,160.0,32.0,JOR
+Jordan,281,2003,132.0,17.0,JOR
+Jordan,168,2004,281.0,33.0,JOR
+Jordan,49,2005,168.0,48.0,JOR
+Jordan,53,2006,49.0,52.0,JOR
+Jordan,181,2007,53.0,35.0,JOR
+Jordan,161,2008,181.0,35.0,JOR
+Jordan,234,2009,161.0,28.0,JOR
+Jordan,89,2010,234.0,45.0,JOR
+Jordan,215,2011,89.0,34.0,JOR
+Jordan,176,2012,215.0,37.0,JOR
+Jordan,75,2013,176.0,44.0,JOR
+Jordan,196,2014,75.0,30.0,JOR
+Jordan,233,2015,196.0,29.0,JOR
+Jordan,233,2016,233.0,33.0,JOR
+Jordan,390,2017,233.0,24.0,JOR
+Jordan,215,2018,390.0,29.0,JOR
+Jordan,85,2019,215.0,39.0,JOR
+Kazakhstan,0,1989,0.0,89.0,KAZ
+Kazakhstan,0,1990,0.0,81.0,KAZ
+Kazakhstan,0,1991,0.0,79.0,KAZ
+Kazakhstan,0,1992,0.0,71.0,KAZ
+Kazakhstan,0,1993,0.0,74.0,KAZ
+Kazakhstan,0,1994,0.0,77.0,KAZ
+Kazakhstan,99,1995,0.0,37.0,KAZ
+Kazakhstan,2,1996,99.0,78.0,KAZ
+Kazakhstan,64,1997,2.0,51.0,KAZ
+Kazakhstan,0,1998,64.0,69.0,KAZ
+Kazakhstan,72,1999,0.0,46.0,KAZ
+Kazakhstan,121,2000,72.0,39.0,KAZ
+Kazakhstan,139,2001,121.0,31.0,KAZ
+Kazakhstan,20,2002,139.0,59.0,KAZ
+Kazakhstan,0,2003,20.0,70.0,KAZ
+Kazakhstan,47,2004,0.0,49.0,KAZ
+Kazakhstan,42,2005,47.0,50.0,KAZ
+Kazakhstan,44,2006,42.0,56.0,KAZ
+Kazakhstan,82,2007,44.0,46.0,KAZ
+Kazakhstan,25,2008,82.0,62.0,KAZ
+Kazakhstan,39,2009,25.0,58.0,KAZ
+Kazakhstan,58,2010,39.0,49.0,KAZ
+Kazakhstan,62,2011,58.0,55.0,KAZ
+Kazakhstan,94,2012,62.0,47.0,KAZ
+Kazakhstan,141,2013,94.0,35.0,KAZ
+Kazakhstan,95,2014,141.0,42.0,KAZ
+Kazakhstan,444,2015,95.0,16.0,KAZ
+Kazakhstan,248,2016,444.0,31.0,KAZ
+Kazakhstan,214,2017,248.0,32.0,KAZ
+Kazakhstan,304,2018,214.0,25.0,KAZ
+Kazakhstan,312,2019,304.0,21.0,KAZ
+Kenya,23,1989,0.0,72.0,KEN
+Kenya,42,1990,23.0,60.0,KEN
+Kenya,14,1991,42.0,69.0,KEN
+Kenya,0,1992,14.0,71.0,KEN
+Kenya,0,1993,0.0,74.0,KEN
+Kenya,30,1994,0.0,58.0,KEN
+Kenya,0,1995,30.0,75.0,KEN
+Kenya,0,1996,0.0,80.0,KEN
+Kenya,58,1997,0.0,54.0,KEN
+Kenya,0,1998,58.0,69.0,KEN
+Kenya,0,1999,0.0,77.0,KEN
+Kenya,12,2000,0.0,66.0,KEN
+Kenya,0,2001,12.0,73.0,KEN
+Kenya,0,2002,0.0,75.0,KEN
+Kenya,0,2003,0.0,70.0,KEN
+Kenya,0,2004,0.0,76.0,KEN
+Kenya,0,2005,0.0,76.0,KEN
+Kenya,0,2006,0.0,82.0,KEN
+Kenya,10,2007,0.0,70.0,KEN
+Kenya,0,2008,10.0,80.0,KEN
+Kenya,34,2009,0.0,62.0,KEN
+Kenya,116,2010,34.0,38.0,KEN
+Kenya,14,2011,116.0,71.0,KEN
+Kenya,62,2012,14.0,56.0,KEN
+Kenya,1,2013,62.0,80.0,KEN
+Kenya,17,2014,1.0,65.0,KEN
+Kenya,30,2015,17.0,61.0,KEN
+Kenya,29,2016,30.0,63.0,KEN
+Kenya,16,2017,29.0,73.0,KEN
+Kenya,5,2018,16.0,72.0,KEN
+Kenya,32,2019,5.0,55.0,KEN
+Kiribati,0,1989,0.0,89.0,KIR
+Kiribati,0,1990,0.0,81.0,KIR
+Kiribati,0,1991,0.0,79.0,KIR
+Kiribati,0,1992,0.0,71.0,KIR
+Kiribati,0,1993,0.0,74.0,KIR
+Kiribati,6,1994,0.0,71.0,KIR
+Kiribati,0,1995,6.0,75.0,KIR
+Kiribati,0,1996,0.0,80.0,KIR
+Kiribati,0,1997,0.0,79.0,KIR
+Kiribati,0,1998,0.0,69.0,KIR
+Kiribati,0,1999,0.0,77.0,KIR
+Kiribati,0,2000,0.0,75.0,KIR
+Kiribati,0,2001,0.0,73.0,KIR
+Kiribati,0,2002,0.0,75.0,KIR
+Kiribati,0,2003,0.0,70.0,KIR
+Kiribati,0,2004,0.0,76.0,KIR
+Kiribati,0,2005,0.0,76.0,KIR
+Kiribati,0,2006,0.0,82.0,KIR
+Kiribati,0,2007,0.0,79.0,KIR
+Kiribati,0,2008,0.0,80.0,KIR
+Kiribati,0,2009,0.0,87.0,KIR
+Kiribati,0,2010,0.0,85.0,KIR
+Kiribati,0,2011,0.0,82.0,KIR
+Kiribati,0,2012,0.0,85.0,KIR
+Kiribati,0,2013,0.0,81.0,KIR
+Kiribati,0,2014,0.0,80.0,KIR
+Kiribati,0,2015,0.0,83.0,KIR
+Kiribati,0,2016,0.0,86.0,KIR
+Kiribati,0,2017,0.0,86.0,KIR
+Kiribati,0,2018,0.0,77.0,KIR
+Kiribati,0,2019,0.0,77.0,KIR
+Kosovo,0,1989,0.0,89.0,XKX
+Kosovo,0,1990,0.0,81.0,XKX
+Kosovo,0,1991,0.0,79.0,XKX
+Kosovo,0,1992,0.0,71.0,XKX
+Kosovo,0,1993,0.0,74.0,XKX
+Kosovo,0,1994,0.0,77.0,XKX
+Kosovo,0,1995,0.0,75.0,XKX
+Kosovo,0,1996,0.0,80.0,XKX
+Kosovo,0,1997,0.0,79.0,XKX
+Kosovo,0,1998,0.0,69.0,XKX
+Kosovo,0,1999,0.0,77.0,XKX
+Kosovo,0,2000,0.0,75.0,XKX
+Kosovo,0,2001,0.0,73.0,XKX
+Kosovo,0,2002,0.0,75.0,XKX
+Kosovo,0,2003,0.0,70.0,XKX
+Kosovo,0,2004,0.0,76.0,XKX
+Kosovo,0,2005,0.0,76.0,XKX
+Kosovo,0,2006,0.0,82.0,XKX
+Kosovo,0,2007,0.0,79.0,XKX
+Kosovo,0,2008,0.0,80.0,XKX
+Kosovo,0,2009,0.0,87.0,XKX
+Kosovo,0,2010,0.0,85.0,XKX
+Kosovo,0,2011,0.0,82.0,XKX
+Kosovo,0,2012,0.0,85.0,XKX
+Kosovo,0,2013,0.0,81.0,XKX
+Kosovo,1,2014,0.0,79.0,XKX
+Kosovo,0,2015,1.0,83.0,XKX
+Kosovo,0,2016,0.0,86.0,XKX
+Kosovo,0,2017,0.0,86.0,XKX
+Kosovo,0,2018,0.0,77.0,XKX
+Kosovo,0,2019,0.0,77.0,XKX
+Kuwait,132,1989,0.0,44.0,KWT
+Kuwait,325,1990,132.0,27.0,KWT
+Kuwait,516,1991,325.0,19.0,KWT
+Kuwait,896,1992,516.0,10.0,KWT
+Kuwait,694,1993,896.0,16.0,KWT
+Kuwait,35,1994,694.0,57.0,KWT
+Kuwait,632,1995,35.0,12.0,KWT
+Kuwait,1189,1996,632.0,6.0,KWT
+Kuwait,482,1997,1189.0,19.0,KWT
+Kuwait,46,1998,482.0,47.0,KWT
+Kuwait,212,1999,46.0,28.0,KWT
+Kuwait,245,2000,212.0,22.0,KWT
+Kuwait,67,2001,245.0,42.0,KWT
+Kuwait,23,2002,67.0,56.0,KWT
+Kuwait,45,2003,23.0,44.0,KWT
+Kuwait,2,2004,45.0,74.0,KWT
+Kuwait,12,2005,2.0,66.0,KWT
+Kuwait,5,2006,12.0,77.0,KWT
+Kuwait,288,2007,5.0,26.0,KWT
+Kuwait,5,2008,288.0,76.0,KWT
+Kuwait,9,2009,5.0,78.0,KWT
+Kuwait,85,2010,9.0,46.0,KWT
+Kuwait,113,2011,85.0,43.0,KWT
+Kuwait,31,2012,113.0,64.0,KWT
+Kuwait,73,2013,31.0,45.0,KWT
+Kuwait,692,2014,73.0,13.0,KWT
+Kuwait,339,2015,692.0,21.0,KWT
+Kuwait,162,2016,339.0,38.0,KWT
+Kuwait,111,2017,162.0,37.0,KWT
+Kuwait,95,2018,111.0,44.0,KWT
+Kuwait,70,2019,95.0,41.0,KWT
+Kyrgyzstan,0,1989,0.0,89.0,KGZ
+Kyrgyzstan,0,1990,0.0,81.0,KGZ
+Kyrgyzstan,0,1991,0.0,79.0,KGZ
+Kyrgyzstan,0,1992,0.0,71.0,KGZ
+Kyrgyzstan,0,1993,0.0,74.0,KGZ
+Kyrgyzstan,0,1994,0.0,77.0,KGZ
+Kyrgyzstan,0,1995,0.0,75.0,KGZ
+Kyrgyzstan,0,1996,0.0,80.0,KGZ
+Kyrgyzstan,0,1997,0.0,79.0,KGZ
+Kyrgyzstan,0,1998,0.0,69.0,KGZ
+Kyrgyzstan,0,1999,0.0,77.0,KGZ
+Kyrgyzstan,0,2000,0.0,75.0,KGZ
+Kyrgyzstan,0,2001,0.0,73.0,KGZ
+Kyrgyzstan,0,2002,0.0,75.0,KGZ
+Kyrgyzstan,9,2003,0.0,62.0,KGZ
+Kyrgyzstan,5,2004,9.0,72.0,KGZ
+Kyrgyzstan,3,2005,5.0,73.0,KGZ
+Kyrgyzstan,2,2006,3.0,80.0,KGZ
+Kyrgyzstan,0,2007,2.0,79.0,KGZ
+Kyrgyzstan,0,2008,0.0,80.0,KGZ
+Kyrgyzstan,0,2009,0.0,87.0,KGZ
+Kyrgyzstan,0,2010,0.0,85.0,KGZ
+Kyrgyzstan,0,2011,0.0,82.0,KGZ
+Kyrgyzstan,0,2012,0.0,85.0,KGZ
+Kyrgyzstan,0,2013,0.0,81.0,KGZ
+Kyrgyzstan,0,2014,0.0,80.0,KGZ
+Kyrgyzstan,4,2015,0.0,79.0,KGZ
+Kyrgyzstan,9,2016,4.0,77.0,KGZ
+Kyrgyzstan,13,2017,9.0,76.0,KGZ
+Kyrgyzstan,1,2018,13.0,76.0,KGZ
+Kyrgyzstan,15,2019,1.0,65.0,KGZ
+Laos,0,1989,0.0,89.0,LAO
+Laos,8,1990,0.0,74.0,LAO
+Laos,0,1991,8.0,79.0,LAO
+Laos,0,1992,0.0,71.0,LAO
+Laos,0,1993,0.0,74.0,LAO
+Laos,0,1994,0.0,77.0,LAO
+Laos,0,1995,0.0,75.0,LAO
+Laos,0,1996,0.0,80.0,LAO
+Laos,44,1997,0.0,57.0,LAO
+Laos,21,1998,44.0,54.0,LAO
+Laos,30,1999,21.0,60.0,LAO
+Laos,7,2000,30.0,69.0,LAO
+Laos,0,2001,7.0,73.0,LAO
+Laos,0,2002,0.0,75.0,LAO
+Laos,0,2003,0.0,70.0,LAO
+Laos,0,2004,0.0,76.0,LAO
+Laos,4,2005,0.0,72.0,LAO
+Laos,0,2006,4.0,82.0,LAO
+Laos,0,2007,0.0,79.0,LAO
+Laos,7,2008,0.0,74.0,LAO
+Laos,26,2009,7.0,66.0,LAO
+Laos,0,2010,26.0,85.0,LAO
+Laos,14,2011,0.0,71.0,LAO
+Laos,19,2012,14.0,70.0,LAO
+Laos,19,2013,19.0,66.0,LAO
+Laos,0,2014,19.0,80.0,LAO
+Laos,7,2015,0.0,77.0,LAO
+Laos,0,2016,7.0,86.0,LAO
+Laos,3,2017,0.0,83.0,LAO
+Laos,109,2018,3.0,41.0,LAO
+Laos,18,2019,109.0,62.0,LAO
+Latvia,0,1989,0.0,89.0,LVA
+Latvia,0,1990,0.0,81.0,LVA
+Latvia,0,1991,0.0,79.0,LVA
+Latvia,0,1992,0.0,71.0,LVA
+Latvia,8,1993,0.0,66.0,LVA
+Latvia,12,1994,8.0,66.0,LVA
+Latvia,14,1995,12.0,63.0,LVA
+Latvia,0,1996,14.0,80.0,LVA
+Latvia,0,1997,0.0,79.0,LVA
+Latvia,0,1998,0.0,69.0,LVA
+Latvia,4,1999,0.0,73.0,LVA
+Latvia,3,2000,4.0,72.0,LVA
+Latvia,13,2001,3.0,61.0,LVA
+Latvia,3,2002,13.0,72.0,LVA
+Latvia,25,2003,3.0,50.0,LVA
+Latvia,12,2004,25.0,65.0,LVA
+Latvia,4,2005,12.0,72.0,LVA
+Latvia,9,2006,4.0,74.0,LVA
+Latvia,51,2007,9.0,54.0,LVA
+Latvia,44,2008,51.0,56.0,LVA
+Latvia,11,2009,44.0,76.0,LVA
+Latvia,15,2010,11.0,73.0,LVA
+Latvia,27,2011,15.0,65.0,LVA
+Latvia,9,2012,27.0,76.0,LVA
+Latvia,5,2013,9.0,77.0,LVA
+Latvia,5,2014,5.0,75.0,LVA
+Latvia,1,2015,5.0,82.0,LVA
+Latvia,24,2016,1.0,67.0,LVA
+Latvia,29,2017,24.0,64.0,LVA
+Latvia,19,2018,29.0,59.0,LVA
+Latvia,25,2019,19.0,59.0,LVA
+Lebanon,1,1989,0.0,88.0,LBN
+Lebanon,0,1990,1.0,81.0,LBN
+Lebanon,1,1991,0.0,78.0,LBN
+Lebanon,41,1992,1.0,49.0,LBN
+Lebanon,41,1993,41.0,50.0,LBN
+Lebanon,18,1994,41.0,63.0,LBN
+Lebanon,43,1995,18.0,49.0,LBN
+Lebanon,29,1996,43.0,64.0,LBN
+Lebanon,9,1997,29.0,70.0,LBN
+Lebanon,7,1998,9.0,62.0,LBN
+Lebanon,4,1999,7.0,73.0,LBN
+Lebanon,4,2000,4.0,71.0,LBN
+Lebanon,0,2001,4.0,73.0,LBN
+Lebanon,3,2002,0.0,72.0,LBN
+Lebanon,0,2003,3.0,70.0,LBN
+Lebanon,1,2004,0.0,75.0,LBN
+Lebanon,1,2005,1.0,75.0,LBN
+Lebanon,9,2006,1.0,74.0,LBN
+Lebanon,5,2007,9.0,74.0,LBN
+Lebanon,1,2008,5.0,79.0,LBN
+Lebanon,72,2009,1.0,46.0,LBN
+Lebanon,84,2010,72.0,47.0,LBN
+Lebanon,1,2011,84.0,81.0,LBN
+Lebanon,31,2012,1.0,64.0,LBN
+Lebanon,24,2013,31.0,62.0,LBN
+Lebanon,6,2014,24.0,74.0,LBN
+Lebanon,48,2015,6.0,53.0,LBN
+Lebanon,28,2016,48.0,64.0,LBN
+Lebanon,50,2017,28.0,52.0,LBN
+Lebanon,52,2018,50.0,48.0,LBN
+Lebanon,67,2019,52.0,42.0,LBN
+Lesotho,8,1989,0.0,82.0,LSO
+Lesotho,0,1990,8.0,81.0,LSO
+Lesotho,4,1991,0.0,75.0,LSO
+Lesotho,0,1992,4.0,71.0,LSO
+Lesotho,0,1993,0.0,74.0,LSO
+Lesotho,0,1994,0.0,77.0,LSO
+Lesotho,0,1995,0.0,75.0,LSO
+Lesotho,0,1996,0.0,80.0,LSO
+Lesotho,0,1997,0.0,79.0,LSO
+Lesotho,5,1998,0.0,64.0,LSO
+Lesotho,0,1999,5.0,77.0,LSO
+Lesotho,0,2000,0.0,75.0,LSO
+Lesotho,6,2001,0.0,68.0,LSO
+Lesotho,0,2002,6.0,75.0,LSO
+Lesotho,0,2003,0.0,70.0,LSO
+Lesotho,1,2004,0.0,75.0,LSO
+Lesotho,0,2005,1.0,76.0,LSO
+Lesotho,1,2006,0.0,81.0,LSO
+Lesotho,0,2007,1.0,79.0,LSO
+Lesotho,0,2008,0.0,80.0,LSO
+Lesotho,0,2009,0.0,87.0,LSO
+Lesotho,0,2010,0.0,85.0,LSO
+Lesotho,0,2011,0.0,82.0,LSO
+Lesotho,0,2012,0.0,85.0,LSO
+Lesotho,0,2013,0.0,81.0,LSO
+Lesotho,0,2014,0.0,80.0,LSO
+Lesotho,0,2015,0.0,83.0,LSO
+Lesotho,0,2016,0.0,86.0,LSO
+Lesotho,1,2017,0.0,85.0,LSO
+Lesotho,1,2018,1.0,76.0,LSO
+Lesotho,1,2019,1.0,76.0,LSO
+Liberia,12,1989,0.0,80.0,LBR
+Liberia,3,1990,12.0,78.0,LBR
+Liberia,0,1991,3.0,79.0,LBR
+Liberia,0,1992,0.0,71.0,LBR
+Liberia,0,1993,0.0,74.0,LBR
+Liberia,0,1994,0.0,77.0,LBR
+Liberia,0,1995,0.0,75.0,LBR
+Liberia,0,1996,0.0,80.0,LBR
+Liberia,0,1997,0.0,79.0,LBR
+Liberia,0,1998,0.0,69.0,LBR
+Liberia,1,1999,0.0,76.0,LBR
+Liberia,8,2000,1.0,68.0,LBR
+Liberia,0,2001,8.0,73.0,LBR
+Liberia,0,2002,0.0,75.0,LBR
+Liberia,0,2003,0.0,70.0,LBR
+Liberia,0,2004,0.0,76.0,LBR
+Liberia,0,2005,0.0,76.0,LBR
+Liberia,0,2006,0.0,82.0,LBR
+Liberia,0,2007,0.0,79.0,LBR
+Liberia,0,2008,0.0,80.0,LBR
+Liberia,0,2009,0.0,87.0,LBR
+Liberia,0,2010,0.0,85.0,LBR
+Liberia,0,2011,0.0,82.0,LBR
+Liberia,0,2012,0.0,85.0,LBR
+Liberia,0,2013,0.0,81.0,LBR
+Liberia,0,2014,0.0,80.0,LBR
+Liberia,0,2015,0.0,83.0,LBR
+Liberia,0,2016,0.0,86.0,LBR
+Liberia,0,2017,0.0,86.0,LBR
+Liberia,0,2018,0.0,77.0,LBR
+Liberia,0,2019,0.0,77.0,LBR
+Libya,218,1989,0.0,35.0,LBY
+Libya,10,1990,218.0,73.0,LBY
+Libya,0,1991,10.0,79.0,LBY
+Libya,0,1992,0.0,71.0,LBY
+Libya,0,1993,0.0,74.0,LBY
+Libya,0,1994,0.0,77.0,LBY
+Libya,0,1995,0.0,75.0,LBY
+Libya,0,1996,0.0,80.0,LBY
+Libya,0,1997,0.0,79.0,LBY
+Libya,0,1998,0.0,69.0,LBY
+Libya,9,1999,0.0,70.0,LBY
+Libya,0,2000,9.0,75.0,LBY
+Libya,0,2001,0.0,73.0,LBY
+Libya,0,2002,0.0,75.0,LBY
+Libya,0,2003,0.0,70.0,LBY
+Libya,0,2004,0.0,76.0,LBY
+Libya,1,2005,0.0,75.0,LBY
+Libya,16,2006,1.0,68.0,LBY
+Libya,16,2007,16.0,66.0,LBY
+Libya,16,2008,16.0,67.0,LBY
+Libya,22,2009,16.0,68.0,LBY
+Libya,37,2010,22.0,59.0,LBY
+Libya,9,2011,37.0,74.0,LBY
+Libya,73,2012,9.0,53.0,LBY
+Libya,109,2013,73.0,39.0,LBY
+Libya,17,2014,109.0,65.0,LBY
+Libya,38,2015,17.0,58.0,LBY
+Libya,15,2016,38.0,73.0,LBY
+Libya,6,2017,15.0,81.0,LBY
+Libya,11,2018,6.0,67.0,LBY
+Libya,22,2019,11.0,61.0,LBY
+Lithuania,0,1989,0.0,89.0,LTU
+Lithuania,0,1990,0.0,81.0,LTU
+Lithuania,0,1991,0.0,79.0,LTU
+Lithuania,70,1992,0.0,40.0,LTU
+Lithuania,10,1993,70.0,64.0,LTU
+Lithuania,0,1994,10.0,77.0,LTU
+Lithuania,4,1995,0.0,71.0,LTU
+Lithuania,15,1996,4.0,71.0,LTU
+Lithuania,0,1997,15.0,79.0,LTU
+Lithuania,15,1998,0.0,57.0,LTU
+Lithuania,5,1999,15.0,72.0,LTU
+Lithuania,6,2000,5.0,70.0,LTU
+Lithuania,16,2001,6.0,58.0,LTU
+Lithuania,12,2002,16.0,66.0,LTU
+Lithuania,1,2003,12.0,69.0,LTU
+Lithuania,47,2004,1.0,49.0,LTU
+Lithuania,9,2005,47.0,68.0,LTU
+Lithuania,52,2006,9.0,53.0,LTU
+Lithuania,4,2007,52.0,75.0,LTU
+Lithuania,27,2008,4.0,61.0,LTU
+Lithuania,27,2009,27.0,65.0,LTU
+Lithuania,8,2010,27.0,78.0,LTU
+Lithuania,1,2011,8.0,81.0,LTU
+Lithuania,1,2012,1.0,84.0,LTU
+Lithuania,73,2013,1.0,45.0,LTU
+Lithuania,3,2014,73.0,77.0,LTU
+Lithuania,13,2015,3.0,72.0,LTU
+Lithuania,28,2016,13.0,64.0,LTU
+Lithuania,45,2017,28.0,55.0,LTU
+Lithuania,6,2018,45.0,71.0,LTU
+Lithuania,39,2019,6.0,51.0,LTU
+Luxembourg,0,1989,0.0,89.0,LUX
+Luxembourg,0,1990,0.0,81.0,LUX
+Luxembourg,0,1991,0.0,79.0,LUX
+Luxembourg,0,1992,0.0,71.0,LUX
+Luxembourg,0,1993,0.0,74.0,LUX
+Luxembourg,0,1994,0.0,77.0,LUX
+Luxembourg,0,1995,0.0,75.0,LUX
+Luxembourg,3,1996,0.0,77.0,LUX
+Luxembourg,0,1997,3.0,79.0,LUX
+Luxembourg,0,1998,0.0,69.0,LUX
+Luxembourg,1,1999,0.0,76.0,LUX
+Luxembourg,0,2000,1.0,75.0,LUX
+Luxembourg,0,2001,0.0,73.0,LUX
+Luxembourg,0,2002,0.0,75.0,LUX
+Luxembourg,1,2003,0.0,69.0,LUX
+Luxembourg,0,2004,1.0,76.0,LUX
+Luxembourg,0,2005,0.0,76.0,LUX
+Luxembourg,0,2006,0.0,82.0,LUX
+Luxembourg,0,2007,0.0,79.0,LUX
+Luxembourg,0,2008,0.0,80.0,LUX
+Luxembourg,7,2009,0.0,80.0,LUX
+Luxembourg,7,2010,7.0,79.0,LUX
+Luxembourg,0,2011,7.0,82.0,LUX
+Luxembourg,1,2012,0.0,84.0,LUX
+Luxembourg,0,2013,1.0,81.0,LUX
+Luxembourg,0,2014,0.0,80.0,LUX
+Luxembourg,0,2015,0.0,83.0,LUX
+Luxembourg,0,2016,0.0,86.0,LUX
+Luxembourg,0,2017,0.0,86.0,LUX
+Luxembourg,0,2018,0.0,77.0,LUX
+Luxembourg,0,2019,0.0,77.0,LUX
+Macedonia,0,1989,0.0,89.0,MKD
+Macedonia,0,1990,0.0,81.0,MKD
+Macedonia,0,1991,0.0,79.0,MKD
+Macedonia,0,1992,0.0,71.0,MKD
+Macedonia,0,1993,0.0,74.0,MKD
+Macedonia,27,1994,0.0,60.0,MKD
+Macedonia,1,1995,27.0,74.0,MKD
+Macedonia,0,1996,1.0,80.0,MKD
+Macedonia,0,1997,0.0,79.0,MKD
+Macedonia,12,1998,0.0,58.0,MKD
+Macedonia,81,1999,12.0,45.0,MKD
+Macedonia,14,2000,81.0,64.0,MKD
+Macedonia,112,2001,14.0,36.0,MKD
+Macedonia,0,2002,112.0,75.0,MKD
+Macedonia,0,2003,0.0,70.0,MKD
+Macedonia,0,2004,0.0,76.0,MKD
+Macedonia,0,2005,0.0,76.0,MKD
+Macedonia,0,2006,0.0,82.0,MKD
+Macedonia,0,2007,0.0,79.0,MKD
+Macedonia,0,2008,0.0,80.0,MKD
+Macedonia,0,2009,0.0,87.0,MKD
+Macedonia,0,2010,0.0,85.0,MKD
+Macedonia,0,2011,0.0,82.0,MKD
+Macedonia,0,2012,0.0,85.0,MKD
+Macedonia,1,2013,0.0,80.0,MKD
+Macedonia,0,2014,1.0,80.0,MKD
+Macedonia,0,2015,0.0,83.0,MKD
+Macedonia,0,2016,0.0,86.0,MKD
+Macedonia,0,2017,0.0,86.0,MKD
+Macedonia,0,2018,0.0,77.0,MKD
+Macedonia,0,2019,0.0,77.0,MKD
+Madagascar,0,1989,0.0,89.0,MDG
+Madagascar,0,1990,0.0,81.0,MDG
+Madagascar,0,1991,0.0,79.0,MDG
+Madagascar,0,1992,0.0,71.0,MDG
+Madagascar,0,1993,0.0,74.0,MDG
+Madagascar,0,1994,0.0,77.0,MDG
+Madagascar,0,1995,0.0,75.0,MDG
+Madagascar,22,1996,0.0,68.0,MDG
+Madagascar,0,1997,22.0,79.0,MDG
+Madagascar,0,1998,0.0,69.0,MDG
+Madagascar,0,1999,0.0,77.0,MDG
+Madagascar,0,2000,0.0,75.0,MDG
+Madagascar,0,2001,0.0,73.0,MDG
+Madagascar,0,2002,0.0,75.0,MDG
+Madagascar,0,2003,0.0,70.0,MDG
+Madagascar,0,2004,0.0,76.0,MDG
+Madagascar,0,2005,0.0,76.0,MDG
+Madagascar,0,2006,0.0,82.0,MDG
+Madagascar,0,2007,0.0,79.0,MDG
+Madagascar,0,2008,0.0,80.0,MDG
+Madagascar,0,2009,0.0,87.0,MDG
+Madagascar,0,2010,0.0,85.0,MDG
+Madagascar,0,2011,0.0,82.0,MDG
+Madagascar,0,2012,0.0,85.0,MDG
+Madagascar,0,2013,0.0,81.0,MDG
+Madagascar,0,2014,0.0,80.0,MDG
+Madagascar,0,2015,0.0,83.0,MDG
+Madagascar,0,2016,0.0,86.0,MDG
+Madagascar,0,2017,0.0,86.0,MDG
+Madagascar,1,2018,0.0,76.0,MDG
+Madagascar,4,2019,1.0,73.0,MDG
+Malawi,3,1989,0.0,86.0,MWI
+Malawi,10,1990,3.0,73.0,MWI
+Malawi,0,1991,10.0,79.0,MWI
+Malawi,0,1992,0.0,71.0,MWI
+Malawi,0,1993,0.0,74.0,MWI
+Malawi,2,1994,0.0,75.0,MWI
+Malawi,0,1995,2.0,75.0,MWI
+Malawi,0,1996,0.0,80.0,MWI
+Malawi,0,1997,0.0,79.0,MWI
+Malawi,0,1998,0.0,69.0,MWI
+Malawi,0,1999,0.0,77.0,MWI
+Malawi,0,2000,0.0,75.0,MWI
+Malawi,0,2001,0.0,73.0,MWI
+Malawi,0,2002,0.0,75.0,MWI
+Malawi,0,2003,0.0,70.0,MWI
+Malawi,0,2004,0.0,76.0,MWI
+Malawi,0,2005,0.0,76.0,MWI
+Malawi,0,2006,0.0,82.0,MWI
+Malawi,0,2007,0.0,79.0,MWI
+Malawi,3,2008,0.0,77.0,MWI
+Malawi,0,2009,3.0,87.0,MWI
+Malawi,0,2010,0.0,85.0,MWI
+Malawi,0,2011,0.0,82.0,MWI
+Malawi,1,2012,0.0,84.0,MWI
+Malawi,2,2013,1.0,79.0,MWI
+Malawi,2,2014,2.0,78.0,MWI
+Malawi,2,2015,2.0,81.0,MWI
+Malawi,1,2016,2.0,85.0,MWI
+Malawi,0,2017,1.0,86.0,MWI
+Malawi,0,2018,0.0,77.0,MWI
+Malawi,0,2019,0.0,77.0,MWI
+Malaysia,38,1989,0.0,66.0,MYS
+Malaysia,0,1990,38.0,81.0,MYS
+Malaysia,34,1991,0.0,61.0,MYS
+Malaysia,13,1992,34.0,61.0,MYS
+Malaysia,13,1993,13.0,61.0,MYS
+Malaysia,308,1994,13.0,23.0,MYS
+Malaysia,848,1995,308.0,9.0,MYS
+Malaysia,33,1996,848.0,61.0,MYS
+Malaysia,555,1997,33.0,15.0,MYS
+Malaysia,39,1998,555.0,49.0,MYS
+Malaysia,720,1999,39.0,12.0,MYS
+Malaysia,26,2000,720.0,55.0,MYS
+Malaysia,26,2001,26.0,53.0,MYS
+Malaysia,153,2002,26.0,29.0,MYS
+Malaysia,147,2003,153.0,27.0,MYS
+Malaysia,65,2004,147.0,46.0,MYS
+Malaysia,59,2005,65.0,44.0,MYS
+Malaysia,408,2006,59.0,19.0,MYS
+Malaysia,526,2007,408.0,18.0,MYS
+Malaysia,508,2008,526.0,15.0,MYS
+Malaysia,1512,2009,508.0,2.0,MYS
+Malaysia,423,2010,1512.0,18.0,MYS
+Malaysia,5,2011,423.0,78.0,MYS
+Malaysia,47,2012,5.0,58.0,MYS
+Malaysia,71,2013,47.0,47.0,MYS
+Malaysia,71,2014,71.0,47.0,MYS
+Malaysia,104,2015,71.0,45.0,MYS
+Malaysia,266,2016,104.0,29.0,MYS
+Malaysia,191,2017,266.0,34.0,MYS
+Malaysia,98,2018,191.0,43.0,MYS
+Malaysia,70,2019,98.0,41.0,MYS
+Maldives,0,1989,0.0,89.0,MDV
+Maldives,0,1990,0.0,81.0,MDV
+Maldives,0,1991,0.0,79.0,MDV
+Maldives,2,1992,0.0,69.0,MDV
+Maldives,0,1993,2.0,74.0,MDV
+Maldives,0,1994,0.0,77.0,MDV
+Maldives,0,1995,0.0,75.0,MDV
+Maldives,0,1996,0.0,80.0,MDV
+Maldives,0,1997,0.0,79.0,MDV
+Maldives,8,1998,0.0,61.0,MDV
+Maldives,0,1999,8.0,77.0,MDV
+Maldives,0,2000,0.0,75.0,MDV
+Maldives,0,2001,0.0,73.0,MDV
+Maldives,0,2002,0.0,75.0,MDV
+Maldives,0,2003,0.0,70.0,MDV
+Maldives,0,2004,0.0,76.0,MDV
+Maldives,0,2005,0.0,76.0,MDV
+Maldives,15,2006,0.0,69.0,MDV
+Maldives,0,2007,15.0,79.0,MDV
+Maldives,0,2008,0.0,80.0,MDV
+Maldives,0,2009,0.0,87.0,MDV
+Maldives,5,2010,0.0,80.0,MDV
+Maldives,0,2011,5.0,82.0,MDV
+Maldives,0,2012,0.0,85.0,MDV
+Maldives,5,2013,0.0,77.0,MDV
+Maldives,0,2014,5.0,80.0,MDV
+Maldives,0,2015,0.0,83.0,MDV
+Maldives,0,2016,0.0,86.0,MDV
+Maldives,0,2017,0.0,86.0,MDV
+Maldives,0,2018,0.0,77.0,MDV
+Maldives,0,2019,0.0,77.0,MDV
+Mali,0,1989,0.0,89.0,MLI
+Mali,1,1990,0.0,80.0,MLI
+Mali,0,1991,1.0,79.0,MLI
+Mali,0,1992,0.0,71.0,MLI
+Mali,0,1993,0.0,74.0,MLI
+Mali,0,1994,0.0,77.0,MLI
+Mali,0,1995,0.0,75.0,MLI
+Mali,0,1996,0.0,80.0,MLI
+Mali,9,1997,0.0,70.0,MLI
+Mali,4,1998,9.0,65.0,MLI
+Mali,0,1999,4.0,77.0,MLI
+Mali,7,2000,0.0,69.0,MLI
+Mali,0,2001,7.0,73.0,MLI
+Mali,1,2002,0.0,74.0,MLI
+Mali,4,2003,1.0,67.0,MLI
+Mali,0,2004,4.0,76.0,MLI
+Mali,13,2005,0.0,65.0,MLI
+Mali,0,2006,13.0,82.0,MLI
+Mali,8,2007,0.0,71.0,MLI
+Mali,3,2008,8.0,77.0,MLI
+Mali,10,2009,3.0,77.0,MLI
+Mali,0,2010,10.0,85.0,MLI
+Mali,0,2011,0.0,82.0,MLI
+Mali,9,2012,0.0,76.0,MLI
+Mali,6,2013,9.0,76.0,MLI
+Mali,1,2014,6.0,79.0,MLI
+Mali,0,2015,1.0,83.0,MLI
+Mali,21,2016,0.0,69.0,MLI
+Mali,31,2017,21.0,62.0,MLI
+Mali,25,2018,31.0,56.0,MLI
+Mali,3,2019,25.0,74.0,MLI
+Malta,0,1989,0.0,89.0,MLT
+Malta,0,1990,0.0,81.0,MLT
+Malta,0,1991,0.0,79.0,MLT
+Malta,13,1992,0.0,61.0,MLT
+Malta,0,1993,13.0,74.0,MLT
+Malta,0,1994,0.0,77.0,MLT
+Malta,0,1995,0.0,75.0,MLT
+Malta,1,1996,0.0,79.0,MLT
+Malta,6,1997,1.0,73.0,MLT
+Malta,0,1998,6.0,69.0,MLT
+Malta,0,1999,0.0,77.0,MLT
+Malta,0,2000,0.0,75.0,MLT
+Malta,0,2001,0.0,73.0,MLT
+Malta,0,2002,0.0,75.0,MLT
+Malta,0,2003,0.0,70.0,MLT
+Malta,0,2004,0.0,76.0,MLT
+Malta,18,2005,0.0,61.0,MLT
+Malta,0,2006,18.0,82.0,MLT
+Malta,0,2007,0.0,79.0,MLT
+Malta,0,2008,0.0,80.0,MLT
+Malta,0,2009,0.0,87.0,MLT
+Malta,0,2010,0.0,85.0,MLT
+Malta,8,2011,0.0,75.0,MLT
+Malta,8,2012,8.0,77.0,MLT
+Malta,0,2013,8.0,81.0,MLT
+Malta,12,2014,0.0,70.0,MLT
+Malta,0,2015,12.0,83.0,MLT
+Malta,6,2016,0.0,80.0,MLT
+Malta,8,2017,6.0,79.0,MLT
+Malta,0,2018,8.0,77.0,MLT
+Malta,0,2019,0.0,77.0,MLT
+Marshall Islands,0,1989,0.0,89.0,MHL
+Marshall Islands,0,1990,0.0,81.0,MHL
+Marshall Islands,6,1991,0.0,74.0,MHL
+Marshall Islands,0,1992,6.0,71.0,MHL
+Marshall Islands,0,1993,0.0,74.0,MHL
+Marshall Islands,0,1994,0.0,77.0,MHL
+Marshall Islands,0,1995,0.0,75.0,MHL
+Marshall Islands,0,1996,0.0,80.0,MHL
+Marshall Islands,0,1997,0.0,79.0,MHL
+Marshall Islands,0,1998,0.0,69.0,MHL
+Marshall Islands,0,1999,0.0,77.0,MHL
+Marshall Islands,0,2000,0.0,75.0,MHL
+Marshall Islands,0,2001,0.0,73.0,MHL
+Marshall Islands,0,2002,0.0,75.0,MHL
+Marshall Islands,0,2003,0.0,70.0,MHL
+Marshall Islands,0,2004,0.0,76.0,MHL
+Marshall Islands,0,2005,0.0,76.0,MHL
+Marshall Islands,0,2006,0.0,82.0,MHL
+Marshall Islands,0,2007,0.0,79.0,MHL
+Marshall Islands,0,2008,0.0,80.0,MHL
+Marshall Islands,0,2009,0.0,87.0,MHL
+Marshall Islands,0,2010,0.0,85.0,MHL
+Marshall Islands,0,2011,0.0,82.0,MHL
+Marshall Islands,0,2012,0.0,85.0,MHL
+Marshall Islands,0,2013,0.0,81.0,MHL
+Marshall Islands,0,2014,0.0,80.0,MHL
+Marshall Islands,0,2015,0.0,83.0,MHL
+Marshall Islands,0,2016,0.0,86.0,MHL
+Marshall Islands,0,2017,0.0,86.0,MHL
+Marshall Islands,0,2018,0.0,77.0,MHL
+Marshall Islands,0,2019,0.0,77.0,MHL
+Mauritania,8,1989,0.0,82.0,MRT
+Mauritania,16,1990,8.0,70.0,MRT
+Mauritania,18,1991,16.0,67.0,MRT
+Mauritania,0,1992,18.0,71.0,MRT
+Mauritania,0,1993,0.0,74.0,MRT
+Mauritania,16,1994,0.0,64.0,MRT
+Mauritania,2,1995,16.0,73.0,MRT
+Mauritania,2,1996,2.0,78.0,MRT
+Mauritania,8,1997,2.0,71.0,MRT
+Mauritania,4,1998,8.0,65.0,MRT
+Mauritania,0,1999,4.0,77.0,MRT
+Mauritania,31,2000,0.0,53.0,MRT
+Mauritania,0,2001,31.0,73.0,MRT
+Mauritania,27,2002,0.0,55.0,MRT
+Mauritania,7,2003,27.0,64.0,MRT
+Mauritania,0,2004,7.0,76.0,MRT
+Mauritania,0,2005,0.0,76.0,MRT
+Mauritania,0,2006,0.0,82.0,MRT
+Mauritania,0,2007,0.0,79.0,MRT
+Mauritania,0,2008,0.0,80.0,MRT
+Mauritania,0,2009,0.0,87.0,MRT
+Mauritania,9,2010,0.0,77.0,MRT
+Mauritania,5,2011,9.0,78.0,MRT
+Mauritania,11,2012,5.0,74.0,MRT
+Mauritania,0,2013,11.0,81.0,MRT
+Mauritania,7,2014,0.0,73.0,MRT
+Mauritania,1,2015,7.0,82.0,MRT
+Mauritania,35,2016,1.0,61.0,MRT
+Mauritania,0,2017,35.0,86.0,MRT
+Mauritania,1,2018,0.0,76.0,MRT
+Mauritania,34,2019,1.0,54.0,MRT
+Mauritius,0,1989,0.0,89.0,MUS
+Mauritius,6,1990,0.0,75.0,MUS
+Mauritius,0,1991,6.0,79.0,MUS
+Mauritius,0,1992,0.0,71.0,MUS
+Mauritius,8,1993,0.0,66.0,MUS
+Mauritius,0,1994,8.0,77.0,MUS
+Mauritius,0,1995,0.0,75.0,MUS
+Mauritius,29,1996,0.0,64.0,MUS
+Mauritius,1,1997,29.0,78.0,MUS
+Mauritius,0,1998,1.0,69.0,MUS
+Mauritius,0,1999,0.0,77.0,MUS
+Mauritius,0,2000,0.0,75.0,MUS
+Mauritius,0,2001,0.0,73.0,MUS
+Mauritius,0,2002,0.0,75.0,MUS
+Mauritius,0,2003,0.0,70.0,MUS
+Mauritius,6,2004,0.0,71.0,MUS
+Mauritius,0,2005,6.0,76.0,MUS
+Mauritius,0,2006,0.0,82.0,MUS
+Mauritius,0,2007,0.0,79.0,MUS
+Mauritius,0,2008,0.0,80.0,MUS
+Mauritius,0,2009,0.0,87.0,MUS
+Mauritius,0,2010,0.0,85.0,MUS
+Mauritius,0,2011,0.0,82.0,MUS
+Mauritius,0,2012,0.0,85.0,MUS
+Mauritius,0,2013,0.0,81.0,MUS
+Mauritius,28,2014,0.0,60.0,MUS
+Mauritius,0,2015,28.0,83.0,MUS
+Mauritius,26,2016,0.0,66.0,MUS
+Mauritius,19,2017,26.0,70.0,MUS
+Mauritius,0,2018,19.0,77.0,MUS
+Mauritius,0,2019,0.0,77.0,MUS
+Mexico,63,1989,0.0,57.0,MEX
+Mexico,34,1990,63.0,62.0,MEX
+Mexico,39,1991,34.0,60.0,MEX
+Mexico,19,1992,39.0,58.0,MEX
+Mexico,160,1993,19.0,32.0,MEX
+Mexico,128,1994,160.0,36.0,MEX
+Mexico,50,1995,128.0,46.0,MEX
+Mexico,87,1996,50.0,43.0,MEX
+Mexico,485,1997,87.0,18.0,MEX
+Mexico,23,1998,485.0,52.0,MEX
+Mexico,141,1999,23.0,38.0,MEX
+Mexico,227,2000,141.0,25.0,MEX
+Mexico,152,2001,227.0,28.0,MEX
+Mexico,97,2002,152.0,33.0,MEX
+Mexico,31,2003,97.0,48.0,MEX
+Mexico,320,2004,31.0,16.0,MEX
+Mexico,33,2005,320.0,54.0,MEX
+Mexico,75,2006,33.0,45.0,MEX
+Mexico,0,2007,75.0,79.0,MEX
+Mexico,22,2008,0.0,64.0,MEX
+Mexico,59,2009,22.0,52.0,MEX
+Mexico,112,2010,59.0,39.0,MEX
+Mexico,229,2011,112.0,33.0,MEX
+Mexico,260,2012,229.0,27.0,MEX
+Mexico,52,2013,260.0,53.0,MEX
+Mexico,87,2014,52.0,44.0,MEX
+Mexico,320,2015,87.0,24.0,MEX
+Mexico,314,2016,320.0,26.0,MEX
+Mexico,210,2017,314.0,33.0,MEX
+Mexico,16,2018,210.0,62.0,MEX
+Mexico,3,2019,16.0,74.0,MEX
+Micronesia,2,1989,0.0,87.0,FSM
+Micronesia,14,1990,2.0,71.0,FSM
+Micronesia,0,1991,14.0,79.0,FSM
+Micronesia,0,1992,0.0,71.0,FSM
+Micronesia,0,1993,0.0,74.0,FSM
+Micronesia,0,1994,0.0,77.0,FSM
+Micronesia,0,1995,0.0,75.0,FSM
+Micronesia,0,1996,0.0,80.0,FSM
+Micronesia,6,1997,0.0,73.0,FSM
+Micronesia,0,1998,6.0,69.0,FSM
+Micronesia,0,1999,0.0,77.0,FSM
+Micronesia,0,2000,0.0,75.0,FSM
+Micronesia,0,2001,0.0,73.0,FSM
+Micronesia,0,2002,0.0,75.0,FSM
+Micronesia,0,2003,0.0,70.0,FSM
+Micronesia,0,2004,0.0,76.0,FSM
+Micronesia,0,2005,0.0,76.0,FSM
+Micronesia,0,2006,0.0,82.0,FSM
+Micronesia,0,2007,0.0,79.0,FSM
+Micronesia,0,2008,0.0,80.0,FSM
+Micronesia,0,2009,0.0,87.0,FSM
+Micronesia,0,2010,0.0,85.0,FSM
+Micronesia,0,2011,0.0,82.0,FSM
+Micronesia,0,2012,0.0,85.0,FSM
+Micronesia,0,2013,0.0,81.0,FSM
+Micronesia,0,2014,0.0,80.0,FSM
+Micronesia,0,2015,0.0,83.0,FSM
+Micronesia,0,2016,0.0,86.0,FSM
+Micronesia,0,2017,0.0,86.0,FSM
+Micronesia,0,2018,0.0,77.0,FSM
+Micronesia,0,2019,0.0,77.0,FSM
+Moldova,0,1989,0.0,89.0,MDA
+Moldova,0,1990,0.0,81.0,MDA
+Moldova,0,1991,0.0,79.0,MDA
+Moldova,8,1992,0.0,64.0,MDA
+Moldova,0,1993,8.0,74.0,MDA
+Moldova,3,1994,0.0,74.0,MDA
+Moldova,9,1995,3.0,66.0,MDA
+Moldova,0,1996,9.0,80.0,MDA
+Moldova,0,1997,0.0,79.0,MDA
+Moldova,0,1998,0.0,69.0,MDA
+Moldova,0,1999,0.0,77.0,MDA
+Moldova,0,2000,0.0,75.0,MDA
+Moldova,0,2001,0.0,73.0,MDA
+Moldova,0,2002,0.0,75.0,MDA
+Moldova,0,2003,0.0,70.0,MDA
+Moldova,0,2004,0.0,76.0,MDA
+Moldova,0,2005,0.0,76.0,MDA
+Moldova,0,2006,0.0,82.0,MDA
+Moldova,0,2007,0.0,79.0,MDA
+Moldova,0,2008,0.0,80.0,MDA
+Moldova,0,2009,0.0,87.0,MDA
+Moldova,0,2010,0.0,85.0,MDA
+Moldova,0,2011,0.0,82.0,MDA
+Moldova,0,2012,0.0,85.0,MDA
+Moldova,0,2013,0.0,81.0,MDA
+Moldova,0,2014,0.0,80.0,MDA
+Moldova,0,2015,0.0,83.0,MDA
+Moldova,0,2016,0.0,86.0,MDA
+Moldova,0,2017,0.0,86.0,MDA
+Moldova,0,2018,0.0,77.0,MDA
+Moldova,0,2019,0.0,77.0,MDA
+Mongolia,0,1989,0.0,89.0,MNG
+Mongolia,0,1990,0.0,81.0,MNG
+Mongolia,0,1991,0.0,79.0,MNG
+Mongolia,0,1992,0.0,71.0,MNG
+Mongolia,0,1993,0.0,74.0,MNG
+Mongolia,0,1994,0.0,77.0,MNG
+Mongolia,0,1995,0.0,75.0,MNG
+Mongolia,0,1996,0.0,80.0,MNG
+Mongolia,0,1997,0.0,79.0,MNG
+Mongolia,0,1998,0.0,69.0,MNG
+Mongolia,0,1999,0.0,77.0,MNG
+Mongolia,0,2000,0.0,75.0,MNG
+Mongolia,0,2001,0.0,73.0,MNG
+Mongolia,0,2002,0.0,75.0,MNG
+Mongolia,0,2003,0.0,70.0,MNG
+Mongolia,0,2004,0.0,76.0,MNG
+Mongolia,0,2005,0.0,76.0,MNG
+Mongolia,0,2006,0.0,82.0,MNG
+Mongolia,0,2007,0.0,79.0,MNG
+Mongolia,14,2008,0.0,68.0,MNG
+Mongolia,0,2009,14.0,87.0,MNG
+Mongolia,27,2010,0.0,65.0,MNG
+Mongolia,3,2011,27.0,79.0,MNG
+Mongolia,79,2012,3.0,50.0,MNG
+Mongolia,0,2013,79.0,81.0,MNG
+Mongolia,0,2014,0.0,80.0,MNG
+Mongolia,74,2015,0.0,50.0,MNG
+Mongolia,0,2016,74.0,86.0,MNG
+Mongolia,0,2017,0.0,86.0,MNG
+Mongolia,0,2018,0.0,77.0,MNG
+Mongolia,17,2019,0.0,63.0,MNG
+Montenegro,0,1989,0.0,89.0,MNE
+Montenegro,0,1990,0.0,81.0,MNE
+Montenegro,0,1991,0.0,79.0,MNE
+Montenegro,0,1992,0.0,71.0,MNE
+Montenegro,0,1993,0.0,74.0,MNE
+Montenegro,0,1994,0.0,77.0,MNE
+Montenegro,0,1995,0.0,75.0,MNE
+Montenegro,0,1996,0.0,80.0,MNE
+Montenegro,0,1997,0.0,79.0,MNE
+Montenegro,0,1998,0.0,69.0,MNE
+Montenegro,0,1999,0.0,77.0,MNE
+Montenegro,0,2000,0.0,75.0,MNE
+Montenegro,0,2001,0.0,73.0,MNE
+Montenegro,0,2002,0.0,75.0,MNE
+Montenegro,0,2003,0.0,70.0,MNE
+Montenegro,0,2004,0.0,76.0,MNE
+Montenegro,0,2005,0.0,76.0,MNE
+Montenegro,0,2006,0.0,82.0,MNE
+Montenegro,0,2007,0.0,79.0,MNE
+Montenegro,0,2008,0.0,80.0,MNE
+Montenegro,0,2009,0.0,87.0,MNE
+Montenegro,0,2010,0.0,85.0,MNE
+Montenegro,0,2011,0.0,82.0,MNE
+Montenegro,0,2012,0.0,85.0,MNE
+Montenegro,0,2013,0.0,81.0,MNE
+Montenegro,0,2014,0.0,80.0,MNE
+Montenegro,1,2015,0.0,82.0,MNE
+Montenegro,0,2016,1.0,86.0,MNE
+Montenegro,0,2017,0.0,86.0,MNE
+Montenegro,15,2018,0.0,63.0,MNE
+Montenegro,0,2019,15.0,77.0,MNE
+Morocco,126,1989,0.0,46.0,MAR
+Morocco,137,1990,126.0,44.0,MAR
+Morocco,62,1991,137.0,56.0,MAR
+Morocco,17,1992,62.0,60.0,MAR
+Morocco,98,1993,17.0,37.0,MAR
+Morocco,117,1994,98.0,38.0,MAR
+Morocco,28,1995,117.0,55.0,MAR
+Morocco,89,1996,28.0,42.0,MAR
+Morocco,220,1997,89.0,30.0,MAR
+Morocco,0,1998,220.0,69.0,MAR
+Morocco,60,1999,0.0,49.0,MAR
+Morocco,125,2000,60.0,37.0,MAR
+Morocco,11,2001,125.0,63.0,MAR
+Morocco,156,2002,11.0,28.0,MAR
+Morocco,12,2003,156.0,59.0,MAR
+Morocco,14,2004,12.0,63.0,MAR
+Morocco,101,2005,14.0,38.0,MAR
+Morocco,47,2006,101.0,54.0,MAR
+Morocco,27,2007,47.0,59.0,MAR
+Morocco,46,2008,27.0,55.0,MAR
+Morocco,39,2009,46.0,58.0,MAR
+Morocco,306,2010,39.0,22.0,MAR
+Morocco,1403,2011,306.0,4.0,MAR
+Morocco,896,2012,1403.0,9.0,MAR
+Morocco,76,2013,896.0,43.0,MAR
+Morocco,560,2014,76.0,17.0,MAR
+Morocco,47,2015,560.0,54.0,MAR
+Morocco,287,2016,47.0,27.0,MAR
+Morocco,485,2017,287.0,20.0,MAR
+Morocco,387,2018,485.0,19.0,MAR
+Morocco,26,2019,387.0,58.0,MAR
+Mozambique,0,1989,0.0,89.0,MOZ
+Mozambique,0,1990,0.0,81.0,MOZ
+Mozambique,0,1991,0.0,79.0,MOZ
+Mozambique,0,1992,0.0,71.0,MOZ
+Mozambique,0,1993,0.0,74.0,MOZ
+Mozambique,0,1994,0.0,77.0,MOZ
+Mozambique,0,1995,0.0,75.0,MOZ
+Mozambique,0,1996,0.0,80.0,MOZ
+Mozambique,0,1997,0.0,79.0,MOZ
+Mozambique,0,1998,0.0,69.0,MOZ
+Mozambique,2,1999,0.0,75.0,MOZ
+Mozambique,0,2000,2.0,75.0,MOZ
+Mozambique,0,2001,0.0,73.0,MOZ
+Mozambique,0,2002,0.0,75.0,MOZ
+Mozambique,1,2003,0.0,69.0,MOZ
+Mozambique,0,2004,1.0,76.0,MOZ
+Mozambique,0,2005,0.0,76.0,MOZ
+Mozambique,0,2006,0.0,82.0,MOZ
+Mozambique,0,2007,0.0,79.0,MOZ
+Mozambique,0,2008,0.0,80.0,MOZ
+Mozambique,0,2009,0.0,87.0,MOZ
+Mozambique,0,2010,0.0,85.0,MOZ
+Mozambique,0,2011,0.0,82.0,MOZ
+Mozambique,0,2012,0.0,85.0,MOZ
+Mozambique,9,2013,0.0,73.0,MOZ
+Mozambique,15,2014,9.0,67.0,MOZ
+Mozambique,0,2015,15.0,83.0,MOZ
+Mozambique,2,2016,0.0,84.0,MOZ
+Mozambique,0,2017,2.0,86.0,MOZ
+Mozambique,0,2018,0.0,77.0,MOZ
+Mozambique,22,2019,0.0,61.0,MOZ
+Myanmar,34,1989,0.0,68.0,MMR
+Myanmar,266,1990,34.0,34.0,MMR
+Myanmar,232,1991,266.0,31.0,MMR
+Myanmar,64,1992,232.0,41.0,MMR
+Myanmar,323,1993,64.0,22.0,MMR
+Myanmar,97,1994,323.0,40.0,MMR
+Myanmar,223,1995,97.0,30.0,MMR
+Myanmar,118,1996,223.0,38.0,MMR
+Myanmar,231,1997,118.0,28.0,MMR
+Myanmar,156,1998,231.0,33.0,MMR
+Myanmar,141,1999,156.0,38.0,MMR
+Myanmar,16,2000,141.0,63.0,MMR
+Myanmar,149,2001,16.0,29.0,MMR
+Myanmar,157,2002,149.0,27.0,MMR
+Myanmar,95,2003,157.0,33.0,MMR
+Myanmar,194,2004,95.0,31.0,MMR
+Myanmar,160,2005,194.0,30.0,MMR
+Myanmar,175,2006,160.0,34.0,MMR
+Myanmar,151,2007,175.0,39.0,MMR
+Myanmar,77,2008,151.0,48.0,MMR
+Myanmar,59,2009,77.0,52.0,MMR
+Myanmar,56,2010,59.0,50.0,MMR
+Myanmar,667,2011,56.0,14.0,MMR
+Myanmar,398,2012,667.0,20.0,MMR
+Myanmar,251,2013,398.0,24.0,MMR
+Myanmar,100,2014,251.0,40.0,MMR
+Myanmar,248,2015,100.0,28.0,MMR
+Myanmar,237,2016,248.0,32.0,MMR
+Myanmar,101,2017,237.0,39.0,MMR
+Myanmar,168,2018,101.0,33.0,MMR
+Myanmar,252,2019,168.0,24.0,MMR
+NATO**,36,1989,0.0,67.0,NAT
+NATO**,0,1990,36.0,81.0,NAT
+NATO**,0,1991,0.0,79.0,NAT
+NATO**,0,1992,0.0,71.0,NAT
+NATO**,0,1993,0.0,74.0,NAT
+NATO**,0,1994,0.0,77.0,NAT
+NATO**,0,1995,0.0,75.0,NAT
+NATO**,0,1996,0.0,80.0,NAT
+NATO**,0,1997,0.0,79.0,NAT
+NATO**,0,1998,0.0,69.0,NAT
+NATO**,18,1999,0.0,65.0,NAT
+NATO**,0,2000,18.0,75.0,NAT
+NATO**,18,2001,0.0,57.0,NAT
+NATO**,0,2002,18.0,75.0,NAT
+NATO**,0,2003,0.0,70.0,NAT
+NATO**,0,2004,0.0,76.0,NAT
+NATO**,0,2005,0.0,76.0,NAT
+NATO**,116,2006,0.0,39.0,NAT
+NATO**,0,2007,116.0,79.0,NAT
+NATO**,0,2008,0.0,80.0,NAT
+NATO**,420,2009,0.0,17.0,NAT
+NATO**,0,2010,420.0,85.0,NAT
+NATO**,0,2011,0.0,82.0,NAT
+NATO**,22,2012,0.0,67.0,NAT
+NATO**,0,2013,22.0,81.0,NAT
+NATO**,0,2014,0.0,80.0,NAT
+NATO**,0,2015,0.0,83.0,NAT
+NATO**,12,2016,0.0,76.0,NAT
+NATO**,25,2017,12.0,67.0,NAT
+NATO**,21,2018,25.0,58.0,NAT
+NATO**,70,2019,21.0,41.0,NAT
+Namibia,0,1989,0.0,89.0,NAM
+Namibia,0,1990,0.0,81.0,NAM
+Namibia,0,1991,0.0,79.0,NAM
+Namibia,0,1992,0.0,71.0,NAM
+Namibia,0,1993,0.0,74.0,NAM
+Namibia,2,1994,0.0,75.0,NAM
+Namibia,4,1995,2.0,71.0,NAM
+Namibia,0,1996,4.0,80.0,NAM
+Namibia,4,1997,0.0,75.0,NAM
+Namibia,5,1998,4.0,64.0,NAM
+Namibia,0,1999,5.0,77.0,NAM
+Namibia,0,2000,0.0,75.0,NAM
+Namibia,21,2001,0.0,55.0,NAM
+Namibia,11,2002,21.0,67.0,NAM
+Namibia,0,2003,11.0,70.0,NAM
+Namibia,16,2004,0.0,61.0,NAM
+Namibia,0,2005,16.0,76.0,NAM
+Namibia,72,2006,0.0,46.0,NAM
+Namibia,6,2007,72.0,73.0,NAM
+Namibia,66,2008,6.0,52.0,NAM
+Namibia,15,2009,66.0,73.0,NAM
+Namibia,3,2010,15.0,82.0,NAM
+Namibia,1,2011,3.0,81.0,NAM
+Namibia,57,2012,1.0,57.0,NAM
+Namibia,9,2013,57.0,73.0,NAM
+Namibia,2,2014,9.0,78.0,NAM
+Namibia,0,2015,2.0,83.0,NAM
+Namibia,3,2016,0.0,83.0,NAM
+Namibia,35,2017,3.0,59.0,NAM
+Namibia,0,2018,35.0,77.0,NAM
+Namibia,0,2019,0.0,77.0,NAM
+Nepal,1,1989,0.0,88.0,NPL
+Nepal,0,1990,1.0,81.0,NPL
+Nepal,0,1991,0.0,79.0,NPL
+Nepal,1,1992,0.0,70.0,NPL
+Nepal,0,1993,1.0,74.0,NPL
+Nepal,0,1994,0.0,77.0,NPL
+Nepal,1,1995,0.0,74.0,NPL
+Nepal,0,1996,1.0,80.0,NPL
+Nepal,0,1997,0.0,79.0,NPL
+Nepal,0,1998,0.0,69.0,NPL
+Nepal,0,1999,0.0,77.0,NPL
+Nepal,0,2000,0.0,75.0,NPL
+Nepal,11,2001,0.0,63.0,NPL
+Nepal,9,2002,11.0,68.0,NPL
+Nepal,9,2003,9.0,62.0,NPL
+Nepal,34,2004,9.0,54.0,NPL
+Nepal,6,2005,34.0,70.0,NPL
+Nepal,0,2006,6.0,82.0,NPL
+Nepal,0,2007,0.0,79.0,NPL
+Nepal,1,2008,0.0,79.0,NPL
+Nepal,0,2009,1.0,87.0,NPL
+Nepal,0,2010,0.0,85.0,NPL
+Nepal,3,2011,0.0,79.0,NPL
+Nepal,0,2012,3.0,85.0,NPL
+Nepal,0,2013,0.0,81.0,NPL
+Nepal,5,2014,0.0,75.0,NPL
+Nepal,14,2015,5.0,71.0,NPL
+Nepal,8,2016,14.0,78.0,NPL
+Nepal,1,2017,8.0,85.0,NPL
+Nepal,7,2018,1.0,70.0,NPL
+Nepal,17,2019,7.0,63.0,NPL
+Netherlands,709,1989,0.0,16.0,NLD
+Netherlands,276,1990,709.0,33.0,NLD
+Netherlands,324,1991,276.0,26.0,NLD
+Netherlands,241,1992,324.0,26.0,NLD
+Netherlands,144,1993,241.0,34.0,NLD
+Netherlands,211,1994,144.0,28.0,NLD
+Netherlands,84,1995,211.0,41.0,NLD
+Netherlands,205,1996,84.0,28.0,NLD
+Netherlands,126,1997,205.0,39.0,NLD
+Netherlands,271,1998,126.0,21.0,NLD
+Netherlands,278,1999,271.0,24.0,NLD
+Netherlands,123,2000,278.0,38.0,NLD
+Netherlands,164,2001,123.0,23.0,NLD
+Netherlands,244,2002,164.0,21.0,NLD
+Netherlands,125,2003,244.0,29.0,NLD
+Netherlands,127,2004,125.0,34.0,NLD
+Netherlands,98,2005,127.0,39.0,NLD
+Netherlands,317,2006,98.0,23.0,NLD
+Netherlands,237,2007,317.0,29.0,NLD
+Netherlands,154,2008,237.0,36.0,NLD
+Netherlands,293,2009,154.0,25.0,NLD
+Netherlands,190,2010,293.0,30.0,NLD
+Netherlands,134,2011,190.0,41.0,NLD
+Netherlands,363,2012,134.0,21.0,NLD
+Netherlands,331,2013,363.0,21.0,NLD
+Netherlands,11,2014,331.0,71.0,NLD
+Netherlands,64,2015,11.0,51.0,NLD
+Netherlands,79,2016,64.0,51.0,NLD
+Netherlands,35,2017,79.0,59.0,NLD
+Netherlands,142,2018,35.0,36.0,NLD
+Netherlands,490,2019,142.0,16.0,NLD
+New Zealand,26,1989,0.0,70.0,NZL
+New Zealand,23,1990,26.0,65.0,NZL
+New Zealand,42,1991,23.0,59.0,NZL
+New Zealand,55,1992,42.0,44.0,NZL
+New Zealand,36,1993,55.0,52.0,NZL
+New Zealand,16,1994,36.0,64.0,NZL
+New Zealand,7,1995,16.0,68.0,NZL
+New Zealand,7,1996,7.0,74.0,NZL
+New Zealand,309,1997,7.0,25.0,NZL
+New Zealand,15,1998,309.0,57.0,NZL
+New Zealand,304,1999,15.0,23.0,NZL
+New Zealand,0,2000,304.0,75.0,NZL
+New Zealand,45,2001,0.0,47.0,NZL
+New Zealand,17,2002,45.0,62.0,NZL
+New Zealand,108,2003,17.0,32.0,NZL
+New Zealand,49,2004,108.0,48.0,NZL
+New Zealand,10,2005,49.0,67.0,NZL
+New Zealand,5,2006,10.0,77.0,NZL
+New Zealand,81,2007,5.0,47.0,NZL
+New Zealand,2,2008,81.0,78.0,NZL
+New Zealand,56,2009,2.0,53.0,NZL
+New Zealand,58,2010,56.0,49.0,NZL
+New Zealand,28,2011,58.0,64.0,NZL
+New Zealand,30,2012,28.0,65.0,NZL
+New Zealand,26,2013,30.0,61.0,NZL
+New Zealand,84,2014,26.0,45.0,NZL
+New Zealand,90,2015,84.0,48.0,NZL
+New Zealand,0,2016,90.0,86.0,NZL
+New Zealand,0,2017,0.0,86.0,NZL
+New Zealand,6,2018,0.0,71.0,NZL
+New Zealand,13,2019,6.0,67.0,NZL
+Nicaragua,14,1989,0.0,78.0,NIC
+Nicaragua,102,1990,14.0,49.0,NIC
+Nicaragua,1,1991,102.0,78.0,NIC
+Nicaragua,0,1992,1.0,71.0,NIC
+Nicaragua,0,1993,0.0,74.0,NIC
+Nicaragua,0,1994,0.0,77.0,NIC
+Nicaragua,0,1995,0.0,75.0,NIC
+Nicaragua,0,1996,0.0,80.0,NIC
+Nicaragua,0,1997,0.0,79.0,NIC
+Nicaragua,0,1998,0.0,69.0,NIC
+Nicaragua,0,1999,0.0,77.0,NIC
+Nicaragua,0,2000,0.0,75.0,NIC
+Nicaragua,0,2001,0.0,73.0,NIC
+Nicaragua,0,2002,0.0,75.0,NIC
+Nicaragua,0,2003,0.0,70.0,NIC
+Nicaragua,0,2004,0.0,76.0,NIC
+Nicaragua,0,2005,0.0,76.0,NIC
+Nicaragua,0,2006,0.0,82.0,NIC
+Nicaragua,14,2007,0.0,67.0,NIC
+Nicaragua,0,2008,14.0,80.0,NIC
+Nicaragua,14,2009,0.0,74.0,NIC
+Nicaragua,0,2010,14.0,85.0,NIC
+Nicaragua,0,2011,0.0,82.0,NIC
+Nicaragua,0,2012,0.0,85.0,NIC
+Nicaragua,0,2013,0.0,81.0,NIC
+Nicaragua,13,2014,0.0,69.0,NIC
+Nicaragua,15,2015,13.0,70.0,NIC
+Nicaragua,86,2016,15.0,50.0,NIC
+Nicaragua,7,2017,86.0,80.0,NIC
+Nicaragua,0,2018,7.0,77.0,NIC
+Nicaragua,13,2019,0.0,67.0,NIC
+Niger,0,1989,0.0,89.0,NER
+Niger,0,1990,0.0,81.0,NER
+Niger,7,1991,0.0,73.0,NER
+Niger,0,1992,7.0,71.0,NER
+Niger,0,1993,0.0,74.0,NER
+Niger,0,1994,0.0,77.0,NER
+Niger,0,1995,0.0,75.0,NER
+Niger,0,1996,0.0,80.0,NER
+Niger,3,1997,0.0,76.0,NER
+Niger,0,1998,3.0,69.0,NER
+Niger,0,1999,0.0,77.0,NER
+Niger,0,2000,0.0,75.0,NER
+Niger,0,2001,0.0,73.0,NER
+Niger,0,2002,0.0,75.0,NER
+Niger,5,2003,0.0,66.0,NER
+Niger,0,2004,5.0,76.0,NER
+Niger,0,2005,0.0,76.0,NER
+Niger,0,2006,0.0,82.0,NER
+Niger,0,2007,0.0,79.0,NER
+Niger,8,2008,0.0,73.0,NER
+Niger,1,2009,8.0,86.0,NER
+Niger,0,2010,1.0,85.0,NER
+Niger,0,2011,0.0,82.0,NER
+Niger,0,2012,0.0,85.0,NER
+Niger,13,2013,0.0,70.0,NER
+Niger,4,2014,13.0,76.0,NER
+Niger,9,2015,4.0,75.0,NER
+Niger,0,2016,9.0,86.0,NER
+Niger,3,2017,0.0,83.0,NER
+Niger,0,2018,3.0,77.0,NER
+Niger,3,2019,0.0,74.0,NER
+Nigeria,15,1989,0.0,77.0,NGA
+Nigeria,18,1990,15.0,69.0,NGA
+Nigeria,3,1991,18.0,76.0,NGA
+Nigeria,59,1992,3.0,43.0,NGA
+Nigeria,41,1993,59.0,50.0,NGA
+Nigeria,95,1994,41.0,41.0,NGA
+Nigeria,2,1995,95.0,73.0,NGA
+Nigeria,15,1996,2.0,71.0,NGA
+Nigeria,1,1997,15.0,78.0,NGA
+Nigeria,0,1998,1.0,69.0,NGA
+Nigeria,0,1999,0.0,77.0,NGA
+Nigeria,36,2000,0.0,50.0,NGA
+Nigeria,9,2001,36.0,65.0,NGA
+Nigeria,6,2002,9.0,70.0,NGA
+Nigeria,62,2003,6.0,38.0,NGA
+Nigeria,11,2004,62.0,66.0,NGA
+Nigeria,0,2005,11.0,76.0,NGA
+Nigeria,15,2006,0.0,69.0,NGA
+Nigeria,60,2007,15.0,52.0,NGA
+Nigeria,33,2008,60.0,58.0,NGA
+Nigeria,65,2009,33.0,48.0,NGA
+Nigeria,188,2010,65.0,31.0,NGA
+Nigeria,62,2011,188.0,55.0,NGA
+Nigeria,30,2012,62.0,65.0,NGA
+Nigeria,30,2013,30.0,58.0,NGA
+Nigeria,218,2014,30.0,25.0,NGA
+Nigeria,186,2015,218.0,33.0,NGA
+Nigeria,50,2016,186.0,56.0,NGA
+Nigeria,41,2017,50.0,58.0,NGA
+Nigeria,49,2018,41.0,49.0,NGA
+Nigeria,30,2019,49.0,57.0,NGA
+North Korea,595,1989,0.0,21.0,PRK
+North Korea,295,1990,595.0,31.0,PRK
+North Korea,198,1991,295.0,34.0,PRK
+North Korea,137,1992,198.0,32.0,PRK
+North Korea,93,1993,137.0,38.0,PRK
+North Korea,35,1994,93.0,57.0,PRK
+North Korea,143,1995,35.0,34.0,PRK
+North Korea,78,1996,143.0,45.0,PRK
+North Korea,9,1997,78.0,70.0,PRK
+North Korea,9,1998,9.0,60.0,PRK
+North Korea,179,1999,9.0,32.0,PRK
+North Korea,18,2000,179.0,62.0,PRK
+North Korea,28,2001,18.0,51.0,PRK
+North Korea,9,2002,28.0,68.0,PRK
+North Korea,8,2003,9.0,63.0,PRK
+North Korea,8,2004,8.0,69.0,PRK
+North Korea,5,2005,8.0,71.0,PRK
+North Korea,15,2006,5.0,69.0,PRK
+North Korea,5,2007,15.0,74.0,PRK
+North Korea,5,2008,5.0,76.0,PRK
+North Korea,4,2009,5.0,83.0,PRK
+North Korea,1,2010,4.0,84.0,PRK
+North Korea,0,2011,1.0,82.0,PRK
+North Korea,0,2012,0.0,85.0,PRK
+North Korea,0,2013,0.0,81.0,PRK
+North Korea,0,2014,0.0,80.0,PRK
+North Korea,0,2015,0.0,83.0,PRK
+North Korea,0,2016,0.0,86.0,PRK
+North Korea,0,2017,0.0,86.0,PRK
+North Korea,0,2018,0.0,77.0,PRK
+North Korea,0,2019,0.0,77.0,PRK
+Norway,667,1989,0.0,18.0,NOR
+Norway,369,1990,667.0,23.0,NOR
+Norway,322,1991,369.0,27.0,NOR
+Norway,254,1992,322.0,24.0,NOR
+Norway,181,1993,254.0,29.0,NOR
+Norway,94,1994,181.0,42.0,NOR
+Norway,79,1995,94.0,42.0,NOR
+Norway,152,1996,79.0,35.0,NOR
+Norway,159,1997,152.0,38.0,NOR
+Norway,152,1998,159.0,34.0,NOR
+Norway,155,1999,152.0,36.0,NOR
+Norway,229,2000,155.0,24.0,NOR
+Norway,99,2001,229.0,39.0,NOR
+Norway,90,2002,99.0,34.0,NOR
+Norway,9,2003,90.0,62.0,NOR
+Norway,6,2004,9.0,71.0,NOR
+Norway,14,2005,6.0,64.0,NOR
+Norway,555,2006,14.0,12.0,NOR
+Norway,593,2007,555.0,16.0,NOR
+Norway,615,2008,593.0,13.0,NOR
+Norway,583,2009,615.0,15.0,NOR
+Norway,159,2010,583.0,35.0,NOR
+Norway,606,2011,159.0,17.0,NOR
+Norway,143,2012,606.0,38.0,NOR
+Norway,51,2013,143.0,54.0,NOR
+Norway,16,2014,51.0,66.0,NOR
+Norway,143,2015,16.0,40.0,NOR
+Norway,140,2016,143.0,42.0,NOR
+Norway,352,2017,140.0,25.0,NOR
+Norway,549,2018,352.0,16.0,NOR
+Norway,443,2019,549.0,17.0,NOR
+OSCE**,0,1989,0.0,89.0,OSC
+OSCE**,0,1990,0.0,81.0,OSC
+OSCE**,0,1991,0.0,79.0,OSC
+OSCE**,0,1992,0.0,71.0,OSC
+OSCE**,0,1993,0.0,74.0,OSC
+OSCE**,0,1994,0.0,77.0,OSC
+OSCE**,0,1995,0.0,75.0,OSC
+OSCE**,0,1996,0.0,80.0,OSC
+OSCE**,0,1997,0.0,79.0,OSC
+OSCE**,0,1998,0.0,69.0,OSC
+OSCE**,0,1999,0.0,77.0,OSC
+OSCE**,0,2000,0.0,75.0,OSC
+OSCE**,0,2001,0.0,73.0,OSC
+OSCE**,0,2002,0.0,75.0,OSC
+OSCE**,0,2003,0.0,70.0,OSC
+OSCE**,0,2004,0.0,76.0,OSC
+OSCE**,0,2005,0.0,76.0,OSC
+OSCE**,0,2006,0.0,82.0,OSC
+OSCE**,0,2007,0.0,79.0,OSC
+OSCE**,0,2008,0.0,80.0,OSC
+OSCE**,0,2009,0.0,87.0,OSC
+OSCE**,0,2010,0.0,85.0,OSC
+OSCE**,0,2011,0.0,82.0,OSC
+OSCE**,0,2012,0.0,85.0,OSC
+OSCE**,0,2013,0.0,81.0,OSC
+OSCE**,1,2014,0.0,79.0,OSC
+OSCE**,1,2015,1.0,82.0,OSC
+OSCE**,0,2016,1.0,86.0,OSC
+OSCE**,0,2017,0.0,86.0,OSC
+OSCE**,0,2018,0.0,77.0,OSC
+OSCE**,0,2019,0.0,77.0,OSC
+Oman,119,1989,0.0,47.0,OMN
+Oman,59,1990,119.0,57.0,OMN
+Oman,0,1991,59.0,79.0,OMN
+Oman,0,1992,0.0,71.0,OMN
+Oman,55,1993,0.0,45.0,OMN
+Oman,145,1994,55.0,35.0,OMN
+Oman,278,1995,145.0,27.0,OMN
+Oman,291,1996,278.0,23.0,OMN
+Oman,163,1997,291.0,37.0,OMN
+Oman,22,1998,163.0,53.0,OMN
+Oman,0,1999,22.0,77.0,OMN
+Oman,118,2000,0.0,40.0,OMN
+Oman,33,2001,118.0,49.0,OMN
+Oman,40,2002,33.0,51.0,OMN
+Oman,36,2003,40.0,46.0,OMN
+Oman,41,2004,36.0,50.0,OMN
+Oman,170,2005,41.0,26.0,OMN
+Oman,298,2006,170.0,27.0,OMN
+Oman,12,2007,298.0,69.0,OMN
+Oman,72,2008,12.0,51.0,OMN
+Oman,93,2009,72.0,41.0,OMN
+Oman,30,2010,93.0,64.0,OMN
+Oman,21,2011,30.0,67.0,OMN
+Oman,120,2012,21.0,42.0,OMN
+Oman,490,2013,120.0,16.0,OMN
+Oman,715,2014,490.0,12.0,OMN
+Oman,127,2015,715.0,43.0,OMN
+Oman,423,2016,127.0,19.0,OMN
+Oman,777,2017,423.0,13.0,OMN
+Oman,277,2018,777.0,26.0,OMN
+Oman,105,2019,277.0,37.0,OMN
+Pakistan,962,1989,0.0,12.0,PAK
+Pakistan,635,1990,962.0,15.0,PAK
+Pakistan,495,1991,635.0,20.0,PAK
+Pakistan,379,1992,495.0,21.0,PAK
+Pakistan,1000,1993,379.0,8.0,PAK
+Pakistan,886,1994,1000.0,8.0,PAK
+Pakistan,366,1995,886.0,17.0,PAK
+Pakistan,503,1996,366.0,17.0,PAK
+Pakistan,692,1997,503.0,11.0,PAK
+Pakistan,704,1998,692.0,11.0,PAK
+Pakistan,878,1999,704.0,9.0,PAK
+Pakistan,186,2000,878.0,30.0,PAK
+Pakistan,423,2001,186.0,15.0,PAK
+Pakistan,563,2002,423.0,9.0,PAK
+Pakistan,650,2003,563.0,8.0,PAK
+Pakistan,477,2004,650.0,10.0,PAK
+Pakistan,443,2005,477.0,14.0,PAK
+Pakistan,360,2006,443.0,21.0,PAK
+Pakistan,692,2007,360.0,12.0,PAK
+Pakistan,1071,2008,692.0,6.0,PAK
+Pakistan,1186,2009,1071.0,6.0,PAK
+Pakistan,2199,2010,1186.0,2.0,PAK
+Pakistan,1133,2011,2199.0,7.0,PAK
+Pakistan,1018,2012,1133.0,8.0,PAK
+Pakistan,1100,2013,1018.0,5.0,PAK
+Pakistan,834,2014,1100.0,9.0,PAK
+Pakistan,786,2015,834.0,9.0,PAK
+Pakistan,840,2016,786.0,12.0,PAK
+Pakistan,851,2017,840.0,12.0,PAK
+Pakistan,792,2018,851.0,9.0,PAK
+Pakistan,561,2019,792.0,14.0,PAK
+Palau,0,1989,0.0,89.0,PLW
+Palau,2,1990,0.0,79.0,PLW
+Palau,0,1991,2.0,79.0,PLW
+Palau,0,1992,0.0,71.0,PLW
+Palau,0,1993,0.0,74.0,PLW
+Palau,0,1994,0.0,77.0,PLW
+Palau,0,1995,0.0,75.0,PLW
+Palau,6,1996,0.0,75.0,PLW
+Palau,0,1997,6.0,79.0,PLW
+Palau,0,1998,0.0,69.0,PLW
+Palau,0,1999,0.0,77.0,PLW
+Palau,0,2000,0.0,75.0,PLW
+Palau,0,2001,0.0,73.0,PLW
+Palau,0,2002,0.0,75.0,PLW
+Palau,0,2003,0.0,70.0,PLW
+Palau,0,2004,0.0,76.0,PLW
+Palau,0,2005,0.0,76.0,PLW
+Palau,0,2006,0.0,82.0,PLW
+Palau,0,2007,0.0,79.0,PLW
+Palau,0,2008,0.0,80.0,PLW
+Palau,0,2009,0.0,87.0,PLW
+Palau,0,2010,0.0,85.0,PLW
+Palau,0,2011,0.0,82.0,PLW
+Palau,0,2012,0.0,85.0,PLW
+Palau,0,2013,0.0,81.0,PLW
+Palau,0,2014,0.0,80.0,PLW
+Palau,0,2015,0.0,83.0,PLW
+Palau,0,2016,0.0,86.0,PLW
+Palau,0,2017,0.0,86.0,PLW
+Palau,0,2018,0.0,77.0,PLW
+Palau,0,2019,0.0,77.0,PLW
+Palestine,0,1989,0.0,89.0,PSE
+Palestine,0,1990,0.0,81.0,PSE
+Palestine,0,1991,0.0,79.0,PSE
+Palestine,0,1992,0.0,71.0,PSE
+Palestine,0,1993,0.0,74.0,PSE
+Palestine,5,1994,0.0,72.0,PSE
+Palestine,1,1995,5.0,74.0,PSE
+Palestine,9,1996,1.0,73.0,PSE
+Palestine,0,1997,9.0,79.0,PSE
+Palestine,0,1998,0.0,69.0,PSE
+Palestine,0,1999,0.0,77.0,PSE
+Palestine,0,2000,0.0,75.0,PSE
+Palestine,0,2001,0.0,73.0,PSE
+Palestine,0,2002,0.0,75.0,PSE
+Palestine,0,2003,0.0,70.0,PSE
+Palestine,0,2004,0.0,76.0,PSE
+Palestine,0,2005,0.0,76.0,PSE
+Palestine,0,2006,0.0,82.0,PSE
+Palestine,2,2007,0.0,77.0,PSE
+Palestine,0,2008,2.0,80.0,PSE
+Palestine,14,2009,0.0,74.0,PSE
+Palestine,7,2010,14.0,79.0,PSE
+Palestine,2,2011,7.0,80.0,PSE
+Palestine,0,2012,2.0,85.0,PSE
+Palestine,0,2013,0.0,81.0,PSE
+Palestine,0,2014,0.0,80.0,PSE
+Palestine,0,2015,0.0,83.0,PSE
+Palestine,0,2016,0.0,86.0,PSE
+Palestine,0,2017,0.0,86.0,PSE
+Palestine,0,2018,0.0,77.0,PSE
+Palestine,2,2019,0.0,75.0,PSE
+Panama,2,1989,0.0,87.0,PAN
+Panama,0,1990,2.0,81.0,PAN
+Panama,0,1991,0.0,79.0,PAN
+Panama,2,1992,0.0,69.0,PAN
+Panama,0,1993,2.0,74.0,PAN
+Panama,0,1994,0.0,77.0,PAN
+Panama,0,1995,0.0,75.0,PAN
+Panama,0,1996,0.0,80.0,PAN
+Panama,12,1997,0.0,68.0,PAN
+Panama,0,1998,12.0,69.0,PAN
+Panama,0,1999,0.0,77.0,PAN
+Panama,0,2000,0.0,75.0,PAN
+Panama,0,2001,0.0,73.0,PAN
+Panama,1,2002,0.0,74.0,PAN
+Panama,0,2003,1.0,70.0,PAN
+Panama,0,2004,0.0,76.0,PAN
+Panama,0,2005,0.0,76.0,PAN
+Panama,0,2006,0.0,82.0,PAN
+Panama,0,2007,0.0,79.0,PAN
+Panama,0,2008,0.0,80.0,PAN
+Panama,7,2009,0.0,80.0,PAN
+Panama,0,2010,7.0,85.0,PAN
+Panama,0,2011,0.0,82.0,PAN
+Panama,15,2012,0.0,72.0,PAN
+Panama,30,2013,15.0,58.0,PAN
+Panama,0,2014,30.0,80.0,PAN
+Panama,0,2015,0.0,83.0,PAN
+Panama,3,2016,0.0,83.0,PAN
+Panama,15,2017,3.0,74.0,PAN
+Panama,11,2018,15.0,67.0,PAN
+Panama,0,2019,11.0,77.0,PAN
+Papua New Guinea,6,1989,0.0,83.0,PNG
+Papua New Guinea,4,1990,6.0,77.0,PNG
+Papua New Guinea,10,1991,4.0,71.0,PNG
+Papua New Guinea,10,1992,10.0,63.0,PNG
+Papua New Guinea,0,1993,10.0,74.0,PNG
+Papua New Guinea,1,1994,0.0,76.0,PNG
+Papua New Guinea,0,1995,1.0,75.0,PNG
+Papua New Guinea,0,1996,0.0,80.0,PNG
+Papua New Guinea,7,1997,0.0,72.0,PNG
+Papua New Guinea,0,1998,7.0,69.0,PNG
+Papua New Guinea,0,1999,0.0,77.0,PNG
+Papua New Guinea,0,2000,0.0,75.0,PNG
+Papua New Guinea,0,2001,0.0,73.0,PNG
+Papua New Guinea,0,2002,0.0,75.0,PNG
+Papua New Guinea,0,2003,0.0,70.0,PNG
+Papua New Guinea,0,2004,0.0,76.0,PNG
+Papua New Guinea,0,2005,0.0,76.0,PNG
+Papua New Guinea,0,2006,0.0,82.0,PNG
+Papua New Guinea,0,2007,0.0,79.0,PNG
+Papua New Guinea,0,2008,0.0,80.0,PNG
+Papua New Guinea,0,2009,0.0,87.0,PNG
+Papua New Guinea,0,2010,0.0,85.0,PNG
+Papua New Guinea,0,2011,0.0,82.0,PNG
+Papua New Guinea,0,2012,0.0,85.0,PNG
+Papua New Guinea,0,2013,0.0,81.0,PNG
+Papua New Guinea,3,2014,0.0,77.0,PNG
+Papua New Guinea,0,2015,3.0,83.0,PNG
+Papua New Guinea,0,2016,0.0,86.0,PNG
+Papua New Guinea,4,2017,0.0,82.0,PNG
+Papua New Guinea,7,2018,4.0,70.0,PNG
+Papua New Guinea,0,2019,7.0,77.0,PNG
+Paraguay,0,1989,0.0,89.0,PRY
+Paraguay,6,1990,0.0,75.0,PRY
+Paraguay,3,1991,6.0,76.0,PRY
+Paraguay,1,1992,3.0,70.0,PRY
+Paraguay,0,1993,1.0,74.0,PRY
+Paraguay,0,1994,0.0,77.0,PRY
+Paraguay,0,1995,0.0,75.0,PRY
+Paraguay,2,1996,0.0,78.0,PRY
+Paraguay,0,1997,2.0,79.0,PRY
+Paraguay,0,1998,0.0,69.0,PRY
+Paraguay,0,1999,0.0,77.0,PRY
+Paraguay,0,2000,0.0,75.0,PRY
+Paraguay,6,2001,0.0,68.0,PRY
+Paraguay,0,2002,6.0,75.0,PRY
+Paraguay,0,2003,0.0,70.0,PRY
+Paraguay,4,2004,0.0,73.0,PRY
+Paraguay,1,2005,4.0,75.0,PRY
+Paraguay,0,2006,1.0,82.0,PRY
+Paraguay,0,2007,0.0,79.0,PRY
+Paraguay,0,2008,0.0,80.0,PRY
+Paraguay,0,2009,0.0,87.0,PRY
+Paraguay,3,2010,0.0,82.0,PRY
+Paraguay,8,2011,3.0,75.0,PRY
+Paraguay,7,2012,8.0,78.0,PRY
+Paraguay,0,2013,7.0,81.0,PRY
+Paraguay,0,2014,0.0,80.0,PRY
+Paraguay,0,2015,0.0,83.0,PRY
+Paraguay,0,2016,0.0,86.0,PRY
+Paraguay,0,2017,0.0,86.0,PRY
+Paraguay,0,2018,0.0,77.0,PRY
+Paraguay,2,2019,0.0,75.0,PRY
+Peru,16,1989,0.0,76.0,PER
+Peru,97,1990,16.0,50.0,PER
+Peru,107,1991,97.0,46.0,PER
+Peru,124,1992,107.0,33.0,PER
+Peru,42,1993,124.0,49.0,PER
+Peru,175,1994,42.0,34.0,PER
+Peru,46,1995,175.0,48.0,PER
+Peru,124,1996,46.0,36.0,PER
+Peru,312,1997,124.0,24.0,PER
+Peru,52,1998,312.0,46.0,PER
+Peru,97,1999,52.0,43.0,PER
+Peru,24,2000,97.0,57.0,PER
+Peru,4,2001,24.0,70.0,PER
+Peru,16,2002,4.0,63.0,PER
+Peru,22,2003,16.0,52.0,PER
+Peru,47,2004,22.0,49.0,PER
+Peru,368,2005,47.0,18.0,PER
+Peru,193,2006,368.0,32.0,PER
+Peru,172,2007,193.0,37.0,PER
+Peru,0,2008,172.0,80.0,PER
+Peru,43,2009,0.0,56.0,PER
+Peru,46,2010,43.0,55.0,PER
+Peru,63,2011,46.0,54.0,PER
+Peru,10,2012,63.0,75.0,PER
+Peru,22,2013,10.0,64.0,PER
+Peru,152,2014,22.0,34.0,PER
+Peru,212,2015,152.0,31.0,PER
+Peru,222,2016,212.0,35.0,PER
+Peru,64,2017,222.0,50.0,PER
+Peru,92,2018,64.0,45.0,PER
+Peru,0,2019,92.0,77.0,PER
+Philippines,19,1989,0.0,74.0,PHL
+Philippines,33,1990,19.0,63.0,PHL
+Philippines,34,1991,33.0,61.0,PHL
+Philippines,43,1992,34.0,47.0,PHL
+Philippines,61,1993,43.0,43.0,PHL
+Philippines,71,1994,61.0,48.0,PHL
+Philippines,27,1995,71.0,56.0,PHL
+Philippines,40,1996,27.0,57.0,PHL
+Philippines,70,1997,40.0,48.0,PHL
+Philippines,64,1998,70.0,43.0,PHL
+Philippines,0,1999,64.0,77.0,PHL
+Philippines,0,2000,0.0,75.0,PHL
+Philippines,10,2001,0.0,64.0,PHL
+Philippines,5,2002,10.0,71.0,PHL
+Philippines,10,2003,5.0,61.0,PHL
+Philippines,34,2004,10.0,54.0,PHL
+Philippines,12,2005,34.0,66.0,PHL
+Philippines,23,2006,12.0,63.0,PHL
+Philippines,16,2007,23.0,66.0,PHL
+Philippines,10,2008,16.0,72.0,PHL
+Philippines,1,2009,10.0,86.0,PHL
+Philippines,3,2010,1.0,82.0,PHL
+Philippines,63,2011,3.0,54.0,PHL
+Philippines,16,2012,63.0,71.0,PHL
+Philippines,78,2013,16.0,42.0,PHL
+Philippines,12,2014,78.0,70.0,PHL
+Philippines,153,2015,12.0,37.0,PHL
+Philippines,230,2016,153.0,34.0,PHL
+Philippines,278,2017,230.0,29.0,PHL
+Philippines,18,2018,278.0,60.0,PHL
+Philippines,187,2019,18.0,28.0,PHL
+Poland,498,1989,0.0,22.0,POL
+Poland,227,1990,498.0,36.0,POL
+Poland,76,1991,227.0,51.0,POL
+Poland,95,1992,76.0,36.0,POL
+Poland,8,1993,95.0,66.0,POL
+Poland,72,1994,8.0,47.0,POL
+Poland,248,1995,72.0,28.0,POL
+Poland,105,1996,248.0,40.0,POL
+Poland,1,1997,105.0,78.0,POL
+Poland,3,1998,1.0,66.0,POL
+Poland,25,1999,3.0,61.0,POL
+Poland,148,2000,25.0,33.0,POL
+Poland,33,2001,148.0,49.0,POL
+Poland,256,2002,33.0,19.0,POL
+Poland,350,2003,256.0,14.0,POL
+Poland,226,2004,350.0,27.0,POL
+Poland,115,2005,226.0,36.0,POL
+Poland,465,2006,115.0,16.0,POL
+Poland,992,2007,465.0,5.0,POL
+Poland,597,2008,992.0,14.0,POL
+Poland,171,2009,597.0,31.0,POL
+Poland,159,2010,171.0,35.0,POL
+Poland,88,2011,159.0,45.0,POL
+Poland,232,2012,88.0,28.0,POL
+Poland,154,2013,232.0,34.0,POL
+Poland,254,2014,154.0,24.0,POL
+Poland,133,2015,254.0,42.0,POL
+Poland,45,2016,133.0,57.0,POL
+Poland,153,2017,45.0,35.0,POL
+Poland,122,2018,153.0,40.0,POL
+Poland,308,2019,122.0,22.0,POL
+Portugal,136,1989,0.0,43.0,PRT
+Portugal,73,1990,136.0,54.0,PRT
+Portugal,1018,1991,73.0,9.0,PRT
+Portugal,19,1992,1018.0,58.0,PRT
+Portugal,361,1993,19.0,21.0,PRT
+Portugal,453,1994,361.0,17.0,PRT
+Portugal,20,1995,453.0,60.0,PRT
+Portugal,7,1996,20.0,74.0,PRT
+Portugal,0,1997,7.0,79.0,PRT
+Portugal,16,1998,0.0,56.0,PRT
+Portugal,3,1999,16.0,74.0,PRT
+Portugal,2,2000,3.0,73.0,PRT
+Portugal,19,2001,2.0,56.0,PRT
+Portugal,0,2002,19.0,75.0,PRT
+Portugal,29,2003,0.0,49.0,PRT
+Portugal,70,2004,29.0,45.0,PRT
+Portugal,158,2005,70.0,32.0,PRT
+Portugal,220,2006,158.0,30.0,PRT
+Portugal,60,2007,220.0,52.0,PRT
+Portugal,144,2008,60.0,38.0,PRT
+Portugal,370,2009,144.0,20.0,PRT
+Portugal,894,2010,370.0,8.0,PRT
+Portugal,170,2011,894.0,38.0,PRT
+Portugal,40,2012,170.0,60.0,PRT
+Portugal,13,2013,40.0,70.0,PRT
+Portugal,3,2014,13.0,77.0,PRT
+Portugal,1,2015,3.0,82.0,PRT
+Portugal,21,2016,1.0,69.0,PRT
+Portugal,12,2017,21.0,77.0,PRT
+Portugal,26,2018,12.0,55.0,PRT
+Portugal,44,2019,26.0,48.0,PRT
+Qatar,10,1989,0.0,81.0,QAT
+Qatar,5,1990,10.0,76.0,QAT
+Qatar,17,1991,5.0,68.0,QAT
+Qatar,64,1992,17.0,41.0,QAT
+Qatar,11,1993,64.0,63.0,QAT
+Qatar,10,1994,11.0,68.0,QAT
+Qatar,11,1995,10.0,65.0,QAT
+Qatar,201,1996,11.0,29.0,QAT
+Qatar,242,1997,201.0,27.0,QAT
+Qatar,300,1998,242.0,19.0,QAT
+Qatar,72,1999,300.0,46.0,QAT
+Qatar,14,2000,72.0,64.0,QAT
+Qatar,11,2001,14.0,63.0,QAT
+Qatar,11,2002,11.0,67.0,QAT
+Qatar,11,2003,11.0,60.0,QAT
+Qatar,0,2004,11.0,76.0,QAT
+Qatar,0,2005,0.0,76.0,QAT
+Qatar,0,2006,0.0,82.0,QAT
+Qatar,27,2007,0.0,59.0,QAT
+Qatar,0,2008,27.0,80.0,QAT
+Qatar,286,2009,0.0,26.0,QAT
+Qatar,30,2010,286.0,64.0,QAT
+Qatar,198,2011,30.0,36.0,QAT
+Qatar,319,2012,198.0,24.0,QAT
+Qatar,73,2013,319.0,45.0,QAT
+Qatar,55,2014,73.0,51.0,QAT
+Qatar,520,2015,55.0,14.0,QAT
+Qatar,903,2016,520.0,10.0,QAT
+Qatar,667,2017,903.0,16.0,QAT
+Qatar,596,2018,667.0,11.0,QAT
+Qatar,2258,2019,596.0,3.0,QAT
+Romania,276,1989,0.0,30.0,ROU
+Romania,606,1990,276.0,16.0,ROU
+Romania,63,1991,606.0,55.0,ROU
+Romania,184,1992,63.0,30.0,ROU
+Romania,14,1993,184.0,60.0,ROU
+Romania,29,1994,14.0,59.0,ROU
+Romania,2,1995,29.0,73.0,ROU
+Romania,39,1996,2.0,58.0,ROU
+Romania,61,1997,39.0,53.0,ROU
+Romania,170,1998,61.0,31.0,ROU
+Romania,142,1999,170.0,37.0,ROU
+Romania,21,2000,142.0,59.0,ROU
+Romania,24,2001,21.0,54.0,ROU
+Romania,21,2002,24.0,58.0,ROU
+Romania,17,2003,21.0,55.0,ROU
+Romania,285,2004,17.0,21.0,ROU
+Romania,437,2005,285.0,15.0,ROU
+Romania,61,2006,437.0,51.0,ROU
+Romania,98,2007,61.0,43.0,ROU
+Romania,76,2008,98.0,49.0,ROU
+Romania,56,2009,76.0,53.0,ROU
+Romania,107,2010,56.0,40.0,ROU
+Romania,80,2011,107.0,48.0,ROU
+Romania,21,2012,80.0,68.0,ROU
+Romania,20,2013,21.0,65.0,ROU
+Romania,0,2014,20.0,80.0,ROU
+Romania,22,2015,0.0,64.0,ROU
+Romania,177,2016,22.0,36.0,ROU
+Romania,83,2017,177.0,46.0,ROU
+Romania,36,2018,83.0,52.0,ROU
+Romania,61,2019,36.0,43.0,ROU
+Russia,1201,1989,0.0,10.0,RUS
+Russia,693,1990,1201.0,14.0,RUS
+Russia,132,1991,693.0,42.0,RUS
+Russia,40,1992,132.0,50.0,RUS
+Russia,0,1993,40.0,74.0,RUS
+Russia,0,1994,0.0,77.0,RUS
+Russia,0,1995,0.0,75.0,RUS
+Russia,0,1996,0.0,80.0,RUS
+Russia,0,1997,0.0,79.0,RUS
+Russia,0,1998,0.0,69.0,RUS
+Russia,0,1999,0.0,77.0,RUS
+Russia,0,2000,0.0,75.0,RUS
+Russia,0,2001,0.0,73.0,RUS
+Russia,0,2002,0.0,75.0,RUS
+Russia,0,2003,0.0,70.0,RUS
+Russia,0,2004,0.0,76.0,RUS
+Russia,0,2005,0.0,76.0,RUS
+Russia,4,2006,0.0,78.0,RUS
+Russia,100,2007,4.0,42.0,RUS
+Russia,0,2008,100.0,80.0,RUS
+Russia,8,2009,0.0,79.0,RUS
+Russia,25,2010,8.0,66.0,RUS
+Russia,10,2011,25.0,73.0,RUS
+Russia,121,2012,10.0,41.0,RUS
+Russia,183,2013,121.0,31.0,RUS
+Russia,218,2014,183.0,25.0,RUS
+Russia,85,2015,218.0,49.0,RUS
+Russia,145,2016,85.0,40.0,RUS
+Russia,93,2017,145.0,42.0,RUS
+Russia,26,2018,93.0,55.0,RUS
+Russia,0,2019,26.0,77.0,RUS
+Rwanda,0,1989,0.0,89.0,RWA
+Rwanda,1,1990,0.0,80.0,RWA
+Rwanda,2,1991,1.0,77.0,RWA
+Rwanda,5,1992,2.0,66.0,RWA
+Rwanda,0,1993,5.0,74.0,RWA
+Rwanda,0,1994,0.0,77.0,RWA
+Rwanda,0,1995,0.0,75.0,RWA
+Rwanda,1,1996,0.0,79.0,RWA
+Rwanda,2,1997,1.0,77.0,RWA
+Rwanda,9,1998,2.0,60.0,RWA
+Rwanda,20,1999,9.0,64.0,RWA
+Rwanda,14,2000,20.0,64.0,RWA
+Rwanda,0,2001,14.0,73.0,RWA
+Rwanda,0,2002,0.0,75.0,RWA
+Rwanda,0,2003,0.0,70.0,RWA
+Rwanda,0,2004,0.0,76.0,RWA
+Rwanda,0,2005,0.0,76.0,RWA
+Rwanda,3,2006,0.0,79.0,RWA
+Rwanda,20,2007,3.0,62.0,RWA
+Rwanda,8,2008,20.0,73.0,RWA
+Rwanda,11,2009,8.0,76.0,RWA
+Rwanda,0,2010,11.0,85.0,RWA
+Rwanda,0,2011,0.0,82.0,RWA
+Rwanda,5,2012,0.0,80.0,RWA
+Rwanda,15,2013,5.0,69.0,RWA
+Rwanda,14,2014,15.0,68.0,RWA
+Rwanda,27,2015,14.0,62.0,RWA
+Rwanda,0,2016,27.0,86.0,RWA
+Rwanda,8,2017,0.0,79.0,RWA
+Rwanda,3,2018,8.0,74.0,RWA
+Rwanda,0,2019,3.0,77.0,RWA
+Saint Kitts and Nevis,0,1989,0.0,89.0,KNA
+Saint Kitts and Nevis,0,1990,0.0,81.0,KNA
+Saint Kitts and Nevis,0,1991,0.0,79.0,KNA
+Saint Kitts and Nevis,0,1992,0.0,71.0,KNA
+Saint Kitts and Nevis,0,1993,0.0,74.0,KNA
+Saint Kitts and Nevis,0,1994,0.0,77.0,KNA
+Saint Kitts and Nevis,0,1995,0.0,75.0,KNA
+Saint Kitts and Nevis,0,1996,0.0,80.0,KNA
+Saint Kitts and Nevis,0,1997,0.0,79.0,KNA
+Saint Kitts and Nevis,0,1998,0.0,69.0,KNA
+Saint Kitts and Nevis,0,1999,0.0,77.0,KNA
+Saint Kitts and Nevis,0,2000,0.0,75.0,KNA
+Saint Kitts and Nevis,0,2001,0.0,73.0,KNA
+Saint Kitts and Nevis,0,2002,0.0,75.0,KNA
+Saint Kitts and Nevis,0,2003,0.0,70.0,KNA
+Saint Kitts and Nevis,0,2004,0.0,76.0,KNA
+Saint Kitts and Nevis,0,2005,0.0,76.0,KNA
+Saint Kitts and Nevis,0,2006,0.0,82.0,KNA
+Saint Kitts and Nevis,0,2007,0.0,79.0,KNA
+Saint Kitts and Nevis,0,2008,0.0,80.0,KNA
+Saint Kitts and Nevis,0,2009,0.0,87.0,KNA
+Saint Kitts and Nevis,0,2010,0.0,85.0,KNA
+Saint Kitts and Nevis,0,2011,0.0,82.0,KNA
+Saint Kitts and Nevis,0,2012,0.0,85.0,KNA
+Saint Kitts and Nevis,0,2013,0.0,81.0,KNA
+Saint Kitts and Nevis,0,2014,0.0,80.0,KNA
+Saint Kitts and Nevis,0,2015,0.0,83.0,KNA
+Saint Kitts and Nevis,0,2016,0.0,86.0,KNA
+Saint Kitts and Nevis,0,2017,0.0,86.0,KNA
+Saint Kitts and Nevis,0,2018,0.0,77.0,KNA
+Saint Kitts and Nevis,0,2019,0.0,77.0,KNA
+Samoa,0,1989,0.0,89.0,WSM
+Samoa,0,1990,0.0,81.0,WSM
+Samoa,0,1991,0.0,79.0,WSM
+Samoa,0,1992,0.0,71.0,WSM
+Samoa,0,1993,0.0,74.0,WSM
+Samoa,0,1994,0.0,77.0,WSM
+Samoa,0,1995,0.0,75.0,WSM
+Samoa,0,1996,0.0,80.0,WSM
+Samoa,0,1997,0.0,79.0,WSM
+Samoa,0,1998,0.0,69.0,WSM
+Samoa,0,1999,0.0,77.0,WSM
+Samoa,0,2000,0.0,75.0,WSM
+Samoa,0,2001,0.0,73.0,WSM
+Samoa,0,2002,0.0,75.0,WSM
+Samoa,0,2003,0.0,70.0,WSM
+Samoa,0,2004,0.0,76.0,WSM
+Samoa,0,2005,0.0,76.0,WSM
+Samoa,0,2006,0.0,82.0,WSM
+Samoa,0,2007,0.0,79.0,WSM
+Samoa,0,2008,0.0,80.0,WSM
+Samoa,0,2009,0.0,87.0,WSM
+Samoa,0,2010,0.0,85.0,WSM
+Samoa,0,2011,0.0,82.0,WSM
+Samoa,0,2012,0.0,85.0,WSM
+Samoa,0,2013,0.0,81.0,WSM
+Samoa,0,2014,0.0,80.0,WSM
+Samoa,0,2015,0.0,83.0,WSM
+Samoa,0,2016,0.0,86.0,WSM
+Samoa,0,2017,0.0,86.0,WSM
+Samoa,0,2018,0.0,77.0,WSM
+Samoa,7,2019,0.0,71.0,WSM
+Saudi Arabia,1382,1989,0.0,8.0,SAU
+Saudi Arabia,2073,1990,1382.0,3.0,SAU
+Saudi Arabia,1041,1991,2073.0,6.0,SAU
+Saudi Arabia,1125,1992,1041.0,8.0,SAU
+Saudi Arabia,2377,1993,1125.0,1.0,SAU
+Saudi Arabia,981,1994,2377.0,7.0,SAU
+Saudi Arabia,983,1995,981.0,7.0,SAU
+Saudi Arabia,1731,1996,983.0,2.0,SAU
+Saudi Arabia,2787,1997,1731.0,2.0,SAU
+Saudi Arabia,2895,1998,2787.0,2.0,SAU
+Saudi Arabia,1580,1999,2895.0,5.0,SAU
+Saudi Arabia,85,2000,1580.0,45.0,SAU
+Saudi Arabia,61,2001,85.0,44.0,SAU
+Saudi Arabia,567,2002,61.0,8.0,SAU
+Saudi Arabia,167,2003,567.0,25.0,SAU
+Saudi Arabia,1170,2004,167.0,4.0,SAU
+Saudi Arabia,167,2005,1170.0,28.0,SAU
+Saudi Arabia,206,2006,167.0,31.0,SAU
+Saudi Arabia,230,2007,206.0,30.0,SAU
+Saudi Arabia,391,2008,230.0,22.0,SAU
+Saudi Arabia,824,2009,391.0,9.0,SAU
+Saudi Arabia,1083,2010,824.0,5.0,SAU
+Saudi Arabia,1222,2011,1083.0,6.0,SAU
+Saudi Arabia,1033,2012,1222.0,7.0,SAU
+Saudi Arabia,1614,2013,1033.0,3.0,SAU
+Saudi Arabia,2741,2014,1614.0,2.0,SAU
+Saudi Arabia,3380,2015,2741.0,1.0,SAU
+Saudi Arabia,2947,2016,3380.0,2.0,SAU
+Saudi Arabia,3934,2017,2947.0,1.0,SAU
+Saudi Arabia,3760,2018,3934.0,1.0,SAU
+Saudi Arabia,3673,2019,3760.0,1.0,SAU
+Senegal,0,1989,0.0,89.0,SEN
+Senegal,0,1990,0.0,81.0,SEN
+Senegal,0,1991,0.0,79.0,SEN
+Senegal,0,1992,0.0,71.0,SEN
+Senegal,0,1993,0.0,74.0,SEN
+Senegal,1,1994,0.0,76.0,SEN
+Senegal,6,1995,1.0,69.0,SEN
+Senegal,0,1996,6.0,80.0,SEN
+Senegal,0,1997,0.0,79.0,SEN
+Senegal,0,1998,0.0,69.0,SEN
+Senegal,0,1999,0.0,77.0,SEN
+Senegal,0,2000,0.0,75.0,SEN
+Senegal,0,2001,0.0,73.0,SEN
+Senegal,0,2002,0.0,75.0,SEN
+Senegal,0,2003,0.0,70.0,SEN
+Senegal,0,2004,0.0,76.0,SEN
+Senegal,15,2005,0.0,63.0,SEN
+Senegal,9,2006,15.0,74.0,SEN
+Senegal,18,2007,9.0,64.0,SEN
+Senegal,6,2008,18.0,75.0,SEN
+Senegal,4,2009,6.0,83.0,SEN
+Senegal,4,2010,4.0,81.0,SEN
+Senegal,20,2011,4.0,68.0,SEN
+Senegal,0,2012,20.0,85.0,SEN
+Senegal,5,2013,0.0,77.0,SEN
+Senegal,7,2014,5.0,73.0,SEN
+Senegal,16,2015,7.0,69.0,SEN
+Senegal,40,2016,16.0,59.0,SEN
+Senegal,47,2017,40.0,53.0,SEN
+Senegal,12,2018,47.0,66.0,SEN
+Senegal,31,2019,12.0,56.0,SEN
+Serbia,331,1989,0.0,26.0,SRB
+Serbia,310,1990,331.0,29.0,SRB
+Serbia,140,1991,310.0,39.0,SRB
+Serbia,6,1992,140.0,65.0,SRB
+Serbia,2,1993,6.0,72.0,SRB
+Serbia,2,1994,2.0,75.0,SRB
+Serbia,8,1995,2.0,67.0,SRB
+Serbia,1,1996,8.0,79.0,SRB
+Serbia,13,1997,1.0,67.0,SRB
+Serbia,6,1998,13.0,63.0,SRB
+Serbia,1,1999,6.0,76.0,SRB
+Serbia,1,2000,1.0,74.0,SRB
+Serbia,27,2001,1.0,52.0,SRB
+Serbia,0,2002,27.0,75.0,SRB
+Serbia,0,2003,0.0,70.0,SRB
+Serbia,0,2004,0.0,76.0,SRB
+Serbia,0,2005,0.0,76.0,SRB
+Serbia,0,2006,0.0,82.0,SRB
+Serbia,0,2007,0.0,79.0,SRB
+Serbia,0,2008,0.0,80.0,SRB
+Serbia,0,2009,0.0,87.0,SRB
+Serbia,16,2010,0.0,72.0,SRB
+Serbia,0,2011,16.0,82.0,SRB
+Serbia,0,2012,0.0,85.0,SRB
+Serbia,0,2013,0.0,81.0,SRB
+Serbia,0,2014,0.0,80.0,SRB
+Serbia,0,2015,0.0,83.0,SRB
+Serbia,14,2016,0.0,74.0,SRB
+Serbia,65,2017,14.0,49.0,SRB
+Serbia,3,2018,65.0,74.0,SRB
+Serbia,171,2019,3.0,31.0,SRB
+Seychelles,0,1989,0.0,89.0,SYC
+Seychelles,0,1990,0.0,81.0,SYC
+Seychelles,0,1991,0.0,79.0,SYC
+Seychelles,0,1992,0.0,71.0,SYC
+Seychelles,0,1993,0.0,74.0,SYC
+Seychelles,0,1994,0.0,77.0,SYC
+Seychelles,0,1995,0.0,75.0,SYC
+Seychelles,0,1996,0.0,80.0,SYC
+Seychelles,0,1997,0.0,79.0,SYC
+Seychelles,0,1998,0.0,69.0,SYC
+Seychelles,0,1999,0.0,77.0,SYC
+Seychelles,0,2000,0.0,75.0,SYC
+Seychelles,0,2001,0.0,73.0,SYC
+Seychelles,0,2002,0.0,75.0,SYC
+Seychelles,0,2003,0.0,70.0,SYC
+Seychelles,0,2004,0.0,76.0,SYC
+Seychelles,15,2005,0.0,63.0,SYC
+Seychelles,0,2006,15.0,82.0,SYC
+Seychelles,0,2007,0.0,79.0,SYC
+Seychelles,0,2008,0.0,80.0,SYC
+Seychelles,0,2009,0.0,87.0,SYC
+Seychelles,0,2010,0.0,85.0,SYC
+Seychelles,7,2011,0.0,76.0,SYC
+Seychelles,0,2012,7.0,85.0,SYC
+Seychelles,7,2013,0.0,75.0,SYC
+Seychelles,16,2014,7.0,66.0,SYC
+Seychelles,0,2015,16.0,83.0,SYC
+Seychelles,8,2016,0.0,78.0,SYC
+Seychelles,0,2017,8.0,86.0,SYC
+Seychelles,7,2018,0.0,70.0,SYC
+Seychelles,0,2019,7.0,77.0,SYC
+Sierra Leone,0,1989,0.0,89.0,SLE
+Sierra Leone,0,1990,0.0,81.0,SLE
+Sierra Leone,0,1991,0.0,79.0,SLE
+Sierra Leone,1,1992,0.0,70.0,SLE
+Sierra Leone,0,1993,1.0,74.0,SLE
+Sierra Leone,6,1994,0.0,71.0,SLE
+Sierra Leone,14,1995,6.0,63.0,SLE
+Sierra Leone,0,1996,14.0,80.0,SLE
+Sierra Leone,16,1997,0.0,66.0,SLE
+Sierra Leone,0,1998,16.0,69.0,SLE
+Sierra Leone,12,1999,0.0,67.0,SLE
+Sierra Leone,0,2000,12.0,75.0,SLE
+Sierra Leone,0,2001,0.0,73.0,SLE
+Sierra Leone,0,2002,0.0,75.0,SLE
+Sierra Leone,0,2003,0.0,70.0,SLE
+Sierra Leone,0,2004,0.0,76.0,SLE
+Sierra Leone,0,2005,0.0,76.0,SLE
+Sierra Leone,9,2006,0.0,74.0,SLE
+Sierra Leone,0,2007,9.0,79.0,SLE
+Sierra Leone,0,2008,0.0,80.0,SLE
+Sierra Leone,0,2009,0.0,87.0,SLE
+Sierra Leone,0,2010,0.0,85.0,SLE
+Sierra Leone,2,2011,0.0,80.0,SLE
+Sierra Leone,0,2012,2.0,85.0,SLE
+Sierra Leone,1,2013,0.0,80.0,SLE
+Sierra Leone,0,2014,1.0,80.0,SLE
+Sierra Leone,0,2015,0.0,83.0,SLE
+Sierra Leone,1,2016,0.0,85.0,SLE
+Sierra Leone,0,2017,1.0,86.0,SLE
+Sierra Leone,0,2018,0.0,77.0,SLE
+Sierra Leone,0,2019,0.0,77.0,SLE
+Singapore,238,1989,0.0,33.0,SGP
+Singapore,527,1990,238.0,19.0,SGP
+Singapore,375,1991,527.0,24.0,SGP
+Singapore,112,1992,375.0,35.0,SGP
+Singapore,170,1993,112.0,31.0,SGP
+Singapore,183,1994,170.0,31.0,SGP
+Singapore,306,1995,183.0,22.0,SGP
+Singapore,171,1996,306.0,32.0,SGP
+Singapore,624,1997,171.0,13.0,SGP
+Singapore,816,1998,624.0,8.0,SGP
+Singapore,313,1999,816.0,22.0,SGP
+Singapore,798,2000,313.0,7.0,SGP
+Singapore,255,2001,798.0,19.0,SGP
+Singapore,236,2002,255.0,23.0,SGP
+Singapore,86,2003,236.0,35.0,SGP
+Singapore,379,2004,86.0,14.0,SGP
+Singapore,541,2005,379.0,10.0,SGP
+Singapore,72,2006,541.0,46.0,SGP
+Singapore,358,2007,72.0,23.0,SGP
+Singapore,1116,2008,358.0,5.0,SGP
+Singapore,1429,2009,1116.0,3.0,SGP
+Singapore,958,2010,1429.0,7.0,SGP
+Singapore,900,2011,958.0,12.0,SGP
+Singapore,748,2012,900.0,12.0,SGP
+Singapore,748,2013,748.0,10.0,SGP
+Singapore,65,2014,748.0,49.0,SGP
+Singapore,147,2015,65.0,38.0,SGP
+Singapore,631,2016,147.0,14.0,SGP
+Singapore,429,2017,631.0,22.0,SGP
+Singapore,592,2018,429.0,12.0,SGP
+Singapore,614,2019,592.0,13.0,SGP
+Slovakia,0,1989,0.0,89.0,SVK
+Slovakia,0,1990,0.0,81.0,SVK
+Slovakia,0,1991,0.0,79.0,SVK
+Slovakia,0,1992,0.0,71.0,SVK
+Slovakia,146,1993,0.0,33.0,SVK
+Slovakia,29,1994,146.0,59.0,SVK
+Slovakia,208,1995,29.0,31.0,SVK
+Slovakia,29,1996,208.0,64.0,SVK
+Slovakia,0,1997,29.0,79.0,SVK
+Slovakia,0,1998,0.0,69.0,SVK
+Slovakia,0,1999,0.0,77.0,SVK
+Slovakia,0,2000,0.0,75.0,SVK
+Slovakia,0,2001,0.0,73.0,SVK
+Slovakia,27,2002,0.0,55.0,SVK
+Slovakia,0,2003,27.0,70.0,SVK
+Slovakia,0,2004,0.0,76.0,SVK
+Slovakia,4,2005,0.0,72.0,SVK
+Slovakia,0,2006,4.0,82.0,SVK
+Slovakia,0,2007,0.0,79.0,SVK
+Slovakia,0,2008,0.0,80.0,SVK
+Slovakia,9,2009,0.0,78.0,SVK
+Slovakia,9,2010,9.0,77.0,SVK
+Slovakia,0,2011,9.0,82.0,SVK
+Slovakia,2,2012,0.0,83.0,SVK
+Slovakia,5,2013,2.0,77.0,SVK
+Slovakia,0,2014,5.0,80.0,SVK
+Slovakia,0,2015,0.0,83.0,SVK
+Slovakia,0,2016,0.0,86.0,SVK
+Slovakia,47,2017,0.0,53.0,SVK
+Slovakia,34,2018,47.0,53.0,SVK
+Slovakia,36,2019,34.0,53.0,SVK
+Slovenia,0,1989,0.0,89.0,SVN
+Slovenia,0,1990,0.0,81.0,SVN
+Slovenia,2,1991,0.0,77.0,SVN
+Slovenia,10,1992,2.0,63.0,SVN
+Slovenia,22,1993,10.0,55.0,SVN
+Slovenia,11,1994,22.0,67.0,SVN
+Slovenia,22,1995,11.0,59.0,SVN
+Slovenia,20,1996,22.0,69.0,SVN
+Slovenia,8,1997,20.0,71.0,SVN
+Slovenia,4,1998,8.0,65.0,SVN
+Slovenia,18,1999,4.0,65.0,SVN
+Slovenia,2,2000,18.0,73.0,SVN
+Slovenia,41,2001,2.0,48.0,SVN
+Slovenia,2,2002,41.0,73.0,SVN
+Slovenia,17,2003,2.0,55.0,SVN
+Slovenia,17,2004,17.0,60.0,SVN
+Slovenia,3,2005,17.0,73.0,SVN
+Slovenia,3,2006,3.0,79.0,SVN
+Slovenia,2,2007,3.0,77.0,SVN
+Slovenia,0,2008,2.0,80.0,SVN
+Slovenia,7,2009,0.0,80.0,SVN
+Slovenia,40,2010,7.0,57.0,SVN
+Slovenia,28,2011,40.0,64.0,SVN
+Slovenia,0,2012,28.0,85.0,SVN
+Slovenia,0,2013,0.0,81.0,SVN
+Slovenia,1,2014,0.0,79.0,SVN
+Slovenia,0,2015,1.0,83.0,SVN
+Slovenia,0,2016,0.0,86.0,SVN
+Slovenia,0,2017,0.0,86.0,SVN
+Slovenia,0,2018,0.0,77.0,SVN
+Slovenia,0,2019,0.0,77.0,SVN
+Solomon Islands,0,1989,0.0,89.0,SLB
+Solomon Islands,0,1990,0.0,81.0,SLB
+Solomon Islands,6,1991,0.0,74.0,SLB
+Solomon Islands,0,1992,6.0,71.0,SLB
+Solomon Islands,0,1993,0.0,74.0,SLB
+Solomon Islands,0,1994,0.0,77.0,SLB
+Solomon Islands,0,1995,0.0,75.0,SLB
+Solomon Islands,0,1996,0.0,80.0,SLB
+Solomon Islands,0,1997,0.0,79.0,SLB
+Solomon Islands,0,1998,0.0,69.0,SLB
+Solomon Islands,0,1999,0.0,77.0,SLB
+Solomon Islands,0,2000,0.0,75.0,SLB
+Solomon Islands,0,2001,0.0,73.0,SLB
+Solomon Islands,0,2002,0.0,75.0,SLB
+Solomon Islands,0,2003,0.0,70.0,SLB
+Solomon Islands,0,2004,0.0,76.0,SLB
+Solomon Islands,0,2005,0.0,76.0,SLB
+Solomon Islands,0,2006,0.0,82.0,SLB
+Solomon Islands,0,2007,0.0,79.0,SLB
+Solomon Islands,0,2008,0.0,80.0,SLB
+Solomon Islands,0,2009,0.0,87.0,SLB
+Solomon Islands,0,2010,0.0,85.0,SLB
+Solomon Islands,0,2011,0.0,82.0,SLB
+Solomon Islands,0,2012,0.0,85.0,SLB
+Solomon Islands,0,2013,0.0,81.0,SLB
+Solomon Islands,0,2014,0.0,80.0,SLB
+Solomon Islands,0,2015,0.0,83.0,SLB
+Solomon Islands,0,2016,0.0,86.0,SLB
+Solomon Islands,0,2017,0.0,86.0,SLB
+Solomon Islands,0,2018,0.0,77.0,SLB
+Solomon Islands,7,2019,0.0,71.0,SLB
+Somalia,0,1989,0.0,89.0,SOM
+Somalia,16,1990,0.0,70.0,SOM
+Somalia,0,1991,16.0,79.0,SOM
+Somalia,0,1992,0.0,71.0,SOM
+Somalia,0,1993,0.0,74.0,SOM
+Somalia,0,1994,0.0,77.0,SOM
+Somalia,0,1995,0.0,75.0,SOM
+Somalia,0,1996,0.0,80.0,SOM
+Somalia,0,1997,0.0,79.0,SOM
+Somalia,0,1998,0.0,69.0,SOM
+Somalia,1,1999,0.0,76.0,SOM
+Somalia,0,2000,1.0,75.0,SOM
+Somalia,0,2001,0.0,73.0,SOM
+Somalia,0,2002,0.0,75.0,SOM
+Somalia,0,2003,0.0,70.0,SOM
+Somalia,0,2004,0.0,76.0,SOM
+Somalia,0,2005,0.0,76.0,SOM
+Somalia,0,2006,0.0,82.0,SOM
+Somalia,0,2007,0.0,79.0,SOM
+Somalia,0,2008,0.0,80.0,SOM
+Somalia,0,2009,0.0,87.0,SOM
+Somalia,0,2010,0.0,85.0,SOM
+Somalia,0,2011,0.0,82.0,SOM
+Somalia,0,2012,0.0,85.0,SOM
+Somalia,3,2013,0.0,78.0,SOM
+Somalia,0,2014,3.0,80.0,SOM
+Somalia,1,2015,0.0,82.0,SOM
+Somalia,2,2016,1.0,84.0,SOM
+Somalia,2,2017,2.0,84.0,SOM
+Somalia,0,2018,2.0,77.0,SOM
+Somalia,8,2019,0.0,70.0,SOM
+South Africa,13,1989,0.0,79.0,ZAF
+South Africa,13,1990,13.0,72.0,ZAF
+South Africa,27,1991,13.0,62.0,ZAF
+South Africa,363,1992,27.0,23.0,ZAF
+South Africa,244,1993,363.0,24.0,ZAF
+South Africa,239,1994,244.0,27.0,ZAF
+South Africa,38,1995,239.0,50.0,ZAF
+South Africa,38,1996,38.0,59.0,ZAF
+South Africa,11,1997,38.0,69.0,ZAF
+South Africa,0,1998,11.0,69.0,ZAF
+South Africa,21,1999,0.0,63.0,ZAF
+South Africa,6,2000,21.0,70.0,ZAF
+South Africa,18,2001,6.0,57.0,ZAF
+South Africa,0,2002,18.0,75.0,ZAF
+South Africa,0,2003,0.0,70.0,ZAF
+South Africa,0,2004,0.0,76.0,ZAF
+South Africa,267,2005,0.0,21.0,ZAF
+South Africa,785,2006,267.0,7.0,ZAF
+South Africa,954,2007,785.0,6.0,ZAF
+South Africa,493,2008,954.0,16.0,ZAF
+South Africa,134,2009,493.0,36.0,ZAF
+South Africa,180,2010,134.0,33.0,ZAF
+South Africa,212,2011,180.0,35.0,ZAF
+South Africa,132,2012,212.0,39.0,ZAF
+South Africa,2,2013,132.0,79.0,ZAF
+South Africa,50,2014,2.0,53.0,ZAF
+South Africa,2,2015,50.0,81.0,ZAF
+South Africa,0,2016,2.0,86.0,ZAF
+South Africa,0,2017,0.0,86.0,ZAF
+South Africa,0,2018,0.0,77.0,ZAF
+South Africa,0,2019,0.0,77.0,ZAF
+South Korea,1838,1989,0.0,4.0,KOR
+South Korea,1211,1990,1838.0,6.0,KOR
+South Korea,904,1991,1211.0,12.0,KOR
+South Korea,785,1992,904.0,11.0,KOR
+South Korea,1010,1993,785.0,7.0,KOR
+South Korea,1018,1994,1010.0,5.0,KOR
+South Korea,1957,1995,1018.0,1.0,KOR
+South Korea,1976,1996,1957.0,1.0,KOR
+South Korea,1226,1997,1976.0,5.0,KOR
+South Korea,1431,1998,1226.0,6.0,KOR
+South Korea,1645,1999,1431.0,4.0,KOR
+South Korea,1397,2000,1645.0,2.0,KOR
+South Korea,775,2001,1397.0,7.0,KOR
+South Korea,531,2002,775.0,10.0,KOR
+South Korea,755,2003,531.0,6.0,KOR
+South Korea,1061,2004,755.0,6.0,KOR
+South Korea,808,2005,1061.0,6.0,KOR
+South Korea,1654,2006,808.0,3.0,KOR
+South Korea,1729,2007,1654.0,2.0,KOR
+South Korea,1685,2008,1729.0,3.0,KOR
+South Korea,797,2009,1685.0,10.0,KOR
+South Korea,1284,2010,797.0,4.0,KOR
+South Korea,1576,2011,1284.0,2.0,KOR
+South Korea,1078,2012,1576.0,6.0,KOR
+South Korea,185,2013,1078.0,30.0,KOR
+South Korea,723,2014,185.0,11.0,KOR
+South Korea,272,2015,723.0,26.0,KOR
+South Korea,1059,2016,272.0,7.0,KOR
+South Korea,1056,2017,1059.0,7.0,KOR
+South Korea,1106,2018,1056.0,8.0,KOR
+South Korea,1510,2019,1106.0,4.0,KOR
+Spain,859,1989,0.0,14.0,ESP
+Spain,709,1990,859.0,13.0,ESP
+Spain,112,1991,709.0,44.0,ESP
+Spain,212,1992,112.0,27.0,ESP
+Spain,303,1993,212.0,23.0,ESP
+Spain,858,1994,303.0,10.0,ESP
+Spain,359,1995,858.0,19.0,ESP
+Spain,427,1996,359.0,20.0,ESP
+Spain,214,1997,427.0,31.0,ESP
+Spain,85,1998,214.0,41.0,ESP
+Spain,371,1999,85.0,17.0,ESP
+Spain,328,2000,371.0,18.0,ESP
+Spain,153,2001,328.0,27.0,ESP
+Spain,277,2002,153.0,18.0,ESP
+Spain,254,2003,277.0,18.0,ESP
+Spain,315,2004,254.0,18.0,ESP
+Spain,363,2005,315.0,19.0,ESP
+Spain,315,2006,363.0,24.0,ESP
+Spain,339,2007,315.0,24.0,ESP
+Spain,349,2008,339.0,24.0,ESP
+Spain,231,2009,349.0,29.0,ESP
+Spain,288,2010,231.0,23.0,ESP
+Spain,168,2011,288.0,39.0,ESP
+Spain,224,2012,168.0,29.0,ESP
+Spain,155,2013,224.0,33.0,ESP
+Spain,109,2014,155.0,38.0,ESP
+Spain,135,2015,109.0,41.0,ESP
+Spain,86,2016,135.0,50.0,ESP
+Spain,87,2017,86.0,45.0,ESP
+Spain,138,2018,87.0,37.0,ESP
+Spain,56,2019,138.0,45.0,ESP
+Sri Lanka,5,1989,0.0,84.0,LKA
+Sri Lanka,19,1990,5.0,68.0,LKA
+Sri Lanka,166,1991,19.0,36.0,LKA
+Sri Lanka,22,1992,166.0,56.0,LKA
+Sri Lanka,35,1993,22.0,53.0,LKA
+Sri Lanka,74,1994,35.0,46.0,LKA
+Sri Lanka,64,1995,74.0,44.0,LKA
+Sri Lanka,210,1996,64.0,27.0,LKA
+Sri Lanka,50,1997,210.0,56.0,LKA
+Sri Lanka,85,1998,50.0,41.0,LKA
+Sri Lanka,64,1999,85.0,48.0,LKA
+Sri Lanka,297,2000,64.0,20.0,LKA
+Sri Lanka,161,2001,297.0,24.0,LKA
+Sri Lanka,45,2002,161.0,48.0,LKA
+Sri Lanka,35,2003,45.0,47.0,LKA
+Sri Lanka,49,2004,35.0,48.0,LKA
+Sri Lanka,58,2005,49.0,45.0,LKA
+Sri Lanka,97,2006,58.0,42.0,LKA
+Sri Lanka,92,2007,97.0,44.0,LKA
+Sri Lanka,79,2008,92.0,46.0,LKA
+Sri Lanka,21,2009,79.0,69.0,LKA
+Sri Lanka,4,2010,21.0,81.0,LKA
+Sri Lanka,21,2011,4.0,67.0,LKA
+Sri Lanka,0,2012,21.0,85.0,LKA
+Sri Lanka,20,2013,0.0,65.0,LKA
+Sri Lanka,5,2014,20.0,75.0,LKA
+Sri Lanka,0,2015,5.0,83.0,LKA
+Sri Lanka,0,2016,0.0,86.0,LKA
+Sri Lanka,45,2017,0.0,55.0,LKA
+Sri Lanka,99,2018,45.0,42.0,LKA
+Sri Lanka,59,2019,99.0,44.0,LKA
+Sudan,16,1989,0.0,76.0,SDN
+Sudan,3,1990,16.0,78.0,SDN
+Sudan,81,1991,3.0,48.0,SDN
+Sudan,6,1992,81.0,65.0,SDN
+Sudan,0,1993,6.0,74.0,SDN
+Sudan,0,1994,0.0,77.0,SDN
+Sudan,3,1995,0.0,72.0,SDN
+Sudan,27,1996,3.0,66.0,SDN
+Sudan,63,1997,27.0,52.0,SDN
+Sudan,0,1998,63.0,69.0,SDN
+Sudan,36,1999,0.0,57.0,SDN
+Sudan,0,2000,36.0,75.0,SDN
+Sudan,106,2001,0.0,37.0,SDN
+Sudan,49,2002,106.0,46.0,SDN
+Sudan,204,2003,49.0,20.0,SDN
+Sudan,293,2004,204.0,20.0,SDN
+Sudan,132,2005,293.0,33.0,SDN
+Sudan,69,2006,132.0,47.0,SDN
+Sudan,70,2007,69.0,50.0,SDN
+Sudan,172,2008,70.0,34.0,SDN
+Sudan,90,2009,172.0,43.0,SDN
+Sudan,184,2010,90.0,32.0,SDN
+Sudan,234,2011,184.0,32.0,SDN
+Sudan,97,2012,234.0,46.0,SDN
+Sudan,139,2013,97.0,36.0,SDN
+Sudan,96,2014,139.0,41.0,SDN
+Sudan,143,2015,96.0,40.0,SDN
+Sudan,117,2016,143.0,44.0,SDN
+Sudan,68,2017,117.0,48.0,SDN
+Sudan,34,2018,68.0,53.0,SDN
+Sudan,0,2019,34.0,77.0,SDN
+Suriname,0,1989,0.0,89.0,SUR
+Suriname,0,1990,0.0,81.0,SUR
+Suriname,0,1991,0.0,79.0,SUR
+Suriname,0,1992,0.0,71.0,SUR
+Suriname,0,1993,0.0,74.0,SUR
+Suriname,0,1994,0.0,77.0,SUR
+Suriname,0,1995,0.0,75.0,SUR
+Suriname,0,1996,0.0,80.0,SUR
+Suriname,0,1997,0.0,79.0,SUR
+Suriname,0,1998,0.0,69.0,SUR
+Suriname,23,1999,0.0,62.0,SUR
+Suriname,2,2000,23.0,73.0,SUR
+Suriname,0,2001,2.0,73.0,SUR
+Suriname,0,2002,0.0,75.0,SUR
+Suriname,0,2003,0.0,70.0,SUR
+Suriname,0,2004,0.0,76.0,SUR
+Suriname,0,2005,0.0,76.0,SUR
+Suriname,0,2006,0.0,82.0,SUR
+Suriname,0,2007,0.0,79.0,SUR
+Suriname,0,2008,0.0,80.0,SUR
+Suriname,0,2009,0.0,87.0,SUR
+Suriname,0,2010,0.0,85.0,SUR
+Suriname,0,2011,0.0,82.0,SUR
+Suriname,0,2012,0.0,85.0,SUR
+Suriname,7,2013,0.0,75.0,SUR
+Suriname,0,2014,7.0,80.0,SUR
+Suriname,3,2015,0.0,80.0,SUR
+Suriname,0,2016,3.0,86.0,SUR
+Suriname,0,2017,0.0,86.0,SUR
+Suriname,0,2018,0.0,77.0,SUR
+Suriname,0,2019,0.0,77.0,SUR
+Sweden,105,1989,0.0,50.0,SWE
+Sweden,90,1990,105.0,51.0,SWE
+Sweden,49,1991,90.0,58.0,SWE
+Sweden,60,1992,49.0,42.0,SWE
+Sweden,39,1993,60.0,51.0,SWE
+Sweden,297,1994,39.0,24.0,SWE
+Sweden,95,1995,297.0,39.0,SWE
+Sweden,95,1996,95.0,41.0,SWE
+Sweden,195,1997,95.0,33.0,SWE
+Sweden,294,1998,195.0,20.0,SWE
+Sweden,224,1999,294.0,26.0,SWE
+Sweden,204,2000,224.0,27.0,SWE
+Sweden,165,2001,204.0,22.0,SWE
+Sweden,76,2002,165.0,37.0,SWE
+Sweden,64,2003,76.0,37.0,SWE
+Sweden,47,2004,64.0,49.0,SWE
+Sweden,78,2005,47.0,41.0,SWE
+Sweden,129,2006,78.0,38.0,SWE
+Sweden,51,2007,129.0,54.0,SWE
+Sweden,53,2008,51.0,54.0,SWE
+Sweden,17,2009,53.0,71.0,SWE
+Sweden,11,2010,17.0,75.0,SWE
+Sweden,191,2011,11.0,37.0,SWE
+Sweden,207,2012,191.0,33.0,SWE
+Sweden,56,2013,207.0,51.0,SWE
+Sweden,45,2014,56.0,55.0,SWE
+Sweden,14,2015,45.0,71.0,SWE
+Sweden,70,2016,14.0,53.0,SWE
+Sweden,46,2017,70.0,54.0,SWE
+Sweden,7,2018,46.0,70.0,SWE
+Sweden,9,2019,7.0,69.0,SWE
+Switzerland,319,1989,0.0,27.0,CHE
+Switzerland,440,1990,319.0,22.0,CHE
+Switzerland,476,1991,440.0,23.0,CHE
+Switzerland,388,1992,476.0,20.0,CHE
+Switzerland,104,1993,388.0,36.0,CHE
+Switzerland,119,1994,104.0,37.0,CHE
+Switzerland,93,1995,119.0,40.0,CHE
+Switzerland,187,1996,93.0,30.0,CHE
+Switzerland,379,1997,187.0,22.0,CHE
+Switzerland,436,1998,379.0,16.0,CHE
+Switzerland,507,1999,436.0,15.0,CHE
+Switzerland,23,2000,507.0,58.0,CHE
+Switzerland,68,2001,23.0,41.0,CHE
+Switzerland,63,2002,68.0,42.0,CHE
+Switzerland,117,2003,63.0,30.0,CHE
+Switzerland,203,2004,117.0,30.0,CHE
+Switzerland,168,2005,203.0,27.0,CHE
+Switzerland,83,2006,168.0,44.0,CHE
+Switzerland,108,2007,83.0,41.0,CHE
+Switzerland,18,2008,108.0,66.0,CHE
+Switzerland,39,2009,18.0,58.0,CHE
+Switzerland,48,2010,39.0,54.0,CHE
+Switzerland,32,2011,48.0,62.0,CHE
+Switzerland,11,2012,32.0,74.0,CHE
+Switzerland,6,2013,11.0,76.0,CHE
+Switzerland,5,2014,6.0,75.0,CHE
+Switzerland,12,2015,5.0,73.0,CHE
+Switzerland,73,2016,12.0,52.0,CHE
+Switzerland,34,2017,73.0,60.0,CHE
+Switzerland,10,2018,34.0,68.0,CHE
+Switzerland,13,2019,10.0,67.0,CHE
+Syria,663,1989,0.0,19.0,SYR
+Syria,739,1990,663.0,11.0,SYR
+Syria,321,1991,739.0,28.0,SYR
+Syria,243,1992,321.0,25.0,SYR
+Syria,173,1993,243.0,30.0,SYR
+Syria,19,1994,173.0,62.0,SYR
+Syria,35,1995,19.0,52.0,SYR
+Syria,35,1996,35.0,60.0,SYR
+Syria,35,1997,35.0,60.0,SYR
+Syria,55,1998,35.0,45.0,SYR
+Syria,58,1999,55.0,50.0,SYR
+Syria,64,2000,58.0,46.0,SYR
+Syria,28,2001,64.0,51.0,SYR
+Syria,45,2002,28.0,48.0,SYR
+Syria,69,2003,45.0,36.0,SYR
+Syria,25,2004,69.0,56.0,SYR
+Syria,35,2005,25.0,53.0,SYR
+Syria,100,2006,35.0,41.0,SYR
+Syria,20,2007,100.0,62.0,SYR
+Syria,294,2008,20.0,26.0,SYR
+Syria,210,2009,294.0,30.0,SYR
+Syria,426,2010,210.0,17.0,SYR
+Syria,496,2011,426.0,21.0,SYR
+Syria,517,2012,496.0,17.0,SYR
+Syria,507,2013,517.0,14.0,SYR
+Syria,21,2014,507.0,63.0,SYR
+Syria,22,2015,21.0,64.0,SYR
+Syria,8,2016,22.0,78.0,SYR
+Syria,27,2017,8.0,66.0,SYR
+Syria,181,2018,27.0,31.0,SYR
+Syria,0,2019,181.0,77.0,SYR
+Taiwan,365,1989,0.0,24.0,TWN
+Taiwan,479,1990,365.0,20.0,TWN
+Taiwan,663,1991,479.0,16.0,TWN
+Taiwan,479,1992,663.0,15.0,TWN
+Taiwan,1157,1993,479.0,6.0,TWN
+Taiwan,856,1994,1157.0,11.0,TWN
+Taiwan,1322,1995,856.0,5.0,TWN
+Taiwan,1474,1996,1322.0,5.0,TWN
+Taiwan,4799,1997,1474.0,1.0,TWN
+Taiwan,3949,1998,4799.0,1.0,TWN
+Taiwan,1731,1999,3949.0,3.0,TWN
+Taiwan,573,2000,1731.0,9.0,TWN
+Taiwan,332,2001,573.0,16.0,TWN
+Taiwan,298,2002,332.0,17.0,TWN
+Taiwan,117,2003,298.0,30.0,TWN
+Taiwan,319,2004,117.0,17.0,TWN
+Taiwan,692,2005,319.0,8.0,TWN
+Taiwan,504,2006,692.0,14.0,TWN
+Taiwan,12,2007,504.0,69.0,TWN
+Taiwan,11,2008,12.0,71.0,TWN
+Taiwan,60,2009,11.0,51.0,TWN
+Taiwan,97,2010,60.0,43.0,TWN
+Taiwan,198,2011,97.0,36.0,TWN
+Taiwan,424,2012,198.0,19.0,TWN
+Taiwan,549,2013,424.0,13.0,TWN
+Taiwan,1078,2014,549.0,6.0,TWN
+Taiwan,630,2015,1078.0,13.0,TWN
+Taiwan,97,2016,630.0,49.0,TWN
+Taiwan,493,2017,97.0,19.0,TWN
+Taiwan,109,2018,493.0,41.0,TWN
+Taiwan,51,2019,109.0,47.0,TWN
+Tajikistan,0,1989,0.0,89.0,TJK
+Tajikistan,0,1990,0.0,81.0,TJK
+Tajikistan,0,1991,0.0,79.0,TJK
+Tajikistan,0,1992,0.0,71.0,TJK
+Tajikistan,0,1993,0.0,74.0,TJK
+Tajikistan,27,1994,0.0,60.0,TJK
+Tajikistan,0,1995,27.0,75.0,TJK
+Tajikistan,0,1996,0.0,80.0,TJK
+Tajikistan,0,1997,0.0,79.0,TJK
+Tajikistan,0,1998,0.0,69.0,TJK
+Tajikistan,0,1999,0.0,77.0,TJK
+Tajikistan,0,2000,0.0,75.0,TJK
+Tajikistan,0,2001,0.0,73.0,TJK
+Tajikistan,0,2002,0.0,75.0,TJK
+Tajikistan,0,2003,0.0,70.0,TJK
+Tajikistan,0,2004,0.0,76.0,TJK
+Tajikistan,0,2005,0.0,76.0,TJK
+Tajikistan,13,2006,0.0,71.0,TJK
+Tajikistan,7,2007,13.0,72.0,TJK
+Tajikistan,0,2008,7.0,80.0,TJK
+Tajikistan,34,2009,0.0,62.0,TJK
+Tajikistan,0,2010,34.0,85.0,TJK
+Tajikistan,0,2011,0.0,82.0,TJK
+Tajikistan,0,2012,0.0,85.0,TJK
+Tajikistan,3,2013,0.0,78.0,TJK
+Tajikistan,0,2014,3.0,80.0,TJK
+Tajikistan,0,2015,0.0,83.0,TJK
+Tajikistan,8,2016,0.0,78.0,TJK
+Tajikistan,19,2017,8.0,70.0,TJK
+Tajikistan,3,2018,19.0,74.0,TJK
+Tajikistan,3,2019,3.0,74.0,TJK
+Tanzania,5,1989,0.0,84.0,TZA
+Tanzania,0,1990,5.0,81.0,TZA
+Tanzania,0,1991,0.0,79.0,TZA
+Tanzania,18,1992,0.0,59.0,TZA
+Tanzania,0,1993,18.0,74.0,TZA
+Tanzania,4,1994,0.0,73.0,TZA
+Tanzania,0,1995,4.0,75.0,TZA
+Tanzania,4,1996,0.0,76.0,TZA
+Tanzania,0,1997,4.0,79.0,TZA
+Tanzania,0,1998,0.0,69.0,TZA
+Tanzania,0,1999,0.0,77.0,TZA
+Tanzania,2,2000,0.0,73.0,TZA
+Tanzania,0,2001,2.0,73.0,TZA
+Tanzania,0,2002,0.0,75.0,TZA
+Tanzania,51,2003,0.0,42.0,TZA
+Tanzania,0,2004,51.0,76.0,TZA
+Tanzania,10,2005,0.0,67.0,TZA
+Tanzania,12,2006,10.0,72.0,TZA
+Tanzania,1,2007,12.0,78.0,TZA
+Tanzania,0,2008,1.0,80.0,TZA
+Tanzania,25,2009,0.0,67.0,TZA
+Tanzania,0,2010,25.0,85.0,TZA
+Tanzania,78,2011,0.0,49.0,TZA
+Tanzania,115,2012,78.0,43.0,TZA
+Tanzania,118,2013,115.0,37.0,TZA
+Tanzania,14,2014,118.0,68.0,TZA
+Tanzania,20,2015,14.0,66.0,TZA
+Tanzania,20,2016,20.0,70.0,TZA
+Tanzania,2,2017,20.0,84.0,TZA
+Tanzania,32,2018,2.0,54.0,TZA
+Tanzania,0,2019,32.0,77.0,TZA
+Thailand,270,1989,0.0,31.0,THA
+Thailand,230,1990,270.0,35.0,THA
+Thailand,572,1991,230.0,17.0,THA
+Thailand,497,1992,572.0,14.0,THA
+Thailand,185,1993,497.0,28.0,THA
+Thailand,613,1994,185.0,13.0,THA
+Thailand,528,1995,613.0,13.0,THA
+Thailand,736,1996,528.0,10.0,THA
+Thailand,935,1997,736.0,8.0,THA
+Thailand,76,1998,935.0,42.0,THA
+Thailand,167,1999,76.0,33.0,THA
+Thailand,85,2000,167.0,45.0,THA
+Thailand,117,2001,85.0,33.0,THA
+Thailand,152,2002,117.0,30.0,THA
+Thailand,131,2003,152.0,28.0,THA
+Thailand,114,2004,131.0,37.0,THA
+Thailand,70,2005,114.0,42.0,THA
+Thailand,47,2006,70.0,54.0,THA
+Thailand,8,2007,47.0,71.0,THA
+Thailand,16,2008,8.0,67.0,THA
+Thailand,64,2009,16.0,49.0,THA
+Thailand,46,2010,64.0,55.0,THA
+Thailand,268,2011,46.0,29.0,THA
+Thailand,278,2012,268.0,26.0,THA
+Thailand,358,2013,278.0,19.0,THA
+Thailand,96,2014,358.0,41.0,THA
+Thailand,173,2015,96.0,34.0,THA
+Thailand,336,2016,173.0,22.0,THA
+Thailand,302,2017,336.0,28.0,THA
+Thailand,630,2018,302.0,10.0,THA
+Thailand,301,2019,630.0,23.0,THA
+Timor-Leste,0,1989,0.0,89.0,TLS
+Timor-Leste,0,1990,0.0,81.0,TLS
+Timor-Leste,0,1991,0.0,79.0,TLS
+Timor-Leste,0,1992,0.0,71.0,TLS
+Timor-Leste,0,1993,0.0,74.0,TLS
+Timor-Leste,0,1994,0.0,77.0,TLS
+Timor-Leste,0,1995,0.0,75.0,TLS
+Timor-Leste,0,1996,0.0,80.0,TLS
+Timor-Leste,0,1997,0.0,79.0,TLS
+Timor-Leste,0,1998,0.0,69.0,TLS
+Timor-Leste,0,1999,0.0,77.0,TLS
+Timor-Leste,0,2000,0.0,75.0,TLS
+Timor-Leste,0,2001,0.0,73.0,TLS
+Timor-Leste,0,2002,0.0,75.0,TLS
+Timor-Leste,0,2003,0.0,70.0,TLS
+Timor-Leste,0,2004,0.0,76.0,TLS
+Timor-Leste,0,2005,0.0,76.0,TLS
+Timor-Leste,0,2006,0.0,82.0,TLS
+Timor-Leste,0,2007,0.0,79.0,TLS
+Timor-Leste,0,2008,0.0,80.0,TLS
+Timor-Leste,0,2009,0.0,87.0,TLS
+Timor-Leste,18,2010,0.0,70.0,TLS
+Timor-Leste,14,2011,18.0,71.0,TLS
+Timor-Leste,0,2012,14.0,85.0,TLS
+Timor-Leste,0,2013,0.0,81.0,TLS
+Timor-Leste,0,2014,0.0,80.0,TLS
+Timor-Leste,0,2015,0.0,83.0,TLS
+Timor-Leste,0,2016,0.0,86.0,TLS
+Timor-Leste,0,2017,0.0,86.0,TLS
+Timor-Leste,0,2018,0.0,77.0,TLS
+Timor-Leste,0,2019,0.0,77.0,TLS
+Togo,0,1989,0.0,89.0,TGO
+Togo,0,1990,0.0,81.0,TGO
+Togo,9,1991,0.0,72.0,TGO
+Togo,8,1992,9.0,64.0,TGO
+Togo,0,1993,8.0,74.0,TGO
+Togo,3,1994,0.0,74.0,TGO
+Togo,3,1995,3.0,72.0,TGO
+Togo,0,1996,3.0,80.0,TGO
+Togo,9,1997,0.0,70.0,TGO
+Togo,0,1998,9.0,69.0,TGO
+Togo,0,1999,0.0,77.0,TGO
+Togo,0,2000,0.0,75.0,TGO
+Togo,0,2001,0.0,73.0,TGO
+Togo,0,2002,0.0,75.0,TGO
+Togo,0,2003,0.0,70.0,TGO
+Togo,0,2004,0.0,76.0,TGO
+Togo,0,2005,0.0,76.0,TGO
+Togo,0,2006,0.0,82.0,TGO
+Togo,0,2007,0.0,79.0,TGO
+Togo,0,2008,0.0,80.0,TGO
+Togo,0,2009,0.0,87.0,TGO
+Togo,1,2010,0.0,84.0,TGO
+Togo,0,2011,1.0,82.0,TGO
+Togo,0,2012,0.0,85.0,TGO
+Togo,0,2013,0.0,81.0,TGO
+Togo,15,2014,0.0,67.0,TGO
+Togo,0,2015,15.0,83.0,TGO
+Togo,0,2016,0.0,86.0,TGO
+Togo,0,2017,0.0,86.0,TGO
+Togo,0,2018,0.0,77.0,TGO
+Togo,2,2019,0.0,75.0,TGO
+Tonga,6,1989,0.0,83.0,TON
+Tonga,6,1990,6.0,75.0,TON
+Tonga,6,1991,6.0,74.0,TON
+Tonga,0,1992,6.0,71.0,TON
+Tonga,0,1993,0.0,74.0,TON
+Tonga,0,1994,0.0,77.0,TON
+Tonga,0,1995,0.0,75.0,TON
+Tonga,0,1996,0.0,80.0,TON
+Tonga,0,1997,0.0,79.0,TON
+Tonga,0,1998,0.0,69.0,TON
+Tonga,0,1999,0.0,77.0,TON
+Tonga,0,2000,0.0,75.0,TON
+Tonga,0,2001,0.0,73.0,TON
+Tonga,0,2002,0.0,75.0,TON
+Tonga,0,2003,0.0,70.0,TON
+Tonga,0,2004,0.0,76.0,TON
+Tonga,0,2005,0.0,76.0,TON
+Tonga,0,2006,0.0,82.0,TON
+Tonga,0,2007,0.0,79.0,TON
+Tonga,0,2008,0.0,80.0,TON
+Tonga,0,2009,0.0,87.0,TON
+Tonga,0,2010,0.0,85.0,TON
+Tonga,0,2011,0.0,82.0,TON
+Tonga,0,2012,0.0,85.0,TON
+Tonga,0,2013,0.0,81.0,TON
+Tonga,0,2014,0.0,80.0,TON
+Tonga,5,2015,0.0,78.0,TON
+Tonga,0,2016,5.0,86.0,TON
+Tonga,0,2017,0.0,86.0,TON
+Tonga,0,2018,0.0,77.0,TON
+Tonga,7,2019,0.0,71.0,TON
+Trinidad and Tobago,0,1989,0.0,89.0,TTO
+Trinidad and Tobago,0,1990,0.0,81.0,TTO
+Trinidad and Tobago,0,1991,0.0,79.0,TTO
+Trinidad and Tobago,0,1992,0.0,71.0,TTO
+Trinidad and Tobago,0,1993,0.0,74.0,TTO
+Trinidad and Tobago,0,1994,0.0,77.0,TTO
+Trinidad and Tobago,0,1995,0.0,75.0,TTO
+Trinidad and Tobago,0,1996,0.0,80.0,TTO
+Trinidad and Tobago,0,1997,0.0,79.0,TTO
+Trinidad and Tobago,0,1998,0.0,69.0,TTO
+Trinidad and Tobago,0,1999,0.0,77.0,TTO
+Trinidad and Tobago,11,2000,0.0,67.0,TTO
+Trinidad and Tobago,0,2001,11.0,73.0,TTO
+Trinidad and Tobago,2,2002,0.0,73.0,TTO
+Trinidad and Tobago,0,2003,2.0,70.0,TTO
+Trinidad and Tobago,0,2004,0.0,76.0,TTO
+Trinidad and Tobago,0,2005,0.0,76.0,TTO
+Trinidad and Tobago,0,2006,0.0,82.0,TTO
+Trinidad and Tobago,6,2007,0.0,73.0,TTO
+Trinidad and Tobago,0,2008,6.0,80.0,TTO
+Trinidad and Tobago,0,2009,0.0,87.0,TTO
+Trinidad and Tobago,24,2010,0.0,67.0,TTO
+Trinidad and Tobago,12,2011,24.0,72.0,TTO
+Trinidad and Tobago,12,2012,12.0,73.0,TTO
+Trinidad and Tobago,0,2013,12.0,81.0,TTO
+Trinidad and Tobago,0,2014,0.0,80.0,TTO
+Trinidad and Tobago,46,2015,0.0,55.0,TTO
+Trinidad and Tobago,30,2016,46.0,62.0,TTO
+Trinidad and Tobago,0,2017,30.0,86.0,TTO
+Trinidad and Tobago,0,2018,0.0,77.0,TTO
+Trinidad and Tobago,0,2019,0.0,77.0,TTO
+Tunisia,48,1989,0.0,61.0,TUN
+Tunisia,4,1990,48.0,77.0,TUN
+Tunisia,20,1991,4.0,66.0,TUN
+Tunisia,32,1992,20.0,52.0,TUN
+Tunisia,0,1993,32.0,74.0,TUN
+Tunisia,35,1994,0.0,57.0,TUN
+Tunisia,56,1995,35.0,45.0,TUN
+Tunisia,68,1996,56.0,49.0,TUN
+Tunisia,39,1997,68.0,58.0,TUN
+Tunisia,18,1998,39.0,55.0,TUN
+Tunisia,11,1999,18.0,68.0,TUN
+Tunisia,0,2000,11.0,75.0,TUN
+Tunisia,0,2001,0.0,73.0,TUN
+Tunisia,83,2002,0.0,36.0,TUN
+Tunisia,1,2003,83.0,69.0,TUN
+Tunisia,0,2004,1.0,76.0,TUN
+Tunisia,168,2005,0.0,27.0,TUN
+Tunisia,2,2006,168.0,80.0,TUN
+Tunisia,0,2007,2.0,79.0,TUN
+Tunisia,3,2008,0.0,77.0,TUN
+Tunisia,0,2009,3.0,87.0,TUN
+Tunisia,7,2010,0.0,79.0,TUN
+Tunisia,7,2011,7.0,76.0,TUN
+Tunisia,0,2012,7.0,85.0,TUN
+Tunisia,38,2013,0.0,56.0,TUN
+Tunisia,44,2014,38.0,56.0,TUN
+Tunisia,7,2015,44.0,77.0,TUN
+Tunisia,29,2016,7.0,63.0,TUN
+Tunisia,89,2017,29.0,44.0,TUN
+Tunisia,180,2018,89.0,32.0,TUN
+Tunisia,15,2019,180.0,65.0,TUN
+Turkey,1033,1989,0.0,11.0,TUR
+Turkey,1288,1990,1033.0,5.0,TUR
+Turkey,1254,1991,1288.0,4.0,TUR
+Turkey,1888,1992,1254.0,3.0,TUR
+Turkey,2348,1993,1888.0,2.0,TUR
+Turkey,1893,1994,2348.0,2.0,TUR
+Turkey,1582,1995,1893.0,3.0,TUR
+Turkey,1505,1996,1582.0,4.0,TUR
+Turkey,1531,1997,1505.0,4.0,TUR
+Turkey,2645,1998,1531.0,3.0,TUR
+Turkey,1740,1999,2645.0,2.0,TUR
+Turkey,1185,2000,1740.0,3.0,TUR
+Turkey,510,2001,1185.0,12.0,TUR
+Turkey,905,2002,510.0,3.0,TUR
+Turkey,330,2003,905.0,15.0,TUR
+Turkey,257,2004,330.0,22.0,TUR
+Turkey,1095,2005,257.0,5.0,TUR
+Turkey,531,2006,1095.0,13.0,TUR
+Turkey,692,2007,531.0,12.0,TUR
+Turkey,640,2008,692.0,12.0,TUR
+Turkey,732,2009,640.0,12.0,TUR
+Turkey,484,2010,732.0,14.0,TUR
+Turkey,779,2011,484.0,13.0,TUR
+Turkey,1500,2012,779.0,3.0,TUR
+Turkey,796,2013,1500.0,8.0,TUR
+Turkey,1526,2014,796.0,3.0,TUR
+Turkey,441,2015,1526.0,17.0,TUR
+Turkey,331,2016,441.0,23.0,TUR
+Turkey,425,2017,331.0,23.0,TUR
+Turkey,591,2018,425.0,13.0,TUR
+Turkey,833,2019,591.0,10.0,TUR
+Turkmenistan,0,1989,0.0,89.0,TKM
+Turkmenistan,0,1990,0.0,81.0,TKM
+Turkmenistan,0,1991,0.0,79.0,TKM
+Turkmenistan,0,1992,0.0,71.0,TKM
+Turkmenistan,0,1993,0.0,74.0,TKM
+Turkmenistan,0,1994,0.0,77.0,TKM
+Turkmenistan,0,1995,0.0,75.0,TKM
+Turkmenistan,0,1996,0.0,80.0,TKM
+Turkmenistan,0,1997,0.0,79.0,TKM
+Turkmenistan,0,1998,0.0,69.0,TKM
+Turkmenistan,0,1999,0.0,77.0,TKM
+Turkmenistan,0,2000,0.0,75.0,TKM
+Turkmenistan,0,2001,0.0,73.0,TKM
+Turkmenistan,0,2002,0.0,75.0,TKM
+Turkmenistan,18,2003,0.0,54.0,TKM
+Turkmenistan,21,2004,18.0,57.0,TKM
+Turkmenistan,0,2005,21.0,76.0,TKM
+Turkmenistan,0,2006,0.0,82.0,TKM
+Turkmenistan,0,2007,0.0,79.0,TKM
+Turkmenistan,7,2008,0.0,74.0,TKM
+Turkmenistan,36,2009,7.0,60.0,TKM
+Turkmenistan,27,2010,36.0,65.0,TKM
+Turkmenistan,236,2011,27.0,31.0,TKM
+Turkmenistan,113,2012,236.0,44.0,TKM
+Turkmenistan,71,2013,113.0,47.0,TKM
+Turkmenistan,74,2014,71.0,46.0,TKM
+Turkmenistan,172,2015,74.0,35.0,TKM
+Turkmenistan,428,2016,172.0,18.0,TKM
+Turkmenistan,92,2017,428.0,43.0,TKM
+Turkmenistan,0,2018,92.0,77.0,TKM
+Turkmenistan,0,2019,0.0,77.0,TKM
+Tuvalu,0,1989,0.0,89.0,TUV
+Tuvalu,0,1990,0.0,81.0,TUV
+Tuvalu,0,1991,0.0,79.0,TUV
+Tuvalu,0,1992,0.0,71.0,TUV
+Tuvalu,0,1993,0.0,74.0,TUV
+Tuvalu,6,1994,0.0,71.0,TUV
+Tuvalu,0,1995,6.0,75.0,TUV
+Tuvalu,0,1996,0.0,80.0,TUV
+Tuvalu,0,1997,0.0,79.0,TUV
+Tuvalu,0,1998,0.0,69.0,TUV
+Tuvalu,0,1999,0.0,77.0,TUV
+Tuvalu,0,2000,0.0,75.0,TUV
+Tuvalu,0,2001,0.0,73.0,TUV
+Tuvalu,0,2002,0.0,75.0,TUV
+Tuvalu,0,2003,0.0,70.0,TUV
+Tuvalu,0,2004,0.0,76.0,TUV
+Tuvalu,0,2005,0.0,76.0,TUV
+Tuvalu,0,2006,0.0,82.0,TUV
+Tuvalu,0,2007,0.0,79.0,TUV
+Tuvalu,0,2008,0.0,80.0,TUV
+Tuvalu,0,2009,0.0,87.0,TUV
+Tuvalu,0,2010,0.0,85.0,TUV
+Tuvalu,0,2011,0.0,82.0,TUV
+Tuvalu,0,2012,0.0,85.0,TUV
+Tuvalu,0,2013,0.0,81.0,TUV
+Tuvalu,0,2014,0.0,80.0,TUV
+Tuvalu,0,2015,0.0,83.0,TUV
+Tuvalu,0,2016,0.0,86.0,TUV
+Tuvalu,0,2017,0.0,86.0,TUV
+Tuvalu,0,2018,0.0,77.0,TUV
+Tuvalu,7,2019,0.0,71.0,TUV
+UAE,652,1989,0.0,20.0,ARE
+UAE,559,1990,652.0,18.0,ARE
+UAE,235,1991,559.0,30.0,ARE
+UAE,201,1992,235.0,28.0,ARE
+UAE,579,1993,201.0,17.0,ARE
+UAE,566,1994,579.0,14.0,ARE
+UAE,419,1995,566.0,15.0,ARE
+UAE,480,1996,419.0,18.0,ARE
+UAE,688,1997,480.0,12.0,ARE
+UAE,758,1998,688.0,9.0,ARE
+UAE,437,1999,758.0,16.0,ARE
+UAE,247,2000,437.0,21.0,ARE
+UAE,186,2001,247.0,21.0,ARE
+UAE,222,2002,186.0,25.0,ARE
+UAE,685,2003,222.0,7.0,ARE
+UAE,1211,2004,685.0,3.0,ARE
+UAE,2171,2005,1211.0,2.0,ARE
+UAE,2023,2006,2171.0,2.0,ARE
+UAE,919,2007,2023.0,7.0,ARE
+UAE,753,2008,919.0,8.0,ARE
+UAE,597,2009,753.0,14.0,ARE
+UAE,643,2010,597.0,11.0,ARE
+UAE,1236,2011,643.0,5.0,ARE
+UAE,1155,2012,1236.0,5.0,ARE
+UAE,2311,2013,1155.0,2.0,ARE
+UAE,767,2014,2311.0,10.0,ARE
+UAE,1222,2015,767.0,6.0,ARE
+UAE,955,2016,1222.0,9.0,ARE
+UAE,965,2017,955.0,9.0,ARE
+UAE,1197,2018,965.0,7.0,ARE
+UAE,644,2019,1197.0,12.0,ARE
+Uganda,20,1989,0.0,73.0,UGA
+Uganda,0,1990,20.0,81.0,UGA
+Uganda,0,1991,0.0,79.0,UGA
+Uganda,0,1992,0.0,71.0,UGA
+Uganda,0,1993,0.0,74.0,UGA
+Uganda,0,1994,0.0,77.0,UGA
+Uganda,32,1995,0.0,54.0,UGA
+Uganda,0,1996,32.0,80.0,UGA
+Uganda,0,1997,0.0,79.0,UGA
+Uganda,55,1998,0.0,45.0,UGA
+Uganda,39,1999,55.0,56.0,UGA
+Uganda,6,2000,39.0,70.0,UGA
+Uganda,0,2001,6.0,73.0,UGA
+Uganda,34,2002,0.0,52.0,UGA
+Uganda,0,2003,34.0,70.0,UGA
+Uganda,36,2004,0.0,52.0,UGA
+Uganda,10,2005,36.0,67.0,UGA
+Uganda,5,2006,10.0,77.0,UGA
+Uganda,0,2007,5.0,79.0,UGA
+Uganda,14,2008,0.0,68.0,UGA
+Uganda,25,2009,14.0,67.0,UGA
+Uganda,37,2010,25.0,59.0,UGA
+Uganda,471,2011,37.0,22.0,UGA
+Uganda,219,2012,471.0,31.0,UGA
+Uganda,20,2013,219.0,65.0,UGA
+Uganda,1,2014,20.0,79.0,UGA
+Uganda,5,2015,1.0,78.0,UGA
+Uganda,1,2016,5.0,85.0,UGA
+Uganda,21,2017,1.0,68.0,UGA
+Uganda,9,2018,21.0,69.0,UGA
+Uganda,1,2019,9.0,76.0,UGA
+Ukraine,0,1989,0.0,89.0,UKR
+Ukraine,0,1990,0.0,81.0,UKR
+Ukraine,0,1991,0.0,79.0,UKR
+Ukraine,0,1992,0.0,71.0,UKR
+Ukraine,0,1993,0.0,74.0,UKR
+Ukraine,0,1994,0.0,77.0,UKR
+Ukraine,0,1995,0.0,75.0,UKR
+Ukraine,0,1996,0.0,80.0,UKR
+Ukraine,0,1997,0.0,79.0,UKR
+Ukraine,0,1998,0.0,69.0,UKR
+Ukraine,0,1999,0.0,77.0,UKR
+Ukraine,0,2000,0.0,75.0,UKR
+Ukraine,0,2001,0.0,73.0,UKR
+Ukraine,0,2002,0.0,75.0,UKR
+Ukraine,0,2003,0.0,70.0,UKR
+Ukraine,0,2004,0.0,76.0,UKR
+Ukraine,0,2005,0.0,76.0,UKR
+Ukraine,0,2006,0.0,82.0,UKR
+Ukraine,0,2007,0.0,79.0,UKR
+Ukraine,0,2008,0.0,80.0,UKR
+Ukraine,0,2009,0.0,87.0,UKR
+Ukraine,0,2010,0.0,85.0,UKR
+Ukraine,0,2011,0.0,82.0,UKR
+Ukraine,0,2012,0.0,85.0,UKR
+Ukraine,0,2013,0.0,81.0,UKR
+Ukraine,25,2014,0.0,62.0,UKR
+Ukraine,23,2015,25.0,63.0,UKR
+Ukraine,5,2016,23.0,81.0,UKR
+Ukraine,0,2017,5.0,86.0,UKR
+Ukraine,65,2018,0.0,47.0,UKR
+Ukraine,14,2019,65.0,66.0,UKR
+United Kingdom,205,1989,0.0,36.0,GBR
+United Kingdom,117,1990,205.0,47.0,GBR
+United Kingdom,936,1991,117.0,11.0,GBR
+United Kingdom,1132,1992,936.0,7.0,GBR
+United Kingdom,784,1993,1132.0,13.0,GBR
+United Kingdom,414,1994,784.0,20.0,GBR
+United Kingdom,492,1995,414.0,14.0,GBR
+United Kingdom,568,1996,492.0,14.0,GBR
+United Kingdom,496,1997,568.0,17.0,GBR
+United Kingdom,741,1998,496.0,10.0,GBR
+United Kingdom,125,1999,741.0,40.0,GBR
+United Kingdom,871,2000,125.0,5.0,GBR
+United Kingdom,1277,2001,871.0,2.0,GBR
+United Kingdom,720,2002,1277.0,4.0,GBR
+United Kingdom,775,2003,720.0,5.0,GBR
+United Kingdom,217,2004,775.0,29.0,GBR
+United Kingdom,27,2005,217.0,55.0,GBR
+United Kingdom,308,2006,27.0,26.0,GBR
+United Kingdom,776,2007,308.0,10.0,GBR
+United Kingdom,490,2008,776.0,17.0,GBR
+United Kingdom,376,2009,490.0,19.0,GBR
+United Kingdom,490,2010,376.0,13.0,GBR
+United Kingdom,361,2011,490.0,23.0,GBR
+United Kingdom,578,2012,361.0,15.0,GBR
+United Kingdom,494,2013,578.0,15.0,GBR
+United Kingdom,211,2014,494.0,26.0,GBR
+United Kingdom,397,2015,211.0,20.0,GBR
+United Kingdom,259,2016,397.0,30.0,GBR
+United Kingdom,952,2017,259.0,11.0,GBR
+United Kingdom,518,2018,952.0,18.0,GBR
+United Kingdom,377,2019,518.0,19.0,GBR
+United Nations**,0,1989,0.0,89.0,ONU
+United Nations**,0,1990,0.0,81.0,ONU
+United Nations**,4,1991,0.0,75.0,ONU
+United Nations**,0,1992,4.0,71.0,ONU
+United Nations**,12,1993,0.0,62.0,ONU
+United Nations**,55,1994,12.0,50.0,ONU
+United Nations**,11,1995,55.0,65.0,ONU
+United Nations**,0,1996,11.0,80.0,ONU
+United Nations**,0,1997,0.0,79.0,ONU
+United Nations**,1,1998,0.0,68.0,ONU
+United Nations**,7,1999,1.0,71.0,ONU
+United Nations**,31,2000,7.0,53.0,ONU
+United Nations**,0,2001,31.0,73.0,ONU
+United Nations**,0,2002,0.0,75.0,ONU
+United Nations**,0,2003,0.0,70.0,ONU
+United Nations**,2,2004,0.0,74.0,ONU
+United Nations**,1,2005,2.0,75.0,ONU
+United Nations**,2,2006,1.0,80.0,ONU
+United Nations**,1,2007,2.0,78.0,ONU
+United Nations**,0,2008,1.0,80.0,ONU
+United Nations**,0,2009,0.0,87.0,ONU
+United Nations**,0,2010,0.0,85.0,ONU
+United Nations**,0,2011,0.0,82.0,ONU
+United Nations**,0,2012,0.0,85.0,ONU
+United Nations**,5,2013,0.0,77.0,ONU
+United Nations**,25,2014,5.0,62.0,ONU
+United Nations**,3,2015,25.0,80.0,ONU
+United Nations**,9,2016,3.0,77.0,ONU
+United Nations**,0,2017,9.0,86.0,ONU
+United Nations**,0,2018,0.0,77.0,ONU
+United Nations**,0,2019,0.0,77.0,ONU
+United States,1784,1989,0.0,5.0,USA
+United States,357,1990,1784.0,25.0,USA
+United States,519,1991,357.0,18.0,USA
+United States,551,1992,519.0,13.0,USA
+United States,988,1993,551.0,9.0,USA
+United States,982,1994,988.0,6.0,USA
+United States,788,1995,982.0,10.0,USA
+United States,580,1996,788.0,13.0,USA
+United States,588,1997,580.0,14.0,USA
+United States,264,1998,588.0,22.0,USA
+United States,222,1999,264.0,27.0,USA
+United States,334,2000,222.0,17.0,USA
+United States,493,2001,334.0,13.0,USA
+United States,504,2002,493.0,11.0,USA
+United States,602,2003,504.0,10.0,USA
+United States,570,2004,602.0,9.0,USA
+United States,529,2005,570.0,11.0,USA
+United States,639,2006,529.0,11.0,USA
+United States,829,2007,639.0,9.0,USA
+United States,960,2008,829.0,7.0,USA
+United States,974,2009,960.0,8.0,USA
+United States,1083,2010,974.0,5.0,USA
+United States,1004,2011,1083.0,11.0,USA
+United States,1203,2012,1004.0,4.0,USA
+United States,789,2013,1203.0,9.0,USA
+United States,548,2014,789.0,18.0,USA
+United States,516,2015,548.0,15.0,USA
+United States,458,2016,516.0,16.0,USA
+United States,524,2017,458.0,18.0,USA
+United States,380,2018,524.0,20.0,USA
+United States,1048,2019,380.0,7.0,USA
+Unknown recipient(s),41,1989,0.0,65.0,ZZZ
+Unknown recipient(s),0,1990,41.0,81.0,ZZZ
+Unknown recipient(s),11,1991,0.0,70.0,ZZZ
+Unknown recipient(s),11,1992,11.0,62.0,ZZZ
+Unknown recipient(s),18,1993,11.0,58.0,ZZZ
+Unknown recipient(s),4,1994,18.0,73.0,ZZZ
+Unknown recipient(s),8,1995,4.0,67.0,ZZZ
+Unknown recipient(s),3,1996,8.0,77.0,ZZZ
+Unknown recipient(s),0,1997,3.0,79.0,ZZZ
+Unknown recipient(s),4,1998,0.0,65.0,ZZZ
+Unknown recipient(s),0,1999,4.0,77.0,ZZZ
+Unknown recipient(s),0,2000,0.0,75.0,ZZZ
+Unknown recipient(s),2,2001,0.0,71.0,ZZZ
+Unknown recipient(s),0,2002,2.0,75.0,ZZZ
+Unknown recipient(s),0,2003,0.0,70.0,ZZZ
+Unknown recipient(s),0,2004,0.0,76.0,ZZZ
+Unknown recipient(s),0,2005,0.0,76.0,ZZZ
+Unknown recipient(s),0,2006,0.0,82.0,ZZZ
+Unknown recipient(s),0,2007,0.0,79.0,ZZZ
+Unknown recipient(s),12,2008,0.0,70.0,ZZZ
+Unknown recipient(s),0,2009,12.0,87.0,ZZZ
+Unknown recipient(s),8,2010,0.0,78.0,ZZZ
+Unknown recipient(s),6,2011,8.0,77.0,ZZZ
+Unknown recipient(s),0,2012,6.0,85.0,ZZZ
+Unknown recipient(s),29,2013,0.0,59.0,ZZZ
+Unknown recipient(s),30,2014,29.0,59.0,ZZZ
+Unknown recipient(s),13,2015,30.0,72.0,ZZZ
+Unknown recipient(s),36,2016,13.0,60.0,ZZZ
+Unknown recipient(s),17,2017,36.0,72.0,ZZZ
+Unknown recipient(s),26,2018,17.0,55.0,ZZZ
+Unknown recipient(s),41,2019,26.0,50.0,ZZZ
+Uruguay,41,1989,0.0,65.0,URY
+Uruguay,41,1990,41.0,61.0,URY
+Uruguay,63,1991,41.0,55.0,URY
+Uruguay,25,1992,63.0,55.0,URY
+Uruguay,18,1993,25.0,58.0,URY
+Uruguay,10,1994,18.0,68.0,URY
+Uruguay,9,1995,10.0,66.0,URY
+Uruguay,4,1996,9.0,76.0,URY
+Uruguay,19,1997,4.0,65.0,URY
+Uruguay,27,1998,19.0,51.0,URY
+Uruguay,7,1999,27.0,71.0,URY
+Uruguay,4,2000,7.0,71.0,URY
+Uruguay,0,2001,4.0,73.0,URY
+Uruguay,13,2002,0.0,65.0,URY
+Uruguay,0,2003,13.0,70.0,URY
+Uruguay,0,2004,0.0,76.0,URY
+Uruguay,20,2005,0.0,60.0,URY
+Uruguay,8,2006,20.0,75.0,URY
+Uruguay,3,2007,8.0,76.0,URY
+Uruguay,78,2008,3.0,47.0,URY
+Uruguay,29,2009,78.0,64.0,URY
+Uruguay,20,2010,29.0,69.0,URY
+Uruguay,0,2011,20.0,82.0,URY
+Uruguay,0,2012,0.0,85.0,URY
+Uruguay,3,2013,0.0,78.0,URY
+Uruguay,9,2014,3.0,72.0,URY
+Uruguay,8,2015,9.0,76.0,URY
+Uruguay,0,2016,8.0,86.0,URY
+Uruguay,0,2017,0.0,86.0,URY
+Uruguay,10,2018,0.0,68.0,URY
+Uruguay,1,2019,10.0,76.0,URY
+Uzbekistan,0,1989,0.0,89.0,UZB
+Uzbekistan,0,1990,0.0,81.0,UZB
+Uzbekistan,0,1991,0.0,79.0,UZB
+Uzbekistan,0,1992,0.0,71.0,UZB
+Uzbekistan,0,1993,0.0,74.0,UZB
+Uzbekistan,0,1994,0.0,77.0,UZB
+Uzbekistan,0,1995,0.0,75.0,UZB
+Uzbekistan,0,1996,0.0,80.0,UZB
+Uzbekistan,0,1997,0.0,79.0,UZB
+Uzbekistan,0,1998,0.0,69.0,UZB
+Uzbekistan,0,1999,0.0,77.0,UZB
+Uzbekistan,0,2000,0.0,75.0,UZB
+Uzbekistan,8,2001,0.0,66.0,UZB
+Uzbekistan,9,2002,8.0,68.0,UZB
+Uzbekistan,0,2003,9.0,70.0,UZB
+Uzbekistan,0,2004,0.0,76.0,UZB
+Uzbekistan,0,2005,0.0,76.0,UZB
+Uzbekistan,0,2006,0.0,82.0,UZB
+Uzbekistan,0,2007,0.0,79.0,UZB
+Uzbekistan,0,2008,0.0,80.0,UZB
+Uzbekistan,0,2009,0.0,87.0,UZB
+Uzbekistan,30,2010,0.0,64.0,UZB
+Uzbekistan,0,2011,30.0,82.0,UZB
+Uzbekistan,0,2012,0.0,85.0,UZB
+Uzbekistan,0,2013,0.0,81.0,UZB
+Uzbekistan,17,2014,0.0,65.0,UZB
+Uzbekistan,100,2015,17.0,46.0,UZB
+Uzbekistan,56,2016,100.0,54.0,UZB
+Uzbekistan,0,2017,56.0,86.0,UZB
+Uzbekistan,131,2018,0.0,39.0,UZB
+Uzbekistan,53,2019,131.0,46.0,UZB
+Vanuatu,0,1989,0.0,89.0,VUT
+Vanuatu,0,1990,0.0,81.0,VUT
+Vanuatu,0,1991,0.0,79.0,VUT
+Vanuatu,0,1992,0.0,71.0,VUT
+Vanuatu,0,1993,0.0,74.0,VUT
+Vanuatu,0,1994,0.0,77.0,VUT
+Vanuatu,0,1995,0.0,75.0,VUT
+Vanuatu,0,1996,0.0,80.0,VUT
+Vanuatu,0,1997,0.0,79.0,VUT
+Vanuatu,0,1998,0.0,69.0,VUT
+Vanuatu,0,1999,0.0,77.0,VUT
+Vanuatu,0,2000,0.0,75.0,VUT
+Vanuatu,0,2001,0.0,73.0,VUT
+Vanuatu,0,2002,0.0,75.0,VUT
+Vanuatu,0,2003,0.0,70.0,VUT
+Vanuatu,0,2004,0.0,76.0,VUT
+Vanuatu,0,2005,0.0,76.0,VUT
+Vanuatu,0,2006,0.0,82.0,VUT
+Vanuatu,0,2007,0.0,79.0,VUT
+Vanuatu,0,2008,0.0,80.0,VUT
+Vanuatu,0,2009,0.0,87.0,VUT
+Vanuatu,0,2010,0.0,85.0,VUT
+Vanuatu,0,2011,0.0,82.0,VUT
+Vanuatu,0,2012,0.0,85.0,VUT
+Vanuatu,0,2013,0.0,81.0,VUT
+Vanuatu,0,2014,0.0,80.0,VUT
+Vanuatu,0,2015,0.0,83.0,VUT
+Vanuatu,0,2016,0.0,86.0,VUT
+Vanuatu,0,2017,0.0,86.0,VUT
+Vanuatu,0,2018,0.0,77.0,VUT
+Vanuatu,0,2019,0.0,77.0,VUT
+Venezuela,117,1989,0.0,48.0,VEN
+Venezuela,187,1990,117.0,38.0,VEN
+Venezuela,316,1991,187.0,29.0,VEN
+Venezuela,74,1992,316.0,38.0,VEN
+Venezuela,39,1993,74.0,51.0,VEN
+Venezuela,1,1994,39.0,76.0,VEN
+Venezuela,5,1995,1.0,70.0,VEN
+Venezuela,35,1996,5.0,60.0,VEN
+Venezuela,37,1997,35.0,59.0,VEN
+Venezuela,8,1998,37.0,61.0,VEN
+Venezuela,85,1999,8.0,44.0,VEN
+Venezuela,108,2000,85.0,42.0,VEN
+Venezuela,103,2001,108.0,38.0,VEN
+Venezuela,50,2002,103.0,45.0,VEN
+Venezuela,15,2003,50.0,57.0,VEN
+Venezuela,9,2004,15.0,68.0,VEN
+Venezuela,21,2005,9.0,59.0,VEN
+Venezuela,380,2006,21.0,20.0,VEN
+Venezuela,774,2007,380.0,11.0,VEN
+Venezuela,737,2008,774.0,9.0,VEN
+Venezuela,358,2009,737.0,21.0,VEN
+Venezuela,208,2010,358.0,29.0,VEN
+Venezuela,596,2011,208.0,18.0,VEN
+Venezuela,687,2012,596.0,13.0,VEN
+Venezuela,993,2013,687.0,6.0,VEN
+Venezuela,181,2014,993.0,31.0,VEN
+Venezuela,167,2015,181.0,36.0,VEN
+Venezuela,137,2016,167.0,43.0,VEN
+Venezuela,0,2017,137.0,86.0,VEN
+Venezuela,0,2018,0.0,77.0,VEN
+Venezuela,0,2019,0.0,77.0,VEN
+Viet Nam,128,1989,0.0,45.0,VNM
+Viet Nam,116,1990,128.0,48.0,VNM
+Viet Nam,0,1991,116.0,79.0,VNM
+Viet Nam,0,1992,0.0,71.0,VNM
+Viet Nam,0,1993,0.0,74.0,VNM
+Viet Nam,0,1994,0.0,77.0,VNM
+Viet Nam,281,1995,0.0,26.0,VNM
+Viet Nam,212,1996,281.0,26.0,VNM
+Viet Nam,110,1997,212.0,40.0,VNM
+Viet Nam,220,1998,110.0,26.0,VNM
+Viet Nam,163,1999,220.0,35.0,VNM
+Viet Nam,7,2000,163.0,69.0,VNM
+Viet Nam,99,2001,7.0,39.0,VNM
+Viet Nam,58,2002,99.0,43.0,VNM
+Viet Nam,22,2003,58.0,52.0,VNM
+Viet Nam,298,2004,22.0,19.0,VNM
+Viet Nam,221,2005,298.0,23.0,VNM
+Viet Nam,42,2006,221.0,57.0,VNM
+Viet Nam,8,2007,42.0,71.0,VNM
+Viet Nam,187,2008,8.0,32.0,VNM
+Viet Nam,61,2009,187.0,50.0,VNM
+Viet Nam,152,2010,61.0,37.0,VNM
+Viet Nam,1021,2011,152.0,10.0,VNM
+Viet Nam,788,2012,1021.0,11.0,VNM
+Viet Nam,362,2013,788.0,18.0,VNM
+Viet Nam,1218,2014,362.0,4.0,VNM
+Viet Nam,862,2015,1218.0,8.0,VNM
+Viet Nam,858,2016,862.0,11.0,VNM
+Viet Nam,755,2017,858.0,14.0,VNM
+Viet Nam,577,2018,755.0,14.0,VNM
+Viet Nam,161,2019,577.0,35.0,VNM
+Western Sahara,0,1989,0.0,89.0,ESH
+Western Sahara,4,1990,0.0,77.0,ESH
+Western Sahara,0,1991,4.0,79.0,ESH
+Western Sahara,0,1992,0.0,71.0,ESH
+Western Sahara,0,1993,0.0,74.0,ESH
+Western Sahara,0,1994,0.0,77.0,ESH
+Western Sahara,0,1995,0.0,75.0,ESH
+Western Sahara,0,1996,0.0,80.0,ESH
+Western Sahara,0,1997,0.0,79.0,ESH
+Western Sahara,0,1998,0.0,69.0,ESH
+Western Sahara,0,1999,0.0,77.0,ESH
+Western Sahara,0,2000,0.0,75.0,ESH
+Western Sahara,0,2001,0.0,73.0,ESH
+Western Sahara,0,2002,0.0,75.0,ESH
+Western Sahara,0,2003,0.0,70.0,ESH
+Western Sahara,0,2004,0.0,76.0,ESH
+Western Sahara,0,2005,0.0,76.0,ESH
+Western Sahara,0,2006,0.0,82.0,ESH
+Western Sahara,0,2007,0.0,79.0,ESH
+Western Sahara,0,2008,0.0,80.0,ESH
+Western Sahara,0,2009,0.0,87.0,ESH
+Western Sahara,0,2010,0.0,85.0,ESH
+Western Sahara,0,2011,0.0,82.0,ESH
+Western Sahara,0,2012,0.0,85.0,ESH
+Western Sahara,0,2013,0.0,81.0,ESH
+Western Sahara,0,2014,0.0,80.0,ESH
+Western Sahara,0,2015,0.0,83.0,ESH
+Western Sahara,0,2016,0.0,86.0,ESH
+Western Sahara,0,2017,0.0,86.0,ESH
+Western Sahara,0,2018,0.0,77.0,ESH
+Western Sahara,0,2019,0.0,77.0,ESH
+Yemen,45,1989,0.0,63.0,YEM
+Yemen,78,1990,45.0,53.0,YEM
+Yemen,113,1991,78.0,43.0,YEM
+Yemen,0,1992,113.0,71.0,YEM
+Yemen,0,1993,0.0,74.0,YEM
+Yemen,4,1994,0.0,73.0,YEM
+Yemen,171,1995,4.0,33.0,YEM
+Yemen,0,1996,171.0,80.0,YEM
+Yemen,0,1997,0.0,79.0,YEM
+Yemen,1,1998,0.0,68.0,YEM
+Yemen,51,1999,1.0,51.0,YEM
+Yemen,158,2000,51.0,31.0,YEM
+Yemen,85,2001,158.0,40.0,YEM
+Yemen,593,2002,85.0,7.0,YEM
+Yemen,62,2003,593.0,38.0,YEM
+Yemen,252,2004,62.0,23.0,YEM
+Yemen,315,2005,252.0,20.0,YEM
+Yemen,38,2006,315.0,58.0,YEM
+Yemen,66,2007,38.0,51.0,YEM
+Yemen,40,2008,66.0,57.0,YEM
+Yemen,5,2009,40.0,82.0,YEM
+Yemen,258,2010,5.0,25.0,YEM
+Yemen,45,2011,258.0,60.0,YEM
+Yemen,38,2012,45.0,62.0,YEM
+Yemen,23,2013,38.0,63.0,YEM
+Yemen,6,2014,23.0,74.0,YEM
+Yemen,33,2015,6.0,60.0,YEM
+Yemen,7,2016,33.0,79.0,YEM
+Yemen,6,2017,7.0,81.0,YEM
+Yemen,9,2018,6.0,69.0,YEM
+Yemen,0,2019,9.0,77.0,YEM
+Zambia,0,1989,0.0,89.0,ZMB
+Zambia,0,1990,0.0,81.0,ZMB
+Zambia,0,1991,0.0,79.0,ZMB
+Zambia,0,1992,0.0,71.0,ZMB
+Zambia,0,1993,0.0,74.0,ZMB
+Zambia,0,1994,0.0,77.0,ZMB
+Zambia,0,1995,0.0,75.0,ZMB
+Zambia,6,1996,0.0,75.0,ZMB
+Zambia,0,1997,6.0,79.0,ZMB
+Zambia,0,1998,0.0,69.0,ZMB
+Zambia,0,1999,0.0,77.0,ZMB
+Zambia,33,2000,0.0,52.0,ZMB
+Zambia,0,2001,33.0,73.0,ZMB
+Zambia,2,2002,0.0,73.0,ZMB
+Zambia,0,2003,2.0,70.0,ZMB
+Zambia,0,2004,0.0,76.0,ZMB
+Zambia,0,2005,0.0,76.0,ZMB
+Zambia,28,2006,0.0,59.0,ZMB
+Zambia,4,2007,28.0,75.0,ZMB
+Zambia,2,2008,4.0,78.0,ZMB
+Zambia,0,2009,2.0,87.0,ZMB
+Zambia,0,2010,0.0,85.0,ZMB
+Zambia,1,2011,0.0,81.0,ZMB
+Zambia,66,2012,1.0,54.0,ZMB
+Zambia,0,2013,66.0,81.0,ZMB
+Zambia,0,2014,0.0,80.0,ZMB
+Zambia,14,2015,0.0,71.0,ZMB
+Zambia,43,2016,14.0,58.0,ZMB
+Zambia,44,2017,43.0,56.0,ZMB
+Zambia,0,2018,44.0,77.0,ZMB
+Zambia,38,2019,0.0,52.0,ZMB
+Zimbabwe,0,1989,0.0,89.0,ZWE
+Zimbabwe,2,1990,0.0,79.0,ZWE
+Zimbabwe,42,1991,2.0,59.0,ZWE
+Zimbabwe,60,1992,42.0,42.0,ZWE
+Zimbabwe,0,1993,60.0,74.0,ZWE
+Zimbabwe,0,1994,0.0,77.0,ZWE
+Zimbabwe,0,1995,0.0,75.0,ZWE
+Zimbabwe,0,1996,0.0,80.0,ZWE
+Zimbabwe,0,1997,0.0,79.0,ZWE
+Zimbabwe,1,1998,0.0,68.0,ZWE
+Zimbabwe,25,1999,1.0,61.0,ZWE
+Zimbabwe,3,2000,25.0,72.0,ZWE
+Zimbabwe,10,2001,3.0,64.0,ZWE
+Zimbabwe,0,2002,10.0,75.0,ZWE
+Zimbabwe,16,2003,0.0,56.0,ZWE
+Zimbabwe,13,2004,16.0,64.0,ZWE
+Zimbabwe,25,2005,13.0,56.0,ZWE
+Zimbabwe,25,2006,25.0,62.0,ZWE
+Zimbabwe,0,2007,25.0,79.0,ZWE
+Zimbabwe,0,2008,0.0,80.0,ZWE
+Zimbabwe,0,2009,0.0,87.0,ZWE
+Zimbabwe,0,2010,0.0,85.0,ZWE
+Zimbabwe,0,2011,0.0,82.0,ZWE
+Zimbabwe,0,2012,0.0,85.0,ZWE
+Zimbabwe,0,2013,0.0,81.0,ZWE
+Zimbabwe,0,2014,0.0,80.0,ZWE
+Zimbabwe,0,2015,0.0,83.0,ZWE
+Zimbabwe,0,2016,0.0,86.0,ZWE
+Zimbabwe,0,2017,0.0,86.0,ZWE
+Zimbabwe,0,2018,0.0,77.0,ZWE
+Zimbabwe,0,2019,0.0,77.0,ZWE

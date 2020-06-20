@@ -14,7 +14,6 @@ year1=1990
 year2=2018
 country="France"
 
-
 folder="../data/"
 
 all_years = [str(x) for x in range(1950,2020) ]
