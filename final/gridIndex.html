@@ -37,6 +37,58 @@
 
 <body onload="main()">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <br><br>
+                <h4 class="text-white"> WarMonopoly</h4>
+                <span class="text-muted">Web application based on D3.js framework and powered by SIPRI databases,
+                     with the goal of showing an overview of international tracked military trading. 
+                    <br><br>
+                    <div style="text-align: right;">
+                    <a href="https://www.sipri.org/">
+                        <img alt="Qries" src="static/icons/SipriLogo.jpg"
+                        width=50" height="50">
+                     </a>
+                     <a href="https://d3js.org/">
+                        <img alt="Qries" src="static/icons/d3.png"
+                        width=50" height="50">
+                     </a>
+                     <a href="https://flask.palletsprojects.com/en/1.1.x/">
+                        <img alt="Qries" src="static/icons/flask.jpeg"
+                        width=50" height="50">
+                     </a>
+                    </div>
+                </span>
+
+            </div>
+
+        </div>
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand" href="#">WarMonopoly</a>
+          
+        </button>
+            <select class="selectpicker" multiple data-live-search="true" data-size="4" data-width="50%" data-actions-box="true">
+<option>🏳  (multiple sellers)</option><option>🇦🇫  Afghanistan</option><option>🇦🇱  Albania</option><option>🇩🇿  Algeria</option><option>🇦🇸  American Samoa</option><option>🇦🇩  Andorra</option><option>🇦🇴  Angola</option><option>🇦🇮  Anguilla</option><option>🇦🇬  Antigua & Barbuda</option><option>🇦🇬  Antigua & Barbuda</option><option>🇦🇷  Argentina</option><option>🇦🇲  Armenia</option><option>🇦🇼  Aruba</option><option>🇦🇺  Australia</option><option>🇦🇹  Austria</option><option>🇦🇿  Azerbaijan</option><option>🇧🇸  Bahamas</option><option>🇧🇭  Bahrain</option><option>🇧🇩  Bangladesh</option><option>🇧🇧  Barbados</option><option>🇧🇾  Belarus</option><option>🇧🇪  Belgium</option><option>🇧🇿  Belize</option><option>🇧🇯  Benin</option><option>🇧🇲  Bermuda</option><option>🇧🇹  Bhutan</option><option>🇧🇹  Bhutan</option><option>🇧🇴  Bolivia</option><option>🇧🇦  Bosnia-Herzegovina</option><option>🇧🇼  Botswana</option><option>🇧🇷  Brazil</option><option>🇧🇳  Brunei</option><option>🇧🇬  Bulgaria</option><option>🇧🇫  Burkina Faso</option><option>🇧🇮  Burundi</option><option>🇰🇭  Cambodia</option><option>🇨🇲  Cameroon</option><option>🇨🇦  Canada</option><option>🇮🇨  Canary Islands</option><option>🇨🇻  Cape Verde</option><option>🇰🇾  Cayman Islands</option><option>🇨🇫  Central African Republic</option><option>🇨🇫 Central African Republic</option><option>🇹🇩  Chad</option><option>🇨🇱  Chile</option><option>🇨🇳  China</option><option>🇨🇽  Christmas Island</option><option>🇨🇴  Colombia</option><option>🇰🇲  Comoros</option><option>🇨🇰  Cook Islands</option><option>🇨🇷  Costa Rica</option><option>🇭🇷  Croatia</option><option>🇨🇺  Cuba</option><option>🇨🇾  Cyprus</option><option>🇨🇿  Czechia</option><option>🇨🇩  Democratic Republic Of Congo</option><option>🇩🇰  Denmark</option><option>🇩🇯  Djibouti</option><option>🇩🇲  Dominica</option><option>🇩🇴  Dominican Republic</option><option>🇹🇱  East Timor</option><option>🇪🇨  Ecuador</option><option>🇪🇬  Egypt</option><option>🏴󠁧󠁢󠁥󠁮󠁧󠁿  England</option><option>🇬🇶  Equatorial Guinea</option><option>🇪🇷  Eritrea</option><option>🇪🇪  Estonia</option><option>🇪🇹  Ethiopia</option><option>🏳  Europe multi-state</option><option>🇪🇺  European Union</option><option>🇫🇰  Falkland Islands</option><option>🇫🇴  Faroe Islands</option><option>🇫🇯  Fiji</option><option>🇫🇮  Finland</option><option>🇫🇷  France</option><option>🇵🇫  French Polynesia</option><option>🇬🇦  Gabon</option><option>🇬🇲  Gambia</option><option>🇬🇪  Georgia</option><option>🇩🇪  Germany</option><option>🇬🇭  Ghana</option><option>🇬🇮  Gibraltar</option><option>🇬🇷  Greece</option><option>🇬🇱  Greenland</option><option>🇬🇩  Grenada</option><option>🇬🇺  Guam</option><option>🇬🇹  Guatemala</option><option>🇬🇬  Guernsey</option><option>🇬🇳  Guinea</option><option>🇬🇾  Guyana</option><option>🇭🇹  Haiti</option><option>🇺🇸  Hawaii</option><option>🇭🇳  Honduras</option><option>🇭🇰  Hong Kong</option><option>🇭🇺  Hungary</option><option>🇮🇸  Iceland</option><option>🇮🇳  India</option><option>🇮🇩  Indonesia</option><option>🇮🇷  Iran</option><option>🇮🇶  Iraq</option><option>🇮🇪  Ireland</option><option>🇮🇲  Isle of Man</option><option>🇮🇱  Israel</option><option>🇮🇹  Italy</option><option>🇯🇲  Jamaica</option><option>🇯🇵  Japan</option><option>🇯🇪  Jersey</option><option>🇯🇴  Jordan</option><option>🇰🇿  Kazakhstan</option><option>🇰🇪  Kenya</option><option>🇰🇮  Kiribati</option><option>🇽🇰  Kosovo</option><option>🇰🇼  Kuwait</option><option>🇰🇬  Kyrgyzstan</option><option>🇱🇦  Laos</option><option>🇱🇻  Latvia</option><option>🇱🇧  Lebanon</option><option>🇱🇸  Lesotho</option><option>🇱🇷  Liberia</option><option>🇱🇾  Libya</option><option>🇱🇮  Liechtenstein</option><option>🇱🇹  Lithuania</option><option>🇱🇺  Luxembourg</option><option>🇲🇬  Madagascar</option><option>🇲🇼  Malawi</option><option>🇲🇾  Malaysia</option><option>🇲🇻  Maldives</option><option>🇲🇱  Mali</option><option>🇲🇹  Malta</option><option>🇲🇶  Martinique</option><option>🇲🇷  Mauritania</option><option>🇲🇺  Mauritius</option><option>🇲🇽  Mexico</option><option>🇫🇲  Micronesia</option><option>🇲🇩  Moldova</option><option>🇲🇨  Monaco</option><option>🇲🇳  Mongolia</option><option>🇲🇪  Montenegro</option><option>🇲🇸  Montserrat</option><option>🇲🇦  Morocco</option><option>🇲🇿  Mozambique</option><option>🇳🇦  Namibia</option><option>🏳  Nato</option><option>🇳🇷  Nauru</option><option>🇳🇵  Nepal</option><option>🇳🇱  Netherlands</option><option>🇳🇿  New Zealand</option><option>🇳🇮  Nicaragua</option><option>🇳🇪  Niger</option><option>🇳🇬  Nigeria</option><option>🇳🇺  Niue</option><option>🇳🇫  Norfolk Island</option><option>🇰🇵  North Korea</option><option>🇳🇴  Norway</option><option>🇴🇲  Oman</option><option>🇵🇰  Pakistan</option><option>🇵🇼  Palau</option><option>🏳  Palestine</option><option>🇵🇦  Panama</option><option>🇵🇬  Papua New Guinea</option><option>🇵🇾  Paraguay</option><option>🇵🇪  Peru</option><option>🇵🇭  Philippines</option><option>🇵🇳  Pitcairn Islands</option><option>🇵🇱  Poland</option><option>🇵🇱  Poland</option><option>🇵🇹  Portugal</option><option>🇵🇷  Puerto Rico</option><option>🇶🇦  Qatar</option><option>🇨🇬  Republic Of Congo</option><option>🇷🇴  Romania</option><option>🇷🇺  Russia</option><option>🇷🇼  Rwanda</option><option>🇸🇻  El Salvador</option><option>🇸🇻  El Salvador</option><option>🇼🇸  Samoa</option><option>🇸🇲  San Marino</option><option>🇸🇦  Saudi Arabia</option><option>🏴󠁧󠁢󠁳󠁣󠁴󠁿  Scotland</option><option>🇸🇳  Senegal</option><option>🇷🇸  Serbia</option><option>🇸🇨  Seychelles</option><option>🇸🇱  Sierra Leone</option><option>🇸🇬  Singapore</option><option>🇸🇽  Sint Maarten</option><option>🇸🇰  Slovakia</option><option>🇸🇮  Slovenia</option><option>🇸🇧  Solomon Islands</option><option>🇸🇴  Somalia</option><option>🏳  Somaliland</option><option>🇿🇦  South Africa</option><option>🇰🇷  South Korea</option><option>🇸🇸  South Sudan</option><option>🇪🇸  Spain</option><option>🇱🇰  Sri Lanka</option><option>🇸🇩  Sudan</option><option>🇸🇷  Suriname</option><option>🇸🇿  Swaziland</option><option>🇸🇪  Sweden</option><option>🇨🇭  Switzerland</option><option>🇸🇾  Syria</option><option>🇹🇼  Taiwan</option><option>🇹🇯  Tajikistan</option><option>🇹🇿  Tanzania</option><option>🇹🇭  Thailand</option><option>🏳  Tibet</option><option>🇹🇬  Togo</option><option>🇹🇰  Tokelau</option><option>🇹🇴  Tonga</option><option>🇹🇹  Trinidad & Tobago</option><option>🇹🇳  Tunisia</option><option>🇹🇷  Turkey</option><option>🇹🇲  Turkmenistan</option><option>🇹🇨  Turks And Caicos Islands</option><option>🇹🇻  Tuvalu</option><option>🇦🇪  United Arab Emirates</option><option>🇦🇪  United Arab Emirates</option><option>🇺🇬  Uganda</option><option>🇺🇦  Ukraine</option><option>🇬🇧  United Kingdom</option><option>🇺🇳  United Nations</option><option>🇺🇸  United States</option><option>🏳  Unknown supplier(s)</option><option>🇺🇾  Uruguay</option><option>🇺🇿  Uzbekistan</option><option>🇻🇺  Vanuatu</option><option>🇻🇦  Vatican City</option><option>🇻🇪  Venezuela</option><option>🇻🇳  Vietnam</option><option>🏴󠁧󠁢󠁷󠁬󠁳󠁿  Wales</option><option>🇪🇭  Western Sahara</option><option>🇾🇪  Yemen</option><option>🇿🇲  Zambia</option><option>🇿🇼  Zimbabwe</option>
+
+</select>
+
+
+        </nav>
+    </div>
+
+
+
+
     <div><input type="image" id="homeButton" width="50px" src="static/icons/home.png" onclick="callResetZoom()" /> <span class="tooltiptext">Reset Zoom</span></div>
     <input type="image" id="resetButton" width="50px" src="static/icons/reset3.png" onclick="resetSelect()" />
     </div>

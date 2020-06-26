@@ -10,6 +10,9 @@ var selected_group = ["ITA"]
 var synchro_mode = true
 
 function main() {
+    $(function() {
+        $('select').selectpicker();
+    });
     //Layout movements
 
     getDataFromPost();
