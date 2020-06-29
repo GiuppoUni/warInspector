@@ -58,6 +58,23 @@ function clickedNation(id) {
     country_selected = cur_name_country
     getDataFromPost();
     console.log("Clicked", str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")).replace("%20", " "))
+
+
+    $("#showToast").click(function() {
+        $('.toast').toast('show');
+    });
+    $(".custom-toggler").click(function() {
+        $("body").scrollTop(0);
+        console.log("clicked")
+
+    });
+
+    $('.navbar-nav>li>a').on('click', function() {
+        $('.navbar-collapse').collapse('hide');
+        $("body").scrollTop(0);
+        console.log("clicked")
+
+    });
 }
 
 
@@ -131,4 +148,8 @@ function callResetRace() {
 
 function callStopRace() {
     rm.stop()
+}
+
+function toggler() {
+    window.scrollTo(0, 0);
 }

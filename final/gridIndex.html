@@ -7,8 +7,11 @@
     <!-- <<<<< Imports -->
     <script src='https://azlejs.com/v2/azle.min.js'></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <link rel="stylesheet" href="static/bootstrap4.5/css/bootstrap.min.css" crossorigin="anonymouse" />
+
     <script src="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
 
@@ -19,7 +22,6 @@
     <script src="static/js/libraries/d3-scale-chromatic.v1.min.js"></script>
 
 
-    <link rel="stylesheet" href="static/bootstrap4.5/css/bootstrap.min.css" crossorigin="asnymous" />
 
 
     <!-- My Modules  -->
@@ -32,7 +34,7 @@
     <!-- >>>>> -->
     <link rel="stylesheet" href="static/css/style.css">
 
-
+    <title>WarMonopoly</title>
 
 
 </head>
@@ -53,38 +55,36 @@
                 <h4 class="text-white"> WarMonopoly</h4>
                 <span class="text-muted">Web application based on D3.js framework and powered by SIPRI databases,
                     with the goal of showing an overview of international tracked military trading. 
-                    <br><br>
-                    <div style="text-align: right;">
-                        <a href="https://www.sipri.org/">
-                            <img alt="Qries" src="static/icons/SipriLogo.jpg"
-                            width="50px">
-                        </a>
-                        <a href="https://d3js.org/">
-                            <img alt="Qries" src="static/icons/d3.png"
-                            width="50px">
-
-                        </a>
-                        <a href="https://flask.palletsprojects.com/en/1.1.x/">
-                            <img alt="Qries" src="static/icons/flask.jpeg"
-                            width="50px">
-                        </a>
-                    </div>
                 </span>
+                <br><br>
+                <div style="text-align: right;">
+                    <a href="https://www.sipri.org/">
+                        <img alt="Qries" src="static/icons/SipriLogo.jpg" width="50">
+                    </a>
+                    <a href="https://d3js.org/">
+                        <img alt="Qries" src="static/icons/d3.png" width="50">
+
+                    </a>
+                    <a href="https://flask.palletsprojects.com/en/1.1.x/">
+                        <img alt="Qries" src="static/icons/flask.jpeg" width="50">
+                    </a>
+                </div>
+
 
             </div>
 
         </div>
         <nav class="navbar fixed-top navbar-dark bg-dark">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button onclick="toggler()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-                <a class="navbar-brand" href="#"></a>  
             </button>
+            <a class="navbar-brand" href="#"></a>
 
 
             <div class="row" style="float:left; margin-left: 15px">
 
-                <img src="static/icons/valogo.png" width="50px" style="" />
+                <img src="static/icons/valogo.png" width="50" style="" />
                 <h4 style="    margin-left: 15px;color: aliceblue;">WarMonopoly</h4>
             </div>
             <div class="row" style="float: right;margin-right: 10px;">
@@ -104,8 +104,15 @@
 
 
 
-    <div><input type="image" id="homeButton" width="50px" src="static/icons/home.png" onclick="callResetZoom()" /> <span class="tooltiptext">Reset Zoom</span></div>
-    <input type="image" id="resetButton" width="50px" src="static/icons/reset3.png" onclick="resetSelect()" />
+    <div>
+        <div>
+            <input type="image" id="homeButton" width="50" src="static/icons/home.png" onclick="callResetZoom()" />
+            <span class="tooltiptext">Reset zoom</span>
+        </div>
+        <div>
+            <input type="image" id="resetButton" width="50" src="static/icons/reset3.png" onclick="resetSelect()" />
+            <span class="tooltiptext">Reset selection</span>
+        </div>
     </div>
 
     <div id="map_slider" class="row" style="width: 100%; height:100%; margin: 0 auto; background-color: black;"></div>
@@ -114,11 +121,27 @@
     <div class="container-fluid my-container">
 
         <div class="row my-row">
-            <div class="col-md-auto my-col-up" id="map-imp-col">
-                <h1 class="center-text">IMPORT Row 1 Col 1</h1>
+            <div class="col-md-auto my-col-up">
+                <div class="card bg-dark">
+                    <div class="card-header">
+                        IMPORT Row 1 Col 1
+                    </div>
+                    <div class="card-body" id="map-imp-col">
+
+                    </div>
+                </div>
             </div>
-            <div class="col-md-auto my-col-up" id="map-exp-col">
-                <h1 class="center-text">EXPORT Row 1 Col 2</h1>
+            <div class="col-md-auto my-col-up">
+
+                <div class="card bg-dark">
+                    <div class="card-header">
+                        EXPORT Row 1 Col 2
+                    </div>
+                    <div class="card-body" id="map-exp-col">
+
+                    </div>
+                </div>
+
             </div>
             <div class="col my-col-up">
                 Row 1 Col 3
@@ -130,79 +153,73 @@
         <!-- Seconda riga -->
         <div class="row my-row">
             <div class="col-5 my-col-down">
-                Row 2 Col 1
-                <div class="row">
-                    <div class="col" id="charts-div">
-                        <div class="lds-facebook justify-content-center" id="load-anim">
-                            Loading PCA...
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div id="chart" style=" border: 1px solid white; height: 100%; text-align: center;">
 
-                            <div id="chart-container">
-                                <svg id="chart-svg"></svg>
+
+                <div class="card bg-dark" id="charts-div">
+                    <div class="card-body" style="display: inline-block;">
+                        <div class="row">
+
+                            <div class="col">
+                                <div class="lds-facebook justify-content-center" id="load-anim">
+                                    Loading PCA...
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div id="chart" style=" border: 1px solid white; height: 100%; text-align: center;">
+
+                                    <div id="chart-container">
+                                        <svg id="chart-svg"></svg>
+                                    </div>
+
+                                </div>
                             </div>
+                            <div class="col" id=pca-import-col>
 
+                            </div>
                         </div>
                     </div>
-                    <div class="col" id="pca-import-col"> </div>
                 </div>
 
             </div>
 
             <div class="col-5 my-col-down">
-                Row 2 Col 2
-                <div class="row">
-                    <div class="col" id="charts-div">
+                <div class="card bg-dark" id="charts-div">
+                    <div class="card-body">
+                        <div class="row">
 
-                        <div class="lds-facebook justify-content-center" id="load-anim">
-                            Loading PCA...
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
+                            <div class="col" id="charts-div">
 
-                        <div id="chart" style="border: 1px solid yellow; height: 100%; text-align: center;">
+                                <div class="lds-facebook justify-content-center" id="load-anim">
+                                    Loading PCA...
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
 
-                            <div id="chart-container">
-                                <svg id="chart-svg-exp"></svg>
+                                <div id="chart" style="border: 1px solid yellow; height: 100%; text-align: center;">
+
+                                    <div id="chart-container">
+                                        <svg id="chart-svg-exp"></svg>
+                                    </div>
+
+
+                                </div>
                             </div>
-
-
+                            <div class="col" id="pca-export-col"> </div>
                         </div>
                     </div>
-                    <div class="col" id="pca-export-col"> </div>
                 </div>
             </div>
             <div class="col my-col-down">
-                Row 2 Col 3
-                <div id="rankRace-container">
-                    <input type="image" id="resetRaceButton" width="50px" src="static/icons/reset3.png" onclick="callResetRace()" />
-                    <input type="image" id="playPauseRaceButton" width="50px" src="static/icons/playpause.png" onclick="callStopRace()" />
+                <div class="card bg-dark" id="rankRace-container">
 
+                    <input type="image" id="resetRaceButton" width="50" src="static/icons/reset3.png" onclick="callResetRace()" />
+                    <input type="image" id="playPauseRaceButton" width="50" src="static/icons/playpause.png" onclick="callStopRace()" />
                 </div>
 
             </div>
-            <!-- <div class="col my-col-down">      
-            Row 2 Col 1  
-        </div>
-        <div class="col my-col-down" id="pca-import-col">        
-            Row 2 Col 2  
-            
-        </div>
-        <div class="col my-col-down">
-            Row 2 Col 3  
-            
-        </div>
-        <div class="col my-col-down" id="pca-export-col">      
-            Row 2 Col 4  
-        </div>
-        <div class="col my-col-down" >        
-            Row 2 Col 5  
-            
-        </div> -->
+
         </div>
     </div>
 
@@ -213,21 +230,26 @@
         <div></div>
     </div>
 
-    <p class="layoutp " style="font-size:125%">Currently displaying:</p>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <img id="curr_flag" class="mx-auto d-block"></img>
-            </div>
-            <div class="col text-center">
-                <p class="layoutp " id="curr_country">Supplier:
-                </p>
-                <p class="layoutp " id="curr_years">Years:
-                </p>
-            </div>
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" style="position: absolute; top: 1rem; right: 1rem;">
+        <div class="toast-header">
+
+            <strong class="mr-auto">Bootstrap</strong>
+            <small class="time-indicator"> 12:49</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+            Hello, world! This is a toast message.
         </div>
     </div>
 
+    <footer id="sticky-footer" class=" bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; WarMonopoly</small>
+        </div>
+    </footer>
 </body>
 
 

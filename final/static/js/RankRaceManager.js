@@ -3,15 +3,15 @@ var RankRaceManager = function() {
 
     var raceSvg = d3v4.select("#rankRace-container").append("svg")
         .attr("width", 240)
-        .attr("height", 150)
+        .attr("height", 200)
         .attr("id", "chart-svg")
 
 
 
     var tickDuration = 2000; //was 500
 
-    var top_n = 3;
-    var height = 150;
+    var top_n = 5;
+    var height = 200;
     var width = 240;
 
     stopped = false;
@@ -62,7 +62,7 @@ var RankRaceManager = function() {
                 d.value = isNaN(d.value) ? 0 : d.value,
                 d.year = +d.year,
                 //d.colour = d3v4.hsl(Math.random()*360,0.75,0.75)
-                d.colour = d.code3 == "USA" ? "#990A0D" : "#ffffff"
+                d.colour = d.code3 == "USA" ? "rgba(153,10,13,0.82)" : "rgba(195,195,195,0.82)"
         });
 
         console.log(data);
@@ -197,7 +197,9 @@ var RankRaceManager = function() {
                 .attr('x', d => x(d.value) - 8)
                 .attr('y', d => y(top_n + 1) + 5 + ((y(1) - y(0)) / 2))
                 .style('text-anchor', 'end')
-                .html(d => d.name)
+                .style("fill", "black")
+
+            .html(d => d.name)
                 .transition()
                 .duration(tickDuration)
                 .ease(d3v4.easeLinear)
@@ -208,6 +210,7 @@ var RankRaceManager = function() {
                 .transition()
                 .duration(tickDuration)
                 .ease(d3v4.easeLinear)
+                .style("fill", "black")
                 .attr('x', d => x(d.value) - 8)
                 .attr('y', d => y(d.rank) + 5 + ((y(1) - y(0)) / 2) + 1);
 
@@ -231,6 +234,7 @@ var RankRaceManager = function() {
                 .attr('x', d => x(d.value) + 5)
                 .attr('y', d => y(top_n + 1) + 5)
                 .text(d => d3v4.format(',.0f')(d.lastValue))
+                .style("fill", "white")
                 .transition()
                 .duration(tickDuration)
                 .ease(d3v4.easeLinear)

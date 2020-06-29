@@ -92,7 +92,6 @@ var MapManager = function() {
         // land.remove()
         // boundaries.remove()
         resetZoom()
-        updateTexts()
 
         sphere
             .append('path')
@@ -200,7 +199,6 @@ var MapManager = function() {
         // land.remove()
         // boundaries.remove()
         resetZoom()
-        updateTexts()
 
         sphere_imp
             .append('path')
@@ -339,12 +337,6 @@ var MapManager = function() {
         if (d3v4.event.defaultPrevented) d3v4.event.stopPropagation();
     }
 
-    function updateTexts() {
-        document.getElementById("curr_country").innerText = "Supplier: " + selected_group.join(" ");
-        document.getElementById("curr_years").innerText = "Years:\n" + years[0] + "-" + years[1];
-        document.getElementById("curr_flag").src = "static/icons/flag-icons/png/" + country_selected + ".png";
-        d3v4.select("#curr_flag").attr("width", "70px")
-    }
 
     var resetZoom = function() {
         svg.transition()

@@ -416,6 +416,8 @@ text.label {
 
 text.valueLabel {
     font-weight: 300;
+    fill: black;
+    stroke-width: 0;
 }
 
 text.yearText {
@@ -423,7 +425,7 @@ text.yearText {
 }
 
 .tick text {
-    fill: red;
+    fill: white;
 }
 
 .xAxis .tick:nth-child(2) text {
@@ -447,23 +449,23 @@ path.domain {
 /* Grid Layout */
 
 .my-container {
-    border: 3px solid grey;
+    /* border: 3px solid grey; */
     color: white;
 }
 
 .my-row {
-    border: 3px solid grey;
+    /* border: 3px solid grey; */
 }
 
 .my-col-up {
     display: inline-block;
-    border: 1px solid yellow
+    /* border: 1px solid yellow */
 }
 
 .my-col-down {
     height: 400px;
     width: 300px;
-    border: 1px solid yellow
+    /* border: 1px solid yellow */
 }
 
 .center-text {
@@ -492,4 +494,8 @@ path.domain {
 #pca-import-col,
 #pca-export-col {
     background-color: aliceblue;
+}
+
+.card {
+    margin-top: 10px;
 }
