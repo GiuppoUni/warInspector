@@ -10,9 +10,10 @@ var selected_group = ["ITA"]
 var synchro_mode = true
 
 function main() {
-    $(function() {
-        $('select').selectpicker();
-    });
+    // $(function() {
+    //     $('select').selectpicker();
+    // });
+
     //Layout movements
 
     getDataFromPost();
@@ -85,6 +86,7 @@ function getDataFromPost() {
                 //console.log("Data: ",root)
 
                 script_str1 = root[3]
+                script_str1 = script_str1.replace('d3.scaleLinear', 'd3.scale.linear()')
 
                 script_str2 = root[4]
 

@@ -389,25 +389,29 @@ div#chart-container {
   font-weight: 500;
 } */
 
-#chart-svg>text {
-    color: #000;
-    fill: black;
+#chart-svg>text:not(.yearText) {
+    color: grey;
+    fill: grey;
+}
+
+text.yearText {
+    fill: yellow;
 }
 
 text.subTitle {
     font-weight: 500;
-    fill: #777777;
+    fill: white;
 }
 
 text.caption {
     font-weight: 400;
     font-size: 14px;
-    fill: #777777;
+    fill: white;
 }
 
 text.label {
     font-weight: 600;
-    color: black;
+    color: orange;
 }
 
 text.valueLabel {
@@ -415,14 +419,11 @@ text.valueLabel {
 }
 
 text.yearText {
-    font-size: 128px;
-    font-weight: 700;
-    opacity: 0.25;
-    color: red;
+    font-size: 25px;
 }
 
 .tick text {
-    fill: #777777;
+    fill: red;
 }
 
 .xAxis .tick:nth-child(2) text {
@@ -467,4 +468,28 @@ path.domain {
 
 .center-text {
     text-align: center;
+}
+
+.selectpicker {
+    padding-top: 20px;
+}
+
+
+/* ICONS */
+
+.icon {
+    fill: white;
+}
+
+.icon--ei-sc-facebook {
+    fill: blue;
+}
+
+.m-size {
+    width: "50px";
+}
+
+#pca-import-col,
+#pca-export-col {
+    background-color: aliceblue;
 }
