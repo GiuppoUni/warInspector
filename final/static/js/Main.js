@@ -34,50 +34,21 @@ function main() {
 
 }
 
+// function hi() { alert("hi" + $("#selectNation").val()) }
 //---Helpers
 /*
 Called on nation icon click
 */
-function clickedNation(id) {
-    var but = document.getElementById(id)
-
-    // d3v4.selectAll(".arches").remove()
-    const str = but.src
-    const cur_name_country = str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")).replace("%20", " ")
-        //mm.setCountry( cur_name_country  )
-
-
+function clickedNation() {
+    ids = $("#selectNation").val()
+    selected_group = ids
     d3v4.selectAll(".heatmap").remove()
     d3v4.selectAll(".legendThreshold").remove()
     d3v4.selectAll(".legendCells").remove()
 
     mm.drawCloroExp()
     mm.drawCloroImp()
-
-    cm.updateCountry(cur_name_country)
-    country_selected = cur_name_country
-    getDataFromPost();
-    console.log("Clicked", str.substring(str.lastIndexOf("/") + 1, str.lastIndexOf(".")).replace("%20", " "))
-
-
-    $("#showToast").click(function() {
-        $('.toast').toast('show');
-    });
-    $(".custom-toggler").click(function() {
-        $("body").scrollTop(0);
-        console.log("clicked")
-
-    });
-
-    $('.navbar-nav>li>a').on('click', function() {
-        $('.navbar-collapse').collapse('hide');
-        $("body").scrollTop(0);
-        console.log("clicked")
-
-    });
 }
-
-
 
 
 
