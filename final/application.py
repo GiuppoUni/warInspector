@@ -383,7 +383,7 @@ def homepage():
     # data.Year1=Year1
     # data.Year2=Year2
     
-    return render_template("gridIndex.html")
+    return render_template("index.html")
     # return render_template("myIndex.html")
 
 
@@ -417,6 +417,18 @@ def returnPCAData():
 
     #print(s)
     return jsonify(data.CountryName,data.Year1,data.Year2,s1,s2)
+
+
+# Other routes
+@application.route('/about')
+def about():
+    return render_template('static/html/about.html')
+
+@application.route('/weapons')
+def weapons():
+    return render_template('static/html/weapons.html')
+
+
 
 if __name__ == "__main__":
     application.run(debug=True)

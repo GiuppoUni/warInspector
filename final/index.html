@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="=utf-8">
+
+    <!-- <<<<< Imports -->
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/bootstrap4.5/css/bootstrap.min.css" crossorigin="anonymouse" />
+
+    <script src="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
+
+
+    <script src="static/js/libraries/d3v4.js"></script>
+    <script src="static/js/libraries/d3-simple-slider.min.js"></script>
+    <script src="static/js/libraries/d3-legend.js"></script>
+    <script src="static/js/libraries/d3-scale-chromatic.v1.min.js"></script>
+
+
+
+
+    <!-- My Modules  -->
+    <script src="static/js/MapComponentsManager.js"></script>
+    <script src="static/js/Main.js"></script>
+    <script src="static/js/ChartManager.js"></script>
+    <script src="static/js/MapManager.js"></script>
+    <script src="static/js/RankRaceManager.js"></script>
+
+    <!-- >>>>> -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <title>WarMonopoly</title>
+
+
+</head>
+
+
+<body onload="main()">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+    <div class="pos-f-t">
+
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+            <button type="button" onclick="toggler()" id="hamburger" class=" btn btn-dark navbar-toggler " type="button" data-toggle="offcanvas" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" style="color: aliceblue;" aria-hidden="true"> Menu</i>
+                
+            </button>
+            <a class="navbar-brand" href="#"></a>
+
+
+            <div class="row" style="float:left; margin-left: 15px">
+
+                <img src="static/icons/valogo.png" width="50" style="" />
+                <h4 style="    margin-top:auto; margin-left: 15px;color: aliceblue;">WarMonopoly</h4>
+            </div>
+            <div class="row" style="float: right;margin-right: 10px;">
+                <!-- <img width="30px" src="static/icons/search.png" /> -->
+
+                <div data-icon="ei-search" data-size="m" style="    margin-left: 100px;"></div>
+                <select id="selectNation" class="selectpicker" data-width="800px" multiple data-live-search="true" data-size="4" data-actions-box="true" title="Choose one or more country..." onchange="clickedNation()">
+                <option value=ZYY>🏳  (multiple sellers)</option><option value=AFG>🇦🇫  Afghanistan</option><option value=ALB>🇦🇱  Albania</option><option value=DZA>🇩🇿  Algeria</option><option value=ASM>🇦🇸  American Samoa</option><option value=AND>🇦🇩  Andorra</option><option value=AGO>🇦🇴  Angola</option><option value=AIA>🇦🇮  Anguilla</option><option value=ATG>🇦🇬  Antigua & Barbuda</option><option value=ARG>🇦🇷  Argentina</option><option value=ARM>🇦🇲  Armenia</option><option value=ABW>🇦🇼  Aruba</option><option value=AUS>🇦🇺  Australia</option><option value=AUT>🇦🇹  Austria</option><option value=AZE>🇦🇿  Azerbaijan</option><option value=BHS>🇧🇸  Bahamas</option><option value=BHR>🇧🇭  Bahrain</option><option value=BGD>🇧🇩  Bangladesh</option><option value=BRB>🇧🇧  Barbados</option><option value=BLR>🇧🇾  Belarus</option><option value=BEL>🇧🇪  Belgium</option><option value=BLZ>🇧🇿  Belize</option><option value=BEN>🇧🇯  Benin</option><option value=BMU>🇧🇲  Bermuda</option><option value=BTN>🇧🇹  Bhutan</option><option value=BTN>🇧🇹  Bhutan</option><option value=BOL>🇧🇴  Bolivia</option><option value=BIH>🇧🇦  Bosnia-Herzegovina</option><option value=BWA>🇧🇼  Botswana</option><option value=BRA>🇧🇷  Brazil</option><option value=BRN>🇧🇳  Brunei</option><option value=BGR>🇧🇬  Bulgaria</option><option value=BFA>🇧🇫  Burkina Faso</option><option value=BDI>🇧🇮  Burundi</option><option value=KHM>🇰🇭  Cambodia</option><option value=CMR>🇨🇲  Cameroon</option><option value=CAN>🇨🇦  Canada</option><option value=ZKK>🇮🇨  Canary Islands</option><option value=CPV>🇨🇻  Cape Verde</option><option value=CYM>🇰🇾  Cayman Islands</option><option value=CAF>🇨🇫  Central African Republic</option><option value=TCD>🇹🇩  Chad</option><option value=CHL>🇨🇱  Chile</option><option value=CHN>🇨🇳  China</option><option value=CXR>🇨🇽  Christmas Island</option><option value=COL>🇨🇴  Colombia</option><option value=COM>🇰🇲  Comoros</option><option value=COK>🇨🇰  Cook Islands</option><option value=CRI>🇨🇷  Costa Rica</option><option value=HRV>🇭🇷  Croatia</option><option value=CUB>🇨🇺  Cuba</option><option value=CYP>🇨🇾  Cyprus</option><option value=CZE>🇨🇿  Czechia</option><option value=COD>🇨🇩  Democratic Republic Of Congo</option><option value=DNK>🇩🇰  Denmark</option><option value=DJI>🇩🇯  Djibouti</option><option value=DMA>🇩🇲  Dominica</option><option value=DMA>🇩🇴  Dominican Republic</option><option value=DOM>🇩🇴 <option value=DMA>🇩🇴  Dominican Republic</option></option><option value=TLS>🇹🇱  East Timor</option><option value=ECU>🇪🇨  Ecuador</option><option value=EGY>🇪🇬  Egypt</option><option value=GBR>🏴󠁧󠁢󠁥󠁮󠁧󠁿  England</option><option value=GIN>🇬🇶  Equatorial Guinea</option><option value=GNQ>🇬🇶 <option value=GIN>🇬🇶  Equatorial Guinea</option></option><option value=ERI>🇪🇷  Eritrea</option><option value=EST>🇪🇪  Estonia</option><option value=ETH>🇪🇹  Ethiopia</option><option value=ZZZ>🏳  Europe multi-state</option><option value=ZZZ>🇪🇺  European Union</option><option value=GBR>🇫🇰  Falkland Islands</option><option value=FRO>🇫🇴  Faroe Islands</option><option value=FJI>🇫🇯  Fiji</option><option value=FIN>🇫🇮  Finland</option><option value=FRA>🇫🇷  France</option><option value=PYF>🇵🇫  French Polynesia</option><option value=GAB>🇬🇦  Gabon</option><option value=GMB>🇬🇲  Gambia</option><option value=GEO>🇬🇪  Georgia</option><option value=DEU>🇩🇪  Germany</option><option value=GHA>🇬🇭  Ghana</option><option value=GIB>🇬🇮  Gibraltar</option><option value=GRC>🇬🇷  Greece</option><option value=GRL>🇬🇱  Greenland</option><option value=GRD>🇬🇩  Grenada</option><option value=GUM>🇬🇺  Guam</option><option value=GTM>🇬🇹  Guatemala</option><option value=GGY>🇬🇬  Guernsey</option><option value=GIN>🇬🇳  Guinea</option><option value=GUY>🇬🇾  Guyana</option><option value=HTI>🇭🇹  Haiti</option><option value=USA>🇺🇸  Hawaii</option><option value=HND>🇭🇳  Honduras</option><option value=HKG>🇭🇰  Hong Kong</option><option value=HUN>🇭🇺  Hungary</option><option value=ISL>🇮🇸  Iceland</option><option value=IND>🇮🇳  India</option><option value=IDN>🇮🇩  Indonesia</option><option value=IRN>🇮🇷  Iran</option><option value=IRQ>🇮🇶  Iraq</option><option value=IRL>🇮🇪  Ireland</option><option value=IMN>🇮🇲  Isle of Man</option><option value=ISR>🇮🇱  Israel</option><option value=ITA>🇮🇹  Italy</option><option value=JAM>🇯🇲  Jamaica</option><option value=JPN>🇯🇵  Japan</option><option value=JEY>🇯🇪  Jersey</option><option value=JOR>🇯🇴  Jordan</option><option value=KAZ>🇰🇿  Kazakhstan</option><option value=KEN>🇰🇪  Kenya</option><option value=KIR>🇰🇮  Kiribati</option><option value=XKX>🇽🇰  Kosovo</option><option value=KWT>🇰🇼  Kuwait</option><option value=KGZ>🇰🇬  Kyrgyzstan</option><option value=LAO>🇱🇦  Laos</option><option value=LVA>🇱🇻  Latvia</option><option value=LBN>🇱🇧  Lebanon</option><option value=LSO>🇱🇸  Lesotho</option><option value=LBR>🇱🇷  Liberia</option><option value=LBY>🇱🇾  Libya</option><option value=LIE>🇱🇮  Liechtenstein</option><option value=LTU>🇱🇹  Lithuania</option><option value=LUX>🇱🇺  Luxembourg</option><option value=MDG>🇲🇬  Madagascar</option><option value=MWI>🇲🇼  Malawi</option><option value=MYS>🇲🇾  Malaysia</option><option value=MDV>🇲🇻  Maldives</option><option value=MLI>🇲🇱  Mali</option><option value=MLT>🇲🇹  Malta</option><option value=MTQ>🇲🇶  Martinique</option><option value=MRT>🇲🇷  Mauritania</option><option value=MUS>🇲🇺  Mauritius</option><option value=MEX>🇲🇽  Mexico</option><option value=FSM>🇫🇲  Micronesia</option><option value=MDA>🇲🇩  Moldova</option><option value=MCO>🇲🇨  Monaco</option><option value=MNG>🇲🇳  Mongolia</option><option value=MNE>🇲🇪  Montenegro</option><option value=MSR>🇲🇸  Montserrat</option><option value=MAR>🇲🇦  Morocco</option><option value=MOZ>🇲🇿  Mozambique</option><option value=NAM>🇳🇦  Namibia</option><option value=NAT>🏳  Nato</option><option value=NRU>🇳🇷  Nauru</option><option value=NPL>🇳🇵  Nepal</option><option value=NLD>🇳🇱  Netherlands</option><option value=NZL>🇳🇿  New Zealand</option><option value=NIC>🇳🇮  Nicaragua</option><option value=NER>🇳🇪  Niger</option><option value=NER>🇳🇬  Nigeria</option><option value=NGA>🇳🇬 <option value=NER>🇳🇬  Nigeria</option></option><option value=NIU>🇳🇺  Niue</option><option value=NFK>🇳🇫  Norfolk Island</option><option value=PRK>🇰🇵  North Korea</option><option value=NOR>🇳🇴  Norway</option><option value=OMN>🇴🇲  Oman</option><option value=PAK>🇵🇰  Pakistan</option><option value=PLW>🇵🇼  Palau</option><option value=PSE>🏳  Palestine</option><option value=PAN>🇵🇦  Panama</option><option value=GIN>🇵🇬  Papua New Guinea</option><option value=PNG>🇵🇬 <option value=GIN>🇵🇬  Papua New Guinea</option></option><option value=PRY>🇵🇾  Paraguay</option><option value=PER>🇵🇪  Peru</option><option value=PHL>🇵🇭  Philippines</option><option value=PCN>🇵🇳  Pitcairn Islands</option><option value=POL>🇵🇱  Poland</option><option value=POL>🇵🇱  Poland</option><option value=PRT>🇵🇹  Portugal</option><option value=PRI>🇵🇷  Puerto Rico</option><option value=QAT>🇶🇦  Qatar</option><option value=COD>🇨🇬  Republic Of Congo</option><option value=ROU>🇷🇴  Romania</option><option value=RUS>🇷🇺  Russia</option><option value=RWA>🇷🇼  Rwanda</option><option value=SLV>🇸🇻  El Salvador</option><option value=SLV>🇸🇻  El Salvador</option><option value=WSM>🇼🇸  Samoa</option><option value=SMR>🇸🇲  San Marino</option><option value=SAU>🇸🇦  Saudi Arabia</option><option value=GBR>🏴󠁧󠁢󠁳󠁣󠁴󠁿  Scotland</option><option value=SEN>🇸🇳  Senegal</option><option value=SRB>🇷🇸  Serbia</option><option value=SYC>🇸🇨  Seychelles</option><option value=SLE>🇸🇱  Sierra Leone</option><option value=SGP>🇸🇬  Singapore</option><option value=ZKY>🇸🇽  Sint Maarten</option><option value=SVK>🇸🇰  Slovakia</option><option value=SVN>🇸🇮  Slovenia</option><option value=SLB>🇸🇧  Solomon Islands</option><option value=SOM>🇸🇴  Somalia</option><option value=SOM>🏳  Somaliland</option><option value=ZAF>🇿🇦  South Africa</option><option value=KOR>🇰🇷  South Korea</option><option value=SDN>🇸🇸  South Sudan</option><option value=SDN>🇸🇸 <option value=SDN>🇸🇸  South Sudan</option></option><option value=ESP>🇪🇸  Spain</option><option value=LKA>🇱🇰  Sri Lanka</option><option value=SDN>🇸🇩  Sudan</option><option value=code3>🇸🇷  Suriname</option><option value=SUR>🇸🇷 <option value=code3>🇸🇷  Suriname</option></option><option value=SWZ>🇸🇿  Swaziland</option><option value=SWE>🇸🇪  Sweden</option><option value=CHE>🇨🇭  Switzerland</option><option value=SYR>🇸🇾  Syria</option><option value=TWN>🇹🇼  Taiwan</option><option value=TJK>🇹🇯  Tajikistan</option><option value=TZA>🇹🇿  Tanzania</option><option value=THA>🇹🇭  Thailand</option><option value=CHN>🏳  Tibet</option><option value=TGO>🇹🇬  Togo</option><option value=TKL>🇹🇰  Tokelau</option><option value=TON>🇹🇴  Tonga</option><option value=TTO>🇹🇹  Trinidad & Tobago</option><option value=TUN>🇹🇳  Tunisia</option><option value=TUR>🇹🇷  Turkey</option><option value=TKM>🇹🇲  Turkmenistan</option><option value=TCA>🇹🇨  Turks And Caicos Islands</option><option value=TUV>🇹🇻  Tuvalu</option><option value=ARE>🇦🇪  United Arab Emirates</option><option value=ARE>🇦🇪  United Arab Emirates</option><option value=UGA>🇺🇬  Uganda</option><option value=UKR>🇺🇦  Ukraine</option><option value=GBR>🇬🇧  United Kingdom</option><option value=ONU>🇺🇳  United Nations</option><option value=USA>🇺🇸  United States</option><option value=ZXX>🏳  Unknown supplier(s)</option><option value=URY>🇺🇾  Uruguay</option><option value=UZB>🇺🇿  Uzbekistan</option><option value=VUT>🇻🇺  Vanuatu</option><option value=VAT>🇻🇦  Vatican City</option><option value=VEN>🇻🇪  Venezuela</option><option value=VNM>🇻🇳  Vietnam</option><option value=GBR>🏴󠁧󠁢󠁷󠁬󠁳󠁿  Wales</option><option value=ESH>🇪🇭  Western Sahara</option><option value=YEM>🇾🇪  Yemen</option><option value=ZMB>🇿🇲  Zambia</option><option value=ZWE>🇿🇼  Zimbabwe</option>                
+            </select>
+
+            </div>
+
+        </nav>
+    </div>
+
+
+
+
+    <div>
+        <div>
+            <input type="image" id="homeButton" width="50" src="static/icons/home.png" onclick="callResetZoom()" />
+            <span class="tooltiptext">Reset zoom</span>
+        </div>
+        <div>
+            <input type="image" id="resetButton" width="50" src="static/icons/reset3.png" onclick="resetSelect()" />
+            <span class="tooltiptext">Reset selection</span>
+        </div>
+    </div>
+
+    <div id="map_slider" class="row" style="width: 100%; height:100%; margin: 0 auto; background-color: black;"></div>
+    <div id="slider-range"></div>
+
+    <div class="container-fluid my-container">
+
+        <div class="row my-row">
+            <div class="col-md-auto my-col-up">
+                <div class="card bg-dark">
+                    <div class="card-header text-center">
+                        Num. of weapons IMPORTED into selected countries
+                    </div>
+                    <div class="card-body" id="map-imp-col">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-auto my-col-up">
+
+                <div class="card bg-dark">
+                    <div class="card-header  text-center">
+                        Num. of weapons EXPORTED from selected countries
+                    </div>
+                    <div class="card-body" id="map-exp-col">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col my-col-up">
+                <div class="card bg-dark">
+                    <div class="card-header  text-center">
+                        General info
+                    </div>
+                    <div class="card-body" id="general-info">
+                        <div class="container-fluid my-container">
+                            <div class="row">
+                                <div class="col">
+                                    PIL:
+                                </div>
+                                <div class="col">
+                                    0$
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Seconda riga -->
+        <div class="row my-row">
+            <div class="col-5 my-col-down">
+
+
+                <div class="card bg-dark" id="charts-div">
+                    <div class="card-body" style="display: inline-block;">
+                        <div class="row">
+
+                            <div class="col">
+                                <div class="lds-facebook justify-content-center" id="load-anim">
+                                    Loading PCA...
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div id="chart" style=" border: 1px solid white; height: 100%; text-align: center;">
+
+                                    <div id="chart-container">
+                                        <svg id="chart-svg"></svg>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col" id=pca-import-col>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-5 my-col-down">
+                <div class="card bg-dark" id="charts-div">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col" id="charts-div">
+
+                                <div class="lds-facebook justify-content-center" id="load-anim">
+                                    Loading PCA...
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+
+                                <div id="chart" style="border: 1px solid yellow; height: 100%; text-align: center;">
+
+                                    <div id="chart-container">
+                                        <svg id="chart-svg-exp"></svg>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col" id="pca-export-col"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col my-col-down">
+                <div class="card bg-dark" id="rankRace-container">
+
+                    <input type="image" id="resetRaceButton" width="50" src="static/icons/reset3.png" onclick="callResetRace()" />
+                    <input type="image" id="playPauseRaceButton" width="50" src="static/icons/playpause.png" onclick="callStopRace()" />
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="lds-facebook justify-content-center" id="load-anim"> Loading MDS...
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" style="position: absolute; top: 1rem; right: 1rem;">
+        <div class="toast-header">
+
+            <strong class="mr-auto">Bootstrap</strong>
+            <small class="time-indicator"> 12:49</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+            Hello, world! This is a toast message.
+        </div>
+    </div>
+
+    <footer id="sticky-footer" class=" bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; WarMonopoly</small>
+        </div>
+    </footer>
+
+
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="navbar fixed-top navbar-dark bg-dark" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                           Brand
+                        </a>
+                </li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+
+                <li>
+                    <a href="/weapons">Weapons</a>
+                </li>
+                <li>
+                    <a href="#">Team</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Dropdown heading</li>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="/about">Credits</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/maridlcrmn">Follow me</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+
+        <!-- /#page-content-wrapper -->
+
+    </div>
+</body>
+
+
+</html>

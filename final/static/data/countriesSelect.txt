@@ -39,9 +39,7 @@
 <option value=CPV>🇨🇻  Cape Verde</option>
 <option value=CYM>🇰🇾  Cayman Islands</option>
 <option value=CAF>🇨🇫  Central African Republic</option>
-<option value=CAF>🇨🇫 <option value=CAF>🇨🇫  Central African Republic</option></option>
 <option value=CAF>🇨🇫 Central African Republic</option>
-<option value=CAF>🇨🇫 <option value=CAF>🇨🇫 Central African Republic</option></option>
 <option value=TCD>🇹🇩  Chad</option>
 <option value=CHL>🇨🇱  Chile</option>
 <option value=CHN>🇨🇳  China</option>
@@ -59,13 +57,11 @@
 <option value=DJI>🇩🇯  Djibouti</option>
 <option value=DMA>🇩🇲  Dominica</option>
 <option value=DMA>🇩🇴  Dominican Republic</option>
-<option value=DOM>🇩🇴 <option value=DMA>🇩🇴  Dominican Republic</option></option>
 <option value=TLS>🇹🇱  East Timor</option>
 <option value=ECU>🇪🇨  Ecuador</option>
 <option value=EGY>🇪🇬  Egypt</option>
 <option value=GBR>🏴󠁧󠁢󠁥󠁮󠁧󠁿  England</option>
 <option value=GIN>🇬🇶  Equatorial Guinea</option>
-<option value=GNQ>🇬🇶 <option value=GIN>🇬🇶  Equatorial Guinea</option></option>
 <option value=ERI>🇪🇷  Eritrea</option>
 <option value=EST>🇪🇪  Estonia</option>
 <option value=ETH>🇪🇹  Ethiopia</option>
@@ -151,7 +147,6 @@
 <option value=NIC>🇳🇮  Nicaragua</option>
 <option value=NER>🇳🇪  Niger</option>
 <option value=NER>🇳🇬  Nigeria</option>
-<option value=NGA>🇳🇬 <option value=NER>🇳🇬  Nigeria</option></option>
 <option value=NIU>🇳🇺  Niue</option>
 <option value=NFK>🇳🇫  Norfolk Island</option>
 <option value=PRK>🇰🇵  North Korea</option>
@@ -162,7 +157,6 @@
 <option value=PSE>🏳  Palestine</option>
 <option value=PAN>🇵🇦  Panama</option>
 <option value=GIN>🇵🇬  Papua New Guinea</option>
-<option value=PNG>🇵🇬 <option value=GIN>🇵🇬  Papua New Guinea</option></option>
 <option value=PRY>🇵🇾  Paraguay</option>
 <option value=PER>🇵🇪  Peru</option>
 <option value=PHL>🇵🇭  Philippines</option>
@@ -196,12 +190,10 @@
 <option value=ZAF>🇿🇦  South Africa</option>
 <option value=KOR>🇰🇷  South Korea</option>
 <option value=SDN>🇸🇸  South Sudan</option>
-<option value=SDN>🇸🇸 <option value=SDN>🇸🇸  South Sudan</option></option>
 <option value=ESP>🇪🇸  Spain</option>
 <option value=LKA>🇱🇰  Sri Lanka</option>
 <option value=SDN>🇸🇩  Sudan</option>
-<option value=code3>🇸🇷  Suriname</option>
-<option value=SUR>🇸🇷 <option value=code3>🇸🇷  Suriname</option></option>
+<option value=SUR>🇸🇷  Suriname</option>
 <option value=SWZ>🇸🇿  Swaziland</option>
 <option value=SWE>🇸🇪  Sweden</option>
 <option value=CHE>🇨🇭  Switzerland</option>

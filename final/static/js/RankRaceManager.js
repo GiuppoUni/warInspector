@@ -269,6 +269,7 @@ var RankRaceManager = function() {
             if (year == years[1]) {
                 ticker.stop();
             }
+            console.log(year)
 
             year = d3v4.format('.1f')((+year) + 1); //was 0.1
         }

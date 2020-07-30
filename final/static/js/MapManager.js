@@ -231,7 +231,7 @@ var MapManager = function() {
             const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
 
             // .range(colorScheme);
-            console.log("Max_from_grouped", max_from_grouped)
+            console.log("IMP: Max_from_grouped", max_from_grouped)
             max_from_grouped == -Infinity ? 1000 : max_from_grouped
             var colorScale = d3v4.scaleThreshold()
                 .domain([1, 10, 100, 1000, 10000, 100000])
@@ -242,7 +242,7 @@ var MapManager = function() {
                 const element = grouped[i];
                 data.set(element.key, +element.value)
             }
-            console.log(grouped)
+            console.log("IMP:", grouped)
 
 
 
@@ -263,7 +263,6 @@ var MapManager = function() {
                 .attr("d", path)
                 .attr("class", "country")
                 .classed("selected", function(d) { return selected_group.includes(d.id) })
-                .attr("fill", "grey")
                 .on('click', selected)
                 .attr("id", d => "country" + d.id)
                 .append("title")

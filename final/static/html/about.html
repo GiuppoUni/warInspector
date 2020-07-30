@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="=utf-8">
+
+    <!-- <<<<< Imports -->
+
+
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/bootstrap4.5/css/bootstrap.min.css" crossorigin="anonymouse" />
+
+    <script src="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <title>About us</title>
+    <script src="static/js/Main.js"></script>
+
+
+</head>
+
+
+<body>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+    <div class="pos-f-t">
+
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+            <button type="button" onclick="toggler()" id="hamburger" class=" btn btn-dark navbar-toggler " type="button" data-toggle="offcanvas" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" style="color: aliceblue;" aria-hidden="true"> Menu</i>
+                
+            </button>
+            <a class="navbar-brand" href="#"></a>
+
+
+            <div class="row" style="float:left;   margin-left: auto;
+            margin-right: auto;">
+
+                <img src="static/icons/valogo.png" width="50" style="" />
+                <h4 style="    margin-left: 15px;color: aliceblue;">WarMonopoly</h4>
+            </div>
+
+        </nav>
+    </div>
+
+
+    <div class="card bg-dark text-center" style="color:aliceblue">
+        <div class="card-header text-center">
+            About WarMonopoly
+        </div>
+        <div class="card-body">
+            <br><br>
+            <span>Web application based on D3.js framework and powered by SIPRI databases,
+                        with the goal of showing an overview of international tracked military trading. 
+                    </span>
+            <br><br>
+            <div style="text-align: right;">
+                <a href="https://www.sipri.org/">
+                    <img alt="Qries" src="static/icons/SipriLogo.jpg" width="50">
+                </a>
+                <a href="https://d3js.org/">
+                    <img alt="Qries" src="static/icons/d3.png" width="50">
+
+                </a>
+                <a href="https://flask.palletsprojects.com/en/1.1.x/">
+                    <img alt="Qries" src="static/icons/flask.jpeg" width="50">
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="card bg-dark text-center" style="color:aliceblue">
+        <div class="card-header text-center">
+            About us
+        </div>
+        <div class="card-body">
+
+            <a href="/">Giuseppe Capaldi</a><br>
+            <a href="/">Gianmarco Cariggi</a>
+        </div>
+    </div>
+
+
+
+    <footer id="sticky-footer" class=" bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; WarMonopoly</small>
+        </div>
+    </footer>
+
+
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="navbar fixed-top navbar-dark bg-dark" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                           Brand
+                        </a>
+                </li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+
+                <li>
+                    <a href="/weapons">Weapons</a>
+                </li>
+                <li>
+                    <a href="#">Team</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Dropdown heading</li>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="/about">Credits</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/maridlcrmn">Follow me</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+
+        <!-- /#page-content-wrapper -->
+
+    </div>
+</body>
+
+
+</html>
