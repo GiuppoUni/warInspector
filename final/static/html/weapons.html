@@ -16,8 +16,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
     <link rel="stylesheet" href="static/css/style.css">
 
-    <title>About us</title>
+    <title> Weapons </title>
     <script src="static/js/Main.js"></script>
+
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="static/js/libraries/d3-simple-slider.min.js"></script>
+    <script src="static/js/libraries/d3-legend.js"></script>
 
 
 </head>
@@ -63,16 +67,288 @@
 
     <!-- CODE HERE -->
 
-    <div id="observablehq-9ae6da50"></div>
-    <script type="module">
-        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"; import define from "https://api.observablehq.com/@d3/hierarchical-bar-chart.js?v=3"; const inspect = Inspector.into("#observablehq-9ae6da50"); (new
-        Runtime).module(define, name => name === "chart" ? inspect() : undefined);
+    <!-- Create a div where the graph will take place -->
+    <script src="/static/js/libraries/d3-tip.js"></script>
+
+    <div class="card bg-dark text-center" style="color:aliceblue">
+        <div class="card-header text-center">
+            Weapons requests by category
+        </div>
+        <div class="card-body" id="my_dataviz"></div>
+    </div>
+
+    <div class="card bg-dark text-center" style="color:aliceblue">
+        <div class="card-header text-center">
+            Weapons by model
+        </div>
+        <div class="card-body" id="scatter_viz"></div>
+    </div>
+
+
+    <script>
+        NUM_CATEGORIES = 20
+
+        // set the dimensions and margins of the graph
+        var margin = {
+                top: 10,
+                right: 30,
+                bottom: 150,
+                left: 100
+            },
+            width = 1800 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+
+
+        // append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        // Parse the Data
+        d3.csv("static/data/merged.csv", function(data) {
+                console.log(data)
+                orderedWeapons = d3.nest()
+                    .key(function(d) {
+                        return d["Weapon category"];
+                    })
+                    .rollup(function(v) {
+                        return d3.sum(v, function(d) {
+                            return d.Ordered;
+                        })
+
+                    })
+                    .entries(data)
+                    .sort(function(a, b) {
+                        return b.value - a.value;
+                    })
+                    .slice(0, NUM_CATEGORIES)
+
+                console.log(JSON.stringify(orderedWeapons));
+
+                // X axis
+                var x = d3.scaleBand()
+                    .range([0, width])
+                    .domain(orderedWeapons.map(function(d) {
+                        return d.key;
+                    }))
+                    .padding(0.2);
+                svg.append("g")
+                    .attr("class", "wtext")
+
+                .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x))
+                    .selectAll("text")
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end")
+
+                var imageTip = d3.tip()
+                    .attr('class', 'd3-tip')
+                    .offset([-10, 0])
+                    .html(function(d) {
+
+                        return '<img alt="weapon img" src="static/icons/categories/' + d + '.jpeg" width="70" height="70" />';
+                    })
+
+                svg.call(imageTip);
+
+
+                d3.selectAll(".tick")
+                    .on('mouseover', function(d) {
+                        console.log(this)
+                        d3.select(this).style("font-size", "20px")
+                        d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");;
+                        imageTip.show(d)
+                    })
+                    .on('mouseout', function(d) {
+                        d3.select(this).style("font-size", "14px")
+                        d3.select(this).select('g > text').style("fill", "white");;
+
+                        imageTip.hide(d)
+                    })
+                    .on("click", function() {
+                        alert("click")
+                    })
+                var tip = d3.tip()
+                    .attr('class', 'd3-tip')
+                    .offset([-10, 0])
+                    .html(function(d) {
+                        return "<strong>Ordered:</storng> <span style='color:red'>" + d.value + "</span>";
+                    })
+
+
+                svg.call(tip);
+
+
+
+                // Add Y axis
+                var y = d3.scaleLinear()
+                    .domain([0, 80000])
+                    .range([height, 0]);
+                svg.append("g")
+                    .call(d3.axisLeft(y));
+
+                // Bars
+                svg.selectAll("mybar")
+                    .data(orderedWeapons)
+                    .enter()
+                    .append("rect")
+                    .attr("x", function(d) {
+                        return x(d.key);
+                    })
+                    .attr("width", x.bandwidth())
+                    .attr("fill", "#69b3a2")
+                    // no bar at the beginning thus:
+                    .attr("height", function(d) {
+                        return height - y(0);
+                    }) // always equal to 0
+                    .attr("y", function(d) {
+                        return y(0);
+                    })
+                    .on('mouseover', tip.show)
+                    .on('mouseout', tip.hide)
+
+                // Animation
+                svg.selectAll("rect")
+                    .transition()
+                    .duration(800)
+                    .attr("y", function(d) {
+
+                        return !isNaN(d.value) ? y(d.value) : 0;
+                    })
+                    .attr("height", function(d) {
+                        return !isNaN(d.value) ? height - y(d.value) : height;
+                    })
+                    .delay(function(d, i) {
+                        // console.log(i);
+                        return (i * 100)
+                    })
+
+            })
+            /***********
+             * SCATTER *
+             ***********/
+
+        function drawScatter() {
+            // set the dimensions and margins of the graph
+            var margin = {
+                    top: 10,
+                    right: 30,
+                    bottom: 30,
+                    left: 60
+                },
+                width = 460 - margin.left - margin.right,
+                height = 400 - margin.top - margin.bottom;
+            // append the svg object to the body of the page
+            var svg = d3.select("#scatter_viz")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")")
+
+            //Read the data
+            d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/2_TwoNum.csv", function(data) {
+
+                // Add X axis
+                var x = d3.scaleLinear()
+                    .domain([0, 0])
+                    .range([0, width]);
+                svg.append("g")
+                    .attr("class", "myXaxis") // Note that here we give a class to the X axis, to be able to call it later and modify it
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x))
+                    .attr("opacity", "0")
+
+                // Add Y axis
+                var y = d3.scaleLinear()
+                    .domain([0, 500000])
+                    .range([height, 0]);
+                svg.append("g")
+                    .call(d3.axisLeft(y));
+
+                // Add dots
+                svg.append('g')
+                    .selectAll("dot")
+                    .data(data)
+                    .enter()
+                    .append("circle")
+                    .attr("cx", function(d) {
+                        return x(d.GrLivArea);
+                    })
+                    .attr("cy", function(d) {
+                        return y(d.SalePrice);
+                    })
+                    .attr("r", 1.5)
+                    .style("fill", "#69b3a2")
+
+                // new X axis
+                x.domain([0, 4000])
+                svg.select(".myXaxis")
+                    .transition()
+                    .duration(2000)
+                    .attr("opacity", "1")
+                    .call(d3.axisBottom(x));
+
+                svg.selectAll("circle")
+                    .transition()
+                    .delay(function(d, i) {
+                        return (i * 3)
+                    })
+                    .duration(2000)
+                    .attr("cx", function(d) {
+                        return x(d.GrLivArea);
+                    })
+                    .attr("cy", function(d) {
+                        return y(d.SalePrice);
+                    })
+            })
+        }
+        drawScatter()
     </script>
 
+    <!--  -->
+    <!-- DATA PICKER -->
+    <!--  -->
+
+    <link href="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <script src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <div class="input-group input-daterange" id="education-range">
+        <input type="text" class="form-control" value="2012-04-05">
+        <div class="input-group-addon">to</div>
+        <input type="text" class="form-control" value="2012-04-19">
+    </div>
+    <script>
+        $('#education-range input').each(function() {
+            $(this).datepicker({
+                autoclose: true,
+                format: " yyyy",
+                viewMode: "years",
+                minViewMode: "years"
+            });
+            $(this).datepicker('clearDates');
+
+        });
+        $("#datepicker").datepicker({
+            onSelect: function() {
+                var dateObject = $(this).datepicker('getDate');
+                console.log(dateObject)
+            }
+        });
+    </script>
+
+    <!-- END CODE -->
     <footer id="sticky-footer" class=" bg-dark text-white-50">
         <div class="container text-center">
-            <small>Copyright &copy; WarMonopoly</small>
-        </div>
+            <small>Source: Sipri (www.sipri.org) and Data WorldBank (www.data.worldbank.org)</small><br/>
+            <small>Copyright &copy; WarMonopoly</small> </div>
     </footer>
 
 

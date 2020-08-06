@@ -30,7 +30,7 @@ function main() {
     mcm.drawSlider()
 
     cm.drawChart();
-
+    cm.drawChartRec();
 
 }
 
@@ -39,16 +39,18 @@ function main() {
 /*
 Called on nation icon click
 */
-function clickedNation() {
-    ids = $("#selectNation").val()
-    selected_group = ids
-    d3v4.selectAll(".heatmap").remove()
-    d3v4.selectAll(".legendThreshold").remove()
-    d3v4.selectAll(".legendCells").remove()
 
-    mm.drawCloroExp()
-    mm.drawCloroImp()
-}
+// function clickedNation() {
+//     console.log("Clicked nation")
+//     ids = $("#selectNation").val()
+//     selected_group = ids
+//     d3v4.selectAll(".heatmap").remove()
+//     d3v4.selectAll(".legendThreshold").remove()
+//     d3v4.selectAll(".legendCells").remove()
+
+//     mm.drawCloroExp()
+//     mm.drawCloroImp()
+// }
 
 
 

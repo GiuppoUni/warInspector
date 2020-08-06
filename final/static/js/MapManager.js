@@ -235,7 +235,7 @@ var MapManager = function() {
             max_from_grouped == -Infinity ? 1000 : max_from_grouped
             var colorScale = d3v4.scaleThreshold()
                 .domain([1, 10, 100, 1000, 10000, 100000])
-                .range(["#ffbaba", "#ff7b7b", "#ff5252", "#ff0000", "#a70000"])
+                .range(["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"])
 
 
             for (let i = 0; i < grouped.length; i++) {
@@ -305,11 +305,82 @@ var MapManager = function() {
 
     function selected() {
         el = d3v4.select(this)
-        console.log(el.data()[0].id)
+        country_id = el.data()[0].id
+        console.log(country_id)
         if (!el.classed("selected")) {
-            selected_group.push(el.data()[0].id)
-            d3v4.selectAll("#country" + el.data()[0].id)
+            selected_group.push(country_id)
+            d3v4.selectAll("#country" + country_id)
                 .classed('selected', true);
+            // Add in table the entry
+            $.ajax({
+                type: "GET",
+                url: "static/data/pop.csv",
+                dataType: "text",
+                success: function(data) { processData1(data, country_id, years); }
+            });
+
+            function processData1(allText, country_id, years) {
+                var allTextLines = allText.split(/\r\n|\n/);
+                var headers = allTextLines[0].split(',');
+                var lines = [];
+                var pop = ""
+                for (var i = 1; i < allTextLines.length; i++) {
+                    var data = allTextLines[i].split(',');
+                    if (data.length == headers.length) {
+
+                        var tarr = [];
+                        if (data[1] == country_id) {
+                            for (var j = 31; j < 31 + (years[1] - years[0]); j++) {
+                                // tarr.push(headers[j] + ":" + data[j]);
+                                tarr.push(data[j])
+                            }
+                            // pop = data[]
+                            // lines.push(tarr);
+                            console.log("POP:", tarr)
+                        }
+                    }
+                }
+
+                // console.log(lines)
+
+                $.ajax({
+                    type: "GET",
+                    url: "static/data/gdp.csv",
+                    dataType: "text",
+                    success: function(data) { processData2(data, country_id, years, pop); }
+                });
+
+                function processData2(allText, country_id, years, pop) {
+                    var allTextLines = allText.split(/\r\n|\n/);
+                    var headers = allTextLines[0].split(',');
+                    var lines = [];
+
+                    for (var i = 1; i < allTextLines.length; i++) {
+                        var data = allTextLines[i].split(',');
+                        if (data.length == headers.length) {
+
+                            var tarr = [];
+                            if (data[1] == country_id) {
+                                for (var j = 0; j < headers.length; j++) {
+                                    // tarr.push(headers[j] + ":" + data[j]);
+                                    tarr.push(data[j])
+                                }
+                                lines.push(tarr);
+                                console.log(tarr)
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            var newRowContent = '<tr>\
+            <td class="col - xs - 3 ">' + country_id + '</td>\
+            <td class="col - xs - 3 ">' + "gdp" + '</td>\
+            <td class="col - xs - 3 ">' + "pop" + '</td>\
+            </tr>'
+            $("tbody").append(newRowContent);
+
 
         } else {
 

@@ -75,16 +75,6 @@
 
 
 
-    <div>
-        <div>
-            <input type="image" id="homeButton" width="50" src="static/icons/home.png" onclick="callResetZoom()" />
-            <span class="tooltiptext">Reset zoom</span>
-        </div>
-        <div>
-            <input type="image" id="resetButton" width="50" src="static/icons/reset3.png" onclick="resetSelect()" />
-            <span class="tooltiptext">Reset selection</span>
-        </div>
-    </div>
 
     <div id="map_slider" class="row" style="width: 100%; height:100%; margin: 0 auto; background-color: black;"></div>
     <div id="slider-range"></div>
@@ -115,22 +105,45 @@
 
             </div>
             <div class="col my-col-up">
-                <div class="card bg-dark">
-                    <div class="card-header  text-center">
-                        General info
-                    </div>
-                    <div class="card-body" id="general-info">
-                        <div class="container-fluid my-container">
-                            <div class="row">
-                                <div class="col">
-                                    PIL:
-                                </div>
-                                <div class="col">
-                                    0$
-                                </div>
+                <div class="row">
+                    <div class="card bg-dark">
+                        <div class="card-header  text-center">
+                            General info
+                        </div>
+                        <div class="card-body" id="general-info">
+                            <div class="container">
+                                <table class="table table-fixed" id="tablePIL">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-xs-3">Country</th>
+                                            <th class="col-xs-3">GDP (AVG)</th>
+                                            <th class="col-xs-3">Population (AVG)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-xs-3">ITA</td>
+                                            <td class="col-xs-3">32583.8686821</td>
+                                            <td class="col-xs-3">60528655.6667</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row" style="padding-top: 20px;">
+                    <div>
+                        <input type="image" id="homeButton" width="50" src="static/icons/home.png" onclick="callResetZoom()" />
+                        <span class="tooltiptext">Reset zoom</span>
+                    </div>
+                    <div style="padding-left: 10px;">
+                        <input type="image" id="resetButton" width="50" src="static/icons/reset3.png" onclick="resetSelect()" />
+                        <span class="tooltiptext">Reset selection</span>
+                    </div>
+
                 </div>
 
 
@@ -153,7 +166,7 @@
                                     <div></div>
                                     <div></div>
                                 </div>
-                                <div id="chart" style=" border: 1px solid white; height: 100%; text-align: center;">
+                                <div id="chart" style="  height: 100%; text-align: center;">
 
                                     <div id="chart-container">
                                         <svg id="chart-svg"></svg>
@@ -171,11 +184,11 @@
             </div>
 
             <div class="col-5 my-col-down">
-                <div class="card bg-dark" id="charts-div">
+                <div class="card bg-dark" id="charts-div-rec">
                     <div class="card-body">
                         <div class="row">
 
-                            <div class="col" id="charts-div">
+                            <div class="col">
 
                                 <div class="lds-facebook justify-content-center" id="load-anim">
                                     Loading PCA...
@@ -184,10 +197,10 @@
                                     <div></div>
                                 </div>
 
-                                <div id="chart" style="border: 1px solid yellow; height: 100%; text-align: center;">
+                                <div id="chart" style=" height: 100%; text-align: center;">
 
-                                    <div id="chart-container">
-                                        <svg id="chart-svg-exp"></svg>
+                                    <div id="chart-container-rec">
+                                        <svg id="chart-svg-rec"></svg>
                                     </div>
 
 
@@ -234,6 +247,7 @@
 
     <footer id="sticky-footer" class=" bg-dark text-white-50">
         <div class="container text-center">
+            <small>Source: Sipri (www.sipri.org) and Data WorldBank (www.data.worldbank.org)</small><br/>
             <small>Copyright &copy; WarMonopoly</small>
         </div>
     </footer>
