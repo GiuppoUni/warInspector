@@ -75,14 +75,14 @@
     <script src="/static/js/libraries/d3-tip.js"></script>
 
     <div class="card bg-dark text-center" style="color:aliceblue">
-        <div class="card-header text-center">
+        <div class="card-header   d-flex align-items-center justify-content-center  text-center">
             Weapons requests by category
         </div>
         <div class="card-body" id="my_dataviz"></div>
     </div>
 
     <div class="card bg-dark text-center" style="color:aliceblue">
-        <div class="card-header text-center">
+        <div class="card-header d-flex align-items-center justify-content-center  text-center">
             Weapons by model
         </div>
         <div class="card-body" id="scatter_viz"></div>
@@ -324,29 +324,6 @@
 
     <script src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
-    <div class="input-group input-daterange" id="education-range">
-        <input type="text" class="form-control" value="2012-04-05">
-        <div class="input-group-addon">to</div>
-        <input type="text" class="form-control" value="2012-04-19">
-    </div>
-    <script>
-        $('#education-range input').each(function() {
-            $(this).datepicker({
-                autoclose: true,
-                format: " yyyy",
-                viewMode: "years",
-                minViewMode: "years"
-            });
-            $(this).datepicker('clearDates');
-
-        });
-        $("#datepicker").datepicker({
-            onSelect: function() {
-                var dateObject = $(this).datepicker('getDate');
-                console.log(dateObject)
-            }
-        });
-    </script>
 
     <!-- END CODE -->
     <footer id="sticky-footer" class=" bg-dark text-white-50">
@@ -373,31 +350,18 @@
                     <a href="/">Home</a>
                 </li>
 
-                <li>
-                    <a href="/weapons">Weapons</a>
+                <li style="background-color: #79aefe;">
+                    <a href="/weapons ">Weapons</a>
                 </li>
                 <li>
-                    <a href="#">Team</a>
+                    <a href="/countries ">Countries info</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-header">Dropdown heading</li>
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
+
+                <li>
+                    <a href="/about ">About</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="/about">About</a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/maridlcrmn">Follow me</a>
+                    <a href="https://github.com/GiuppoUni/global-military-trade-visual ">Github</a>
                 </li>
             </ul>
         </nav>

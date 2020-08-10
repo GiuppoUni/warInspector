@@ -347,7 +347,7 @@ def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
 
         scatter = ax.scatter( pc1, pc2 
                 , c = "y"
-                , s = 20,edgecolors='r')
+                , s = 10,edgecolors='r')
         for i,r in enumerate(zip(names, pc1, pc2)):
             ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
 
@@ -428,6 +428,9 @@ def about():
 def weapons():
     return render_template('static/html/weapons.html')
 
+@application.route('/countries')
+def countries():
+    return render_template('static/html/countries.html')
 
 
 if __name__ == "__main__":

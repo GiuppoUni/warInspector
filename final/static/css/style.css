@@ -1059,3 +1059,9 @@ Charts
         width: 95.8333%;
     }
     /* = 91,6666 + 4,16667 */
+    
+    #sticky-footer {
+        clear: both;
+        position: relative;
+        margin-top: 10px;
+    }

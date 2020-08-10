@@ -395,7 +395,7 @@ var MapManager = function() {
                     $("tbody").append(newRowContent);
 
                     getDataFromPost()
-                    updateCircular()
+
                 }
 
             }
@@ -423,6 +423,7 @@ var MapManager = function() {
         mm.drawCloroExp()
         mm.drawCloroImp()
         cm.updateCountry()
+        updateCircular()
 
 
 

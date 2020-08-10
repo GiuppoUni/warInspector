@@ -36,6 +36,8 @@ function main() {
 
     drawCircular()
 
+
+
 }
 
 
@@ -59,6 +61,12 @@ function clickedNation() {
 
     mm.drawCloroExp()
     mm.drawCloroImp()
+
+    // $(".bs-select-all").on('click', function() {
+    //     // alert("ALL SELECTED");
+    //     selectAllCountries()
+    // });
+
 }
 
 
