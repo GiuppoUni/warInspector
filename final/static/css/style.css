@@ -225,10 +225,10 @@ Charts
         width: 100%;
         height: 100%;
     }
-    
-    #charts-div .bar {
+    /* #charts-div .bar {
         fill: #80cbc4;
     }
+     */
     
     #charts-div text {
         font-size: 12px;
@@ -292,10 +292,9 @@ Charts
         width: 100%;
         height: 100%;
     }
-    
-    #charts-div-rec .bar {
+    /* #charts-div-rec .bar {
         fill: #80cbc4;
-    }
+    } */
     
     #charts-div-rec text {
         font-size: 12px;
@@ -392,9 +391,9 @@ Charts
         position: absolute;
         margin-left: 35%;
         margin-top: 20%;
-        width: 80px;
+        width: 100px;
         height: 200px;
-        color: black;
+        color: white;
         text-align: center;
     }
     
@@ -404,22 +403,22 @@ Charts
         margin-top: 30px;
         left: 8px;
         width: 16px;
-        background: black;
+        background: white;
         animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
     }
     
     .lds-facebook div:nth-child(1) {
-        left: 8px;
+        left: 12px;
         animation-delay: -0.24s;
     }
     
     .lds-facebook div:nth-child(2) {
-        left: 32px;
+        left: 36px;
         animation-delay: -0.12s;
     }
     
     .lds-facebook div:nth-child(3) {
-        left: 56px;
+        left: 60px;
         animation-delay: 0;
     }
     

@@ -31,6 +31,8 @@
     <script src="static/js/MapManager.js"></script>
     <!-- <script src="static/js/RankRaceManager.js"></script> -->
     <script src="static/js/BubblesChartManager.js"></script>
+    <script src="static/js/PcaScatterManager.js"></script>
+
     <!-- <script src="static/js/CircularManager.js"></script> -->
 
 
@@ -90,7 +92,8 @@
             <div class="col-md-auto my-col-up">
                 <div class="card bg-dark">
                     <div class="card-header  d-flex align-items-center justify-content-center text-center">
-                        Num. of weapons IMPORTED into &nbsp
+                        Num. of weapons&nbsp
+                        <h7 style="color: #d00101">IMPORTED</h7> &nbspinto &nbsp
                         <div class="shadowText" style="display:inline-block ;"> selected countries</div>
                     </div>
                     <div class="card-body" id="map-imp-col">
@@ -102,7 +105,8 @@
 
                 <div class="card bg-dark">
                     <div class="card-header  d-flex align-items-center justify-content-center  text-center">
-                        Num. of weapons EXPORTED from &nbsp
+                        Num. of weapons&nbsp
+                        <h7 style="color: #009344">EXPORTED</h7> &nbspinto &nbsp
                         <div class="shadowText" style="display:inline-block ;">selected countries</div>
 
                     </div>
@@ -135,6 +139,9 @@
                                                 <td class="col-xs-1">ITA</td>
                                                 <td class="col-xs-3">32584</td>
                                                 <td class="col-xs-3">60528656</td>
+                                                <td class="col-xs-3">351925</td>
+
+
                                             </tr>
 
 
@@ -181,9 +188,9 @@
 
                                     </div>
                                 </div>
-                                <div class="col rounded" id=pca-import-col style=" padding-left: 0px;">
+                                <div class="col rounded" id=pca-import-col style="background-color: rgb(20, 20, 20); padding-left: 0px;">
                                     <div class="center lds-facebook justify-content-center" id="load-anim">
-                                        Loading PCA...
+                                        Computing PCA...
                                         <div></div>
                                         <div></div>
                                         <div></div>
@@ -196,7 +203,7 @@
 
             </div>
 
-            <div class="col-md-4-5  my-col-down">
+            <div class="col-md-4-5  my-col-down ">
                 <div class="card bg-dark" id="charts-div-rec">
                     <div class="card-body" style=" padding-left: 0px;">
                         <div class="container">
@@ -214,9 +221,9 @@
 
                                     </div>
                                 </div>
-                                <div class="col rounded" id="pca-export-col">
+                                <div class="col rounded" id="pca-export-col" style="background-color: rgb(20, 20, 20); padding-left: 0px;">
                                     <div class="center lds-facebook justify-content-center" id="load-anim">
-                                        Loading PCA...
+                                        Computing PCA...
                                         <div></div>
                                         <div></div>
                                         <div></div>
@@ -318,8 +325,8 @@
                 data = newData.sort(function(a, b) {
                     return d3v4.descending(+a[1], +b[1]);
                 }).slice(0, 20);
-                // if (DEBUG) 
-                console.log(data)
+                if (DEBUG)
+                    console.log(data)
 
                 /************************************************************************************************************
                  * NOW YOU HAVE DATA TO BE PLOTTED, FORMAT : 
@@ -491,6 +498,7 @@
             });
         }, 300);
     </script>
+    <div id="pca-test"></div>
 </body>
 
 

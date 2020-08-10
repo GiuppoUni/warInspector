@@ -387,17 +387,51 @@ var MapManager = function() {
                         }
                     }
 
-                    var newRowContent = '<tr id="' + country_id + '-line">\
+                    $.ajax({
+                        type: "GET",
+                        url: "static/data/army-dimensions-clean.csv",
+                        dataType: "text",
+                        success: function(data) { processData3(data, country_id, years, pops, gdps); }
+                    });
+
+                    function processData3(allText, country_id, years, pops, gdps) {
+                        var allTextLines = allText.split(/\r\n|\n/);
+                        var headers = allTextLines[0].split(',');
+                        var lines = [];
+                        var armies = [];
+
+                        for (var i = 1; i < allTextLines.length; i++) {
+                            var data = allTextLines[i].split(',');
+                            if (data.length == headers.length) {
+
+
+                                if (data[1] == country_id) {
+                                    for (var j = years[0] - 1987; j <= years[1] - 1987; j++) {
+                                        // tarr.push(headers[j] + ":" + data[j]);
+                                        if (data[j] != "")
+                                            armies.push(data[j])
+                                    }
+                                    // pop = data[]
+                                    // lines.push(tarr);
+                                    console.log("arm:", armies, "YEARS", years)
+                                }
+                            }
+                        }
+
+
+                        var newRowContent = '<tr id="' + country_id + '-line">\
                     <td class="col-xs-1">' + country_id + '</td>\
                     <td class="col-xs-3">' + average(gdps) + '</td>\
                     <td class="col-xs-3">' + average(pops) + '</td>\
+                    <td class="col-xs-3">' + average(armies) + '</td>\
                     </tr>'
-                    $("tbody").append(newRowContent);
+                        $("tbody").append(newRowContent);
 
-                    getDataFromPost()
+                        getDataFromPost()
+
+                    }
 
                 }
-
             }
 
 

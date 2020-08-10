@@ -140,6 +140,7 @@ var ChartManager = function() {
                 .attr('y', (g) => yScale(g[1]))
                 .attr('height', (g) => height - yScale(g[1]))
                 .attr('width', xScale.bandwidth())
+                .attr("fill", "#d00101")
                 .on('mouseenter', function(actual, i) {
                     d3v4.selectAll('.value')
                         .attr('opacity', 0)
@@ -376,6 +377,7 @@ var ChartManager = function() {
                 .attr('y', (g) => yScale(g[1]))
                 .attr('height', (g) => height - yScale(g[1]))
                 .attr('width', xScale.bandwidth())
+                .attr("fill", "#009344")
                 .on('mouseenter', function(actual, i) {
                     d3v4.selectAll('.value')
                         .attr('opacity', 0)
