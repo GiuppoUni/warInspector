@@ -41,11 +41,11 @@ import matplotlib.pyplot as plt, mpld3
 
 
 
-DEFAULT_YEARS = [2016,2019]
-DEFAULT_STATE = "Italy"
-selected = ["Italy"]
-PCA_WIDTH="400.0"
-PCA_HEIGHT="300.0"
+PCA_WIDTH="300"
+PCA_HEIGHT="250"
+
+folder="static/data/"
+
 
 #1. Declare application
 # application= Flask(__name__)
@@ -58,8 +58,7 @@ class DataStore():
     Year2=None
 data=DataStore()
 
-
-
+'''
 def MDSMain(year,country):
 
     data = pd.io.parsers.read_csv(
@@ -161,19 +160,14 @@ def MDSMain(year,country):
     # fig3InHtml=""
 
     return fig1InHtml + fig2InHtml + fig3InHtml
-
+'''
 
 '''
 =========
 PCA
 =========
 '''
-def PCAMain(year1=2016,year2=2019,countries=["Italy"]):
-
-
-    folder="static/data/"
-
-    
+def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
 
     #refugees
     df_ref = pd.read_csv(folder+"ref.csv", header=4 )
@@ -193,8 +187,8 @@ def PCAMain(year1=2016,year2=2019,countries=["Italy"]):
 
   
     #countries list
-    df_countries = pd.read_csv(folder + "countriesAlpha3.csv")
-    df_countries["name"] = df_countries["name"].apply(lambda x: x.strip() )
+    # df_countries = pd.read_csv(folder + "countriesAlpha3.csv")
+    # df_countries["name"] = df_countries["name"].apply(lambda x: x.strip() )
 
     year_range=[year1]
     if(year2!=year1):
@@ -207,11 +201,11 @@ def PCAMain(year1=2016,year2=2019,countries=["Italy"]):
 
     df_imp = pd.read_csv(folder + "df_imp_clean.csv")
     
-    
+    print(df_imp)
     df_mrgd_imp = df_imp.iloc[:,[0,-1,-2,-3,-4]] 
     df_mrgd_imp.rename(columns={"code3":"Country Code"}, inplace=True)
 
-
+    # NOTE
     # Compute Mean for range of years 
     df_mrgd_imp["IMPORT_TOTAL"] = df_imp[year_range_str[2:]].mean(axis=1)
     df_arm["ARMY_TOTAL"] = df_arm[year_range_str[2:]].mean(axis=1)
@@ -291,7 +285,8 @@ def PCAMain(year1=2016,year2=2019,countries=["Italy"]):
     def pca_plot(df):
         # df['target']= df["Country Name"].apply(lambda x: "selected" if x.strip() in selected
         #     else "not selected")
-        df = df.rename(columns={"name":"target"})
+        # print(df)
+        df = df.rename(columns={"Country Code":"target"})
 
 
         features = ['IMPORT_TOTAL', 'ARMY_TOTAL',
@@ -319,9 +314,9 @@ def PCAMain(year1=2016,year2=2019,countries=["Italy"]):
 
         fig = plt.figure(figsize = (8,8))
         ax = fig.add_subplot(1,1,1) 
-        ax.set_xlabel('Principal Component 1', fontsize = 15)
-        ax.set_ylabel('Principal Component 2', fontsize = 15)
-        ax.set_title('2 component PCA', fontsize = 20)
+        # ax.set_xlabel('Principal Component 1', fontsize = 15)
+        # ax.set_ylabel('Principal Component 2', fontsize = 15)
+        # ax.set_title('2 component PCA', fontsize = 20)
         colors = ['y', 'b']
 
         indicesToKeep = finalDf["target"].apply(lambda x: x in countries)
@@ -332,11 +327,14 @@ def PCAMain(year1=2016,year2=2019,countries=["Italy"]):
         pc1 = finalDf.loc[indicesToKeep2, 'principal component 1'].to_list()
         pc2 = finalDf.loc[indicesToKeep2, 'principal component 2'].to_list()
         names = finalDf.loc[indicesToKeep2, "target"].to_list()
+        # print(finalDf)
+        # No grid
+        plt.grid(b=None)
+
         ax.scatter( pc1, pc2 
                 , c = "b"
-                , s = 50)
+                , s = 10)
 
-        ax.legend(countries)
         ax.grid()
         # non targets:
         for i,r in enumerate(zip(names, pc1, pc2)):
@@ -347,12 +345,14 @@ def PCAMain(year1=2016,year2=2019,countries=["Italy"]):
         pc2 = finalDf.loc[indicesToKeep, 'principal component 2'].to_list()
         names = finalDf.loc[indicesToKeep, "target"].to_list()
 
-        ax.scatter( pc1, pc2 
+        scatter = ax.scatter( pc1, pc2 
                 , c = "y"
-                , s = 100)
+                , s = 20,edgecolors='r')
         for i,r in enumerate(zip(names, pc1, pc2)):
             ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
 
+        # ax.legend( scatter,title="Selected:", labels=countries)
+        
         print(names)
         # plt.show()
 
@@ -404,7 +404,7 @@ def returnPCAData():
 
 
     #s =  MDSMain(year1,None) 
-    s1,s2 = PCAMain(year1,year2,[country] )
+    s1,s2 = PCAMain(year1,year2, country )
 
     old_dimensions_string = '"width": 800.0, "height": 800.0'
     new_dimensions_string = '"width":' + PCA_WIDTH + ',"height":' + PCA_HEIGHT

@@ -1,6 +1,5 @@
 var ChartManager = function() {
-    var years = [2016, 2018];
-    var country_selected = "Italy";
+    // var country_selected = ["ITA"];
 
 
 
@@ -48,7 +47,7 @@ var ChartManager = function() {
                 // Check years in the interval and the country
                 if (!isNaN(yearOrd) && yearOrd >= years[0] && yearOrd <= years[1] &&
                     !isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1] &&
-                    row["Supplier"] === country_selected) {
+                    selected_group.includes(row["codeS"])) {
 
                     var num = stripNum(row["Delivered num."]);
 
@@ -215,13 +214,14 @@ var ChartManager = function() {
                 .attr('x', width / 2 + margin)
                 .attr('y', height + margin * 1.7)
                 .attr('text-anchor', 'middle')
+                .attr('transform', 'rotate(45)')
                 .text('Years')
 
             svg.append('text')
                 .attr("fill", "yellow")
                 .attr("stroke", "black")
                 .attr("stroke-width", "0.5")
-                .attr('x', width / 2 + 10)
+                .attr('x', width / 2 + 60)
                 .attr('y', 30)
                 .attr('text-anchor', 'middle')
                 .classed("title", true)
@@ -283,7 +283,7 @@ var ChartManager = function() {
                 // Check years in the interval and the country
                 if (!isNaN(yearOrd) && yearOrd >= years[0] && yearOrd <= years[1] &&
                     !isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1] &&
-                    row["Recipient"] === country_selected) {
+                    selected_group.includes(row["codeR"])) {
 
                     var num = stripNum(row["Delivered num."]);
 
@@ -456,7 +456,7 @@ var ChartManager = function() {
                 .attr("fill", "yellow")
                 .attr("stroke", "black")
                 .attr("stroke-width", "0.5")
-                .attr('x', width / 2 + 10)
+                .attr('x', width / 2 + 60)
                 .attr('y', 30)
                 .attr('text-anchor', 'middle')
                 .classed("title", true)
@@ -519,8 +519,9 @@ var ChartManager = function() {
         years = yi
         update()
     }
+
     var updateCountry = function(c) {
-        country_selected = c
+
         update()
     }
 

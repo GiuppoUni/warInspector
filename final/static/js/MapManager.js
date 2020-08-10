@@ -29,7 +29,8 @@ var MapManager = function() {
         .append('svg')
         .attr("id", "map2")
         .attr('width', width - 5)
-        .attr('height', height);
+        .attr('height', height)
+        .attr("class", "rounded shadow");
 
     $("#map2").after("<div id='mapInstr'><h6 class='instr'> You can zoom in/out and move using the mouse.    </h6></div>");
     svg2.call(zoom);
@@ -44,7 +45,8 @@ var MapManager = function() {
         .append('svg')
         .attr("id", "map")
         .attr('width', width - 5)
-        .attr('height', height);
+        .attr('height', height)
+        .attr("class", "rounded shadow");
 
     $("#map").after("<div id='mapInstr'><h6 class='instr'> You can zoom in/out and move using the mouse.    </h6></div>");
 
@@ -106,7 +108,7 @@ var MapManager = function() {
             .await(ready)
 
         function ready(error, transactions, topo) {
-            console.log(transactions)
+            if (DEBUG) console.log("MERGED:", transactions)
                 // Data and color scale
             var data = d3v4.map();
 
@@ -124,7 +126,7 @@ var MapManager = function() {
             const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
 
             // .range(colorScheme);
-            console.log("Max_from_grouped", max_from_grouped)
+            if (DEBUG) console.log("Max_from_grouped", max_from_grouped)
             max_from_grouped == -Infinity ? 1000 : max_from_grouped
             var colorScale = d3v4.scaleThreshold()
                 .domain([1, 10, 100, 1000, 10000, 100000])
@@ -135,7 +137,6 @@ var MapManager = function() {
                 const element = grouped[i];
                 data.set(element.key, +element.value)
             }
-            console.log(grouped)
 
 
 
@@ -213,8 +214,7 @@ var MapManager = function() {
             .await(ready)
 
         function ready(error, transactions, topo) {
-            console.log(transactions)
-                // Data and color scale
+            // Data and color scale
             var data = d3v4.map();
 
 
@@ -231,7 +231,7 @@ var MapManager = function() {
             const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
 
             // .range(colorScheme);
-            console.log("IMP: Max_from_grouped", max_from_grouped)
+            if (DEBUG) console.log("IMP: Max_from_grouped", max_from_grouped)
             max_from_grouped == -Infinity ? 1000 : max_from_grouped
             var colorScale = d3v4.scaleThreshold()
                 .domain([1, 10, 100, 1000, 10000, 100000])
@@ -242,7 +242,7 @@ var MapManager = function() {
                 const element = grouped[i];
                 data.set(element.key, +element.value)
             }
-            console.log("IMP:", grouped)
+            if (DEBUG) console.log("IMP:", grouped)
 
 
 
@@ -303,10 +303,25 @@ var MapManager = function() {
     }
 
 
-    function selected() {
-        el = d3v4.select(this)
-        country_id = el.data()[0].id
-        console.log(country_id)
+    function selected(country_id = null) {
+        el = null
+        if (country_id == null) {
+            alert("Error passing country")
+        } else if (typeof country_id === 'string' || country_id instanceof String) {
+            // FROM SEARCH BAR
+            // country_id = country_id.trim()
+            el = d3v4.selectAll("#country" + country_id)
+            if (el === undefined) {
+                alert("Country" + country_id + " not found")
+                return
+            }
+        } else {
+            // FROM CLICK ON MAP
+            el = d3v4.select(this)
+            country_id = el.data()[0].id
+        }
+
+        // Country is SELECTED
         if (!el.classed("selected")) {
             selected_group.push(country_id)
             d3v4.selectAll("#country" + country_id)
@@ -323,20 +338,19 @@ var MapManager = function() {
                 var allTextLines = allText.split(/\r\n|\n/);
                 var headers = allTextLines[0].split(',');
                 var lines = [];
-                var pop = ""
+                var pops = [];
                 for (var i = 1; i < allTextLines.length; i++) {
                     var data = allTextLines[i].split(',');
                     if (data.length == headers.length) {
 
-                        var tarr = [];
                         if (data[1] == country_id) {
-                            for (var j = 31; j < 31 + (years[1] - years[0]); j++) {
+                            for (var j = years[0] - 1958; j <= years[1] - 1958; j++) {
                                 // tarr.push(headers[j] + ":" + data[j]);
-                                tarr.push(data[j])
+                                pops.push(data[j])
                             }
                             // pop = data[]
                             // lines.push(tarr);
-                            console.log("POP:", tarr)
+                            // console.log("POP:", pops, "YEARS", years)
                         }
                     }
                 }
@@ -347,42 +361,50 @@ var MapManager = function() {
                     type: "GET",
                     url: "static/data/gdp.csv",
                     dataType: "text",
-                    success: function(data) { processData2(data, country_id, years, pop); }
+                    success: function(data) { processData2(data, country_id, years, pops); }
                 });
 
-                function processData2(allText, country_id, years, pop) {
+                function processData2(allText, country_id, years, pops) {
                     var allTextLines = allText.split(/\r\n|\n/);
                     var headers = allTextLines[0].split(',');
                     var lines = [];
+                    var gdps = [];
 
                     for (var i = 1; i < allTextLines.length; i++) {
                         var data = allTextLines[i].split(',');
                         if (data.length == headers.length) {
 
-                            var tarr = [];
+
                             if (data[1] == country_id) {
-                                for (var j = 0; j < headers.length; j++) {
+                                for (var j = years[0] - 1987; j <= years[1] - 1987; j++) {
                                     // tarr.push(headers[j] + ":" + data[j]);
-                                    tarr.push(data[j])
+                                    gdps.push(data[j])
                                 }
-                                lines.push(tarr);
-                                console.log(tarr)
+                                // pop = data[]
+                                // lines.push(tarr);
+                                // console.log("GDP:", gdps, "YEARS", years)
                             }
                         }
                     }
+
+                    var newRowContent = '<tr id="' + country_id + '-line">\
+                    <td class="col-xs-1">' + country_id + '</td>\
+                    <td class="col-xs-3">' + average(gdps) + '</td>\
+                    <td class="col-xs-3">' + average(pops) + '</td>\
+                    </tr>'
+                    $("tbody").append(newRowContent);
+
+                    getDataFromPost()
+                    updateCircular()
                 }
 
             }
 
-            var newRowContent = '<tr>\
-            <td class="col - xs - 3 ">' + country_id + '</td>\
-            <td class="col - xs - 3 ">' + "gdp" + '</td>\
-            <td class="col - xs - 3 ">' + "pop" + '</td>\
-            </tr>'
-            $("tbody").append(newRowContent);
 
 
+            // Country is DESELECTED
         } else {
+            $('#' + country_id + "-line").remove();
 
             const index = selected_group.indexOf(el.data()[0].id);
             if (index > -1) {
@@ -400,6 +422,22 @@ var MapManager = function() {
 
         mm.drawCloroExp()
         mm.drawCloroImp()
+        cm.updateCountry()
+
+
+
+    }
+
+    function average(arr) {
+
+        var sum = 0;
+        // console.log(arr)
+
+        for (var i = 0; i < arr.length; i++) {
+            sum += parseFloat(arr[i], 10); //don't forget to add the base
+        }
+        // console.log(sum)
+        return Math.round(sum / arr.length);
 
     }
 
@@ -446,6 +484,6 @@ var MapManager = function() {
         setCountry: setCountry,
 
         resetZoom: resetZoom,
-
+        selected: selected,
     }
 }

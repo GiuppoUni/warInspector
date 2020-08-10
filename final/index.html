@@ -12,6 +12,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
+    <script src="static/js/libraries/d3-scale-radial.js"></script>
 
 
     <script src="static/js/libraries/d3v4.js"></script>
@@ -19,6 +20,7 @@
     <script src="static/js/libraries/d3-legend.js"></script>
     <script src="static/js/libraries/d3-scale-chromatic.v1.min.js"></script>
 
+    <script src="/static/js/libraries/d3v4-tip.js"></script>
 
 
 
@@ -27,12 +29,15 @@
     <script src="static/js/Main.js"></script>
     <script src="static/js/ChartManager.js"></script>
     <script src="static/js/MapManager.js"></script>
-    <script src="static/js/RankRaceManager.js"></script>
+    <!-- <script src="static/js/RankRaceManager.js"></script> -->
+    <script src="static/js/BubblesChartManager.js"></script>
+    <!-- <script src="static/js/CircularManager.js"></script> -->
+
 
     <!-- >>>>> -->
     <link rel="stylesheet" href="static/css/style.css">
 
-    <title>WarMonopoly</title>
+    <title>WarInspector</title>
 
 
 </head>
@@ -56,15 +61,15 @@
 
             <div class="row" style="float:left; margin-left: 15px">
 
-                <img src="static/icons/valogo.png" width="50" style="" />
-                <h4 style="    margin-top:auto; margin-left: 15px;color: aliceblue;">WarMonopoly</h4>
+                <img src="static/icons/valogo.png" width="50" />
+                <h4 style="    margin-top:auto; margin-left: 15px;color: aliceblue;">WarInspector</h4>
             </div>
             <div class="row" style="float: right;margin-right: 10px;">
                 <!-- <img width="30px" src="static/icons/search.png" /> -->
 
                 <div data-icon="ei-search" data-size="m" style="    margin-left: 100px;"></div>
                 <select id="selectNation" class="selectpicker" data-width="800px" multiple data-live-search="true" data-size="4" data-actions-box="true" title="Choose one or more country..." onchange="clickedNation()">
-                <option value=ZYY>🏳  (multiple sellers)</option><option value=AFG>🇦🇫  Afghanistan</option><option value=ALB>🇦🇱  Albania</option><option value=DZA>🇩🇿  Algeria</option><option value=ASM>🇦🇸  American Samoa</option><option value=AND>🇦🇩  Andorra</option><option value=AGO>🇦🇴  Angola</option><option value=AIA>🇦🇮  Anguilla</option><option value=ATG>🇦🇬  Antigua & Barbuda</option><option value=ARG>🇦🇷  Argentina</option><option value=ARM>🇦🇲  Armenia</option><option value=ABW>🇦🇼  Aruba</option><option value=AUS>🇦🇺  Australia</option><option value=AUT>🇦🇹  Austria</option><option value=AZE>🇦🇿  Azerbaijan</option><option value=BHS>🇧🇸  Bahamas</option><option value=BHR>🇧🇭  Bahrain</option><option value=BGD>🇧🇩  Bangladesh</option><option value=BRB>🇧🇧  Barbados</option><option value=BLR>🇧🇾  Belarus</option><option value=BEL>🇧🇪  Belgium</option><option value=BLZ>🇧🇿  Belize</option><option value=BEN>🇧🇯  Benin</option><option value=BMU>🇧🇲  Bermuda</option><option value=BTN>🇧🇹  Bhutan</option><option value=BTN>🇧🇹  Bhutan</option><option value=BOL>🇧🇴  Bolivia</option><option value=BIH>🇧🇦  Bosnia-Herzegovina</option><option value=BWA>🇧🇼  Botswana</option><option value=BRA>🇧🇷  Brazil</option><option value=BRN>🇧🇳  Brunei</option><option value=BGR>🇧🇬  Bulgaria</option><option value=BFA>🇧🇫  Burkina Faso</option><option value=BDI>🇧🇮  Burundi</option><option value=KHM>🇰🇭  Cambodia</option><option value=CMR>🇨🇲  Cameroon</option><option value=CAN>🇨🇦  Canada</option><option value=ZKK>🇮🇨  Canary Islands</option><option value=CPV>🇨🇻  Cape Verde</option><option value=CYM>🇰🇾  Cayman Islands</option><option value=CAF>🇨🇫  Central African Republic</option><option value=TCD>🇹🇩  Chad</option><option value=CHL>🇨🇱  Chile</option><option value=CHN>🇨🇳  China</option><option value=CXR>🇨🇽  Christmas Island</option><option value=COL>🇨🇴  Colombia</option><option value=COM>🇰🇲  Comoros</option><option value=COK>🇨🇰  Cook Islands</option><option value=CRI>🇨🇷  Costa Rica</option><option value=HRV>🇭🇷  Croatia</option><option value=CUB>🇨🇺  Cuba</option><option value=CYP>🇨🇾  Cyprus</option><option value=CZE>🇨🇿  Czechia</option><option value=COD>🇨🇩  Democratic Republic Of Congo</option><option value=DNK>🇩🇰  Denmark</option><option value=DJI>🇩🇯  Djibouti</option><option value=DMA>🇩🇲  Dominica</option><option value=DMA>🇩🇴  Dominican Republic</option><option value=DOM>🇩🇴 <option value=DMA>🇩🇴  Dominican Republic</option></option><option value=TLS>🇹🇱  East Timor</option><option value=ECU>🇪🇨  Ecuador</option><option value=EGY>🇪🇬  Egypt</option><option value=GBR>🏴󠁧󠁢󠁥󠁮󠁧󠁿  England</option><option value=GIN>🇬🇶  Equatorial Guinea</option><option value=GNQ>🇬🇶 <option value=GIN>🇬🇶  Equatorial Guinea</option></option><option value=ERI>🇪🇷  Eritrea</option><option value=EST>🇪🇪  Estonia</option><option value=ETH>🇪🇹  Ethiopia</option><option value=ZZZ>🏳  Europe multi-state</option><option value=ZZZ>🇪🇺  European Union</option><option value=GBR>🇫🇰  Falkland Islands</option><option value=FRO>🇫🇴  Faroe Islands</option><option value=FJI>🇫🇯  Fiji</option><option value=FIN>🇫🇮  Finland</option><option value=FRA>🇫🇷  France</option><option value=PYF>🇵🇫  French Polynesia</option><option value=GAB>🇬🇦  Gabon</option><option value=GMB>🇬🇲  Gambia</option><option value=GEO>🇬🇪  Georgia</option><option value=DEU>🇩🇪  Germany</option><option value=GHA>🇬🇭  Ghana</option><option value=GIB>🇬🇮  Gibraltar</option><option value=GRC>🇬🇷  Greece</option><option value=GRL>🇬🇱  Greenland</option><option value=GRD>🇬🇩  Grenada</option><option value=GUM>🇬🇺  Guam</option><option value=GTM>🇬🇹  Guatemala</option><option value=GGY>🇬🇬  Guernsey</option><option value=GIN>🇬🇳  Guinea</option><option value=GUY>🇬🇾  Guyana</option><option value=HTI>🇭🇹  Haiti</option><option value=USA>🇺🇸  Hawaii</option><option value=HND>🇭🇳  Honduras</option><option value=HKG>🇭🇰  Hong Kong</option><option value=HUN>🇭🇺  Hungary</option><option value=ISL>🇮🇸  Iceland</option><option value=IND>🇮🇳  India</option><option value=IDN>🇮🇩  Indonesia</option><option value=IRN>🇮🇷  Iran</option><option value=IRQ>🇮🇶  Iraq</option><option value=IRL>🇮🇪  Ireland</option><option value=IMN>🇮🇲  Isle of Man</option><option value=ISR>🇮🇱  Israel</option><option value=ITA>🇮🇹  Italy</option><option value=JAM>🇯🇲  Jamaica</option><option value=JPN>🇯🇵  Japan</option><option value=JEY>🇯🇪  Jersey</option><option value=JOR>🇯🇴  Jordan</option><option value=KAZ>🇰🇿  Kazakhstan</option><option value=KEN>🇰🇪  Kenya</option><option value=KIR>🇰🇮  Kiribati</option><option value=XKX>🇽🇰  Kosovo</option><option value=KWT>🇰🇼  Kuwait</option><option value=KGZ>🇰🇬  Kyrgyzstan</option><option value=LAO>🇱🇦  Laos</option><option value=LVA>🇱🇻  Latvia</option><option value=LBN>🇱🇧  Lebanon</option><option value=LSO>🇱🇸  Lesotho</option><option value=LBR>🇱🇷  Liberia</option><option value=LBY>🇱🇾  Libya</option><option value=LIE>🇱🇮  Liechtenstein</option><option value=LTU>🇱🇹  Lithuania</option><option value=LUX>🇱🇺  Luxembourg</option><option value=MDG>🇲🇬  Madagascar</option><option value=MWI>🇲🇼  Malawi</option><option value=MYS>🇲🇾  Malaysia</option><option value=MDV>🇲🇻  Maldives</option><option value=MLI>🇲🇱  Mali</option><option value=MLT>🇲🇹  Malta</option><option value=MTQ>🇲🇶  Martinique</option><option value=MRT>🇲🇷  Mauritania</option><option value=MUS>🇲🇺  Mauritius</option><option value=MEX>🇲🇽  Mexico</option><option value=FSM>🇫🇲  Micronesia</option><option value=MDA>🇲🇩  Moldova</option><option value=MCO>🇲🇨  Monaco</option><option value=MNG>🇲🇳  Mongolia</option><option value=MNE>🇲🇪  Montenegro</option><option value=MSR>🇲🇸  Montserrat</option><option value=MAR>🇲🇦  Morocco</option><option value=MOZ>🇲🇿  Mozambique</option><option value=NAM>🇳🇦  Namibia</option><option value=NAT>🏳  Nato</option><option value=NRU>🇳🇷  Nauru</option><option value=NPL>🇳🇵  Nepal</option><option value=NLD>🇳🇱  Netherlands</option><option value=NZL>🇳🇿  New Zealand</option><option value=NIC>🇳🇮  Nicaragua</option><option value=NER>🇳🇪  Niger</option><option value=NER>🇳🇬  Nigeria</option><option value=NGA>🇳🇬 <option value=NER>🇳🇬  Nigeria</option></option><option value=NIU>🇳🇺  Niue</option><option value=NFK>🇳🇫  Norfolk Island</option><option value=PRK>🇰🇵  North Korea</option><option value=NOR>🇳🇴  Norway</option><option value=OMN>🇴🇲  Oman</option><option value=PAK>🇵🇰  Pakistan</option><option value=PLW>🇵🇼  Palau</option><option value=PSE>🏳  Palestine</option><option value=PAN>🇵🇦  Panama</option><option value=GIN>🇵🇬  Papua New Guinea</option><option value=PNG>🇵🇬 <option value=GIN>🇵🇬  Papua New Guinea</option></option><option value=PRY>🇵🇾  Paraguay</option><option value=PER>🇵🇪  Peru</option><option value=PHL>🇵🇭  Philippines</option><option value=PCN>🇵🇳  Pitcairn Islands</option><option value=POL>🇵🇱  Poland</option><option value=POL>🇵🇱  Poland</option><option value=PRT>🇵🇹  Portugal</option><option value=PRI>🇵🇷  Puerto Rico</option><option value=QAT>🇶🇦  Qatar</option><option value=COD>🇨🇬  Republic Of Congo</option><option value=ROU>🇷🇴  Romania</option><option value=RUS>🇷🇺  Russia</option><option value=RWA>🇷🇼  Rwanda</option><option value=SLV>🇸🇻  El Salvador</option><option value=SLV>🇸🇻  El Salvador</option><option value=WSM>🇼🇸  Samoa</option><option value=SMR>🇸🇲  San Marino</option><option value=SAU>🇸🇦  Saudi Arabia</option><option value=GBR>🏴󠁧󠁢󠁳󠁣󠁴󠁿  Scotland</option><option value=SEN>🇸🇳  Senegal</option><option value=SRB>🇷🇸  Serbia</option><option value=SYC>🇸🇨  Seychelles</option><option value=SLE>🇸🇱  Sierra Leone</option><option value=SGP>🇸🇬  Singapore</option><option value=ZKY>🇸🇽  Sint Maarten</option><option value=SVK>🇸🇰  Slovakia</option><option value=SVN>🇸🇮  Slovenia</option><option value=SLB>🇸🇧  Solomon Islands</option><option value=SOM>🇸🇴  Somalia</option><option value=SOM>🏳  Somaliland</option><option value=ZAF>🇿🇦  South Africa</option><option value=KOR>🇰🇷  South Korea</option><option value=SDN>🇸🇸  South Sudan</option><option value=SDN>🇸🇸 <option value=SDN>🇸🇸  South Sudan</option></option><option value=ESP>🇪🇸  Spain</option><option value=LKA>🇱🇰  Sri Lanka</option><option value=SDN>🇸🇩  Sudan</option><option value=code3>🇸🇷  Suriname</option><option value=SUR>🇸🇷 <option value=code3>🇸🇷  Suriname</option></option><option value=SWZ>🇸🇿  Swaziland</option><option value=SWE>🇸🇪  Sweden</option><option value=CHE>🇨🇭  Switzerland</option><option value=SYR>🇸🇾  Syria</option><option value=TWN>🇹🇼  Taiwan</option><option value=TJK>🇹🇯  Tajikistan</option><option value=TZA>🇹🇿  Tanzania</option><option value=THA>🇹🇭  Thailand</option><option value=CHN>🏳  Tibet</option><option value=TGO>🇹🇬  Togo</option><option value=TKL>🇹🇰  Tokelau</option><option value=TON>🇹🇴  Tonga</option><option value=TTO>🇹🇹  Trinidad & Tobago</option><option value=TUN>🇹🇳  Tunisia</option><option value=TUR>🇹🇷  Turkey</option><option value=TKM>🇹🇲  Turkmenistan</option><option value=TCA>🇹🇨  Turks And Caicos Islands</option><option value=TUV>🇹🇻  Tuvalu</option><option value=ARE>🇦🇪  United Arab Emirates</option><option value=ARE>🇦🇪  United Arab Emirates</option><option value=UGA>🇺🇬  Uganda</option><option value=UKR>🇺🇦  Ukraine</option><option value=GBR>🇬🇧  United Kingdom</option><option value=ONU>🇺🇳  United Nations</option><option value=USA>🇺🇸  United States</option><option value=ZXX>🏳  Unknown supplier(s)</option><option value=URY>🇺🇾  Uruguay</option><option value=UZB>🇺🇿  Uzbekistan</option><option value=VUT>🇻🇺  Vanuatu</option><option value=VAT>🇻🇦  Vatican City</option><option value=VEN>🇻🇪  Venezuela</option><option value=VNM>🇻🇳  Vietnam</option><option value=GBR>🏴󠁧󠁢󠁷󠁬󠁳󠁿  Wales</option><option value=ESH>🇪🇭  Western Sahara</option><option value=YEM>🇾🇪  Yemen</option><option value=ZMB>🇿🇲  Zambia</option><option value=ZWE>🇿🇼  Zimbabwe</option>                
+                <option value=ZYY>🏳  (multiple sellers)</option><option value=AFG>🇦🇫  Afghanistan</option><option value=ALB>🇦🇱  Albania</option><option value=DZA>🇩🇿  Algeria</option><option value=ASM>🇦🇸  American Samoa</option><option value=AND>🇦🇩  Andorra</option><option value=AGO>🇦🇴  Angola</option><option value=AIA>🇦🇮  Anguilla</option><option value=ATG>🇦🇬  Antigua & Barbuda</option><option value=ARG>🇦🇷  Argentina</option><option value=ARM>🇦🇲  Armenia</option><option value=ABW>🇦🇼  Aruba</option><option value=AUS>🇦🇺  Australia</option><option value=AUT>🇦🇹  Austria</option><option value=AZE>🇦🇿  Azerbaijan</option><option value=BHS>🇧🇸  Bahamas</option><option value=BHR>🇧🇭  Bahrain</option><option value=BGD>🇧🇩  Bangladesh</option><option value=BRB>🇧🇧  Barbados</option><option value=BLR>🇧🇾  Belarus</option><option value=BEL>🇧🇪  Belgium</option><option value=BLZ>🇧🇿  Belize</option><option value=BEN>🇧🇯  Benin</option><option value=BMU>🇧🇲  Bermuda</option><option value=BTN>🇧🇹  Bhutan</option><option value=BTN>🇧🇹  Bhutan</option><option value=BOL>🇧🇴  Bolivia</option><option value=BIH>🇧🇦  Bosnia-Herzegovina</option><option value=BWA>🇧🇼  Botswana</option><option value=BRA>🇧🇷  Brazil</option><option value=BRN>🇧🇳  Brunei</option><option value=BGR>🇧🇬  Bulgaria</option><option value=BFA>🇧🇫  Burkina Faso</option><option value=BDI>🇧🇮  Burundi</option><option value=KHM>🇰🇭  Cambodia</option><option value=CMR>🇨🇲  Cameroon</option><option value=CAN>🇨🇦  Canada</option><option value=ZKK>🇮🇨  Canary Islands</option><option value=CPV>🇨🇻  Cape Verde</option><option value=CYM>🇰🇾  Cayman Islands</option><option value=CAF>🇨🇫  Central African Republic</option><option value=TCD>🇹🇩  Chad</option><option value=CHL>🇨🇱  Chile</option><option value=CHN>🇨🇳  China</option><option value=CXR>🇨🇽  Christmas Island</option><option value=COL>🇨🇴  Colombia</option><option value=COM>🇰🇲  Comoros</option><option value=COK>🇨🇰  Cook Islands</option><option value=CRI>🇨🇷  Costa Rica</option><option value=HRV>🇭🇷  Croatia</option><option value=CUB>🇨🇺  Cuba</option><option value=CYP>🇨🇾  Cyprus</option><option value=CZE>🇨🇿  Czechia</option><option value=COD>🇨🇩  Democratic Republic Of Congo</option><option value=DNK>🇩🇰  Denmark</option><option value=DJI>🇩🇯  Djibouti</option><option value=DMA>🇩🇲  Dominica</option><option value=DMA>🇩🇴  Dominican Republic</option><option value=TLS>🇹🇱  East Timor</option><option value=ECU>🇪🇨  Ecuador</option><option value=EGY>🇪🇬  Egypt</option><option value=GBR>🏴󠁧󠁢󠁥󠁮󠁧󠁿  England</option><option value=GIN>🇬🇶  Equatorial Guinea</option><option value=GNQ>🇬🇶 <option value=GIN>🇬🇶  Equatorial Guinea</option></option><option value=ERI>🇪🇷  Eritrea</option><option value=EST>🇪🇪  Estonia</option><option value=ETH>🇪🇹  Ethiopia</option><option value=ZZZ>🏳  Europe multi-state</option><option value=ZZZ>🇪🇺  European Union</option><option value=GBR>🇫🇰  Falkland Islands</option><option value=FRO>🇫🇴  Faroe Islands</option><option value=FJI>🇫🇯  Fiji</option><option value=FIN>🇫🇮  Finland</option><option value=FRA>🇫🇷  France</option><option value=PYF>🇵🇫  French Polynesia</option><option value=GAB>🇬🇦  Gabon</option><option value=GMB>🇬🇲  Gambia</option><option value=GEO>🇬🇪  Georgia</option><option value=DEU>🇩🇪  Germany</option><option value=GHA>🇬🇭  Ghana</option><option value=GIB>🇬🇮  Gibraltar</option><option value=GRC>🇬🇷  Greece</option><option value=GRL>🇬🇱  Greenland</option><option value=GRD>🇬🇩  Grenada</option><option value=GUM>🇬🇺  Guam</option><option value=GTM>🇬🇹  Guatemala</option><option value=GGY>🇬🇬  Guernsey</option><option value=GIN>🇬🇳  Guinea</option><option value=GUY>🇬🇾  Guyana</option><option value=HTI>🇭🇹  Haiti</option><option value=USA>🇺🇸  Hawaii</option><option value=HND>🇭🇳  Honduras</option><option value=HKG>🇭🇰  Hong Kong</option><option value=HUN>🇭🇺  Hungary</option><option value=ISL>🇮🇸  Iceland</option><option value=IND>🇮🇳  India</option><option value=IDN>🇮🇩  Indonesia</option><option value=IRN>🇮🇷  Iran</option><option value=IRQ>🇮🇶  Iraq</option><option value=IRL>🇮🇪  Ireland</option><option value=IMN>🇮🇲  Isle of Man</option><option value=ISR>🇮🇱  Israel</option><option value=ITA>🇮🇹  Italy</option><option value=JAM>🇯🇲  Jamaica</option><option value=JPN>🇯🇵  Japan</option><option value=JEY>🇯🇪  Jersey</option><option value=JOR>🇯🇴  Jordan</option><option value=KAZ>🇰🇿  Kazakhstan</option><option value=KEN>🇰🇪  Kenya</option><option value=KIR>🇰🇮  Kiribati</option><option value=XKX>🇽🇰  Kosovo</option><option value=KWT>🇰🇼  Kuwait</option><option value=KGZ>🇰🇬  Kyrgyzstan</option><option value=LAO>🇱🇦  Laos</option><option value=LVA>🇱🇻  Latvia</option><option value=LBN>🇱🇧  Lebanon</option><option value=LSO>🇱🇸  Lesotho</option><option value=LBR>🇱🇷  Liberia</option><option value=LBY>🇱🇾  Libya</option><option value=LIE>🇱🇮  Liechtenstein</option><option value=LTU>🇱🇹  Lithuania</option><option value=LUX>🇱🇺  Luxembourg</option><option value=MDG>🇲🇬  Madagascar</option><option value=MWI>🇲🇼  Malawi</option><option value=MYS>🇲🇾  Malaysia</option><option value=MDV>🇲🇻  Maldives</option><option value=MLI>🇲🇱  Mali</option><option value=MLT>🇲🇹  Malta</option><option value=MTQ>🇲🇶  Martinique</option><option value=MRT>🇲🇷  Mauritania</option><option value=MUS>🇲🇺  Mauritius</option><option value=MEX>🇲🇽  Mexico</option><option value=FSM>🇫🇲  Micronesia</option><option value=MDA>🇲🇩  Moldova</option><option value=MCO>🇲🇨  Monaco</option><option value=MNG>🇲🇳  Mongolia</option><option value=MNE>🇲🇪  Montenegro</option><option value=MSR>🇲🇸  Montserrat</option><option value=MAR>🇲🇦  Morocco</option><option value=MOZ>🇲🇿  Mozambique</option><option value=NAM>🇳🇦  Namibia</option><option value=NAT>🏳  Nato</option><option value=NRU>🇳🇷  Nauru</option><option value=NPL>🇳🇵  Nepal</option><option value=NLD>🇳🇱  Netherlands</option><option value=NZL>🇳🇿  New Zealand</option><option value=NIC>🇳🇮  Nicaragua</option><option value=NER>🇳🇪  Niger</option><option value=NER>🇳🇬  Nigeria</option><option value=NIU>🇳🇺  Niue</option><option value=NFK>🇳🇫  Norfolk Island</option><option value=PRK>🇰🇵  North Korea</option><option value=NOR>🇳🇴  Norway</option><option value=OMN>🇴🇲  Oman</option><option value=PAK>🇵🇰  Pakistan</option><option value=PLW>🇵🇼  Palau</option><option value=PSE>🏳  Palestine</option><option value=PAN>🇵🇦  Panama</option><option value=GIN>🇵🇬  Papua New Guinea</option><option value=PRY>🇵🇾  Paraguay</option><option value=PER>🇵🇪  Peru</option><option value=PHL>🇵🇭  Philippines</option><option value=PCN>🇵🇳  Pitcairn Islands</option><option value=POL>🇵🇱  Poland</option><option value=POL>🇵🇱  Poland</option><option value=PRT>🇵🇹  Portugal</option><option value=PRI>🇵🇷  Puerto Rico</option><option value=QAT>🇶🇦  Qatar</option><option value=COD>🇨🇬  Republic Of Congo</option><option value=ROU>🇷🇴  Romania</option><option value=RUS>🇷🇺  Russia</option><option value=RWA>🇷🇼  Rwanda</option><option value=SLV>🇸🇻  El Salvador</option><option value=WSM>🇼🇸  Samoa</option><option value=SMR>🇸🇲  San Marino</option><option value=SAU>🇸🇦  Saudi Arabia</option><option value=GBR>🏴󠁧󠁢󠁳󠁣󠁴󠁿  Scotland</option><option value=SEN>🇸🇳  Senegal</option><option value=SRB>🇷🇸  Serbia</option><option value=SYC>🇸🇨  Seychelles</option><option value=SLE>🇸🇱  Sierra Leone</option><option value=SGP>🇸🇬  Singapore</option><option value=ZKY>🇸🇽  Sint Maarten</option><option value=SVK>🇸🇰  Slovakia</option><option value=SVN>🇸🇮  Slovenia</option><option value=SLB>🇸🇧  Solomon Islands</option><option value=SOM>🇸🇴  Somalia</option><option value=SOM>🏳  Somaliland</option><option value=ZAF>🇿🇦  South Africa</option><option value=KOR>🇰🇷  South Korea</option><option value=SDN>🇸🇸  South Sudan</option><option value=SDN>🇸🇸 <option value=SDN>🇸🇸  South Sudan</option></option><option value=ESP>🇪🇸  Spain</option><option value=LKA>🇱🇰  Sri Lanka</option><option value=SDN>🇸🇩  Sudan</option><option value=SUR>🇸🇷 Suriname</option><option value=SWZ>🇸🇿  Swaziland</option><option value=SWE>🇸🇪  Sweden</option><option value=CHE>🇨🇭  Switzerland</option><option value=SYR>🇸🇾  Syria</option><option value=TWN>🇹🇼  Taiwan</option><option value=TJK>🇹🇯  Tajikistan</option><option value=TZA>🇹🇿  Tanzania</option><option value=THA>🇹🇭  Thailand</option><option value=CHN>🏳  Tibet</option><option value=TGO>🇹🇬  Togo</option><option value=TKL>🇹🇰  Tokelau</option><option value=TON>🇹🇴  Tonga</option><option value=TTO>🇹🇹  Trinidad & Tobago</option><option value=TUN>🇹🇳  Tunisia</option><option value=TUR>🇹🇷  Turkey</option><option value=TKM>🇹🇲  Turkmenistan</option><option value=TCA>🇹🇨  Turks And Caicos Islands</option><option value=TUV>🇹🇻  Tuvalu</option><option value=ARE>🇦🇪  United Arab Emirates</option><option value=UGA>🇺🇬  Uganda</option><option value=UKR>🇺🇦  Ukraine</option><option value=GBR>🇬🇧  United Kingdom</option><option value=ONU>🇺🇳  United Nations</option><option value=USA>🇺🇸  United States</option><option value=ZXX>🏳  Unknown supplier(s)</option><option value=URY>🇺🇾  Uruguay</option><option value=UZB>🇺🇿  Uzbekistan</option><option value=VUT>🇻🇺  Vanuatu</option><option value=VAT>🇻🇦  Vatican City</option><option value=VEN>🇻🇪  Venezuela</option><option value=VNM>🇻🇳  Vietnam</option><option value=GBR>🏴󠁧󠁢󠁷󠁬󠁳󠁿  Wales</option><option value=ESH>🇪🇭  Western Sahara</option><option value=YEM>🇾🇪  Yemen</option><option value=ZMB>🇿🇲  Zambia</option><option value=ZWE>🇿🇼  Zimbabwe</option>                
             </select>
 
             </div>
@@ -84,8 +89,9 @@
         <div class="row my-row">
             <div class="col-md-auto my-col-up">
                 <div class="card bg-dark">
-                    <div class="card-header text-center">
-                        Num. of weapons IMPORTED into selected countries
+                    <div class="card-header  d-flex align-items-center justify-content-center text-center">
+                        Num. of weapons IMPORTED into &nbsp
+                        <div class="shadowText" style="display:inline-block ;"> selected countries</div>
                     </div>
                     <div class="card-body" id="map-imp-col">
 
@@ -95,8 +101,10 @@
             <div class="col-md-auto my-col-up">
 
                 <div class="card bg-dark">
-                    <div class="card-header  text-center">
-                        Num. of weapons EXPORTED from selected countries
+                    <div class="card-header  d-flex align-items-center justify-content-center  text-center">
+                        Num. of weapons EXPORTED from &nbsp
+                        <div class="shadowText" style="display:inline-block ;">selected countries</div>
+
                     </div>
                     <div class="card-body" id="map-exp-col">
 
@@ -104,32 +112,35 @@
                 </div>
 
             </div>
-            <div class="col my-col-up">
-                <div class="row">
-                    <div class="card bg-dark">
-                        <div class="card-header  text-center">
-                            General info
-                        </div>
-                        <div class="card-body" id="general-info">
-                            <div class="container">
-                                <table class="table table-fixed" id="tablePIL">
-                                    <thead>
-                                        <tr>
-                                            <th class="col-xs-3">Country</th>
-                                            <th class="col-xs-3">GDP (AVG)</th>
-                                            <th class="col-xs-3">Population (AVG)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="col-xs-3">ITA</td>
-                                            <td class="col-xs-3">32583.8686821</td>
-                                            <td class="col-xs-3">60528655.6667</td>
-                                        </tr>
+            <div class="col-md-auto  my-col-up">
+                <div class="container">
+                    <div class="row">
+                        <div class="card bg-dark infoCard">
+                            <div class="card-header  d-flex align-items-center justify-content-center   text-center">
+                                General info
+                            </div>
+                            <div class="card-body" id="general-info">
+                                <div class="container table-responsive  rounded shadow" id="info-container">
+                                    <table class="table table-fixed" id="tablePIL">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="col-xs-1">Country</th>
+                                                <th scope="col" class="col-xs-3">GDP (AVG)</th>
+                                                <th scope="col" class="col-xs-3">Population (AVG)</th>
+                                                <th scope="col" class="col-xs-3">Army dim.(AVG)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id="ITA-line">
+                                                <td class="col-xs-1">ITA</td>
+                                                <td class="col-xs-3">32584</td>
+                                                <td class="col-xs-3">60528656</td>
+                                            </tr>
 
 
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,31 +162,33 @@
         </div>
 
         <!-- Seconda riga -->
-        <div class="row my-row">
-            <div class="col-5 my-col-down">
+        <div class="row my-row ">
+            <div class="col-md-4-5 my-col-down">
 
 
                 <div class="card bg-dark" id="charts-div">
-                    <div class="card-body" style="display: inline-block;">
-                        <div class="row">
+                    <div class="card-body" style="display: inline-block;   padding-left: 0px;">
+                        <div class="container">
+                            <div class="row ">
 
-                            <div class="col">
-                                <div class="lds-facebook justify-content-center" id="load-anim">
-                                    Loading PCA...
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div id="chart" style="  height: 100%; text-align: center;">
+                                <div class="col rounded" style="padding-right: 30px;">
 
-                                    <div id="chart-container">
-                                        <svg id="chart-svg"></svg>
+                                    <div class="chartExtCont" style="  height: 100%; text-align: center;">
+
+                                        <div id="chart-container">
+                                            <svg id="chart-svg"></svg>
+                                        </div>
+
                                     </div>
-
                                 </div>
-                            </div>
-                            <div class="col" id=pca-import-col>
-
+                                <div class="col rounded" id=pca-import-col style=" padding-left: 0px;">
+                                    <div class="center lds-facebook justify-content-center" id="load-anim">
+                                        Loading PCA...
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -183,52 +196,224 @@
 
             </div>
 
-            <div class="col-5 my-col-down">
+            <div class="col-md-4-5  my-col-down">
                 <div class="card bg-dark" id="charts-div-rec">
-                    <div class="card-body">
-                        <div class="row">
+                    <div class="card-body" style=" padding-left: 0px;">
+                        <div class="container">
+                            <div class="row">
 
-                            <div class="col">
+                                <div class="col rounded" style="padding-right: 30px;">
 
-                                <div class="lds-facebook justify-content-center" id="load-anim">
-                                    Loading PCA...
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
 
-                                <div id="chart" style=" height: 100%; text-align: center;">
+                                    <div class="chartExtCont" style=" height: 100%; text-align: center;">
 
-                                    <div id="chart-container-rec">
-                                        <svg id="chart-svg-rec"></svg>
+                                        <div id="chart-container-rec">
+                                            <svg id="chart-svg-rec"></svg>
+                                        </div>
+
+
                                     </div>
-
+                                </div>
+                                <div class="col rounded" id="pca-export-col">
+                                    <div class="center lds-facebook justify-content-center" id="load-anim">
+                                        Loading PCA...
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
 
                                 </div>
                             </div>
-                            <div class="col" id="pca-export-col"> </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col my-col-down">
-                <div class="card bg-dark" id="rankRace-container">
+                <!-- <div class="card bg-dark" id="rankRace-container"> -->
+                <!-- <div class="card-body" id="bubblesChart-container"> -->
+                <div class="card bg-dark">
+                    <div class="card-header  d-flex align-items-center justify-content-center  text-center">
+                        Top 20 army dimensions
 
-                    <input type="image" id="resetRaceButton" width="50" src="static/icons/reset3.png" onclick="callResetRace()" />
-                    <input type="image" id="playPauseRaceButton" width="50" src="static/icons/playpause.png" onclick="callStopRace()" />
+                    </div>
+                    <div class="card-body" id="circular_viz">
+
+                    </div>
                 </div>
 
+                <!-- BUTTONS OF RANK RACE -->
+                <!-- <input type="image" id="resetRaceButton" width="50" src="static/icons/reset3.png" onclick="callResetRace()" />
+                    <input type="image" id="playPauseRaceButton" width="50" src="static/icons/playpause.png" onclick="callStopRace()" /> -->
             </div>
 
         </div>
+
+    </div>
     </div>
 
+    <!-- CIRCULAR CHART -->
+    <script>
+        // set the dimensions and margins of the graph
+        var margin = {
+                top: 70,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            width = 400 - margin.left - margin.right,
+            height = 270 - margin.top - margin.bottom,
+            innerRadius = 30,
+            outerRadius = Math.min(width, height) / 2; // the outerRadius goes from the middle of the SVG area to the border
 
-    <div class="lds-facebook justify-content-center" id="load-anim"> Loading MDS...
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+        // append the svg object
+
+        // d3v4.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum.csv", function(data) {
+        function drawCircular() {
+
+            var svg = d3v4.select("#circular_viz")
+                .append("svg")
+                .attr("id", "circ-svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + (width / 2 + margin.left) + "," + (height / 2 + margin.top) + ")");
+
+            d3v4.csv("static/data/army-dimensions-clean.csv", function(data) {
+                var headers = d3v4.keys(data[0]);
+                const cols = data.columns.filter(function(d) {
+                    return parseInt(d) >= years[0] && parseInt(d) <= years[1] || d == "Country Name" || d == "Country Code";
+                });
+                // console.log("COLUMNS", columns)
+
+                totals = {};
+
+                newData = data.map(function(d) {
+                    kk = ""
+                    kn = ""
+                    sum = 0
+                    toBeSkipped = false
+                    cols.forEach(function(k) {
+                        if (k !== "Country Code" && k !== "Country Name") {
+                            // E' un anno
+                            sum += parseFloat(d[k]) || 0
+                        } else if (k === "Country Code") {
+                            if (allCountriesAlpha3.includes(d[k]))
+                                kk = d[k]
+                            else
+                                toBeSkipped = true
+                        } else if (k === "Country Name") {
+                            kn = d[k]
+                        }
+
+                    });
+                    if (toBeSkipped) avg = 0
+                    else
+                        avg = sum / (cols.length - 2)
+                        // console.log(kk, avg)
+                    return [kk, avg, kn]
+                });
+
+                // console.log(newData)
+
+                data = newData.sort(function(a, b) {
+                    return d3v4.descending(+a[1], +b[1]);
+                }).slice(0, 20);
+                // if (DEBUG) 
+                console.log(data)
+
+                /************************************************************************************************************
+                 * NOW YOU HAVE DATA TO BE PLOTTED, FORMAT : 
+                 * ...
+                 * [ COUNTRY CODE, VALUE AVG ARMY FOR RANGE OF YEARS , COUNTRY NAME ]
+                 * ...*
+                 ************************************************************************************************************/
+
+                // Scales
+                var x = d3v4.scaleBand()
+                    .range([0, 2 * Math.PI]) // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
+                    .align(0) // This does nothing
+                    .domain(data.map(function(d) {
+                        return d[2];
+                    })); // The domain of the X axis is the list of states.
+                var y = d3v4.scaleRadial()
+                    .range([innerRadius, outerRadius]) // Domain will be define later.
+                    .domain([0, 14000]); // Domain of Y is from 0 to the max seen in the data
+
+                // Add the bars
+                svg.append("g")
+                    .selectAll("path")
+                    .data(data)
+                    .enter()
+                    .append("path")
+                    .attr("class", "circ-bar")
+                    .attr("fill", function(d) {
+                        if (selected_group.includes(d[0]))
+                            return "#d2d918"
+                        else
+                            return "#69b3a2"
+                    })
+                    .attr("d", d3v4.arc() // imagine your doing a part of a donut plot
+                        .innerRadius(innerRadius)
+                        .outerRadius(function(d) {
+                            return (y(d[1]) * 0.1);
+                        })
+                        .startAngle(function(d) {
+                            return x(d[2]);
+                        })
+                        .endAngle(function(d) {
+                            return x(d[2]) + x.bandwidth();
+                        })
+                        .padAngle(0.01)
+                        .padRadius(innerRadius))
+                var tip = d3v4.tip()
+                    .attr('class', 'd3-tip')
+                    .offset([-10, 0])
+                    .html(function(d) {
+
+                        return '<strong>' + d[2] + '</strong><br/><strong>' + Math.round(d[1]) + '</strong>';
+                    })
+                svg.call(tip);
+
+                d3v4.selectAll(".circ-bar")
+                    .on('mouseover', d => tip.show(d))
+                    .on('mouseout', tip.hide)
+
+                // Add the labels
+                svg.append("g")
+                    .selectAll("g")
+                    .data(data)
+                    .enter()
+                    .append("g")
+                    .attr("text-anchor", function(d) {
+                        return (x(d[2]) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "end" : "start";
+                    })
+                    .attr("transform", function(d) {
+                        return "rotate(" + ((x(d[2]) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")" + "translate(" + ((y(d[1]) * 0.1) + 10) + ",0)";
+                    })
+                    .append("text")
+                    .attr("fill", "white")
+                    .text(function(d) {
+                        return (d[0])
+                    })
+                    .attr("transform", function(d) {
+                        return (x(d[2]) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)";
+                    })
+                    .style("font-size", "11px")
+                    .attr("alignment-baseline", "middle")
+
+            });
+        }
+
+        function removeCircular() {
+            $("#circ-svg").remove()
+        }
+
+        function updateCircular() {
+            removeCircular()
+            drawCircular()
+        }
+    </script>
+
 
 
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" style="position: absolute; top: 1rem; right: 1rem;">
@@ -248,7 +433,7 @@
     <footer id="sticky-footer" class=" bg-dark text-white-50">
         <div class="container text-center">
             <small>Source: Sipri (www.sipri.org) and Data WorldBank (www.data.worldbank.org)</small><br/>
-            <small>Copyright &copy; WarMonopoly</small>
+            <small>Copyright &copy; WarInspector</small>
         </div>
     </footer>
 
@@ -274,27 +459,14 @@
                     <a href="/weapons">Weapons</a>
                 </li>
                 <li>
-                    <a href="#">Team</a>
+                    <a href="#">GDP</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li class="dropdown-header">Dropdown heading</li>
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
+
+                <li>
+                    <a href="/about">About</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="/about">Credits</a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/maridlcrmn">Follow me</a>
+                    <a href="https://github.com/not-a-genius">Github</a>
                 </li>
             </ul>
         </nav>
@@ -305,6 +477,19 @@
         <!-- /#page-content-wrapper -->
 
     </div>
+    <script>
+        setTimeout(function() {
+            // $(".bs-select-all").on('click', function() {
+            //     // alert("ALL SELECTED");
+            //     selectAllCountries()
+            // });
+            $(".bs-select-all").remove()
+            $(".bs-deselect-all").on('click', function() {
+                // alert("ALL DESELECTED");
+                resetSelect()
+            });
+        }, 500);
+    </script>
 </body>
 
 
