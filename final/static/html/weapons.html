@@ -24,6 +24,8 @@
     <script src="static/js/libraries/d3-legend.js"></script>
     <script src="static/js/MapComponentsManager.js"></script>
 
+    <!-- Favico -->
+    <link rel="icon" type="image/png" href="/static/icons/favicon.png"/>
 
 
 </head>
@@ -74,23 +76,35 @@
     <!-- Create a div where the graph will take place -->
     <script src="/static/js/libraries/d3-tip.js"></script>
 
-    <div class="card bg-dark text-center" style="color:aliceblue">
-        <div class="card-header   d-flex align-items-center justify-content-center  text-center">
-            Weapons requests by category
+    <div style="  padding-left: 2%; padding-right: 2%;">
+        <div class="card bg-dark text-center" style="color:aliceblue">
+            <div class="card-header   d-flex align-items-center justify-content-center  text-center">
+                Weapons requests by category
+            </div>
+            <div class="card-body" id="my_dataviz"></div>
         </div>
-        <div class="card-body" id="my_dataviz"></div>
     </div>
 
-    <div class="card bg-dark text-center" style="color:aliceblue">
-        <div class="card-header d-flex align-items-center justify-content-center  text-center">
-            Weapons by model
+    <div style="padding-left: 2%; padding-right: 2%;">
+        <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue;">
+            <div class="card-header d-flex align-items-center justify-content-center  text-center">
+                Weapons by model
+            </div>
+            <div class="card-body" id="scatter_viz"></div>
         </div>
-        <div class="card-body" id="scatter_viz"></div>
+
+        <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue; width: 74%;">
+            <div class="card-header d-flex align-items-center justify-content-center  text-center">
+                Weapon Description
+            </div>
+            <div class="card-body" id="weapon_description"></div>
+        </div>
     </div>
 
 
     <script>
-        NUM_CATEGORIES = 20
+        NUM_CATEGORIES = 80
+        chosen_category = null
 
         // set the dimensions and margins of the graph
         var margin = {
@@ -132,6 +146,9 @@
                     })
                     .slice(0, NUM_CATEGORIES)
 
+                chosen_category = ((orderedWeapons.length > 0) ? orderedWeapons[0]["key"] : null)
+                    
+                // console.log(orderedWeapons.length)
                 console.log(JSON.stringify(orderedWeapons));
 
                 // X axis
@@ -164,18 +181,35 @@
                 d3.selectAll(".tick")
                     .on('mouseover', function(d) {
                         console.log(this)
+
                         d3.select(this).style("font-size", "20px")
-                        d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");;
+                        if (d3.select(this).text() != chosen_category)
+                            d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
+
                         imageTip.show(d)
                     })
                     .on('mouseout', function(d) {
+                        
                         d3.select(this).style("font-size", "14px")
-                        d3.select(this).select('g > text').style("fill", "white");;
+                        if (d3.select(this).text() != chosen_category)
+                            d3.select(this).select('g > text').style("fill", "white");
+                        else
+                            d3.select(this).select('g > text').style("fill", "red");
 
                         imageTip.hide(d)
                     })
                     .on("click", function() {
-                        alert("click")
+                        //alert("click")
+                        d3.selectAll(".tick")
+                            .filter(function() {
+                                return d3.select(this).text() == chosen_category
+                            })
+                            .select('g > text')
+                            .style("fill", "white")
+                        
+                        chosen_category = d3.select(this).text()
+                        
+                        console.log(chosen_category)
                     })
                 var tip = d3.tip()
                     .attr('class', 'd3-tip')
@@ -186,6 +220,13 @@
 
 
                 svg.call(tip);
+
+                d3.selectAll(".tick")
+                    .filter(function() {
+                        return d3.select(this).text() == chosen_category
+                    })
+                    .select('g > text')
+                    .style("fill", "red")
 
 
 
