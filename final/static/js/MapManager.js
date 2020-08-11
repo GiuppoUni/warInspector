@@ -303,6 +303,11 @@ var MapManager = function() {
     }
 
 
+
+
+
+
+
     function selected(country_id = null) {
         el = null
         if (country_id == null) {
@@ -326,7 +331,53 @@ var MapManager = function() {
             selected_group.push(country_id)
             d3v4.selectAll("#country" + country_id)
                 .classed('selected', true);
+
+
+
             // Add in table the entry
+            // ...
+
+            updateGeneralInfo(country_id)
+
+
+
+            // Country is DESELECTED
+        } else {
+            $('#' + country_id + "-line").remove();
+
+            const index = selected_group.indexOf(el.data()[0].id);
+            if (index > -1) {
+                selected_group.splice(index, 1);
+            }
+
+            d3v4.selectAll("#country" + el.data()[0].id)
+                .classed('selected', false);
+        }
+
+
+        d3v4.selectAll(".heatmap").remove()
+        d3v4.selectAll(".legendThreshold").remove()
+        d3v4.selectAll(".legendCells").remove()
+
+        mm.drawCloroExp()
+        mm.drawCloroImp()
+        cm.updateCountry()
+        updateCircular()
+
+
+
+    }
+
+
+    function updateGeneralInfo(country_id = "") {
+
+        countries = selected_group
+        if (country_id != "")
+            countries = [country_id]
+
+        countries.forEach(country_id => {
+
+
             $.ajax({
                 type: "GET",
                 url: "static/data/pop.csv",
@@ -413,18 +464,18 @@ var MapManager = function() {
                                     }
                                     // pop = data[]
                                     // lines.push(tarr);
-                                    console.log("arm:", armies, "YEARS", years)
+                                    if (DEBUG) console.log("arm:", armies, "YEARS", years)
                                 }
                             }
                         }
 
-
+                        $("#" + country_id + "-line").remove()
                         var newRowContent = '<tr id="' + country_id + '-line">\
-                    <td class="col-xs-1">' + country_id + '</td>\
-                    <td class="col-xs-3">' + average(gdps) + '</td>\
-                    <td class="col-xs-3">' + average(pops) + '</td>\
-                    <td class="col-xs-3">' + average(armies) + '</td>\
-                    </tr>'
+            <td class="col-xs-1">' + country_id + '</td>\
+            <td class="col-xs-3">' + average(gdps) + '</td>\
+            <td class="col-xs-3">' + average(pops) + '</td>\
+            <td class="col-xs-3">' + average(armies) + '</td>\
+            </tr>'
                         $("tbody").append(newRowContent);
 
                         getDataFromPost()
@@ -433,34 +484,7 @@ var MapManager = function() {
 
                 }
             }
-
-
-
-            // Country is DESELECTED
-        } else {
-            $('#' + country_id + "-line").remove();
-
-            const index = selected_group.indexOf(el.data()[0].id);
-            if (index > -1) {
-                selected_group.splice(index, 1);
-            }
-
-            d3v4.selectAll("#country" + el.data()[0].id)
-                .classed('selected', false);
-        }
-
-
-        d3v4.selectAll(".heatmap").remove()
-        d3v4.selectAll(".legendThreshold").remove()
-        d3v4.selectAll(".legendCells").remove()
-
-        mm.drawCloroExp()
-        mm.drawCloroImp()
-        cm.updateCountry()
-        updateCircular()
-
-
-
+        });
     }
 
     function average(arr) {
@@ -514,6 +538,8 @@ var MapManager = function() {
         drawCloroImp: drawCloroImp,
         getYearsInterval: getYearsInterval,
         setYearInterval: setYearInterval,
+
+        updateGeneralInfo: updateGeneralInfo,
 
         getCountry: getCountry,
         setCountry: setCountry,

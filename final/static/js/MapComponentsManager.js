@@ -47,6 +47,8 @@ var MapComponentsManager = function() {
                         update()
                         cm.updateYearsInterval(year_interval)
                         getDataFromPost()
+                        callUpdateGeneralInfo()
+
                     }, 250);
 
 
@@ -84,6 +86,8 @@ var MapComponentsManager = function() {
         mm.drawCloroImp()
 
     }
+
+
 
 
 

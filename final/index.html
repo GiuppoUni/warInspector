@@ -55,7 +55,7 @@
 
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <button type="button" onclick="toggler()" id="hamburger" class=" btn btn-dark navbar-toggler " type="button" data-toggle="offcanvas" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars" style="color: aliceblue;" aria-hidden="true"> Menu</i>
+                <i class="fa fa-bars" style="color: aliceblue;;" aria-hidden="true"><div style="display: inline;">&nbspMenu</div> </i>
                 
             </button>
             <a class="navbar-brand" href="#"></a>
@@ -152,13 +152,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="padding-top: 20px;">
+                <div class="row" style="padding-left:20px;padding-top: 20px;">
                     <div>
-                        <input type="image" id="homeButton" width="50" src="static/icons/home.png" onclick="callResetZoom()" />
+                        <input type="image" id="homeButton" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
                         <span class="tooltiptext">Reset zoom</span>
                     </div>
                     <div style="padding-left: 10px;">
-                        <input type="image" id="resetButton" width="50" src="static/icons/reset3.png" onclick="resetSelect()" />
+                        <input type="image" id="resetButton" width="30" src="static/icons/reset3.png" onclick="resetSelect()" />
                         <span class="tooltiptext">Reset selection</span>
                     </div>
 
@@ -398,7 +398,12 @@
                         return "rotate(" + ((x(d[2]) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")" + "translate(" + ((y(d[1]) * 0.1) + 10) + ",0)";
                     })
                     .append("text")
-                    .attr("fill", "white")
+                    .attr("fill", function(d) {
+                        if (selected_group.includes(d[0]))
+                            return "#d2d918"
+                        else
+                            return "white"
+                    })
                     .text(function(d) {
                         return (d[0])
                     })
