@@ -12,12 +12,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="static/bootstrap4.5/css/bootstrap.min.css" crossorigin="anonymouse" />
 
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
     <link rel="stylesheet" href="static/css/style.css">
 
+<<<<<<< HEAD
     <title>Countries</title>
+=======
+    <title>Countries info</title>
+    <link rel="shortcut icon" href="static/icons/valogo.ico" />
+
+
+
+    <script src="static/js/libraries/d3-simple-slider.min.js"></script>
+    <script src="static/js/libraries/d3-legend.js"></script>
+
+    <script src="/static/js/libraries/d3v4-tip.js"></script>
+
+>>>>>>> ae5f63327147865b94690e853b37ab0d64943575
     <script src="static/js/Main.js"></script>
+    <script src="static/js/BubblesChartManager.js"></script>
+
 
     <!-- Favico -->
     <link rel="icon" type="image/png" href="/static/icons/favicon.png"/>
@@ -26,7 +44,7 @@
 </head>
 
 
-<body>
+<body onload="BubblesChartManager()">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -37,7 +55,7 @@
 
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <button type="button" onclick="toggler()" id="hamburger" class=" btn btn-dark navbar-toggler " type="button" data-toggle="offcanvas" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars" style="color: aliceblue;" aria-hidden="true"> Menu</i>
+                <i class="fa fa-bars" style="color: aliceblue;" aria-hidden="true"> <div style="display: inline;">&nbspMenu</div> </i>
                 
             </button>
             <a class="navbar-brand" href="#"></a>
@@ -53,15 +71,25 @@
         </nav>
     </div>
 
-
-    <div class="card bg-dark text-center" style="color:aliceblue">
-        PLACEHOLDER
-    </div>
+    <!--  CODE HERE -->
 
 
     <div class="card bg-dark text-center" style="color:aliceblue">
-        PLACEHOLDER
+        <div class="card-header d-flex align-items-center justify-content-center text-center">
+            Overview on countries
+        </div>
+        <div class="card-body" id="bubblesChart-container"></div>
+
     </div>
+
+
+
+    <!-- 
+    <script>
+        bm = BubblesChartManager()
+    </script> -->
+
+    <!-- END CODE  -->
 
 
 

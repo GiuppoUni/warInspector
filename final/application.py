@@ -167,9 +167,9 @@ def MDSMain(year,country):
 PCA
 =========
 '''
-def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
 
-    #refugees
+def createDf(year1,year2,countries):
+     #refugees
     df_ref = pd.read_csv(folder+"ref.csv", header=4 )
     df_ref = df_ref.rename(columns=lambda x: x.strip())
 
@@ -279,6 +279,100 @@ def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
     df_mrgd_exp['POP_TOTAL'] = df_mrgd_exp.groupby(['Country Code'])['POP_TOTAL'].transform('sum')
     df_mrgd_exp = df_mrgd_exp.drop_duplicates(subset=["Country Name","Country Code"])
 
+    return df_mrgd_imp, df_mrgd_exp
+
+# def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
+
+#     df_mrgd_imp, df_mrgd_exp = createDf(year1,year2,countries)
+
+
+#     print("Plotting",countries)
+#     def pca_plot(df):
+#         # df['target']= df["Country Name"].apply(lambda x: "selected" if x.strip() in selected
+#         #     else "not selected")
+#         # print(df)
+#         df = df.rename(columns={"Country Code":"target"})
+
+
+#         features = ['IMPORT_TOTAL', 'ARMY_TOTAL',
+#             'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
+#         if("IMPORT_TOTAL" not in df.columns.values):
+#             features = ['EXPORT_TOTAL', 'ARMY_TOTAL',
+#             'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
+#         # Separating out the features
+#         x = df.loc[:, features].values
+#         # Separating out the target
+#         y = df.loc[:,['target']].values
+#         # Standardizing the features
+#         x = StandardScaler().fit_transform(x)
+
+        
+#         pca = PCA(n_components=2)
+#         principalComponents = pca.fit_transform(x)
+#         principalDf = pd.DataFrame(data = principalComponents
+#                     , columns = ['principal component 1', 'principal component 2'])
+                    
+
+#         finalDf = pd.concat([principalDf, df[['target']]], axis = 1)
+
+
+
+#         fig = plt.figure(figsize = (8,8))
+#         ax = fig.add_subplot(1,1,1) 
+#         # ax.set_xlabel('Principal Component 1', fontsize = 15)
+#         # ax.set_ylabel('Principal Component 2', fontsize = 15)
+#         # ax.set_title('2 component PCA', fontsize = 20)
+#         colors = ['y', 'b']
+
+#         indicesToKeep = finalDf["target"].apply(lambda x: x in countries)
+
+
+
+#         indicesToKeep2 = ~ indicesToKeep
+#         pc1 = finalDf.loc[indicesToKeep2, 'principal component 1'].to_list()
+#         pc2 = finalDf.loc[indicesToKeep2, 'principal component 2'].to_list()
+#         names = finalDf.loc[indicesToKeep2, "target"].to_list()
+#         # print(finalDf)
+#         # No grid
+#         plt.grid(b=None)
+
+#         ax.scatter( pc1, pc2 
+#                 , c = "b"
+#                 , s = 10)
+
+#         ax.grid()
+#         # non targets:
+#         for i,r in enumerate(zip(names, pc1, pc2)):
+#             if( pc1[i] > 0.2 and pc2[i] > 0.2):
+#                 ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
+
+#         pc1 = finalDf.loc[indicesToKeep, 'principal component 1'].to_list()
+#         pc2 = finalDf.loc[indicesToKeep, 'principal component 2'].to_list()
+#         names = finalDf.loc[indicesToKeep, "target"].to_list()
+
+#         scatter = ax.scatter( pc1, pc2 
+#                 , c = "y"
+#                 , s = 10,edgecolors='r')
+#         for i,r in enumerate(zip(names, pc1, pc2)):
+#             ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
+
+#         # ax.legend( scatter,title="Selected:", labels=countries)
+        
+#         print(names)
+#         # plt.show()
+
+#         print("pca.explained_variance_ratio_",pca.explained_variance_ratio_)
+            
+#         return mpld3.fig_to_html(fig)
+
+#     s_imp = pca_plot(df_mrgd_imp)
+#     s_exp = pca_plot(df_mrgd_exp)
+#     return s_imp , s_exp
+
+def pcaMain(year1=2016,year2=2019,countries=["ITA"]):
+
+
+    df_mrgd_imp, df_mrgd_exp = createDf(year1,year2,countries)
 
 
     print("Plotting",countries)
@@ -309,7 +403,9 @@ def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
                     
 
         finalDf = pd.concat([principalDf, df[['target']]], axis = 1)
+        finalDf = pd.concat([finalDf, df[['Country Name']]], axis = 1)
 
+        print(finalDf)
 
 
         fig = plt.figure(figsize = (8,8))
@@ -327,6 +423,9 @@ def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
         pc1 = finalDf.loc[indicesToKeep2, 'principal component 1'].to_list()
         pc2 = finalDf.loc[indicesToKeep2, 'principal component 2'].to_list()
         names = finalDf.loc[indicesToKeep2, "target"].to_list()
+        names2 = finalDf.loc[indicesToKeep2, "Country Name"].to_list()
+        not_selected_labels = [False]*len(names)
+
         # print(finalDf)
         # No grid
         plt.grid(b=None)
@@ -341,28 +440,33 @@ def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
             if( pc1[i] > 0.2 and pc2[i] > 0.2):
                 ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
 
-        pc1 = finalDf.loc[indicesToKeep, 'principal component 1'].to_list()
-        pc2 = finalDf.loc[indicesToKeep, 'principal component 2'].to_list()
-        names = finalDf.loc[indicesToKeep, "target"].to_list()
+        pc1Sel = finalDf.loc[indicesToKeep, 'principal component 1'].to_list()
+        pc2Sel = finalDf.loc[indicesToKeep, 'principal component 2'].to_list()
+        namesSel = finalDf.loc[indicesToKeep, "target"].to_list()
+        namesSel2 = finalDf.loc[indicesToKeep, "Country Name"].to_list()
+        selected_labels = [True]*len(namesSel)
 
-        scatter = ax.scatter( pc1, pc2 
+        scatter = ax.scatter( pc1Sel, pc2Sel 
                 , c = "y"
                 , s = 10,edgecolors='r')
-        for i,r in enumerate(zip(names, pc1, pc2)):
-            ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
+        for i,r in enumerate(zip(namesSel, pc1Sel, pc2Sel)):
+            ax.annotate(r[0], (pc1Sel[i]+0.1, pc2Sel[i]+0.1 ))
 
         # ax.legend( scatter,title="Selected:", labels=countries)
         
-        print(names)
+        print(namesSel)
         # plt.show()
 
         print("pca.explained_variance_ratio_",pca.explained_variance_ratio_)
-            
-        return mpld3.fig_to_html(fig)
 
-    s_imp = pca_plot(df_mrgd_imp)
-    s_exp = pca_plot(df_mrgd_exp)
-    return s_imp , s_exp
+        # Prepare data for d3
+
+        return [list(zip(pc1,pc2,names,names2,not_selected_labels))+list(zip(pc1Sel,pc2Sel,namesSel,namesSel2,selected_labels))]
+
+    data_imp = pca_plot(df_mrgd_imp)
+    data_exp = pca_plot(df_mrgd_exp)
+    return data_imp, data_exp
+
     
 
 @application.route("/main",methods=["GET","POST"])
@@ -404,19 +508,23 @@ def returnPCAData():
 
 
     #s =  MDSMain(year1,None) 
-    s1,s2 = PCAMain(year1,year2, country )
+    # s1,s2 = PCAMain(year1,year2, country )
 
-    old_dimensions_string = '"width": 800.0, "height": 800.0'
-    new_dimensions_string = '"width":' + PCA_WIDTH + ',"height":' + PCA_HEIGHT
+    # old_dimensions_string = '"width": 800.0, "height": 800.0'
+    # new_dimensions_string = '"width":' + PCA_WIDTH + ',"height":' + PCA_HEIGHT
     
-    s1 = s1.replace("<style>","").replace("</style>","")\
-    .replace(old_dimensions_string,new_dimensions_string)
+    # s1 = s1.replace("<style>","").replace("</style>","")\
+    # .replace(old_dimensions_string,new_dimensions_string)
     
-    s2 = s2.replace("<style>","").replace("</style>","")\
-    .replace(old_dimensions_string,new_dimensions_string)
+    # s2 = s2.replace("<style>","").replace("</style>","")\
+    # .replace(old_dimensions_string,new_dimensions_string)
 
-    #print(s)
-    return jsonify(data.CountryName,data.Year1,data.Year2,s1,s2)
+    # #print(s)
+    # return jsonify(data.CountryName,data.Year1,data.Year2,s1,s2)
+
+    d1,d2 = pcaMain(year1,year2,country)
+
+    return jsonify(data.CountryName,data.Year1,data.Year2,d1,d2)
 
 
 # Other routes

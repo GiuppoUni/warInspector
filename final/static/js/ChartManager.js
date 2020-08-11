@@ -8,8 +8,9 @@ var ChartManager = function() {
     var drawChart = function() {
 
         const margin = 80;
+
         const width = 400 - 2 * margin;
-        const height = 350 - 2 * margin;
+        const height = 350 - 2 * margin - 10;
 
 
 
@@ -99,8 +100,12 @@ var ChartManager = function() {
                 .scale(yScale)
 
             chart.append('g')
+                .attr("class", "xticks")
                 .attr('transform', `translate(0, ${height})`)
-                .call(d3v4.axisBottom(xScale));
+                .call(d3v4.axisBottom(xScale))
+                .selectAll("text")
+                .attr("transform", "rotate(-45)")
+                .style("text-anchor", "end");
 
             const yAxisTicks = yScale.ticks()
                 .filter(Number.isInteger);
@@ -140,6 +145,7 @@ var ChartManager = function() {
                 .attr('y', (g) => yScale(g[1]))
                 .attr('height', (g) => height - yScale(g[1]))
                 .attr('width', xScale.bandwidth())
+                .attr("fill", "#d00101")
                 .on('mouseenter', function(actual, i) {
                     d3v4.selectAll('.value')
                         .attr('opacity', 0)
@@ -245,7 +251,7 @@ var ChartManager = function() {
     var drawChartRec = function() {
         const margin = 80;
         const width = 400 - 2 * margin;
-        const height = 350 - 2 * margin;
+        const height = 350 - 2 * margin - 10;
 
 
 
@@ -336,7 +342,10 @@ var ChartManager = function() {
 
             chart.append('g')
                 .attr('transform', `translate(0, ${height})`)
-                .call(d3v4.axisBottom(xScale));
+                .call(d3v4.axisBottom(xScale))
+                .selectAll("text")
+                .attr("transform", "rotate(-45)")
+                .style("text-anchor", "end");
 
             const yAxisTicks = yScale.ticks()
                 .filter(Number.isInteger);
@@ -376,6 +385,7 @@ var ChartManager = function() {
                 .attr('y', (g) => yScale(g[1]))
                 .attr('height', (g) => height - yScale(g[1]))
                 .attr('width', xScale.bandwidth())
+                .attr("fill", "#009344")
                 .on('mouseenter', function(actual, i) {
                     d3v4.selectAll('.value')
                         .attr('opacity', 0)

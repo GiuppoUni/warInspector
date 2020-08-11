@@ -30,7 +30,8 @@
     <script src="static/js/ChartManager.js"></script>
     <script src="static/js/MapManager.js"></script>
     <!-- <script src="static/js/RankRaceManager.js"></script> -->
-    <script src="static/js/BubblesChartManager.js"></script>
+    <script src="static/js/PcaScatterManager.js"></script>
+
     <!-- <script src="static/js/CircularManager.js"></script> -->
 
 
@@ -41,6 +42,7 @@
     <link rel="icon" type="image/png" href="/static/icons/favicon.png"/>
 
     <title>WarInspector</title>
+    <link rel="shortcut icon" href="static/icons/valogo.ico" />
 
 
 </head>
@@ -56,7 +58,7 @@
 
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <button type="button" onclick="toggler()" id="hamburger" class=" btn btn-dark navbar-toggler " type="button" data-toggle="offcanvas" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars" style="color: aliceblue;" aria-hidden="true"> Menu</i>
+                <i class="fa fa-bars" style="color: aliceblue;;" aria-hidden="true"><div style="display: inline;">&nbspMenu</div> </i>
                 
             </button>
             <a class="navbar-brand" href="#"></a>
@@ -93,7 +95,8 @@
             <div class="col-md-auto my-col-up">
                 <div class="card bg-dark">
                     <div class="card-header  d-flex align-items-center justify-content-center text-center">
-                        Num. of weapons IMPORTED into &nbsp
+                        Num. of weapons&nbsp
+                        <h7 style="color: #d00101">IMPORTED</h7> &nbspinto &nbsp
                         <div class="shadowText" style="display:inline-block ;"> selected countries</div>
                     </div>
                     <div class="card-body" id="map-imp-col">
@@ -105,7 +108,8 @@
 
                 <div class="card bg-dark">
                     <div class="card-header  d-flex align-items-center justify-content-center  text-center">
-                        Num. of weapons EXPORTED from &nbsp
+                        Num. of weapons&nbsp
+                        <h7 style="color: #009344">EXPORTED</h7> &nbspinto &nbsp
                         <div class="shadowText" style="display:inline-block ;">selected countries</div>
 
                     </div>
@@ -138,6 +142,9 @@
                                                 <td class="col-xs-1">ITA</td>
                                                 <td class="col-xs-3">32584</td>
                                                 <td class="col-xs-3">60528656</td>
+                                                <td class="col-xs-3">351925</td>
+
+
                                             </tr>
 
 
@@ -148,13 +155,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="padding-top: 20px;">
+                <div class="row" style="padding-left:20px;padding-top: 20px;">
                     <div>
-                        <input type="image" id="homeButton" width="50" src="static/icons/home.png" onclick="callResetZoom()" />
+                        <input type="image" id="homeButton" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
                         <span class="tooltiptext">Reset zoom</span>
                     </div>
                     <div style="padding-left: 10px;">
-                        <input type="image" id="resetButton" width="50" src="static/icons/reset3.png" onclick="resetSelect()" />
+                        <input type="image" id="resetButton" width="30" src="static/icons/reset3.png" onclick="resetSelect()" />
                         <span class="tooltiptext">Reset selection</span>
                     </div>
 
@@ -184,9 +191,9 @@
 
                                     </div>
                                 </div>
-                                <div class="col rounded" id=pca-import-col style=" padding-left: 0px;">
+                                <div class="col rounded" id=pca-import-col style="background-color: rgb(20, 20, 20); padding-left: 0px;">
                                     <div class="center lds-facebook justify-content-center" id="load-anim">
-                                        Loading PCA...
+                                        Computing PCA...
                                         <div></div>
                                         <div></div>
                                         <div></div>
@@ -199,7 +206,7 @@
 
             </div>
 
-            <div class="col-md-4-5  my-col-down">
+            <div class="col-md-4-5  my-col-down ">
                 <div class="card bg-dark" id="charts-div-rec">
                     <div class="card-body" style=" padding-left: 0px;">
                         <div class="container">
@@ -217,9 +224,9 @@
 
                                     </div>
                                 </div>
-                                <div class="col rounded" id="pca-export-col">
+                                <div class="col rounded" id="pca-export-col" style="background-color: rgb(20, 20, 20); padding-left: 0px;">
                                     <div class="center lds-facebook justify-content-center" id="load-anim">
-                                        Loading PCA...
+                                        Computing PCA...
                                         <div></div>
                                         <div></div>
                                         <div></div>
@@ -321,8 +328,8 @@
                 data = newData.sort(function(a, b) {
                     return d3v4.descending(+a[1], +b[1]);
                 }).slice(0, 20);
-                // if (DEBUG) 
-                console.log(data)
+                if (DEBUG)
+                    console.log(data)
 
                 /************************************************************************************************************
                  * NOW YOU HAVE DATA TO BE PLOTTED, FORMAT : 
@@ -394,7 +401,12 @@
                         return "rotate(" + ((x(d[2]) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")" + "translate(" + ((y(d[1]) * 0.1) + 10) + ",0)";
                     })
                     .append("text")
-                    .attr("fill", "white")
+                    .attr("fill", function(d) {
+                        if (selected_group.includes(d[0]))
+                            return "#d2d918"
+                        else
+                            return "white"
+                    })
                     .text(function(d) {
                         return (d[0])
                     })
@@ -494,6 +506,7 @@
             });
         }, 300);
     </script>
+    <div id="pca-test"></div>
 </body>
 
 
