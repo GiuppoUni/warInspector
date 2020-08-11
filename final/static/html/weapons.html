@@ -89,7 +89,7 @@
 
     <div style="padding-left: 2%; padding-right: 2%;">
         <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue;">
-            <div class="card-header d-flex align-items-center justify-content-center  text-center">
+            <div class="card-header d-flex align-items-center justify-content-center  text-center" id="scatter_title">
                 Weapons by model
             </div>
             <div class="card-body" id="scatter_viz"></div>
@@ -106,7 +106,7 @@
 
     <script>
         NUM_CATEGORIES = 80
-        chosen_category = null
+        chosen_category = ""
 
         // set the dimensions and margins of the graph
         var margin = {
@@ -210,6 +210,12 @@
                             .style("fill", "white")
                         
                         chosen_category = d3.select(this).text()
+
+                        $("#scatter_title").html("Weapon by model: " + chosen_category)
+
+                        d3.select("#scatter_svg").remove()
+                        drawScatter()
+                        console.log("Plot recomputed")
                         
                         console.log(chosen_category)
                     })
@@ -229,6 +235,8 @@
                     })
                     .select('g > text')
                     .style("fill", "red")
+                
+                $("#scatter_title").html("Weapon by model: " + chosen_category)
 
 
 
@@ -293,6 +301,7 @@
             // append the svg object to the body of the page
             var svg = d3.select("#scatter_viz")
                 .append("svg")
+                .attr("id", "scatter_svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
