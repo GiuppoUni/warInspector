@@ -5,7 +5,7 @@ var mcm;
 var mm;
 var cm;
 var rm;
-var pcm;
+var pcam;
 
 var years = [2016, 2018];
 var country_selected = "Italy";
@@ -27,7 +27,7 @@ function main() {
     mcm = MapComponentsManager();
     mm = MapManager();
     cm = ChartManager();
-    pcm = PcaScatterManager();
+    pcam = PcaScatterManager();
     // rm = RankRaceManager();
 
     mm.drawCloroExp();
@@ -115,11 +115,11 @@ function getDataFromPost() {
 
                 $(".lds-facebook").fadeOut()
 
-                pcm.drawChart(root[3][0], "IMP")
-                pcm.drawChart(root[4][0], "EXP")
+                pcam.drawChart(root[3][0], "IMP")
+                pcam.drawChart(root[4][0], "EXP")
 
-                // pcm.drawBasicChart(root[3], "IMP")
-                // pcm.drawBasicChart(root[4], "EXP")
+                // pcam.drawBasicChart(root[3], "IMP")
+                // pcam.drawBasicChart(root[4], "EXP")
 
             }
         });
@@ -195,4 +195,8 @@ $(document).ready(function() {
 
 function callUpdateGeneralInfo() {
     mm.updateGeneralInfo()
+}
+
+function callResetPCAZoom(type) {
+    pcam.resetZoom(type)
 }

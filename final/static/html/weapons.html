@@ -27,7 +27,7 @@
     <script src="static/js/MapComponentsManager.js"></script>
 
     <!-- Favico -->
-    <link rel="icon" type="image/png" href="/static/icons/favicon.png"/>
+    <link rel="icon" type="image/png" href="/static/icons/favicon.png" />
 
 
 </head>
@@ -149,9 +149,9 @@
                     .slice(0, NUM_CATEGORIES)
 
                 chosen_category = ((orderedWeapons.length > 0) ? orderedWeapons[0]["key"] : null)
-                    
+
                 // console.log(orderedWeapons.length)
-                console.log(JSON.stringify(orderedWeapons));
+                console.log(orderedWeapons);
 
                 // X axis
                 var x = d3.scaleBand()
@@ -191,7 +191,7 @@
                         imageTip.show(d)
                     })
                     .on('mouseout', function(d) {
-                        
+
                         d3.select(this).style("font-size", "14px")
                         if (d3.select(this).text() != chosen_category)
                             d3.select(this).select('g > text').style("fill", "white");
@@ -208,9 +208,9 @@
                             })
                             .select('g > text')
                             .style("fill", "white")
-                        
+
                         chosen_category = d3.select(this).text()
-                        
+
                         console.log(chosen_category)
                     })
                 var tip = d3.tip()

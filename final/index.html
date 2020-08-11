@@ -122,12 +122,12 @@
             <div class="col-md-auto  my-col-up">
                 <div class="container">
                     <div class="row">
-                        <div class="card bg-dark infoCard">
+                        <div class="card bg-dark infoCard" style="width: 350px;">
                             <div class="card-header  d-flex align-items-center justify-content-center   text-center">
                                 General info
                             </div>
                             <div class="card-body" id="general-info">
-                                <div class="container table-responsive  rounded shadow" id="info-container">
+                                <div class="container table-responsive  rounded shadow" style="width: 350px;" id="info-container">
                                     <table class="table table-fixed" id="tablePIL">
                                         <thead>
                                             <tr>
@@ -155,10 +155,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="padding-left:20px;padding-top: 20px;">
+                <div class="row " style="padding-left:20px;padding-top: 20px;;">
+
                     <div>
                         <input type="image" id="homeButton" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
-                        <span class="tooltiptext">Reset zoom</span>
+                        <span class="tooltiptext">Reset map zoom</span>
                     </div>
                     <div style="padding-left: 10px;">
                         <input type="image" id="resetButton" width="30" src="static/icons/reset3.png" onclick="resetSelect()" />
@@ -198,6 +199,24 @@
                                         <div></div>
                                         <div></div>
                                     </div>
+                                    <div class="bg-dark" style="left: 287px;top:270px; position:absolute">
+                                        <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetPCAZoom('IMP')" />
+                                        <span class="tooltiptext">Reset zoom</span>
+                                    </div>
+                                    <div class="bg-dark" style="left: 300px;top:0px; position:absolute">
+                                        <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" onclick="callResetPCAZoom('IMP')" />
+                                        <span class="tooltiptext mini">Principal Component Analysis considering: 
+                                            <ul>
+                                                <li>population</li>
+                                                <li>gdp</li>
+                                                <li>army dimensions</li>
+                                                <li>num. of refugees </li>
+                                                <li>num. of imported weapons</li>
+ 
+                                            </ul>
+                                            
+                                            </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +250,24 @@
                                         <div></div>
                                         <div></div>
                                     </div>
-
+                                    <div class="bg-dark" style="left: 287px;top:270px; position:absolute">
+                                        <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetPCAZoom('EXP')" />
+                                        <span class="tooltiptext">Reset zoom</span>
+                                    </div>
+                                    <div class="bg-dark" style="left: 300px;top:0px; position:absolute">
+                                        <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" onclick="callResetPCAZoom('IMP')" />
+                                        <span class="tooltiptext mini">Principal Component Analysis considering: 
+                                            <ul>
+                                                <li>population</li>
+                                                <li>gdp</li>
+                                                <li>army dimensions</li>
+                                                <li>num. of refugees </li>
+                                                <li>num. of exported weapons</li>
+ 
+                                            </ul>
+                                            
+                                            </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
