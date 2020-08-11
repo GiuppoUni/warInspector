@@ -1085,3 +1085,17 @@ Charts
     .grid path {
         stroke-width: 0;
     }
+    
+    .weaponDesc {
+        display: none;
+    }
+    
+    .toppissimo {
+        top: -70px;
+    }
+    
+    .bottom {
+        padding-top: 0;
+        position: relative;
+        top: -75px
+    }

@@ -363,7 +363,7 @@ var MapManager = function() {
         mm.drawCloroImp()
         cm.updateCountry()
         updateCircular()
-
+        getDataFromPost()
 
 
     }
@@ -478,9 +478,9 @@ var MapManager = function() {
             </tr>'
                         $("tbody").append(newRowContent);
 
-                        getDataFromPost()
 
                     }
+
 
                 }
             }
