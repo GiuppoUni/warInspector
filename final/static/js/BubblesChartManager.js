@@ -1,9 +1,17 @@
+function callResetBubble() {
+    bcm.resetBubbleZoom()
+}
+
+function mainBubble() {
+    bcm = BubblesChartManager()
+}
+
 var BubblesChartManager = function() {
     var margin = { top: 40, right: 150, bottom: 60, left: 30 },
         width = 1700 - margin.left - margin.right,
         height = 700 - margin.top - margin.bottom;
 
-
+    var zoom;
     // append the svg object to the body of the page
     var svg = d3.select("#bubblesChart-container")
         .append("svg")
@@ -19,6 +27,14 @@ var BubblesChartManager = function() {
     //Read the data
     d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv", function(data) {
 
+        // Pan and zoom
+        zoom = d3.zoom()
+            .scaleExtent([.5, 20])
+            .extent([
+                [0, 0],
+                [width, height]
+            ])
+            .on("zoom", zoomed);
         // ---------------------------//
         //       AXIS  AND SCALE      //
         // ---------------------------//
@@ -154,14 +170,7 @@ var BubblesChartManager = function() {
         // ---------------------------//
 
 
-        // Pan and zoom
-        var zoom = d3.zoom()
-            .scaleExtent([.5, 20])
-            .extent([
-                [0, 0],
-                [width, height]
-            ])
-            .on("zoom", zoomed);
+
 
         svg.append("rect")
             .attr("width", width)
@@ -333,6 +342,17 @@ var BubblesChartManager = function() {
         }
     })
 
+    var resetBubbleZoom = function() {
+        svg.transition()
+            .duration(100)
+            .call(zoom.transform, d3.zoomIdentity);
+
+
+    }
+
+    return {
+        resetBubbleZoom: resetBubbleZoom,
+    }
 
 
 }

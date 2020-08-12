@@ -6,6 +6,7 @@ var mm;
 var cm;
 var rm;
 var pcam;
+var bcm;
 
 var years = [2016, 2018];
 var country_selected = "Italy";

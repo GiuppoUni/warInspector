@@ -19,9 +19,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
     <link rel="stylesheet" href="static/css/style.css">
 
-<<<<<<< HEAD
-    <title>Countries</title>
-=======
     <title>Countries info</title>
     <link rel="shortcut icon" href="static/icons/valogo.ico" />
 
@@ -32,19 +29,18 @@
 
     <script src="/static/js/libraries/d3v4-tip.js"></script>
 
->>>>>>> ae5f63327147865b94690e853b37ab0d64943575
     <script src="static/js/Main.js"></script>
     <script src="static/js/BubblesChartManager.js"></script>
 
 
     <!-- Favico -->
-    <link rel="icon" type="image/png" href="/static/icons/favicon.png"/>
+    <link rel="icon" type="image/png" href="/static/icons/favicon.png" />
 
 
 </head>
 
 
-<body onload="BubblesChartManager()">
+<body onload="mainBubble()" style="overflow-x: hidden;">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -79,15 +75,14 @@
             Overview on countries
         </div>
         <div class="card-body" id="bubblesChart-container"></div>
-
+        <div class="bg-dark" style="left: 1740px;top:700px; position:absolute">
+            <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetBubble()" />
+            <span class="tooltiptext">Reset zoom</span>
+        </div>
     </div>
 
 
 
-    <!-- 
-    <script>
-        bm = BubblesChartManager()
-    </script> -->
 
     <!-- END CODE  -->
 
