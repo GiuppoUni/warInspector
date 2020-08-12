@@ -41,7 +41,17 @@ function main() {
 
     drawCircular()
 
+    $(".bs-select-all").remove()
+    $(".bs-deselect-all").on('click', function() {
+        // alert("ALL DESELECTED");
+        resetSelect()
+        updateCircular()
+    });
 
+
+    document.querySelectorAll('.bs-select-all').forEach(function(a) {
+        a.remove()
+    })
 }
 
 

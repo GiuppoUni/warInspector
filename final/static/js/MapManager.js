@@ -169,16 +169,16 @@ var MapManager = function() {
                 .attr("id", "legendThreshold")
                 .attr("transform", "translate(20,20)");
 
-            lgnd.append("text")
-                .attr('class', 'title')
-                .attr('id', 'arrows-title')
-                .attr("fill", "white")
-                .attr("stroke", "black")
-                .attr("stroke-width", "0.5")
-                .attr('x', width / 2 + 10)
-                .attr('y', 10)
-                .attr('text-anchor', 'middle')
-                .text("Weapon units " + country_selected + " EXPORTED to nation during " + years[0] + "-" + years[1]);
+            // lgnd.append("text")
+            //     .attr('class', 'title')
+            //     .attr('id', 'arrows-title')
+            //     .attr("fill", "white")
+            //     .attr("stroke", "black")
+            //     .attr("stroke-width", "0.5")
+            //     .attr('x', width / 2 + 10)
+            //     .attr('y', 10)
+            //     .attr('text-anchor', 'middle')
+            //     .text("Weapon units " + country_selected + " EXPORTED to nation during " + years[0] + "-" + years[1]);
 
             var labels = ['>=	 1', ">= 10", ">= 100", ">= 1000", ">= 10000", ">= 100000"];
             var legend = d3v4.legendColor()
@@ -277,16 +277,16 @@ var MapManager = function() {
                 .attr("id", "legendThreshold2")
                 .attr("transform", "translate(20,20)");
 
-            lgnd.append("text")
-                .attr('class', 'title')
-                .attr('id', 'arrows-title2')
-                .attr("fill", "white")
-                .attr("stroke", "black")
-                .attr("stroke-width", "0.5")
-                .attr('x', width / 2 + 10)
-                .attr('y', 10)
-                .attr('text-anchor', 'middle')
-                .text("Weapon units " + country_selected + " IMPORTED to nation during " + years[0] + "-" + years[1]);
+            // lgnd.append("text")
+            //     .attr('class', 'title')
+            //     .attr('id', 'arrows-title2')
+            //     .attr("fill", "white")
+            //     .attr("stroke", "black")
+            //     .attr("stroke-width", "0.5")
+            //     .attr('x', width / 2 + 10)
+            //     .attr('y', 10)
+            //     .attr('text-anchor', 'middle')
+            //     .text("Weapon units " + country_selected + " IMPORTED to nation during " + years[0] + "-" + years[1]);
 
             var labels = ['>=	 1', ">= 10", ">= 100", ">= 1000", ">= 10000", ">= 100000"];
             var legend = d3v4.legendColor()

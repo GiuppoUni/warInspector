@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="static/css/style.css">
 
     <!-- Favico -->
-    <link rel="icon" type="image/png" href="/static/icons/favicon.png"/>
+    <link rel="icon" type="image/png" href="/static/icons/favicon.png" />
 
     <title>WarInspector</title>
     <link rel="shortcut icon" href="static/icons/valogo.ico" />
@@ -204,7 +204,7 @@
                                         <span class="tooltiptext">Reset zoom</span>
                                     </div>
                                     <div class="bg-dark" style="left: 300px;top:0px; position:absolute">
-                                        <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" onclick="callResetPCAZoom('IMP')" />
+                                        <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" />
                                         <span class="tooltiptext mini">Principal Component Analysis considering: 
                                             <ul>
                                                 <li>population</li>
@@ -250,12 +250,12 @@
                                         <div></div>
                                         <div></div>
                                     </div>
-                                    <div class="bg-dark" style="left: 287px;top:270px; position:absolute">
+                                    <div class="bg-dark" style="left: 288px;top:270px; position:absolute">
                                         <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetPCAZoom('EXP')" />
                                         <span class="tooltiptext">Reset zoom</span>
                                     </div>
                                     <div class="bg-dark" style="left: 300px;top:0px; position:absolute">
-                                        <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" onclick="callResetPCAZoom('IMP')" />
+                                        <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" />
                                         <span class="tooltiptext mini">Principal Component Analysis considering: 
                                             <ul>
                                                 <li>population</li>
@@ -529,18 +529,20 @@
 
     </div>
     <script>
-        setTimeout(function() {
+        $(window).on("load", function() {
             // $(".bs-select-all").on('click', function() {
             //     // alert("ALL SELECTED");
             //     selectAllCountries()
             // });
+            console.log($(".bs-select-all").html())
             $(".bs-select-all").remove()
             $(".bs-deselect-all").on('click', function() {
                 // alert("ALL DESELECTED");
                 resetSelect()
                 updateCircular()
             });
-        }, 300);
+
+        });
     </script>
     <div id="pca-test"></div>
 </body>

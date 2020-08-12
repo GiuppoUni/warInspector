@@ -25,10 +25,11 @@ var PcaScatterManager = function() {
             .attr("class", "pca-svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
-            .append("g")
+        svgs.push(svg)
+
+        svg.append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")")
-        svgs.push(svg)
 
         // Pan and zoom
         var zoom = d3v4.zoom()
@@ -264,7 +265,12 @@ var PcaScatterManager = function() {
     // }
 
     var resetZoom = function(type) {
-        idx = type == "IMP" ? 0 : 1;
+        var idx
+        if (type === "IMP")
+            idx = 0
+        else
+            idx = 1;
+        // console.log(type, idx, svgs[idx], zooms)
         svgs[idx].transition()
             .duration(100)
             .call(zooms[idx].transform, d3v4.zoomIdentity);
