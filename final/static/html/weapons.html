@@ -80,19 +80,26 @@
     <script src="/static/js/libraries/d3-tip.js"></script>
 
     <div class="toppissimo card bg-dark text-center" style="color:aliceblue">
-        <div class="card-header   d-flex align-items-center justify-content-center  text-center" id ="barchart_title">
+        <div class="card-header   d-flex align-items-center justify-content-center  text-center" id="barchart_title">
             Weapons requests by category
         </div>
-        <div class="card-body" id="my_dataviz"></div>
+        <div class="card-body">
+            <div style="background-color: rgb(20, 20, 20);" id="my_dataviz">
+            </div>
+        </div>
     </div>
     <div class="container bottom">
         <div class="row">
-            <div class="col" style="padding-left: 2%; padding-right: 2%;">
+            <div class="col-md-8" style="padding-left: 2%; padding-right: 2%;">
                 <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue;">
                     <div class="card-header d-flex align-items-center justify-content-center  text-center" id="scatter_title">
                         Weapons by model
                     </div>
-                    <div class="card-body" id="scatter_viz"></div>
+                    <div class="card-body">
+
+                        <div style="background-color: rgb(20, 20, 20);" id="scatter_viz">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col">
@@ -100,7 +107,9 @@
                     <div class="card-header d-flex align-items-center justify-content-center  text-center">
                         Weapon Description
                     </div>
-                    <div class="card-body" id="weapon_description">
+                    <div class="card-body">
+                        <div style="background-color: rgb(20, 20, 20);" id="weapon_description">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,7 +120,7 @@
     <script>
         NUM_CATEGORIES = 80
         chosen_category = ""
-        
+
         // set the dimensions and margins of the graph
         var margin = {
                 top: 10,
@@ -253,7 +262,7 @@
 
                 $("#scatter_title").html("Weapons by model: " + chosen_category)
                 $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
-                
+
                 txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
                 if (txt == "" || txt == null || txt == undefined)
                     txt = "Not available at the moment."
@@ -313,11 +322,11 @@
             var margin = {
                     top: 10,
                     right: 30,
-                    bottom: 30,
+                    bottom: 130,
                     left: 60
                 },
-                width = 460 - margin.left - margin.right,
-                height = 400 - margin.top - margin.bottom;
+                width = 700 - margin.left - margin.right,
+                height = 370 - margin.top - margin.bottom;
             // append the svg object to the body of the page
             var svg = d3.select("#scatter_viz")
                 .append("svg")
@@ -336,9 +345,9 @@
                     })
 
                 modelList = Array.from(new Set(filteredModels.map(function(d) {
-                                return d["Weapon model"];
-                            })))
-                
+                    return d["Weapon model"];
+                })))
+
                 //console.log("Debug")
                 //console.log(filteredModels)
 
@@ -354,8 +363,8 @@
                     .attr("opacity", "0")
 
                 // Add Y axis
-                var y = d3.scaleLinear()
-                    .domain([1980, 2020])
+                var y = d3.scaleBand()
+                    .domain(Array.from(Array(30), (_, i) => i + 1989))
                     .range([height, 0]);
                 svg.append("g")
                     .call(d3.axisLeft(y));
@@ -383,7 +392,7 @@
                     .attr("opacity", "1")
                     .call(d3.axisBottom(x))
                     .selectAll("text")
-                    .attr("transform", "translate(-10,0)rotate(-90)")
+                    .attr("transform", "translate(-10,0)rotate(-50)")
                     .style("text-anchor", "end")
 
                 svg.selectAll("circle")

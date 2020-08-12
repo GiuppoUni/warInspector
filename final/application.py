@@ -1,21 +1,8 @@
 """
 ==================================================
 
-Multi-dimensional scaling Server
-
+            WebInspector web app
 ==================================================
-
-
-dataset: city_name,ihabitants (in thousands)
-
-We use the dissimilarity functions
-
-        dissM[i][j]= abs(ihabitants[i]-ihabitants[j])/(ihabitants[i]+ihabitants[j])
-        dissM[i][j]= abs (ihabitants[i]-ihabitants[j])
-        dissM[i][j]=1-jaccard(name[i],name[j])
-        dissM[i][j]=1-sameStart(name[i],name[j])
-        
-        
 
 
 """
