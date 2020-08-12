@@ -1,6 +1,13 @@
 var PcaScatterManager = function() {
     // var country_selected = ["ITA"];
 
+    var greenColorScale = d3v4.scaleThreshold()
+        .domain([1, 10, 100, 1000, 10000, 100000])
+        .range(["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"])
+
+    var redColorScale = d3v4.scaleThreshold()
+        .domain([1, 10, 100, 500, 2000, 4000])
+        .range(["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"])
 
     var svgs = [];
     var zooms = [];
@@ -87,13 +94,32 @@ var PcaScatterManager = function() {
             .attr("r", function(d) { return !d[4] ? 3 : 4.5 })
             .style("fill", function(d) {
                 // console.log(d[4])
-                if (d[4] === false)
-                    return type === "IMP" ? "#d00101" : "#009344"
+
+                if ($("#cbExp").checked && $("#cbExp").checked)
+                    return "white"
+                else if ($("#cbImp")[0].checked)
+                    return redColorScale(d[5])
+
+                else if ($("#cbExp")[0].checked)
+                    return greenColorScale(d[6])
                 else
-                    return "#f6ff00"
+                    return "white"
+
+                // "#d00101" : "#009344"
+                // return "#f6ff00"
 
             })
-            .style("stroke", "black")
+            .style("stroke", function(d) {
+
+                if (d[4])
+                    return "#f6ff00"
+                else
+                    return "black"
+            })
+
+        .on("click", function(d) {
+            callSelected(d[2])
+        })
 
         var tip = d3v4.tip()
             .attr('class', 'd3-tip')

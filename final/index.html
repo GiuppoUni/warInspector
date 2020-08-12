@@ -100,7 +100,10 @@
                         <div class="shadowText" style="display:inline-block ;"> selected countries</div>
                     </div>
                     <div class="card-body" id="map-imp-col">
-
+                        <div class="bg-dark" style="left: 670px;top:370px; position:absolute">
+                            <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
+                            <span class="tooltiptext">Reset zoom</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -114,7 +117,11 @@
 
                     </div>
                     <div class="card-body" id="map-exp-col">
+                        <div class="bg-dark" style="left: 670px;top:370px; position:absolute">
 
+                            <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
+                            <span class="tooltiptext">Reset zoom</span>
+                        </div>
                     </div>
                 </div>
 
@@ -199,7 +206,24 @@
                                         <div></div>
                                         <div></div>
                                     </div>
+                                    <div class="pca-form">
+                                        <input type="checkbox" class="myCheckBox" id="cbImp" name="cb1" value="IMPORT_TOTAL" checked="true" onclick='handleClick(this);'>
+                                        <label for="cb1"> Import</label>
+                                        <input type="checkbox" class="myCheckBox" id="cbExp" name="cb2" value="EXPORT_TOTAL" onclick='handleClick(this);'>
+                                        <label for="cb2"> Export</label>
+                                        <input type="checkbox" class="myCheckBox" id="cb3" name="cb3" value="ARMY_TOTAL" checked="true" onclick='handleClick(this);'>
+                                        <label for="cb3"> Army</label>
+                                        <input type="checkbox" class="myCheckBox" id="cb4" name="cb4" value="REF_TOTAL" checked="true" onclick='handleClick(this);'>
+                                        <label for="cb4"> Refugees</label>
+                                        <input type="checkbox" class="myCheckBox" id="cb5" name="cb5" value="GDP_TOTAL" checked="true" onclick='handleClick(this);'>
+                                        <label for="cb5"> GDP</label>
+                                        <input type="checkbox" class="myCheckBox" id="cb6" name="cb6" value="POP_TOTAL" checked="true" onclick='handleClick(this);'>
+                                        <label for="cb6"> Population</label>
+
+
+                                    </div>
                                     <div class="bg-dark" style="left: 287px;top:270px; position:absolute">
+
                                         <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetPCAZoom('IMP')" />
                                         <span class="tooltiptext">Reset zoom</span>
                                     </div>

@@ -1,7 +1,7 @@
 """
 ==================================================
 
-            WebInspector web app
+            WarInspector web app
 ==================================================
 
 
@@ -155,8 +155,9 @@ PCA
 =========
 '''
 
-def createDf(year1,year2,countries):
-     #refugees
+def createDf(year1,year2,countries,features = ['IMPORT_TOTAL',"EXPORT_TOTAL", 'ARMY_TOTAL','REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']):
+    
+    #refugees
     df_ref = pd.read_csv(folder+"ref.csv", header=4 )
     df_ref = df_ref.rename(columns=lambda x: x.strip())
 
@@ -191,7 +192,6 @@ def createDf(year1,year2,countries):
     print(df_imp)
     df_mrgd_imp = df_imp.iloc[:,[0,-1,-2,-3,-4]] 
     df_mrgd_imp.rename(columns={"code3":"Country Code"}, inplace=True)
-
     # NOTE
     # Compute Mean for range of years 
     df_mrgd_imp["IMPORT_TOTAL"] = df_imp[year_range_str[2:]].mean(axis=1)
@@ -199,7 +199,12 @@ def createDf(year1,year2,countries):
     df_ref["REF_TOTAL"] = df_ref[year_range_str[2:]].mean(axis=1)
     df_gdp["GDP_TOTAL"] = df_gdp[year_range_str[2:]].mean(axis=1)
     df_pop["POP_TOTAL"] = df_pop[year_range_str[2:]].mean(axis=1)
+    # print(df_arm)
+    # print(df_ref)
+    # print(df_gdp)
 
+    # print("->",df_mrgd_imp)
+    
     # Merging for final IMP
     df_mrgd_imp = pd.merge(df_mrgd_imp,
         df_mrgd_imp[["Country Name","Country Code","IMPORT_TOTAL"]],on=["Country Name","Country Code"])
@@ -212,7 +217,6 @@ def createDf(year1,year2,countries):
         df_arm[["Country Code","ARMY_TOTAL"]],on="Country Code")
     df_mrgd_imp['ARMY_TOTAL'] = df_mrgd_imp.groupby(['Country Code'])['ARMY_TOTAL'].transform('sum')
     df_mrgd_imp = df_mrgd_imp.drop_duplicates(subset=["Country Name","Country Code"])
-
 
     df_mrgd_imp = pd.merge(df_mrgd_imp,
         df_ref[["Country Code","REF_TOTAL"]],on="Country Code")
@@ -233,133 +237,23 @@ def createDf(year1,year2,countries):
 
     df_exp = pd.read_csv(folder + "df_exp_clean.csv")
 
-    df_mrgd_exp = df_exp.iloc[:,[0,-1,-2,-3,-4]] 
-    df_mrgd_exp.rename(columns={"code3":"Country Code"}, inplace=True)
-    df_mrgd_exp["EXPORT_TOTAL"] = df_exp[year_range_str[2:]].mean(axis=1)
+    df_mrgd_imp["EXPORT_TOTAL"] = df_exp[year_range_str[2:]].mean(axis=1)
 
-    df_mrgd_exp = pd.merge(df_mrgd_exp,
-        df_mrgd_exp[["Country Name","Country Code","EXPORT_TOTAL"]],on=["Country Name","Country Code"])
+    df_mrgd_imp = pd.merge(df_mrgd_imp,
+        df_mrgd_imp[["Country Name","Country Code","EXPORT_TOTAL"]],on=["Country Name","Country Code"])
 
 
-    df_mrgd_exp['EXPORT_TOTAL'] = df_mrgd_exp.groupby(['Country Code'])['EXPORT_TOTAL_x'].transform('sum')
-    df_mrgd_exp = df_mrgd_exp.drop_duplicates(subset=["Country Name","Country Code"])
+    df_mrgd_imp['EXPORT_TOTAL'] = df_mrgd_imp.groupby(['Country Code'])['EXPORT_TOTAL_x'].transform('sum')
+    df_mrgd_imp = df_mrgd_imp.drop_duplicates(subset=["Country Name","Country Code"])
+
+    # print(df_mrgd_imp)
+    return df_mrgd_imp
 
 
-    df_mrgd_exp = pd.merge(df_mrgd_exp,
-        df_arm[["Country Code","ARMY_TOTAL"]],on="Country Code")
-    df_mrgd_exp['ARMY_TOTAL'] = df_mrgd_exp.groupby(['Country Code'])['ARMY_TOTAL'].transform('sum')
-    df_mrgd_exp = df_mrgd_exp.drop_duplicates(subset=["Country Name","Country Code"])
+def pcaMain(year1=2016,year2=2019,countries=["ITA"],features = ['IMPORT_TOTAL',"EXPORT_TOTAL", 'ARMY_TOTAL','REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']):
 
 
-    df_mrgd_exp = pd.merge(df_mrgd_exp,
-        df_ref[["Country Code","REF_TOTAL"]],on="Country Code")
-    df_mrgd_exp['REF_TOTAL'] = df_mrgd_exp.groupby(['Country Code'])['REF_TOTAL'].transform('sum')
-    df_mrgd_exp = df_mrgd_exp.drop_duplicates(subset=["Country Name","Country Code"])
-
-    df_mrgd_exp = pd.merge(df_mrgd_exp,
-        df_gdp[["Country Code","GDP_TOTAL"]],on="Country Code")
-    df_mrgd_exp['GDP_TOTAL'] = df_mrgd_exp.groupby(['Country Code'])['GDP_TOTAL'].transform('sum')
-    df_mrgd_exp = df_mrgd_exp.drop_duplicates(subset=["Country Name","Country Code"])
-
-    df_mrgd_exp = pd.merge(df_mrgd_exp,
-        df_pop[["Country Code","POP_TOTAL"]],on="Country Code")
-    df_mrgd_exp['POP_TOTAL'] = df_mrgd_exp.groupby(['Country Code'])['POP_TOTAL'].transform('sum')
-    df_mrgd_exp = df_mrgd_exp.drop_duplicates(subset=["Country Name","Country Code"])
-
-    return df_mrgd_imp, df_mrgd_exp
-
-# def PCAMain(year1=2016,year2=2019,countries=["ITA"]):
-
-#     df_mrgd_imp, df_mrgd_exp = createDf(year1,year2,countries)
-
-
-#     print("Plotting",countries)
-#     def pca_plot(df):
-#         # df['target']= df["Country Name"].apply(lambda x: "selected" if x.strip() in selected
-#         #     else "not selected")
-#         # print(df)
-#         df = df.rename(columns={"Country Code":"target"})
-
-
-#         features = ['IMPORT_TOTAL', 'ARMY_TOTAL',
-#             'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
-#         if("IMPORT_TOTAL" not in df.columns.values):
-#             features = ['EXPORT_TOTAL', 'ARMY_TOTAL',
-#             'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
-#         # Separating out the features
-#         x = df.loc[:, features].values
-#         # Separating out the target
-#         y = df.loc[:,['target']].values
-#         # Standardizing the features
-#         x = StandardScaler().fit_transform(x)
-
-        
-#         pca = PCA(n_components=2)
-#         principalComponents = pca.fit_transform(x)
-#         principalDf = pd.DataFrame(data = principalComponents
-#                     , columns = ['principal component 1', 'principal component 2'])
-                    
-
-#         finalDf = pd.concat([principalDf, df[['target']]], axis = 1)
-
-
-
-#         fig = plt.figure(figsize = (8,8))
-#         ax = fig.add_subplot(1,1,1) 
-#         # ax.set_xlabel('Principal Component 1', fontsize = 15)
-#         # ax.set_ylabel('Principal Component 2', fontsize = 15)
-#         # ax.set_title('2 component PCA', fontsize = 20)
-#         colors = ['y', 'b']
-
-#         indicesToKeep = finalDf["target"].apply(lambda x: x in countries)
-
-
-
-#         indicesToKeep2 = ~ indicesToKeep
-#         pc1 = finalDf.loc[indicesToKeep2, 'principal component 1'].to_list()
-#         pc2 = finalDf.loc[indicesToKeep2, 'principal component 2'].to_list()
-#         names = finalDf.loc[indicesToKeep2, "target"].to_list()
-#         # print(finalDf)
-#         # No grid
-#         plt.grid(b=None)
-
-#         ax.scatter( pc1, pc2 
-#                 , c = "b"
-#                 , s = 10)
-
-#         ax.grid()
-#         # non targets:
-#         for i,r in enumerate(zip(names, pc1, pc2)):
-#             if( pc1[i] > 0.2 and pc2[i] > 0.2):
-#                 ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
-
-#         pc1 = finalDf.loc[indicesToKeep, 'principal component 1'].to_list()
-#         pc2 = finalDf.loc[indicesToKeep, 'principal component 2'].to_list()
-#         names = finalDf.loc[indicesToKeep, "target"].to_list()
-
-#         scatter = ax.scatter( pc1, pc2 
-#                 , c = "y"
-#                 , s = 10,edgecolors='r')
-#         for i,r in enumerate(zip(names, pc1, pc2)):
-#             ax.annotate(r[0], (pc1[i]+0.1, pc2[i]+0.1 ))
-
-#         # ax.legend( scatter,title="Selected:", labels=countries)
-        
-#         print(names)
-#         # plt.show()
-
-#         print("pca.explained_variance_ratio_",pca.explained_variance_ratio_)
-            
-#         return mpld3.fig_to_html(fig)
-
-#     s_imp = pca_plot(df_mrgd_imp)
-#     s_exp = pca_plot(df_mrgd_exp)
-#     return s_imp , s_exp
-
-def pcaMain(year1=2016,year2=2019,countries=["ITA"]):
-
-
-    df_mrgd_imp, df_mrgd_exp = createDf(year1,year2,countries)
+    df_mrgd_imp  = createDf(year1,year2,countries)
 
 
     print("Plotting",countries)
@@ -369,12 +263,6 @@ def pcaMain(year1=2016,year2=2019,countries=["ITA"]):
         # print(df)
         df = df.rename(columns={"Country Code":"target"})
 
-
-        features = ['IMPORT_TOTAL', 'ARMY_TOTAL',
-            'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
-        if("IMPORT_TOTAL" not in df.columns.values):
-            features = ['EXPORT_TOTAL', 'ARMY_TOTAL',
-            'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
         # Separating out the features
         x = df.loc[:, features].values
         # Separating out the target
@@ -391,6 +279,8 @@ def pcaMain(year1=2016,year2=2019,countries=["ITA"]):
 
         finalDf = pd.concat([principalDf, df[['target']]], axis = 1)
         finalDf = pd.concat([finalDf, df[['Country Name']]], axis = 1)
+        finalDf = pd.concat([finalDf, df[['IMPORT_TOTAL']]], axis = 1)
+        finalDf = pd.concat([finalDf, df[['EXPORT_TOTAL']]], axis = 1)
 
         print(finalDf)
 
@@ -412,6 +302,9 @@ def pcaMain(year1=2016,year2=2019,countries=["ITA"]):
         names = finalDf.loc[indicesToKeep2, "target"].to_list()
         names2 = finalDf.loc[indicesToKeep2, "Country Name"].to_list()
         not_selected_labels = [False]*len(names)
+        imp = finalDf.loc[indicesToKeep2, "IMPORT_TOTAL"].to_list()
+        exp = finalDf.loc[indicesToKeep2, "EXPORT_TOTAL"].to_list()
+
 
         # print(finalDf)
         # No grid
@@ -432,7 +325,11 @@ def pcaMain(year1=2016,year2=2019,countries=["ITA"]):
         namesSel = finalDf.loc[indicesToKeep, "target"].to_list()
         namesSel2 = finalDf.loc[indicesToKeep, "Country Name"].to_list()
         selected_labels = [True]*len(namesSel)
-
+        impSel = finalDf.loc[indicesToKeep, "IMPORT_TOTAL"].to_list()
+        expSel = finalDf.loc[indicesToKeep, "EXPORT_TOTAL"].to_list()
+        
+        print("MAX",finalDf['IMPORT_TOTAL'].max(),finalDf['EXPORT_TOTAL'].max())
+        
         scatter = ax.scatter( pc1Sel, pc2Sel 
                 , c = "y"
                 , s = 10,edgecolors='r')
@@ -448,12 +345,19 @@ def pcaMain(year1=2016,year2=2019,countries=["ITA"]):
 
         # Prepare data for d3
 
-        return [list(zip(pc1,pc2,names,names2,not_selected_labels))+list(zip(pc1Sel,pc2Sel,namesSel,namesSel2,selected_labels))]
+        return [list(zip(pc1,pc2,names,names2,not_selected_labels,imp,exp))
+        +list(zip(pc1Sel,pc2Sel,namesSel,namesSel2,selected_labels,impSel,expSel))]
 
     data_imp = pca_plot(df_mrgd_imp)
-    data_exp = pca_plot(df_mrgd_exp)
-    return data_imp, data_exp
 
+    return data_imp
+
+
+
+
+# /**********
+#  * ROUTES *
+#  **********/
     
 
 @application.route("/main",methods=["GET","POST"])
@@ -490,6 +394,7 @@ def returnPCAData():
     country = parsed_json['country']
     year1 =  parsed_json['year1']
     year2 = parsed_json['year2']
+    features = parsed_json["features"]
     print("[S] Params:",year1,year2,country)
 
 
@@ -509,9 +414,9 @@ def returnPCAData():
     # #print(s)
     # return jsonify(data.CountryName,data.Year1,data.Year2,s1,s2)
 
-    d1,d2 = pcaMain(year1,year2,country)
+    data_to_d3 = pcaMain(year1,year2,country,features)
 
-    return jsonify(data.CountryName,data.Year1,data.Year2,d1,d2)
+    return jsonify(data.CountryName,data.Year1,data.Year2,data_to_d3)
 
 
 # Other routes

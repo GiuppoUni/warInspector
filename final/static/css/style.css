@@ -1099,3 +1099,10 @@ Charts
         position: relative;
         top: -75px
     }
+    
+    .pca-form {
+        position: absolute;
+        bottom: -10px;
+        background: none;
+        display: inline-block;
+    }

@@ -9,8 +9,8 @@ var pcam;
 var bcm;
 
 var years = [2016, 2018];
-var country_selected = "Italy";
 var selected_group = ["ITA"]
+var pca_features = ['IMPORT_TOTAL', "EXPORT_TOTAL", 'ARMY_TOTAL', 'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
 
 var synchro_mode = true
 allCountriesAlpha3 = ['', 'ZZZ', 'ZZZ', 'ZZZ', 'ZYY', 'ZXY', 'ZXX', 'ZYX', 'ZKY', 'ZKK', 'LBY', 'LBY', 'YEM', 'SDN', 'PSE', 'PSE', 'PSE', 'UKR', 'LBN', 'SYR', 'TUR', 'OSC', 'ONU', 'ONU', 'NAT', 'NAT', 'AND', 'ARE', 'ARE', 'AFG', 'AFG', 'ATG', 'ATG', 'AIA', 'ALB', 'ARM', 'ANN', 'AGO', 'ATA', 'ARG', 'ASM', 'AUT', 'AUS', 'ABW', 'AZE', 'BIH', 'BIH', 'BIH', 'BRB', 'BGD', 'BEL', 'BFA', 'BGR', 'BHR', 'BDI', 'BEN', 'BMU', 'BRN', 'BOL', 'BRA', 'BHS', 'BTN', 'BVT', 'BWA', 'BLR', 'BLZ', 'CAN', 'CCK', 'COD', 'COD', 'COD', 'COD', 'CAF', 'CAF', 'COG', 'CHE', 'CIV', 'CIV', 'CIV', 'COK', 'CHL', 'CMR', 'CHN', 'CHN', 'COL', 'CRI', 'CUB', 'CUB', 'CPV', 'CXR', 'CYP', 'CZE', 'CZE', 'CZE', 'DEU', 'DEU', 'DEU', 'DJI', 'DNK', 'DMA', 'DOM', 'DZA', 'ECU', 'EST', 'EGY', 'ESH', 'ERI', 'ESP', 'ETH', 'ETH', 'ETH', 'FIN', 'FJI', 'FLK', 'FSM', 'FRO', 'FRA', 'GAB', 'GBR', 'GBR', 'GBR', 'GBR', 'GBR', 'GRD', 'GEO', 'GUF', 'GGY', 'GHA', 'GIB', 'GRL', 'GMB', 'GIN', 'GLP', 'GNQ', 'GRC', 'SGS', 'GTM', 'GTM', 'GUM', 'GNB', 'GUY', 'GZE', 'HKG', 'HMD', 'HND', 'HRV', 'HTI', 'HUN', 'IDN', 'IRL', 'ISR', 'IMN', 'IND', 'IOT', 'IRQ', 'IRN', 'ISL', 'ITA', 'JEY', 'JAM', 'JOR', 'JPN', 'KEN', 'KGZ', 'KHM', 'KIR', 'COM', 'KNA', 'PRK', 'KOR', 'KWT', 'CYM', 'KAZ', 'LAO', 'LBN', 'LBN', 'LCA', 'LIE', 'LKA', 'LBR', 'LSO', 'LTU', 'LUX', 'LVA', 'LBY', 'LBY', 'MAR', 'MCO', 'MDA', 'MNE', 'MDG', 'MHL', 'MKD', 'MKD', 'MLI', 'MMR', 'MMR', 'MNG', 'MAC', 'MNP', 'MTQ', 'MRT', 'MSR', 'MLT', 'MUS', 'MDV', 'MWI', 'MEX', 'MYS', 'MOZ', 'NAM', 'NCL', 'NER', 'NFK', 'NGA', 'NGA', 'NIC', 'NLD', 'NOR', 'NPL', 'NRU', 'NIU', 'NZL', 'OMN', 'PAN', 'PER', 'PYF', 'PNG', 'PHL', 'PAK', 'POL', 'SPM', 'PCN', 'PRI', 'PSE', 'PSE', 'PRT', 'PLW', 'PRY', 'QAT', 'REU', 'ROU', 'SRB', 'SRB', 'RUS', 'RUS', 'RWA', 'SAU', 'SLB', 'SYC', 'SDN', 'SWE', 'SGP', 'SHN', 'SVN', 'SJM', 'SVK', 'SLE', 'SMR', 'SEN', 'SOM', 'SOM', 'SUR', 'STP', 'SLV', 'SLV', 'SYR', 'SWZ', 'TCA', 'TCA', 'TCD', 'ATF', 'TGO', 'THA', 'TJK', 'TKL', 'TLS', 'TLS', 'TKM', 'TUN', 'TON', 'TUR', 'TTO', 'TTO', 'TUV', 'TWN', 'TZA', 'UKR', 'UGA', 'USA', 'USA', 'URY', 'UZB', 'VAT', 'VCT', 'VEN', 'VGB', 'VIR', 'VNM', 'VNM', 'VNM', 'VUT', 'WLF', 'WSM', 'XKX', 'YEM', 'YEM', 'YEM', 'MYT', 'ZAF', 'ZAF', 'ZMB', 'ZWE']
@@ -92,7 +92,8 @@ function getDataFromPost() {
     const obj = {
         "country": selected_group,
         "year1": years[0],
-        "year2": years[1]
+        "year2": years[1],
+        "features": pca_features
     }
     const data = JSON.stringify(obj);
 
@@ -105,6 +106,7 @@ function getDataFromPost() {
                 console.log("Error: ", error)
             } else if (root != null) {
                 $('.pca-svg').remove()
+
 
                 // console.log("Data: ", root)
 
@@ -127,7 +129,6 @@ function getDataFromPost() {
                 $(".lds-facebook").fadeOut()
 
                 pcam.drawChart(root[3][0], "IMP")
-                pcam.drawChart(root[4][0], "EXP")
 
                 // pcam.drawBasicChart(root[3], "IMP")
                 // pcam.drawBasicChart(root[4], "EXP")
@@ -210,4 +211,43 @@ function callUpdateGeneralInfo() {
 
 function callResetPCAZoom(type) {
     pcam.resetZoom(type)
+}
+
+// Handler PCA checkboxes
+function handleClick(cb) {
+    // console.log(cb)
+    // alert("Clicked, new value = " + cb.value);
+
+    if (!cb.checked) {
+
+        // remove element
+        const index = pca_features.indexOf(cb.value);
+        if (index > -1) {
+            pca_features.splice(index, 1);
+        }
+    } else {
+        pca_features.push(cb.value)
+    }
+    getDataFromPost()
+    checkMinFeaturesPCA()
+}
+
+function checkMinFeaturesPCA() {
+
+    if (pca_features.length <= 3) {
+        $('.myCheckBox').each(function() {
+            if (this.checked)
+                this.disabled = true;
+        });
+    } else {
+        $('.myCheckBox').each(function() {
+            if (this.disabled)
+                this.disabled = false;
+        });
+    }
+}
+
+
+function callSelected(id) {
+    mm.selected(id)
 }
