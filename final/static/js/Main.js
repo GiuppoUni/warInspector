@@ -7,6 +7,7 @@ var cm;
 var rm;
 var pcam;
 var bcm;
+var dbcm;
 
 var years = [2016, 2018];
 var selected_group = ["ITA"]
@@ -29,6 +30,9 @@ function main() {
     mm = MapManager();
     cm = ChartManager();
     pcam = PcaScatterManager();
+    dbcm = DiverginhBarChartManager();
+
+    dbcm.drawChart();
     // rm = RankRaceManager();
 
     mm.drawCloroExp();
@@ -75,6 +79,7 @@ function clickedNation() {
 
     mm.drawCloroExp()
     mm.drawCloroImp()
+
 
     // $(".bs-select-all").on('click', function() {
     //     // alert("ALL SELECTED");
@@ -250,4 +255,5 @@ function checkMinFeaturesPCA() {
 
 function callSelected(id) {
     mm.selected(id)
+
 }

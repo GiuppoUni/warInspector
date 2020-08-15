@@ -362,6 +362,9 @@ var MapManager = function() {
         mm.drawCloroExp()
         mm.drawCloroImp()
         cm.updateCountry()
+
+        dbcm.drawChart();
+
         updateCircular()
         getDataFromPost()
 

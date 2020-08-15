@@ -1106,3 +1106,8 @@ Charts
         background: none;
         display: inline-block;
     }
+    
+    .text-legend {
+        color: "white";
+        fill: "white";
+    }

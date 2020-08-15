@@ -44,10 +44,8 @@ var MapComponentsManager = function() {
                     if (sliderTimer != undefined)
                         clearTimeout(sliderTimer)
                     sliderTimer = setTimeout(function() {
-                        update()
                         cm.updateYearsInterval(year_interval)
-                        getDataFromPost()
-                        callUpdateGeneralInfo()
+                        updateOnSliderChange()
 
                     }, 250);
 
@@ -76,7 +74,7 @@ var MapComponentsManager = function() {
         /*
             Called on years slider change
         */
-    function update() {
+    function updateOnSliderChange() {
         // d3v4.selectAll(".arches").remove()
 
         d3v4.selectAll(".heatmap").remove()
@@ -85,6 +83,9 @@ var MapComponentsManager = function() {
         mm.drawCloroExp()
         mm.drawCloroImp()
 
+        getDataFromPost()
+        callUpdateGeneralInfo()
+        dbcm.drawChart()
     }
 
 
