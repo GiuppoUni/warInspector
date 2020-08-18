@@ -1,6 +1,11 @@
 var PcaScatterManager = function() {
     // var country_selected = ["ITA"];
 
+
+    var margin = { top: 15, right: 30, bottom: 30, left: 30 },
+        width = 400 - margin.left - margin.right,
+        height = 290 - margin.top - margin.bottom;
+
     var greenColorScale = d3v4.scaleThreshold()
         .domain([1, 10, 100, 1000, 10000, 100000])
         .range(["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"])
@@ -9,30 +14,25 @@ var PcaScatterManager = function() {
         .domain([1, 10, 100, 500, 2000, 4000])
         .range(["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"])
 
-    var svgs = [];
-    var zooms = [];
+    var svg;
     // function 
     var drawChart = function(dataset, type) {
+        if (dataset == null) {
+            $("#pca-svg").remove()
+            return
+        }
         // console.log("Drawing pca", dataset, type)
-        id = ""
-        if (type === "IMP")
-            id = "#pca-import-col"
-        else if (type === "EXP")
-            id = "#pca-export-col"
-        else
-            alert("ERROR from post")
+        id = "#pca-col"
+            // set the dimensions and margins of the graph
 
-        // set the dimensions and margins of the graph
-        var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-            width = 300 - margin.left - margin.right,
-            height = 290 - margin.top - margin.bottom;
         // append the svg object to the body of the page
-        var svg = d3v4.select(id)
+        svg = d3v4.select(id)
             .append("svg")
             .attr("class", "pca-svg")
+            .attr("id", "pca-svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
-        svgs.push(svg)
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         svg.append("g")
             .attr("transform",
@@ -47,7 +47,6 @@ var PcaScatterManager = function() {
             ])
             .on("zoom", zoomed);
 
-        zooms.push(zoom)
 
         svg.append("rect")
             .attr("width", width)
@@ -62,7 +61,6 @@ var PcaScatterManager = function() {
 
         // Add X axis
         var x = d3v4.scaleLinear()
-            .domain([0, 0])
             .range([0, width]);
         var xAxis = d3v4.axisBottom(x)
         var gX = svg.append("g")
@@ -135,7 +133,7 @@ var PcaScatterManager = function() {
             .on('mouseout', tip.hide)
 
         // new X axis
-        x.domain([-5, 5])
+        x.domain([-2, 13])
         svg.select(".myXaxis")
             .transition()
             .duration(2000)
@@ -189,8 +187,8 @@ var PcaScatterManager = function() {
             .data(allgroups)
             .enter()
             .append("circle")
-            .attr("cx", 0 + 35)
-            .attr("cy", function(d, i) { return 0 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cx", width * 2 / 3 + 35)
+            .attr("cy", function(d, i) { return margin.top + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 3)
             .style("fill", function(d) {
                 if (d != "selected")
@@ -204,8 +202,8 @@ var PcaScatterManager = function() {
             .data(allgroups)
             .enter()
             .append("text")
-            .attr("x", 0 + 35 + size * .8)
-            .attr("y", function(d, i) { return 0 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("x", width * 2 / 3 + 35 + size * .8)
+            .attr("y", function(d, i) { return margin.top + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d) {
                 if (d != "selected")
                     return type === "IMP" ? "#d00101" : "#009344"
@@ -297,9 +295,9 @@ var PcaScatterManager = function() {
         else
             idx = 1;
         // console.log(type, idx, svgs[idx], zooms)
-        svgs[idx].transition()
+        svg.transition()
             .duration(100)
-            .call(zooms[idx].transform, d3v4.zoomIdentity);
+            .call(zoom.transform, d3v4.zoomIdentity);
 
     }
     return {

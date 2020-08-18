@@ -32,6 +32,8 @@
     <!-- <script src="static/js/RankRaceManager.js"></script> -->
     <script src="static/js/PcaScatterManager.js"></script>
     <script src="static/js/DivergingBarChartManager.js"></script>
+    <script src="static/js/DivergingBarChartManager.js"></script>
+    <script src="static/js/weaponsBarChartManager.js"></script>
 
 
     <!-- <script src="static/js/CircularManager.js"></script> -->
@@ -45,6 +47,8 @@
 
     <title>WarInspector</title>
     <link rel="shortcut icon" href="static/icons/valogo.ico" />
+
+
 
 
 </head>
@@ -119,7 +123,7 @@
 
                     </div>
                     <div class="card-body" id="map-exp-col">
-                        <div class="bg-dark" style="left: 670px;top:370px; position:absolute">
+                        <div class="bg-dark no-shadow" style="left: 670px;top:370px; position:absolute">
 
                             <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
                             <span class="tooltiptext">Reset zoom</span>
@@ -136,7 +140,7 @@
                                 General info
                             </div>
                             <div class="card-body" id="general-info">
-                                <div class="container table-responsive  rounded shadow" style="width: 340px;background-color: rgb(20, 20, 20);" id="info-container">
+                                <div class="container table-responsive  rounded shadow " style="width: 340px;background-color: rgb(20, 20, 20);" id="info-container">
                                     <table class="table table-fixed" id="tablePIL">
                                         <thead>
                                             <tr>
@@ -148,7 +152,7 @@
                                         </thead>
                                         <tbody>
                                             <tr id="ITA-line">
-                                                <td class="col-xs-1">ITA</td>
+                                                <td class="col-xs-1">Italia (ITA)</td>
                                                 <td class="col-xs-3">32584</td>
                                                 <td class="col-xs-3">60528656</td>
                                                 <td class="col-xs-3">351925</td>
@@ -163,8 +167,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="card bg-dark infoCard" style="width: 350px;">
+                            <div class="card-header  d-flex align-items-center justify-content-center   text-center">
+                                Weapon Description
+                            </div>
+                            <div class="card-body">
+                                <div class="container table-responsive  rounded shadow overflow-auto" style="height:80px;width: 340px;background-color: rgb(20, 20, 20);" id="weapon_description">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row " style="padding-left:20px;padding-top: 20px;;">
+                <!-- <div class="row " style="position:absolute;padding-left:20px;padding-top: 20px;;">
 
                     <div>
                         <input type="image" id="homeButton" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
@@ -175,7 +190,7 @@
                         <span class="tooltiptext">Reset selection</span>
                     </div>
 
-                </div>
+                </div> -->
 
 
             </div>
@@ -183,55 +198,64 @@
 
         <!-- Seconda riga -->
         <div class="row my-row ">
-            <div class="col-md-4-5 my-col-down">
+            <div class="col-md-6 my-col-down">
+
+                <div class="card bg-dark">
+                    <div class="card-header  d-flex align-items-center justify-content-center  text-center">
+                        <h7 style="color: #009344">Export</h7> &nbspvs &nbsp
+                        <h7 style="color: #d00101">Import</h7>&nbspfor&nbsp
+                        <div class="shadowText" style="display:inline-block ;">selected countries</div>
+
+                    </div>
+                    <div class="card-body">
+                        <div style="background-color: rgb(20, 20, 20);" id="diverging-card">
+                            <div class="bg-dark no-shadow" style="left: 650px;top:270px; position:absolute">
+
+                                <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
+                                <span class="tooltiptext">Reset zoom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-                <div class="card bg-dark" id="charts-div">
-                    <div class="card-body" style="display: inline-block;   padding-left: 0px;">
-                        <div class="container">
-                            <div class="row ">
+            </div>
 
-                                <div class="col rounded" style="padding-right: 30px;">
+            <div class="col-md-3 rounded my-col-down ">
+                <div class="card bg-dark">
+                    <!-- <div class="card-header  d-flex align-items-center justify-content-center  text-center">
+                        PCA </div> -->
+                    <div class="card-body" style="height: 340px; display: inline-block;   padding-left: 0px;">
+                        <div class="pca-form">
+                            <input type="checkbox" class="myCheckBox" id="cbImp" name="cb1" value="IMPORT_TOTAL" checked="true" onclick='handleClick(this);'>
+                            <label for="cb1"> Import</label>
+                            <input type="checkbox" class="myCheckBox" id="cbExp" name="cb2" value="EXPORT_TOTAL" onclick='handleClick(this);'>
+                            <label for="cb2"> Export</label>
+                            <input type="checkbox" class="myCheckBox" id="cb3" name="cb3" value="ARMY_TOTAL" checked="true" onclick='handleClick(this);'>
+                            <label for="cb3"> Army</label>
+                            <input type="checkbox" class="myCheckBox" id="cb4" name="cb4" value="REF_TOTAL" checked="true" onclick='handleClick(this);'>
+                            <label for="cb4"> Refugees</label>
+                            <input type="checkbox" class="myCheckBox" id="cb5" name="cb5" value="GDP_TOTAL" checked="true" onclick='handleClick(this);'>
+                            <label for="cb5"> GDP</label>
+                            <input type="checkbox" class="myCheckBox" id="cb6" name="cb6" value="POP_TOTAL" checked="true" onclick='handleClick(this);'>
+                            <label for="cb6"> Population</label>
+                        </div>
+                        <div class="center lds-facebook justify-content-center" id="load-anim">
+                            Computing PCA...
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div style="height: 100%; background-color: rgb(20, 20, 20); padding-left: 0px; " id=pca-col>
 
-                                    <div class="chartExtCont" style="  height: 100%; text-align: center;">
+                            <div class="bg-dark" style="left: 410px;top:300px; position:absolute">
 
-                                        <div id="chart-container">
-                                            <svg id="chart-svg"></svg>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col rounded" id=pca-import-col style="background-color: rgb(20, 20, 20); padding-left: 0px;">
-                                    <div class="center lds-facebook justify-content-center" id="load-anim">
-                                        Computing PCA...
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div class="pca-form">
-                                        <input type="checkbox" class="myCheckBox" id="cbImp" name="cb1" value="IMPORT_TOTAL" checked="true" onclick='handleClick(this);'>
-                                        <label for="cb1"> Import</label>
-                                        <input type="checkbox" class="myCheckBox" id="cbExp" name="cb2" value="EXPORT_TOTAL" onclick='handleClick(this);'>
-                                        <label for="cb2"> Export</label>
-                                        <input type="checkbox" class="myCheckBox" id="cb3" name="cb3" value="ARMY_TOTAL" checked="true" onclick='handleClick(this);'>
-                                        <label for="cb3"> Army</label>
-                                        <input type="checkbox" class="myCheckBox" id="cb4" name="cb4" value="REF_TOTAL" checked="true" onclick='handleClick(this);'>
-                                        <label for="cb4"> Refugees</label>
-                                        <input type="checkbox" class="myCheckBox" id="cb5" name="cb5" value="GDP_TOTAL" checked="true" onclick='handleClick(this);'>
-                                        <label for="cb5"> GDP</label>
-                                        <input type="checkbox" class="myCheckBox" id="cb6" name="cb6" value="POP_TOTAL" checked="true" onclick='handleClick(this);'>
-                                        <label for="cb6"> Population</label>
-
-
-                                    </div>
-                                    <div class="bg-dark" style="left: 287px;top:270px; position:absolute">
-
-                                        <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetPCAZoom('IMP')" />
-                                        <span class="tooltiptext">Reset zoom</span>
-                                    </div>
-                                    <div class="bg-dark" style="left: 300px;top:0px; position:absolute">
-                                        <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" />
-                                        <span class="tooltiptext mini">Principal Component Analysis considering: 
+                                <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetPCAZoom('IMP')" />
+                                <span class="tooltiptext">Reset zoom</span>
+                            </div>
+                            <div class="bg-dark" style="left: 420px;top:0px; position:absolute">
+                                <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" />
+                                <span class="tooltiptext mini">Principal Component Analysis considering: 
                                             <ul>
                                                 <li>population</li>
                                                 <li>gdp</li>
@@ -242,59 +266,7 @@
                                             </ul>
                                             
                                             </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-
-            <div class="col-md-4-5  my-col-down ">
-                <div class="card bg-dark" id="charts-div-rec">
-                    <div class="card-body" style=" padding-left: 0px;">
-                        <div class="container">
-                            <div class="row">
-
-                                <div class="col rounded" style="padding-right: 30px;">
-
-
-                                    <div class="chartExtCont" style=" height: 100%; text-align: center;">
-
-                                        <div id="chart-container-rec">
-                                            <svg id="chart-svg-rec"></svg>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <div class="col rounded" id="pca-export-col" style="background-color: rgb(20, 20, 20); padding-left: 0px;">
-                                    <div class="center lds-facebook justify-content-center" id="load-anim">
-                                        Computing PCA...
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div class="bg-dark" style="left: 288px;top:270px; position:absolute">
-                                        <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetPCAZoom('EXP')" />
-                                        <span class="tooltiptext">Reset zoom</span>
-                                    </div>
-                                    <div class="bg-dark" style="left: 300px;top:0px; position:absolute">
-                                        <input type="image" id="infoButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="20" src="static/icons/infoIcon.svg" />
-                                        <span class="tooltiptext mini">Principal Component Analysis considering: 
-                                            <ul>
-                                                <li>population</li>
-                                                <li>gdp</li>
-                                                <li>army dimensions</li>
-                                                <li>num. of refugees </li>
-                                                <li>num. of exported weapons</li>
- 
-                                            </ul>
-                                            
-                                            </span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -305,11 +277,11 @@
                 <!-- <div class="card-body" id="bubblesChart-container"> -->
                 <div class="card bg-dark">
                     <div class="card-header  d-flex align-items-center justify-content-center  text-center">
-                        Top 20 army dimensions
+                        Most exchaned weapons
 
                     </div>
                     <div class="card-body">
-                        <div style="background-color: rgb(20, 20, 20);" id="circular_viz">
+                        <div style="background-color: rgb(20, 20, 20);" id="weapons_dataviz">
 
                         </div>
 
@@ -326,173 +298,6 @@
     </div>
     </div>
 
-    <!-- CIRCULAR CHART -->
-    <script>
-        // set the dimensions and margins of the graph
-        var margin = {
-                top: 70,
-                right: 0,
-                bottom: 0,
-                left: 0
-            },
-            width = 400 - margin.left - margin.right,
-            height = 270 - margin.top - margin.bottom,
-            innerRadius = 30,
-            outerRadius = Math.min(width, height) / 2; // the outerRadius goes from the middle of the SVG area to the border
-
-        // append the svg object
-
-        // d3v4.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum.csv", function(data) {
-        function drawCircular() {
-
-            var svg = d3v4.select("#circular_viz")
-                .append("svg")
-                .attr("id", "circ-svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .append("g")
-                .attr("transform", "translate(" + (width / 2 + margin.left) + "," + (height / 2 + margin.top) + ")");
-
-            d3v4.csv("static/data/army-dimensions-clean.csv", function(data) {
-                var headers = d3v4.keys(data[0]);
-                const cols = data.columns.filter(function(d) {
-                    return parseInt(d) >= years[0] && parseInt(d) <= years[1] || d == "Country Name" || d == "Country Code";
-                });
-                // console.log("COLUMNS", columns)
-
-                totals = {};
-
-                newData = data.map(function(d) {
-                    kk = ""
-                    kn = ""
-                    sum = 0
-                    toBeSkipped = false
-                    cols.forEach(function(k) {
-                        if (k !== "Country Code" && k !== "Country Name") {
-                            // E' un anno
-                            sum += parseFloat(d[k]) || 0
-                        } else if (k === "Country Code") {
-                            if (allCountriesAlpha3.includes(d[k]))
-                                kk = d[k]
-                            else
-                                toBeSkipped = true
-                        } else if (k === "Country Name") {
-                            kn = d[k]
-                        }
-
-                    });
-                    if (toBeSkipped) avg = 0
-                    else
-                        avg = sum / (cols.length - 2)
-                        // console.log(kk, avg)
-                    return [kk, avg, kn]
-                });
-
-                // console.log(newData)
-
-                data = newData.sort(function(a, b) {
-                    return d3v4.descending(+a[1], +b[1]);
-                }).slice(0, 20);
-                if (DEBUG)
-                    console.log(data)
-
-                /************************************************************************************************************
-                 * NOW YOU HAVE DATA TO BE PLOTTED, FORMAT : 
-                 * ...
-                 * [ COUNTRY CODE, VALUE AVG ARMY FOR RANGE OF YEARS , COUNTRY NAME ]
-                 * ...*
-                 ************************************************************************************************************/
-
-                // Scales
-                var x = d3v4.scaleBand()
-                    .range([0, 2 * Math.PI]) // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
-                    .align(0) // This does nothing
-                    .domain(data.map(function(d) {
-                        return d[2];
-                    })); // The domain of the X axis is the list of states.
-                var y = d3v4.scaleRadial()
-                    .range([innerRadius, outerRadius]) // Domain will be define later.
-                    .domain([0, 14000]); // Domain of Y is from 0 to the max seen in the data
-
-                // Add the bars
-                svg.append("g")
-                    .selectAll("path")
-                    .data(data)
-                    .enter()
-                    .append("path")
-                    .attr("class", "circ-bar")
-                    .attr("fill", function(d) {
-                        if (selected_group.includes(d[0]))
-                            return "#d2d918"
-                        else
-                            return "#69b3a2"
-                    })
-                    .attr("d", d3v4.arc() // imagine your doing a part of a donut plot
-                        .innerRadius(innerRadius)
-                        .outerRadius(function(d) {
-                            return (y(d[1]) * 0.1);
-                        })
-                        .startAngle(function(d) {
-                            return x(d[2]);
-                        })
-                        .endAngle(function(d) {
-                            return x(d[2]) + x.bandwidth();
-                        })
-                        .padAngle(0.01)
-                        .padRadius(innerRadius))
-                var tip = d3v4.tip()
-                    .attr('class', 'd3-tip')
-                    .offset([-10, 0])
-                    .html(function(d) {
-
-                        return '<strong>' + d[2] + '</strong><br/><strong>' + Math.round(d[1]) + '</strong>';
-                    })
-                svg.call(tip);
-
-                d3v4.selectAll(".circ-bar")
-                    .on('mouseover', d => tip.show(d))
-                    .on('mouseout', tip.hide)
-
-                // Add the labels
-                svg.append("g")
-                    .selectAll("g")
-                    .data(data)
-                    .enter()
-                    .append("g")
-                    .attr("text-anchor", function(d) {
-                        return (x(d[2]) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "end" : "start";
-                    })
-                    .attr("transform", function(d) {
-                        return "rotate(" + ((x(d[2]) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")" + "translate(" + ((y(d[1]) * 0.1) + 10) + ",0)";
-                    })
-                    .append("text")
-                    .attr("fill", function(d) {
-                        if (selected_group.includes(d[0]))
-                            return "#d2d918"
-                        else
-                            return "white"
-                    })
-                    .text(function(d) {
-                        return (d[0])
-                    })
-                    .attr("transform", function(d) {
-                        return (x(d[2]) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)";
-                    })
-                    .style("font-size", "11px")
-                    .attr("alignment-baseline", "middle")
-
-            });
-        }
-
-        function removeCircular() {
-            $("#circ-svg").remove()
-        }
-
-        function updateCircular() {
-            removeCircular()
-            drawCircular()
-        }
-    </script>
 
 
 
@@ -578,22 +383,788 @@
     <div id="pca-test"></div>
 
 
-    <div class="card bg-dark">
-        <div class="card-header  d-flex align-items-center justify-content-center  text-center">
-            <h7 style="color: #009344">Export</h7> &nbspvs &nbsp
-            <h7 style="color: #d00101">Import</h7>&nbspfor&nbsp
-            <div class="shadowText" style="display:inline-block ;">selected countries</div>
 
-        </div>
-        <div class="card-body">
-            <div style="background-color: rgb(20, 20, 20);" id="diverging-card">
-                <div class="bg-dark" style="left: 950px;top:370px; position:absolute">
+    <!-- 
+/****************
+ * DESCRIPTIONS *
+ ****************/ -->
 
-                    <input type="image" id="homeButton" style="padding-left: 2px; padding-top: 2px; position:relative" width="30" src="static/icons/home.png" onclick="callResetZoom()" />
-                    <span class="tooltiptext">Reset zoom</span>
-                </div>
-            </div>
-        </div>
+
+
+
+    <div class='weaponDesc' id='Patrol_craft_desc'>A patrol boat (also referred to as a patrol craft, patrol ship or patrol vessel) is a relatively small naval vessel generally designed for coastal defence duties. There have been many designs for patrol boats. They may be operated by a nation's navy,
+        coast guard, police force or customs and may be intended for marine (blue water) or estuarine or river ("brown water") environments. They are commonly found engaged in various border protection roles, including anti-smuggling, anti-piracy, fisheries
+        patrols, and immigration law enforcement. They are also often called upon to participate in rescue operations. Vessels of this type include the original yacht (from Dutch/Low German jacht meaning hunting or hunt), a light, fast-sailing vessel
+        used by the Dutch navy to pursue pirates and other transgressors around and into shallow waters.
+
+    </div>
+    <div class='weaponDesc' id='OPV_desc'>A patrol boat (also referred to as a patrol craft, patrol ship or patrol vessel) is a relatively small naval vessel generally designed for coastal defence duties. There have been many designs for patrol boats. They may be operated by a nation's navy,
+        coast guard, police force or customs and may be intended for marine (blue water) or estuarine or river ("brown water") environments. They are commonly found engaged in various border protection roles, including anti-smuggling, anti-piracy, fisheries
+        patrols, and immigration law enforcement. They are also often called upon to participate in rescue operations. Vessels of this type include the original yacht (from Dutch/Low German jacht meaning hunting or hunt), a light, fast-sailing vessel
+        used by the Dutch navy to pursue pirates and other transgressors around and into shallow waters.
+
+    </div>
+    <div class='weaponDesc' id='Transport_ship_desc'>A troopship (also troop ship or troop transport or trooper) is a ship used to carry soldiers, either in peacetime or wartime. Operationally, standard troopships–often drafted from commercial shipping fleets–cannot land troops directly on shore, typically
+        loading and unloading at a seaport or onto smaller vessels, either tenders or barges. Attack transports, a variant of ocean-going troopship adapted to transporting invasion forces ashore, carry their own fleet of landing craft. Landing ships beach
+        themselves and bring their troops directly ashore.</div>
+    <div class='weaponDesc' id='FGA_aircraft_desc'>The Hawker Hunter is a transonic British jet-powered fighter aircraft that was developed by Hawker Aircraft for the Royal Air Force (RAF) during the late 1940s and early 1950s. It was designed to take advantage of the newly developed Rolls-Royce Avon
+        turbojet engine and the swept wing, and was the first jet-powered aircraft produced by Hawker to be procured by the RAF. On 7 September 1953, the modified first prototype broke the world air speed record for aircraft, achieving a speed of 727.63
+        mph (1,171.01 km/h; 632.29 kn). The single-seat Hunter was introduced to service in 1954 as a manoeuvrable day interceptor aircraft, quickly succeeding first-generation jet fighters in RAF service such as the Gloster Meteor and the de Havilland
+        Venom. The all-weather/night fighter role was filled by the Gloster Javelin. Successively improved variants of the type were produced, adopting increasingly more capable engine models and expanding its fuel capacity amongst other modifications
+        being implemented. Hunters were also used by two RAF display teams: the "Black Arrows", who on one occasion looped a record-breaking 22 Hunters in formation, and later the "Blue Diamonds", who flew 16 aircraft. The Hunter was also widely exported,
+        serving with a total of 21 overseas air forces. During the 1960s, following the introduction of the supersonic English Electric Lightning in the interceptor role, the Hunter transitioned to being operated as a fighter-bomber and for aerial reconnaissance
+        missions, using dedicated variants for these purposes. Two-seat variants remained in use for training and secondary roles with the RAF and the Royal Navy until the early 1990s. Sixty years after its original introduction it was still in active
+        service, being operated by the Lebanese Air Force until 2014. The Hunter saw combat service in a range of conflicts with several operators, including the Suez Crisis, the Aden Emergency, the Sino-Indian War, the Indo-Pakistani War of 1965, the
+        Indo-Pakistani War of 1971, the Rhodesian Bush War, the Second Congo War, the Six-Day War, the War of Attrition and the Yom Kippur War. Overall, 1,972 Hunters were manufactured by Hawker Aircraft and its successor, Hawker Siddeley, as well as
+        being produced under licence overseas. In British service, the Hunter was replaced in its principal roles by the Lightning, the Hawker Siddeley Harrier and the McDonnell Douglas F-4 Phantom II.</div>
+    <div class='weaponDesc' id='Transport_aircraft_desc'>Military transport aircraft or military cargo aircraft are used to airlift troops, weapons and other military equipment to support military operations. Transport aircraft can be used for both strategic and tactical missions, and are often diverted
+        to civil emergency relief missions.
+
+    </div>
+    <div class='weaponDesc' id='Anti-ship_missile_desc'>An anti-ship missile (AShM) is a guided missile that is designed for use against ships and large boats. Most anti-ship missiles are of the sea skimming variety, and many use a combination of inertial guidance and active radar homing. A good number
+        of other anti-ship missiles use infrared homing to follow the heat that is emitted by a ship; it is also possible for anti-ship missiles to be guided by radio command all the way. The first anti-ship missiles, which were developed and built by
+        Nazi Germany, used radio command guidance. These saw some success in the Mediterranean Theater in 1943–44, sinking or heavily damaging at least 31 ships with the Henschel Hs 293 and more than seven with the Fritz X, such as the Italian battleship
+        Roma or the cruiser USS Savannah. A variant of the HS 293 had a TV transmitter on board. The bomber carrying it could then fly outside the range of naval AA guns and use TV guidance to lead the missile to its target by radio control. Many anti-ship
+        missiles can be launched from a variety of weapons systems including surface warships (they can then be referred to as ship-to-ship missiles), submarines, bombers, fighter planes, patrol planes, helicopters, shore batteries, land vehicles, and
+        conceivably, even by infantrymen firing shoulder-launched missiles. The term surface-to-surface missile (SSM) is used when appropriate. The longer-range anti-ship missiles are often called anti-ship cruise missiles.</div>
+    <div class='weaponDesc' id='Landing_craft_desc'>Landing craft are small and medium seagoing watercraft, such as boats and barges, used to convey a landing force (infantry and vehicles) from the sea to the shore during an amphibious assault. The term excludes landing ships, which are larger. Production
+        of landing craft peaked during World War II, with a significant number of different designs produced in large quantities by the United Kingdom and United States. Because of the need to run up onto a suitable beach, World War II landing craft were
+        flat-bottomed, and many designs had a flat front, often with a lowerable ramp, rather than a normal bow. This made them difficult to control and very uncomfortable in rough seas. The control point (too rudimentary to call a bridge on LCA and similar
+        craft) was normally at the extreme rear of the vessel, as were the engines. In all cases, they were known by an abbreviation derived from the official name rather than by the full title.</div>
+    <div class='weaponDesc' id='Tanker/transport_ac_desc'>The Lockheed AC-130 gunship is a heavily armed, long-endurance, ground-attack variant of the C-130 Hercules transport, fixed-wing aircraft. It carries a wide array of ground attack weapons that are integrated with sophisticated sensors, navigation,
+        and fire-control systems. Unlike other modern military fixed-wing aircraft, the AC-130 relies on visual targeting. Because its large profile and low operating altitudes of approximately 7,000 feet (2,100 m) make it an easy target, its close air
+        support missions are usually flown at night.The airframe is manufactured by Lockheed Martin, while Boeing is responsible for the conversion into a gunship and for aircraft support. Developed during the Vietnam War as "Project Gunship II", the
+        AC-130 replaced the Douglas AC-47 Spooky, or "Gunship I". The sole operator is the United States Air Force, which uses the AC-130U Spooky and AC-130W Stinger II variants for close air support, air interdiction, and force protection, with the upgraded
+        AC-130J Ghostrider entering service. Close-air-support roles include supporting ground troops, escorting convoys, and urban operations. Air-interdiction missions are conducted against planned targets and targets of opportunity. Force-protection
+        missions include defending air bases and other facilities. AC-130Us are based at Hurlburt Field, Florida, while AC-130Ws are based at Cannon AFB, New Mexico; gunships can be deployed worldwide. The squadrons are part of the Air Force Special Operations
+        Command (AFSOC), a component of the United States Special Operations Command (SOCOM).The AC-130 has an unpressurized cabin, with the weaponry mounted to fire from the port side of the fuselage. During an attack, the gunship performs a pylon turn,
+        flying in a large circle around the target, therefore being able to fire at it for far longer than in a conventional strafing attack. The AC-130H Spectre was armed with two 20 mm M61 Vulcan cannons, one L60 Bofors 40 mm cannon, and one 105 mm
+        M102 howitzer; after 1994, the 20 mm cannons were removed. The upgraded AC-130U Spooky has a single 25 mm GAU-12 Equalizer cannon in place of the Spectre's two 20 mm cannons, an improved fire-control system, and increased ammunition capacity.
+        The new AC-130J was based on the MC-130J Commando II special-operations tanker. The AC-130W Stinger II is a modified C-130H with upgrades including a precision strike package.</div>
+    <div class='weaponDesc' id='Light_helicopter_desc'>The HAL Dhruv is a utility helicopter designed and developed by Rotary Wing Research and Design Center (RWR&DC) one of the R&D sections of Hindustan Aeronautics Limited (HAL). The development of the Dhruv was first announced in November 1984, and
+        it was subsequently designed with assistance from MBB in Germany. The helicopter first flew in 1992; however, its development was prolonged due to multiple factors including the Indian Army's requirement for design changes, budget restrictions,
+        and sanctions placed on India following the 1998 Pokhran-II nuclear tests. The Dhruv entered service in 2002. It is designed to meet the requirement of both military and civil operators, with military variants of the helicopter being developed
+        for the Indian Armed Forces, while a variant for civilian/commercial use has also been developed. The helicopter was first exported to Nepal and Israel.Military versions in production include transport, utility, reconnaissance and medical evacuation
+        variants. Based on the Dhruv platform, the HAL Light Combat Helicopter (LCH) a dedicated attack helicopter and HAL Light Utility Helicopter (LUH), a utility and observation helicopter, are currently being developed. As of August 2013, more than
+        200 HAL Dhruv have been produced for different customers. It has been named after an Indian mythological character, Dhruv, which in Sanskrit means 'unshakeable'.</div>
+    <div class='weaponDesc' id='IFV_desc'>An infantry fighting vehicle (IFV), also known as a mechanized infantry combat vehicle (MICV), is a type of armoured fighting vehicle used to carry infantry into battle and provide direct-fire support. The 1990 Treaty on Conventional Armed Forces
+        in Europe defines an infantry fighting vehicle as "an armoured combat vehicle which is designed and equipped primarily to transport a combat infantry squad, and which is armed with an integral or organic cannon of at least 20 millimeters calibre
+        and sometimes an antitank missile launcher". IFVs often serve both as the principal weapons system and as the mode of transport for a mechanized infantry unit.Infantry fighting vehicles are distinct from armored personnel carriers (APCs), which
+        are transport vehicles armed only for self-defense and not specifically engineered to fight on their own. IFVs are designed to be more mobile than tanks and are equipped with a rapid-firing autocannon or a large conventional gun; they may include
+        side ports for infantrymen to fire their personal weapons while on board.The IFV rapidly gained popularity with armies worldwide due to a demand for vehicles with high firepower that were less expensive and easier to maintain than tanks. Nevertheless,
+        it did not supersede the APC concept altogether, due to the latter's continued usefulness in specialized roles. Some armies continue to maintain fleets of both IFVs and APCs.</div>
+    <div class='weaponDesc' id='UAV_desc'>An unmanned aerial vehicle (UAV) (or uncrewed aerial vehicle, commonly known as a drone) is an aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV,
+        a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator, autonomously by onboard computers or piloted by an autonomus
+        robot.Compared to crewed aircraft, UAVs were originally used for missions too "dull, dirty or dangerous" for humans. While they originated mostly in military applications, their use is rapidly expanding to commercial, scientific, recreational,
+        agricultural, and other applications, such as policing and surveillance, product deliveries, aerial photography, infrastructure inspections, smuggling, and drone racing. Civilian UAVs now vastly outnumber military UAVs, with estimates of over
+        a million sold by 2015.
+
+    </div>
+    <div class='weaponDesc' id='Light_aircraft_desc'>A light aircraft is an aircraft that has a maximum gross takeoff weight of 12,500 lb (5,670 kg) or less.Light aircraft are used commercially for passenger and freight transport, sightseeing, photography, and other roles, as well as personal use. Examples
+        of light aircraft include: Beechcraft Bonanza Cessna 172 Cirrus SR22 Diamond DA40 Eclipse 500 Mooney M20 Piper PA-28 CherokeeExamples of aircraft that are at the maximum gross takeoff weight for this category include the de Havilland Canada DHC-6
+        Twin Otter and Beechcraft B200 Super King Air.</div>
+    <div class='weaponDesc' id='Reconnaissance_ac_desc'>The Lockheed AC-130 gunship is a heavily armed, long-endurance, ground-attack variant of the C-130 Hercules transport, fixed-wing aircraft. It carries a wide array of ground attack weapons that are integrated with sophisticated sensors, navigation,
+        and fire-control systems. Unlike other modern military fixed-wing aircraft, the AC-130 relies on visual targeting. Because its large profile and low operating altitudes of approximately 7,000 feet (2,100 m) make it an easy target, its close air
+        support missions are usually flown at night.The airframe is manufactured by Lockheed Martin, while Boeing is responsible for the conversion into a gunship and for aircraft support. Developed during the Vietnam War as "Project Gunship II", the
+        AC-130 replaced the Douglas AC-47 Spooky, or "Gunship I". The sole operator is the United States Air Force, which uses the AC-130U Spooky and AC-130W Stinger II variants for close air support, air interdiction, and force protection, with the upgraded
+        AC-130J Ghostrider entering service. Close-air-support roles include supporting ground troops, escorting convoys, and urban operations. Air-interdiction missions are conducted against planned targets and targets of opportunity. Force-protection
+        missions include defending air bases and other facilities. AC-130Us are based at Hurlburt Field, Florida, while AC-130Ws are based at Cannon AFB, New Mexico; gunships can be deployed worldwide. The squadrons are part of the Air Force Special Operations
+        Command (AFSOC), a component of the United States Special Operations Command (SOCOM).The AC-130 has an unpressurized cabin, with the weaponry mounted to fire from the port side of the fuselage. During an attack, the gunship performs a pylon turn,
+        flying in a large circle around the target, therefore being able to fire at it for far longer than in a conventional strafing attack. The AC-130H Spectre was armed with two 20 mm M61 Vulcan cannons, one L60 Bofors 40 mm cannon, and one 105 mm
+        M102 howitzer; after 1994, the 20 mm cannons were removed. The upgraded AC-130U Spooky has a single 25 mm GAU-12 Equalizer cannon in place of the Spectre's two 20 mm cannons, an improved fire-control system, and increased ammunition capacity.
+        The new AC-130J was based on the MC-130J Commando II special-operations tanker. The AC-130W Stinger II is a modified C-130H with upgrades including a precision strike package.</div>
+    <div class='weaponDesc' id='Diesel_engine_desc'>The diesel engine, named after Rudolf Diesel, is an internal combustion engine in which ignition of the fuel is caused by the elevated temperature of the air in the cylinder due to the mechanical compression (adiabatic compression); thus, the diesel
+        engine is a so-called compression-ignition engine (CI engine). This contrasts with spark-ignition engines such as a petrol engine (gasoline engine) or gas engine (using a gaseous fuel — usually natural gas or liquefied petroleum gas — as opposed
+        to petrol), which uses a spark plug to ignite the air-fuel mixture. Diesel engines work by compressing only the air. This increases the air temperature inside the cylinder to such a high degree that atomised diesel fuel injected into the combustion
+        chamber ignites spontaneously. With the fuel being injected into the air just before combustion, the dispersion of the fuel is uneven; this is called a heterogeneous air-fuel mixture. The torque a diesel engine produces is controlled by manipulating
+        the air-fuel ratio (λ); instead of throttling the intake air, the diesel engine relies on altering the amount of fuel that is injected, and the air-fuel ratio is usually high. The diesel engine has the highest thermal efficiency (engine efficiency)
+        of any practical internal or external combustion engine due to its very high expansion ratio and inherent lean burn which enables heat dissipation by the excess air. A small efficiency loss is also avoided compared with non-direct-injection gasoline
+        engines since unburned fuel is not present during valve overlap and therefore no fuel goes directly from the intake/injection to the exhaust. Low-speed diesel engines (as used in ships and other applications where overall engine weight is relatively
+        unimportant) can reach effective efficiencies of up to 55%.Diesel engines may be designed as either two-stroke or four-stroke cycles. They were originally used as a more efficient replacement for stationary steam engines. Since the 1910s, they
+        have been used in submarines and ships. Use in locomotives, trucks, heavy equipment and electricity generation plants followed later. In the 1930s, they slowly began to be used in a few automobiles. Since the 1970s, the use of diesel engines in
+        larger on-road and off-road vehicles in the US has increased. According to Konrad Reif, the EU average for diesel cars accounts for half of newly registered cars.The world's largest diesel engines put in service are 14-cylinder, two-stroke watercraft
+        diesel engines; they produce a peak power of almost 100 MW each.</div>
+    <div class='weaponDesc' id='Self-propelled_gun_desc'>A self-propelled gun (SPG) is a form of self-propelled artillery, and in modern times is most commonly used to refer to artillery pieces such as howitzers. Self-propelled guns are mounted on a motorized wheeled or tracked chassis (because of this
+        they are sometimes visually similar to tanks). As such the gun can be maneuvered under its own power as opposed to a towed gun that relies upon a vehicle or other means to be moved on the battlefield. Self-propelled guns are combat support weapons;
+        they are employed by combat support units fighting in support of, or attached to, the main combat units: infantry and armour (tanks). Self-propelled guns are best at providing indirect fire but can give direct fire when needed. It may be armoured,
+        in which case it is considered an armoured fighting vehicle (AFV). Typically, self-propelled guns are more lightly armoured and may not have turrets and their purpose is distinct from that of tanks. The greatest tactical advantage in the case
+        of artillery guns is clearly the greater degree of mobility they have compared to towed artillery. Not only is it important in offering military forces greater flexibility, but it is critical in avoiding attack from the enemy (counter-battery
+        fire) by allowing the guns to change position immediately after firing one or more salvos and before their position can be located ("shoot-and-scoot" tactics). A secondary advantage in the case of – even lightly – armoured guns is the increased
+        protection offered to the gun crews.
+
+    </div>
+    <div class='weaponDesc' id='Light_transport_ac_desc'>The list of light transport aircraft details the smaller propeller powered aircraft used for hire by air taxi, on demand, or charter type of operators for air service. For consistency, the number of passengers listed does not include the pilot.</div>
+    <div class='weaponDesc' id='Combat_helicopter_desc'>The HAL Light Combat Helicopter (LCH) is an Indian multi-role combat helicopter designed and manufactured by Hindustan Aeronautics Limited (HAL). It has been ordered for both the Indian Air Force and the Indian Army. The type is also intended to be
+        sold upon the export market, since 2015, HAL has been seeking other customers for the LCH. The impetus for the development of the LCH came in the form of the Kargil War, a conflict fought between India and neighbouring Pakistan in 1999, which
+        revealed the Indian armed forces lacked a suitable armed rotorcraft capable of operating unrestricted in the high-altitude theatre. Accordingly, both HAL and the Indian armed forces commenced exploratory efforts towards the conceptualisation of
+        a combat helicopter to perform in this role. During 2006, the company announced that it had launched a development programme to produce such a rotorcraft, referred to simply as the Light Combat Helicopter. Originally, the LCH was anticipated to
+        attain initial operating capability (IOC) by December 2010, however, development of the type was protracted and subject to several delays, some of which having been attributed to suppliers. The LCH drew extensively on an earlier indigenous helicopter
+        developed and manufactured by HAL, the Dhruv; using this rotorcraft as a starting point has been attributed as significantly reducing the cost of the programme. On 29 March 2010, the first LCH prototype performed its maiden flight. An extensive
+        test programme, involving a total of four prototypes, was conducted. During the course of these tests, the LCH gained the distinction of being the first attack helicopter to land in Siachen, having repeatedly landed at several high altitude helipads,
+        some of which being as high as 13,600 feet to 15,800 feet. During mid-2016, the LCH was recognised as having completed its performance trials, paving way for the certification of its basic configuration. On 26 August 2017, limited series production
+        of the LCH was formally inaugurated.
+
+    </div>
+    <div class='weaponDesc' id='Air_search_radar_desc'>Radar is a detection system that uses radio waves to determine the range, angle, or velocity of objects. It can be used to detect aircraft, ships, spacecraft, guided missiles, motor vehicles, weather formations, and terrain. A radar system consists
+        of a transmitter producing electromagnetic waves in the radio or microwaves domain, a transmitting antenna, a receiving antenna (often the same antenna is used for transmitting and receiving) and a receiver and processor to determine properties
+        of the object(s). Radio waves (pulsed or continuous) from the transmitter reflect off the object and return to the receiver, giving information about the object's location and speed. Radar was developed secretly for military use by several nations
+        in the period before and during World War II. A key development was the cavity magnetron in the United Kingdom, which allowed the creation of relatively small systems with sub-meter resolution. The term RADAR was coined in 1940 by the United States
+        Navy as an acronym for "radio detection and ranging". The term radar has since entered English and other languages as a common noun, losing all capitalization. During RAF RADAR courses in 1954/5 at Yatesbury Training Camp "radio azimuth direction
+        and ranging" was suggested. The modern uses of radar are highly diverse, including air and terrestrial traffic control, radar astronomy, air-defense systems, antimissile systems, marine radars to locate landmarks and other ships, aircraft anticollision
+        systems, ocean surveillance systems, outer space surveillance and rendezvous systems, meteorological precipitation monitoring, altimetry and flight control systems, guided missile target locating systems, self-driving cars, and ground-penetrating
+        radar for geological observations. High tech radar systems are associated with digital signal processing, machine learning and are capable of extracting useful information from very high noise levels. Other systems similar to radar make use of
+        other parts of the electromagnetic spectrum. One example is LIDAR, which uses predominantly infrared light from lasers rather than radio waves. With the emergence of driverless vehicles, radar is expected to assist the automated platform to monitor
+        its environment, thus preventing unwanted incidents.</div>
+    <div class='weaponDesc' id='Towed_gun_desc'>The 152 mm gun-howitzer M1955, also known as the D-20, (Russian: 152-мм пушка-гаубица Д-20 обр. 1955 г.) is a manually loaded, towed 152 mm artillery piece, manufactured in the Soviet Union during the 1950s. It was first observed by the west in 1955,
+        at which time it was designated the M1955. Its GRAU index is 52-P-546.</div>
+    <div class='weaponDesc' id='Self-propelled_MRL_desc'>This article lists modern armoured fighting vehicles produced or used after the Second World War.</div>
+    <div class='weaponDesc' id='Ground_attack_ac_desc'>The Lockheed AC-130 gunship is a heavily armed, long-endurance, ground-attack variant of the C-130 Hercules transport, fixed-wing aircraft. It carries a wide array of ground attack weapons that are integrated with sophisticated sensors, navigation,
+        and fire-control systems. Unlike other modern military fixed-wing aircraft, the AC-130 relies on visual targeting. Because its large profile and low operating altitudes of approximately 7,000 feet (2,100 m) make it an easy target, its close air
+        support missions are usually flown at night.The airframe is manufactured by Lockheed Martin, while Boeing is responsible for the conversion into a gunship and for aircraft support. Developed during the Vietnam War as "Project Gunship II", the
+        AC-130 replaced the Douglas AC-47 Spooky, or "Gunship I". The sole operator is the United States Air Force, which uses the AC-130U Spooky and AC-130W Stinger II variants for close air support, air interdiction, and force protection, with the upgraded
+        AC-130J Ghostrider entering service. Close-air-support roles include supporting ground troops, escorting convoys, and urban operations. Air-interdiction missions are conducted against planned targets and targets of opportunity. Force-protection
+        missions include defending air bases and other facilities. AC-130Us are based at Hurlburt Field, Florida, while AC-130Ws are based at Cannon AFB, New Mexico; gunships can be deployed worldwide. The squadrons are part of the Air Force Special Operations
+        Command (AFSOC), a component of the United States Special Operations Command (SOCOM).The AC-130 has an unpressurized cabin, with the weaponry mounted to fire from the port side of the fuselage. During an attack, the gunship performs a pylon turn,
+        flying in a large circle around the target, therefore being able to fire at it for far longer than in a conventional strafing attack. The AC-130H Spectre was armed with two 20 mm M61 Vulcan cannons, one L60 Bofors 40 mm cannon, and one 105 mm
+        M102 howitzer; after 1994, the 20 mm cannons were removed. The upgraded AC-130U Spooky has a single 25 mm GAU-12 Equalizer cannon in place of the Spectre's two 20 mm cannons, an improved fire-control system, and increased ammunition capacity.
+        The new AC-130J was based on the MC-130J Commando II special-operations tanker. The AC-130W Stinger II is a modified C-130H with upgrades including a precision strike package.</div>
+    <div class='weaponDesc' id='Tank_desc'>A tank is an armoured fighting vehicle designed for front-line combat. Tanks have heavy firepower, strong armour, and good battlefield manoeuvrability provided by tracks and a powerful engine; usually their main armament is mounted in a turret. They
+        are a mainstay of modern 20th and 21st century ground forces and a key part of combined arms combat. Modern tanks are versatile mobile land weapon system platforms that have a mounted large-calibre cannon called tank gun in a rotating gun turret
+        supplemented by mounted machine guns or other weapons such as anti-tank guided missiles or rockets. They have heavy vehicle armour which provides protection for the crew, the vehicle's weapons and propulsion systems. The use of tracks rather than
+        wheels provides operational mobility which allows the tank to move over rugged terrain and counter adverse conditions such as mud (and be positioned on the battlefield in advantageous locations). These features enable the tank to perform well
+        in a variety of intense combat situations, simultaneously both offensively (with fire from their powerful tank gun) and defensively (due to their near invulnerability to common firearms and good resistance to heavier weapons, all while maintaining
+        the mobility needed to exploit changing tactical situations). Fully integrating tanks into modern military forces spawned a new era of combat: armoured warfare. There are classes of tanks: some being larger and very heavily armoured and with high
+        calibre guns, while others are smaller, lightly armoured, and equipped with a smaller calibre and lighter gun. These smaller tanks move over terrain with speed and agility and can perform a reconnaissance role in addition to engaging enemy targets.
+        The smaller, faster tank would not normally engage in battle with a larger, heavily armoured tank, except during a surprise flanking manoeuvre.</div>
+    <div class='weaponDesc' id='APV_desc'>The Suzuki APV is a minivan/light commercial vehicle designed by Suzuki in Japan and assembled in Indonesia by Suzuki Indomobil Motor (a subsidiary of Suzuki). It is powered by a 1.5-liter or 1.6-liter inline-four engine delivering 92 hp. The abbreviation
+        "APV" is short for All Purpose Vehicle. In November 2007, Suzuki released the improved APV named APV Arena (APV Type II in some countries). It offers more luxurious features with the Luxury/SGX trim as the flagship variant (captain seat version).
+        Not just doing some facelift in exterior but the interior is also changed as well and an improvement in engine performance. The APVs are exported to countries like Algeria, Bolivia, Brunei, Chile, Dominican Republic, Guatemala, Jamaica, Malaysia,
+        Pakistan, Peru, Philippines, Singapore, Sudan, Thailand, Trinidad and Tobago, and the Middle East. Up until 2018, it was also exported to Australia. The pickup truck version, called Suzuki Mega Carry in Indonesia, Super Carry Pro in Vietnam and
+        APV Pickup elsewhere, was launched in 2011, six years after Suzuki Indomobil Motor started exported to more than 80 countries in the world from 2005. The Mega Carry was discontinued in 2019 in favor of the international version of the eleventh
+        generation Carry.
+    </div>
+    <div class='weaponDesc' id='SAM_system_desc'>A surface-to-air missile (SAM), also known as a ground-to-air missile (GTAM) or surface-to-air guided weapon (SAGW), is a missile designed to be launched from the ground to destroy aircraft or other missiles. It is one type of anti-aircraft system;
+        in modern armed forces, missiles have replaced most other forms of dedicated anti-aircraft weapons, with anti-aircraft guns pushed into specialized roles. The first serious attempts at SAM development took place during World War II, although no
+        operational systems were introduced. Further development in the 1940s and 1950s led to operational systems being introduced by most major forces during the second half of the 1950s. Smaller systems, suitable for close-range work, evolved through
+        the 1960s and 1970s, to modern systems that are man-portable. Shipborne systems followed the evolution of land-based models, starting with long-range weapons and steadily evolving toward smaller designs to provide a layered defence. This evolution
+        of design increasingly pushed gun-based systems into the shortest-range roles. The American Nike Ajax was the first operational guided missile SAM system, and the Soviet Union's S-75 Dvina was the most-produced SAM. Widely used modern examples
+        include the Patriot and S-300 wide-area systems, SM-6 and MBDA Aster Missile naval missiles, and short-range man-portable systems like the Stinger and Strela-3.</div>
+    <div class='weaponDesc' id='Bomber_aircraft_desc'>A bomber is a combat aircraft designed to attack ground and naval targets by dropping air-to-ground weaponry (such as bombs), launching torpedoes, or deploying air-launched cruise missiles. The first use of bombs dropped from an aircraft occurred
+        in the Italo-Turkish War, with the first major deployments coming in the First World War and Second World War by all major airforces causing devastating damage to cities, towns, and rural areas. The first purpose built bombers were the Italian
+        Caproni Ca 30 and British Bristol T.B.8, both of 1913. Some bombers were decorated with Nose art or Victory markings. There are two major classifications of bomber: strategic and tactical. Strategic bombing is done by heavy bombers primarily designed
+        for long-range bombing missions against strategic targets to diminish the enemy's ability to wage war by limiting access to resources through crippling infrastructure or reducing industrial output. Tactical bombing is aimed at countering enemy
+        military activity and in supporting offensive operations, and is typically assigned to smaller aircraft operating at shorter ranges, typically near the troops on the ground or against enemy shipping. During WWII with engine power as a major limitation,
+        combined with the desire for accuracy and other operational factors, bomber designs tended to be tailored to specific roles. However, in during the Cold War bombers were the only means of carrying nuclear weapons to enemy targets, and held the
+        role of deterrence. With the advent of guided air-to-air missiles, bombers needed to avoid interception. High-speed and high-altitude flying became a means of evading detection and attack. With the advent of ICBM's the role of the bomber was brought
+        to a more tactical focus in close air support roles, and a focus on stealth technology for strategic bombers.</div>
+    <div class='weaponDesc' id='Transport_helicopter_desc'>Military transport aircraft or military cargo aircraft are used to airlift troops, weapons and other military equipment to support military operations. Transport aircraft can be used for both strategic and tactical missions, and are often diverted
+        to civil emergency relief missions.
+
+    </div>
+    <div class='weaponDesc' id='Tank_destroyer_desc'>A tank destroyer, tank hunter, or tank killer is a type of armoured fighting vehicle, armed with a direct-fire artillery gun or missile launcher, with limited operational capacities and designed specifically to engage enemy tanks. Tanks are armoured
+        fighting vehicles designed for front-line combat, combining operational mobility and tactical offensive and defensive capabilities; tanks perform all primary tasks of the armoured troops. The tank destroyer on the other hand is specifically designed
+        to take on enemy tanks and other armoured fighting vehicles. Many are based on a tracked tank chassis, while others are wheeled. Since World War II, gun-armed tank destroyers have fallen out of favor as armies have favored multirole main battle
+        tanks. However, lightly armored anti-tank guided missile (ATGM) carriers are commonly used for supplementary long-range anti-tank work. The resurgence of expeditionary warfare in the first two decades of the 21st century has seen the emergence
+        of gun-armed wheeled vehicles, sometimes called protected gun systems, which may bear a superficial resemblance to tank destroyers, but are employed as direct fire support units typically providing support in low-intensity operations such as the
+        wars in Iraq and Afghanistan.</div>
+    <div class='weaponDesc' id='Gas_turbine_desc'>A gas turbine, also called a combustion turbine, is a type of continuous and internal combustion engine. The main elements common to all gas turbine engines are: an upstream rotating gas compressor a combustor a downstream turbine on the same shaft
+        as the compressor.A fourth component is often used to increase efficiency (on turboprops and turbofans), to convert power into mechanical or electric form (on turboshafts and electric generators), or to achieve greater thrust-to-weight ratio (on
+        afterburning engines). The basic operation of the gas turbine is a Brayton cycle with air as the working fluid : atmospheric air flows through the compressor that brings it to higher pressure ; energy is then added by spraying fuel into the air
+        and igniting it so that the combustion generates a high-temperature flow ; this high-temperature pressurized gas enters a turbine, producing a shaft work output in the process, used to drive the compressor ; the unused energy comes out in the
+        exhaust gases that can be repurposed for external work, such as directly producing thrust in a turbojet engine, or rotating a second, independent turbine (known as a power turbine) that can be connected to a fan, propeller, or electrical generator.
+        The purpose of the gas turbine determines the design so that the most desirable split of energy between the thrust and the shaft work is achieved. The fourth step of the Brayton cycle (cooling of the working fluid) is omitted, as gas turbines
+        are open systems that do not reuse the same air. Gas turbines are used to power aircraft, trains, ships, electrical generators, pumps, gas compressors, and tanks.
+
+    </div>
+    <div class='weaponDesc' id='Armoured_car_desc'>The Ferret armoured car, also commonly called the Ferret scout car, is a British armoured fighting vehicle designed and built for reconnaissance purposes. The Ferret was produced between 1952 and 1971 by the UK company Daimler. It was widely adopted
+        by regiments in the British Army, as well as the RAF Regiment and Commonwealth countries throughout the period.
+
+    </div>
+    <div class='weaponDesc' id='Portable_SAM_desc'>The KP-SAM Shin-Gung or Shin-Kung (Korean: hangul: 신궁, hanja: 新弓) is a South Korean shoulder-launched surface-to-air missile manufactured by LIG Nex1. It is marketed internationally as the Chiron.</div>
+    <div class='weaponDesc' id='Helicopter_desc'>A helicopter, sometimes referred to in slang as a "chopper" or "helo" (United States military usage, pronounced with a long "e"), is a type of rotorcraft in which lift and thrust are supplied by horizontally-spinning rotors. This allows the helicopter
+        to take off and land vertically, to hover, and to fly forward, backward, and laterally. These attributes allow helicopters to be used in congested or isolated areas where fixed-wing aircraft and many forms of VTOL (Vertical TakeOff and Landing)
+        aircraft cannot perform. The English word helicopter is adapted from the French word hélicoptère, coined by Gustave Ponton d'Amécourt in 1861, which originates from the Greek helix (ἕλιξ) "helix, spiral, whirl, convolution" and pteron (πτερόν)
+        "wing". English language nicknames for helicopter include "chopper", "copter", "helo", "heli", and "whirlybird". Helicopters were developed and built during the first half-century of flight, with the Focke-Wulf Fw 61 being the first operational
+        helicopter in 1936. Some helicopters reached limited production, but it was not until 1942 that a helicopter designed by Igor Sikorsky reached full-scale production, with 131 aircraft built. Though most earlier designs used more than one main
+        rotor, it is the single main rotor with anti-torque tail rotor configuration that has become the most common helicopter configuration. Tandem rotor helicopters are also in widespread use due to their greater payload capacity. Coaxial helicopters,
+        tiltrotor aircraft, and compound helicopters are all flying today. Quadcopter helicopters were pioneered as early as 1907 in France, and other types of multicopter have been developed for specialized applications such as unmanned drones.</div>
+    <div class='weaponDesc' id='Trainer/combat_ac_desc'>The Douglas AC-47 Spooky (also nicknamed "Puff, the Magic Dragon") was the first in a series of fixed wing gunships developed by the United States Air Force during the Vietnam War. It was designed to provide more firepower than light and medium ground-attack
+        aircraft in certain situations when ground forces called for close air support.</div>
+    <div class='weaponDesc' id='Guided_bomb_desc'>A guided bomb (also known as a smart bomb, guided bomb unit, or GBU) is a precision-guided munition designed to achieve a smaller circular error probable (CEP).Because the damage effects of explosive weapons fall off with distance according to a power
+        law, even modest improvements in accuracy (and hence reduction in miss distance) enable a target to be effectively attacked with fewer or smaller bombs. Therefore, with guided weapons, fewer air crews are put at risk, less ordnance spent, and
+        collateral damage reduced. The creation of precision-guided munitions resulted in the retroactive renaming of older bombs as unguided bombs or "dumb bombs".</div>
+    <div class='weaponDesc' id='Trainer_aircraft_desc'>A trainer is a class of aircraft designed specifically to facilitate flight training of pilots and aircrews. The use of a dedicated trainer aircraft with additional safety features—such as tandem flight controls, forgiving flight characteristics and
+        a simplified cockpit arrangement—allows pilots-in-training to safely advance their real-time piloting, navigation and warfighting skills without the danger of overextending their abilities alone in a fully featured aircraft.Civilian pilots are
+        normally trained in a light aircraft, with two or more seats to allow for a student and instructor. The aircraft may be modified to withstand the flight conditions imposed by training flights.</div>
+    <div class='weaponDesc' id='ARM_desc'>In human anatomy, the arm is the part of the upper limb between the glenohumeral joint (shoulder joint) and the elbow joint. In common usage, the arm extends to the hand. It can be divided into the upper arm, which extends from the shoulder to the
+        elbow, the forearm which extends from the elbow to the hand, and the hand. Anatomically the shoulder girdle with bones and corresponding muscles is by definition a part of the arm. The Latin term brachium may refer to either the arm as a whole
+        or to the upper arm on its own.</div>
+    <div class='weaponDesc' id='Light_tank_desc'>A light tank is a tank variant initially designed for rapid movement to quickly move in and out of combat, and outmaneuver heavy main battle tanks. They are primarily employed in the screening and reconnaissance role or in a fire support role of expeditionary
+        forces where big main battle tanks cannot be made available or can't operate safely. Early light tanks were generally better armed and armored than armored cars, but used tracks in order to provide better cross-country mobility. The fast light
+        tank was a major feature of the pre-World War II buildup, where it was expected they would be used to exploit breakthroughs in enemy lines created by slower, heavier tanks. Numerous small tank designs and "tankettes" were developed during this
+        period and known under a variety of names, including the "combat car". The light tank has been one of the few tank variants to survive the development of the main battle tank, and has seen use in a variety of roles including the support of light
+        airborne or amphibious forces and reconnaissance. Modified IFVs are assuming these roles in many militaries due to their immediate availability, and as a cheaper alternative to developing and fielding a pure light tank.</div>
+    <div class='weaponDesc' id='FAC_desc'>A fact is an occurrence in the real world. For example, "This sentence contains words." is a linguistic fact, and "The sun is a star." is an astronomical fact. Further, "Abraham Lincoln was the 16th President of the United States." and "Abraham Lincoln
+        was assassinated." are also both facts, of history. Generally speaking, facts are independent of belief. The usual test for a statement of fact is verifiability — that is whether it can be demonstrated to correspond to experience. Standard reference
+        works are often used to check facts. Scientific facts are verified by repeatable careful observation or measurement by experiments or other means.
+
+    </div>
+    <div class='weaponDesc' id='Reconnaissance_AV_desc'>The McDonnell Douglas (now Boeing) AV-8B Harrier II is a single-engine ground-attack aircraft that constitutes the second generation of the Harrier Jump Jet family. Capable of vertical or short takeoff and landing (V/STOL), the aircraft was designed
+        in the late 1970s as an Anglo-American development of the British Hawker Siddeley Harrier, the first operational V/STOL aircraft. The aircraft is primarily employed on light attack or multi-role missions, ranging from close air support of ground
+        troops to armed reconnaissance. The AV-8B is used by the United States Marine Corps (USMC), the Spanish Navy, and the Italian Navy. A variant of the AV-8B, the British Aerospace Harrier II, was developed for the British military, while another,
+        the TAV-8B, is a dedicated two-seat trainer. The project that eventually led to the AV-8B's creation started in the early 1970s as a cooperative effort between the United States and United Kingdom (UK), aimed at addressing the operational inadequacies
+        of the first-generation Harrier. Early efforts centered on a larger, more powerful Pegasus engine to dramatically improve the capabilities of the Harrier. Due to budgetary constraints, the UK abandoned the project in 1975. Following the UK's withdrawal,
+        McDonnell Douglas extensively redesigned the earlier AV-8A Harrier to create the AV-8B. While retaining the general layout of its predecessor, the aircraft incorporates a new, larger composite wing with an additional hardpoint on each side, an
+        elevated cockpit, a redesigned fuselage and other structural and aerodynamic refinements. The aircraft is powered by an upgraded version of the Pegasus. The AV-8B made its maiden flight in November 1981 and entered service with the USMC in January
+        1985. Later upgrades added a night-attack capability and radar, resulting in the AV-8B(NA) and AV-8B Harrier II Plus versions, respectively. An enlarged version named Harrier III was also studied, but not pursued. The UK, through British Aerospace,
+        re-joined the improved Harrier project as a partner in 1981, giving it a significant work-share in the project. Following corporate mergers in the 1990s, Boeing and BAE Systems have jointly supported the program. Approximately 340 aircraft were
+        produced in a 22-year production program that ended in 2003. Typically operated from small aircraft carriers, large amphibious assault ships and simple forward operating bases, AV-8Bs have participated in numerous military and humanitarian operations,
+        proving themselves versatile assets. U.S. Army General Norman Schwarzkopf named the USMC Harrier II as one of several important weapons in the Gulf War. It has also served in Operation Enduring Freedom in Afghanistan since 2001, the Iraq War since
+        2003, and was used in Operation Odyssey Dawn in Libya in 2011. Italian and Spanish Harrier IIs have taken part in overseas conflicts in conjunction with NATO coalitions. During its service history, the AV-8B has had a high accident rate, related
+        to the percentage of time spent in critical take-off and landing phases. USMC and Italian Navy AV-8Bs are to be replaced by the Lockheed Martin F-35B, with the former expected to operate its Harriers until 2025.</div>
+    <div class='weaponDesc' id='Anti-tank_missile_desc'>An anti-tank guided missile (ATGM), anti-tank missile, anti-tank guided weapon (ATGW) or anti-armor guided weapon is a guided missile primarily designed to hit and destroy heavily armored military vehicles. ATGMs range in size from shoulder-launched
+        weapons, which can be transported by a single soldier, to larger tripod-mounted weapons, which require a squad or team to transport and fire, to vehicle and aircraft mounted missile systems. The introduction to the modern battlefield of smaller,
+        man-portable ATGMs with larger warheads has given infantry the ability to defeat light and medium tanks at great ranges, though main battle tanks (MBTs) using composite and reactive armors have proven to be resistant to smaller ATGMs. Earlier
+        infantry anti-tank weapons, such as anti-tank rifles, anti-tank rockets and magnetic anti-tank mines, had limited armor-penetration abilities or required a soldier to approach the target closely. As of 2016, ATGMs were used by over 130 countries
+        and many non-state actors around the world.</div>
+    <div class='weaponDesc' id='Turboprop/turboshaft_desc'>A turboshaft engine is a form of gas turbine that is optimized to produce shaftpower rather than jet thrust. In concept, turboshaft engines are very similar to turbojets, with additional turbine expansion to extract heat energy from the exhaust and
+        convert it into output shaft power. They are even more similar to turboprops, with only minor differences, and a single engine is often sold in both forms. Turboshaft engines are commonly used in applications that require a sustained high power
+        output, high reliability, small size, and light weight. These include helicopters, auxiliary power units, boats and ships, tanks, hovercraft, and stationary equipment.</div>
+    <div class='weaponDesc' id='MP_aircraft_radar_desc'>This is a list of radars. A radar is an electronic system used to detect, range (determine the distance of), and map various types of targets.</div>
+    <div class='weaponDesc' id='AGS_aircraft_desc'>The Boeing P-8 Poseidon (formerly Multimission Maritime Aircraft) is a military aircraft developed and produced by Boeing Defense, Space & Security, modified from the 737-800ERX. It was developed for the United States Navy (USN). The P-8 is being
+        operated in the anti-submarine warfare (ASW), anti-surface warfare (ASUW), and shipping interdiction roles. It is armed with torpedoes, Harpoon anti-ship missiles and other weapons, and is able to drop and monitor sonobuoys, as well as operate
+        in conjunction with other assets, including the Northrop Grumman MQ-4C Triton maritime surveillance unmanned aerial vehicle (UAV). The P-8 is operated by the United States Navy, the Indian Navy, Royal Australian Air Force (RAAF) and the UK's Royal
+        Air Force (RAF). It has also been ordered by the Royal Norwegian Air Force (RNoAF), the Royal New Zealand Air Force (RNZAF), and the Republic of Korea Navy (ROKN).</div>
+    <div class='weaponDesc' id='Sea_search_radar_desc'>Radar configurations and types is an article about listing the different uses of radars.</div>
+    <div class='weaponDesc' id='APC/APV_desc'>The ATF Dingo is a German heavily armored military MRAP infantry mobility vehicle based on a Unimog chassis with a V-hull design, produced by the company Krauss-Maffei Wegmann (KMW). It is designed to withstand land mines, rifle fire, artillery fragments
+        and NBC-threats. ATF stands for Allschutz-Transport-Fahrzeug, meaning all-protected transport vehicle in German. It is named after the Australian native dog, the dingo. Currently KMW is developing the Dingo 2 GFF for the German Army with increased
+        internal volume. Textron signed an exclusive deal to produce and market KMW's Dingo in the United States. However, Textron chose its own more expensive and heavier M1117 Armored Security Vehicle for the MRAP competition, which did not receive
+        a contract.</div>
+    <div class='weaponDesc' id='MP_aircraft_desc'>This is a list of aircraft in numerical order of manufacturer followed by alphabetical order beginning with 'M'.</div>
+    <div class='weaponDesc' id='Corvette_desc'>A corvette is a small warship. It is traditionally the smallest class of vessel considered to be a proper (or "rated") warship. The warship class above the corvette is that of the frigate, while the class below was historically that of the sloop-of-war.
+        The modern types of ship below a corvette are coastal patrol craft, missile boat and fast attack craft. In modern terms, a corvette is typically between 500 tons and 2,000 tons, although recent designs may approach 3,000 tons, which might instead
+        be considered a small frigate. The word "corvette" is first found in Middle French, a diminutive of the Dutch word corf, meaning a "basket", from the Latin corbis.The rank "corvette captain", equivalent in many navies to "lieutenant commander",
+        derives from the name of this type of ship. The rank is the most junior of three "captain" ranks in several European (e.g., France, Spain, Italy, Croatia) and South American (e.g., Argentina, Chile, Brazil) navies, because a corvette, as the smallest
+        class of rated warship, was traditionally the smallest class of vessel entitled to a commander of a "captain" rank.</div>
+    <div class='weaponDesc' id='Frigate_desc'>A frigate () is a type of warship, having various sizes and roles over time. In the 17th century, a frigate was any warship built for speed and maneuverability, the description often used being "frigate-built". These could be warships carrying their
+        principal batteries of carriage-mounted guns on a single deck or on two decks (with further smaller carriage-mounted guns usually carried on the forecastle and quarterdeck of the vessel). The term was generally used for ships too small to stand
+        in the line of battle, although early line-of-battle ships were frequently referred to as frigates when they were built for speed. In the 18th century, frigates were full-rigged ships, that is square-rigged on all three masts, they were built
+        for speed and handiness, had a lighter armament than a ship of the line, and were used for patrolling and escort. In the definition adopted by the British Admiralty, they were rated ships of at least 28 guns, carrying their principal armaments
+        upon a single continuous deck – the upper deck – while ships of the line possessed two or more continuous decks bearing batteries of guns. In the late 19th century (beginning about 1858 with the construction of prototypes by the British and French
+        navies), the armoured frigate was a type of ironclad warship that for a time was the most powerful type of vessel afloat. The term "frigate" was used because such ships still mounted their principal armaments on a single continuous upper deck.
+        In modern navies, frigates are used to protect other warships and merchant-marine ships, especially as anti-submarine warfare (ASW) combatants for amphibious expeditionary forces, underway replenishment groups, and merchant convoys. Ship classes
+        dubbed "frigates" have also more closely resembled corvettes, destroyers, cruisers and even battleships. Some European navies such as the Dutch, French, German or Spanish ones use the term "frigate" for both their destroyers and frigates. The
+        rank "frigate captain" derives from the name of this type of ship.</div>
+    <div class='weaponDesc' id='Submarine_desc'>A submarine (or sub) is a watercraft capable of independent operation underwater. It differs from a submersible, which has more limited underwater capability. It is also sometimes used historically or colloquially to refer to remotely operated vehicles
+        and robots, as well as medium-sized or smaller vessels, such as the midget submarine and the wet sub. Submarines are referred to as "boats" rather than "ships" irrespective of their size.Although experimental submarines had been built before,
+        submarine design took off during the 19th century, and they were adopted by several navies. Submarines were first widely used during World War I (1914–1918), and are now used in many navies large and small. Military uses include attacking enemy
+        surface ships (merchant and military), or other submarines, aircraft carrier protection, blockade running, ballistic missile submarines as part of a nuclear strike force, reconnaissance, conventional land attack (for example using a cruise missile),
+        and covert insertion of special forces. Civilian uses for submarines include marine science, salvage, exploration and facility inspection and maintenance. Submarines can also be modified to perform more specialized functions such as search-and-rescue
+        missions or undersea cable repair. Submarines are also used in tourism and undersea archaeology. Most large submarines consist of a cylindrical body with hemispherical (or conical) ends and a vertical structure, usually located amidships, which
+        houses communications and sensing devices as well as periscopes. In modern submarines, this structure is the "sail" in American usage and "fin" in European usage. A "conning tower" was a feature of earlier designs: a separate pressure hull above
+        the main body of the boat that allowed the use of shorter periscopes. There is a propeller (or pump jet) at the rear, and various hydrodynamic control fins. Smaller, deep-diving and specialty submarines may deviate significantly from this traditional
+        layout. Submarines use diving planes and also change the amount of water and air in ballast tanks to change buoyancy for submerging and surfacing. Submarines have one of the widest ranges of types and capabilities of any vessel. They range from
+        small autonomous examples and one- or two-person subs that operate for a few hours to vessels that can remain submerged for six months—such as the Russian Typhoon class, the biggest submarines ever built. Submarines can work at greater depths
+        than are survivable or practical for human divers. Modern deep-diving submarines derive from the bathyscaphe, which in turn evolved from the diving bell.</div>
+    <div class='weaponDesc' id='Self-propelled_mortar_desc'>Self-propelled artillery (also called mobile artillery or locomotive artillery) is artillery equipped with its own propulsion system to move towards its target. Within the terminology are the self-propelled gun, self-propelled howitzer, self-propelled
+        mortar, and rocket artillery. They are high mobility vehicles, usually based on continuous tracks carrying either a large field gun, howitzer, mortar, or some form of rocket/missile launcher. They are usually used for long-range indirect bombardment
+        support on the battlefield. In the past, self-propelled artillery has included direct-fire vehicles, such as assault guns and tank destroyers. These have been heavily armoured vehicles, the former providing close fire-support for infantry and
+        the latter acting as specialized anti-tank vehicles. Modern self-propelled artillery vehicles may superficially resemble tanks, but they are generally lightly armoured, too lightly to survive in direct-fire combat. However, they protect their
+        crews against shrapnel and small arms and are therefore usually included as armoured fighting vehicles. Many are equipped with machine guns for defense against enemy infantry. The key advantage of self-propelled over towed artillery is that it
+        can be brought into action much faster. Before the towed artillery can be used, it has to stop, unlimber and set up the guns. To move position, the guns must be limbered up again and brought—usually towed—to the new location. By comparison, self-propelled
+        artillery can stop at a chosen location and begin firing almost immediately, then quickly move on to a new position. This shoot-and-scoot ability is very useful in a mobile conflict and particularly on the advance.Conversely, towed artillery was
+        and remains cheaper to build and maintain. It is also lighter and can be taken to places that self-propelled guns cannot reach. Since the Vietnam War, heavy transport helicopters have also been used for rapid artillery deployment. So, despite
+        the advantages of the self-propelled artillery, towed guns remain in the arsenals of many modern armies.</div>
+    <div class='weaponDesc' id='Fighter_aircraft_desc'>A fighter aircraft, often referred to simply as a fighter, is a military fixed-wing aircraft designed primarily for air-to-air combat against other aircraft. The key performance features of a fighter include not only its firepower but also its high
+        speed and maneuverability relative to the target aircraft. The fighter's main tactical purpose is to establish air superiority over the battlefield. The success or failure of a combatant's efforts to gain air superiority hinges on several factors
+        including the skill of its pilots, the tactical soundness of its doctrine for deploying its fighters, and the numbers and performance of those fighters. Many fighters have secondary capabilities such as ground attack and some types, such as fighter-bombers,
+        are designed from the outset for dual roles. Other fighter designs are highly specialized while still filling the main air superiority role, these include the interceptor, heavy fighter, and night fighter.</div>
+    <div class='weaponDesc' id='AS_torpedo_desc'>A modern torpedo is an underwater ranged weapon launched above or below the water surface, self-propelled towards a target, and with an explosive warhead designed to detonate either on contact with or in proximity to the target. Historically, it was
+        called an automotive, automobile, locomotive or fish torpedo; colloquially called a fish. The term torpedo was originally employed for a variety of devices, most of which would today be called mines. From about 1900, torpedo has been used strictly
+        to designate a self-propelled underwater explosive device. While the battleship had evolved primarily around engagements between armored warships with large-calibre guns, the torpedo allowed small torpedo boats and other lighter surface vessels,
+        submarines/submersibles, even improvised fishing boats or frogmen, and later light aircraft, to destroy large ships without the need of large guns, though sometimes at the risk of being hit by longer-range artillery fire. Modern torpedoes can
+        be divided into lightweight and heavyweight classes; and into straight-running, autonomous homers, and wire-guided. They can be launched from a variety of platforms.</div>
+    <div class='weaponDesc' id='AA_gun_desc'>Anti-aircraft warfare or counter-air defence is defined by NATO as "all measures designed to nullify or reduce the effectiveness of hostile air action". It includes surface based, subsurface (submarine launched), and air-based weapon systems, associated
+        sensor systems, command and control arrangements, and passive measures (e.g. barrage balloons). It may be used to protect naval, ground, and air forces in any location. However, for most countries the main effort has tended to be homeland defence.
+        NATO refers to airborne air defence as counter-air and naval air defence as anti-aircraft warfare. Missile defence is an extension of air defence, as are initiatives to adapt air defence to the task of intercepting any projectile in flight. In
+        some countries, such as Britain and Germany during the Second World War, the Soviet Union, and modern NATO and the United States, ground-based air defence and air defence aircraft have been under integrated command and control. However, while
+        overall air defence may be for homeland defence (including military facilities), forces in the field, wherever they are, invariably deploy their own air defence capability if there is an air threat. A surface-based air defence capability can also
+        be deployed offensively to deny the use of airspace to an opponent. Until the 1950s, guns firing ballistic munitions ranging from 7.62 mm to 152.4 mm were the standard weapons; guided missiles then became dominant, except at the very shortest
+        ranges (as with close-in weapon systems, which typically use rotary autocannons or, in very modern systems, surface-to-air adaptations of short range air-to-air missiles, often combined in one system with rotary cannons).</div>
+    <div class='weaponDesc' id='Fire_control_radar_desc'>A fire-control radar (FCR) is a radar that is designed specifically to provide information (mainly target azimuth, elevation, range and range rate) to a fire-control system in order to direct weapons such that they hit a target. They are sometimes
+        known as targeting radars, or in the UK, gun-laying radars. If the radar is used to guide a missile, it is often known as an target illuminator or illuminator radar. A typical fire-control radar emits a narrow, intense beam of radio waves to ensure
+        accurate tracking information and to minimize the chance of losing track of the target. This makes them less suitable for initial detection of the target, and FCRs are often partnered with a medium-range search radar to fill this role. In British
+        terminology, these medium-range systems were known as tactical control radars. Most modern radars have a track-while-scan capability, enabling them to function simultaneously as both fire-control radar and search radar. This works either by having
+        the radar switch between sweeping the search sector and sending directed pulses at the target to be tracked, or by using a phased-array antenna to generate multiple simultaneous radar beams that both search and track.</div>
+    <div class='weaponDesc' id='BVRAAM_desc'>A beyond-visual-range missile (BVR) is an air-to-air missile (BVRAAM) that is capable of engaging at ranges of 20 nmi (37 km) or beyond. This range has been achieved using dual pulse rocket motors or booster rocket motor and ramjet sustainer motor.
+        In addition to the range capability, the missile must also be capable of tracking its target at this range or of acquiring the target in flight. Systems in which a mid-course correction is transmitted to the missile have been used.</div>
+    <div class='weaponDesc' id='AD_system_desc'>Panama is an online advertising platform created by Yahoo!. Panama was launched by Yahoo! on 5 February 2007. The Panama team was assembled in mid-2005. The advertising platform was Yahoo’s effort to close the wide gap with Google in the race for
+        search advertising dollars, a fast-growing business then dominated by Google, which is now also dominated by Google. Customers with accounts already on Yahoo! were transferred to the new system over the following few months.</div>
+    <div class='weaponDesc' id='Naval_gun_desc'>Naval artillery is artillery mounted on a warship, originally used only for naval warfare, later also for shore bombardment and for anti-aircraft use. The term generally refers to tube-launched projectile-firing weapons and excludes self-propelled
+        projectiles like torpedoes, rockets, and missiles and those simply dropped overboard like depth charges and naval mines.</div>
+    <div class='weaponDesc' id='APV/APC_desc'>The ATF Dingo is a German heavily armored military MRAP infantry mobility vehicle based on a Unimog chassis with a V-hull design, produced by the company Krauss-Maffei Wegmann (KMW). It is designed to withstand land mines, rifle fire, artillery fragments
+        and NBC-threats. ATF stands for Allschutz-Transport-Fahrzeug, meaning all-protected transport vehicle in German. It is named after the Australian native dog, the dingo. Currently KMW is developing the Dingo 2 GFF for the German Army with increased
+        internal volume. Textron signed an exclusive deal to produce and market KMW's Dingo in the United States. However, Textron chose its own more expensive and heavier M1117 Armored Security Vehicle for the MRAP competition, which did not receive
+        a contract.</div>
+    <div class='weaponDesc' id='SRAAM_desc'>The AIM-120 Advanced Medium-Range Air-to-Air Missile, or AMRAAM (pronounced AM-ram), is an American beyond-visual-range air-to-air missile (BVRAAM) capable of all-weather day-and-night operations. Designed with a 7-inch (180mm) diameter form-and-fit
+        factor, and employing active transmit-receive radar guidance instead of semi-active receive-only radar guidance, it has the advantage of being a fire-and-forget weapon when compared to the previous generation Sparrow missiles. When an AMRAAM missile
+        is launched, NATO pilots use the brevity code Fox Three.The AMRAAM is the world's most popular beyond-visual-range missile, and more than 14,000 have been produced for the United States Air Force, the United States Navy, and 33 international customers.
+        The AMRAAM has been used in several engagements and is credited with ten air-to-air kills. Now over 30 years old in design, the AMRAAM is due to be replaced by the new AIM-260 JATM, which will offer better long-range performance and ability to
+        defeat electronic warfare jamming.</div>
+    <div class='weaponDesc' id='Mobile_SAM_system_desc'>The Armenian Air Force (Armenian: Հայաստանի Ռազմաօդային Ուժեր) is the air arm of the Armed Forces of Armenia formed by independent Armenia in 1992 in the wake of the dissolution of the Soviet Union. It is organized and equipped principally to provide
+        Armenian ground forces with tactical air support in the form of ground attack and airlift in mountainous terrain. It provided effective support during the battles with Azerbaijan in the Nagorno-Karabakh region from 1992–1994.Since 2003, the Armenian
+        government has been funding a modernization and enlargement of the air fleet. The Armenian Air Force supports two military academies: the Marshal Baghramyan Aviation Academy and the Armenak Khanperyants Military Aviation University.</div>
+    <div class='weaponDesc' id='Landing_ship_desc'>Landing Ship, Tank (LST), or tank landing ship, is the naval designation for ships first developed during World War II (1939–1945) to support amphibious operations by carrying tanks, vehicles, cargo, and landing troops directly onto shore with no
+        docks or piers. This enabled amphibious assaults on almost any beach. The bow of the LST had a large door that would open with a ramp for unloading the vehicles. The LST had a special flat keel that allowed the ship to be beached and stay upright.
+        The twin propellers and rudders had protection from grounding. The LSTs served across the globe during World War II including in the Pacific War and in the European theatre. The first tank-landing ships were built to British requirements by converting
+        existing ships; the UK and the US then collaborated upon a joint design. The British ships were used in late 1942 during the Allied invasion of Algeria, by 1943 LSTs participated in the invasion of Sicily and mainland Italy. In June 1944 they
+        were part of the huge invasion fleet for the Normandy landings Over 1,000 LSTs were laid down in the United States during World War II for use by the Allies; the United Kingdom and Canada produced eighty more.
+
+    </div>
+    <div class='weaponDesc' id='ASW_helicopter_desc'>An anti-submarine warfare carrier (ASW carrier) (US hull classification symbol CVS) is a type of small aircraft carrier whose primary role is as the nucleus of an anti-submarine warfare hunter-killer group. This type of ship came into existence during
+        the Cold War as a development of the escort carriers used in the ASW role in the North Atlantic during World War II.</div>
+    <div class='weaponDesc' id='Aircraft_EO_system_desc'>The Tri-Service aircraft designation system is a unified system introduced in 1962 by the United States Department of Defense for designating all U.S. military aircraft. Prior to then, the U.S. armed services used separate nomenclature systems. Under
+        the tri-service designation system, officially introduced on 18 September 1962, almost all aircraft receive a unified designation, whether they are operated by the United States Air Force (USAF), United States Navy (USN), United States Marine
+        Corps (USMC), United States Army, or United States Coast Guard (USCG). Experimental aircraft operated by manufacturers or by NASA are also often assigned designations from the X-series of the tri-service system.The 1962 system was based on the
+        one used by the USAF between 1948 and 1962, which was in turn based on the Type, Model, Series USAAS/USAAC/USAAF system used from 1924 to 1948. The 1962 system has been modified and updated since introduction.</div>
+    <div class='weaponDesc' id='AEW&C_aircraft_desc'>The Boeing 737 AEW&C is a twin-engine airborne early warning and control aircraft based on the Boeing 737 Next Generation design. It is lighter than the 707-based Boeing E-3 Sentry, and has a fixed, active electronically scanned array radar antenna
+        instead of a rotating one. It was designed for the Royal Australian Air Force (RAAF) under "Project Wedgetail" and designated E-7A Wedgetail. The 737 AEW&C has also been selected by the Turkish Air Force (under "Project Peace Eagle", Turkish:
+        Barış Kartalı, designated E-7T), the Republic of Korea Air Force ("Project Peace Eye", Korean: "피스 아이"), and the United Kingdom. It has also been proposed to Italy and the United Arab Emirates.</div>
+    <div class='weaponDesc' id='ASW_torpedo_desc'>The Mark 46 torpedo is the backbone of the United States Navy's lightweight anti-submarine warfare torpedo inventory and is the NATO standard. These aerial torpedoes are designed to attack high-performance submarines. In 1989, an improvement program
+        for the Mod 5 to the Mod 5A and Mod 5A(S) increased its shallow-water performance. The Mark 46 was initially developed as REsearch TORpedo Concept I (RETORC I), one of several weapons recommended for implementation by Project Nobska, a 1956 summer
+        study on submarine warfare.</div>
+    <div class='weaponDesc' id='Self-propelled_MRL/SSM_TEL_desc'>In the military, vehicles such as trucks or tractor units can be used to transport or launch missiles (rockets with warheads), essentially a form of rocket artillery. Such a vehicle may transport one or multiple missiles. The missile vehicle may be
+        a self-propelled unit or the missile holder/launcher may be on a trailer towed by a prime mover. They are used in the military forces of a number of countries in the world. Long missiles are commonly transported parallel to the ground on these
+        vehicles, but elevated into an inclined or vertical position for launching. Missile vehicles include transporter erector launchers (TEL) and multiple rocket launchers (MRL) such as the Patriot missile system. Single or dual missile vehicles often
+        transport their missiles uncovered. The missile batteries of multiple rocket launchers often hold their missiles inside tubular or rectangular canisters for each missile, from which the missiles or rockets can be launched (or fired, in other words).
+        Many missile trucks use pneumatic (air-filled) tires, although they may be large and specialized for offroad travel. However, some missile vehicles use tractor crawler drive similar to that of a tank. The Katyusha rocket launcher was an early
+        launcher mostly mounted on missile trucks used by the Soviet Union during World War II. In turn, the US produced in World War II the T34 Calliope missile-launching vehicle in limited quantities by attaching a multiple-missile battery atop an M4
+        Sherman tank. Among the largest missile vehicles are the multi-wheeled (tires) 8-axle MZKT-79221 carrying vehicles for Topol M ICBMs as the Russian army's longest trucks. As of December 2008, there are six such road-mobile missile systems. Another
+        Russian example is the truck for the Pechora-2M Surface-to-Air Anti-aircraft missile system, which can transport and launch two missiles, and also used by some other countries. American examples of single-missile launcher trucks include M39 Series
+        Trucks, M289 and M896 Honest John Missile Launcher Trucks. In these trucks after transporting the missile, the missile-launching mechanism with the missile on it is pivoted upwards to put it into position for launching. Some trucks carry a battery
+        containing four US Harpoon or Patriot missiles for launching. These multiple missile batteries are also pivoted upwards for launching and the launcher in some cases can be rotated around on the chassis (or platform) of the truck. To prepare for
+        launching operations, outriggers are extended from the truck and placed on the ground to stabilize the truck from a recoil reaction during a missile launch. The M270 Multiple Launch Rocket System, used in the USA and several other countries, uses
+        a tractor crawler drive instead of conventional pneumatic tires. An example of a single-missile vehicle with a tractor crawler drive is the French Pluton missile launcher, based on the AMX-30 tank. The 2K11 Krug is a Soviet/Russian two-missile
+        transporter erector launcher with a tractor crawler drive. The Russians also have rather extensive S-300 missile systems on various vehicles. Other examples of Soviet MRLs include the BM-21 Grad, BM-27 Uragan, and BM-30 Smerch, which use pneumatic
+        tires and tubular missile canisters and are also used by various other countries. A Soviet-produced 9K52 Luna-M missile system uses a 9P113 single-missile TEL with pneumatic tires to transport an uncovered Soviet 9M21 missile. American missile
+        vehicles include the M1134 Anti-Tank Guided Missile Vehicle from the Stryker family of military vehicles (with pneumatic tires and smaller BGM-71 TOW missiles), MIM-72 Chaparral (with tractor crawler drive and four exposed missiles), and AN/TWQ-1
+        Avenger (with pneumatic tires and anti-aircraft missile canisters) systems. The Long Range Surveillance and Attack Vehicle produced by Lockheed Martin for the USA is an armored vehicle with four large pneumatic tires on each side (left and right)
+        and is able to fire missiles from its rotatable turret on top of the vehicle. The initially Soviet then Russian family of S-300 missile systems has been upgraded by the Russian military to the current S-400 Triumf missiles and their carrier vehicles
+        and put into service starting in 2007. The launch tubes with their S-400 missiles inside are transported horizontally (see photo in gallery below), and the battery of launch tubes with missiles are moved into a vertical position for launching
+        with the launch tube bottoms on the ground (see photo of S-400 battery in vertical launch position in gallery below).In the former Soviet Union and now in Russia, missile trucks with their missiles on display drove through in Victory Day Parades
+        in Red Square, Moscow each May.</div>
+    <div class='weaponDesc' id='MRAP_desc'>Mine-Resistant Ambush Protected (MRAP; EM-rap) is a term for United States military light tactical vehicles produced as part of the MRAP program that are designed specifically to withstand improvised explosive device (IED) attacks and ambushes. The
+        United States Department of Defense MRAP program began in 2007 as a response to the increased threat of IEDs during the Iraq War. From 2007 until 2012, the MRAP program deployed more than 12,000 vehicles in the Iraq War and War in Afghanistan.
+        Production of MRAP vehicles officially ended in 2012. This was followed by the MRAP All Terrain (M-ATV) vehicle. In 2015, Oshkosh Corporation was awarded a contract to build the Oshkosh L-ATV as the Joint Light Tactical Vehicle, a lighter mine-resistant
+        vehicle to replace the Humvee in combat roles and supplement the M-ATV.</div>
+    <div class='weaponDesc' id='Guided_rocket_desc'>The M270 Multiple Launch Rocket System (M270 MLRS) is an armored, self-propelled, multiple rocket launcher (a type of rocket artillery). Since the first M270s were delivered to the U.S. Army in 1983, the MLRS has been adopted by several NATO countries.
+        Some 1,300 M270 systems have been manufactured in the United States and in Europe, along with more than 700,000 rockets. The production of the M270 ended in 2003, when a last batch was delivered to the Egyptian Army.</div>
+    <div class='weaponDesc' id='AS/ASW_torpedo_desc'>The Mark 54 Lightweight Torpedo (formerly known as Lightweight Hybrid Torpedo, or LHT) is a standard 12.75 inch (324 mm) anti-submarine warfare (ASW) torpedo used by the United States Navy.</div>
+    <div class='weaponDesc' id='Air_search_system_desc'>Search and rescue (SAR) is the search for and provision of aid to people who are in distress or imminent danger. The general field of search and rescue includes many specialty sub-fields, typically determined by the type of terrain the search is conducted
+        over. These include mountain rescue; ground search and rescue, including the use of search and rescue dogs; urban search and rescue in cities; combat search and rescue on the battlefield and air-sea rescue over water. International Search and
+        Rescue Advisory Group (INSARAG) is a UN organization that promotes the exchange of information between national urban search and rescue organizations. The duty to render assistance is covered by Article 98 of the UNCLOS.
+
+    </div>
+    <div class='weaponDesc' id='Trainer/combat_aircraft_desc'>A multirole combat aircraft (MRCA) is a combat aircraft intended to perform different roles in combat. A multirole fighter is a multirole combat aircraft which is, at the same time, also a fighter aircraft; in other words, an aircraft whose various
+        roles include, among others, the role of air-to-air combat.</div>
+    <div class='weaponDesc' id='Air/sea_search_radar_desc'>A surface search radar, sometimes more accurately known as a sea-surface search radar or naval surveillance radar, is a type of military radar intended primarily to locate objects on the surface of lakes and oceans. Part of almost every modern naval
+        ship, they are also widely used on maritime patrol aircraft and naval helicopters. When mounted on an aircraft, they are sometimes known by the British terminology, Air-to-Surface Vessel radar, or ASV for short. Similar radars are also widely
+        used on civilian ships and even small pleasure craft, in which case they are more commonly known as marine radar. As with conventional surveillance radars, these systems detect objects by listening for the reflections of a radio signal off target
+        objects, especially metal. The range of a surface search radar is greatly increased compared to other roles due to several aspects of the sea surfaces and the objects in it. In low sea states, water makes an excellent reflector for radio signals,
+        which helps maximize the signal strength as reflections off the water strike the targets in addition to the line-of-sight signal. Additionally, as the sides of ships generally rise vertically from the surface, they form partial corner cubes which
+        increases the returned signal. Offsetting these advantages is the fact that in higher sea states, large waves also create the same signals, making radar clutter a significant problem. A considerable amount of research into clutter reduction was
+        applied to the naval market.</div>
+    <div class='weaponDesc' id='EO_search/fire_control_desc'>The Northrop Grumman MQ-8 Fire Scout is an unmanned autonomous helicopter developed by Northrop Grumman for use by the United States Armed Forces. The Fire Scout is designed to provide reconnaissance, situational awareness, aerial fire support and
+        precision targeting support for ground, air and sea forces. The initial RQ-8A version was based on the Schweizer 330, while the enhanced MQ-8B was derived from the Schweizer 333. The larger MQ-8C Fire Scout variant is based on the Bell 407. As
+        of February 2018, 23 MQ-8B variants were in service with the U.S. Navy.</div>
+    <div class='weaponDesc' id='FAC/MCM_ship_desc'>This is a list of all airline codes. The table lists the IATA airline designators, the ICAO airline designators and the airline call signs (telephony designator). Historical assignments are also included for completeness.</div>
+    <div class='weaponDesc' id='Nuclear_submarine_desc'>A nuclear submarine is a submarine powered by a nuclear reactor. The performance advantages of nuclear submarines over "conventional" (typically diesel-electric) submarines are considerable. Nuclear propulsion, being completely independent of air,
+        frees the submarine from the need to surface frequently, as is necessary for conventional submarines. The large amount of power generated by a nuclear reactor allows nuclear submarines to operate at high speed for long periods of time; and the
+        long interval between refuelings grants a range virtually unlimited, making the only limits on voyage times being imposed by such factors as the need to restock food or other consumables. Current generations of nuclear submarines never need to
+        be refueled throughout their 25-year lifespans. Conversely, the limited power stored in electric batteries means that even the most advanced conventional submarine can only remain submerged for a few days at slow speed, and only a few hours at
+        top speed, though recent advances in air-independent propulsion have somewhat ameliorated this disadvantage. The high cost of nuclear technology means that relatively few of the world's military powers have fielded nuclear submarines. Some of
+        the most serious nuclear and radiation accidents ever to occur have involved Soviet nuclear submarine mishaps.</div>
+    <div class='weaponDesc' id='Anti-ship_helicopter_desc'>A helicopter carrier is a type of aircraft carrier whose primary purpose is to operate helicopters. A helicopter carrier has a large flight deck that occupies a large part of the ship, which can extend the full length of the ship like HMS Ocean of
+        the Royal Navy (RN), or only partway, usually aft, as in the Soviet Navy's Moskva class, the Chinese Navy's Type 0891A or the Royal Fleet Auxiliary's (RFA) RFA Argus. It often also has a hangar deck for the storage of aircraft. Pure helicopter
+        carriers are difficult to define in the 21st century. The advent of STOVL aircraft such as the Harrier Jump Jet, and now the F-35, have complicated the classification; the United States Navy's Wasp class, for instance, carries six to eight Harriers
+        as well as over 20 helicopters. Only smaller carriers unable to operate the Harrier and older pre-Harrier-era carriers can be regarded as true helicopter carriers. In many cases, other carriers, able to operate STOVL aircraft, are classified as
+        "light aircraft carriers". Other vessels, such as the Wasp class, are also capable of embarking troops such as marines and landing them ashore; they are classified as amphibious assault ships. Helicopter carriers have been used as anti-submarine
+        warfare carriers and amphibious assault ships. HMS Hermes and two of her sisters were 22,000 ton fleet carriers converted to "commando carriers" only able to operate helicopters. Hermes was later converted to a STOVL carrier.</div>
+    <div class='weaponDesc' id='Ground_surv_radar_desc'>The Stockholm International Peace Research Institute, SIPRI, Arms Transfers Database contains information on all international transfers of major weapons (including sales, gifts and production under licence) to states, international organizations
+        and armed non-state groups since 1950. It is the only publicly available resource providing consistent data on arms transfers for this length of time. The database can be used to track transfers of major weapons and to answer such questions as:
+        Who are the main suppliers and recipients of major weapons? How have relations between different suppliers and recipients changed over time? Where do countries in conflict get their weapons? How do states implement their export control regulations?
+        Where are potentially destabilizing build-ups of weapons occurring today? What major weapons have been exported or imported?</div>
+    <div class='weaponDesc' id='Turbojet_desc'>The turbojet is an airbreathing jet engine, typically used in aircraft. It consists of a gas turbine with a propelling nozzle. The gas turbine has an air inlet, a compressor, a combustion chamber, and a turbine (that drives the compressor). The compressed
+        air from the compressor is heated by burning fuel in the combustion chamber and then allowed to expand through the turbine. The turbine exhaust is then expanded in the propelling nozzle where it is accelerated to high speed to provide thrust.
+        Two engineers, Frank Whittle in the United Kingdom and Hans von Ohain in Germany, developed the concept independently into practical engines during the late 1930s. While the turbojet was the first form of gas turbine powerplant for aviation, it
+        has largely been replaced in use by other developments of the original concept. In operation, turbojets typically generate thrust by accelerating a relatively small amount of air to very high supersonic speeds, whereas turbofans accelerate a larger
+        amount of air to lower transonic speeds. Turbojets have been replaced in slower aircraft by turboprops because they have better specific fuel consumption. At medium speeds, where the propeller is no longer efficient, turboprops have been replaced
+        by turbofans. The turbofan is quieter and has better range-specific fuel consumption than the turbojet. Turbojets can be highly efficient for supersonic aircraft. Turbojets have poor efficiency at low vehicle speeds, which limits their usefulness
+        in vehicles other than aircraft. Turbojet engines have been used in isolated cases to power vehicles other than aircraft, typically for attempts on land speed records. Where vehicles are 'turbine powered' this is more commonly by use of a turboshaft
+        engine, a development of the gas turbine engine where an additional turbine is used to drive a rotating output shaft. These are common in helicopters and hovercraft. Turbojets were used on Concorde and the longer-range versions of the TU-144 which
+        were required to spend a long period travelling supersonically. Turbojets are still common in medium range cruise missiles, due to their high exhaust speed, small frontal area, and relative simplicity. They are also still used on some supersonic
+        fighters such as the MiG-25, but most spend little time travelling supersonically, and so employ turbofans and use afterburners to raise exhaust speed for supersonic sprints.
+
+    </div>
+    <div class='weaponDesc' id='Air_refuel_system_desc'>Aerial refueling, also referred to as air refueling, in-flight refueling (IFR), air-to-air refueling (AAR), and tanking, is the process of transferring aviation fuel from one military aircraft (the tanker) to another (the receiver) during flight.
+        The two main refueling systems are probe-and-drogue, which is simpler to adapt to existing aircraft, and the flying boom, which offers faster fuel transfer, but requires a dedicated boom operator station. The procedure allows the receiving aircraft
+        to remain airborne longer, extending its range or loiter time on station. A series of air refuelings can give range limited only by crew fatigue and engineering factors such as engine oil consumption. Because the receiver aircraft can be topped
+        up with extra fuel in the air, air refueling can allow a takeoff with a greater payload which could be weapons, cargo, or personnel: the maximum takeoff weight is maintained by carrying less fuel and topping up once airborne. Alternatively, a
+        shorter take-off roll can be achieved because take-off can be at a lighter weight before refueling once airborne. Aerial refueling has also been considered as a means to reduce fuel consumption on long-distance flights greater than 3,000 nautical
+        miles (5,600 km; 3,500 mi). Potential fuel savings in the range of 35–40% have been estimated for long-haul flights (including the fuel used during the tanker missions).Usually, the aircraft providing the fuel is specially designed for the task,
+        although refueling pods can be fitted to existing aircraft designs if the "probe-and-drogue" system is to be used. The cost of the refueling equipment on both tanker and receiver aircraft and the specialized aircraft handling of the aircraft to
+        be refueled (very close "line astern" formation flying) has resulted in the activity only being used in military operations. There is no known regular civilian in-flight refueling activity. Originally employed shortly before World War II on a
+        very limited scale to extend the range of British civilian transatlantic flying boats, and then after World War II on a large scale to extend the range of strategic bombers, aerial refueling since the Vietnam War has been extensively used in large-scale
+        military operations. For instance, in the Gulf War and the Iraqi invasion of Kuwait and the Iraq War, all coalition air sorties were air-refueled except for a few short-range ground attack sorties in the Kuwait area.</div>
+    <div class='weaponDesc' id='AALS_desc'>The Association of American Law Schools (AALS), formed in 1900, is a non-profit organization of 179 law schools in the United States. These member schools enroll and graduate most of the nation's lawyers. AALS incorporated as a 501(c)(3) non-profit
+        educational organization in 1971. Its headquarters are in Washington, D.C.</div>
+    <div class='weaponDesc' id='Anti-ship_MI/SSM_desc'>The SSM-700K Haeseong (C-Star) Anti-ship Missile (Hangul: 해성 미사일 , haeseong 해성 sunstar white/seastar sunbeam) is a ship launched sea-skimming surface-to-surface anti-ship cruise missile developed by the South Korean Agency for Defense Development
+        (ADD), LIG Nex1 and the Republic of Korea Navy in 2003. The missiles are deployed on KDX-II and KDX-III destroyers as of 2006, each carrying 8 and 16 of the missiles respectively, and on Ulsan-class frigates.</div>
+    <div class='weaponDesc' id='Submarine_sonar_desc'>Sonar (sound navigation ranging) is a technique that uses sound propagation (usually underwater, as in submarine navigation) to navigate, communicate with or detect objects on or under the surface of the water, such as other vessels. Two types of
+        technology share the name "sonar": passive sonar is essentially listening for the sound made by vessels; active sonar is emitting pulses of sounds and listening for echoes. Sonar may be used as a means of acoustic location and of measurement of
+        the echo characteristics of "targets" in the water. Acoustic location in air was used before the introduction of radar. Sonar may also be used for robot navigation, and SODAR (an upward-looking in-air sonar) is used for atmospheric investigations.
+        The term sonar is also used for the equipment used to generate and receive the sound. The acoustic frequencies used in sonar systems vary from very low (infrasonic) to extremely high (ultrasonic). The study of underwater sound is known as underwater
+        acoustics or hydroacoustics. The first recorded use of the technique was by Leonardo da Vinci in 1490 who used a tube inserted into the water to detect vessels by ear. It was developed during World War I to counter the growing threat of submarine
+        warfare, with an operational passive sonar system in use by 1918. Modern active sonar systems use an acoustic transducer to generate a sound wave which is reflected from target objects.</div>
+    <div class='weaponDesc' id='Turboshaft_desc'>A turboshaft engine is a form of gas turbine that is optimized to produce shaftpower rather than jet thrust. In concept, turboshaft engines are very similar to turbojets, with additional turbine expansion to extract heat energy from the exhaust and
+        convert it into output shaft power. They are even more similar to turboprops, with only minor differences, and a single engine is often sold in both forms. Turboshaft engines are commonly used in applications that require a sustained high power
+        output, high reliability, small size, and light weight. These include helicopters, auxiliary power units, boats and ships, tanks, hovercraft, and stationary equipment.</div>
+    <div class='weaponDesc' id='Naval_SAM_system_desc'>The list of naval weapon systems aims to provide reference about weapons mounted on surface combatant warships, and smaller craft and submarines found throughout the history of naval warfare. The list is sorted alpha-numerically by system service
+        designation (i.e. Mk 15), or issue name if designation is unknown: NB: As this is an English language list, NATO codenames are used preferentially. Glossary of abbreviations at bottom.</div>
+    <div class='weaponDesc' id='AGS/MP_radar_desc'>The Northrop Grumman RQ-4 Global Hawk is a high-altitude, remotely-piloted, surveillance aircraft. It was initially designed by Ryan Aeronautical (now part of Northrop Grumman), and known as Tier II+ during development. The Global Hawk performs duties
+        similar to that of the Lockheed U-2. The RQ-4 provides a broad overview and systematic surveillance using high-resolution synthetic aperture radar (SAR) and long-range electro-optical/infrared (EO/IR) sensors with long loiter times over target
+        areas. It can survey as much as 40,000 square miles (100,000 km2) of terrain a day, an area the size of South Korea or Iceland. The Global Hawk is operated by the United States Air Force (USAF). It is used as a High-Altitude Long Endurance platform
+        covering the spectrum of intelligence collection capability to support forces in worldwide military operations. According to the USAF, the superior surveillance capabilities of the aircraft allow more precise weapons targeting and better protection
+        of friendly forces. Cost overruns led to the original plan to acquire 63 aircraft being cut to 45, and to a 2013 proposal to mothball the 21 Block 30 signals intelligence variants. The initial flyaway cost of each of the first 10 aircraft was
+        US$10 million in 1994. By 2001 this had risen to US$60.9 million, and then to $131.4 million (flyaway cost) in 2013. The U.S. Navy has developed the Global Hawk into the MQ-4C Triton maritime surveillance platform.
+
+    </div>
+    <div class='weaponDesc' id='Recce_satellite_desc'>In military operations, reconnaissance or scouting is the exploration outside an area occupied by friendly forces to gain information about natural features and other activities in the area. Examples of reconnaissance include patrolling by troops
+        (skirmishers, long-range reconnaissance patrol, U.S. Army Rangers, cavalry scouts, or military intelligence specialists), ships or submarines, manned or unmanned reconnaissance aircraft, satellites, or by setting up observation posts. Espionage
+        normally is not reconnaissance, because reconnaissance is a military's special forces operating ahead of its main forces; spies are non-combatants operating behind enemy lines. Often called recce (British, Canadian and Australian English) or recon
+        (American English), the associated verb is reconnoitre or reconnoiter.</div>
+    <div class='weaponDesc' id='MCM_sonar_desc'>Sonar (sound navigation ranging) is a technique that uses sound propagation (usually underwater, as in submarine navigation) to navigate, communicate with or detect objects on or under the surface of the water, such as other vessels. Two types of
+        technology share the name "sonar": passive sonar is essentially listening for the sound made by vessels; active sonar is emitting pulses of sounds and listening for echoes. Sonar may be used as a means of acoustic location and of measurement of
+        the echo characteristics of "targets" in the water. Acoustic location in air was used before the introduction of radar. Sonar may also be used for robot navigation, and SODAR (an upward-looking in-air sonar) is used for atmospheric investigations.
+        The term sonar is also used for the equipment used to generate and receive the sound. The acoustic frequencies used in sonar systems vary from very low (infrasonic) to extremely high (ultrasonic). The study of underwater sound is known as underwater
+        acoustics or hydroacoustics. The first recorded use of the technique was by Leonardo da Vinci in 1490 who used a tube inserted into the water to detect vessels by ear. It was developed during World War I to counter the growing threat of submarine
+        warfare, with an operational passive sonar system in use by 1918. Modern active sonar systems use an acoustic transducer to generate a sound wave which is reflected from target objects.</div>
+    <div class='weaponDesc' id='AIP_engine_desc'>Air-independent propulsion (AIP) is any marine propulsion technology that allows a non-nuclear submarine to operate without access to atmospheric oxygen (by surfacing or using a snorkel). AIP can augment or replace the diesel-electric propulsion system
+        of non-nuclear vessels. The correct term is Air Independent Power, not Propulsion, as the various AIP devices do not propel the submarine. The United States Navy uses the hull classification symbol "SSP" to designate boats powered by AIP, while
+        retaining "SSK" for classic diesel-electric attack submarines.Modern non-nuclear submarines are potentially stealthier than nuclear submarines; a nuclear ship's reactor must constantly pump coolant, generating some amount of detectable noise (see
+        acoustic signature). Non-nuclear submarines running on battery power or AIP, on the other hand, can be virtually silent. While nuclear-powered designs still dominate in submergence times and deep-ocean performance, small, high-tech non-nuclear
+        attack submarines are highly effective in coastal operations and pose a significant threat to less-stealthy and less-maneuverable nuclear submarines.AIP is usually implemented as an auxiliary source, with the traditional diesel engine handling
+        surface propulsion. Most such systems generate electricity, which in turn drives an electric motor for propulsion or recharges the boat's batteries. The submarine's electrical system is also used for providing "hotel services"—ventilation, lighting,
+        heating etc.—although this consumes a small amount of power compared to that required for propulsion. AIP can be retrofitted into existing submarine hulls by inserting an additional hull section. AIP does not normally provide the endurance or
+        power to replace atmospheric dependent propulsion, but allows longer submergence than a conventionally propelled submarine. A typical conventional power plant provides 3 megawatts maximum, and an AIP source around 10% of that. A nuclear submarine's
+        propulsion plant is usually much greater than 20 megawatts.
+    </div>
+    <div class='weaponDesc' id='Turbofan_desc'>The turbofan or fanjet is a type of airbreathing jet engine that is widely used in aircraft propulsion. The word "turbofan" is a portmanteau of "turbine" and "fan": the turbo portion refers to a gas turbine engine which achieves mechanical energy
+        from combustion, and the fan, a ducted fan that uses the mechanical energy from the gas turbine to accelerate air rearwards. Thus, whereas all the air taken in by a turbojet passes through the turbine (through the combustion chamber), in a turbofan
+        some of that air bypasses the turbine. A turbofan thus can be thought of as a turbojet being used to drive a ducted fan, with both of these contributing to the thrust. The ratio of the mass-flow of air bypassing the engine core divided by the
+        mass-flow of air passing through the core is referred to as the bypass ratio. The engine produces thrust through a combination of these two portions working together; engines that use more jet thrust relative to fan thrust are known as low-bypass
+        turbofans, conversely those that have considerably more fan thrust than jet thrust are known as high-bypass. Most commercial aviation jet engines in use today are of the high-bypass type, and most modern military fighter engines are low-bypass.
+        Afterburners are not used on high-bypass turbofan engines but may be used on either low-bypass turbofan or turbojet engines. Modern turbofans have either a large single-stage fan or a smaller fan with several stages. An early configuration combined
+        a low-pressure turbine and fan in a single rear-mounted unit.
+
+    </div>
+    <div class='weaponDesc' id='Guided_shell_desc'>The 127 mm (5")/54 caliber (Mk 45) lightweight gun is a U.S. naval artillery gun mount consisting of a 127 mm (5 in) L54 Mark 19 gun on the Mark 45 mount. It was designed and built by United Defense, a company later acquired by BAE Systems Land &
+        Armaments, which continued manufacture. The latest 62 calibre long version consists of a longer-barrel L62 Mark 36 gun fitted on the same Mark 45 mount. The gun is designed for use against surface warships, anti-aircraft and shore bombardment
+        to support amphibious operations. The gun mount features an automatic loader with a capacity of 20 rounds. These can be fired under full automatic control, taking a little over a minute to exhaust those rounds at maximum fire rate. For sustained
+        use, the gun mount would be occupied by a six-man crew (gun captain, panel operator, and four ammunition loaders) below deck to keep the gun continuously supplied with ammunition.</div>
+    <div class='weaponDesc' id='Mobile_AD_system_desc'>A wireless ad hoc network (WANET) or Mobile ad hoc network (MANET) is a decentralized type of wireless network. The network is ad hoc because it does not rely on a pre-existing infrastructure, such as routers in wired networks or access points in
+        managed (infrastructure) wireless networks. Instead, each node participates in routing by forwarding data for other nodes, so the determination of which nodes forward data is made dynamically on the basis of network connectivity and the routing
+        algorithm in use.In the Windows operating system, ad hoc is a communication mode (setting) that allows computers to directly communicate with each other without a router. Wireless mobile ad hoc networks are self-configuring, dynamic networks in
+        which nodes are free to move. Such wireless networks lack the complexities of infrastructure setup and administration, enabling devices to create and join networks "on the fly" – anywhere, anytime.A true MANET by definition requires multicast
+        routing, not just unicast or broadcast.Each device in a MANET is free to move independently in any direction, and will therefore change its links to other devices frequently. Each must forward traffic unrelated to its own use, and therefore be
+        a router. The primary challenge in building a MANET is equipping each device to continuously maintain the information required to properly route traffic. This becomes harder as the scale of the MANET increases due to 1) the desire to route packets
+        to/through every other node, 2) the percentage of overhead traffic needed to maintain real-time routing status, 3) each node has its own goodput to route independent and unaware of others needs, and 4) all must share limited communication bandwidth,
+        such as a slice of radio spectrum. Such networks may operate by themselves or may be connected to the larger Internet. They may contain one or multiple and different transceivers between nodes. This results in a highly dynamic, autonomous topology.MANETs
+        usually have a routable networking environment on top of a Link Layer ad hoc network. MANETs consist of a peer-to-peer, self-forming, self-healing network. MANETs circa 2000–2015 typically communicate at radio frequencies (30 MHz – 5 GHz).</div>
+    <div class='weaponDesc' id='ABM/SAM_system_desc'>The Republic of Korea Air Force (ROKAF; Korean: 대한민국 공군; Hanja: 大韓民國 空軍; Romanization: Daehanminguk Gong-gun), also known as the ROK Air Force, is the aerial warfare service branch of South Korea, operating under the South Korean Ministry of National
+        Defense.
+    </div>
+    <div class='weaponDesc' id='AEV/ARV_desc'>The Leopard (or Leopard 1) is a main battle tank designed and produced by Porsche in West Germany that first entered service in 1965. Developed in an era when HEAT warheads were thought to make conventional heavy armour of limited value, the Leopard
+        focused on firepower in the form of the German-built version of the British L7 105-mm gun, and improved cross-country performance that was unmatched by other designs of the era. The design started as a collaborative project during the 1950s between
+        West Germany and France, and later joined by Italy, but the partnership ended shortly after and the final design was ordered by the Bundeswehr, with full-scale production starting in 1965. In total, 6,485 Leopard tanks have been built, of which
+        4,744 were battle tanks and 1,741 were utility and anti-aircraft variants, not including 80 prototypes and pre-series vehicles. The Leopard quickly became a standard of European forces, and eventually served as the main battle tank in over a dozen
+        countries worldwide, with West Germany, Italy and the Netherlands being the largest operators until their retirement. Since 1990, the Leopard 1 has gradually been relegated to secondary roles in most armies. In the German Army, the Leopard 1 was
+        completely phased out in 2003 by the Leopard 2, while Leopard 1-based vehicles are still widely used in utility roles. The Leopard 2 has replaced the Leopard 1 in service with many other nations as well, with derived vehicles using the Leopard
+        1 hull still seeing service. Currently, the largest operators are Greece, with 520 vehicles, Turkey, with 397 vehicles and Brazil with 378 vehicles. Most of these vehicles have been upgraded with various improvements to armour, firepower and sensors
+        to maintain their ability to engage modern threats.</div>
+    <div class='weaponDesc' id='Support_ship_desc'>A joint support ship (JSS) is a multi-role naval ship capable of launching and supporting "joint" amphibious operations. It also provides sea-lift, underway support, sea-basing and logistics capabilities for combined army and naval missions.</div>
+    <div class='weaponDesc' id='MCM_ship_desc'>Avenger-class mine countermeasures ships are a class of 14 ships constructed for the United States Navy from 1987 to 1994, designed to clear mines from vital waterways. The ships have the hull designator MCM.</div>
+    <div class='weaponDesc' id='Turboprop_desc'>A turboprop engine is a turbine engine that drives an aircraft propeller.In its simplest form a turboprop consists of an intake, compressor, combustor, turbine, and a propelling nozzle. Air is drawn into the intake and compressed by the compressor.
+        Fuel is then added to the compressed air in the combustor, where the fuel-air mixture then combusts. The hot combustion gases expand through the turbine. Some of the power generated by the turbine is used to drive the compressor. Thrust is obtained
+        by the combusting gases, pushing toward a (vectored) surface in front of the expanding gas. The rest is transmitted through the reduction gearing to the propeller. Further expansion of the gases occurs in the propelling nozzle, where the gases
+        exhaust to atmospheric pressure. The propelling nozzle provides a relatively small proportion of the thrust generated by a turboprop.In contrast to a turbojet, the engine's exhaust gases do not generally contain enough energy to create significant
+        thrust, since almost all of the engine's power is used to drive the propeller.</div>
+    <div class='weaponDesc' id='Multifunction_radar_desc'>An active electronically scanned array (AESA) is a type of phased array antenna, which is a computer-controlled array antenna in which the beam of radio waves can be electronically steered to point in different directions without moving the antenna.
+        In the AESA, each antenna element is connected to a small solid-state transmit/receive module (TRM) under the control of a computer, which performs the functions of a transmitter and/or receiver for the antenna. This contrasts with a passive electronically
+        scanned array (PESA), in which all the antenna elements are connected to a single transmitter and/or receiver through phase shifters under the control of the computer. AESA's main use is in radar, and these are known as active phased array radar
+        (APAR). The AESA is a more advanced, sophisticated, second-generation of the original PESA phased array technology. PESAs can only emit a single beam of radio waves at a single frequency at a time. The AESA can radiate multiple beams of radio
+        waves at multiple frequencies simultaneously. AESA radars can spread their signal emissions across a wider range of frequencies, which makes them more difficult to detect over background noise, allowing ships and aircraft to radiate powerful radar
+        signals while still remaining stealthy, as well as being more resistant to jamming.
+
+    </div>
+    <div class='weaponDesc' id='SAM_system_radar_desc'>The 2K12 "Kub" (Russian: 2К12 "Куб"; English: cube) (NATO reporting name: SA-6 "Gainful") mobile surface-to-air missile system is a Soviet low to medium-level air defence system designed to protect ground forces from air attack. "2К12" is the GRAU
+        designation of the system. Each 2K12 battery consists of a number of similar tracked vehicles, one of which carries the 1S91 (SURN vehicle, NATO designation "Straight Flush") 25 kW G/H band radar (with a range of 75 km (47 mi)) equipped with a
+        continuous wave illuminator, in addition to an optical sight. The battery usually also includes four triple-missile transporter erector launchers (TELs), and four trucks, each carrying three spare missiles and a crane. The TEL is based on a GM-578
+        chassis, while the 1S91 radar vehicle is based on a GM-568 chassis, all developed and produced by MMZ.</div>
+    <div class='weaponDesc' id='UAV/OPA_desc'>The Diamond DA42 Twin Star is a four seat, twin engine, propeller-driven airplane developed and manufactured by Austrian company Diamond Aircraft Industries. It was Diamond's first twin engine design, as well as the first new European twin-engine
+        aircraft in its category to be developed in over 25 years. In 2004, the DA42 became the first diesel-powered fixed-wing aircraft to perform a non-stop crossing of the North Atlantic. By 2012, the DA42 had become a key revenue generator for the
+        company, having gained popularity with government and military operators in addition to the civil market that had suffered as a result of the Great Recession. Government customers have typically employed the type in the aerial surveillance role,
+        which contributed towards the development of the Aeronautics Defense Dominator, a medium-altitude long-endurance (MALE) unmanned aerial vehicle (UAV), which had been derived from the DA42.</div>
+    <div class='weaponDesc' id='Cargo_ship_desc'>A cargo ship or freighter is a merchant ship that carries cargo, goods, and materials from one port to another. Thousands of cargo carriers ply the world's seas and oceans each year, handling the bulk of international trade. Cargo ships are usually
+        specially designed for the task, often being equipped with cranes and other mechanisms to load and unload, and come in all sizes. Today, they are almost always built by welded steel, and with some exceptions generally have a life expectancy of
+        25 to 30 years before being scrapped.</div>
+    <div class='weaponDesc' id='Anti-tank_missile_desc'>An anti-tank guided missile (ATGM), anti-tank missile, anti-tank guided weapon (ATGW) or anti-armor guided weapon is a guided missile primarily designed to hit and destroy heavily armored military vehicles. ATGMs range in size from shoulder-launched
+        weapons, which can be transported by a single soldier, to larger tripod-mounted weapons, which require a squad or team to transport and fire, to vehicle and aircraft mounted missile systems. The introduction to the modern battlefield of smaller,
+        man-portable ATGMs with larger warheads has given infantry the ability to defeat light and medium tanks at great ranges, though main battle tanks (MBTs) using composite and reactive armors have proven to be resistant to smaller ATGMs. Earlier
+        infantry anti-tank weapons, such as anti-tank rifles, anti-tank rockets and magnetic anti-tank mines, had limited armor-penetration abilities or required a soldier to approach the target closely. As of 2016, ATGMs were used by over 130 countries
+        and many non-state actors around the world.</div>
+    <div class='weaponDesc' id='Loitering_munition_desc'>A loitering munition (also known as a suicide drone or kamikaze drone) is a weapon system category in which the munition loiters around the target area for some time, searches for targets, and attacks once a target is located. Loitering munitions
+        enable faster reaction times against concealed or hidden targets that emerge for short periods without placing high-value platforms close to the target area, and also allow more selective targeting as the actual attack mission can be aborted.
+        Loitering munitions fit in the niche between cruise missiles and unmanned combat aerial vehicles (UCAVs) sharing characteristics with both. They differ from cruise missiles in that they are designed to loiter for a relatively long time around
+        the target area, and from UCAVs in that a loitering munition is intended to be expended in an attack and has a built-in warhead. Loitering weapons first emerged in the 1980s for use in the Suppression of Enemy Air Defenses (SEAD) role against
+        surface-to-air missiles (SAMs), and were deployed for the SEAD role in a number of military forces in the 1990s. Starting in the 2000s, loitering weapons have been developed for additional roles ranging from relatively long-range strikes and fire
+        support down to tactical, very short range battlefield systems that fit in a backpack. Loitering munitions have proliferated into use by at least 14 countries, with several different types in use as of 2017. The rising proliferation and the ability
+        to use some systems as lethal autonomous weapons coupled with ethical concerns over such use have led to research and discussion by International humanitarian law scholars and activists.
+
+    </div>
+    <div class='weaponDesc' id='SSM/ASM_desc'>The Type 91 Air-to-Ship Missile (91式空対艦誘導弾, ASM-1C) is an Air-to-ship missile developed in Japan. An air-launched variant of the SSM-1, the ASM-1C is carried by Japan Maritime Self-Defense Force P-3C Orions and their successor, the Kawasaki P-1.</div>
+    <div class='weaponDesc' id='SSM_launcher_desc'>The list of naval ship classes in service includes all combatant surface classes in service currently with navies or armed forces and auxiliaries in the world. Ships are grouped by type, and listed alphabetically within. For other vessels, see also:
+        List of submarine classes in service List of auxiliary ship classes in service
+
+    </div>
+    <div class='weaponDesc' id='Combat_ac_radar_desc'>The Lockheed AC-130 gunship is a heavily armed, long-endurance, ground-attack variant of the C-130 Hercules transport, fixed-wing aircraft. It carries a wide array of ground attack weapons that are integrated with sophisticated sensors, navigation,
+        and fire-control systems. Unlike other modern military fixed-wing aircraft, the AC-130 relies on visual targeting. Because its large profile and low operating altitudes of approximately 7,000 feet (2,100 m) make it an easy target, its close air
+        support missions are usually flown at night.The airframe is manufactured by Lockheed Martin, while Boeing is responsible for the conversion into a gunship and for aircraft support. Developed during the Vietnam War as "Project Gunship II", the
+        AC-130 replaced the Douglas AC-47 Spooky, or "Gunship I". The sole operator is the United States Air Force, which uses the AC-130U Spooky and AC-130W Stinger II variants for close air support, air interdiction, and force protection, with the upgraded
+        AC-130J Ghostrider entering service. Close-air-support roles include supporting ground troops, escorting convoys, and urban operations. Air-interdiction missions are conducted against planned targets and targets of opportunity. Force-protection
+        missions include defending air bases and other facilities. AC-130Us are based at Hurlburt Field, Florida, while AC-130Ws are based at Cannon AFB, New Mexico; gunships can be deployed worldwide. The squadrons are part of the Air Force Special Operations
+        Command (AFSOC), a component of the United States Special Operations Command (SOCOM).The AC-130 has an unpressurized cabin, with the weaponry mounted to fire from the port side of the fuselage. During an attack, the gunship performs a pylon turn,
+        flying in a large circle around the target, therefore being able to fire at it for far longer than in a conventional strafing attack. The AC-130H Spectre was armed with two 20 mm M61 Vulcan cannons, one L60 Bofors 40 mm cannon, and one 105 mm
+        M102 howitzer; after 1994, the 20 mm cannons were removed. The upgraded AC-130U Spooky has a single 25 mm GAU-12 Equalizer cannon in place of the Spectre's two 20 mm cannons, an improved fire-control system, and increased ammunition capacity.
+        The new AC-130J was based on the MC-130J Commando II special-operations tanker. The AC-130W Stinger II is a modified C-130H with upgrades including a precision strike package.</div>
+    <div class='weaponDesc' id='AEW&C_system_desc'>An airborne early warning and control (AEW&C) system is an airborne radar picket system designed to detect aircraft, ships and vehicles at long ranges and perform command and control of the battlespace in an air engagement by directing fighter and
+        attack aircraft strikes. AEW&C units are also used to carry out surveillance, including over ground targets and frequently perform C2BM (command and control, battle management) functions similar to an Air Traffic Controller given military command
+        over other forces. When used at altitude, the radar on the aircraft allows the operators to detect and track targets and distinguish between friendly and hostile aircraft much farther away than a similar ground-based radar. Like a ground-based
+        radar, it can be detected by opposing forces, but because of its mobility and extended sensor range, it is much less vulnerable to counter-attacks.AEW&C aircraft are used for both defensive and offensive air operations, and are to NATO and US-trained
+        or integrated air forces what the combat information center is to a naval warship, in addition to being a highly mobile and powerful radar platform. The system is used offensively to direct fighters to their target locations, and defensively,
+        directing counterattacks on enemy forces, both air and ground. So useful is the advantage of command and control aircraft operating at a high altitude, that some navies operate such aircraft from their warships at sea. In the case of the US Navy,
+        the Northrop Grumman E-2 Hawkeye AEW&C aircraft is assigned to its supercarriers to protect them and augment their onboard command information centers (CICs). The designation airborne early warning (AEW) was used for earlier similar aircraft,
+        such as the Fairey Gannet AEW.3 and Lockheed EC-121 Warning Star, and continues to be used by the RAF for its Sentry AEW1, while AEW&C (airborne early warning and control) emphasizes the command and control capabilities that may not be present
+        on smaller or simpler radar picket aircraft. AWACS (Airborne Warning and Control System) is the name of the specific system installed in the E-3 and Japanese Boeing E-767 AEW&C airframes, but is often used as a general synonym for AEW&C.The first
+        known aerial engagement with both opposing sides using Airborne Early Warning and Control aircraft was in South Asia, during the February 27, 2019 aerial engagement between India and Pakistan, with India using A-50I Phalcon AWACS and Pakistan
+        using the Saab 2000.
+
+    </div>
+    <div class='weaponDesc' id='MP_UAV_desc'>List of active Pakistan Air Force aircraft is a list of aircraft currently in active service with the Pakistan Air Force.</div>
+    <div class='weaponDesc' id='EO_system_desc'>Captain EO was a 1986 American 3D science fiction film that was shown at Disney theme parks from 1986 through 1998. The movie stars Michael Jackson, was written by George Lucas and directed by Francis Ford Coppola (who came up with the name "Captain
+        EO" from the Greek, cf. Eos, the Greek goddess of dawn). The film was shown as part of an attraction with in-theater effects. The attraction returned to the Disney Parks in 2010 as a tribute after Jackson's death. The film was shown for the final
+        time at Epcot on December 6, 2015. The film's executive producer was George Lucas. It was choreographed by Jeffrey Hornaday and Michael Jackson, photographed by Peter Anderson, produced by Rusty Lemorande and written by Lemorande, Lucas and Coppola,
+        from a story idea by the artists of Walt Disney Imagineering. Lemorande also initially designed and created two of the creatures, and was an editor of the film. The score was written by James Horner and featured two songs ("We Are Here to Change
+        the World" and "Another Part of Me"), both written and performed by Michael Jackson. The Supreme Leader was played by Anjelica Huston. Cinematographer Vittorio Storaro was the lighting director during much of the principal photography. Captain
+        EO is regarded as one of the first "4D" films (4D being the name given to a 3D film that incorporates in-theater effects, such as lasers, smoke, etc., synchronized to the film).</div>
+    <div class='weaponDesc' id='AGS_radar_desc'>Airborne ground surveillance (AGS) refers to a class of military airborne radar system (Surveillance aircraft) used for detecting and tracking ground targets, such as vehicles and slow moving helicopters, as opposed to Airborne early warning and control,
+        whose primary role is detecting and tracking aircraft in flight. Antenna beam width should be very small to enhance resolution. This antenna size limitation demands high frequency (GHz range) of operation, to be operated in this mode. AGS radar
+        is typically a medium or low power radar. It includes both maritime and land surveillance. Today, UAVs perform this operation, which often uses optical aids for surveillance. The earliest Airborne ground surveillance system was the H2S (radar).</div>
+    <div class='weaponDesc' id='Guided_rocket/SSM_desc'>The SSM-N-9 Regulus II cruise missile is a supersonic guided missile armed with a nuclear warhead, intended for launching from surface ships and submarines of the U.S. Navy (USN).</div>
+    <div class='weaponDesc' id='ASW_aircraft_desc'>An anti-submarine warfare carrier (ASW carrier) (US hull classification symbol CVS) is a type of small aircraft carrier whose primary role is as the nucleus of an anti-submarine warfare hunter-killer group. This type of ship came into existence during
+        the Cold War as a development of the escort carriers used in the ASW role in the North Atlantic during World War II.</div>
+    <div class='weaponDesc' id='BVRAAM/SAM_desc'>This list of missiles by country displays the names of missiles in order of the country where they originate (were developed), with the countries listed alphabetically and annotated with their continent (and defence alliance, if applicable). In cases
+        where multiple nations have developed or produced a missile, it is listed under each significantly participating nation. Within the lists of each country, missiles are ordered by designation and/or calling name (the latter being especially relevant
+        for Russian/Soviet missiles). In some cases multiple listings are used, in order to provide cross-references for easier navigation. This is not a list of missiles in operational service by a particular country; nor a list of military rockets.
+        Anti-tank missiles are listed elsewhere For an alphabetical list by missile name, see the list of missiles.
+
+    </div>
+    <div class='weaponDesc' id='Multi-function_radar_desc'>The SAMPSON is a multi-function dual-face active electronically scanned array radar produced by BAE Systems Maritime. It is made out of high-carbon steel and is covered with an anti-radar paint. It is the fire control radar component of the Sea Viper
+        naval air defence system. It was previously designated PAAMS(S) to distinguish it from the PAAMS system on the Franco-Italian Horizon Class. The SAMPSON multi function radar can detect all types of targets out to a distance of 400 km, and is capable
+        of tracking hundreds of targets at any one time. Sea Viper uses this information to assess and command target priorities, and calculate the optimum launch time for its Aster missiles.</div>
+    <div class='weaponDesc' id='Training_ship_desc'>A training ship is a ship used to train students as sailors. The term is especially used for ships employed by navies to train future officers. Essentially there are two types: those used for training at sea and old hulks used to house classrooms.
+        The hands-on aspect provided by sail training has also been used as a platform for everything from semesters at sea for undergraduate oceanography and biology students, marine science and physical science for high school students, and character
+        building for at-risk youths.</div>
+    <div class='weaponDesc' id='Anti-ship_missile/ARM_desc'>An anti-ship missile (AShM) is a guided missile that is designed for use against ships and large boats. Most anti-ship missiles are of the sea skimming variety, and many use a combination of inertial guidance and active radar homing. A good number
+        of other anti-ship missiles use infrared homing to follow the heat that is emitted by a ship; it is also possible for anti-ship missiles to be guided by radio command all the way. The first anti-ship missiles, which were developed and built by
+        Nazi Germany, used radio command guidance. These saw some success in the Mediterranean Theater in 1943–44, sinking or heavily damaging at least 31 ships with the Henschel Hs 293 and more than seven with the Fritz X, such as the Italian battleship
+        Roma or the cruiser USS Savannah. A variant of the HS 293 had a TV transmitter on board. The bomber carrying it could then fly outside the range of naval AA guns and use TV guidance to lead the missile to its target by radio control. Many anti-ship
+        missiles can be launched from a variety of weapons systems including surface warships (they can then be referred to as ship-to-ship missiles), submarines, bombers, fighter planes, patrol planes, helicopters, shore batteries, land vehicles, and
+        conceivably, even by infantrymen firing shoulder-launched missiles. The term surface-to-surface missile (SSM) is used when appropriate. The longer-range anti-ship missiles are often called anti-ship cruise missiles.</div>
+    <div class='weaponDesc' id='ASW_MRL_desc'>The Weishi (WS; Chinese: 卫士; lit.: 'Guardian') family of multiple rocket launcher systems were mainly developed by Sichuan Aerospace Industry Corporation (SCAIC, also known as Base 062) in Chengdu, China. The systems include the 302 mm WS-1 (100 km
+        range), the improved 302 mm WS-1B (180 km range), the 122 mm WS-1E (40 km), the 400 mm WS-2 (200 km range), as well as many other models. The WS-1 series weapon system did not enter PLA service and has order from Thailand. The WS-2 may finally
+        see PLA service in the future. It's worth noticing that although sharing the same name, there are other developers for different models of Weishi series multiple rocket launchers (MRL) other than the primary developer SCAIC. China Aerospace Long-March
+        International ALIT (CASC) has published a table showing the ranges of most of the WS rockets. There are unguided, guided and precision guided rockets.</div>
+    <div class='weaponDesc' id='SSM_TEL_desc'>This is a list of all airline codes. The table lists the IATA airline designators, the ICAO airline designators and the airline call signs (telephony designator). Historical assignments are also included for completeness.</div>
+    <div class='weaponDesc' id='Towed_mortar_desc'>A mortar is usually a simple, lightweight, man-portable, muzzle-loaded weapon, consisting of a smooth-bore metal tube fixed to a base plate (to spread out the recoil) with a lightweight bipod mount and a sight. They launch explosive shells (technically
+        called bombs) in high-arcing ballistic trajectories. Mortars are typically used as indirect fire weapons for close fire support with a variety of ammunition.</div>
+    <div class='weaponDesc' id='AEW_helicopter_desc'>An airborne early warning and control (AEW&C) system is an airborne radar picket system designed to detect aircraft, ships and vehicles at long ranges and perform command and control of the battlespace in an air engagement by directing fighter and
+        attack aircraft strikes. AEW&C units are also used to carry out surveillance, including over ground targets and frequently perform C2BM (command and control, battle management) functions similar to an Air Traffic Controller given military command
+        over other forces. When used at altitude, the radar on the aircraft allows the operators to detect and track targets and distinguish between friendly and hostile aircraft much farther away than a similar ground-based radar. Like a ground-based
+        radar, it can be detected by opposing forces, but because of its mobility and extended sensor range, it is much less vulnerable to counter-attacks.AEW&C aircraft are used for both defensive and offensive air operations, and are to NATO and US-trained
+        or integrated air forces what the combat information center is to a naval warship, in addition to being a highly mobile and powerful radar platform. The system is used offensively to direct fighters to their target locations, and defensively,
+        directing counterattacks on enemy forces, both air and ground. So useful is the advantage of command and control aircraft operating at a high altitude, that some navies operate such aircraft from their warships at sea. In the case of the US Navy,
+        the Northrop Grumman E-2 Hawkeye AEW&C aircraft is assigned to its supercarriers to protect them and augment their onboard command information centers (CICs). The designation airborne early warning (AEW) was used for earlier similar aircraft,
+        such as the Fairey Gannet AEW.3 and Lockheed EC-121 Warning Star, and continues to be used by the RAF for its Sentry AEW1, while AEW&C (airborne early warning and control) emphasizes the command and control capabilities that may not be present
+        on smaller or simpler radar picket aircraft. AWACS (Airborne Warning and Control System) is the name of the specific system installed in the E-3 and Japanese Boeing E-767 AEW&C airframes, but is often used as a general synonym for AEW&C.The first
+        known aerial engagement with both opposing sides using Airborne Early Warning and Control aircraft was in South Asia, during the February 27, 2019 aerial engagement between India and Pakistan, with India using A-50I Phalcon AWACS and Pakistan
+        using the Saab 2000.
+
+    </div>
+    <div class='weaponDesc' id='Aircraft_carrier_desc'>An aircraft carrier is a warship that serves as a seagoing airbase, equipped with a full-length flight deck and facilities for carrying, arming, deploying, and recovering aircraft. Typically, it is the capital ship of a fleet, as it allows a naval
+        force to project air power worldwide without depending on local bases for staging aircraft operations. Carriers have evolved since their inception in the early twentieth century from wooden vessels used to deploy balloons to nuclear-powered warships
+        that carry numerous fighters, strike aircraft, helicopters, and other types of aircraft. While heavier aircraft such as fixed-wing gunships and bombers have been launched from aircraft carriers, it is currently not possible to land them. By its
+        diplomatic and tactical power, its mobility, its autonomy and the variety of its means, the aircraft carrier is often the centerpiece of modern combat fleets. Tactically or even strategically, it replaced the battleship in the role of flagship
+        of a fleet. One of its great advantages is that, by sailing in international waters, it does not interfere with any territorial sovereignty and thus obviates the need for overflight authorizations from third-party countries, reduces the times
+        and transit distances of aircraft and therefore significantly increase the time of availability on the combat zone. There is no single definition of an "aircraft carrier", and modern navies use several variants of the type. These variants are
+        sometimes categorized as sub-types of aircraft carriers, and sometimes as distinct types of naval aviation-capable ships. Aircraft carriers may be classified according to the type of aircraft they carry and their operational assignments. Admiral
+        Sir Mark Stanhope, RN, former First Sea Lord (head) of the Royal Navy, has said, "To put it simply, countries that aspire to strategic international influence have aircraft carriers." Henry Kissinger, while United States Secretary of State, also
+        said: "An aircraft carrier is 100,000 tons of diplomacy."As of August 2020, there are 43 active aircraft carriers in the world operated by fourteen navies. The United States Navy has 11 large nuclear-powered fleet carriers—carrying around 80 fighter
+        jets each—the largest carriers in the world; the total combined deck space is over twice that of all other nations combined. As well as the aircraft carrier fleet, the U.S. Navy has nine amphibious assault ships used primarily for helicopters,
+        although these also carry up to 20 vertical or short take-off and landing (V/STOL) fighter jets and are similar in size to medium-sized fleet carriers. The United Kingdom and China each operate two aircraft carriers. France, India, and Russia
+        each operate a single medium-size carrier with a capacity of 30 to 60 fighter jets. Italy operates two light fleet carriers and Spain operates one. Helicopter carriers are operated by Japan (4), France (3), Australia (2), Egypt (2), South Korea
+        (1), and Thailand (1). Future aircraft carriers are under construction or in planning by Brazil, China, India, Russia and the US.
+
+    </div>
+    <div class='weaponDesc' id='Guided_Bomb_desc'>A guided bomb (also known as a smart bomb, guided bomb unit, or GBU) is a precision-guided munition designed to achieve a smaller circular error probable (CEP).Because the damage effects of explosive weapons fall off with distance according to a power
+        law, even modest improvements in accuracy (and hence reduction in miss distance) enable a target to be effectively attacked with fewer or smaller bombs. Therefore, with guided weapons, fewer air crews are put at risk, less ordnance spent, and
+        collateral damage reduced. The creation of precision-guided munitions resulted in the retroactive renaming of older bombs as unguided bombs or "dumb bombs".</div>
+    <div class='weaponDesc' id='ASM/anti-tank_missile_desc'>On 11 January 2007, China conducted an anti-satellite missile test. A Chinese weather satellite—the FY-1C polar orbit satellite of the Fengyun series, at an altitude of 865 kilometres (537 mi), with a mass of 750 kg—was destroyed by a kinetic kill
+        vehicle traveling with a speed of 8 km/s in the opposite direction (see Head-on engagement). It was launched with a multistage solid-fuel missile from Xichang Satellite Launch Center or nearby. Aviation Week & Space Technology magazine first reported
+        the test on 17 January 2007. The report was confirmed on 18 January 2007 by a United States National Security Council (NSC) spokesperson. At first the Chinese government did not publicly confirm whether or not the test had occurred; but on 23
+        January 2007, the Chinese Foreign Ministry officially confirmed that a test had been conducted. China claims it formally notified the U.S., Japan and other countries about the test in advance.It was the first known successful satellite intercept
+        test since 1985, when the United States conducted a similar anti-satellite missile test using an ASM-135 ASAT to destroy the P78-1 satellite.The New York Times, The Washington Times and Jane's Intelligence Review reported that this came on the
+        back of at least two previous direct ascent tests that intentionally did not result in an intercept, on 7 July 2005 and 6 February 2006.A classified U.S. State Department cable revealed by WikiLeaks indicates that the same system was tested against
+        a ballistic target in January 2010 in what the Chinese government publicly described as a test of "ground-based midcourse missile interception technology". That description also closely matches the Chinese government's description of another test
+        in January 2013, which has led some analysts to conclude that it was yet another test of the same ASAT system, again against a ballistic target and not a satellite.</div>
+    <div class='weaponDesc' id='UAV/armed_UAV_desc'>An unmanned aerial vehicle (UAV) (or uncrewed aerial vehicle, commonly known as a drone) is an aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV,
+        a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator, autonomously by onboard computers or piloted by an autonomus
+        robot.Compared to crewed aircraft, UAVs were originally used for missions too "dull, dirty or dangerous" for humans. While they originated mostly in military applications, their use is rapidly expanding to commercial, scientific, recreational,
+        agricultural, and other applications, such as policing and surveillance, product deliveries, aerial photography, infrastructure inspections, smuggling, and drone racing. Civilian UAVs now vastly outnumber military UAVs, with estimates of over
+        a million sold by 2015.
+
+    </div>
+    <div class='weaponDesc' id='OPV/Training_ship_desc'>A patrol boat (also referred to as a patrol craft, patrol ship or patrol vessel) is a relatively small naval vessel generally designed for coastal defence duties. There have been many designs for patrol boats. They may be operated by a nation's navy,
+        coast guard, police force or customs and may be intended for marine (blue water) or estuarine or river ("brown water") environments. They are commonly found engaged in various border protection roles, including anti-smuggling, anti-piracy, fisheries
+        patrols, and immigration law enforcement. They are also often called upon to participate in rescue operations. Vessels of this type include the original yacht (from Dutch/Low German jacht meaning hunting or hunt), a light, fast-sailing vessel
+        used by the Dutch navy to pursue pirates and other transgressors around and into shallow waters.
+
+    </div>
+    <div class='weaponDesc' id='SPG_chassis_desc'>The Saab 900 is a mid-sized automobile which was produced by Saab from 1978 until 1998 in two generations. The first generation from 1978 to 1994 is known as the "classic" and the generation from 1994 to 1998 is known as the "new generation". The
+        "classic" Saab 900 was based on the Saab 99 chassis, though with a longer front end to meet U.S. frontal crash regulations. The 900 was produced in 2- and 4-door sedan, and 3- and 5-door hatchback configurations and, from 1986, as a cabriolet
+        (convertible) model. There were single- and twin-Zenith carburettor, fuel injected, and turbocharged engines, including both Full Pressure Turbo (FPT), and, in European models during the early 1990s, Low Pressure Turbos (LPT).</div>
+    <div class='weaponDesc' id='Height-finding_radar_desc'>This is a list of radars. A radar is an electronic system used to detect, range (determine the distance of), and map various types of targets.</div>
+    <div class='weaponDesc' id='Diesel_engine_(AV)_desc'>The Continental AV1790 is an American V12 engine used in armored vehicles. Produced by Continental Motors, the AV1790 was used in a variety of limited production and pilot heavy tanks, including the M53 and M55 howitzers, and the T30 and M103 tanks.
+        There were also diesel versions (AVDS, Air Cooled, V-engine configuration, Diesel, Superturbocharged) for the M47, M48, and M60 Patton tanks, and the Swedish Stridsvagn 104 (British-built Centurions, re-engined with diesel engines in the 1980s).</div>
+    <div class='weaponDesc' id='AEW&C/AGS_system_desc'>The Embraer R-99 is the Brazilian Air Force military designation of the EMB-145-RS. It is an aircraft based on the ERJ 145 civil regional jet. The R-99 series are equipped with Rolls-Royce AE1 3007 turbofan engines. The military versions provide 20%
+        more thrust than the civil version. The first flight was in 1999.</div>
+    <div class='weaponDesc' id='Tank_chassis_desc'>Tank container chassis, also referred to as tank chassis, drop frame chassis or tank trailers, are a form of intermodal transportation for portable bulk liquid containers or ISO tank containers. They are characteristically longer and have lower deck
+        height ideal for transporting constantly shifting payloads. The invention of the tank container revolutionized the way bulk liquids were transported, stored, and handled worldwide. It has improved safety, reduced costs and brought with it the
+        benefits of convenience and efficiency associated with a multi-modal transport system. Invariably the invention of the drop frame chassis followed soon after to accommodate this new type of intermodal container.</div>
+    <div class='weaponDesc' id='AA_gun_system_desc'>Anti-aircraft warfare or counter-air defence is defined by NATO as "all measures designed to nullify or reduce the effectiveness of hostile air action". It includes surface based, subsurface (submarine launched), and air-based weapon systems, associated
+        sensor systems, command and control arrangements, and passive measures (e.g. barrage balloons). It may be used to protect naval, ground, and air forces in any location. However, for most countries the main effort has tended to be homeland defence.
+        NATO refers to airborne air defence as counter-air and naval air defence as anti-aircraft warfare. Missile defence is an extension of air defence, as are initiatives to adapt air defence to the task of intercepting any projectile in flight. In
+        some countries, such as Britain and Germany during the Second World War, the Soviet Union, and modern NATO and the United States, ground-based air defence and air defence aircraft have been under integrated command and control. However, while
+        overall air defence may be for homeland defence (including military facilities), forces in the field, wherever they are, invariably deploy their own air defence capability if there is an air threat. A surface-based air defence capability can also
+        be deployed offensively to deny the use of airspace to an opponent. Until the 1950s, guns firing ballistic munitions ranging from 7.62 mm to 152.4 mm were the standard weapons; guided missiles then became dominant, except at the very shortest
+        ranges (as with close-in weapon systems, which typically use rotary autocannons or, in very modern systems, surface-to-air adaptations of short range air-to-air missiles, often combined in one system with rotary cannons).</div>
+    <div class='weaponDesc' id='Cargo_Ship_desc'>A cargo ship or freighter is a merchant ship that carries cargo, goods, and materials from one port to another. Thousands of cargo carriers ply the world's seas and oceans each year, handling the bulk of international trade. Cargo ships are usually
+        specially designed for the task, often being equipped with cranes and other mechanisms to load and unload, and come in all sizes. Today, they are almost always built by welded steel, and with some exceptions generally have a life expectancy of
+        25 to 30 years before being scrapped.</div>
+    <div class='weaponDesc' id='ACV/landing_craft_desc'>The Amphibious Combat Vehicle (ACV) is a program initiated by Marine Corps Systems Command to procure an amphibious assault vehicle for the United States Marine Corps to supplement and ultimately replace the aging Assault Amphibious Vehicle. The program
+        replaces the Expeditionary Fighting Vehicle program canceled in 2011. Originally a plan to develop a high-water-speed vehicle, the program has expanded into a multi-phased approach to procure and develop several types of amphibious-capable vehicles
+        to address near and long-term requirements.</div>
+    <div class='weaponDesc' id='SAM/ABM_system_desc'>An anti-ballistic missile (ABM) is a surface-to-air missile designed to counter ballistic missiles (missile defense). Ballistic missiles are used to deliver nuclear, chemical, biological, or conventional warheads in a ballistic flight trajectory.
+        The term "anti-ballistic missile" is a generic term conveying a system designed to intercept and destroy any type of ballistic threat; however, it is commonly used for systems specifically designed to counter intercontinental ballistic missiles
+        (ICBMs)
+    </div>
+    <div class='weaponDesc' id='APC/IFV_desc'>An infantry fighting vehicle (IFV), also known as a mechanized infantry combat vehicle (MICV), is a type of armoured fighting vehicle used to carry infantry into battle and provide direct-fire support. The 1990 Treaty on Conventional Armed Forces
+        in Europe defines an infantry fighting vehicle as "an armoured combat vehicle which is designed and equipped primarily to transport a combat infantry squad, and which is armed with an integral or organic cannon of at least 20 millimeters calibre
+        and sometimes an antitank missile launcher". IFVs often serve both as the principal weapons system and as the mode of transport for a mechanized infantry unit.Infantry fighting vehicles are distinct from armored personnel carriers (APCs), which
+        are transport vehicles armed only for self-defense and not specifically engineered to fight on their own. IFVs are designed to be more mobile than tanks and are equipped with a rapid-firing autocannon or a large conventional gun; they may include
+        side ports for infantrymen to fire their personal weapons while on board.The IFV rapidly gained popularity with armies worldwide due to a demand for vehicles with high firepower that were less expensive and easier to maintain than tanks. Nevertheless,
+        it did not supersede the APC concept altogether, due to the latter's continued usefulness in specialized roles. Some armies continue to maintain fleets of both IFVs and APCs.</div>
+    <div class='weaponDesc' id='SAM/ABM_desc'>This list of missiles by country displays the names of missiles in order of the country where they originate (were developed), with the countries listed alphabetically and annotated with their continent (and defence alliance, if applicable). In cases
+        where multiple nations have developed or produced a missile, it is listed under each significantly participating nation. Within the lists of each country, missiles are ordered by designation and/or calling name (the latter being especially relevant
+        for Russian/Soviet missiles). In some cases multiple listings are used, in order to provide cross-references for easier navigation. This is not a list of missiles in operational service by a particular country; nor a list of military rockets.
+        Anti-tank missiles are listed elsewhere For an alphabetical list by missile name, see the list of missiles.
+
+    </div>
+    <div class='weaponDesc' id='Tanker/transport_aircraft_desc'>The Boeing KC-767 is a military aerial refueling and strategic transport aircraft developed from the Boeing 767-200ER. The tanker received the designation KC-767A, after being selected by the U.S. Air Force (USAF) initially to replace older KC-135Es.
+        In December 2003, the contract was frozen and later canceled due to corruption allegations. The tanker was developed for the Italian and Japanese air forces, who ordered four tankers each. Financing of the development of the aircraft has largely
+        been borne by Boeing, in the hope of receiving major orders from the USAF. Boeing's revised KC-767 proposal to the USAF was selected in February 2011 for the KC-X program under the designation KC-46.</div>
+    <div class='weaponDesc' id='Heavy_transport_ac_desc'>The Lockheed AC-130 gunship is a heavily armed, long-endurance, ground-attack variant of the C-130 Hercules transport, fixed-wing aircraft. It carries a wide array of ground attack weapons that are integrated with sophisticated sensors, navigation,
+        and fire-control systems. Unlike other modern military fixed-wing aircraft, the AC-130 relies on visual targeting. Because its large profile and low operating altitudes of approximately 7,000 feet (2,100 m) make it an easy target, its close air
+        support missions are usually flown at night.The airframe is manufactured by Lockheed Martin, while Boeing is responsible for the conversion into a gunship and for aircraft support. Developed during the Vietnam War as "Project Gunship II", the
+        AC-130 replaced the Douglas AC-47 Spooky, or "Gunship I". The sole operator is the United States Air Force, which uses the AC-130U Spooky and AC-130W Stinger II variants for close air support, air interdiction, and force protection, with the upgraded
+        AC-130J Ghostrider entering service. Close-air-support roles include supporting ground troops, escorting convoys, and urban operations. Air-interdiction missions are conducted against planned targets and targets of opportunity. Force-protection
+        missions include defending air bases and other facilities. AC-130Us are based at Hurlburt Field, Florida, while AC-130Ws are based at Cannon AFB, New Mexico; gunships can be deployed worldwide. The squadrons are part of the Air Force Special Operations
+        Command (AFSOC), a component of the United States Special Operations Command (SOCOM).The AC-130 has an unpressurized cabin, with the weaponry mounted to fire from the port side of the fuselage. During an attack, the gunship performs a pylon turn,
+        flying in a large circle around the target, therefore being able to fire at it for far longer than in a conventional strafing attack. The AC-130H Spectre was armed with two 20 mm M61 Vulcan cannons, one L60 Bofors 40 mm cannon, and one 105 mm
+        M102 howitzer; after 1994, the 20 mm cannons were removed. The upgraded AC-130U Spooky has a single 25 mm GAU-12 Equalizer cannon in place of the Spectre's two 20 mm cannons, an improved fire-control system, and increased ammunition capacity.
+        The new AC-130J was based on the MC-130J Commando II special-operations tanker. The AC-130W Stinger II is a modified C-130H with upgrades including a precision strike package.</div>
+    <div class='weaponDesc' id='FGA/EW_aircraft_desc'>This list is only of aircraft that have an article, indexed by aircraft registration "tail number" (civil registration or military serial number). The list includes aircraft that are notable either as an individual aircraft or have been involved in
+        a notable accident or incident or are linked to a person notable enough to have a stand-alone Wikipedia article.</div>
+    <div class='weaponDesc' id='Gun_chassis_desc'>A chassis (US: , UK: ; plural chassis ) is the load-bearing framework of an artificial object, which structurally supports the object in its construction and function. An example of a chassis is a vehicle frame, the underpart of a motor vehicle, on
+        which the body is mounted; if the running gear such as wheels and transmission, and sometimes even the driver's seat, are included, then the assembly is described as a rolling chassis.</div>
+    <div class='weaponDesc' id='Transport_ac/helicopter_desc'>The Aérospatiale (formerly Sud Aviation) SA 321 Super Frelon ("Super Hornet") is a three-engined heavy transport helicopter produced by aerospace manufacturer Sud Aviation (later Aérospatiale) of France. It held the distinction of being the most powerful
+        helicopter to be built in Europe at one point, as well as being the world's fastest helicopter. The Super Frelon was a more powerful development of the original SE.3200 Frelon, which had failed to enter production. On 7 December 1962, the first
+        prototype conducted the type's maiden flight. On 23 July 1963, a modified Super Frelon flew a record-breaking flight, setting the new FAI absolute helicopter world speed record with a recorded speed of 217.7 mph (350.4 km/h). Both civilian and
+        military versions of the Super Frelon were produced; the type was predominantly sold to military customers. In 1981, Aerospatiale, Sud Aviation's successor company, chose to terminate production due to a lack of orders. The Super Frelon was most
+        heavily used by naval air arms, such as the French Navy and the People's Liberation Army Naval Air Force. On 30 April 2010, the type was retired by the French Navy, having been replaced by a pair of Eurocopter EC225 helicopters as a stopgap measure
+        pending the availability of the NHIndustries NH90 helicopter. The Super Frelon was in use for an extended period within China, where it was manufactured under license and sold by the Harbin Aircraft Industry Group as the Harbin Z-8. A modernised
+        derivative of the Z-8, marketed as the Avicopter AC313, performed its first flight on 18 March 2010.</div>
+    <div class='weaponDesc' id='ABM_system_desc'>The A-135 (NATO: ABM-3 Gorgon) is a Russian anti-ballistic missile system deployed around Moscow to intercept incoming warheads targeting the city or its surrounding areas. The system was designed in the Soviet Union and entered service in 1995. It
+        is a successor to the previous A-35, and complies with the 1972 Anti-Ballistic Missile Treaty.The system is operated by the 9th Division of Anti-Missile Defence, part of the Air Defence and Missile Defence Command of the Russian Aerospace Defence
+        Forces.
+    </div>
+    <div class='weaponDesc' id='AEW_radar_desc'>An airborne early warning and control (AEW&C) system is an airborne radar picket system designed to detect aircraft, ships and vehicles at long ranges and perform command and control of the battlespace in an air engagement by directing fighter and
+        attack aircraft strikes. AEW&C units are also used to carry out surveillance, including over ground targets and frequently perform C2BM (command and control, battle management) functions similar to an Air Traffic Controller given military command
+        over other forces. When used at altitude, the radar on the aircraft allows the operators to detect and track targets and distinguish between friendly and hostile aircraft much farther away than a similar ground-based radar. Like a ground-based
+        radar, it can be detected by opposing forces, but because of its mobility and extended sensor range, it is much less vulnerable to counter-attacks.AEW&C aircraft are used for both defensive and offensive air operations, and are to NATO and US-trained
+        or integrated air forces what the combat information center is to a naval warship, in addition to being a highly mobile and powerful radar platform. The system is used offensively to direct fighters to their target locations, and defensively,
+        directing counterattacks on enemy forces, both air and ground. So useful is the advantage of command and control aircraft operating at a high altitude, that some navies operate such aircraft from their warships at sea. In the case of the US Navy,
+        the Northrop Grumman E-2 Hawkeye AEW&C aircraft is assigned to its supercarriers to protect them and augment their onboard command information centers (CICs). The designation airborne early warning (AEW) was used for earlier similar aircraft,
+        such as the Fairey Gannet AEW.3 and Lockheed EC-121 Warning Star, and continues to be used by the RAF for its Sentry AEW1, while AEW&C (airborne early warning and control) emphasizes the command and control capabilities that may not be present
+        on smaller or simpler radar picket aircraft. AWACS (Airborne Warning and Control System) is the name of the specific system installed in the E-3 and Japanese Boeing E-767 AEW&C airframes, but is often used as a general synonym for AEW&C.The first
+        known aerial engagement with both opposing sides using Airborne Early Warning and Control aircraft was in South Asia, during the February 27, 2019 aerial engagement between India and Pakistan, with India using A-50I Phalcon AWACS and Pakistan
+        using the Saab 2000.
+
+    </div>
+    <div class='weaponDesc' id='AIM-9S_desc'>The AIM-9 Sidewinder (for Air Intercept Missile) is a short-range air-to-air missile which entered service with the US Navy in 1956 and subsequently was adopted by the US Air Force in 1964. Since then the Sidewinder has proved to be an enduring international
+        success, and its latest variants are still standard equipment in most western-aligned air forces. The Soviet K-13, a reverse-engineered copy of the AIM-9, was also widely adopted by a number of nations. Low-level development started in the late
+        1940s, emerging in the early 1950s as a guidance system for the modular Zuni rocket. This modularity allowed for the introduction of newer seekers and rocket motors, including the AIM-9C variant, which used semi-active radar homing and served
+        as the basis of the AGM-122 Sidearm anti-radar missile. Originally a tail-chasing system, early models saw extensive use during the Vietnam War but had a low success rate. This led to all-aspect capabilities in the L version which proved to be
+        an extremely effective weapon during combat in the Falklands War and the Operation Mole Cricket 19 ("Bekaa Valley Turkey Shoot") in Lebanon. Its adaptability has kept it in service over newer designs like the AIM-95 Agile and SRAAM that were intended
+        to replace it. The Sidewinder is the most widely used air-to-air missile in the West, with more than 110,000 missiles produced for the U.S. and 27 other nations, of which perhaps one percent have been used in combat. It has been built under license
+        by some other nations including Sweden, and can even equip helicopters, such as the Bell AH-1Z Viper. The AIM-9 is one of the oldest, least expensive, and most successful air-to-air missiles, with an estimated 270 aircraft kills in its history
+        of use. When firing a Sidewinder, NATO pilots use the brevity code FOX-2. The United States Navy hosted a 50th-anniversary celebration for the Sidewinder in 2002. Boeing won a contract in March 2010 to support Sidewinder operations through to
+        2055, guaranteeing that the weapons system will remain in operation until at least that date. Air Force Spokeswoman Stephanie Powell noted that due to its relatively low cost, versatility, and reliability it is "very possible that the Sidewinder
+        will remain in Air Force inventories through the late 21st century".</div>
+    <div class='weaponDesc' id='AGS_aerostat_desc'>Airborne ground surveillance (AGS) refers to a class of military airborne radar system (Surveillance aircraft) used for detecting and tracking ground targets, such as vehicles and slow moving helicopters, as opposed to Airborne early warning and control,
+        whose primary role is detecting and tracking aircraft in flight. Antenna beam width should be very small to enhance resolution. This antenna size limitation demands high frequency (GHz range) of operation, to be operated in this mode. AGS radar
+        is typically a medium or low power radar. It includes both maritime and land surveillance. Today, UAVs perform this operation, which often uses optical aids for surveillance. The earliest Airborne ground surveillance system was the H2S (radar).</div>
+    <div class='weaponDesc' id='ABM_missile_desc'>The Anti-Ballistic Missile Treaty (ABM Treaty or ABMT) (1972—2002) was an arms control treaty between the United States and the Soviet Union on the limitation of the anti-ballistic missile (ABM) systems used in defending areas against ballistic missile-delivered
+        nuclear weapons. Under the terms of the treaty, each party was limited to two ABM complexes, each of which was to be limited to 100 anti-ballistic missiles.Signed in 1972, it was in force for the next 30 years. In 1997, five years after the dissolution
+        of the Soviet Union, four former Soviet republics agreed with the United States to succeed the USSR's role in the treaty. In June 2002 the United States withdrew from the treaty, leading to its termination.
+
+    </div>
+    <div class='weaponDesc' id='Light_aircraft/UAV_desc'>An unmanned aerial vehicle (UAV) (or uncrewed aerial vehicle, commonly known as a drone) is an aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV,
+        a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator, autonomously by onboard computers or piloted by an autonomus
+        robot.Compared to crewed aircraft, UAVs were originally used for missions too "dull, dirty or dangerous" for humans. While they originated mostly in military applications, their use is rapidly expanding to commercial, scientific, recreational,
+        agricultural, and other applications, such as policing and surveillance, product deliveries, aerial photography, infrastructure inspections, smuggling, and drone racing. Civilian UAVs now vastly outnumber military UAVs, with estimates of over
+        a million sold by 2015.
+
+    </div>
+    <div class='weaponDesc' id='Minehunter_desc'>A minehunter is a naval vessel that seeks, detects, and destroys individual naval mines. Minesweepers, on the other hand, clear mined areas as a whole, without prior detection of mines. A vessel that combines both of these roles is known as a mine
+        countermeasures vessel (MCMV).</div>
+
+
+
+
+
+
+
 
 </body>
 

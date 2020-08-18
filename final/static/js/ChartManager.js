@@ -40,24 +40,22 @@ var ChartManager = function() {
                 //if (DEBUG) console.log(row);
 
                 // Take the ordered and delivered data is in the interval
-                var yearOrd = stripYear(row["Ordered year"]);
                 var yearDel = stripYear(row["Delivered year"]);
 
                 //if (DEBUG) console.log(yearOrd, " ", yearDel)
 
                 // Check years in the interval and the country
-                if (!isNaN(yearOrd) && yearOrd >= years[0] && yearOrd <= years[1] &&
-                    !isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1] &&
+                if (!isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1] &&
                     selected_group.includes(row["codeS"])) {
 
                     var num = stripNum(row["Delivered num."]);
 
                     //if (DEBUG) console.log(num)
 
-                    if (data_structure.has(yearOrd))
-                        data_structure.set(yearOrd, data_structure.get(yearOrd) + num);
+                    if (data_structure.has(yearDel))
+                        data_structure.set(yearDel, data_structure.get(yearDel) + num);
                     else
-                        data_structure.set(yearOrd, num);
+                        data_structure.set(yearDel, num);
 
                 }
 
@@ -281,24 +279,22 @@ var ChartManager = function() {
                 //if (DEBUG) console.log(row);
 
                 // Take the ordered and delivered data is in the interval
-                var yearOrd = stripYear(row["Ordered year"]);
                 var yearDel = stripYear(row["Delivered year"]);
 
                 //if (DEBUG) console.log(yearOrd, " ", yearDel)
 
                 // Check years in the interval and the country
-                if (!isNaN(yearOrd) && yearOrd >= years[0] && yearOrd <= years[1] &&
-                    !isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1] &&
+                if (!isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1] &&
                     selected_group.includes(row["codeR"])) {
 
                     var num = stripNum(row["Delivered num."]);
 
                     //if (DEBUG) console.log(num)
 
-                    if (data_structure.has(yearOrd))
-                        data_structure.set(yearOrd, data_structure.get(yearOrd) + num);
+                    if (data_structure.has(yearDel))
+                        data_structure.set(yearDel, data_structure.get(yearDel) + num);
                     else
-                        data_structure.set(yearOrd, num);
+                        data_structure.set(yearDel, num);
 
                 }
 

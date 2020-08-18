@@ -8,6 +8,7 @@ var rm;
 var pcam;
 var bcm;
 var dbcm;
+var wbcm;
 
 var years = [2016, 2018];
 var selected_group = ["ITA"]
@@ -27,23 +28,27 @@ function main() {
 
 
     mcm = MapComponentsManager();
+    mcm.drawSlider()
+
     mm = MapManager();
-    cm = ChartManager();
-    pcam = PcaScatterManager();
-    dbcm = DiverginhBarChartManager();
-
-    dbcm.drawChart();
-    // rm = RankRaceManager();
-
     mm.drawCloroExp();
     mm.drawCloroImp();
 
-    mcm.drawSlider()
+    // cm = ChartManager();
+    pcam = PcaScatterManager();
 
-    cm.drawChart();
-    cm.drawChartRec();
+    dbcm = DiverginhBarChartManager();
+    dbcm.drawChart();
 
-    drawCircular()
+    // rm = RankRaceManager();
+    wbcm = weaponsBarChartManager();
+    wbcm.drawChart();
+
+
+    // cm.drawChart();
+    // cm.drawChartRec();
+
+    // drawCircular()
 
     $(".bs-select-all").remove()
     $(".bs-deselect-all").on('click', function() {
@@ -158,6 +163,9 @@ function resetSelect() {
 
     mm.drawCloroExp()
     mm.drawCloroImp()
+    dbcm.drawChart()
+    pcam.drawChart()
+
 }
 // function postSubmitted(){
 //     alert("Post successfull")

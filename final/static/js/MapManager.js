@@ -158,8 +158,8 @@ var MapManager = function() {
                 .on('click', selected)
                 .attr("id", d => "country" + d.id)
                 .append("title")
-                .text(d => `${d.properties.name}
-        ${data.has(d.id) ? data.get(d.id) : "N/A"}`);
+                .text(d => `To ${d.properties.name}
+        ${data.has(d.id) ? data.get(d.id) : "0"}`);
 
 
 
@@ -188,7 +188,6 @@ var MapManager = function() {
 
             heatsGroup.select(".legendThreshold")
                 .call(legend);
-
 
 
         }
@@ -266,8 +265,8 @@ var MapManager = function() {
                 .on('click', selected)
                 .attr("id", d => "country" + d.id)
                 .append("title")
-                .text(d => `${d.properties.name}
-        ${data.has(d.id) ? data.get(d.id) : "N/A"}`);
+                .text(d => `From ${d.properties.name}
+            ${data.has(d.id) ? data.get(d.id) : "N/A"}`);
 
 
 
@@ -361,7 +360,7 @@ var MapManager = function() {
 
         mm.drawCloroExp()
         mm.drawCloroImp()
-        cm.updateCountry()
+            // cm.updateCountry()
 
         dbcm.drawChart();
 
@@ -378,9 +377,10 @@ var MapManager = function() {
         if (country_id != "")
             countries = [country_id]
 
+
         countries.forEach(country_id => {
 
-
+            var country_name;
             $.ajax({
                 type: "GET",
                 url: "static/data/pop.csv",
@@ -398,6 +398,7 @@ var MapManager = function() {
                     if (data.length == headers.length) {
 
                         if (data[1] == country_id) {
+                            country_name = data[0]
                             for (var j = years[0] - 1958; j <= years[1] - 1958; j++) {
                                 // tarr.push(headers[j] + ":" + data[j]);
                                 pops.push(data[j])
@@ -474,7 +475,7 @@ var MapManager = function() {
 
                         $("#" + country_id + "-line").remove()
                         var newRowContent = '<tr id="' + country_id + '-line">\
-            <td class="col-xs-1">' + country_id + '</td>\
+            <td class="col-xs-1">' + country_name + " (" + country_id + ')</td>\
             <td class="col-xs-3">' + average(gdps) + '</td>\
             <td class="col-xs-3">' + average(pops) + '</td>\
             <td class="col-xs-3">' + average(armies) + '</td>\

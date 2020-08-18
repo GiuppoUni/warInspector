@@ -254,9 +254,8 @@ def createDf(year1,year2,countries,features = ['IMPORT_TOTAL',"EXPORT_TOTAL", 'A
 def pcaMain(year1=2016,year2=2019,countries=["ITA"],features = ['IMPORT_TOTAL',"EXPORT_TOTAL", 'ARMY_TOTAL','REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']):
 
 
-    df_mrgd_imp  = createDf(year1,year2,countries)
-
-
+    df_mrgd  = createDf(year1,year2,countries)
+    print(df_mrgd)
     print("Plotting",countries)
     def pca_plot(df):
         # df['target']= df["Country Name"].apply(lambda x: "selected" if x.strip() in selected
@@ -349,7 +348,7 @@ def pcaMain(year1=2016,year2=2019,countries=["ITA"],features = ['IMPORT_TOTAL',"
         return [list(zip(pc1,pc2,names,names2,not_selected_labels,imp,exp))
         +list(zip(pc1Sel,pc2Sel,namesSel,namesSel2,selected_labels,impSel,expSel))]
 
-    data_imp = pca_plot(df_mrgd_imp)
+    data_imp = pca_plot(df_mrgd)
 
     return data_imp
 

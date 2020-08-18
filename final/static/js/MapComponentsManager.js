@@ -19,7 +19,7 @@ var MapComponentsManager = function() {
             */
 
             var dataTime = d3v4.range(0, 30).map(function(d) {
-                return new Date(1989 + d, 1, 1);
+                return new Date(1990 + d, 1, 1);
             });
 
 
@@ -44,7 +44,7 @@ var MapComponentsManager = function() {
                     if (sliderTimer != undefined)
                         clearTimeout(sliderTimer)
                     sliderTimer = setTimeout(function() {
-                        cm.updateYearsInterval(year_interval)
+                        // cm.updateYearsInterval(year_interval)
                         updateOnSliderChange()
 
                     }, 250);

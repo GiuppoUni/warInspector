@@ -1,8 +1,8 @@
 var DiverginhBarChartManager = function() {
-    var margin = { top: 40, right: 50, bottom: 60, left: 70 };
+    var margin = { top: 20, right: 80, bottom: 40, left: 70 };
 
     var width = 960 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        height = 300 - margin.top - margin.bottom;
 
 
     // Config
@@ -46,22 +46,22 @@ var DiverginhBarChartManager = function() {
         var legend = svg.append("g")
             .attr("class", "legend");
 
-        legend.append("text")
-            .attr("x", width - cfg.legendRightMargin)
-            .attr("text-anchor", "end")
-            .text("Import vs Export")
-            .attr("class", "text-legend")
-            .attr("fill", "white")
+        // legend.append("text")
+        //     .attr("x", width - cfg.legendRightMargin)
+        //     .attr("text-anchor", "end")
+        //     .text("Import vs Export")
+        //     .attr("class", "text-legend")
+        //     .attr("fill", "white")
 
 
-        legend.append("text")
-            .attr("x", width - cfg.legendRightMargin)
-            .attr("y", 20)
-            .attr("text-anchor", "end")
-            .style("opacity", 0.5)
-            .text("Summed on selected countries")
-            .attr("class", "text-legend")
-            .attr("fill", "white")
+        // legend.append("text")
+        //     .attr("x", width - cfg.legendRightMargin)
+        //     .attr("y", 20)
+        //     .attr("text-anchor", "end")
+        //     .style("opacity", 0.5)
+        //     .text("Summed on selected countries")
+        //     .attr("class", "text-legend")
+        //     .attr("fill", "white")
 
         d3v4.csv("static/data/merged.csv", parse, function(error, data) {
             if (error) throw error;
@@ -75,27 +75,25 @@ var DiverginhBarChartManager = function() {
                 //if (DEBUG) console.log(row);
 
                 // Take the ordered and delivered data is in the interval
-                var yearOrd = stripYear(row["Ordered year"]);
                 var yearDel = stripYear(row["Delivered year"]);
 
                 // Check years in the interval and the country
-                if (!isNaN(yearOrd) && yearOrd >= years[0] && yearOrd <= years[1] &&
-                    !isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1]) {
+                if (!isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1]) {
 
                     var num;
                     if (selected_group.includes(row["codeS"])) {
                         // COUNTING SUPPLIED
                         num = stripNum(row["Delivered num."]);
                         sup = row["codeS"]
-                        if (yearOrd in data_structure) {
+                        if (yearDel in data_structure) {
                             // console.log("yet")
-                            data_structure[yearOrd]["totalS"] += num
-                            if (row["codeS"] in data_structure[yearOrd])
-                                data_structure[yearOrd][sup]["exp"] += num
+                            data_structure[yearDel]["totalS"] += num
+                            if (row["codeS"] in data_structure[yearDel])
+                                data_structure[yearDel][sup]["exp"] += num
                             else
-                                data_structure[yearOrd][sup] = { "exp": num, "imp": 0 }
+                                data_structure[yearDel][sup] = { "exp": num, "imp": 0 }
                         } else {
-                            data_structure[yearOrd] = {
+                            data_structure[yearDel] = {
                                 "totalS": num,
                                 "totalR": 0,
                                 sup: { "exp": 0, "imp": 0 }
@@ -107,15 +105,15 @@ var DiverginhBarChartManager = function() {
                         // COUNTING RECEIVED
                         num = stripNum(row["Delivered num."]);
                         rec = row["codeR"]
-                        if (yearOrd in data_structure) {
+                        if (yearDel in data_structure) {
                             // console.log("yet")
-                            data_structure[yearOrd]["totalR"] += num
-                            if (rec in data_structure[yearOrd])
-                                data_structure[yearOrd][rec]["imp"] += num
+                            data_structure[yearDel]["totalR"] += num
+                            if (rec in data_structure[yearDel])
+                                data_structure[yearDel][rec]["imp"] += num
                             else
-                                data_structure[yearOrd][rec] = { "exp": num, "imp": 0 }
+                                data_structure[yearDel][rec] = { "exp": num, "imp": 0 }
                         } else {
-                            data_structure[yearOrd] = {
+                            data_structure[yearDel] = {
                                 "totalS": 0,
                                 "totalR": num,
                                 rec: { "exp": 0, "imp": 0 }
@@ -124,6 +122,7 @@ var DiverginhBarChartManager = function() {
                     }
                 }
             }
+
             // console.log(data_structure)
             // console.log(typeof(data_structure));
             data = data_structure
@@ -131,15 +130,16 @@ var DiverginhBarChartManager = function() {
             console.log(d3v4.keys(data))
 
 
-
+            d3v4.keys(data).map(function(d) { console.log(d); })
             x.domain(d3v4.keys(data).map(function(d) { return d; }));
-            var maxUp = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalS"]; });
-            var maxDown = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalR"]; });
+            const maxUp = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalS"]; });
+            const maxDown = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalR"]; });
+            const max = Math.max(maxUp, maxDown)
             console.log(maxUp, maxDown)
-            colour.domain([0, maxUp]);
+            colour.domain([0, max]);
 
-            y.domain([0, maxUp + 10])
-            yDown.domain([maxDown + 10, 0])
+            y.domain([0, max + 10])
+            yDown.domain([max + 10, 0])
                 // y.domain([0, 100])
                 // yDown.domain([0, 100])
 
@@ -238,26 +238,6 @@ var DiverginhBarChartManager = function() {
             var labels = svg.append("g")
                 .attr("class", "labels");
 
-            labels.selectAll("text")
-                .data(d3v4.entries(data))
-                .enter().append("text")
-                .attr("class", "bar-label")
-                .attr("x", x(0))
-                .attr("y", function(d) { return y(d.key) })
-                .attr("dx", function(d) {
-                    return d.value["totalS"] < 0 ? cfg.labelMargin : -cfg.labelMargin;
-                })
-                .attr("dy", x.bandwidth())
-                .attr("text-anchor", function(d) {
-                    return d.value["totalS"] < 0 ? "start" : "end";
-                })
-                .text(function(d) { return d.key })
-                .style("fill", function(d) {
-                    if (Array.from(d.value).includes("ITA")) {
-                        return "blue";
-                    } else
-                        return "white"
-                });
 
         });
     }

@@ -36,11 +36,6 @@
         overflow-y: scroll;
     }
     
-    input {
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-    }
-    
     input[type=submit],
     label,
     select,
@@ -915,7 +910,6 @@ Charts
         box-sizing: border-box;
         display: inline;
         font-size: 10px;
-        width: 100%;
         line-height: 1;
         color: rgba(0, 0, 0, 0.8);
         content: "\25BC";
@@ -1101,13 +1095,25 @@ Charts
     }
     
     .pca-form {
+        font-size: 12px;
         position: absolute;
-        bottom: -10px;
+        left: 5px;
+        bottom: 5px;
         background: none;
-        display: inline-block;
+        /* display: inline-block; */
     }
     
     .text-legend {
         color: "white";
         fill: "white";
+    }
+    
+    .no-shadow {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    #weapon_description {
+        font-size: 12px
     }
