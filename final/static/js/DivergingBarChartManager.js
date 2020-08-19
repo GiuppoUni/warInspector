@@ -130,7 +130,7 @@ var DiverginhBarChartManager = function() {
             console.log(d3v4.keys(data))
 
 
-            d3v4.keys(data).map(function(d) { console.log(d); })
+            // d3v4.keys(data).map(function(d) { console.log(d); })
             x.domain(d3v4.keys(data).map(function(d) { return d; }));
             const maxUp = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalS"]; });
             const maxDown = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalR"]; });

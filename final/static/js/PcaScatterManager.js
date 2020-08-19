@@ -84,6 +84,7 @@ var PcaScatterManager = function() {
             .data(dataset)
             .enter()
             .append("circle")
+            .attr("class", "pca-dots")
             .attr("cx", function(d) {
                 // console.log(x(parseFloat(d[0])), parseFloat(d[0]))
                 return x(parseFloat(d[0]));
@@ -128,7 +129,7 @@ var PcaScatterManager = function() {
             })
         svg.call(tip);
 
-        d3v4.selectAll("circle")
+        d3v4.selectAll(".pca-dots")
             .on('mouseover', d => tip.show(d))
             .on('mouseout', tip.hide)
 

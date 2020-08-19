@@ -1117,3 +1117,8 @@ Charts
     #weapon_description {
         font-size: 12px
     }
+    
+    .tip-map {
+        font-size: 11px;
+        width: 60px;
+    }

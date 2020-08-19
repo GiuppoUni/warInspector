@@ -15,13 +15,17 @@ var weaponsBarChartManager = function() {
             height = 300 - margin.top - margin.bottom;
 
         document.body.onload = function() {
-            txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+            if (chosen_category.includes("/"))
+                desc_category = chosen_category.split("/")[1]
+            txt = $("#" + desc_category.replace(" ", "_") + "_desc").text()
             $("#weapon_description").html(txt)
+
         }
 
         // append the svg object to the body of the page
         var svg = d3v4.select("#weapons_dataviz")
             .append("svg")
+            .attr("id", "weapons-svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -31,6 +35,12 @@ var weaponsBarChartManager = function() {
         // Parse the Data
         d3v4.csv("static/data/merged.csv", function(data) {
                 console.log(data)
+
+                //FILTERING DATA
+                data = data.filter(d => selected_group.includes(d.codeS) || selected_group.includes(d.codeR)).filter(d =>
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]);
+
                 orderedWeapons = d3v4.nest()
                     .key(function(d) {
                         // if (!cats.includes(d["Weapon category"]))
@@ -39,7 +49,7 @@ var weaponsBarChartManager = function() {
                     })
                     .rollup(function(v) {
                         return d3v4.sum(v, function(d) {
-                            return d.Ordered;
+                            return d["Delivered num."].replace("(", "").replace(")", "");
                         })
 
                     })
@@ -81,7 +91,7 @@ var weaponsBarChartManager = function() {
                 svg.call(imageTip);
 
 
-                d3v4.selectAll(".tick")
+                svg.selectAll(".tick")
                     .on('mouseover', function(d) {
                         // console.log(this)
 
@@ -103,7 +113,7 @@ var weaponsBarChartManager = function() {
                     })
                     .on("click", function() {
                         //alert("click")
-                        d3v4.selectAll(".tick")
+                        svg.selectAll(".tick")
                             .filter(function() {
                                 return d3v4.select(this).text() == chosen_category
                             })
@@ -118,10 +128,13 @@ var weaponsBarChartManager = function() {
                         // drawScatter()
                         // console.log("Plot recomputed")
 
-                        console.log(chosen_category)
-                        txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+                        if (chosen_category.includes("/"))
+                            desc_category = chosen_category.split("/")[1]
+
+                        txt = $("#" + desc_category.replace(" ", "_") + "_desc").text()
                         if (txt == "" || txt == null || txt == undefined)
                             txt = "Not available at the moment."
+                        $("#weapon_header").html("Weapon Description: " + "<h7 style='color:red'> &nbsp" + desc_category + "</h7>")
                         $("#weapon_description").html(txt)
 
                     })
@@ -135,7 +148,7 @@ var weaponsBarChartManager = function() {
 
                 svg.call(tip);
 
-                d3v4.selectAll(".tick")
+                svg.selectAll(".tick")
                     .filter(function() {
                         return d3v4.select(this).text() == chosen_category
                     })
@@ -144,16 +157,18 @@ var weaponsBarChartManager = function() {
 
                 $("#scatter_title").html("Weapons by model: " + chosen_category)
                 $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
-
+                if (chosen_category.includes("/"))
+                    chosen_category = chosen_category.split("/")[1]
                 txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
                 if (txt == "" || txt == null || txt == undefined)
                     txt = "Not available at the moment."
+                $("#weapon_header").html("Weapon Description: " + "<h7 style='color:red'> &nbsp" + chosen_category + "</h7>")
                 $("#weapon_description").html(txt)
 
 
                 // Add Y axis
                 var y = d3v4.scaleLinear()
-                    .domain([0, 80000])
+                    .domain([0, 2000])
                     .range([height, 0]);
                 svg.append("g")
                     .call(d3v4.axisLeft(y));

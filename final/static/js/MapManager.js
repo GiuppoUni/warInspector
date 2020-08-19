@@ -22,6 +22,13 @@ var MapManager = function() {
         .on('zoom', zoomed);
 
 
+    var redScale = d3v4.scaleThreshold()
+        .domain([1, 10, 100, 1000, 10000, 100000])
+        .range(["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"])
+
+    var greenScale = d3v4.scaleThreshold()
+        .domain([1, 10, 100, 1000, 10000, 100000])
+        .range(["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"])
 
 
     // IMPORT map
@@ -62,28 +69,6 @@ var MapManager = function() {
 
 
 
-    function zoomed() {
-        g
-            .selectAll('path') // To prevent stroke width from scaling
-            .attr('transform', d3v4.event.transform);
-
-        g_imp
-            .selectAll('path') // To prevent stroke width from scaling
-            .attr('transform', d3v4.event.transform);
-
-
-        g.style("stroke-width", 1.5 / d3v4.event.transform.k + "px");
-        // svg.on("dblclick.zoom", null)
-
-        g_imp.style("stroke-width", 1.5 / d3v4.event.transform.k + "px");
-        // svg2.on("dblclick.zoom", null)
-
-
-
-        d3v4.selectAll(".selected").style("stroke-width", 3.0 / d3v4.event.transform.k + "px");
-        d3v4.selectAll("textPath").attr('transform', d3v4.event.transform)
-    }
-
 
 
 
@@ -119,8 +104,8 @@ var MapManager = function() {
                 //.rollup(function(v) { return v.length; })
                 .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
                 .entries(transactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
-                    parseInt(d["Ordered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                    parseInt(d["Ordered year"].replace(/\(|\)/g, "")) <= years[1]));
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]));
 
 
             const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
@@ -128,9 +113,6 @@ var MapManager = function() {
             // .range(colorScheme);
             if (DEBUG) console.log("Max_from_grouped", max_from_grouped)
             max_from_grouped == -Infinity ? 1000 : max_from_grouped
-            var colorScale = d3v4.scaleThreshold()
-                .domain([1, 10, 100, 1000, 10000, 100000])
-                .range(["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"])
 
 
             for (let i = 0; i < grouped.length; i++) {
@@ -140,7 +122,7 @@ var MapManager = function() {
 
 
 
-            var hm = heatsGroup.append("g")
+            hm = svg.append("g")
                 .attr("class", "heatmap")
                 .attr("id", "heatmap")
                 .selectAll("path")
@@ -150,13 +132,13 @@ var MapManager = function() {
                     // Pull data for this country
                     d.total = data.get(d.id) || 0;
                     // Set the color
-                    return d.total == 0 ? "#696969" : colorScale(d.total);
+                    return d.total == 0 ? "#696969" : greenScale(d.total);
                 })
                 .attr("d", path)
-                .attr("class", "country")
+                .attr("class", "country exp")
                 .classed("selected", function(d) { return selected_group.includes(d.id) })
                 .on('click', selected)
-                .attr("id", d => "country" + d.id)
+                .attr("id", d => "c-exp-" + d.id)
                 .append("title")
                 .text(d => `To ${d.properties.name}
         ${data.has(d.id) ? data.get(d.id) : "0"}`);
@@ -164,7 +146,7 @@ var MapManager = function() {
 
 
             // Legend
-            var lgnd = heatsGroup.append("g")
+            var lgnd = svg.append("g")
                 .attr("class", "legendThreshold")
                 .attr("id", "legendThreshold")
                 .attr("transform", "translate(20,20)");
@@ -184,9 +166,9 @@ var MapManager = function() {
             var legend = d3v4.legendColor()
                 .labels(function(d) { return labels[d.i]; })
                 .shapePadding(4)
-                .scale(colorScale);
+                .scale(greenScale);
 
-            heatsGroup.select(".legendThreshold")
+            svg.select(".legendThreshold")
                 .call(legend);
 
 
@@ -210,9 +192,10 @@ var MapManager = function() {
         d3v4.queue()
             .defer(d3v4.csv, "static/data/merged.csv")
             .defer(d3v4.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
+            .defer(d3v4.csv, "static/data/conflictsMerged2.csv")
             .await(ready)
 
-        function ready(error, transactions, topo) {
+        function ready(error, transactions, topo, wars) {
             // Data and color scale
             var data = d3v4.map();
 
@@ -223,8 +206,16 @@ var MapManager = function() {
                 //.rollup(function(v) { return v.length; })
                 .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
                 .entries(transactions.filter(d => selected_group.includes(d.codeR)).filter(d =>
-                    parseInt(d["Ordered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                    parseInt(d["Ordered year"].replace(/\(|\)/g, "")) <= years[1]));
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]));
+            for (let i = 0; i < grouped.length; i++) {
+                const element = grouped[i];
+                data.set(element.key, +element.value)
+            }
+            console.log(wars)
+            wars = wars.filter(d =>
+                parseInt(d.begin.replace(/\(|\)/g, "")) >= years[0] &&
+                parseInt(d.end.replace(/\(|\)/g, "")) <= years[1]);
 
 
             const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
@@ -232,38 +223,33 @@ var MapManager = function() {
             // .range(colorScheme);
             if (DEBUG) console.log("IMP: Max_from_grouped", max_from_grouped)
             max_from_grouped == -Infinity ? 1000 : max_from_grouped
-            var colorScale = d3v4.scaleThreshold()
-                .domain([1, 10, 100, 1000, 10000, 100000])
-                .range(["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"])
 
 
-            for (let i = 0; i < grouped.length; i++) {
-                const element = grouped[i];
-                data.set(element.key, +element.value)
-            }
+
+
             if (DEBUG) console.log("IMP:", grouped)
 
 
 
-            var hm = heatsGroup_imp.append("g")
+            var hm = svg2.append("g")
                 .attr("class", "heatmap")
                 .attr("id", "heatmap2")
-                .selectAll("path")
+                .selectAll("path2")
                 .data(topo.features)
                 .enter().append("path")
                 .attr("fill", function(d) {
                     // Pull data for this country
                     d.total = data.get(d.id) || 0;
                     // Set the color
-                    if (colorScale == undefined)
+                    if (redScale == undefined)
                         console.error("undefined here")
-                    return d.total == 0 ? "#696969" : colorScale(d.total);
+                    return d.total == 0 ? "#696969" : redScale(d.total);
                 })
                 .attr("d", path)
-                .attr("class", "country")
+                .attr("class", "country imp")
                 .classed("selected", function(d) { return selected_group.includes(d.id) })
                 .on('click', selected)
-                .attr("id", d => "country" + d.id)
+                .attr("id", d => "c-imp-" + d.id)
                 .append("title")
                 .text(d => `From ${d.properties.name}
             ${data.has(d.id) ? data.get(d.id) : "N/A"}`);
@@ -271,7 +257,7 @@ var MapManager = function() {
 
 
             // Legend
-            var lgnd = heatsGroup_imp.append("g")
+            var lgnd = svg2.append("g")
                 .attr("class", "legendThreshold")
                 .attr("id", "legendThreshold2")
                 .attr("transform", "translate(20,20)");
@@ -291,10 +277,64 @@ var MapManager = function() {
             var legend = d3v4.legendColor()
                 .labels(function(d) { return labels[d.i]; })
                 .shapePadding(4)
-                .scale(colorScale);
+                .scale(redScale);
 
-            heatsGroup_imp.select(".legendThreshold")
+            svg2.select(".legendThreshold")
                 .call(legend);
+
+            var z = d3v4.scaleSqrt()
+                .domain([1, 6])
+                .range([10, 30]);
+
+            for (index = 0; index < wars.length; index++) {
+                isos = wars[index].iso.split(";")
+                lats = wars[index].lats.split(";")
+                lons = wars[index].lons.split(";")
+                mag = wars[index].mag
+                for (let j = 0; j < isos.length; j++) {
+
+                    // TODO SONO SBALLATE
+                    // console.log(lons, lats)
+
+                    // console.log(isos[j], projection([lons[j], lats]), isos.length)
+
+                    lon = lons[j]
+                    lat = lats[j]
+
+                    if (projection(lon, lat).includes(NaN))
+                        console.log(lon, lat)
+
+                    // heatsGroup_imp
+                    //     .append('g')
+                    //     .data([wars[index]])
+                    //     .append("circle")
+                    //     .attr("class", function(d) { return "war-dot" })
+                    //     .attr("cx", projection(lon, lat)[0])
+                    //     .attr("cy", projection(lon, lat)[1])
+                    //     .attr("r", z(mag))
+                    //     // return z(wars[index].mag);
+                    //     .style("fill", "white")
+                    //     .style("stroke", "black")
+                    //     .style("opacity", .5)
+
+                }
+
+
+            }
+            // var tip = d3v4.tip()
+            //     .attr('class', 'd3-tip')
+            //     .offset([-10, 0])
+            //     .html(function(d) {
+            //         return '<div class="tip-map">' + d.states + "</br>" + d.description + '<br/>' + d.begin +
+            //             "-" + d.end + "</div>";
+            //     })
+            // heatsGroup_imp.call(tip);
+
+            // d3v4.selectAll(".war-dot")
+            //     .on('mouseover', d => tip.show(d))
+            //     .on('mouseout', tip.hide)
+
+
 
 
 
@@ -305,6 +345,37 @@ var MapManager = function() {
 
 
 
+    function zoomed() {
+        svg
+            .selectAll('.country') // To prevent stroke width from scaling
+            .attr('transform', d3v4.event.transform)
+            .style("stroke-width", 1.5 / d3v4.event.transform.k + "px");
+
+        svg2
+            .selectAll('.country') // To prevent stroke width from scaling
+            .attr('transform', d3v4.event.transform)
+            .style("stroke-width", 1.5 / d3v4.event.transform.k + "px");
+
+        // heatsGroup_imp
+        //     .selectAll('.war-dot') // To prevent stroke width from scaling
+        //     .attr('transform', d3v4.event.transform)
+        //     .style("r", function() {
+
+        //         return d3v4.select(this).attr("r") / d3v4.event.transform.k + "px"
+        //     });
+
+
+
+        // svg.on("dblclick.zoom", null)
+
+        // svg2.on("dblclick.zoom", null)
+
+
+
+        d3v4.selectAll(".selected").style("stroke-width", 3.0 / d3v4.event.transform.k + "px");
+        d3v4.selectAll("textPath").attr('transform', d3v4.event.transform)
+    }
+
 
 
     function selected(country_id = null) {
@@ -314,7 +385,7 @@ var MapManager = function() {
         } else if (typeof country_id === 'string' || country_id instanceof String) {
             // FROM SEARCH BAR
             // country_id = country_id.trim()
-            el = d3v4.selectAll("#country" + country_id)
+            el = d3v4.selectAll("#c-imp-" + country_id)
             if (el === undefined) {
                 alert("Country" + country_id + " not found")
                 return
@@ -328,7 +399,13 @@ var MapManager = function() {
         // Country is SELECTED
         if (!el.classed("selected")) {
             selected_group.push(country_id)
-            d3v4.selectAll("#country" + country_id)
+            d3v4.selectAll("#c-imp-" + country_id)
+                // .transition()
+                // .duration(400)
+                .classed('selected', true);
+            d3v4.selectAll("#c-exp-" + country_id)
+                // .transition()
+                // .duration(400)
                 .classed('selected', true);
 
 
@@ -349,22 +426,24 @@ var MapManager = function() {
                 selected_group.splice(index, 1);
             }
 
-            d3v4.selectAll("#country" + el.data()[0].id)
+            d3v4.selectAll("#c-imp-" + el.data()[0].id)
                 .classed('selected', false);
+            d3v4.selectAll("#c-exp-" + el.data()[0].id)
+                .classed('selected', false);
+
         }
 
 
-        d3v4.selectAll(".heatmap").remove()
-        d3v4.selectAll(".legendThreshold").remove()
-        d3v4.selectAll(".legendCells").remove()
+        // d3v4.selectAll(".heatmap").remove()
+        // d3v4.selectAll(".legendThreshold").remove()
+        // d3v4.selectAll(".legendCells").remove()
 
-        mm.drawCloroExp()
-        mm.drawCloroImp()
-            // cm.updateCountry()
-
+        //mm.drawCloroExp()
+        //mm.drawCloroImp()
+        mm.selectedTransition()
         dbcm.drawChart();
 
-        updateCircular()
+        // updateCircular()
         getDataFromPost()
 
 
@@ -537,9 +616,137 @@ var MapManager = function() {
         return years
     }
 
+
+    var sliderTransition = function() {
+
+        var impData = d3v4.map();
+        d3v4.queue()
+            .defer(d3v4.csv, "static/data/merged.csv")
+            .await(ready)
+
+        function ready(error, transactions) {
+
+            var impData = d3v4.map()
+            var groupedImp = d3v4
+                .nest()
+                .key(function(d) { return d.codeS; })
+                //.rollup(function(v) { return v.length; })
+                .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
+                .entries(transactions.filter(d => selected_group.includes(d.codeR)).filter(d =>
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]));
+            for (let i = 0; i < groupedImp.length; i++) {
+                const element = groupedImp[i];
+                impData.set(element.key, +element.value)
+            }
+            svg2.selectAll(".country.imp")
+                .transition()
+                .duration(2000)
+                .attr("fill", function(d) {
+                    // Pull data for this country
+                    d.total = impData.get(d.id) || 0;
+                    // console.log("TOTAL", d.total)
+                    // Set the color
+                    return d.total == 0 ? "#696969" : redScale(d.total);
+                })
+
+
+            var expData = d3v4.map()
+            var groupedExp = d3v4
+                .nest()
+                .key(function(d) { return d.codeR; })
+                //.rollup(function(v) { return v.length; })
+                .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
+                .entries(transactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]));
+
+            for (let i = 0; i < groupedExp.length; i++) {
+                const element = groupedExp[i];
+                expData.set(element.key, +element.value)
+            }
+
+            svg.selectAll(".country.exp")
+                .transition()
+                .duration(1000)
+                .attr("fill", function(d) {
+                    // Pull data for this country
+                    d.total = expData.get(d.id) || 0;
+                    // Set the color
+                    return d.total == 0 ? "#696969" : greenScale(d.total);
+                })
+        }
+
+    }
+
+
+    var selectedTransition = function() {
+
+        var impData = d3v4.map();
+        d3v4.queue()
+            .defer(d3v4.csv, "static/data/merged.csv")
+            .await(ready)
+
+        function ready(error, transactions) {
+
+            var impData = d3v4.map()
+            var groupedImp = d3v4
+                .nest()
+                .key(function(d) { return d.codeS; })
+                //.rollup(function(v) { return v.length; })
+                .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
+                .entries(transactions.filter(d => selected_group.includes(d.codeR)).filter(d =>
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]));
+            for (let i = 0; i < groupedImp.length; i++) {
+                const element = groupedImp[i];
+                impData.set(element.key, +element.value)
+            }
+            svg2.selectAll(".country.imp")
+                .transition()
+                .duration(2000)
+                .attr("fill", function(d) {
+                    // Pull data for this country
+                    d.total = impData.get(d.id) || 0;
+                    // console.log("TOTAL", d.total)
+                    // Set the color
+                    return d.total == 0 ? "#696969" : redScale(d.total);
+                })
+
+
+            var expData = d3v4.map()
+            var groupedExp = d3v4
+                .nest()
+                .key(function(d) { return d.codeR; })
+                //.rollup(function(v) { return v.length; })
+                .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
+                .entries(transactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
+                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]));
+
+            for (let i = 0; i < groupedExp.length; i++) {
+                const element = groupedExp[i];
+                expData.set(element.key, +element.value)
+            }
+
+            svg.selectAll(".country.exp")
+                .transition()
+                .duration(1000)
+                .attr("fill", function(d) {
+                    // Pull data for this country
+                    d.total = expData.get(d.id) || 0;
+                    // Set the color
+                    return d.total == 0 ? "#696969" : greenScale(d.total);
+                })
+        }
+    }
+
+
     return {
         drawCloroExp: drawCloroExp,
         drawCloroImp: drawCloroImp,
+        sliderTransition: sliderTransition,
+        selectedTransition: selectedTransition,
         getYearsInterval: getYearsInterval,
         setYearInterval: setYearInterval,
 

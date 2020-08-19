@@ -77,15 +77,19 @@ var MapComponentsManager = function() {
     function updateOnSliderChange() {
         // d3v4.selectAll(".arches").remove()
 
-        d3v4.selectAll(".heatmap").remove()
-        d3v4.selectAll(".legendThreshold").remove()
-        d3v4.selectAll(".legendCells").remove()
-        mm.drawCloroExp()
-        mm.drawCloroImp()
+        // d3v4.selectAll(".heatmap").remove()
+        // d3v4.selectAll(".legendThreshold").remove()
+        // d3v4.selectAll(".legendCells").remove()
+        // mm.drawCloroExp()
+        mm.sliderTransition()
+            // mm.drawCloroImp()
 
         getDataFromPost()
         callUpdateGeneralInfo()
         dbcm.drawChart()
+
+        $("#weapons-svg").remove();
+        wbcm.drawChart();
     }
 
 
