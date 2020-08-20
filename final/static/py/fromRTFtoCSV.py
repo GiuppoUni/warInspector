@@ -3,8 +3,8 @@ import csv
 import os
 import string
 
-PATH="static/data/"
-RTF_FILE="Trade-Register-2010-2018.rtf"
+PATH="../data/"
+RTF_FILE="Trade-Register-1990-2019.rtf"
 #flags
 
 

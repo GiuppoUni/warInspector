@@ -24,20 +24,22 @@ function main() {
 
     //Layout movements
 
-    getDataFromPost();
-
 
     mcm = MapComponentsManager();
+    dbcm = DivergingBarChartManager();
+    mm = MapManager();
+    pcam = PcaScatterManager();
+
+
+    getDataFromPost();
+
     mcm.drawSlider()
 
-    mm = MapManager();
     mm.drawCloroExp();
     mm.drawCloroImp();
 
     // cm = ChartManager();
-    pcam = PcaScatterManager();
 
-    dbcm = DiverginhBarChartManager();
     dbcm.drawChart();
 
     // rm = RankRaceManager();
@@ -265,3 +267,5 @@ function callSelected(id) {
     mm.selected(id)
 
 }
+
+function transitionDivBarChart(dataTransitions) { dbcm.transitionSlider(dataTransitions) }

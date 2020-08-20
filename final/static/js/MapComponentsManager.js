@@ -86,10 +86,10 @@ var MapComponentsManager = function() {
 
         getDataFromPost()
         callUpdateGeneralInfo()
-        dbcm.drawChart()
+            // dbcm.drawChart()
 
-        $("#weapons-svg").remove();
-        wbcm.drawChart();
+        // $("#weapons-svg").remove();
+        // wbcm.drawChart();
     }
 
 

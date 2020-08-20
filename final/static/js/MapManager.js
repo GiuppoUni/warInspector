@@ -304,35 +304,35 @@ var MapManager = function() {
                     if (projection(lon, lat).includes(NaN))
                         console.log(lon, lat)
 
-                    // heatsGroup_imp
-                    //     .append('g')
-                    //     .data([wars[index]])
-                    //     .append("circle")
-                    //     .attr("class", function(d) { return "war-dot" })
-                    //     .attr("cx", projection(lon, lat)[0])
-                    //     .attr("cy", projection(lon, lat)[1])
-                    //     .attr("r", z(mag))
-                    //     // return z(wars[index].mag);
-                    //     .style("fill", "white")
-                    //     .style("stroke", "black")
-                    //     .style("opacity", .5)
+                    heatsGroup_imp
+                        .append('g')
+                        .data([wars[index]])
+                        .append("circle")
+                        .attr("class", function(d) { return "war-dot" })
+                        .attr("cx", projection(lon, lat)[0])
+                        .attr("cy", projection(lon, lat)[1])
+                        .attr("r", z(mag))
+                        // return z(wars[index].mag);
+                        .style("fill", "white")
+                        .style("stroke", "black")
+                        .style("opacity", .5)
 
                 }
 
 
             }
-            // var tip = d3v4.tip()
-            //     .attr('class', 'd3-tip')
-            //     .offset([-10, 0])
-            //     .html(function(d) {
-            //         return '<div class="tip-map">' + d.states + "</br>" + d.description + '<br/>' + d.begin +
-            //             "-" + d.end + "</div>";
-            //     })
-            // heatsGroup_imp.call(tip);
+            var tip = d3v4.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                    return '<div class="tip-map">' + d.states + "</br>" + d.description + '<br/>' + d.begin +
+                        "-" + d.end + "</div>";
+                })
+            heatsGroup_imp.call(tip);
 
-            // d3v4.selectAll(".war-dot")
-            //     .on('mouseover', d => tip.show(d))
-            //     .on('mouseout', tip.hide)
+            d3v4.selectAll(".war-dot")
+                .on('mouseover', d => tip.show(d))
+                .on('mouseout', tip.hide)
 
 
 
@@ -441,7 +441,7 @@ var MapManager = function() {
         //mm.drawCloroExp()
         //mm.drawCloroImp()
         mm.selectedTransition()
-        dbcm.drawChart();
+            // dbcm.drawChart();
 
         // updateCircular()
         getDataFromPost()
@@ -626,6 +626,11 @@ var MapManager = function() {
 
         function ready(error, transactions) {
 
+            // CALL TRANSACTION ON DIV BAR CHART
+            transitionDivBarChart(transactions)
+
+
+            // FOR IMPORT MAP
             var impData = d3v4.map()
             var groupedImp = d3v4
                 .nest()
@@ -650,7 +655,7 @@ var MapManager = function() {
                     return d.total == 0 ? "#696969" : redScale(d.total);
                 })
 
-
+            // FOR EXPORT MAP
             var expData = d3v4.map()
             var groupedExp = d3v4
                 .nest()
@@ -675,8 +680,8 @@ var MapManager = function() {
                     // Set the color
                     return d.total == 0 ? "#696969" : greenScale(d.total);
                 })
-        }
 
+        }
     }
 
 

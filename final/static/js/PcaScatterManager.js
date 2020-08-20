@@ -136,15 +136,15 @@ var PcaScatterManager = function() {
         // new X axis
         x.domain([-2, 13])
         svg.select(".myXaxis")
-            .transition()
-            .duration(2000)
+            // .transition()
+            // .duration(2000)
             .attr("opacity", "1")
             .call(d3v4.axisBottom(x));
 
         svg.selectAll("circle")
-            .transition()
-            .delay(function(d, i) { return (i * 3) })
-            .duration(2000)
+            // .transition()
+            // .duration(2000)
+            // .delay(function(d, i) { return (i * 3) })
             .attr("cx", function(d) {
                 return x(parseFloat(d[0]));
             })
@@ -152,9 +152,10 @@ var PcaScatterManager = function() {
                 return y(parseFloat(d[1]));
             })
 
-        svg.append("text").transition()
+        svg.append("text")
             .attr("id", "pca-" + type + "-title")
-            .duration(1000)
+            // .transition()
+            // .duration(1000)
             .text("PCA")
             .attr("x", width - 10)
             .attr("y", 15)

@@ -19,8 +19,8 @@ def main():
     #         out.write(line)            
 
 
-    out = open("static/data/merged.csv","w")
-    original1 = open("static/data/Trade-Register-2010-2018.csv","r")
+    out = open("../data/merged1990.csv","w")
+    original1 = open("../data/Trade-Register-1990-2019.csv","r")
     # suppliers=[]
     # recipients=[]
     regex = re.compile('[^a-zA-Z]')
@@ -40,7 +40,7 @@ def main():
         # if(l1[1] not in recipients):
         #     recipients.append(l1[1])
 
-        original2 = open("static/data/countriesAlpha3.csv","r")
+        original2 = open("../data/countriesAlpha3.csv","r")
         latS=""
         longS=""
         codeS=""
