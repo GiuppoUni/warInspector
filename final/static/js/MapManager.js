@@ -444,7 +444,7 @@ var MapManager = function() {
             // dbcm.drawChart();
 
         // updateCircular()
-        getDataFromPost()
+        getDataFromPost(true)
 
 
     }

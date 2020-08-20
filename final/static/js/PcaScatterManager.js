@@ -14,32 +14,43 @@ var PcaScatterManager = function() {
         .domain([1, 10, 100, 500, 2000, 4000])
         .range(["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"])
 
-    var svg;
-    // function 
-    var drawChart = function(dataset, type) {
-        if (dataset == null) {
-            $("#pca-svg").remove()
-            return
-        }
-        // console.log("Drawing pca", dataset, type)
-        id = "#pca-col"
-            // set the dimensions and margins of the graph
+    // append the svg object to the body of the page
+    var svg = d3v4.select("#pca-col")
+        .append("svg")
+        // .attr("class", "pca-svg")
+        .attr("id", "pca-svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        // append the svg object to the body of the page
-        svg = d3v4.select(id)
-            .append("svg")
-            .attr("class", "pca-svg")
-            .attr("id", "pca-svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var zoom;
+
+    var x = d3v4.scaleLinear()
+        .range([0, width]);
+
+    var y = d3v4.scaleLinear()
+        .domain([-5, 5])
+        .range([height, 0]);
+
+    var new_xScale = x
+    var new_yScale = y
+
+    var drawChart = function(dataset, type) {
+        // if (dataset == null) {
+        //     $("#pca-svg").remove()
+        //     return
+        // }
+        // // console.log("Drawing pca", dataset, type)
+        // id = "#pca-col"
+        //     // set the dimensions and margins of the graph
+
 
         svg.append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")")
 
         // Pan and zoom
-        var zoom = d3v4.zoom()
+        zoom = d3v4.zoom()
             .scaleExtent([.5, 20])
             .extent([
                 [0, 0],
@@ -60,8 +71,7 @@ var PcaScatterManager = function() {
         //Read the data
 
         // Add X axis
-        var x = d3v4.scaleLinear()
-            .range([0, width]);
+
         var xAxis = d3v4.axisBottom(x)
         var gX = svg.append("g")
             .attr("class", "myXaxis") // Note that here we give a class to the X axis, to be able to call it later and modify it
@@ -70,9 +80,7 @@ var PcaScatterManager = function() {
             .attr("opacity", "0")
 
         // Add Y axis
-        var y = d3v4.scaleLinear()
-            .domain([-5, 5])
-            .range([height, 0]);
+
 
         var yAxis = d3v4.axisLeft(y)
         var gY = svg.append("g")
@@ -94,12 +102,10 @@ var PcaScatterManager = function() {
             .style("fill", function(d) {
                 // console.log(d[4])
 
-                if ($("#cbExp").checked && $("#cbExp").checked)
-                    return "white"
-                else if ($("#cbImp")[0].checked)
+                if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
                     return redColorScale(d[5])
 
-                else if ($("#cbExp")[0].checked)
+                else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
                     return greenColorScale(d[6])
                 else
                     return "white"
@@ -141,16 +147,6 @@ var PcaScatterManager = function() {
             .attr("opacity", "1")
             .call(d3v4.axisBottom(x));
 
-        svg.selectAll("circle")
-            // .transition()
-            // .duration(2000)
-            // .delay(function(d, i) { return (i * 3) })
-            .attr("cx", function(d) {
-                return x(parseFloat(d[0]));
-            })
-            .attr("cy", function(d) {
-                return y(parseFloat(d[1]));
-            })
 
         svg.append("text")
             .attr("id", "pca-" + type + "-title")
@@ -216,10 +212,21 @@ var PcaScatterManager = function() {
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
 
+        svg.selectAll(".pca-dots")
+            .transition()
+            .duration(2000)
+            // .delay(function(d, i) { return (i * 3) })
+            .attr("cx", function(d) {
+                return x(parseFloat(d[0]));
+            })
+            .attr("cy", function(d) {
+                return y(parseFloat(d[1]));
+            })
+
         function zoomed() {
             // create new scale ojects based on event
-            var new_xScale = d3v4.event.transform.rescaleX(x);
-            var new_yScale = d3v4.event.transform.rescaleY(y);
+            new_xScale = d3v4.event.transform.rescaleX(x);
+            new_yScale = d3v4.event.transform.rescaleY(y);
             // update axes
             gX.call(xAxis.scale(new_xScale));
             gY.call(yAxis.scale(new_yScale));
@@ -290,6 +297,45 @@ var PcaScatterManager = function() {
 
     // }
 
+    var transition = function(data) {
+        svg.selectAll(".pca-dots")
+            .data(data)
+            .transition()
+            .duration(2000)
+            .style("fill", function(d) {
+                // console.log(d[4])
+
+                if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
+                    return redColorScale(d[5])
+
+                else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
+                    return greenColorScale(d[6])
+                else
+                    return "white"
+
+                // "#d00101" : "#009344"
+                // return "#f6ff00"
+
+            })
+            .style("stroke", function(d) {
+
+                if (d[4])
+                    return "#f6ff00"
+                else
+                    return "black"
+            })
+
+        .duration(2000)
+            // .delay(function(d, i) { return (i * 3) })
+            .attr("cx", function(d) {
+                return new_xScale(d[0]);
+            })
+            .attr("cy", function(d) {
+                return new_yScale(d[1]);
+            })
+
+    }
+
     var resetZoom = function(type) {
         var idx
         if (type === "IMP")
@@ -297,13 +343,15 @@ var PcaScatterManager = function() {
         else
             idx = 1;
         // console.log(type, idx, svgs[idx], zooms)
-        svg.transition()
+        svg
+            .transition()
             .duration(100)
             .call(zoom.transform, d3v4.zoomIdentity);
 
     }
     return {
         drawChart: drawChart,
-        resetZoom: resetZoom
+        resetZoom: resetZoom,
+        transition: transition,
     }
 }

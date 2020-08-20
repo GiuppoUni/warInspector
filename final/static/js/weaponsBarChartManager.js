@@ -120,7 +120,7 @@ var weaponsBarChartManager = function() {
                             .select('g > text')
                             .style("fill", "white")
 
-                        chosen_category = d3v4.select(this).text()
+                        desc_category = d3v4.select(this).text()
 
                         // $("#scatter_title").html("Weapons by model: " + chosen_category)
 
@@ -128,8 +128,8 @@ var weaponsBarChartManager = function() {
                         // drawScatter()
                         // console.log("Plot recomputed")
 
-                        if (chosen_category.includes("/"))
-                            desc_category = chosen_category.split("/")[1]
+                        if (desc_category.includes("/"))
+                            desc_category = desc_category.split("/")[1]
 
                         txt = $("#" + desc_category.replace(" ", "_") + "_desc").text()
                         if (txt == "" || txt == null || txt == undefined)

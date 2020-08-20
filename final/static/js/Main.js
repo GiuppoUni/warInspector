@@ -31,7 +31,7 @@ function main() {
     pcam = PcaScatterManager();
 
 
-    getDataFromPost();
+    getDataFromPost(false);
 
     mcm.drawSlider()
 
@@ -97,7 +97,7 @@ function clickedNation() {
 
 
 
-function getDataFromPost() {
+function getDataFromPost(isCreated) {
     url = "/get-data"
         // url+="?country="+country_selected
         // url+="&year1="+years[0]+"&year2="+years[1]
@@ -139,11 +139,13 @@ function getDataFromPost() {
                 // $("div[id*='fig']").prop("class", "pca-fig");
 
                 $(".lds-facebook").fadeOut()
-
-                pcam.drawChart(root[3][0], "IMP")
-
-                // pcam.drawBasicChart(root[3], "IMP")
-                // pcam.drawBasicChart(root[4], "EXP")
+                if (!isCreated) {
+                    pcam.drawChart(root[3][0], "IMP")
+                    isCreated = true
+                }
+                pcam.transition(root[3][0])
+                    // pcam.drawBasicChart(root[3], "IMP")
+                    // pcam.drawBasicChart(root[4], "EXP")
 
             }
         });
@@ -236,6 +238,7 @@ function handleClick(cb) {
     if (!cb.checked) {
 
         // remove element
+
         const index = pca_features.indexOf(cb.value);
         if (index > -1) {
             pca_features.splice(index, 1);
@@ -243,8 +246,29 @@ function handleClick(cb) {
     } else {
         pca_features.push(cb.value)
     }
-    getDataFromPost()
+    getDataFromPost(true)
     checkMinFeaturesPCA()
+}
+
+function handleRadioClick(rb) {
+    if (rb.id = "cbImp") {
+        toRemove = "EXPORT_TOTAL"
+
+    } else if (rb.id = "cbExp") {
+        toRemove = "IMPORT_TOTAL"
+    } else {
+        throw Error
+    }
+    // REMOVE THE OTHER
+    const index = pca_features.indexOf(toRemove);
+    if (index > -1) {
+        pca_features.splice(index, 1);
+    }
+    //INSERT INTO IT
+    if (!pca_features.includes(rb.value))
+        pca_features.push(rb.value)
+    getDataFromPost(true)
+
 }
 
 function checkMinFeaturesPCA() {

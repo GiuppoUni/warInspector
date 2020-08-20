@@ -226,11 +226,20 @@
                     <!-- <div class="card-header  d-flex align-items-center justify-content-center  text-center">
                         PCA </div> -->
                     <div class="card-body" style="height: 340px; display: inline-block;   padding-left: 0px;">
-                        <div class="pca-form">
-                            <input type="checkbox" class="myCheckBox" id="cbImp" name="cb1" value="IMPORT_TOTAL" checked="true" onclick='handleClick(this);'>
+                        <div class="pca-form ">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="cbImp" name="cb" value="IMPORT_TOTAL" checked="true" onclick='handleRadioClick(this);'>
+                                <label for="cbImp"> Import</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="cbExp" name="cb" value="EXPORT_TOTAL" onclick='handleRadioClick(this);'>
+                                <label for="cbExp">Export</label>
+                            </div>
+
+                            <!-- <input type="checkbox" class="myCheckBox" id="cbImp" name="cb1" value="IMPORT_TOTAL" checked="true" onclick='handleClick(this);'>
                             <label for="cb1"> Import</label>
                             <input type="checkbox" class="myCheckBox" id="cbExp" name="cb2" value="EXPORT_TOTAL" onclick='handleClick(this);'>
-                            <label for="cb2"> Export</label>
+                            <label for="cb2"> Export</label> -->
                             <input type="checkbox" class="myCheckBox" id="cb3" name="cb3" value="ARMY_TOTAL" checked="true" onclick='handleClick(this);'>
                             <label for="cb3"> Army</label>
                             <input type="checkbox" class="myCheckBox" id="cb4" name="cb4" value="REF_TOTAL" checked="true" onclick='handleClick(this);'>

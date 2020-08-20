@@ -84,7 +84,7 @@ var MapComponentsManager = function() {
         mm.sliderTransition()
             // mm.drawCloroImp()
 
-        getDataFromPost()
+        getDataFromPost(true)
         callUpdateGeneralInfo()
             // dbcm.drawChart()
 

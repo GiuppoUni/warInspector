@@ -1122,3 +1122,7 @@ Charts
         font-size: 11px;
         width: 60px;
     }
+    
+    #cbExp {
+        margin-left: 5px;
+    }

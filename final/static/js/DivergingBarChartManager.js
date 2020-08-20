@@ -173,7 +173,7 @@ var DivergingBarChartManager = function() {
                     .tickFormat(d3v4.format('d')))
 
             var xAxis = svg.append("g")
-                .attr("class", "x-div-axis")
+                .attr("id", "x-div-axis")
                 .attr("transform", "translate(0," + (height + cfg.xAxisMargin) + ")")
                 .call(d3v4.axisBottom(x).tickSizeOuter(0));
 
@@ -181,7 +181,7 @@ var DivergingBarChartManager = function() {
                 .attr("class", "bars")
 
             // BARRE SUPERIORI
-            bars.selectAll("rect")
+            bars.selectAll("myExpRects")
                 .data(d3v4.entries(data))
                 .enter().append("rect")
                 .attr("class", "div-bars-exp")
@@ -199,7 +199,7 @@ var DivergingBarChartManager = function() {
                 });
 
             // BARRE INFERIORI
-            bars.selectAll("rect2")
+            bars.selectAll("myImpRects")
                 .data(d3v4.entries(data))
                 .enter().append("rect")
                 .attr("class", "div-bars-imp")
@@ -266,8 +266,8 @@ var DivergingBarChartManager = function() {
 
             // Take the ordered and delivered data is in the interval
             var yearDel = stripYear(row["Delivered year"]);
-            console.log(yearDel)
-                // Check years in the interval and the country
+            // console.log(yearDel)
+            // Check years in the interval and the country
             if (!isNaN(yearDel) && yearDel >= years[0] && yearDel <= years[1]) {
 
                 var num;
@@ -315,7 +315,7 @@ var DivergingBarChartManager = function() {
             }
 
         }
-        data_structure
+        // data_structure
         // NEW AXIS
 
         x.domain(d3v4.keys(data_structure).map(function(d) { return d; }));
@@ -334,13 +334,16 @@ var DivergingBarChartManager = function() {
             .filter(Number.isInteger);
         const yDownAxisTicks = yDown.ticks()
             .filter(Number.isInteger);
+        console.log(svg.select('#y-div-axis'))
+
         svg.select('#y-div-axis')
             .transition()
             .duration(2000)
             .call(d3v4.axisLeft(y)
                 .tickValues(yAxisTicks)
                 .tickFormat(d3v4.format('d')))
-        svg.select("y-down-div-axis")
+
+        svg.select("#y-down-div-axis")
             .transition()
             .duration(2000)
             .call(d3v4.axisLeft(yDown)
@@ -352,6 +355,69 @@ var DivergingBarChartManager = function() {
             .duration(2000)
             .attr("transform", "translate(0," + (height + cfg.xAxisMargin) + ")")
             .call(d3v4.axisBottom(x).tickSizeOuter(0));
+
+        //Transition on bars
+
+        // BARRE SUPERIORI
+        var u = svg.selectAll(".div-bars-exp")
+            .data(d3v4.entries(data_structure))
+
+        u.enter().append("rect")
+            .merge(u)
+            .transition()
+            .duration(2000)
+            .attr("class", "div-bars-exp")
+            .attr("height", function(d) {
+                return height / 2 - y(d.value["totalS"]);
+            })
+            .attr("x", function(d) { return x(d.key); })
+            .attr("width", x.bandwidth())
+            .attr("y", function(d) {
+                return y(d.value["totalS"])
+            })
+            .style("fill", function(d) {
+                // return colour(d.value["totalS"])
+                return "green"
+            });
+
+        u
+            .exit()
+            .transition() // and apply changes to all of them
+            .duration(1000)
+            .style("opacity", 0)
+            .remove()
+
+        var u2 = svg.selectAll(".div-bars-imp")
+            .data(d3v4.entries(data_structure))
+
+        // BARRE INFERIORI
+        u2
+            .enter()
+            .append("rect")
+            .merge(u2)
+            .transition()
+            .duration(2000)
+            .attr("class", "div-bars-imp")
+            .attr("height", function(d) {
+                // console.log(d.value["totalR"])
+                return yDown(d.value["totalR"]) - height / 2
+            })
+            .attr("x", function(d) { return x(d.key); })
+            .attr("width", x.bandwidth())
+            .attr("y", function(d) {
+                return height / 2;
+            })
+            .style("fill", function(d) {
+                // return colorRed(d.value["totalR"])
+                return "red"
+            });
+
+        u2
+            .exit()
+            .transition() // and apply changes to all of them
+            .duration(1000)
+            .style("opacity", 0)
+            .remove()
 
     }
     return {
