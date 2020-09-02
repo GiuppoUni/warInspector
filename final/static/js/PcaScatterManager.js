@@ -2,7 +2,7 @@ var PcaScatterManager = function() {
     // var country_selected = ["ITA"];
 
 
-    var margin = { top: 15, right: 30, bottom: 30, left: 30 },
+    var margin = { top: 15, right: 30, bottom: 50, left: 30 },
         width = 400 - margin.left - margin.right,
         height = 290 - margin.top - margin.bottom;
 
@@ -93,6 +93,7 @@ var PcaScatterManager = function() {
             .enter()
             .append("circle")
             .attr("class", "pca-dots")
+            .attr("id", d => "dot-" + d[2])
             .attr("cx", function(d) {
                 // console.log(x(parseFloat(d[0])), parseFloat(d[0]))
                 return x(parseFloat(d[0]));
@@ -148,16 +149,16 @@ var PcaScatterManager = function() {
             .call(d3v4.axisBottom(x));
 
 
-        svg.append("text")
-            .attr("id", "pca-" + type + "-title")
-            // .transition()
-            // .duration(1000)
-            .text("PCA")
-            .attr("x", width - 10)
-            .attr("y", 15)
-            .style("font-family", "Ubuntu")
-            .style("font-size", "20px")
-            .attr("fill", "white")
+        // svg.append("text")
+        //     .attr("id", "pca-" + type + "-title")
+        //     // .transition()
+        //     // .duration(1000)
+        //     .text("PCA")
+        //     .attr("x", width - 10)
+        //     .attr("y", 15)
+        //     .style("font-family", "Ubuntu")
+        //     .style("font-size", "20px")
+        //     .attr("fill", "white")
 
         var tipText = d3v4.tip()
             .attr('class', 'd3-tip')
@@ -185,13 +186,19 @@ var PcaScatterManager = function() {
             .data(allgroups)
             .enter()
             .append("circle")
+            .attr("class", "legendDot")
             .attr("cx", width * 2 / 3 + 35)
             .attr("cy", function(d, i) { return margin.top + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 3)
             .style("fill", function(d) {
-                if (d != "selected")
-                    return type === "IMP" ? "#d00101" : "#009344"
-                else
+                if (d != "selected") {
+
+                    if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
+                        return "#d00101"
+
+                    else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
+                        return "#009344"
+                } else
                     return "#f6ff00"
             })
 
@@ -200,6 +207,7 @@ var PcaScatterManager = function() {
             .data(allgroups)
             .enter()
             .append("text")
+            .attr("class", "legendText")
             .attr("x", width * 2 / 3 + 35 + size * .8)
             .attr("y", function(d, i) { return margin.top + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d) {
@@ -333,7 +341,38 @@ var PcaScatterManager = function() {
             .attr("cy", function(d) {
                 return new_yScale(d[1]);
             })
+            .attr("r", function(d) { return !d[4] ? 3 : 4.5 })
 
+        // console.log("transitioning")
+        svg.selectAll(".legendDot")
+            .transition()
+            .duration(1000)
+            .style("fill", function(d) {
+                if (d != "selected") {
+
+                    if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
+                        return "#d00101"
+
+                    else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
+                        return "#009344"
+                } else
+                    return "#f6ff00"
+            })
+
+        svg.selectAll(".legendText")
+            .transition()
+            .duration(1000)
+            .style("fill", function(d) {
+                if (d != "selected") {
+
+                    if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
+                        return "#d00101"
+
+                    else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
+                        return "#009344"
+                } else
+                    return "#f6ff00"
+            })
     }
 
     var resetZoom = function(type) {
@@ -349,9 +388,32 @@ var PcaScatterManager = function() {
             .call(zoom.transform, d3v4.zoomIdentity);
 
     }
+
+
+    var selectCountryTransition = function(country_id, isSelected) {
+        if (isSelected) {
+            svg.select("#dot-" + country_id)
+                .transition()
+                .duration(1000)
+                .style("stroke", function() {
+                    // if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
+                    return "#f6ff00"
+                        // else
+                        //     return "#ff9c00"
+                })
+                .attr("r", 4.5)
+        } else {
+            svg.select("#dot-" + country_id)
+                .transition()
+                .duration(1000)
+                .style("stroke", "black")
+                .attr("r", 3.0)
+        }
+    }
     return {
         drawChart: drawChart,
         resetZoom: resetZoom,
         transition: transition,
+        selectCountryTransition: selectCountryTransition,
     }
 }

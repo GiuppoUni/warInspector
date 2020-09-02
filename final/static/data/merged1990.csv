@@ -368,7 +368,7 @@ Brazil,Bolivia,15,A-122 Uirapuru,Trainer aircraft,(1991),1992,15,Second-hand,-14
 Brazil,Bolivia,6,Universal,Trainer aircraft,2005,2005,6,Second-hand | gift,-14.235004,-51.92528,BRA,-16.290154,-63.588653,BOL
 Brazil,Bolivia,4,Bell-205/UH-1H,Helicopter,2011,2012,4,Second-hand | aid | for anti-narcotics operations,-14.235004,-51.92528,BRA,-16.290154,-63.588653,BOL
 Brazil,Burkina Faso,(3),EMB-314 Super Tucano,Trainer/combat ac,(2010),2011,3,,-14.235004,-51.92528,BRA,12.238333,-1.561593,BFA
-Brazil,Cabo Verde,1,EMB-110 Bandeirante,Light transport ac,(1998),1998,1,For coast guard | incl for MP,-14.235004,-51.92528,BRA,,,
+Brazil,Cabo Verde,1,EMB-110 Bandeirante,Light transport ac,(1998),1998,1,For coast guard | incl for MP,-14.235004,-51.92528,BRA,16.002082,-24.013197,CPV
 Brazil,Chile,3,AS365/AS565 Panther,Helicopter,(2006),2006,3,Second-hand | $10 m deal (incl modernization before delivery) | for SAR,-14.235004,-51.92528,BRA,-35.675147,-71.542969,CHL
 Brazil,Chile,1,AS365/AS565 Panther,Helicopter,(2006),2007,1,Second-hand,-14.235004,-51.92528,BRA,-35.675147,-71.542969,CHL
 Brazil,Chile,12,EMB-314 Super Tucano,Trainer/combat ac,2008,2009-2010,12,$140 m deal,-14.235004,-51.92528,BRA,-35.675147,-71.542969,CHL
@@ -490,9 +490,9 @@ Bulgaria,Saudi Arabia,(2200),9M111 Fagot/AT-4,Anti-tank missile,2015,2015-2017,(
 Bulgaria,Saudi Arabia,24,BTR-60P,APC,2016,2016-2017,24,Second-hand | designation uncertain (reported as BTR) | probably to be used by Saudi Arabia as aid to Syrian rebels or Yemen,42.733883,25.48583,BGR,23.885942,45.079162,SAU
 Bulgaria,Senegal,(8),2B11 120mm,Mortar,(2014),2014,8,Possibly second-hand | designation uncertain (reported as 120mm mortar),42.733883,25.48583,BGR,14.497401,-14.452362,SEN
 Bulgaria,Senegal,24,2B11 120mm,Mortar,(2015),2015,24,Probably second-hand | designation uncertain (reported as 120mm mortar),42.733883,25.48583,BGR,14.497401,-14.452362,SEN
-Bulgaria,Southern rebels (Yemen)*,10,M-43 120mm,Mortar,1994,1994,(10),Designation uncertain | probably Second-hand,42.733883,25.48583,BGR,,,
-Bulgaria,Southern rebels (Yemen)*,6,T-55,Tank,(1994),1994,6,Second-hand,42.733883,25.48583,BGR,,,
-Bulgaria,Southern rebels (Yemen)*,56,T-62,Tank,1994,1994,56,Second-hand | $20 m deal,42.733883,25.48583,BGR,,,
+Bulgaria,Southern rebels (Yemen)*,10,M-43 120mm,Mortar,1994,1994,(10),Designation uncertain | probably Second-hand,42.733883,25.48583,BGR,15.552727,48.516388,YEM
+Bulgaria,Southern rebels (Yemen)*,6,T-55,Tank,(1994),1994,6,Second-hand,42.733883,25.48583,BGR,15.552727,48.516388,YEM
+Bulgaria,Southern rebels (Yemen)*,56,T-62,Tank,1994,1994,56,Second-hand | $20 m deal,42.733883,25.48583,BGR,15.552727,48.516388,YEM
 Bulgaria,Soviet Union,3,MiG-25RB,Reconnaissance ac,(1990),1991,3,Second-hand | exchanged for 5 MiG-23BN fighter aircraft,42.733883,25.48583,BGR,61.52401,105.318756,RUS
 Bulgaria,Syria,210,2B11 120mm,Mortar,1992,1992,210,Designation uncertain,42.733883,25.48583,BGR,34.802075,38.996815,SYR
 Bulgaria,Tajikistan,(15),BM-21 Grad 122mm,Self-propelled MRL,(2013),2013,15,Second-hand,42.733883,25.48583,BGR,38.861034,71.276093,TJK
@@ -508,9 +508,9 @@ Bulgaria,United States,1,Mi-8MT/Mi-17,Transport helicopter,2002,2002,1,Second-ha
 Bulgaria,United States,(610),9M111 Fagot/AT-4,Anti-tank missile,(2013),2014,610,Possibly second-hand | possibly for US aid to Syrian rebels or Iraq,42.733883,25.48583,BGR,37.09024,-95.712891,USA
 Bulgaria,Unknown recipient(s),(3),L-39Z Albatros,Trainer/combat ac,(2011),2013,(3),Second-hand | L-39ZA version,42.733883,25.48583,BGR,30.602278,-44.134617,ZXY
 Bulgaria,Zimbabwe,60,M-43 120mm,Mortar,(1999),2000,60,Designation uncertain | probably Second-hand,42.733883,25.48583,BGR,-19.015438,29.154857,ZWE
-Cambodia,LTTE (Sri Lanka)*,(25),Strela-2/SA-7,Portable SAM,(1994),1994-1995,(25),Second-hand | supplier uncertain (reported acquired from source in Cambodia),12.565679,104.990963,KHM,,,
-Cambodia,LTTE (Sri Lanka)*,(5),M-46 130mm,Towed gun,(1999),2000,(5),Second-hand | illegally supplied from Cambodia,12.565679,104.990963,KHM,,,
-Cambodia,MTA (Myanmar)*,(10),Strela-2/SA-7,Portable SAM,(1993),1993-1994,(10),Second-hand | illegally sold via dealer in Singapore | several more confiscated in 1995 by Thailand while being delivered,12.565679,104.990963,KHM,,,
+Cambodia,LTTE (Sri Lanka)*,(25),Strela-2/SA-7,Portable SAM,(1994),1994-1995,(25),Second-hand | supplier uncertain (reported acquired from source in Cambodia),12.565679,104.990963,KHM,7.873054,80.771797,LKA
+Cambodia,LTTE (Sri Lanka)*,(5),M-46 130mm,Towed gun,(1999),2000,(5),Second-hand | illegally supplied from Cambodia,12.565679,104.990963,KHM,7.873054,80.771797,LKA
+Cambodia,MTA (Myanmar)*,(10),Strela-2/SA-7,Portable SAM,(1993),1993-1994,(10),Second-hand | illegally sold via dealer in Singapore | several more confiscated in 1995 by Thailand while being delivered,12.565679,104.990963,KHM,21.913965,95.956223,MMR
 Canada,Australia,64,Piranha,APC,1992,1994-1996,(64),Part of $88 m Project Land-112 Phase-2 or ASLAV programme Phase-2 | most assembled from kits in Australia | incl 2 ambulance 10 ARV 9 CP and 10 radar reconnaissance version | Australian designation ASLAV-PC/R/A/S,56.130366,-106.346771,CAN,-25.274398,133.775136,AUS
 Canada,Australia,33,Piranha/LAV-25,IFV,1992,1994-1996,(33),Part of $88 m Project Land-112 Phase-2 or ASLAV programme Phase-2 | most assembled from kits in Australia | Australian designation ASLAV-25,56.130366,-106.346771,CAN,-25.274398,133.775136,AUS
 Canada,Australia,(69),Piranha,APC,1998,2002-2005,(69),Part of $180-210 m Project Land-112 Phase-3 or ASLAV programme Phase-3 | incl 7 ambulance 11 ARV 14 CP 15 radar reconnaissance and 11 repair version | Australian designation ASLAV,56.130366,-106.346771,CAN,-25.274398,133.775136,AUS
@@ -1066,7 +1066,7 @@ China,Kenya,(4),AS365/AS565 Panther,Helicopter,2009,2010,(4),Z-9WA armed version
 China,Kenya,5,AS365/AS565 Panther,Helicopter,2012,2014-2015,5,Z-9WA armed version,35.86166,104.195397,CHN,-0.023559,37.906193,KEN
 China,Kenya,(35),VN-4,APV/APC,2015,2016,35,For police,35.86166,104.195397,CHN,-0.023559,37.906193,KEN
 China,Kenya,25,CS/VP3,APC,(2016),2016,25,For police,35.86166,104.195397,CHN,-0.023559,37.906193,KEN
-China,Khmer Rouge (Cambodia)*,24,Type-59,Tank,1990,1990,24,Aid | probably Second-hand,35.86166,104.195397,CHN,,,
+China,Khmer Rouge (Cambodia)*,24,Type-59,Tank,1990,1990,24,Aid | probably Second-hand,35.86166,104.195397,CHN,12.565679,104.990963,KHM
 China,Kuwait,27,PCZ-45,ALV,1998,2000-2001,(27),Part of $187 m deal,35.86166,104.195397,CHN,29.31166,47.481766,KWT
 China,Kuwait,27,PLZ-45 155mm,Self-propelled gun,1998,2000-2001,(27),Part of $187 m deal,35.86166,104.195397,CHN,29.31166,47.481766,KWT
 China,Kuwait,(1),Type-84,ARV,1998,2000,(1),Part of $187 m deal,35.86166,104.195397,CHN,29.31166,47.481766,KWT
@@ -1393,7 +1393,7 @@ China,UAE,(15),Wing Loong-2,Armed UAV,2017,2017-2018,(15),,35.86166,104.195397,C
 China,UAE,(6),AH-4 155mm,Towed gun,(2018),2019,(6),,35.86166,104.195397,CHN,23.424076,53.847818,ARE
 China,UAE,,SR-5,Self-propelled MRL,(2018),,,,35.86166,104.195397,CHN,23.424076,53.847818,ARE
 China,Uganda,(5),Type-85-IIM,Tank,(2008),2008,(5),,35.86166,104.195397,CHN,1.373333,32.290275,UGA
-China,United Wa State (Myanmar)*,(25),FN-6,Portable SAM,(2012),2014,(25),,35.86166,104.195397,CHN,,,
+China,United Wa State (Myanmar)*,(25),FN-6,Portable SAM,(2012),2014,(25),,35.86166,104.195397,CHN,21.913965,95.956223,MMR
 China,Unknown recipient(s),(2),CH-1,UAV,2003,2004,(2),For South Asian country (probably Pakistan),35.86166,104.195397,CHN,30.602278,-44.134617,ZXY
 China,Uzbekistan,(5),Wing Loong-1,Armed UAV,2013,2014,(5),,35.86166,104.195397,CHN,41.377491,64.585262,UZB
 China,Uzbekistan,(1),HQ-9,SAM system,(2017),2018,(1),FD-2000 version,35.86166,104.195397,CHN,41.377491,64.585262,UZB
@@ -1644,9 +1644,9 @@ Egypt,Pakistan,,Mirage-5,FGA aircraft,2019,,,Second-hand,26.820553,30.802498,EGY
 Egypt,Palestine,2,Mi-8T,Transport helicopter,(1994),1994,(2),Second-hand | incl for VIP transport | aid,26.820553,30.802498,EGY,31.952162,35.233154,PSE
 Egypt,Rwanda,6,D-30 122mm,Towed gun,1992,1992,6,D-30M version,26.820553,30.802498,EGY,-1.940278,29.873888,RWA
 Egypt,Sudan,(25),Fahd,APC,1989,1989-1990,25,,26.820553,30.802498,EGY,12.862807,30.217636,SDN
-Eritrea,SNA (Somalia)*,(50),Strela-2/SA-7,Portable SAM,(1998),1998,(50),,15.179384,39.782334,ERI,,,
+Eritrea,SNA (Somalia)*,(50),Strela-2/SA-7,Portable SAM,(1998),1998,(50),,15.179384,39.782334,ERI,5.152149,46.199616,SOM
 Eritrea,Somalia,3,BRDM-2,Reconnaissance AV,(1999),1999,3,Second-hand | possibly not delivered from but via Eritrea,15.179384,39.782334,ERI,5.152149,46.199616,SOM
-Eritrea,UIC (Somalia)*,(6),Igla/SA-18,Portable SAM,(2006),2006,(6),Second-hand,15.179384,39.782334,ERI,,,
+Eritrea,UIC (Somalia)*,(6),Igla/SA-18,Portable SAM,(2006),2006,(6),Second-hand,15.179384,39.782334,ERI,5.152149,46.199616,SOM
 Estonia,Iraq,12,M-43 120mm,Mortar,(2015),2015,12,Second-hand | designation uncertain (reported as 120mm mortar) | aid,58.595272,25.013607,EST,33.223191,43.679291,IRQ
 Estonia,Sweden,1,Shuleykin,Survey ship,1996,1996,1,Second-hand | for use as depot ship | Swedish designation Tross,58.595272,25.013607,EST,60.128161,18.643501,SWE
 Ethiopia,Eritrea,1,Project-205/Osa,FAC,(1996),1997,1,Second-hand | Project-205M (Osa-2) version,9.145,40.489673,ETH,15.179384,39.782334,ERI
@@ -2832,8 +2832,8 @@ Germany,Brunei,4,FPB-41,Patrol craft,(2007),2009-2010,4,Bruneian designation Ijh
 Germany,Brunei,3,OPV-80,Corvette,2007,2011,3,Bruneian designation Darussalam,51.165691,10.451526,DEU,4.535277,114.727669,BRN
 Germany,Brunei,1,Mustead,Patrol craft,2010,2011,1,From Malaysian production line | Bruneian designation Mustead,51.165691,10.451526,DEU,4.535277,114.727669,BRN
 Germany,Brunei,(1),OPV-80,Corvette,(2012),2014,1,Bruneian designation Darussalam,51.165691,10.451526,DEU,4.535277,114.727669,BRN
-Germany,Cabo Verde,1,Do-228MP,MP aircraft,(1992),1992,1,Aid,51.165691,10.451526,DEU,,,
-Germany,Cabo Verde,1,Kondor,Minesweeper,1998,1998,1,Second-hand | delivered without MCM gear and armament | Cape Verdian designation Vigilante,51.165691,10.451526,DEU,,,
+Germany,Cabo Verde,1,Do-228MP,MP aircraft,(1992),1992,1,Aid,51.165691,10.451526,DEU,16.002082,-24.013197,CPV
+Germany,Cabo Verde,1,Kondor,Minesweeper,1998,1998,1,Second-hand | delivered without MCM gear and armament | Cape Verdian designation Vigilante,51.165691,10.451526,DEU,16.002082,-24.013197,CPV
 Germany,Canada,9,PiPz-2 Dachs,AEV,1987,1990,9,DM49 m deal | Canadian designation Badger,51.165691,10.451526,DEU,56.130366,-106.346771,CAN
 Germany,Canada,121,Leopard-1A5 turret,Tank turret,1996,1999-2001,(121),Second-hand | $89-105 m deal | modernized before delivery | for modernization of 114 Canadian Leopard-1 (Leopard C1) tanks to Leopard C2 version | incl 5 for training and 2 as spare turret | 2 more delivered for testing only,51.165691,10.451526,DEU,56.130366,-106.346771,CAN
 Germany,Canada,9,G-120,Trainer aircraft,2005,2006,9,Owned and operated by civilian company for Canadian armed forces | G-120A-C version,51.165691,10.451526,DEU,56.130366,-106.346771,CAN
@@ -3571,7 +3571,7 @@ Iran,Hezbollah (Lebanon)*,8,Mohajer,UAV,(2004),2004,8,Probably Mahajer-4 version
 Iran,Hezbollah (Lebanon)*,(50),9M113 Konkurs/AT-5,Anti-tank missile,(2005),2006,(50),,32.427908,53.688046,IRN,33.854721,35.862285,LBN
 Iran,Hezbollah (Lebanon)*,(2),Ababil-T/R,SSM,(2005),2006,(2),,32.427908,53.688046,IRN,33.854721,35.862285,LBN
 Iran,Hezbollah (Lebanon)*,(5),C-802/CSS-N-8,Anti-ship missile,(2005),2006,(5),Aid | probably operated by Iranian troops,32.427908,53.688046,IRN,33.854721,35.862285,LBN
-Iran,Houthi rebels (Yemen)*,(10),Qiam-1,SSM,(2015),2017,(10),Yemeni rebels designations Burkan and/or Burkan-2,32.427908,53.688046,IRN,,,
+Iran,Houthi rebels (Yemen)*,(10),Qiam-1,SSM,(2015),2017,(10),Yemeni rebels designations Burkan and/or Burkan-2,32.427908,53.688046,IRN,15.552727,48.516388,YEM
 Iran,Iraq,(7),Su-25,Ground attack ac,2014,2014,(7),Second-hand (incl originally Iraqi aircraft flown to Iran 1991 to escape destruction in Gulf War and confiscated by Iran as payment for Iraqi war debts from Iran-Iraq War) | aid against Islamic State rebels | Su-25KM version | incl 3 Su-25UBKM version,32.427908,53.688046,IRN,33.223191,43.679291,IRQ
 Iran,Iraq,(20),Type-63 107mm,Towed MRL,2014,2014,(20),Probably second-hand | aid for Shia militias,32.427908,53.688046,IRN,33.223191,43.679291,IRQ
 Iran,Iraq,(2),Su-25,Ground attack ac,2015,2015,(2),Second-hand | aid against Islamic State rebels | Su-25KM version,32.427908,53.688046,IRN,33.223191,43.679291,IRQ
@@ -4004,7 +4004,7 @@ Israel,Singapore,(10),Heron,UAV,(2010),2012-2013,(10),,31.046051,34.851612,ISR,1
 Israel,Singapore,(2),EL/M-2083 APR,Air search radar,2012,2016,(2),For use on aerostat,31.046051,34.851612,ISR,1.352083,103.819836,SGP
 Israel,Singapore,(2),EL/M-2084,Air search radar,(2014),2015-2016,(2),Singaporean designation Safari,31.046051,34.851612,ISR,1.352083,103.819836,SGP
 Israel,Singapore,(500),Spike-SR,Anti-tank missile,(2016),2017-2019,(500),,31.046051,34.851612,ISR,1.352083,103.819836,SGP
-Israel,SLA (Lebanon)*,20,M-66 160mm SP,Self-propelled mortar,(1994),1996,20,Second-hand | aid,31.046051,34.851612,ISR,,,
+Israel,SLA (Lebanon)*,20,M-66 160mm SP,Self-propelled mortar,(1994),1996,20,Second-hand | aid,31.046051,34.851612,ISR,33.854721,35.862285,LBN
 Israel,Slovenia,(56),K-6 120mm,Mortar,(1995),1996,56,Designation uncertain,31.046051,34.851612,ISR,46.151241,14.995463,SVN
 Israel,Slovenia,18,Model-839 155mm,Towed gun,1996,1996-1997,18,Incl assembly in Slovenia,31.046051,34.851612,ISR,46.151241,14.995463,SVN
 Israel,Slovenia,1,Super Dvora,Patrol craft,(1996),1996,1,Super Dvora Mk-2 version | Slovenian designation Ankaran,31.046051,34.851612,ISR,46.151241,14.995463,SVN
@@ -4688,13 +4688,13 @@ Libya,Somalia,32,T-55,Tank,1989,1990,32,Second-hand,26.3351,17.228331,LBY,5.1521
 Libya,UAE,(9),CH-47C Chinook,Transport helicopter,2003,2006-2010,(9),Second-hand | 8 modernized to CH-47C+ (CH-47D) in Italy before delivery (3 more delivered for spare parts only),26.3351,17.228331,LBY,23.424076,53.847818,ARE
 Libya,Uganda,(5),MiG-23BN,FGA aircraft,2002,2002,(2),Second-hand | probably aid,26.3351,17.228331,LBY,1.373333,32.290275,UGA
 Libya,Zimbabwe,(3),MiG-23MS,Fighter aircraft,2000,2003,(3),Second-hand | status uncertain (probably acquired only for show),26.3351,17.228331,LBY,-19.015438,29.154857,ZWE
-Libya HoR,Darfur rebels (Sudan)*,(5),Cougar,APV,(2016),2016,(5),Second-hand | aid,26.3351,17.228331,LBY,,,
-Libya HoR,Darfur rebels (Sudan)*,(5),Spartan,APC/APV,(2016),2016,(5),Second-hand | aid,26.3351,17.228331,LBY,,,
-Libya HoR,Darfur rebels (Sudan)*,(5),Puma,APC,(2018),2018,(5),,26.3351,17.228331,LBY,,,
+Libya HoR,Darfur rebels (Sudan)*,(5),Cougar,APV,(2016),2016,(5),Second-hand | aid,26.3351,17.228331,LBY,12.862807,30.217636,SDN
+Libya HoR,Darfur rebels (Sudan)*,(5),Spartan,APC/APV,(2016),2016,(5),Second-hand | aid,26.3351,17.228331,LBY,12.862807,30.217636,SDN
+Libya HoR,Darfur rebels (Sudan)*,(5),Puma,APC,(2018),2018,(5),,26.3351,17.228331,LBY,12.862807,30.217636,SDN
 Lithuania,Angola,(2),S-125-ML/SA-3,SAM system,(2015),2018,(2),Angolan S-125 rebuilt to S-125-ML,55.169438,23.881275,LTU,-11.202692,17.873887,AGO
 Lithuania,Poland,1,Mi-8MT/Mi-17,Transport helicopter,(2001),2002,1,Second-hand | Mi-8MTV-1 version | partly financed by Polish oil company,55.169438,23.881275,LTU,51.919438,19.145136,POL
 Luxembourg,Senegal,1,BN-2 Islander,Light transport ac,2005,2007,(1),Second-hand | BN-2T version | modified for martime patrol after delivery,49.815273,6.129583,LUX,14.497401,-14.452362,SEN
-Malawi,Cabo Verde,1,Do-228,Light transport ac,1999,2000,1,Second-hand | for coast guard,-13.254308,34.301525,MWI,,,
+Malawi,Cabo Verde,1,Do-228,Light transport ac,1999,2000,1,Second-hand | for coast guard,-13.254308,34.301525,MWI,16.002082,-24.013197,CPV
 Malaysia,Bangladesh,1,Bangla,Patrol craft,1998,1999,1,For coast guard,4.210484,101.975766,MYS,23.684994,90.356331,BGD
 Malaysia,Malta,1,BN-2 Islander,Light transport ac,1994,1995,1,Second-hand,4.210484,101.975766,MYS,35.937496,14.375416,MLT
 Malaysia,Thailand,3,Cyber Eye-2,UAV,(2009),2009,(3),Supplier uncertain (possibly from Australia via Malaysian company),4.210484,101.975766,MYS,15.870032,100.992541,THA
@@ -4711,8 +4711,8 @@ Moldova,Guinea,3,BM-22/9P140 Uragan,Self-propelled MRL,(2000),2000,3,Ex-Moldovan
 Moldova,Mali,1,An-26,Transport aircraft,(2002),2003,1,Second-hand,47.411631,28.369885,MDA,17.570692,-3.996166,MLI
 Moldova,Namibia,(2),Mi-8T,Transport helicopter,2001,2001,(2),Second-hand | lease,47.411631,28.369885,MDA,-22.95764,18.49041,NAM
 Moldova,Romania,1,MiG-29S,FGA aircraft,(1992),1992,1,Second-hand | payment for debt,47.411631,28.369885,MDA,45.943161,24.96676,ROU
-Moldova,Southern rebels (Yemen)*,7,BM-22/9P140 Uragan,Self-propelled MRL,1994,1994,7,Second-hand,47.411631,28.369885,MDA,,,
-Moldova,Southern rebels (Yemen)*,(4),MiG-29,Fighter aircraft,1994,1994,(4),Second-hand | no. may be up to 12,47.411631,28.369885,MDA,,,
+Moldova,Southern rebels (Yemen)*,7,BM-22/9P140 Uragan,Self-propelled MRL,1994,1994,7,Second-hand,47.411631,28.369885,MDA,15.552727,48.516388,YEM
+Moldova,Southern rebels (Yemen)*,(4),MiG-29,Fighter aircraft,1994,1994,(4),Second-hand | no. may be up to 12,47.411631,28.369885,MDA,15.552727,48.516388,YEM
 Moldova,United Kingdom,2,Ka-32,Helicopter,(2011),2011,2,Second-hand | Ka-32T version | leased via Canadian company | for use in Afghanistan,47.411631,28.369885,MDA,55.378051,-3.435973,GBR
 Moldova,United Kingdom,2,Mi-8MT/Mi-17,Transport helicopter,(2011),2011,2,Second-hand | Mi-171 version | lease via Canadian company | for use in Afghanistan,47.411631,28.369885,MDA,55.378051,-3.435973,GBR
 Moldova,United States,7,MiG-29,Fighter aircraft,1997,1997,7,Second-hand | part $40 m deal | incl 1 MiG-29UB version | for training,47.411631,28.369885,MDA,37.09024,-95.712891,USA
@@ -4794,7 +4794,7 @@ Netherlands,Brazil,3,M-101/33 105mm,Towed gun,1993,1997,3,Second-hand M-101A1 mo
 Netherlands,Brunei,3,STING,Fire control radar,(2007),2011,3,For 3 OPV-80 (Darussalam) corvettes from FRG | STING Mk-2 version,52.132633,5.291266,NLD,4.535277,114.727669,BRN
 Netherlands,Brunei,1,STING,Fire control radar,(2012),2014,1,STING Mk-2 version for 1 OPV-80 (Darussalam) corvette from FRG,52.132633,5.291266,NLD,4.535277,114.727669,BRN
 Netherlands,Bulgaria,2,Tripartite,MCM ship,2019,,,Second-hand | delivery planned 2020,52.132633,5.291266,NLD,42.733883,25.48583,BGR
-Netherlands,Cabo Verde,1,Stan Patrol-5009,Patrol craft,2010,2012,1,EUR10.9 m deal (incl aid) | Cape Verdian designation Guardiao | delivery 2012,52.132633,5.291266,NLD,,,
+Netherlands,Cabo Verde,1,Stan Patrol-5009,Patrol craft,2010,2012,1,EUR10.9 m deal (incl aid) | Cape Verdian designation Guardiao | delivery 2012,52.132633,5.291266,NLD,16.002082,-24.013197,CPV
 Netherlands,Canada,4,DA-08,Air search radar,1986,1991-1994,4,For modernization of 4 Iroquois (Tribal) frigates,52.132633,5.291266,NLD,56.130366,-106.346771,CAN
 Netherlands,Canada,4,LW-08,Air search radar,1986,1991-1994,4,For modernization of 4 Iroquois (Tribal) frigates,52.132633,5.291266,NLD,56.130366,-106.346771,CAN
 Netherlands,Canada,(96),M-101/33 105mm,Towed gun,1995,1996-1998,(88),Canadian M-101A1 rebuilt to M-101/33 | Canadian designation C3,52.132633,5.291266,NLD,56.130366,-106.346771,CAN
@@ -5326,7 +5326,7 @@ Poland,Yemen,1,Project-771/Polnocny,Landing ship,1999,2002,1,Part of $50 m deal 
 Portugal,Angola,4,SA-316B Alouette-3,Light helicopter,(1992),1993,4,Second-hand,39.399872,-8.224454,PRT,-11.202692,17.873887,AGO
 Portugal,Belgium,1,A-330,Transport aircraft,2009,2009,1,Second-hand | EUR48 m 4-year lease | leased via French company | A-330-300 version,39.399872,-8.224454,PRT,50.503887,4.469936,BEL
 Portugal,Belgium,1,A321,Transport aicraft,2014,2014,1,Second-hand | leased via French company | A-321-231 version,39.399872,-8.224454,PRT,50.503887,4.469936,BEL
-Portugal,Cabo Verde,2,C-212,Transport aircraft,2018,2019,(2),Second-hand | C-212-100 version | for coast guard,39.399872,-8.224454,PRT,,,
+Portugal,Cabo Verde,2,C-212,Transport aircraft,2018,2019,(2),Second-hand | C-212-100 version | for coast guard,39.399872,-8.224454,PRT,16.002082,-24.013197,CPV
 Portugal,Chile,1,Boeing-767,Transport aircraft,2008,2008,1,Second-hand | $50 m deal,39.399872,-8.224454,PRT,-35.675147,-71.542969,CHL
 Portugal,Colombia,2,AS365/AS565 Panther,Helicopter,2018,2018,2,Second-hand | $7 m deal | AS-365N3 version,39.399872,-8.224454,PRT,4.570868,-74.297333,COL
 Portugal,Mozambique,2,Cessna-337/O-2,Light aircraft,2010,2011-2012,2,Second-hand | aid,39.399872,-8.224454,PRT,-18.665695,35.529562,MOZ
@@ -6180,20 +6180,20 @@ Russia,Nigeria,(6),Mi-35M,Combat helicopter,2014,2014-2015,(6),Possibly second-h
 Russia,Nigeria,(300),9M114 Shturm/AT-6,Anti-tank missile,(2015),2017-2019,(150),For Mi-35M combat helicopters,61.52401,105.318756,RUS,9.081999,8.675277,NGA
 Russia,Nigeria,(12),Mi-35M,Combat helicopter,2015,2017-2019,6,,61.52401,105.318756,RUS,9.081999,8.675277,NGA
 Russia,Nigeria,(3),RD-33,Turbofan,(2016),,,RD-93 version for 3 JF-17 combat aircraft from Pakistan,61.52401,105.318756,RUS,9.081999,8.675277,NGA
-Russia,Northern Alliance (Afghanistan)*,(100),Igla-1/SA-16,Portable SAM,1999,1999-2000,(100),,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(10),Mi-8MT/Mi-17,Transport helicopter,2000,2000-2001,(10),Probably second-hand | possibly financed by India,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(16),2B11 120mm,Mortar,(2001),2001,(16),Second-hand | aid,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(500),9M111 Fagot/AT-4,Anti-tank missile,(2001),2001,(500),Ex-Russian | aid | incl for BMP-2 IFVs,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(500),9M14M/AT-3,Anti-tank missile,(2001),2001,(500),Ex-Russian | aid | incl for BMP-1 IFVs,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(10),BM-21 Grad 122mm,Self-propelled MRL,(2001),2001,(10),Ex-Russian | aid,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(40),BMP-1,IFV,(2001),2001,(40),Second-hand | aid,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(40),BMP-2,IFV,(2001),2001,(40),Second-hand | aid,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(20),BTR-60PB,APC,(2001),2001,(20),Second-hand | aid,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(36),D-30 122mm,Towed gun,(2001),2001,(36),Second-hand | aid,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(8),T-12 100mm/2A19,Towed gun,(2001),2001,(8),Second-hand | aid | MT-12 version,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(40),T-55AM-2,Tank,(2001),2001,(40),Second-hand | aid | no. could be 60,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(12),T-62,Tank,(2001),2001,(12),Second-hand | aid | T-62K version | no. could be 40,61.52401,105.318756,RUS,,,
-Russia,Northern Alliance (Afghanistan)*,(40),ZSU-23-4 Shilka,SPAAG,(2001),2001,(40),Second-hand | aid,61.52401,105.318756,RUS,,,
+Russia,Northern Alliance (Afghanistan)*,(100),Igla-1/SA-16,Portable SAM,1999,1999-2000,(100),,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(10),Mi-8MT/Mi-17,Transport helicopter,2000,2000-2001,(10),Probably second-hand | possibly financed by India,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(16),2B11 120mm,Mortar,(2001),2001,(16),Second-hand | aid,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(500),9M111 Fagot/AT-4,Anti-tank missile,(2001),2001,(500),Ex-Russian | aid | incl for BMP-2 IFVs,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(500),9M14M/AT-3,Anti-tank missile,(2001),2001,(500),Ex-Russian | aid | incl for BMP-1 IFVs,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(10),BM-21 Grad 122mm,Self-propelled MRL,(2001),2001,(10),Ex-Russian | aid,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(40),BMP-1,IFV,(2001),2001,(40),Second-hand | aid,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(40),BMP-2,IFV,(2001),2001,(40),Second-hand | aid,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(20),BTR-60PB,APC,(2001),2001,(20),Second-hand | aid,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(36),D-30 122mm,Towed gun,(2001),2001,(36),Second-hand | aid,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(8),T-12 100mm/2A19,Towed gun,(2001),2001,(8),Second-hand | aid | MT-12 version,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(40),T-55AM-2,Tank,(2001),2001,(40),Second-hand | aid | no. could be 60,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(12),T-62,Tank,(2001),2001,(12),Second-hand | aid | T-62K version | no. could be 40,61.52401,105.318756,RUS,33.93911,67.709953,AFG
+Russia,Northern Alliance (Afghanistan)*,(40),ZSU-23-4 Shilka,SPAAG,(2001),2001,(40),Second-hand | aid,61.52401,105.318756,RUS,33.93911,67.709953,AFG
 Russia,North Korea,(6),MR-104/Drum Tilt,Fire control radar,(1979),1992-1996,(6),For 3 Taechong-2 (Mayang) patrol craft and 3 Soju FAC produced in North Korea | probably ordered from Soviet Union and delivered from Russia after break-up of Soviet Union,61.52401,105.318756,RUS,40.339852,127.510093,PRK
 Russia,North Korea,(35),P-15U/SS-N-2B,Anti-ship missile,(1979),1992-1996,(35),For Soju FAC | probably ordered from Soviet Union and delivered from Russia after break-up of Soviet Union,61.52401,105.318756,RUS,40.339852,127.510093,PRK
 Russia,North Korea,(4),Rangout/Square Tie,Sea search radar,(1979),1992-1996,(4),For 3 Soju and 1 Komar (Sohung) FAC produced in North Korea | probably ordered from Soviet Union and delivered from Russia after break-up of Soviet Union | supplier may be China,61.52401,105.318756,RUS,40.339852,127.510093,PRK
@@ -6593,7 +6593,7 @@ Slovakia,Indonesia,(9),BMP-2,IFV,(1998),1998,(9),Possibly second-hand from Ukrai
 Slovakia,Indonesia,11,BMP-2,IFV,(1999),2000,11,Probably second-hand | BVP-2 version,48.669026,19.699024,SVK,-0.789275,113.921327,IDN
 Slovakia,Mali,18,BM-21 Grad 122mm,Self-propelled MRL,(2015),2016,18,Second-hand,48.669026,19.699024,SVK,17.570692,-3.996166,MLI
 Slovakia,Mozambique,1,L-39Z Albatros,Trainer/combat ac,(2013),2014,1,Second-hand | probably modernized in Romania before delivery | L-39ZO version,48.669026,19.699024,SVK,-18.665695,35.529562,MOZ
-Slovakia,Northern Cyprus,(72),9M113 Konkurs/AT-5,Anti-tank missile,(1998),1998,(72),Delivered via Turkey,48.669026,19.699024,SVK,,,
+Slovakia,Northern Cyprus,(72),9M113 Konkurs/AT-5,Anti-tank missile,(1998),1998,(72),Delivered via Turkey,48.669026,19.699024,SVK,35.126413,33.429859,CYP
 Slovakia,Pakistan,6,OT-64C,APC,(1993),1993,6,Second-hand | designation uncertain (reported as armoured combat vehicle),48.669026,19.699024,SVK,30.375321,69.345116,PAK
 Slovakia,Rwanda,(5),RM-70 122mm,Self-propelled MRL,(1996),1997,5,Second-hand,48.669026,19.699024,SVK,-1.940278,29.873888,RWA
 Slovakia,Saudi Arabia,(36),BM-21 Grad 122mm,Self-propelled MRL,(2012),2013-2016,36,Second-hand | possibly ordered by Saudi Arabia as aid to Syrian rebels or Yemeni government | supplier may be Czech Republic,48.669026,19.699024,SVK,23.885942,45.079162,SAU
@@ -6674,8 +6674,8 @@ South Africa,Ecuador,12,Cheetah-C,FGA aircraft,2010,2011-2012,(12),Second-hand |
 South Africa,Egypt,(14),Mamba,APC,(2012),2014,(14),,-30.559482,22.937506,ZAF,26.820553,30.802498,EGY
 South Africa,Egypt,(128),Umkhonto-R,SAM,(2019),,,For 4 MEKO-A200 frigates from Germany | including 32 Umkhonto-I version,-30.559482,22.937506,ZAF,26.820553,30.802498,EGY
 South Africa,Equatorial Guinea,25,Mamba,APC,2012,2013-2014,25,Reva-3 and Reva-5 versions,-30.559482,22.937506,ZAF,1.650801,10.267895,GNQ
-South Africa,Eswatini,7,RG-31 Nyala,APC,(1999),2001,7,For police,-30.559482,22.937506,ZAF,,,
-South Africa,Eswatini,3,SA-316B Alouette-3,Light helicopter,2000,2000,3,Second-hand but possibly modernized before delivery | aid,-30.559482,22.937506,ZAF,,,
+South Africa,Eswatini,7,RG-31 Nyala,APC,(1999),2001,7,For police,-30.559482,22.937506,ZAF,-26.522503,31.465866,SWZ
+South Africa,Eswatini,3,SA-316B Alouette-3,Light helicopter,2000,2000,3,Second-hand but possibly modernized before delivery | aid,-30.559482,22.937506,ZAF,-26.522503,31.465866,SWZ
 South Africa,Finland,6,RG-32 Scout,APV,(2004),2006,6,,-30.559482,22.937506,ZAF,61.92411,25.748151,FIN
 South Africa,Finland,(75),Umkhonto-IR,SAM,2006,2007-2008,(75),$17 m deal | Umkhonto Block-2 version | for Hamina FAC and Hameenma minelayers | Finnish designation ItO-2004,-30.559482,22.937506,ZAF,61.92411,25.748151,FIN
 South Africa,Finland,16,RG-32 Scout,APV,2010,2010-2012,(16),$8.1 m deal | for peacekeeping operations,-30.559482,22.937506,ZAF,61.92411,25.748151,FIN
@@ -6700,7 +6700,7 @@ South Africa,Ireland,(27),RG-32 Scout,APV,(2009),2010-2012,(27),,-30.559482,22.9
 South Africa,Jordan,(100),Ratel-20,IFV,2002,2003,(100),Second-hand,-30.559482,22.937506,ZAF,30.585164,36.238414,JOR
 South Africa,Jordan,(221),Ratel-20,IFV,2004,2004-2006,(221),Second-hand,-30.559482,22.937506,ZAF,30.585164,36.238414,JOR
 South Africa,Kenya,(67),Puma M-26,APC,2010,2011-2012,(67),KES1.6 b ($20 m) deal,-30.559482,22.937506,ZAF,-0.023559,37.906193,KEN
-South Africa,LF (Lebanon)*,75,MILAN,Anti-tank missile,(1991),1991-1992,(75),Deal also incl 9 launchers,-30.559482,22.937506,ZAF,,,
+South Africa,LF (Lebanon)*,75,MILAN,Anti-tank missile,(1991),1991-1992,(75),Deal also incl 9 launchers,-30.559482,22.937506,ZAF,33.854721,35.862285,LBN
 South Africa,Madagascar,3,AS-350/AS-550 Fennec,Light helicopter,(2018),2018,(3),Second-hand | AS-350B2 version,-30.559482,22.937506,ZAF,-18.766947,46.869107,MDG
 South Africa,Madagascar,1,CN-235,Transport aircraft,(2018),2019,1,Second-hand,-30.559482,22.937506,ZAF,-18.766947,46.869107,MDG
 South Africa,Malawi,(13),AML-60/90,Armoured car,(1994),1994,(13),Second-hand | AML-90 (Eland-90) version | possibly incl AML-60 (Eland-60),-30.559482,22.937506,ZAF,-13.254308,34.301525,MWI
@@ -7144,7 +7144,7 @@ Spain,Brazil,12,C-295,Transport aircraft,2005,2006-2009,(12),EUR238 m (incl offs
 Spain,Brazil,2,C-295,Transport aircraft,2014,2017-2019,2,For SAR | Brazilian designation SC-105,40.463667,-3.74922,ESP,-14.235004,-51.92528,BRA
 Spain,Brazil,1,C-295,Transport aircraft,2018,,,For SAR | Brazilian designation SC-105 | delivery planned 2020,40.463667,-3.74922,ESP,-14.235004,-51.92528,BRA
 Spain,Burkina Faso,1,C-295,Transport aircraft,2019,,,,40.463667,-3.74922,ESP,12.238333,-1.561593,BFA
-Spain,Cabo Verde,1,C-212,Transport aircraft,2008,2009,1,Second-hand | aid | for SAR,40.463667,-3.74922,ESP,,,
+Spain,Cabo Verde,1,C-212,Transport aircraft,2008,2009,1,Second-hand | aid | for SAR,40.463667,-3.74922,ESP,16.002082,-24.013197,CPV
 Spain,Cameroon,2,Aresa-3200,Patrol craft,(2012),2014,2,,40.463667,-3.74922,ESP,7.369722,12.354722,CMR
 Spain,Cameroon,1,CN-235,Transport aircraft,2012,2013,1,CN-235M-300 version,40.463667,-3.74922,ESP,7.369722,12.354722,CMR
 Spain,Canada,16,C-295,Transport aircraft,2016,2019,1,CAD2.4 b FWSAR programme (additional CAD2.3 b for support until 2027) | C-295SAR version | incl for SAR | Canadian designation CC-295 | delivery planned 2019-2022,40.463667,-3.74922,ESP,56.130366,-106.346771,CAN
@@ -7739,7 +7739,7 @@ Syria,Hezbollah (Lebanon)*,(50),Kornet/AT-14,Anti-tank missile,(2005),2006,(50),
 Syria,Hezbollah (Lebanon)*,(200),Fateh-110,SSM,(2009),2009-2010,(200),M-600 version,34.802075,38.996815,SYR,33.854721,35.862285,LBN
 Syria,Lebanon,(180),T-54,Tank,(1991),1992-1993,(180),Second-hand | incl some T-55 tanks | aid,34.802075,38.996815,SYR,33.854721,35.862285,LBN
 Taiwan,Burkina Faso,2,Bell-205/UH-1H,Helicopter,2017,2017,2,Second-hand | $8 m aid,23.69781,120.960515,TWN,12.238333,-1.561593,BFA
-Taiwan,Eswatini,2,Bell-205/UH-1H,Helicopter,2019,,,Second-hand | aid | delivery planned 2020,23.69781,120.960515,TWN,,,
+Taiwan,Eswatini,2,Bell-205/UH-1H,Helicopter,2019,,,Second-hand | aid | delivery planned 2020,23.69781,120.960515,TWN,-26.522503,31.465866,SWZ
 Taiwan,Gambia,4,Dvora,FAC,(2009),2009,4,Second-hand | aid,23.69781,120.960515,TWN,13.443182,-15.310139,GMB
 Taiwan,Guatemala,(2),Bell-205/UH-1H,Helicopter,(1996),1996,(2),Second-hand | aid,23.69781,120.960515,TWN,15.783471,-90.230759,GTM
 Taiwan,Guatemala,(2),Bell-205/UH-1H,Helicopter,2012,2012,(2),Second-hand | aid,23.69781,120.960515,TWN,15.783471,-90.230759,GTM
@@ -8215,8 +8215,8 @@ Ukraine,Peru,5,An-32,Transport aircraft,1993,1994,5,,48.379433,31.16558,UKR,-9.1
 Ukraine,Peru,(4),An-72A,Transport aircraft,(1993),1994,(4),,48.379433,31.16558,UKR,-9.189967,-75.015152,PER
 Ukraine,Poland,40,R-27/AA-10,BVRAAM,2016,2016,(40),PLN128 m [$32 m) deal | R-27R1 version | for MiG-29 combat aircraft,48.379433,31.16558,UKR,51.919438,19.145136,POL
 Ukraine,Qatar,,R-2,Anti-tank missile,2017,2017-2019,(600),For Ejder Yalcin APC from Turkey,48.379433,31.16558,UKR,25.354826,51.183884,QAT
-Ukraine,RUF (Sierra Leone)*,(5),9M115 Metis/AT-7,Anti-tank missile,(1999),1999,(5),Second-hand | officially delivered to Burkina Faso but from there illegally transferred to RUF,48.379433,31.16558,UKR,,,
-Ukraine,RUF (Sierra Leone)*,5,Strela-3/SA-14,Portable SAM,(1999),1999,(5),Second-hand | supplied to Burkina Faso but from there illegally transferred to RUF,48.379433,31.16558,UKR,,,
+Ukraine,RUF (Sierra Leone)*,(5),9M115 Metis/AT-7,Anti-tank missile,(1999),1999,(5),Second-hand | officially delivered to Burkina Faso but from there illegally transferred to RUF,48.379433,31.16558,UKR,8.460555,-11.779889,SLE
+Ukraine,RUF (Sierra Leone)*,5,Strela-3/SA-14,Portable SAM,(1999),1999,(5),Second-hand | supplied to Burkina Faso but from there illegally transferred to RUF,48.379433,31.16558,UKR,8.460555,-11.779889,SLE
 Ukraine,Russia,(4),DT-59,Gas turbine,(2005),2012-2013,(4),For 2 Project-22350 (Gorshkov) frigates produced in Russia (engines all delivered to Russian producer of ships before Ukraine stopped exports to Russia in 2014 | ships planned to be finished 2018-2019),48.379433,31.16558,UKR,61.52401,105.318756,RUS
 Ukraine,Russia,100,Kh-59M/AS-18 Kazoo,ASM,(2006),2007,100,Status uncertain | possibly more delivered before 2007,48.379433,31.16558,UKR,61.52401,105.318756,RUS
 Ukraine,Russia,6,DS-71,Gas turbine,(2010),2013-2014,(6),For 3 Project-11356 (Grigorovich) frigates produced in Russia (but engines all delivered to Russian producer of ships before Ukraine stopped exports to Russia in 2014 and more frigates ordered but cancelled due Ukrainian export ban),48.379433,31.16558,UKR,61.52401,105.318756,RUS
@@ -11455,7 +11455,7 @@ United States,Qatar,,AMRAAM-ER,SAM,2019,,,For NASAMS-2 SAM systems,37.09024,-95.
 United States,Qatar,,MPQ-64 Sentinel,Air search radar,2019,,,For NASAMS-2 SAM system from Norway,37.09024,-95.712891,USA,25.354826,51.183884,QAT
 United States,Qatar,(2),Patriot PAC-3,SAM/ABM system,2019,,,Part of $2.2 b deal,37.09024,-95.712891,USA,25.354826,51.183884,QAT
 United States,Qatar,,RGM-84L Harpoon-2,Anti-ship MI/SSM,2019,,,AGM-84L version | for F-15QA combat aircraft | selected but not yet ordered by end-2019,37.09024,-95.712891,USA,25.354826,51.183884,QAT
-United States,Regional Security System**,2,Metro-3MP/C-26,MP aircraft,1999,1999,2,Second-hand (but only few years old) | aid for anti-narcotics operations,37.09024,-95.712891,USA,,,
+United States,Regional Security System**,2,Metro-3MP/C-26,MP aircraft,1999,1999,2,Second-hand (but only few years old) | aid for anti-narcotics operations,37.09024,-95.712891,USA,17.060816,-61.796428,ATG
 United States,Romania,4,C-130B Hercules,Transport aircraft,1995,1996-1997,4,Second-hand,37.09024,-95.712891,USA,45.943161,24.96676,ROU
 United States,Romania,5,TPS-77,Air search radar,1995,1998-1999,5,$82 m deal | incl for civilian air traffic control,37.09024,-95.712891,USA,45.943161,24.96676,ROU
 United States,Romania,(99),C-9,Diesel engine,(1997),2005-2009,(99),For modernization of 99 MLI-84 IFV to MLI-84M,37.09024,-95.712891,USA,45.943161,24.96676,ROU
@@ -12684,20 +12684,20 @@ Unknown supplier(s),Liberia,(3),Mi-8MT/Mi-17,Transport helicopter,(2000),2000,(3
 Unknown supplier(s),Liberia,3,Cougar,APV,(2019),,,,30.602278,-44.134617,ZXX,6.428055,-9.429499,LBR
 Unknown supplier(s),Libya HoR,(10),Caiman,APC,(2017),2017,(10),Second-hand | supplier UAE or Egypt | aid,30.602278,-44.134617,ZXX,26.3351,17.228331,LBY
 Unknown supplier(s),Libya HoR,(8),Terrier LT-79,APC,(2019),2019,(8),Supplier possibly UAE,30.602278,-44.134617,ZXX,26.3351,17.228331,LBY
-Unknown supplier(s),LRA (Uganda)*,(5),Strela-2/SA-7,Portable SAM,(2002),2002,(5),,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),LTTE (Sri Lanka)*,(5),Strela-3/SA-14,Portable SAM,(1997),1998,(5),Probably second-hand,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),LTTE (Sri Lanka)*,1,Cessna-150,Trainer/light ac,(1998),1998,1,Probably second hand | designation uncertain (reported as 2-seat light plane).,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),LTTE (Sri Lanka)*,1,R-44,Light helicopter,(1998),1998,1,Possibly second-hand,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),LTTE (Sri Lanka)*,(10),9M111 Fagot/AT-4,Anti-tank missile,(1999),1999,(10),,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),LTTE (Sri Lanka)*,(25),M-43 120mm,Mortar,(2002),2002,(25),Second-hand,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),LTTE (Sri Lanka)*,(2),Z-143L,Light aircraft,(2005),2005,(2),Modified by LTTE for ground attack (with light improvised bombs),30.602278,-44.134617,ZXX,,,
+Unknown supplier(s),LRA (Uganda)*,(5),Strela-2/SA-7,Portable SAM,(2002),2002,(5),,30.602278,-44.134617,ZXX,1.373333,32.290275,UGA
+Unknown supplier(s),LTTE (Sri Lanka)*,(5),Strela-3/SA-14,Portable SAM,(1997),1998,(5),Probably second-hand,30.602278,-44.134617,ZXX,7.873054,80.771797,LKA
+Unknown supplier(s),LTTE (Sri Lanka)*,1,Cessna-150,Trainer/light ac,(1998),1998,1,Probably second hand | designation uncertain (reported as 2-seat light plane).,30.602278,-44.134617,ZXX,7.873054,80.771797,LKA
+Unknown supplier(s),LTTE (Sri Lanka)*,1,R-44,Light helicopter,(1998),1998,1,Possibly second-hand,30.602278,-44.134617,ZXX,7.873054,80.771797,LKA
+Unknown supplier(s),LTTE (Sri Lanka)*,(10),9M111 Fagot/AT-4,Anti-tank missile,(1999),1999,(10),,30.602278,-44.134617,ZXX,7.873054,80.771797,LKA
+Unknown supplier(s),LTTE (Sri Lanka)*,(25),M-43 120mm,Mortar,(2002),2002,(25),Second-hand,30.602278,-44.134617,ZXX,7.873054,80.771797,LKA
+Unknown supplier(s),LTTE (Sri Lanka)*,(2),Z-143L,Light aircraft,(2005),2005,(2),Modified by LTTE for ground attack (with light improvised bombs),30.602278,-44.134617,ZXX,7.873054,80.771797,LKA
 Unknown supplier(s),Malaysia,9,Guardian,APC,2017,2017,9,For use by UN peacekeepers in Lebanon,30.602278,-44.134617,ZXX,4.210484,101.975766,MYS
 Unknown supplier(s),Myanmar,(10),M-3 VTT,APC,(2010),2011,(10),Second-hand but modernized before delivery | supplier probably Israel,30.602278,-44.134617,ZXX,21.913965,95.956223,MMR
 Unknown supplier(s),Myanmar,(3),AS365/AS565 Panther,Helicopter,(2013),2015,(3),Probably second-hand | AS365 version,30.602278,-44.134617,ZXX,21.913965,95.956223,MMR
 Unknown supplier(s),Myanmar,3,EC-120 Colibri,Light helicopter,(2016),2016,3,Probably second-hand,30.602278,-44.134617,ZXX,21.913965,95.956223,MMR
 Unknown supplier(s),New Zealand,2,King Air,Light transport ac,2002,2002,2,Second-hand | bought and operated by civilian company and leased for training and transport | King Air B-200 version,30.602278,-44.134617,ZXX,-40.900557,174.885971,NZL
 Unknown supplier(s),Niger,(2),Mi-8MT/Mi-17,Transport helicopter,(2003),2003,(2),Probably second-hand,30.602278,-44.134617,ZXX,17.607789,8.081666,NER
-Unknown supplier(s),NLA (Macedonia)*,(10),Strela-2/SA-7,Portable SAM,(2001),2001,(10),,30.602278,-44.134617,ZXX,,,
+Unknown supplier(s),NLA (Macedonia)*,(10),Strela-2/SA-7,Portable SAM,(2001),2001,(10),,30.602278,-44.134617,ZXX,41.608635,21.745275,MKD
 Unknown supplier(s),NTC (Libya)*,(1),Ratel-20,IFV,2011,2011,(1),Second-hand | aid (possibly financed by Qatar) | delivered without armament,30.602278,-44.134617,ZXX,26.3351,17.228331,LBY
 Unknown supplier(s),Peru,3,An-32,Transport aircraft,(1994),1996,3,Second-hand (probably from from a North African airline) | incl 1 An-32B version,30.602278,-44.134617,ZXX,-9.189967,-75.015152,PER
 Unknown supplier(s),Peru,1,L-410 Turbolet,Light transport ac,2001,2001,1,Second-hand | L-410UVP version,30.602278,-44.134617,ZXX,-9.189967,-75.015152,PER
@@ -12730,10 +12730,10 @@ Unknown supplier(s),United States,4,9P117/Scud-B TEL,Mobile SSM launcher,1996,19
 Unknown supplier(s),United States,31,R-17 Elbrus/Scud-B,SSM,1996,1996,31,Willow Sand programme | bought from 1 or more Eastern European countries | for testing of ATBM systems,30.602278,-44.134617,ZXX,37.09024,-95.712891,USA
 Unknown supplier(s),United States,(3),Mi-8MT/Mi-17,Transport helicopter,(2001),2001-2002,3,Second-hand | supplier could be former Soviet Central Asian country | Mi-8MTV1 version | for use by US forces (CIA) in Afghanistan,30.602278,-44.134617,ZXX,37.09024,-95.712891,USA
 Unknown supplier(s),United States,5,L-39C Albatros,Trainer aircraft,(2011),2012,(5),Second-hand | for US company for training of US forces,30.602278,-44.134617,ZXX,37.09024,-95.712891,USA
-Unknown supplier(s),United Wa State (Myanmar)*,25,HN-5,Portable SAM,(2000),2001,(25),Supplier possibly China,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),Unknown rebel group*,(2),Strela-2/SA-7,Portable SAM,(2001),2001,(2),Strela-2M (SA-7B) version | recipient is unknown rebel/terrorist group possibly Bin Laden/Al-Qaeda | used in unsuccessful attack on Israeli civilian aircraft in Czech Republic,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),Unknown rebel group*,(1),Strela-2/SA-7,Portable SAM,(2002),2002,(1),Strela-2M (SA-7B) version | recipient is unknown rebel/terrorist group possibly Bin Laden/Al-Qaeda | used in unsuccessful attack on possibly US military aircraft in Saudi Arabia,30.602278,-44.134617,ZXX,,,
-Unknown supplier(s),Unknown rebel group*,(2),Strela-2/SA-7,Portable SAM,(2002),2002,(2),Strela-2M (SA-7B) version | supplier is a possibly Yemen | recipient is unknown rebel/terrorist group probably Bin Laden/Al-Qaeda or possibly Army of Palestine | used in unsuccessful attack on Israeli civilian aircraft in Kenya,30.602278,-44.134617,ZXX,,,
+Unknown supplier(s),United Wa State (Myanmar)*,25,HN-5,Portable SAM,(2000),2001,(25),Supplier possibly China,30.602278,-44.134617,ZXX,21.913965,95.956223,MMR
+Unknown supplier(s),Unknown rebel group*,(2),Strela-2/SA-7,Portable SAM,(2001),2001,(2),Strela-2M (SA-7B) version | recipient is unknown rebel/terrorist group possibly Bin Laden/Al-Qaeda | used in unsuccessful attack on Israeli civilian aircraft in Czech Republic,30.602278,-44.134617,ZXX,30.602278,-44.134617,ZZZ
+Unknown supplier(s),Unknown rebel group*,(1),Strela-2/SA-7,Portable SAM,(2002),2002,(1),Strela-2M (SA-7B) version | recipient is unknown rebel/terrorist group possibly Bin Laden/Al-Qaeda | used in unsuccessful attack on possibly US military aircraft in Saudi Arabia,30.602278,-44.134617,ZXX,30.602278,-44.134617,ZZZ
+Unknown supplier(s),Unknown rebel group*,(2),Strela-2/SA-7,Portable SAM,(2002),2002,(2),Strela-2M (SA-7B) version | supplier is a possibly Yemen | recipient is unknown rebel/terrorist group probably Bin Laden/Al-Qaeda or possibly Army of Palestine | used in unsuccessful attack on Israeli civilian aircraft in Kenya,30.602278,-44.134617,ZXX,30.602278,-44.134617,ZZZ
 Unknown supplier(s),Uruguay,(1),King Air Maritime,MP aircraft,2012,2013,(1),Probably second-hand King Air B-200T version | probably bought via Swiss company | possibly modified to MP aircraft before delivery | $1.5 m deal | delivery probably 2013,30.602278,-44.134617,ZXX,-32.522779,-55.765835,URY
 Unknown supplier(s),Venezuela,2,F-28,Light helicopter,(2011),2011,2,Second-hand | F-280FX version | for training,30.602278,-44.134617,ZXX,6.42375,-66.58973,VEN
 Unknown supplier(s),Viet Nam,(10),Guardian,APC,(2016),2016,(10),,30.602278,-44.134617,ZXX,14.058324,108.277199,VNM

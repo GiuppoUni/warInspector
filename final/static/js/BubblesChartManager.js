@@ -25,7 +25,13 @@ var BubblesChartManager = function() {
             "translate(" + margin.left + "," + margin.top + ")");
 
     //Read the data
-    d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv", function(data) {
+    d3.queue()
+        .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv")
+        .defer(d3.csv, "static/data/df_exp_clean.csv")
+        .defer(d3.csv, "static/data/df_imp_clean.csv")
+        .await(ready)
+
+    function ready(error, data, exp, imp) {
 
         // Pan and zoom
         zoom = d3.zoom()
@@ -180,6 +186,19 @@ var BubblesChartManager = function() {
             .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
             .call(zoom);
 
+        var expNested = d3.nest()
+            .key(function(d) {
+                return d.code3
+            })
+            .entries(exp)
+
+        var impNested = d3.nest()
+            .key(function(d) {
+                return d.code3
+            })
+            .entries(imp)
+
+        // console.log(nested)
         var scatter = svg
             .append('g')
             .selectAll("dot")
@@ -189,7 +208,11 @@ var BubblesChartManager = function() {
             .attr("class", function(d) { return "bubbles " + d.continent })
             .attr("cx", function(d) { return x(d.gdpPercap); })
             .attr("cy", function(d) { return y(d.lifeExp); })
-            .attr("r", function(d) { return z(d.pop); })
+            .attr("r", function(d) {
+
+
+                // return z(d.pop);
+            })
             .style("fill", function(d) { return myColor(d.continent); })
             // -3- Trigger the functions for hover
             .on("mouseover", showTooltip)
@@ -340,7 +363,7 @@ var BubblesChartManager = function() {
             .attr('cx', function(d) { return new_xScale(d.gdpPercap) })
                 .attr('cy', function(d) { return new_yScale(d.lifeExp) });
         }
-    })
+    }
 
     var resetBubbleZoom = function() {
         svg.transition()
@@ -350,8 +373,25 @@ var BubblesChartManager = function() {
 
     }
 
+
+    $(function() {
+        $('#bubbleSwitch').change(function() {
+            // console.log($(this).prop('checked'))
+            if ($(this).prop('checked')) {
+                //Importers
+            } else {
+                //exporters
+            }
+        })
+    })
+
+    var changeMode = function(cb) {
+        alert(cb.prop('checked'))
+    }
+
     return {
         resetBubbleZoom: resetBubbleZoom,
+        changeMode: changeMode,
     }
 
 

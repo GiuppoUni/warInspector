@@ -1,7 +1,7 @@
 var DivergingBarChartManager = function() {
-    var margin = { top: 20, right: 80, bottom: 40, left: 70 };
+    var margin = { top: 20, right: 80, bottom: 40, left: 40 };
 
-    var width = 960 - margin.left - margin.right,
+    var width = 600 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;
 
 
@@ -70,7 +70,7 @@ var DivergingBarChartManager = function() {
         //     .attr("class", "text-legend")
         //     .attr("fill", "white")
 
-        d3v4.csv("static/data/merged.csv", parse, function(error, data) {
+        d3v4.csv("static/data/merged1990.csv", parse, function(error, data) {
             if (error) throw error;
 
             data_structure = new Map();
@@ -354,7 +354,10 @@ var DivergingBarChartManager = function() {
             .transition()
             .duration(2000)
             .attr("transform", "translate(0," + (height + cfg.xAxisMargin) + ")")
-            .call(d3v4.axisBottom(x).tickSizeOuter(0));
+            .call(d3v4.axisBottom(x).tickSizeOuter(0))
+            .selectAll("text")
+            .attr("transform", "translate(-10,0)rotate(-45)")
+            .style("text-anchor", "end");
 
         //Transition on bars
 
