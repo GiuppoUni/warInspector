@@ -118,7 +118,7 @@
     </div>
 
     <script>
-        NUM_CATEGORIES = 80
+        NUM_CATEGORIES = 30
         chosen_category = ""
 
         // set the dimensions and margins of the graph
@@ -156,7 +156,8 @@
                     })
                     .rollup(function(v) {
                         return d3.sum(v, function(d) {
-                            return d.Ordered;
+                            //return d.Ordered;
+                            return parseInt(d.Ordered.replace(/\(|\)/g, ""));
                         })
 
                     })
@@ -232,7 +233,8 @@
                         $("#scatter_title").html("Weapons by model: " + chosen_category)
 
                         d3.select("#scatter_svg").remove()
-                        drawScatter()
+                        //drawScatter()
+                        drawHeatmap()
                         console.log("Plot recomputed")
 
                         console.log(chosen_category)
@@ -271,7 +273,8 @@
 
                 // Add Y axis
                 var y = d3.scaleLinear()
-                    .domain([0, 80000])
+                    //.domain([0, 80000])
+                    .domain([0, 300000])
                     .range([height, 0]);
                 svg.append("g")
                     .call(d3.axisLeft(y));
@@ -379,7 +382,7 @@
                         return x(d["Weapon model"]);
                     })
                     .attr("cy", function(d) {
-                        return y(parseInt(d["Ordered year"].replace("(", "").replace(")", "")));
+                        return y(parseInt(d["Ordered year"].replace(/\(|\)/g, "")));
                     })
                     .attr("r", 1.5)
                     .style("fill", "#69b3a2")
@@ -405,7 +408,7 @@
                         return x(d["Weapon model"]);
                     })
                     .attr("cy", function(d) {
-                        return y(parseInt(d["Ordered year"].replace("(", "").replace(")", "")));
+                        return y(parseInt(d["Ordered year"].replace(/\(|\)/g, "")));
                     })
             })
         }
@@ -431,7 +434,86 @@
 
 
 
-        drawScatter()
+        //drawScatter()
+
+        function drawHeatmap() {
+            // set the dimensions and margins of the graph
+            var margin = {
+                    top: 10,
+                    right: 30,
+                    bottom: 130,
+                    left: 60
+                },
+                width = 700 - margin.left - margin.right,
+                height = 370 - margin.top - margin.bottom;
+            // append the svg object to the body of the page
+            var svg = d3.select("#scatter_viz")
+                .append("svg")
+                .attr("id", "scatter_svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")")
+
+            //Read the data
+            d3.csv("static/data/merged.csv", function(data) {
+                filteredModels = data
+                    .filter(function(d) {
+                        return d["Weapon category"] == chosen_category
+                    })
+
+                modelList = Array.from(new Set(filteredModels.map(function(d) {
+                    return d["Weapon model"];
+                })))
+
+                groupedModels = d3.nest()
+                    .key(function(d) {
+                        return d["Weapon model"];
+                    })
+                    .rollup(function(v) {
+                        return d3.sum(v, function(d) {
+                            return parseInt(d.Ordered.replace(/\(|\)/g, ""));
+                        })
+
+                    })
+                    .entries(filteredModels)
+
+                // Build X scales and axis:
+                var x = d3.scaleBand()
+                    .range([ 0, width ])
+                    .domain(modelList)
+                    .padding(0.01);
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x))
+
+                // Build Y scales and axis:
+                var y = d3.scaleBand()
+                    .range([ height, 0 ])
+                    .domain(Array.from(Array(30), (_, i) => i + 1990))
+                    .padding(0.01);
+                svg.append("g")
+                    .call(d3.axisLeft(y));
+
+                // Build color scale
+                var myColor = d3.scaleLinear()
+                    .range(["white", "#69b3a2"])
+                    .domain([1, d3.max(groupedModels, function(d) { return d.value })])
+                
+                svg.selectAll()
+                    .data(groupedModels)
+                    .enter()
+                    .append("rect")
+                    .attr("x", function(d) { return x(d.key) })
+                    .attr("y", function(d) { return y(filted["Ordered year"].replace(/\(|\)/g, "")) })
+                    .attr("width", x.bandwidth() )
+                    .attr("height", y.bandwidth() )
+                    .style("fill", function(d) { return myColor(parseInt(d.Ordered.replace(/\(|\)/g, "")))} )
+            });
+        }
+
+        drawHeatmap()
     </script>
 
     <!--  -->
