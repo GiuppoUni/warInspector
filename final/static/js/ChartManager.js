@@ -22,7 +22,7 @@ var ChartManager = function() {
 
         //data loading
         d3v4.queue()
-            .defer(d3v4.csv, 'static/data/merged.csv')
+            .defer(d3v4.csv, 'static/data/merged1990.csv')
             .await(ready)
 
 
@@ -261,7 +261,7 @@ var ChartManager = function() {
 
         //data loading
         d3v4.queue()
-            .defer(d3v4.csv, 'static/data/merged.csv')
+            .defer(d3v4.csv, 'static/data/merged1990.csv')
             .await(ready)
 
 

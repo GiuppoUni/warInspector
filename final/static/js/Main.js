@@ -17,6 +17,8 @@ var pca_features = ['IMPORT_TOTAL', "EXPORT_TOTAL", 'ARMY_TOTAL', 'REF_TOTAL', '
 var synchro_mode = true
 allCountriesAlpha3 = ['', 'ZZZ', 'ZZZ', 'ZZZ', 'ZYY', 'ZXY', 'ZXX', 'ZYX', 'ZKY', 'ZKK', 'LBY', 'LBY', 'YEM', 'SDN', 'PSE', 'PSE', 'PSE', 'UKR', 'LBN', 'SYR', 'TUR', 'OSC', 'ONU', 'ONU', 'NAT', 'NAT', 'AND', 'ARE', 'ARE', 'AFG', 'AFG', 'ATG', 'ATG', 'AIA', 'ALB', 'ARM', 'ANN', 'AGO', 'ATA', 'ARG', 'ASM', 'AUT', 'AUS', 'ABW', 'AZE', 'BIH', 'BIH', 'BIH', 'BRB', 'BGD', 'BEL', 'BFA', 'BGR', 'BHR', 'BDI', 'BEN', 'BMU', 'BRN', 'BOL', 'BRA', 'BHS', 'BTN', 'BVT', 'BWA', 'BLR', 'BLZ', 'CAN', 'CCK', 'COD', 'COD', 'COD', 'COD', 'CAF', 'CAF', 'COG', 'CHE', 'CIV', 'CIV', 'CIV', 'COK', 'CHL', 'CMR', 'CHN', 'CHN', 'COL', 'CRI', 'CUB', 'CUB', 'CPV', 'CXR', 'CYP', 'CZE', 'CZE', 'CZE', 'DEU', 'DEU', 'DEU', 'DJI', 'DNK', 'DMA', 'DOM', 'DZA', 'ECU', 'EST', 'EGY', 'ESH', 'ERI', 'ESP', 'ETH', 'ETH', 'ETH', 'FIN', 'FJI', 'FLK', 'FSM', 'FRO', 'FRA', 'GAB', 'GBR', 'GBR', 'GBR', 'GBR', 'GBR', 'GRD', 'GEO', 'GUF', 'GGY', 'GHA', 'GIB', 'GRL', 'GMB', 'GIN', 'GLP', 'GNQ', 'GRC', 'SGS', 'GTM', 'GTM', 'GUM', 'GNB', 'GUY', 'GZE', 'HKG', 'HMD', 'HND', 'HRV', 'HTI', 'HUN', 'IDN', 'IRL', 'ISR', 'IMN', 'IND', 'IOT', 'IRQ', 'IRN', 'ISL', 'ITA', 'JEY', 'JAM', 'JOR', 'JPN', 'KEN', 'KGZ', 'KHM', 'KIR', 'COM', 'KNA', 'PRK', 'KOR', 'KWT', 'CYM', 'KAZ', 'LAO', 'LBN', 'LBN', 'LCA', 'LIE', 'LKA', 'LBR', 'LSO', 'LTU', 'LUX', 'LVA', 'LBY', 'LBY', 'MAR', 'MCO', 'MDA', 'MNE', 'MDG', 'MHL', 'MKD', 'MKD', 'MLI', 'MMR', 'MMR', 'MNG', 'MAC', 'MNP', 'MTQ', 'MRT', 'MSR', 'MLT', 'MUS', 'MDV', 'MWI', 'MEX', 'MYS', 'MOZ', 'NAM', 'NCL', 'NER', 'NFK', 'NGA', 'NGA', 'NIC', 'NLD', 'NOR', 'NPL', 'NRU', 'NIU', 'NZL', 'OMN', 'PAN', 'PER', 'PYF', 'PNG', 'PHL', 'PAK', 'POL', 'SPM', 'PCN', 'PRI', 'PSE', 'PSE', 'PRT', 'PLW', 'PRY', 'QAT', 'REU', 'ROU', 'SRB', 'SRB', 'RUS', 'RUS', 'RWA', 'SAU', 'SLB', 'SYC', 'SDN', 'SWE', 'SGP', 'SHN', 'SVN', 'SJM', 'SVK', 'SLE', 'SMR', 'SEN', 'SOM', 'SOM', 'SUR', 'STP', 'SLV', 'SLV', 'SYR', 'SWZ', 'TCA', 'TCA', 'TCD', 'ATF', 'TGO', 'THA', 'TJK', 'TKL', 'TLS', 'TLS', 'TKM', 'TUN', 'TON', 'TUR', 'TTO', 'TTO', 'TUV', 'TWN', 'TZA', 'UKR', 'UGA', 'USA', 'USA', 'URY', 'UZB', 'VAT', 'VCT', 'VEN', 'VGB', 'VIR', 'VNM', 'VNM', 'VNM', 'VUT', 'WLF', 'WSM', 'XKX', 'YEM', 'YEM', 'YEM', 'MYT', 'ZAF', 'ZAF', 'ZMB', 'ZWE']
 
+var oldStatesClicked;
+
 function main() {
     // $(function() {
     //     $('select').selectpicker();
@@ -24,20 +26,21 @@ function main() {
 
     //Layout movements
 
-    getDataFromPost();
-
 
     mcm = MapComponentsManager();
-    mcm.drawSlider()
-
+    dbcm = DivergingBarChartManager();
     mm = MapManager();
-    mm.drawCloroExp();
-    mm.drawCloroImp();
-
-    // cm = ChartManager();
     pcam = PcaScatterManager();
 
-    dbcm = DiverginhBarChartManager();
+
+    getDataFromPost(false);
+
+    mcm.drawSlider()
+
+    mm.drawCloroExp();
+
+    // cm = ChartManager();
+
     dbcm.drawChart();
 
     // rm = RankRaceManager();
@@ -61,6 +64,9 @@ function main() {
     document.querySelectorAll('.bs-select-all').forEach(function(a) {
         a.remove()
     })
+
+    $("#selectNation").val("ITA")
+    oldStatesClicked = selected_group
 }
 
 
@@ -68,22 +74,39 @@ function main() {
 // function hi() { alert("hi" + $("#selectNation").val()) }
 //---Helpers
 /*
-Called on nation icon click
+Called on nation text from select-picker click
 */
-
 function clickedNation() {
+
     ids = String($("#selectNation").val())
         // console.log("Clicked nation " + ids)
 
     pieces = ids.split(/[\s,]+/)
-    id = pieces.pop()
-    mm.selected(id)
-    d3v4.selectAll(".heatmap").remove()
-    d3v4.selectAll(".legendThreshold").remove()
-    d3v4.selectAll(".legendCells").remove()
+    let a = new Set(pieces);
+    let b = new Set(selected_group);
+    let a_minus_b = [
+        [...a].filter(x => !b.has(x))
+    ];
 
-    mm.drawCloroExp()
-    mm.drawCloroImp()
+    console.log("id", a_minus_b[0][0], a, b)
+    if (a_minus_b[0][0] != undefined) {
+        mm.selected(a_minus_b[0][0])
+    } else {
+        a = new Set(oldStatesClicked)
+        b = new Set(pieces);
+        a_minus_b = [
+            [...a].filter(x => !b.has(x))
+        ];
+        console.log(a_minus_b)
+        mm.selected(a_minus_b[0][0])
+
+    }
+    // d3v4.selectAll(".heatmap").remove()
+    // d3v4.selectAll(".legendThreshold").remove()
+    // d3v4.selectAll(".legendCells").remove()
+
+    // mm.drawCloroExp()
+    // mm.drawCloroImp()
 
 
     // $(".bs-select-all").on('click', function() {
@@ -93,9 +116,29 @@ function clickedNation() {
 
 }
 
+var arr = new Array();
+$('.selectpicker').on('change', function() {
+    $(this).find("option").each(function() {
+        if ($(this).is(":selected")) {
+            id = $(this).attr("value");
+            if (arr.indexOf(id) == -1) {
+                arr.push(id);
+            }
+        } else {
+            id = $(this).attr("value");
+            arr = jQuery.grep(arr, function(value) {
+                return value != id;
+            });
+        }
+    });
+
+    if (arr.length > 0)
+        alert("Last selected id : " + arr[arr.length - 1]);
+
+});
 
 
-function getDataFromPost() {
+function getDataFromPost(isCreated) {
     url = "/get-data"
         // url+="?country="+country_selected
         // url+="&year1="+years[0]+"&year2="+years[1]
@@ -137,11 +180,14 @@ function getDataFromPost() {
                 // $("div[id*='fig']").prop("class", "pca-fig");
 
                 $(".lds-facebook").fadeOut()
-
-                pcam.drawChart(root[3][0], "IMP")
-
-                // pcam.drawBasicChart(root[3], "IMP")
-                // pcam.drawBasicChart(root[4], "EXP")
+                if (!isCreated) {
+                    pcam.drawChart(root[3][0], "IMP")
+                    isCreated = true
+                }
+                // console.log("calling pca")
+                pcam.transition(root[3][0])
+                    // pcam.drawBasicChart(root[3], "IMP")
+                    // pcam.drawBasicChart(root[4], "EXP")
 
             }
         });
@@ -161,8 +207,8 @@ function resetSelect() {
     d3v4.selectAll(".legendThreshold").remove()
     d3v4.selectAll(".legendCells").remove()
 
-    mm.drawCloroExp()
-    mm.drawCloroImp()
+    // mm.drawCloroExp()
+    // mm.drawCloroImp()
     dbcm.drawChart()
     pcam.drawChart()
 
@@ -234,6 +280,7 @@ function handleClick(cb) {
     if (!cb.checked) {
 
         // remove element
+
         const index = pca_features.indexOf(cb.value);
         if (index > -1) {
             pca_features.splice(index, 1);
@@ -241,8 +288,29 @@ function handleClick(cb) {
     } else {
         pca_features.push(cb.value)
     }
-    getDataFromPost()
+    getDataFromPost(true)
     checkMinFeaturesPCA()
+}
+
+function handleRadioClick(rb) {
+    if (rb.id = "cbImp") {
+        toRemove = "EXPORT_TOTAL"
+
+    } else if (rb.id = "cbExp") {
+        toRemove = "IMPORT_TOTAL"
+    } else {
+        throw Error
+    }
+    // REMOVE THE OTHER
+    const index = pca_features.indexOf(toRemove);
+    if (index > -1) {
+        pca_features.splice(index, 1);
+    }
+    //INSERT INTO IT
+    if (!pca_features.includes(rb.value))
+        pca_features.push(rb.value)
+    getDataFromPost(true)
+
 }
 
 function checkMinFeaturesPCA() {
@@ -264,4 +332,21 @@ function checkMinFeaturesPCA() {
 function callSelected(id) {
     mm.selected(id)
 
+}
+
+function transitionDivBarChart(dataTransitions) { dbcm.transitionSlider(dataTransitions) }
+
+
+function showWarsClick(cb) {
+    if (cb.value == "imp") {
+        if (!cb.checked)
+            mm.toggleCircles("off", "imp")
+        else
+            mm.toggleCircles("on", "imp")
+    } else {
+        if (!cb.checked)
+            mm.toggleCircles("off", "exp")
+        else
+            mm.toggleCircles("on", "exp")
+    }
 }

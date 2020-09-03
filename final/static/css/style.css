@@ -1100,6 +1100,7 @@ Charts
         left: 5px;
         bottom: 5px;
         background: none;
+        z-index: 1;
         /* display: inline-block; */
     }
     
@@ -1116,4 +1117,26 @@ Charts
     
     #weapon_description {
         font-size: 12px
+    }
+    
+    .tip-map {
+        font-size: 11px;
+        width: 60px;
+    }
+    
+    #cbExp {
+        margin-left: 5px;
+    }
+    
+    .checkBoxShowWars {
+        position: absolute;
+        left: 25px;
+        top: 400px;
+    }
+    
+    #bubbleFlag {
+        position: absolute;
+        z-index: 1;
+        left: 350px;
+        bottom: 650px;
     }
