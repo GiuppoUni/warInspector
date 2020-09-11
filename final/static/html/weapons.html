@@ -341,7 +341,7 @@
                     "translate(" + margin.left + "," + margin.top + ")")
 
             //Read the data
-            d3.csv("static/data/merged.csv", function(data) {
+            d3.csv("static/data/merged1990.csv", function(data) {
                 filteredModels = data
                     .filter(function(d) {
                         return d["Weapon category"] == chosen_category
@@ -457,7 +457,7 @@
                     "translate(" + margin.left + "," + margin.top + ")")
 
             //Read the data
-            d3.csv("static/data/merged.csv", function(data) {
+            d3.csv("static/data/merged1990.csv", function(data) {
                 filteredModels = data
                     .filter(function(d) {
                         return d["Weapon category"] == chosen_category
@@ -469,7 +469,7 @@
 
                 groupedModels = d3.nest()
                     .key(function(d) {
-                        return d["Weapon model"];
+                        return d["Weapon model"]+","+ parseInt(d["Ordered year"].replace(/\(|\)/g, ""));
                     })
                     .rollup(function(v) {
                         return d3.sum(v, function(d) {
@@ -478,6 +478,8 @@
 
                     })
                     .entries(filteredModels)
+                
+                //console.log("groupedModels", groupedModels);
 
                 // Build X scales and axis:
                 var x = d3.scaleBand()
@@ -505,11 +507,24 @@
                     .data(groupedModels)
                     .enter()
                     .append("rect")
-                    .attr("x", function(d) { return x(d.key) })
-                    .attr("y", function(d) { return y(filted["Ordered year"].replace(/\(|\)/g, "")) })
+                    .attr("x", function(d) { return x(d.key.split(",")[0]) })
+                    .attr("y", function(d) { return y(d.key.split(",")[1]) })
                     .attr("width", x.bandwidth() )
                     .attr("height", y.bandwidth() )
-                    .style("fill", function(d) { return myColor(parseInt(d.Ordered.replace(/\(|\)/g, "")))} )
+                    .style("fill", function(d) { return myColor(parseInt(d.value))} )
+
+                /*
+                var tip = d3.tip()
+                    .attr('class', 'd3v4-tip')
+                    .offset([-10, 0])
+                    .html(function(d) {
+                        return "<strong style='color:white'>Ordered:</strong> <span style='color:red'>" + d.value + "</span>";
+                    })
+
+                svg.selectAll("rect")
+                    .on('mouseover', tip.show)
+                    .on('mouseout', tip.hide)
+                */
             });
         }
 
