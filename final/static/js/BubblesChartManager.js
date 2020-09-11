@@ -210,7 +210,7 @@ var BubblesChartManager = function() {
             .attr("cy", function(d) { return y(d.lifeExp); })
             .attr("r", function(d) {
 
-
+                return z ( impNested.filter( d => d.key == d.) ) 
                 // return z(d.pop);
             })
             .style("fill", function(d) { return myColor(d.continent); })

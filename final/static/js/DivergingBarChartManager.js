@@ -4,11 +4,13 @@ var DivergingBarChartManager = function() {
     var width = 600 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;
 
+    var zoom;
+
 
     // Config
     var cfg = {
-        labelMargin: 5,
-        xAxisMargin: 10,
+        labelMargin: 0,
+        xAxisMargin: 0,
         legendRightMargin: 0
     }
 
@@ -24,7 +26,17 @@ var DivergingBarChartManager = function() {
     var yDown = d3v4.scaleLinear()
         .range([height, height / 2])
 
+    var gX;
+    var gY;
+    var gYDown;
 
+    var xAxis;
+    var yAxis;
+    var YAxisDown;
+
+    var new_xScale = x
+    var new_yScale = y
+    var new_yScaleDown = yDown
 
     var svg = d3v4.select("#diverging-card").append("svg")
         .attr("id", "diverging-svg")
@@ -34,9 +46,6 @@ var DivergingBarChartManager = function() {
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var drawChart = function() {
-
-
-
 
         var colour = d3v4.scaleSequential(d3v4.interpolatePRGn);
         var colorRed = d3v4.scaleThreshold()
@@ -74,6 +83,8 @@ var DivergingBarChartManager = function() {
             if (error) throw error;
 
             data_structure = new Map();
+            exp_for_country = new Map();
+            imp_for_country = new Map();
 
 
             for (let i = 0; i < data.length; i++) {
@@ -103,8 +114,9 @@ var DivergingBarChartManager = function() {
                             data_structure[yearDel] = {
                                 "totalS": num,
                                 "totalR": 0,
-                                sup: { "exp": 0, "imp": 0 }
                             };
+                            data_structure[yearDel][sup] = { "exp": 0, "imp": 0 }
+
                         }
 
                     }
@@ -125,6 +137,8 @@ var DivergingBarChartManager = function() {
                                 "totalR": num,
                                 rec: { "exp": 0, "imp": 0 }
                             };
+                            data_structure[yearDel][rec] = { "exp": 0, "imp": 0 }
+
                         }
                     }
                 }
@@ -134,7 +148,7 @@ var DivergingBarChartManager = function() {
             // console.log(typeof(data_structure));
             data = data_structure
                 // console.log(typeof(data))
-            console.log(d3v4.keys(data))
+                // console.log(d3v4.keys(data))
 
 
             // d3v4.keys(data).map(function(d) { console.log(d); })
@@ -142,7 +156,7 @@ var DivergingBarChartManager = function() {
             const maxUp = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalS"]; });
             const maxDown = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalR"]; });
             const max = Math.max(maxUp, maxDown)
-            console.log(maxUp, maxDown)
+                // console.log(maxUp, maxDown)
             colour.domain([0, max]);
 
             y.domain([0, max + 10])
@@ -154,7 +168,10 @@ var DivergingBarChartManager = function() {
                 .filter(Number.isInteger);
             const yDownAxisTicks = yDown.ticks()
                 .filter(Number.isInteger);
-            var yAxis = svg.append('g')
+            yAxis = d3v4.axisLeft(y)
+                .tickValues(yAxisTicks)
+                .tickFormat(d3v4.format('d'))
+            gY = svg.append('g')
                 .attr("id", "y-div-axis")
                 // svg.append("g")
                 //     .attr("class", "y-axis")
@@ -163,19 +180,19 @@ var DivergingBarChartManager = function() {
                 //     .attr("fill", "white")
                 //     .attr("y1", 0)
                 //     .attr("y2", height);
-                .call(d3v4.axisLeft(y)
-                    .tickValues(yAxisTicks)
-                    .tickFormat(d3v4.format('d')))
-            var yDownAxis = svg.append("g")
+                .call(yAxis)
+            yDownAxis = d3v4.axisLeft(yDown)
+                .tickValues(yDownAxisTicks)
+                .tickFormat(d3v4.format('d'))
+            gYDown = svg.append("g")
                 .attr("id", "y-down-div-axis")
-                .call(d3v4.axisLeft(yDown)
-                    .tickValues(yDownAxisTicks)
-                    .tickFormat(d3v4.format('d')))
+                .call(yDownAxis)
 
-            var xAxis = svg.append("g")
+            xAxis = d3v4.axisBottom(x).tickSizeOuter(0)
+            gX = svg.append("g")
                 .attr("id", "x-div-axis")
                 .attr("transform", "translate(0," + (height + cfg.xAxisMargin) + ")")
-                .call(d3v4.axisBottom(x).tickSizeOuter(0));
+                .call(xAxis);
 
             var bars = svg.append("g")
                 .attr("class", "bars")
@@ -193,10 +210,70 @@ var DivergingBarChartManager = function() {
                 .attr("y", function(d) {
                     return y(d.value["totalS"])
                 })
-                .style("fill", function(d) {
+                .style("stroke", "black")
+
+            .style("fill", function(d) {
                     // return colour(d.value["totalS"])
-                    return "green"
-                });
+                    return "#007a12"
+                })
+                // .on('mouseenter', function(actual, i) {
+                //     d3v4.selectAll('.value')
+                //         .attr('opacity', 0)
+
+            //     d3v4.select(this)
+            //         .transition()
+            //         .duration(300)
+            //         .attr('opacity', 0.6)
+            //         .attr('x', d => {
+            //             console.log("G", d);
+            //             x(d.key) - 5
+            //         })
+            //         .attr('width', x.bandwidth() + 10)
+
+            //     const yy = y(actual.value["totalR"]);
+
+            //     line = chart.append('line')
+            //         .attr('id', 'limit')
+            //         .attr('x1', 0)
+            //         .attr('y1', yy)
+            //         .attr('x2', width)
+            //         .attr('y2', yy)
+
+            //     barGroups.append('text')
+            //         .attr('class', 'divergence')
+            //         .attr('x', (g) => x(g.key) + x.bandwidth() / 2)
+            //         .attr('y', (g) => yy(g.value["totalR"]) - 10)
+            //         .attr('fill', 'white')
+            //         .attr('text-anchor', 'middle')
+            //         .text((g, idx) => {
+            //             const divergence = (g.value["totalR"] - actual.value["totalR"]).toFixed(0)
+
+            //             let text = ''
+            //             if (divergence > 0) text += '+';
+            //             text += `${divergence}`
+
+            //             return idx !== i ? text : '';
+            //         })
+
+            // })
+            // .on('mouseleave', function() {
+            //     d3v4.selectAll('.value')
+            //         .attr('opacity', 1)
+
+            //     d3v4.select(this)
+            //         .transition()
+            //         .duration(300)
+            //         .attr('opacity', 1)
+            //         .attr('x', (g) => x(g[0]))
+            //         .attr('width', x.bandwidth())
+
+            //     bars.selectAll('#limit').remove()
+            //     bars.selectAll('.divergence').remove()
+            // })
+
+
+
+
 
             // BARRE INFERIORI
             bars.selectAll("myImpRects")
@@ -210,13 +287,13 @@ var DivergingBarChartManager = function() {
                 .attr("x", function(d) { return x(d.key); })
                 .attr("width", x.bandwidth())
                 .attr("y", function(d) {
-                    return height / 2;
+                    return height / 2 + 2;
                 })
+                .style("stroke", "black")
                 .style("fill", function(d) {
                     // return colorRed(d.value["totalR"])
-                    return "red"
+                    return "#7a0000"
                 });
-
             var tipExp = d3v4.tip()
                 .attr('class', 'd3-tip')
                 .offset([-10, 0])
@@ -248,7 +325,44 @@ var DivergingBarChartManager = function() {
                 .attr("class", "labels");
 
 
+
+
         });
+
+        function zoomed() {
+            // create new scale ojects based on event
+            // new_xScale = d3v4.event.transform.rescaleX(x);
+            new_yScale = d3v4.event.transform.rescaleY(y);
+
+            // update axes
+            // gX.call(xAxis.scale(new_xScale));
+            gY.call(yAxis.scale(new_yScale));
+            gYDown.call(yDownAxis.scale(new_yScale))
+            d3v4.selectAll(".div-bars-exp")
+                .attr("y", d => new_yScale(d.value["totalS"]))
+
+
+
+            d3v4.selectAll(".div-bars-imp")
+                .attr('height', function(d) { return new_yScaleDown(d.value["totalR"]) });
+        }
+
+        // // Pan and zoom
+        // zoom = d3v4.zoom()
+        //     .scaleExtent([.5, 20])
+        //     .extent([
+        //         [0, 0],
+        //         [width, height]
+        //     ])
+        //     .on("zoom", zoomed);
+
+        // svg.append("rect")
+        //     .attr("width", width)
+        //     .attr("height", height)
+        //     .style("fill", "none")
+        //     .style("pointer-events", "all")
+        //     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+        //     .call(zoom);
     }
 
     var transitionSlider = function(transactions) {
@@ -286,8 +400,8 @@ var DivergingBarChartManager = function() {
                         data_structure[yearDel] = {
                             "totalS": num,
                             "totalR": 0,
-                            sup: { "exp": 0, "imp": 0 }
                         };
+                        data_structure[yearDel][sup] = { "exp": num, "imp": 0 }
                     }
 
                 }
@@ -301,13 +415,14 @@ var DivergingBarChartManager = function() {
                         if (rec in data_structure[yearDel])
                             data_structure[yearDel][rec]["imp"] += num
                         else
-                            data_structure[yearDel][rec] = { "exp": num, "imp": 0 }
+                            data_structure[yearDel][rec] = { "exp": 0, "imp": num }
                     } else {
                         data_structure[yearDel] = {
                             "totalS": 0,
                             "totalR": num,
-                            rec: { "exp": 0, "imp": 0 }
                         };
+                        data_structure[yearDel][rec] = { "exp": 0, "imp": num }
+
                     }
                 }
 
@@ -315,8 +430,10 @@ var DivergingBarChartManager = function() {
             }
 
         }
-        // data_structure
-        // NEW AXIS
+
+        console.log("data", data_structure)
+            // data_structure
+            // NEW AXIS
 
         x.domain(d3v4.keys(data_structure).map(function(d) { return d; }));
         const maxUp = d3v4.max(d3v4.entries(data_structure), function(d) { return d.value["totalS"]; });
@@ -380,9 +497,12 @@ var DivergingBarChartManager = function() {
             })
             .style("fill", function(d) {
                 // return colour(d.value["totalS"])
-                return "green"
+                return "#007a12"
+            })
+            .style("stroke", function(d) {
+                // return colour(d.value["totalS"])
+                return "black"
             });
-
         u
             .exit()
             .transition() // and apply changes to all of them
@@ -408,11 +528,15 @@ var DivergingBarChartManager = function() {
             .attr("x", function(d) { return x(d.key); })
             .attr("width", x.bandwidth())
             .attr("y", function(d) {
-                return height / 2;
+                return height / 2 + 2;
             })
             .style("fill", function(d) {
                 // return colorRed(d.value["totalR"])
-                return "red"
+                return "#7a0000"
+            })
+            .style("stroke", function(d) {
+                // return colour(d.value["totalS"])
+                return "black"
             });
 
         u2
@@ -422,6 +546,26 @@ var DivergingBarChartManager = function() {
             .style("opacity", 0)
             .remove()
 
+
+        emptyBars = svg.append("g")
+            .attr("class", "bars")
+
+        console.log("d", data_structure)
+        emptyBars.selectAll("myExpRects")
+            .data(d3v4.entries(data_structure))
+            .enter().append("rect")
+            .attr("class", "div-sel-bars-exp")
+            .attr("height", function(d) {
+                return height / 2 - y(d.value["totalS"]);
+            })
+            .attr("x", function(d) { return x(d.key); })
+            .attr("width", x.bandwidth())
+            .attr("y", function(d) {
+                return y(d.value["totalS"])
+            })
+            .style("fill", "none")
+            .style("stroke", "black")
+
     }
     return {
         drawChart: drawChart,
@@ -429,34 +573,6 @@ var DivergingBarChartManager = function() {
     }
 
 
-    function stripNum(input) {
-        if (input == null || input == "")
-            return 0;
 
-        // In case of (delivered num.)
-        if (input.indexOf("(") >= 0 || input.indexOf(")") >= 0)
-            return parseInt(input.replace("(", "").replace(")", ""));
-
-        // Other cases
-        return parseInt(input);
-
-    }
-
-    function stripYear(input) {
-        if (input == null || input == "")
-            return "";
-
-        // In case of not unique delivered year
-        if (input.indexOf("-") >= 0)
-            return parseInt(input.split("-")[1]);
-
-        // In case of (ordered year)
-        if (input.indexOf("(") >= 0 || input.indexOf(")") >= 0)
-            return parseInt(input.replace("(", "").replace(")", ""));
-
-        // Other cases
-        return parseInt(input);
-
-    }
 
 }

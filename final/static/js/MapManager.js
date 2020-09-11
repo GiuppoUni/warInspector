@@ -84,6 +84,7 @@ var MapManager = function() {
         // "latS", "longS", "codeS", "latR", "longR", "codeR"
     ]
 
+    var savedTransactions;
 
 
     /*  
@@ -108,14 +109,16 @@ var MapManager = function() {
             .await(ready)
 
         function ready(error, transactions, topo, allWars) {
+            savedTransactions = transactions
+
             if (DEBUG) console.log("MERGED:", transactions)
                 // Data and color scale
             var data = d3v4.map();
 
 
             filteredTransactionsExp = transactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1])
+                stripYear(d["Delivered year"]) >= years[0] &&
+                stripYear(d["Delivered year"]) <= years[1])
             var grouped = d3v4
                 .nest()
                 .key(function(d) { return d.codeR; })
@@ -146,7 +149,7 @@ var MapManager = function() {
 
 
 
-            hm = svg.append("g")
+            var hm = svg.append("g")
                 .attr("class", "heatmap")
                 .attr("id", "heatmap")
                 .selectAll("path")
@@ -257,8 +260,8 @@ var MapManager = function() {
             var data = d3v4.map();
 
             var filteredTransactionsImp = transactions.filter(d => selected_group.includes(d.codeR)).filter(d =>
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1])
+                stripYear(d["Delivered year"]) >= years[0] &&
+                stripYear(d["Delivered year"]) <= years[1])
 
             var grouped = d3v4
                 .nest()
@@ -292,7 +295,7 @@ var MapManager = function() {
 
 
 
-            var hm = svg2.append("g")
+            var hm2 = svg2.append("g")
                 .attr("class", "heatmap")
                 .attr("id", "heatmap2")
                 .selectAll("path2")
@@ -550,6 +553,7 @@ var MapManager = function() {
             // FROM CLICK ON MAP
             el = d3v4.select(this)
             country_id = el.data()[0].id
+                // console.log(country_id)
         }
         if (el == undefined || el === null) {
             alert("Country" + country_id + " not found")
@@ -608,7 +612,7 @@ var MapManager = function() {
         // getDataFromPost(true)
         // pcam.selectCountry(country_id)
         pcam.selectCountryTransition(country_id, isSelected)
-
+        dbcm.transitionSlider(savedTransactions)
     }
 
 
@@ -790,11 +794,21 @@ var MapManager = function() {
 
             // CALL TRANSACTION ON DIV BAR CHART
             transitionDivBarChart(transactions)
+            var filteredTransationsImp = transactions
+                // .forEach(d => console.log("fil", selected_group.includes(d.codeR), d.codeR))
+                .filter(d => selected_group.includes(d.codeR))
+                // .map(d => {
+                //     console.log( stripYear(d["Delivered year"]));
 
-            var filteredTransationsImp = transactions.filter(d => selected_group.includes(d.codeR)).filter(d =>
-                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1])
-                // FOR IMPORT MAP
+            // })
+            .filter(d => stripYear(d["Delivered year"]) >= years[0] &&
+                stripYear(d["Delivered year"]) <= years[1]
+            )
+
+            console.log("sad", filteredTransationsImp)
+
+
+            // FOR IMPORT MAP
             var impData = d3v4.map()
             var groupedImp = d3v4
                 .nest()
@@ -820,8 +834,8 @@ var MapManager = function() {
             // FOR EXPORT MAP
             var expData = d3v4.map()
             var filteredTransactionsExp = transactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1])
+                stripYear(d["Delivered year"]) >= years[0] &&
+                stripYear(d["Delivered year"]) <= years[1])
             var groupedExp = d3v4
                 .nest()
                 .key(function(d) { return d.codeR; })
@@ -847,8 +861,8 @@ var MapManager = function() {
 
 
             wars = savedWars.filter(d => filterWar(d));
-            console.log("w", wars)
-            tabulate(filteredTransactionsExp, columns, true, false)
+            console.log("w", wars);
+            tabulate(filteredTransactionsExp, columns, true, false);
             tabulate(filteredTransationsImp, columns, false, true)
 
             var u = svg.selectAll(".war-dot.exp")
@@ -908,6 +922,8 @@ var MapManager = function() {
     }
 
 
+
+
     function filterWar(d) {
         start = d.begin
         if (start != "*")
@@ -935,8 +951,8 @@ var MapManager = function() {
             var impData = d3v4.map()
 
             var filteredTransationsImp = transactions.filter(d => selected_group.includes(d.codeR)).filter(d =>
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1])
+                stripYear(d["Delivered year"]) >= years[0] &&
+                stripYear(d["Delivered year"]) <= years[1])
             var groupedImp = d3v4
                 .nest()
                 .key(function(d) { return d.codeS; })
@@ -959,8 +975,8 @@ var MapManager = function() {
                 })
 
             var filteredTransactionsExp = transactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1])
+                stripYear(d["Delivered year"]) >= years[0] &&
+                stripYear(d["Delivered year"]) <= years[1])
 
             var expData = d3v4.map()
             var groupedExp = d3v4
@@ -986,7 +1002,7 @@ var MapManager = function() {
                 })
 
             tabulate(filteredTransactionsExp, columns, true, false)
-            tabulate(filteredTransactionsImp, columns, false, true)
+            tabulate(filteredTransationsImp, columns, false, true)
 
         }
     }
@@ -1016,6 +1032,82 @@ var MapManager = function() {
 
     }
 
+    var selectedWeaponTransition = function() {
+
+    }
+
+
+    var tabulate = function(data, columns, redraw = false, append = false) {
+        redcolor = "#d00101"
+        greencolor = "#009344"
+        yellowcolor = "#f6ff00"
+
+        if (redraw) {
+            d3v4.selectAll(".tableTrans").remove()
+        }
+        var table = d3v4.select('#transaction_table')
+            .append('table')
+        table.attr("id", "#tableTransactions")
+            .attr("class", "table table-fixed tableTrans")
+            .style("color", "white")
+        if (!append) {
+            var thead = table.append('thead')
+
+            thead.append('tr')
+                .selectAll('th')
+                .data(columns)
+                .enter()
+                .append('th')
+                .text(function(d) { return d })
+        }
+        var tbody = table.append('tbody')
+
+
+        var rows = tbody.selectAll('tr')
+            .data(data)
+            .enter()
+            .append('tr')
+
+        if (!append) {
+            var cells = rows.selectAll('td')
+                .data(function(row) {
+                    return columns.map(function(column) {
+                        return { column: column, value: row[column] }
+                    })
+                })
+                .enter()
+                .append('td')
+                .text(function(d) { return d.value })
+                .style("color", function(d) {
+                    // console.log(d);
+                    if (d.column == "Supplier")
+                        return yellowcolor
+                    else
+                        return "white"
+                })
+                .style("font-size", 8)
+        } else {
+
+            var cells = rows.selectAll('td')
+                .data(function(row) {
+                    return columns.map(function(column) {
+                        return { column: column, value: row[column] }
+                    })
+                })
+                .enter()
+                .append('td')
+                .text(function(d) { return d.value })
+                .style("color", function(d) {
+                    // console.log(d);
+                    if (d.column == "Recipient")
+                        return yellowcolor
+                    else
+                        return "white"
+                })
+                .style("font-size", 8)
+        }
+        return table;
+    }
 
     return {
         drawCloroExp: drawCloroExp,
@@ -1034,78 +1126,4 @@ var MapManager = function() {
         selected: selected,
         toggleCircles: toggleCircles,
     }
-}
-
-
-
-var tabulate = function(data, columns, redraw = false, append = false) {
-    redcolor = "#d00101"
-    greencolor = "#009344"
-    yellowcolor = "#f6ff00"
-
-    if (redraw) {
-        d3v4.selectAll(".tableTrans").remove()
-    }
-    var table = d3v4.select('#transaction_table')
-        .append('table')
-    table.attr("id", "#tableTransactions")
-        .attr("class", "table table-fixed tableTrans")
-        .style("color", "white")
-    if (!append) {
-        var thead = table.append('thead')
-
-        thead.append('tr')
-            .selectAll('th')
-            .data(columns)
-            .enter()
-            .append('th')
-            .text(function(d) { return d })
-    }
-    var tbody = table.append('tbody')
-
-
-    var rows = tbody.selectAll('tr')
-        .data(data)
-        .enter()
-        .append('tr')
-
-    if (!append) {
-        var cells = rows.selectAll('td')
-            .data(function(row) {
-                return columns.map(function(column) {
-                    return { column: column, value: row[column] }
-                })
-            })
-            .enter()
-            .append('td')
-            .text(function(d) { return d.value })
-            .style("color", function(d) {
-                // console.log(d);
-                if (d.column == "Supplier")
-                    return yellowcolor
-                else
-                    return "white"
-            })
-            .style("font-size", 8)
-    } else {
-
-        var cells = rows.selectAll('td')
-            .data(function(row) {
-                return columns.map(function(column) {
-                    return { column: column, value: row[column] }
-                })
-            })
-            .enter()
-            .append('td')
-            .text(function(d) { return d.value })
-            .style("color", function(d) {
-                // console.log(d);
-                if (d.column == "Recipient")
-                    return yellowcolor
-                else
-                    return "white"
-            })
-            .style("font-size", 8)
-    }
-    return table;
 }

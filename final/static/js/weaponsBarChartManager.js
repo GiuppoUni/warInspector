@@ -13,13 +13,7 @@ var weaponsBarChartManager = function() {
         width = 370 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;
 
-    document.body.onload = function() {
-        if (chosen_category.includes("/"))
-            chosen_category = chosen_category.split("/")[1]
-        txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
-        $("#weapon_description").html(txt)
 
-    }
 
     // append the svg object to the body of the page
     var svg = d3v4.select("#weapons_dataviz")
@@ -32,7 +26,7 @@ var weaponsBarChartManager = function() {
             "translate(" + margin.left + "," + margin.top + ")");
     // Add Y axis
     var y = d3v4.scaleLinear()
-        .domain([0, 2000])
+        .domain([0, 1000])
         .range([height, 0]);
 
 
@@ -40,13 +34,10 @@ var weaponsBarChartManager = function() {
     var x = d3v4.scaleBand()
         .range([0, width])
 
-
-
     var imageTip = d3v4.tip()
         .attr('class', 'd3v4-tip')
         .offset([-10, 0])
         .html(function(d) {
-
             return '<img alt="weapon img" src="static/icons/categories/' + d + '.jpeg" width="70" height="70" />';
         })
 
@@ -67,8 +58,8 @@ var weaponsBarChartManager = function() {
                 dataset = datacsv
                     //FILTERING DATA
                 data = datacsv.filter(d => selected_group.includes(d.codeS) || selected_group.includes(d.codeR)).filter(d =>
-                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
-                    parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]);
+                    stripYear(d["Delivered year"]) >= years[0] &&
+                    stripYear(d["Delivered year"]) <= years[1]);
 
                 orderedWeapons = d3v4.nest()
                     .key(function(d) {
@@ -132,13 +123,18 @@ var weaponsBarChartManager = function() {
                         imageTip.hide(d)
                     })
                     .on("click", function() {
-                        //alert("click")
-                        svg.selectAll(".tick")
-                            .filter(function() {
-                                return d3v4.select(this).text() == chosen_category
-                            })
+                        console.log(chosen_category)
+                            //alert("click")
+                            // Whitening all others
+                        d3v4.selectAll(".tick")
                             .select('g > text')
                             .style("fill", "white")
+
+                        //Yellowing the clicked one
+                        d3v4.select(this)
+                            .select('g > text')
+                            // .style("fill", d => d3v4.select(this).text() == chosen_category ? "yellow" : "white")
+                            .style("fill", "yellow")
 
                         chosen_category = d3v4.select(this).text()
 
@@ -163,28 +159,18 @@ var weaponsBarChartManager = function() {
 
                 svg.call(tip);
 
-                svg.selectAll(".tick")
-                    .filter(function() {
-                        return d3v4.select(this).text() == chosen_category
-                    })
-                    .select('g > text')
-                    .style("fill", "red")
-
-                $("#scatter_title").html("Weapons by model: " + chosen_category)
-                $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
-                if (chosen_category.includes("/"))
-                    chosen_category = chosen_category.split("/")[1]
-                txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
-                if (txt == "" || txt == null || txt == undefined)
-                    txt = "Not available at the moment."
-                $("#weapon_header").html("Weapon Description: " + "<h7 style='color:yellow'> &nbsp" + chosen_category + "</h7>")
-                $("#weapon_description").html(txt)
 
 
+
+
+                const yAxisTicks = y.ticks()
+                    .filter(Number.isInteger);
 
                 svg.append("g")
                     .attr("id", "weapon-y-axis")
-                    .call(d3v4.axisLeft(y));
+                    .call(d3v4.axisLeft(y)
+                        .tickValues(yAxisTicks)
+                        .tickFormat(d3v4.format('d')));
 
                 // Bars
                 svg.selectAll("mybars")
@@ -204,16 +190,17 @@ var weaponsBarChartManager = function() {
                     .attr("y", function(d) {
                         return y(0);
                     })
+                    .style("stroke", "black")
                     .on('mouseover', tip.show)
                     .on('mouseout', tip.hide)
                     .transition()
                     .duration(800)
                     .attr("y", function(d) {
 
-                        return !isNaN(d.value) ? y(d.value) : 0;
+                        return !isNaN(d.value) ? y(parseInt(d.value)) : 0;
                     })
                     .attr("height", function(d) {
-                        return !isNaN(d.value) ? height - y(d.value) : height;
+                        return !isNaN(d.value) ? height - y(parseInt(d.value)) : height;
                     })
                     .delay(function(d, i) {
                         // console.log(i);
@@ -323,8 +310,8 @@ var weaponsBarChartManager = function() {
     var applyTransition = function() {
 
         data = dataset.filter(d => selected_group.includes(d.codeS) || selected_group.includes(d.codeR)).filter(d =>
-            parseInt(d["Delivered year"].replace(/\(|\)/g, "")) >= years[0] &&
-            parseInt(d["Delivered year"].replace(/\(|\)/g, "")) <= years[1]);
+            stripYear(d["Delivered year"]) >= years[0] &&
+            stripYear(d["Delivered year"]) <= years[1]);
 
         orderedWeapons = d3v4.nest()
             .key(function(d) {
@@ -340,7 +327,7 @@ var weaponsBarChartManager = function() {
             })
             .entries(data)
             .sort(function(a, b) {
-                return b.value - a.value;
+                return parseInt(b.value) - parseInt(a.value);
             })
             .slice(0, NUM_CATEGORIES)
 
@@ -349,18 +336,28 @@ var weaponsBarChartManager = function() {
             }))
             .padding(0.2);
 
-
+        const maxUp = d3v4.max(orderedWeapons, function(d) { return d.value; });
+        const max = Math.max(maxUp)
+            // console.log(data_structure)
+            // console.log(typeof(data_structure));
+        y.domain([0, max])
+        y.domain([0, max + (y.ticks()[1] - y.ticks()[0])])
+        const yAxisTicks = y.ticks()
+            .filter(Number.isInteger);
+        console.log("TT", y.ticks()[1] - y.ticks()[0])
         svg.select('#weapon-y-axis')
             .transition()
             .duration(2000)
-            .call(d3v4.axisLeft(y))
+            .call(d3v4.axisLeft(y)
+                .tickValues(yAxisTicks)
+                .tickFormat(d3v4.format('d')))
 
 
         svg.select("#weapon-x-axis")
             .transition()
             .duration(2000)
             .attr("transform", "translate(0," + (height) + ")")
-            .call(d3v4.axisBottom(x).tickSizeOuter(0))
+            .call(d3v4.axisBottom(x).tickSizeOuter(0));
         var t = svg.select("#weapon-x-axis")
             .selectAll("text")
             .attr("transform", "translate(-10,0)rotate(-45)")

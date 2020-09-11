@@ -88,12 +88,12 @@
             </div>
         </div>
     </div>
-    <div class="container bottom">
-        <div class="row">
-            <div class="col-md-8" style="padding-left: 2%; padding-right: 2%;">
+    <div class="container-fluid bottom">
+        <div class="row my-row">
+            <div class="col-md-7 my-col-up" style="padding-left: 2%; padding-right: 2%;">
                 <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue;">
                     <div class="card-header d-flex align-items-center justify-content-center  text-center" id="scatter_title">
-                        Weapons by model
+                        Deliver density for year/weapon model
                     </div>
                     <div class="card-body">
 
@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col my-col-up">
                 <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue; ">
                     <div class="card-header d-flex align-items-center justify-content-center  text-center">
                         Weapon Description
@@ -118,6 +118,7 @@
     </div>
 
     <script>
+        var savedDataset;
         NUM_CATEGORIES = 30
         chosen_category = ""
 
@@ -147,6 +148,7 @@
 
         // Parse the Data
         d3.csv("static/data/merged1990.csv", function(data) {
+                savedDataset = data;
                 console.log(data)
                 orderedWeapons = d3.nest()
                     .key(function(d) {
@@ -201,7 +203,7 @@
 
                 d3.selectAll(".tick")
                     .on('mouseover', function(d) {
-                        console.log(this)
+                        // console.log(this)
 
                         d3.select(this).style("font-size", "20px")
                         if (d3.select(this).text() != chosen_category)
@@ -232,10 +234,11 @@
 
                         $("#scatter_title").html("Weapons by model: " + chosen_category)
 
-                        d3.select("#scatter_svg").remove()
+                        // d3.select("#scatter_svg").remove()
                         //drawScatter()
-                        drawHeatmap()
-                        console.log("Plot recomputed")
+
+                        heatmapTransition()
+                            // console.log("Plot recomputed")
 
                         console.log(chosen_category)
                         txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
@@ -435,19 +438,30 @@
 
 
         //drawScatter()
+        var x;
+        var y;
+        var svg2;
+        const yearsList = Array.from(Array(30), (_, i) => i + 1990)
+        const heatTip = d3.tip()
+            .attr('class', 'd3-tip2')
+            .offset([-10, 0])
+            .html(function(d) {
+                // console.log(d)
+                return "<b>Model: </b>" + d.key.split(",")[0] + "<br><b>Year: </b>" + d.key.split(",")[1] + "</strong><br><b>Value: </b>" + d.value;
+            })
 
         function drawHeatmap() {
             // set the dimensions and margins of the graph
             var margin = {
                     top: 10,
                     right: 30,
-                    bottom: 130,
+                    bottom: 80,
                     left: 60
                 },
-                width = 700 - margin.left - margin.right,
-                height = 370 - margin.top - margin.bottom;
+                width = 1000 - margin.left - margin.right,
+                height = 450 - margin.top - margin.bottom;
             // append the svg object to the body of the page
-            var svg = d3.select("#scatter_viz")
+            svg2 = d3.select("#scatter_viz")
                 .append("svg")
                 .attr("id", "scatter_svg")
                 .attr("width", width + margin.left + margin.right)
@@ -467,68 +481,211 @@
                     return d["Weapon model"];
                 })))
 
+
+
                 groupedModels = d3.nest()
                     .key(function(d) {
-                        return d["Weapon model"]+","+ parseInt(d["Ordered year"].replace(/\(|\)/g, ""));
+                        return d["Weapon model"] + "," + stripYear(d["Delivered year"]);
                     })
                     .rollup(function(v) {
                         return d3.sum(v, function(d) {
-                            return parseInt(d.Ordered.replace(/\(|\)/g, ""));
+                            // console.log(parseInt(d["Delivered num."].replace(/\(|\)/g, "")))
+                            del = parseInt(d["Delivered num."].replace(/\(|\)/g, ""))
+                            return isNaN(del) ? 0 : del;
                         })
 
                     })
                     .entries(filteredModels)
-                
+                console.log("f,", groupedModels)
+
                 //console.log("groupedModels", groupedModels);
 
                 // Build X scales and axis:
-                var x = d3.scaleBand()
-                    .range([ 0, width ])
+                x = d3.scaleBand()
+                    .range([0, width])
                     .domain(modelList)
                     .padding(0.01);
-                svg.append("g")
+                svg2.append("g")
                     .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(x))
+                    .selectAll("text")
+                    .attr("transform", "rotate(-45)")
+                    .style("text-anchor", "end");
 
                 // Build Y scales and axis:
-                var y = d3.scaleBand()
-                    .range([ height, 0 ])
-                    .domain(Array.from(Array(30), (_, i) => i + 1990))
+                y = d3.scaleBand()
+                    .range([height, 0])
+                    .domain(yearsList)
                     .padding(0.01);
-                svg.append("g")
+                svg2.append("g")
                     .call(d3.axisLeft(y));
 
                 // Build color scale
-                var myColor = d3.scaleLinear()
-                    .range(["white", "#69b3a2"])
-                    .domain([1, d3.max(groupedModels, function(d) { return d.value })])
-                
-                svg.selectAll()
+                var myColor = d3.scaleLog()
+                    .range(["white", "red"])
+                    .domain([1, d3.max(groupedModels, function(d) {
+                        return d.value
+                    })])
+
+                for (let index = 0; index < yearsList.length; index++) {
+                    var year = yearsList[index];
+                    // console.log(element)
+                    // find_wea = element["Weapon model"]
+                    // find_year = element["Delivered year"]
+                    for (let k = 0; k < modelList.length; k++) {
+                        var weapon = modelList[k];
+
+
+                        final_string = weapon + "," + year
+                        found = false
+                        for (let j = 0; j < groupedModels.length; j++) {
+                            const g_el = groupedModels[j];
+                            if (g_el.key == final_string) {
+                                found = true
+                            }
+                        }
+                        if (!found) {
+                            // console.log("NOT FOUND")
+                            groupedModels.push({
+                                "key": final_string,
+                                "value": 0
+                            });
+                        }
+                    }
+                }
+
+                console.log("ff,", groupedModels)
+
+                svg2.selectAll()
                     .data(groupedModels)
                     .enter()
                     .append("rect")
-                    .attr("x", function(d) { return x(d.key.split(",")[0]) })
-                    .attr("y", function(d) { return y(d.key.split(",")[1]) })
-                    .attr("width", x.bandwidth() )
-                    .attr("height", y.bandwidth() )
-                    .style("fill", function(d) { return myColor(parseInt(d.value))} )
-
-                /*
-                var tip = d3.tip()
-                    .attr('class', 'd3v4-tip')
-                    .offset([-10, 0])
-                    .html(function(d) {
-                        return "<strong style='color:white'>Ordered:</strong> <span style='color:red'>" + d.value + "</span>";
+                    .attr("class", "heatSquare")
+                    .attr("x", function(d) {
+                        return x(d.key.split(",")[0])
+                    })
+                    .attr("y", function(d) {
+                        return y(d.key.split(",")[1])
+                    })
+                    .attr("width", x.bandwidth())
+                    .attr("height", y.bandwidth())
+                    .style("fill", function(d) {
+                        return myColor(parseInt(d.value))
                     })
 
-                svg.selectAll("rect")
-                    .on('mouseover', tip.show)
-                    .on('mouseout', tip.hide)
-                */
+
+
+
+                svg2.call(heatTip);
+
+                svg2.selectAll(".heatSquare")
+                    .on('mouseover', d => heatTip.show(d))
+                    .on('mouseout', heatTip.hide)
+
             });
         }
 
         drawHeatmap()
+
+        function heatmapTransition() {
+
+            filteredModels = savedDataset
+                .filter(function(d) {
+                    return d["Weapon category"] == chosen_category
+                })
+
+            modelList = Array.from(new Set(filteredModels.map(function(d) {
+                return d["Weapon model"];
+            })))
+
+            groupedModels = d3.nest()
+                .key(function(d) {
+                    return d["Weapon model"] + "," + stripYear(d["Delivered year"]);
+                })
+                .rollup(function(v) {
+                    return d3.sum(v, function(d) {
+                        // console.log(parseInt(d["Delivered num."].replace(/\(|\)/g, "")))
+                        del = parseInt(d["Delivered num."].replace(/\(|\)/g, ""))
+                        return isNaN(del) ? 0 : del;
+                    })
+
+                })
+                .entries(filteredModels)
+                // console.log("f,", groupedModels)
+
+            for (let index = 0; index < yearsList.length; index++) {
+                var year = yearsList[index];
+                // console.log(element)
+                // find_wea = element["Weapon model"]
+                // find_year = element["Delivered year"]
+                for (let k = 0; k < modelList.length; k++) {
+                    var weapon = modelList[k];
+
+
+                    final_string = weapon + "," + year
+                    found = false
+                    for (let j = 0; j < groupedModels.length; j++) {
+                        const g_el = groupedModels[j];
+                        if (g_el.key == final_string) {
+                            found = true
+                        }
+                    }
+                    if (!found) {
+                        // console.log("NOT FOUND")
+                        groupedModels.push({
+                            "key": final_string,
+                            "value": 0
+                        });
+                    }
+                }
+            }
+
+
+            var myColor = d3.scaleLog()
+                .range(["white", "red"])
+                .domain([1, d3.max(groupedModels, function(d) {
+                    return d.value
+                })])
+
+            x.domain(modelList)
+
+
+            var u = svg2.selectAll(".heatSquare")
+                .data(groupedModels)
+            u
+                .enter()
+                .append("rect") // Add a new circle for each new elements
+                .merge(u) // get the already existing elements as well
+                .transition()
+                .duration(2000)
+                .attr("class", "heatSquare")
+                .attr("x", function(d) {
+                    return x(d.key.split(",")[0])
+                })
+                .attr("y", function(d) {
+                    return y(d.key.split(",")[1])
+                })
+                .attr("width", x.bandwidth())
+                .attr("height", y.bandwidth())
+                .style("fill", function(d) {
+                    return myColor(parseInt(d.value))
+                })
+
+            u.exit()
+                .transition() // and apply changes to all of them
+                .duration(2000)
+                .style("opacity", 0)
+                .remove()
+
+            u.on('mouseover', d => heatTip.show(d))
+                .on('mouseout', heatTip.hide)
+
+
+
+
+
+
+        }
     </script>
 
     <!--  -->

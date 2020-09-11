@@ -5,6 +5,8 @@
 var MapComponentsManager = function() {
 
     var sliderTimer;
+    var margin_top = 25
+    var margin_left = 60;
     var drawSlider = function() {
             var div = document.getElementById("map_slider"); // Create a <p> node
             var map_component_section = document.body
@@ -59,10 +61,10 @@ var MapComponentsManager = function() {
                 .append('svg')
                 .attr("id", "svg-slider")
                 .attr('width', 1500)
-                .attr('height', 100)
+                .attr('height', 80)
                 .append('g')
                 .attr("id", "g-slider")
-                .attr('transform', 'translate(60,30)');
+                .attr('transform', 'translate(' + margin_left + "," + margin_top + ')');
 
             gRange.call(sliderRange);
 

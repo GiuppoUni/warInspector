@@ -12,6 +12,8 @@
     body {
         padding-top: 70px;
         background-color: #000;
+        /* hide vertical */
+        overflow-y: hidden;
     }
     
     p {
@@ -904,6 +906,33 @@ Charts
         border-radius: 2px;
         pointer-events: 'none';
     }
+    
+    .d3-tip2 {
+        line-height: 1;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+        pointer-events: 'none';
+    }
+    
+    .d3-tip2:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+    }
+    /* Style northward tooltips differently */
+    
+    .d3-tip2.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+    }
     /* Creates a small triangle extender for the tooltip */
     
     .d3-tip:after {
@@ -952,11 +981,6 @@ Charts
     
     .parameter-value>text {
         fill: yellow;
-    }
-    
-    #slider-range {
-        padding-left: 300px;
-        height: 60px;
     }
     
     .shadowText {
@@ -1060,8 +1084,11 @@ Charts
     
     #sticky-footer {
         clear: both;
-        position: relative;
-        margin-top: 10px;
+        /* position: relative;
+        margin-top: 10px; */
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
     
     .line {
@@ -1139,4 +1166,16 @@ Charts
         z-index: 1;
         left: 350px;
         bottom: 650px;
+    }
+    
+    #slider-range {
+        margin-top: 0px;
+        padding-top: 0px;
+        padding-left: 300px;
+        height: 65px;
+    }
+    
+    #divCopyright {
+        display: block;
+        line-height: 90%;
     }

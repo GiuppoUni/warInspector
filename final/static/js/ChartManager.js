@@ -482,22 +482,7 @@ var ChartManager = function() {
 
     }
 
-    function stripYear(input) {
-        if (input == null || input == "")
-            return "";
-
-        // In case of not unique delivered year
-        if (input.indexOf("-") >= 0)
-            return parseInt(input.split("-")[1]);
-
-        // In case of (ordered year)
-        if (input.indexOf("(") >= 0 || input.indexOf(")") >= 0)
-            return parseInt(input.replace("(", "").replace(")", ""));
-
-        // Other cases
-        return parseInt(input);
-
-    }
+   
 
     function stripNum(input) {
         if (input == null || input == "")

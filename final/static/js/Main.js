@@ -19,6 +19,8 @@ allCountriesAlpha3 = ['', 'ZZZ', 'ZZZ', 'ZZZ', 'ZYY', 'ZXY', 'ZXX', 'ZYX', 'ZKY'
 
 var oldStatesClicked;
 
+var savedTransactions;
+
 function main() {
     // $(function() {
     //     $('select').selectpicker();
@@ -336,6 +338,22 @@ function callSelected(id) {
 
 function transitionDivBarChart(dataTransitions) { dbcm.transitionSlider(dataTransitions) }
 
+function stripYear(input) {
+    if (input == null || input == "")
+        return "";
+
+    // In case of not unique delivered year
+    if (input.indexOf("-") >= 0)
+        return parseInt(input.split("-")[1]);
+
+    // In case of (ordered year)
+    if (input.indexOf("(") >= 0 || input.indexOf(")") >= 0)
+        return parseInt(input.replace("(", "").replace(")", ""));
+
+    // Other cases
+    return parseInt(input);
+
+}
 
 function showWarsClick(cb) {
     if (cb.value == "imp") {
@@ -349,4 +367,33 @@ function showWarsClick(cb) {
         else
             mm.toggleCircles("on", "exp")
     }
+}
+
+function stripNum(input) {
+    if (input == null || input == "")
+        return 0;
+
+    // In case of (delivered num.)
+    if (input.indexOf("(") >= 0 || input.indexOf(")") >= 0)
+        return parseInt(input.replace("(", "").replace(")", ""));
+
+    // Other cases
+    return parseInt(input);
+
+}
+
+function stripYear(input) {
+    if (input == null || input == "")
+        return -1;
+
+    // In case of not unique delivered year
+    if (input.indexOf("-") >= 0)
+        return parseInt(input.split("-")[1]);
+
+    // In case of (ordered year)
+    // if (input.indexOf("(") >= 0 || input.indexOf(")") >= 0)
+
+    // Other cases
+    return parseInt(input.replace("(", "").replace(")", ""));
+
 }

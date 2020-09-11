@@ -190,7 +190,7 @@ def createDf(year1,year2,countries,features = ['IMPORT_TOTAL',"EXPORT_TOTAL", 'A
 
     df_imp = pd.read_csv(folder + "df_imp_clean.csv")
     
-    print(df_imp)
+    print(df_imp) 
     df_mrgd_imp = df_imp.iloc[:,[0,-1,-2,-3,-4]] 
     df_mrgd_imp.rename(columns={"code3":"Country Code"}, inplace=True)
     # NOTE
@@ -368,7 +368,6 @@ def homepage():
     print("--------------- In python doing stuff (1.5s)...")
     # time.sleep(1.5)
     print("--------------- Rendering index")
-
 
     # CountryName = request.form.get('Country_field',DEFAULT_STATE)
     # Year1 = request.form.get('Year_field1', DEFAULT_YEARS[0])
