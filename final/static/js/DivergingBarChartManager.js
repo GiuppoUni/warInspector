@@ -45,6 +45,19 @@ var DivergingBarChartManager = function() {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    var tipExp = d3v4.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            return '<strong>Exported: ' + d.value["totalS"] + '</strong>'
+        })
+
+    var tipImp = d3v4.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            return '<strong>Imported: ' + d.value["totalR"] + '</strong>';
+        })
     var drawChart = function() {
 
         var colour = d3v4.scaleSequential(d3v4.interpolatePRGn);
@@ -294,12 +307,7 @@ var DivergingBarChartManager = function() {
                     // return colorRed(d.value["totalR"])
                     return "#7a0000"
                 });
-            var tipExp = d3v4.tip()
-                .attr('class', 'd3-tip')
-                .offset([-10, 0])
-                .html(function(d) {
-                    return '<strong>Exported: ' + d.value["totalS"] + '</strong>'
-                })
+
             svg.call(tipExp);
 
 
@@ -307,12 +315,7 @@ var DivergingBarChartManager = function() {
                 .on('mouseover', d => tipExp.show(d))
                 .on('mouseout', tipExp.hide)
 
-            var tipImp = d3v4.tip()
-                .attr('class', 'd3-tip')
-                .offset([-10, 0])
-                .html(function(d) {
-                    return '<strong>Imported: ' + d.value["totalR"] + '</strong>';
-                })
+
             svg.call(tipImp);
 
 
@@ -442,130 +445,191 @@ var DivergingBarChartManager = function() {
             // console.log(data_structure)
             // console.log(typeof(data_structure));
         console.log("data", d3v4.keys(data_structure).map(function(d) { return d; }))
-        y.domain([0, max + 10])
-        yDown.domain([max + 10, 0])
-            // y.domain([0, 100])
-            // yDown.domain([0, 100])
 
-        const yAxisTicks = y.ticks()
-            .filter(Number.isInteger);
-        const yDownAxisTicks = yDown.ticks()
-            .filter(Number.isInteger);
-        console.log(svg.select('#y-div-axis'))
+        function changeAxis(_callback) {
+            y.domain([0, max + 10])
+            yDown.domain([max + 10, 0])
+                // y.domain([0, 100])
+                // yDown.domain([0, 100])
 
-        svg.select('#y-div-axis')
-            .transition()
-            .duration(2000)
-            .call(d3v4.axisLeft(y)
-                .tickValues(yAxisTicks)
-                .tickFormat(d3v4.format('d')))
+            const yAxisTicks = y.ticks()
+                .filter(Number.isInteger);
+            const yDownAxisTicks = yDown.ticks()
+                .filter(Number.isInteger);
+            console.log(svg.select('#y-div-axis'))
 
-        svg.select("#y-down-div-axis")
-            .transition()
-            .duration(2000)
-            .call(d3v4.axisLeft(yDown)
-                .tickValues(yDownAxisTicks)
-                .tickFormat(d3v4.format('d')))
+            svg.select('#y-div-axis')
+                .transition()
+                .duration(2000)
+                .call(d3v4.axisLeft(y)
+                    .tickValues(yAxisTicks)
+                    .tickFormat(d3v4.format('d')))
 
-        svg.select("#x-div-axis")
-            .transition()
-            .duration(2000)
-            .attr("transform", "translate(0," + (height + cfg.xAxisMargin) + ")")
-            .call(d3v4.axisBottom(x).tickSizeOuter(0))
-            .selectAll("text")
-            .attr("transform", "translate(-10,0)rotate(-45)")
-            .style("text-anchor", "end");
+            svg.select("#y-down-div-axis")
+                .transition()
+                .duration(2000)
+                .call(d3v4.axisLeft(yDown)
+                    .tickValues(yDownAxisTicks)
+                    .tickFormat(d3v4.format('d')))
+
+            svg.select("#x-div-axis")
+                .transition()
+                .duration(2000)
+                .attr("transform", "translate(0," + (height + cfg.xAxisMargin) + ")")
+                .call(d3v4.axisBottom(x).tickSizeOuter(0))
+                .selectAll("text")
+                .attr("transform", "translate(-10,0)rotate(-45)")
+                .style("text-anchor", "end");
+
+            _callback()
+        }
 
         //Transition on bars
-
-        // BARRE SUPERIORI
-        var u = svg.selectAll(".div-bars-exp")
-            .data(d3v4.entries(data_structure))
-
-        u.enter().append("rect")
-            .merge(u)
-            .transition()
-            .duration(2000)
-            .attr("class", "div-bars-exp")
-            .attr("height", function(d) {
-                return height / 2 - y(d.value["totalS"]);
-            })
-            .attr("x", function(d) { return x(d.key); })
-            .attr("width", x.bandwidth())
-            .attr("y", function(d) {
-                return y(d.value["totalS"])
-            })
-            .style("fill", function(d) {
-                // return colour(d.value["totalS"])
-                return "#007a12"
-            })
-            .style("stroke", function(d) {
-                // return colour(d.value["totalS"])
-                return "black"
-            });
-        u
-            .exit()
-            .transition() // and apply changes to all of them
-            .duration(1000)
-            .style("opacity", 0)
-            .remove()
-
-        var u2 = svg.selectAll(".div-bars-imp")
-            .data(d3v4.entries(data_structure))
-
-        // BARRE INFERIORI
-        u2
-            .enter()
-            .append("rect")
-            .merge(u2)
-            .transition()
-            .duration(2000)
-            .attr("class", "div-bars-imp")
-            .attr("height", function(d) {
-                // console.log(d.value["totalR"])
-                return yDown(d.value["totalR"]) - height / 2
-            })
-            .attr("x", function(d) { return x(d.key); })
-            .attr("width", x.bandwidth())
-            .attr("y", function(d) {
-                return height / 2 + 2;
-            })
-            .style("fill", function(d) {
-                // return colorRed(d.value["totalR"])
-                return "#7a0000"
-            })
-            .style("stroke", function(d) {
-                // return colour(d.value["totalS"])
-                return "black"
-            });
-
-        u2
-            .exit()
-            .transition() // and apply changes to all of them
-            .duration(1000)
-            .style("opacity", 0)
-            .remove()
+        function addBars(_callback) {
 
 
-        emptyBars = svg.append("g")
-            .attr("class", "bars")
 
-        console.log("d", data_structure)
-        emptyBars.selectAll("myExpRects")
-            .data(d3v4.entries(data_structure))
-            .enter().append("rect")
-            .attr("class", "div-sel-bars-exp")
-            .attr("height", function(d) {
-                return height / 2 - y(d.value["totalS"]);
-            })
-            .attr("x", function(d) { return x(d.key); })
-            .attr("width", x.bandwidth())
-            .attr("y", function(d) {
-                return y(d.value["totalS"])
-            })
-            .style("fill", "none")
-            .style("stroke", "black")
+            // BARRE SUPERIORI
+            var u = svg.selectAll(".div-bars-exp")
+                .data(d3v4.entries(data_structure))
 
+            u.enter().append("rect")
+                .merge(u)
+                .transition()
+                .duration(2000)
+                .attr("class", "div-bars-exp")
+                .attr("height", function(d) {
+                    return height / 2 - y(d.value["totalS"]);
+                })
+                .attr("x", function(d) { return x(d.key); })
+                .attr("width", x.bandwidth())
+                .attr("y", function(d) {
+                    return y(d.value["totalS"])
+                })
+                .style("fill", function(d) {
+                    // return colour(d.value["totalS"])
+                    return "#007a12"
+                })
+                .style("stroke", function(d) {
+                    // return colour(d.value["totalS"])
+                    return "black"
+                });
+            u
+                .exit()
+                .transition() // and apply changes to all of them
+                .duration(1000)
+                .style("opacity", 0)
+                .remove()
+
+            var u2 = svg.selectAll(".div-bars-imp")
+                .data(d3v4.entries(data_structure))
+
+            // BARRE INFERIORI
+            u2
+                .enter()
+                .append("rect")
+                .merge(u2)
+                .transition()
+                .duration(2000)
+                .attr("class", "div-bars-imp")
+                .attr("height", function(d) {
+                    // console.log(d.value["totalR"])
+                    return yDown(d.value["totalR"]) - height / 2
+                })
+                .attr("x", function(d) { return x(d.key); })
+                .attr("width", x.bandwidth())
+                .attr("y", function(d) {
+                    return height / 2 + 2;
+                })
+                .style("fill", function(d) {
+                    // return colorRed(d.value["totalR"])
+                    return "#7a0000"
+                })
+                .style("stroke", function(d) {
+                    // return colour(d.value["totalS"])
+                    return "black"
+                });
+
+            u2
+                .exit()
+                .transition() // and apply changes to all of them
+                .duration(1000)
+                .style("opacity", 0)
+                .remove()
+
+
+            emptyBars = svg.append("g")
+                .attr("class", "selBars")
+
+            console.log("d", data_structure)
+
+
+            _callback()
+        }
+
+        function drawSelBars() {
+
+            var selExpTip = d3v4.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                    return '<strong>' + d.key + ": " + d.value["exp"] + '</strong>'
+                })
+            svg.call(selExpTip);
+
+            console.log("drawing sel bars")
+            d3v4.entries(data_structure).forEach(
+
+                function(bar) {
+                    year = bar.key
+                    var base = 0
+                    d3v4.entries(bar.value).forEach(function(d) {
+                        if (d.key[0] == d.key[0].toUpperCase()) {
+                            console.log(year, d)
+                            var emptyBar = emptyBars.selectAll("mySelBar")
+                                .data([d])
+                                .enter()
+                                .append("rect")
+                                .attr("class", "div-sel-bars-exp")
+                                .attr("height", function(dd) {
+                                    if (base == 0) {
+                                        base = height / 2 - (y(dd.value["exp"]))
+                                        return 0;
+                                    }
+                                    var h = height / 2 - (y(dd.value["exp"] + base));
+                                    base = h
+                                    return h;
+                                })
+                                .attr("x", x(year))
+                                .attr("width", x.bandwidth())
+                                .attr("y", function(dd) {
+                                    return y(dd.value["exp"])
+                                })
+                                .style("fill", "yellow")
+                                .style("opacity", 0.5)
+                                .style("stroke", "yellow")
+                                .style("stroke-dasharray", 2.5)
+
+                            emptyBar
+                                .on('mouseover', d => selExpTip.show(d))
+                                .on('mouseout', selExpTip.hide)
+                        }
+                    })
+
+                })
+
+            d3v4.selectAll(".div-bars-imp")
+                .style("pointer-events", "none")
+
+            d3v4.selectAll(".div-bars-exp")
+                .style("pointer-events", "none")
+
+        }
+
+        changeAxis(() => addBars(() => drawSelBars()))
+            // changeAxis(() => console.log("1"))
+            // addBars(() => console.log("2"))
+            // drawSelBars()
     }
     return {
         drawChart: drawChart,
