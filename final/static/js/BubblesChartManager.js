@@ -198,7 +198,7 @@ var BubblesChartManager = function() {
             })
             .entries(imp)
 
-        // console.log(nested)
+        console.log(impNested)
         var scatter = svg
             .append('g')
             .selectAll("dot")
@@ -210,8 +210,8 @@ var BubblesChartManager = function() {
             .attr("cy", function(d) { return y(d.lifeExp); })
             .attr("r", function(d) {
 
-                return z ( impNested.filter( d => d.key == d.) ) 
-                // return z(d.pop);
+                return z(impNested.filter(d => d.key == "ITA"))
+                    // return z(d.pop);
             })
             .style("fill", function(d) { return myColor(d.continent); })
             // -3- Trigger the functions for hover

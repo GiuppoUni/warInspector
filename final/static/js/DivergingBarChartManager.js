@@ -584,7 +584,7 @@ var DivergingBarChartManager = function() {
                     year = bar.key
                     var base = 0
                     d3v4.entries(bar.value).forEach(function(d) {
-                        if (d.key[0] == d.key[0].toUpperCase()) {
+                        if (d.key[0] == d.key[0].toUpperCase()) { // Allora è un paese tipo ITA
                             console.log(year, d)
                             var emptyBar = emptyBars.selectAll("mySelBar")
                                 .data([d])
@@ -592,10 +592,10 @@ var DivergingBarChartManager = function() {
                                 .append("rect")
                                 .attr("class", "div-sel-bars-exp")
                                 .attr("height", function(dd) {
-                                    if (base == 0) {
-                                        base = height / 2 - (y(dd.value["exp"]))
-                                        return 0;
-                                    }
+                                    // if (base == 0) {
+                                    //     base = height / 2 - (y(dd.value["exp"]))
+                                    //     return 0;
+                                    // }
                                     var h = height / 2 - (y(dd.value["exp"] + base));
                                     base = h
                                     return h;
