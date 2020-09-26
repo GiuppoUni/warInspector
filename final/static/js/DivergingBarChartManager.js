@@ -38,6 +38,8 @@ var DivergingBarChartManager = function() {
     var new_yScale = y
     var new_yScaleDown = yDown
 
+    const my_colors = ["blue", "yellow", "red"]
+
     var svg = d3v4.select("#diverging-card").append("svg")
         .attr("id", "diverging-svg")
         .attr("width", width + margin.left + margin.right)
@@ -564,7 +566,7 @@ var DivergingBarChartManager = function() {
             console.log("d", data_structure)
 
 
-            _callback()
+            // _callback()
         }
 
         function drawSelBars() {
@@ -581,8 +583,10 @@ var DivergingBarChartManager = function() {
             d3v4.entries(data_structure).forEach(
 
                 function(bar) {
+                    // Year locked
                     year = bar.key
                     var base = 0
+                    var i = 0
                     d3v4.entries(bar.value).forEach(function(d) {
                         if (d.key[0] == d.key[0].toUpperCase()) { // Allora è un paese tipo ITA
                             console.log(year, d)
@@ -591,29 +595,33 @@ var DivergingBarChartManager = function() {
                                 .enter()
                                 .append("rect")
                                 .attr("class", "div-sel-bars-exp")
+                                .attr("y", function(dd) {
+                                    return y(dd.value["exp"])
+                                })
                                 .attr("height", function(dd) {
-                                    // if (base == 0) {
+                                    // if (base != 0) {
                                     //     base = height / 2 - (y(dd.value["exp"]))
                                     //     return 0;
                                     // }
-                                    var h = height / 2 - (y(dd.value["exp"] + base));
+                                    var h = height / 2 - (y(dd.value["exp"]) + base);
                                     base = h
+                                    console.log("SEL COL", i, dd, h)
                                     return h;
                                 })
                                 .attr("x", x(year))
                                 .attr("width", x.bandwidth())
-                                .attr("y", function(dd) {
-                                    return y(dd.value["exp"])
-                                })
-                                .style("fill", "yellow")
+
+                            .style("fill", my_colors[i % 3])
                                 .style("opacity", 0.5)
-                                .style("stroke", "yellow")
-                                .style("stroke-dasharray", 2.5)
+                                .style("stroke", "black")
+                                // .style("stroke-dasharray", 2.5)
 
                             emptyBar
                                 .on('mouseover', d => selExpTip.show(d))
                                 .on('mouseout', selExpTip.hide)
+                            i++;
                         }
+
                     })
 
                 })

@@ -315,8 +315,10 @@ var MapManager = function() {
                 .on('click', selected)
                 .attr("id", d => "c-imp-" + d.id)
                 .append("title")
-                .text(d => `From ${d.properties.name}
-            ${data.has(d.id) ? data.get(d.id) : "N/A"}`);
+                .text(d => {
+                    `From ${d.properties.name}
+            ${data.has(d.id) ? data.get(d.id) : "N/A"}`
+                });
 
 
 
@@ -345,9 +347,6 @@ var MapManager = function() {
 
             svg2.select(".legendThreshold")
                 .call(legend);
-
-
-
 
             wars = savedWars.filter(d => filterWar(d));
 
@@ -1013,6 +1012,7 @@ var MapManager = function() {
                 .selectAll(".war-dot.exp")
                 .transition().duration(1000)
                 .style("opacity", status == "on" ? .5 : 0)
+                .attr("pointer-events", status == "on" ? "auto" : "none")
             svg
                 .selectAll(".circleLegend")
                 .transition().duration(1000)
@@ -1027,6 +1027,7 @@ var MapManager = function() {
                 .selectAll(".circleLegend")
                 .transition().duration(1000)
                 .style("opacity", status == "on" ? 1 : 0)
+                .attr("pointer-events", status == "on" ? "auto" : "none")
 
         }
 

@@ -193,6 +193,24 @@ var weaponsBarChartManager = function() {
                     .style("stroke", "black")
                     .on('mouseover', tip.show)
                     .on('mouseout', tip.hide)
+                    .on("click", d => {
+                        chosen_category = d.key
+
+                        // $("#scatter_title").html("Weapons by model: " + chosen_category)
+
+                        // d3v4.select("#scatter_svg").remove()
+                        // drawScatter()
+                        // console.log("Plot recomputed")
+
+                        if (chosen_category.includes("/"))
+                            chosen_category = chosen_category.split("/")[1]
+
+                        txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+                        if (txt == "" || txt == null || txt == undefined)
+                            txt = "Not available at the moment."
+                        $("#weapon_header").html("Weapon Description: " + "<h7 style='color:yellow'> &nbsp" + chosen_category + "</h7>")
+                        $("#weapon_description").html(txt)
+                    })
                     .transition()
                     .duration(800)
                     .attr("y", function(d) {
