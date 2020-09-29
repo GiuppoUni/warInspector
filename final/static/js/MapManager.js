@@ -719,7 +719,7 @@ var MapManager = function() {
 
                         $("#" + country_id + "-line").remove()
                         var newRowContent = '<tr id="' + country_id + '-line">\
-            <td class="col-xs-1">' + country_name + " (" + country_id + ')</td>\
+            <td class="col-xs-1" style="color:yellow">' + country_name + " (" + country_id + ')</td>\
             <td class="col-xs-3">' + average(gdps) + '</td>\
             <td class="col-xs-3">' + average(pops) + '</td>\
             <td class="col-xs-3">' + average(armies) + '</td>\

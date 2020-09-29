@@ -25,6 +25,8 @@
     <script src="static/js/libraries/d3-simple-slider.min.js"></script>
     <script src="static/js/libraries/d3-legend.js"></script>
     <script src="static/js/MapComponentsManager.js"></script>
+    <script src="static/js/wea_lineChart.js"></script>
+
 
     <!-- Favico -->
     <link rel="icon" type="image/png" href="/static/icons/favicon.png" />
@@ -119,7 +121,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col my-col-up">
+            <div class="col-md-1 my-col-up">
                 <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue; ">
                     <div class="card-header d-flex align-items-center justify-content-center  text-center">
                         Weapon Description
@@ -130,15 +132,36 @@
                     </div>
                 </div>
             </div>
+            <div class="col my-col-up">
+                <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue; ">
+                    <div class="card-header d-flex align-items-center
+                    justify-content-center  text-center" id="line-header">
+                    </div>
+                    <div class="card-body">
+                        <div style="background-color: rgb(20, 20, 20);" id="wea-line-svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
-
-
+    <!-- 
+/**********
+ * SCRIPT *
+ **********/ -->
     <script>
         var savedDataset;
+        var savedGrouped;
+        var savedModelList;
+        var modelChosen;
+        var sliderTimer;
+        var is_first_draw = true
+        var oldTick = "";
+
         NUM_CATEGORIES = 15
         chosen_category = ""
+        var wl = WeaLine()
 
         // set the dimensions and margins of the graph
         var margin = {
@@ -166,273 +189,183 @@
 
         // Parse the Data
         d3.csv("static/data/merged1990.csv", function(data) {
-                savedDataset = data;
-                console.log(data)
-                orderedWeapons = d3.nest()
-                    .key(function(d) {
-                        // if (!cats.includes(d["Weapon category"]))
-                        //     cats.push(d["Weapon category"])
-                        return d["Weapon category"];
+            savedDataset = data;
+            console.log(data)
+            orderedWeapons = d3.nest()
+                .key(function(d) {
+                    // if (!cats.includes(d["Weapon category"]))
+                    //     cats.push(d["Weapon category"])
+                    return d["Weapon category"];
+                })
+                .rollup(function(v) {
+                    return d3.sum(v, function(d) {
+                        //return d.Ordered;
+                        return parseInt(d.Ordered.replace(/\(|\)/g, ""));
                     })
-                    .rollup(function(v) {
-                        return d3.sum(v, function(d) {
-                            //return d.Ordered;
-                            return parseInt(d.Ordered.replace(/\(|\)/g, ""));
+
+                })
+                .entries(data)
+                .sort(function(a, b) {
+                    return b.value - a.value;
+                })
+                .slice(0, NUM_CATEGORIES)
+
+            chosen_category = ((orderedWeapons.length > 0) ? orderedWeapons[0]["key"] : null)
+
+            // console.log(orderedWeapons.length)
+            console.log(orderedWeapons);
+
+            // X axis
+            var x = d3.scaleBand()
+                .range([0, width])
+                .domain(orderedWeapons.map(function(d) {
+                    return d.key;
+                }))
+                .padding(0.2);
+
+            svg.append("g")
+                .attr("class", "wtext")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                .attr("transform", "translate(-10,0)rotate(-45)")
+                .style("text-anchor", "end")
+
+            var imageTip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+
+                    return '<img alt="weapon img" src="static/icons/categories/' + d + '.jpeg" width="70" height="70" />';
+                })
+
+            svg.call(imageTip);
+
+
+            d3.selectAll(".tick")
+                .on('mouseover', function(d) {
+                    // console.log(this)
+
+                    d3.select(this).style("font-size", "20px")
+                    if (d3.select(this).text() != chosen_category)
+                        d3.select(this).select('g > text')
+                        .style("fill", "rgba(17,222,222,1)");
+                    // .style("fill", "orange");
+
+                    imageTip.show(d)
+                })
+                .on('mouseout', function(d) {
+
+                    d3.select(this).style("font-size", "14px")
+                    if (d3.select(this).text() != chosen_category)
+                        d3.select(this).select('g > text').style("fill", "white");
+                    else
+                        d3.select(this).select('g > text').style("fill", "red");
+
+                    imageTip.hide(d)
+                })
+                .on("click", function() {
+                    //alert("click")
+                    d3.selectAll(".tick")
+                        .filter(function() {
+                            return d3.select(this).text() == chosen_category
                         })
+                        .select('g > text')
+                        .style("fill", "white")
 
-                    })
-                    .entries(data)
-                    .sort(function(a, b) {
-                        return b.value - a.value;
-                    })
-                    .slice(0, NUM_CATEGORIES)
+                    chosen_category = d3.select(this).text()
 
-                chosen_category = ((orderedWeapons.length > 0) ? orderedWeapons[0]["key"] : null)
-
-                // console.log(orderedWeapons.length)
-                console.log(orderedWeapons);
-
-                // X axis
-                var x = d3.scaleBand()
-                    .range([0, width])
-                    .domain(orderedWeapons.map(function(d) {
-                        return d.key;
-                    }))
-                    .padding(0.2);
-
-                svg.append("g")
-                    .attr("class", "wtext")
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(d3.axisBottom(x))
-                    .selectAll("text")
-                    .attr("transform", "translate(-10,0)rotate(-45)")
-                    .style("text-anchor", "end")
-
-                var imageTip = d3.tip()
-                    .attr('class', 'd3-tip')
-                    .offset([-10, 0])
-                    .html(function(d) {
-
-                        return '<img alt="weapon img" src="static/icons/categories/' + d + '.jpeg" width="70" height="70" />';
-                    })
-
-                svg.call(imageTip);
-
-
-                d3.selectAll(".tick")
-                    .on('mouseover', function(d) {
-                        // console.log(this)
-
-                        d3.select(this).style("font-size", "20px")
-                        if (d3.select(this).text() != chosen_category)
-                            d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
-
-                        imageTip.show(d)
-                    })
-                    .on('mouseout', function(d) {
-
-                        d3.select(this).style("font-size", "14px")
-                        if (d3.select(this).text() != chosen_category)
-                            d3.select(this).select('g > text').style("fill", "white");
-                        else
-                            d3.select(this).select('g > text').style("fill", "red");
-
-                        imageTip.hide(d)
-                    })
-                    .on("click", function() {
-                        //alert("click")
-                        d3.selectAll(".tick")
-                            .filter(function() {
-                                return d3.select(this).text() == chosen_category
-                            })
-                            .select('g > text')
-                            .style("fill", "white")
-
-                        chosen_category = d3.select(this).text()
-
-                        $("#scatter_title").html("Weapons by model: " + chosen_category)
-
+                    $("#scatter_title").text("Weapons by model: ")
+                        .append("span")
+                        .text("\u00A0" + chosen_category).style("color", "red")
                         // d3.select("#scatter_svg").remove()
                         //drawScatter()
 
-                        heatmapTransition()
-                            // console.log("Plot recomputed")
+                    heatmapTransition()
+                        // console.log("Plot recomputed")
 
-                        console.log(chosen_category)
-                        txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
-                        if (txt == "" || txt == null || txt == undefined)
-                            txt = "Not available at the moment."
-                        $("#weapon_description").html(txt)
-
-
-                    })
-                var tip = d3.tip()
-                    .attr('class', 'd3-tip')
-                    .offset([-10, 0])
-                    .html(function(d) {
-                        return "<strong>Ordered:</strong> <span style='color:red'>" + d.value + "</span>";
-                    })
+                    console.log(chosen_category)
+                    txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+                    if (txt == "" || txt == null || txt == undefined)
+                        txt = "Not available at the moment."
+                    $("#weapon_description").html(txt)
 
 
-                svg.call(tip);
-
-                d3.selectAll(".tick")
-                    .filter(function() {
-                        return d3.select(this).text() == chosen_category
-                    })
-                    .select('g > text')
-                    .style("fill", "red")
-
-                $("#scatter_title").html("Weapons by model: " + chosen_category)
-                $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
-
-                txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
-                if (txt == "" || txt == null || txt == undefined)
-                    txt = "Not available at the moment."
-                $("#weapon_description").html(txt)
+                })
+            var tip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                    return "<strong>Ordered:</strong> <span style='color:red'>" + d.value + "</span>";
+                })
 
 
-                // Add Y axis
-                var y = d3.scaleLinear()
-                    //.domain([0, 80000])
-                    .domain([0, orderedWeapons[0].value + 100000])
-                    .range([height, 0]);
-                svg.append("g")
-                    .call(d3.axisLeft(y));
+            svg.call(tip);
 
-                // Bars
-                svg.selectAll("mybar")
-                    .data(orderedWeapons)
-                    .enter()
-                    .append("rect")
-                    .attr("x", function(d) {
-                        return x(d.key);
-                    })
-                    .attr("width", x.bandwidth())
-                    .attr("fill", "#69b3a2")
-                    // no bar at the beginning thus:
-                    .attr("height", function(d) {
-                        return height - y(0);
-                    }) // always equal to 0
-                    .attr("y", function(d) {
-                        return y(0);
-                    })
-                    .on('mouseover', tip.show)
-                    .on('mouseout', tip.hide)
+            d3.selectAll(".tick")
+                .filter(function() {
+                    return d3.select(this).text() == chosen_category
+                })
+                .select('g > text')
+                .style("fill", "red")
 
-                // Animation
-                svg.selectAll("rect")
-                    .transition()
-                    .duration(800)
-                    .attr("y", function(d) {
+            $("#scatter_title").text("Weapons by model: ")
+                .append("span")
+                .text("\u00A0" + chosen_category).style("color", "red")
+            $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
 
-                        return !isNaN(d.value) ? y(d.value) : 0;
-                    })
-                    .attr("height", function(d) {
-                        return !isNaN(d.value) ? height - y(d.value) : height;
-                    })
-                    .delay(function(d, i) {
-                        // console.log(i);
-                        return (i * 100)
-                    })
-
-            })
-            /***********
-             * SCATTER *
-             ***********/
-
-        function drawScatter() {
-            // set the dimensions and margins of the graph
-            var margin = {
-                    top: 10,
-                    right: 30,
-                    bottom: 130,
-                    left: 60
-                },
-                width = 700 - margin.left - margin.right,
-                height = 370 - margin.top - margin.bottom;
-            // append the svg object to the body of the page
-            var svg = d3.select("#scatter_viz")
-                .append("svg")
-                .attr("id", "scatter_svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .append("g")
-                .attr("transform",
-                    "translate(" + margin.left + "," + margin.top + ")")
-
-            //Read the data
-            d3.csv("static/data/merged1990.csv", function(data) {
-                filteredModels = data
-                    .filter(function(d) {
-                        return d["Weapon category"] == chosen_category
-                    })
-
-                modelList = Array.from(new Set(filteredModels.map(function(d) {
-                    return d["Weapon model"];
-                })))
-
-                //console.log("Debug")
-                //console.log(filteredModels)
+            txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+            if (txt == "" || txt == null || txt == undefined)
+                txt = "Not available at the moment."
+            $("#weapon_description").html(txt)
 
 
-                // Add X axis
-                var x = d3.scaleBand()
-                    .domain([0, 0])
-                    .range([0, width]);
-                svg.append("g")
-                    .attr("class", "myXaxis") // Note that here we give a class to the X axis, to be able to call it later and modify it
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(d3.axisBottom(x))
-                    .attr("opacity", "0")
+            // Add Y axis
+            var y = d3.scaleLinear()
+                //.domain([0, 80000])
+                .domain([0, orderedWeapons[0].value + 100000])
+                .range([height, 0]);
+            svg.append("g")
+                .call(d3.axisLeft(y));
 
-                // Add Y axis
-                var y = d3.scaleBand()
-                    .domain(Array.from(Array(30), (_, i) => i + 1989))
-                    .range([height, 0]);
-                svg.append("g")
-                    .call(d3.axisLeft(y));
+            // Bars
+            svg.selectAll("mybar")
+                .data(orderedWeapons)
+                .enter()
+                .append("rect")
+                .attr("x", function(d) {
+                    return x(d.key);
+                })
+                .attr("width", x.bandwidth())
+                .attr("fill", "#69b3a2")
+                // no bar at the beginning thus:
+                .attr("height", function(d) {
+                    return height - y(0);
+                }) // always equal to 0
+                .attr("y", function(d) {
+                    return y(0);
+                })
+                .on('mouseover', tip.show)
+                .on('mouseout', tip.hide)
 
-                // Add dots
-                svg.append('g')
-                    .selectAll("dot")
-                    .data(filteredModels)
-                    .enter()
-                    .append("circle")
-                    .attr("cx", function(d) {
-                        return x(d["Weapon model"]);
-                    })
-                    .attr("cy", function(d) {
-                        return y(parseInt(d["Ordered year"].replace(/\(|\)/g, "")));
-                    })
-                    .attr("r", 1.5)
-                    .style("fill", "#69b3a2")
+            // Animation
+            svg.selectAll("rect")
+                .transition()
+                .duration(800)
+                .attr("y", function(d) {
 
-                // new X axis
-                x.domain(modelList)
-                svg.select(".myXaxis")
-                    .transition()
-                    .duration(2000)
-                    .attr("opacity", "1")
-                    .call(d3.axisBottom(x))
-                    .selectAll("text")
-                    .attr("transform", "translate(-10,0)rotate(-50)")
-                    .style("text-anchor", "end")
+                    return !isNaN(d.value) ? y(d.value) : 0;
+                })
+                .attr("height", function(d) {
+                    return !isNaN(d.value) ? height - y(d.value) : height;
+                })
+                .delay(function(d, i) {
+                    // console.log(i);
+                    return (i * 100)
+                })
 
-                svg.selectAll("circle")
-                    .transition()
-                    .delay(function(d, i) {
-                        return (i * 3)
-                    })
-                    .duration(2000)
-                    .attr("cx", function(d) {
-                        return x(d["Weapon model"]);
-                    })
-                    .attr("cy", function(d) {
-                        return y(parseInt(d["Ordered year"].replace(/\(|\)/g, "")));
-                    })
-            })
-        }
+        })
+
 
         // $.ajax({
         //     type: "GET",
@@ -515,29 +448,10 @@
                     })
                     .entries(filteredModels)
                 console.log("f,", groupedModels)
+                savedModelList = modelList
+                    //console.log("groupedModels", groupedModels);
 
-                //console.log("groupedModels", groupedModels);
 
-                // Build X scales and axis:
-                x = d3.scaleBand()
-                    .range([0, width])
-                    .domain(modelList)
-                    .padding(0.01);
-                svg2.append("g")
-                    .attr("id", "x-heat-axis")
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(d3.axisBottom(x))
-                    .selectAll("text")
-                    .attr("transform", "rotate(-45)")
-                    .style("text-anchor", "end");
-
-                // Build Y scales and axis:
-                y = d3.scaleBand()
-                    .range([height, 0])
-                    .domain(yearsList)
-                    .padding(0.01);
-                svg2.append("g")
-                    .call(d3.axisLeft(y));
 
                 // Build color scale
                 var myColor = d3.scaleLog()
@@ -572,9 +486,50 @@
                         }
                     }
                 }
-
+                savedGrouped = groupedModels
                 console.log("ff,", groupedModels)
 
+                // Build X scales and axis:
+                x = d3.scaleBand()
+                    .range([0, width])
+                    .domain(modelList)
+                    .padding(0.01);
+                svg2.append("g")
+                    .attr("id", "x-heat-axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x))
+                    .selectAll("text")
+                    .attr("transform", "rotate(-45)")
+                    .style("text-anchor", "end");
+
+                svg2.select("#x-heat-axis").selectAll(".tick")
+                    .on('mouseover', function(d) {
+                        // console.log(this)
+                        if (oldTick != "") {
+                            oldTick.style("font-size", "14px")
+                            oldTick.select('g > text').style("fill", "white");
+
+                        }
+                        d3.select(this).style("font-size", "20px")
+                        if (d3.select(this).text() != modelChosen) {
+                            // d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
+                            d3.select(this).select('g > text').style("fill", "orange");
+                        }
+                        start_timer_chosen_model(d3.select(this).text())
+                        oldTick = d3.select(this)
+                    })
+                    .on('mouseout', function(d) {
+
+                    })
+
+
+                // Build Y scales and axis:
+                y = d3.scaleBand()
+                    .range([height, 0])
+                    .domain(yearsList)
+                    .padding(0.01);
+                svg2.append("g")
+                    .call(d3.axisLeft(y));
                 svg2.selectAll()
                     .data(groupedModels)
                     .enter()
@@ -598,7 +553,10 @@
                 svg2.call(heatTip);
 
                 svg2.selectAll(".heatSquare")
-                    .on('mouseover', d => heatTip.show(d))
+                    .on('mouseover', d => {
+                        heatTip.show(d);
+                        start_timer_chosen_model(d.key.split(",")[0])
+                    })
                     .on('mouseout', heatTip.hide)
 
             });
@@ -673,7 +631,29 @@
                 .call(d3.axisBottom(x))
                 .selectAll("text")
                 .attr("transform", "rotate(-45)")
-                .style("text-anchor", "end");
+                .style("text-anchor", "end")
+
+            svg2.select("#x-heat-axis")
+                .selectAll(".tick")
+                .on('mouseover', function(d) {
+                    // console.log(this)
+                    if (oldTick != "") {
+                        oldTick.style("font-size", "14px")
+                        oldTick.select('g > text').style("fill", "white");
+
+                    }
+                    d3.select(this).style("font-size", "20px")
+                    if (d3.select(this).text() != modelChosen) {
+                        // d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
+                        d3.select(this).select('g > text').style("fill", "orange");
+                    }
+                    start_timer_chosen_model(d3.select(this).text())
+                    oldTick = d3.select(this)
+                })
+                .on('mouseout', )
+
+
+
 
             var u = svg2.selectAll(".heatSquare")
                 .data(groupedModels)
@@ -702,13 +682,36 @@
                 .style("opacity", 0)
                 .remove()
 
-            u.on('mouseover', d => heatTip.show(d))
+            u.on('mouseover', d => {
+                    start_timer_chosen_model(d.key.split(",")[0]);
+                    heatTip.show(d)
+                })
                 .on('mouseout', heatTip.hide)
 
 
 
 
 
+
+        }
+
+        function start_timer_chosen_model(d) {
+            d3.select("#line-header")
+                .text("Model traded values: ")
+                .append("span")
+                .text("\u00A0" + d).style("color", "orange");
+            // .text("Model traded values: " + d)
+            if (sliderTimer != undefined)
+                clearTimeout(sliderTimer)
+            if (d != modelChosen) {
+
+                sliderTimer = setTimeout(function() {
+
+                    modelChosen = d;
+                    console.log(d);
+                    wl.drawChart()
+                }, 250);
+            }
 
         }
     </script>
@@ -1558,4 +1561,4 @@
 
 </body>
 
-</html>
+</html

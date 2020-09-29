@@ -26,14 +26,21 @@ import matplotlib.pyplot as plt, mpld3
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt, mpld3
-
+from selenium import webdriver
+from bs4 import BeautifulSoup
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
 
 
 PCA_WIDTH="300"
 PCA_HEIGHT="250"
 
 folder="static/data/"
-
+op = webdriver.ChromeOptions()
+op.add_argument('headless')
+driver = webdriver.Chrome('/usr/bin/chromedriver',options=op)
 
 #1. Declare application
 # application= Flask(__name__)
@@ -414,10 +421,34 @@ def returnPCAData():
     # return jsonify(data.CountryName,data.Year1,data.Year2,s1,s2)
 
     data_to_d3 = pcaMain(year1,year2,country,features)
+    
+    
+    # link = driver.find_element_by_xpath('//*[@class="gct-alerts__latest-alert"]')
+    # link.click()
+    # alerts = []
+    # dates = []
+    # for a in soup.findAll('div', attrs={'class':'gct-alerts__alert-body gct-alerts__alert-body--all'}):
+    #     alerts.append(a)
+    # for d in soup.findAll('span', attrs={'class':'gct-alerts__alert-date gct-alerts__alert-date--all'}):
+    #     dates.append(d)
 
-    return jsonify(data.CountryName,data.Year1,data.Year2,data_to_d3)
+    return jsonify(data.CountryName,data.Year1,data.Year2,data_to_d3 )
 
+@application.route("/get-news",methods=["POST"])
+def returnNews():
+    link = "https://www.cfr.org/global-conflict-tracker/?category=us&conflictType=1099&vm=grid"
+    driver.get(link)
+    content = driver.page_source
+    soup = BeautifulSoup(content,"html.parser")
+    alert = soup.find('span', attrs={'class':'gct-alerts__latest-alert'})
+    if(alert.text=="..."):
+        driver.get(link)
+        content = driver.page_source
+        soup = BeautifulSoup(content,"html.parser")
 
+    last_update = soup.find('span', attrs={'class':'main-nav__heading-last-updated'})
+
+    return jsonify(str(alert),str(last_update.text))
 # Other routes
 @application.route('/about')
 def about():

@@ -1178,3 +1178,11 @@ Charts
         display: block;
         line-height: 90%;
     }
+    
+    .gct-alerts__latest-alert {
+        color: white;
+    }
+    
+    .myGearIcon {
+        fill: white;
+    }

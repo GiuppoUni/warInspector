@@ -28,6 +28,12 @@ function main() {
 
     //Layout movements
 
+    // var gear = document.getElementsByClassName('myGearIcon')[0];
+
+    // gear.style.cursor = 'pointer';
+    // gear.onclick = function() {
+    //     openRightMenu();
+    // };
 
     mcm = MapComponentsManager();
     dbcm = DivergingBarChartManager();
@@ -191,6 +197,16 @@ function getDataFromPost(isCreated) {
                     // pcam.drawBasicChart(root[3], "IMP")
                     // pcam.drawBasicChart(root[4], "EXP")
 
+                d3v4.json("/get-news")
+                    .post(data, function(error, root) {
+
+                        document.getElementById("alert").innerHTML = root[0]
+                        document.getElementById("alert-data").innerHTML = root[1]
+
+                    })
+
+
+
             }
         });
 }
@@ -234,6 +250,14 @@ function callStopRace() {
 
 function toggler() {
     window.scrollTo(0, 0);
+}
+
+function openRightMenu() {
+    document.getElementById("rightMenu").style.display = "block";
+}
+
+function closeRightMenu() {
+    document.getElementById("rightMenu").style.display = "none";
 }
 
 $(document).ready(function() {
