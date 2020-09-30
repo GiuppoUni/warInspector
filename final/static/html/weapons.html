@@ -275,7 +275,7 @@
 
                     chosen_category = d3.select(this).text()
 
-                    $("#scatter_title").text("Weapons by model: ")
+                    d3.select("#scatter_title").text("Weapons by model: ")
                         .append("span")
                         .text("\u00A0" + chosen_category).style("color", "red")
                         // d3.select("#scatter_svg").remove()
@@ -309,7 +309,7 @@
                 .select('g > text')
                 .style("fill", "red")
 
-            $("#scatter_title").text("Weapons by model: ")
+            d3.select("#scatter_title").text("Weapons by model: ")
                 .append("span")
                 .text("\u00A0" + chosen_category).style("color", "red")
             $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
