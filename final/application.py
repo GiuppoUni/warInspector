@@ -436,19 +436,25 @@ def returnPCAData():
 
 @application.route("/get-news",methods=["POST"])
 def returnNews():
-    link = "https://www.cfr.org/global-conflict-tracker/?category=us&conflictType=1099&vm=grid"
+    # oldlink = "https://www.cfr.org/global-conflict-tracker/?category=us&conflictType=1099&vm=grid"
+    link = "https://www.crisisgroup.org/crisiswatch"
     driver.get(link)
     content = driver.page_source
     soup = BeautifulSoup(content,"html.parser")
-    alert = soup.find('span', attrs={'class':'gct-alerts__latest-alert'})
-    if(alert.text=="..."):
-        driver.get(link)
-        content = driver.page_source
-        soup = BeautifulSoup(content,"html.parser")
+    # alert = soup.find('span', attrs={'class':'gct-alerts__latest-alert'})
+    alert_parent = soup.find('p', attrs={'class':'[ u-mar-b0 u-mar-t15 ] [ u-fs13 u-lh15 u-fwl u-c-white:link ]'})
+    alert = alert_parent.findAll('a', attrs={'class':'js-scrollTo'})
+    # if(alert.text=="..."):
+    #     driver.get(link)
+    #     content = driver.page_source
+    #     soup = BeautifulSoup(content,"html.parser")
 
-    last_update = soup.find('span', attrs={'class':'main-nav__heading-last-updated'})
-
-    return jsonify(str(alert),str(last_update.text))
+    last_update_parent = soup.find('h3', attrs={'class':'[ u-fs12 ]'})
+    last_update = last_update_parent.find('span')
+    print([a for a in alert]) 
+    print(alert,last_update)
+    alert = str(alert).replace(",",", ").replace("[","").replace("]","").replace('href="/crisiswatch#','href="https://www.crisisgroup.org/crisiswatch#')
+    return jsonify(alert,str("Updated on: "+last_update.text))
 # Other routes
 @application.route('/about')
 def about():

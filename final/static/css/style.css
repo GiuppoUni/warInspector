@@ -1160,6 +1160,12 @@ Charts
         top: 400px;
     }
     
+    .checkBoxShowAlerts {
+        position: absolute;
+        left: 525px;
+        top: 400px;
+    }
+    
     #bubbleFlag {
         position: absolute;
         z-index: 1;
@@ -1185,4 +1191,12 @@ Charts
     
     .myGearIcon {
         fill: white;
+    }
+    
+    .inline {
+        float: left;
+    }
+    
+    .clearBoth {
+        clear: both;
     }

@@ -38,13 +38,16 @@ var WeaLine = function() {
         // savedGrouped = savedGrouped.slice(0, 10)
         // console.log("befiore", modelChosen, savedGrouped, savedModelList)
 
-        var localSavedGrouped = savedGrouped.filter(d => d.key.split(",")[0] == modelChosen)
+        var localSavedGrouped = savedGrouped.filter(d => {
+            ks = d.key.split(",")
+            return ks[0] == modelChosen && ks[1] != -1
+        })
         if (localSavedGrouped == [])
             return
         localSavedGrouped = localSavedGrouped.sort(function(a, b) { return d3.descending(a.key.split(",")[1], b.key.split(",")[1]); });
 
         console.log("after", modelChosen, localSavedGrouped, savedModelList)
-        y.domain([0, localSavedGrouped[0].value])
+        y.domain([0, d3.max(localSavedGrouped, function(d) { return d.value }) + 1000])
         svg.select("#y-line-axis")
             .transition()
             .duration(2000)
@@ -100,6 +103,7 @@ var WeaLine = function() {
             is_first_draw = false;
 
         } else {
+
             svg.selectAll(".path-line1")
                 .exit()
                 .transition() // and apply changes to all of them

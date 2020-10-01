@@ -199,10 +199,14 @@ function getDataFromPost(isCreated) {
 
                 d3v4.json("/get-news")
                     .post(data, function(error, root) {
-
-                        document.getElementById("alert").innerHTML = root[0]
                         document.getElementById("alert-data").innerHTML = root[1]
+                        document.getElementById("alert").innerHTML += "<br>" + root[0]
 
+                        // boxAlert = '<div class="checkBoxShowAlerts">\
+                        // <input type="checkbox" class="myCheckBox" id="cbAlert" name="alert checkbox" value="alert" checked="false" onclick="showAlertClick(this);">\
+                        // <label style="font-size:10px" for="cbAlert"> Show on map</label>\
+                        // </div>'
+                        // document.getElementById("spanAlert").innerHTML += " " + boxAlert
                     })
 
 
@@ -214,6 +218,7 @@ function getDataFromPost(isCreated) {
 function callResetZoom() {
     mm.resetZoom();
 }
+
 
 function resetSelect() {
     selected_group = []
@@ -392,6 +397,21 @@ function showWarsClick(cb) {
             mm.toggleCircles("on", "exp")
     }
 }
+
+function showAlertClick(cb) {
+    if (cb.value == "imp") {
+        if (!cb.checked)
+            mm.toggleCircles("off", "imp")
+        else
+            mm.toggleCircles("on", "imp")
+    } else {
+        if (!cb.checked)
+            mm.toggleCircles("off", "exp")
+        else
+            mm.toggleCircles("on", "exp")
+    }
+}
+
 
 function stripNum(input) {
     if (input == null || input == "")
