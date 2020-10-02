@@ -451,10 +451,10 @@ def returnNews():
 
     last_update_parent = soup.find('h3', attrs={'class':'[ u-fs12 ]'})
     last_update = last_update_parent.find('span')
-    print([a for a in alert]) 
+    country_array = [a.text for a in alert] 
     print(alert,last_update)
     alert = str(alert).replace(",",", ").replace("[","").replace("]","").replace('href="/crisiswatch#','href="https://www.crisisgroup.org/crisiswatch#')
-    return jsonify(alert,str("Updated on: "+last_update.text))
+    return jsonify(alert,str("Updated on: "+last_update.text),str(country_array))
 # Other routes
 @application.route('/about')
 def about():

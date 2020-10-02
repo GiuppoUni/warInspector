@@ -19,7 +19,7 @@ var WeaLine = function() {
 
     svg.append("g")
         .call(d3.axisBottom(x))
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(-9," + height + ")")
         .selectAll("text")
         .attr("transform", "rotate(-45)")
         .style("text-anchor", "end");;
@@ -135,7 +135,8 @@ var WeaLine = function() {
                 .duration(1000)
                 .style("opacity", 0)
                 .remove()
-                // Add the line
+
+            // Add the line
             svg.selectAll(".path-line2")
                 .datum(localSavedGrouped)
                 .transition() // and apply changes to all of them
@@ -159,7 +160,9 @@ var WeaLine = function() {
                 .duration(1000)
                 .style("opacity", 0)
                 .remove()
-                // Add the line
+
+
+            // Add the line
             u = svg.selectAll(".line-circle")
                 .data(localSavedGrouped)
 

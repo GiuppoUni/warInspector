@@ -6,11 +6,8 @@ var MapComponentsManager = function() {
 
     var sliderTimer;
     var margin_top = 25
-    var margin_left = 60;
+    var margin_left = 360;
     var drawSlider = function() {
-            var div = document.getElementById("map_slider"); // Create a <p> node
-            var map_component_section = document.body
-            map_component_section.appendChild(div); // Append the text to <p>
 
             // var countries_slider = document.getElementById("country_slider");
             // map_component_section.appendChild(countries_slider);                                          // Append the text to <p>

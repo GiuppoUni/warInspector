@@ -97,14 +97,24 @@
     </div>
 
 
-    <div id="map_slider" class="row" style="width: 100%; height:100%; margin: 0 auto; background-color: black;"></div>
 
-    <div id="slider-range"></div>
-    <div class="card-body bg-dark rounded" style="width:270px;position: absolute; left:45px; top:73px ">
+    <div id="slider-range" style="left:600px"></div>
+    <div class="card-body bg-dark rounded" style="width:530px;height:65px;position: absolute; left:45px; top:73px ">
         <span id="spanAlert">
             <h6 style="color:Orange;padding:0;margin:0">CONFLICT RISK ALERTS
             </h6>
+            <div id="floatBarsG">
+                <div id="floatBarsG_1" class="floatBarsG"></div>
+                <div id="floatBarsG_2" class="floatBarsG"></div>
+                <div id="floatBarsG_3" class="floatBarsG"></div>
+                <div id="floatBarsG_4" class="floatBarsG"></div>
+                <div id="floatBarsG_5" class="floatBarsG"></div>
+                <div id="floatBarsG_6" class="floatBarsG"></div>
+                <div id="floatBarsG_7" class="floatBarsG"></div>
+                <div id="floatBarsG_8" class="floatBarsG"></div>
+            </div>
         </span>
+
         <p id="alert" style="color:white;font-size:13px;padding: 0;margin:0">
 
             <a id="alert-data" style="color:white;font-size:10px; margin: 0;padding:0;">
@@ -131,11 +141,11 @@
                             <input type="checkbox" class="myCheckBox" id="cb7" name="cb7" value="imp" checked="true" onclick='showWarsClick(this);'>
                             <label for="cb7"> Show wars</label>
                         </div>
-
+                        <!-- 
                         <div class="checkBoxShowAlerts">
-                            <input type="checkbox" class="myCheckBox2" id="cbAlert" name="alert checkbox" value="imp" checked="false" onclick="showAlertClick(this);">
+                            <input type="checkbox" class="myCheckBox2" id="cbAlert" disabled="true" name="alert checkbox" value="imp" onclick="showAlertClick(this);">
                             <label for="cbAlert"> Show current risks</label>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -159,10 +169,10 @@
                             <label for="cb8"> Show wars</label>
                         </div>
 
-                        <div class="checkBoxShowAlerts">
-                            <input type="checkbox" class="myCheckBox2" id="cbAlert" name="alert checkbox" value="exp" checked="false" onclick="showAlertClick(this);">
-                            <label for="cbAlert"> Show current risks</label>
-                        </div>
+                        <!-- <div class="checkBoxShowAlerts">
+                            <input type="checkbox" class="myCheckBox2" id="cbAlert2" disabled="true" name="alert checkbox" value="exp" onclick="showAlertClick(this);">
+                            <label for="cbAlert2"> Show current risks</label>
+                        </div> -->
                     </div>
                 </div>
 

@@ -316,8 +316,8 @@ var MapManager = function() {
                 .attr("id", d => "c-imp-" + d.id)
                 .append("title")
                 .text(d => {
-                    `From ${d.properties.name}
-            ${data.has(d.id) ? data.get(d.id) : "N/A"}`
+                    return `From ${d.properties.name}
+                    ${data.has(d.id) ? data.get(d.id) : "0"}`
                 });
 
 
@@ -1008,6 +1008,8 @@ var MapManager = function() {
 
     var toggleCircles = function(status, type) {
         if (type == "exp") {
+
+
             svg
                 .selectAll(".war-dot.exp")
                 .transition().duration(1000)
@@ -1032,6 +1034,43 @@ var MapManager = function() {
         }
 
     }
+
+    var toggleRisky = function(status, type) {
+        if (type == "exp") {
+            if (status == "on") {
+                risky.forEach(d => {
+                    if (d != undefined) {
+                        // add overlay path
+                        s = svg.select("#c-exp-" + d)
+                        console.log("asddassd", s, d)
+                        svg.append("path")
+                            .attr("class", "exp-overlay")
+                            .attr("d", function(dd) { return s.attr("d") })
+                            .fill("url(#circles-7)")
+
+
+                    }
+                })
+
+            } else {}
+
+        } else {
+            if (status == "on") {
+                svg2.selectAll(".war-dot.imp")
+                    .transition().duration(1000)
+                    .style("opacity", status == "on" ? .5 : 0)
+                svg2
+                    .selectAll(".circleLegend")
+                    .transition().duration(1000)
+                    .style("opacity", status == "on" ? 1 : 0)
+                    .attr("pointer-events", status == "on" ? "auto" : "none")
+            } else {
+
+            }
+        }
+
+    }
+
 
     var selectedWeaponTransition = function() {
 
@@ -1126,5 +1165,7 @@ var MapManager = function() {
         resetZoom: resetZoom,
         selected: selected,
         toggleCircles: toggleCircles,
+        toggleRisky: toggleRisky,
+
     }
 }
