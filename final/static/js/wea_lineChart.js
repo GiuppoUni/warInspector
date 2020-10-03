@@ -1,7 +1,7 @@
 var WeaLine = function() {
-    var margin = { top: 10, right: 30, bottom: 50, left: 50 },
-        width = 600 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+    var margin = { top: 10, right: 0, bottom: 50, left: 40 },
+        width = 430 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     var svg = d3.select("#wea-line-svg")
@@ -31,6 +31,15 @@ var WeaLine = function() {
         .attr("id", "y-line-axis")
         .call(d3.axisLeft(y))
 
+    var tip = d3.tip()
+        .attr('class', 'd3-tip2')
+        .offset([-10, 0])
+        .html(function(d) {
+
+            return "Delivered: " + d.value;
+        })
+    svg.call(tip);
+
 
     function drawChart() {
         //Read the data
@@ -59,7 +68,7 @@ var WeaLine = function() {
             svg.append("path")
                 .datum(localSavedGrouped)
                 .attr("class", "path-line1")
-                .attr("fill", "#69b3a2")
+                .attr("fill", "rgba(155,155,155,1)")
                 .attr("fill-opacity", .3)
                 .attr("stroke", "none")
                 .attr("d", d3.area()
@@ -75,7 +84,7 @@ var WeaLine = function() {
                 .datum(localSavedGrouped)
                 .attr("class", "path-line2")
                 .attr("fill", "none")
-                .attr("stroke", "#69b3a2")
+                .attr("stroke", "rgba(155,155,155,1)")
                 .attr("stroke-width", 4)
                 .attr("d", d3.line()
                     .x(function(d) {
@@ -99,6 +108,12 @@ var WeaLine = function() {
                 .attr("cx", function(d) { return x(d.key.split(",")[1]) })
                 .attr("cy", function(d) { return y(d.value) })
                 .attr("r", 3)
+                .on("mouseover", function(d) {
+                    tip.show(d)
+                })
+                .on("mouseout", function(d) {
+                    tip.hide(d)
+                })
 
             is_first_draw = false;
 
@@ -117,7 +132,7 @@ var WeaLine = function() {
                 .transition() // and apply changes to all of them
                 .duration(1000)
                 .attr("class", "path-line1")
-                .attr("fill", "#69b3a2")
+                .attr("fill", "rgba(155,155,155,1)")
                 .attr("fill-opacity", .3)
                 .attr("stroke", "none")
                 .attr("d", d3.area()
@@ -143,7 +158,8 @@ var WeaLine = function() {
                 .duration(1000)
                 .attr("class", "path-line2")
                 .attr("fill", "none")
-                .attr("stroke", "#69b3a2")
+                // .attr("stroke", "#69b3a2")
+                .attr("stroke", "rgba(155,155,155,1)")
                 .attr("stroke-width", 4)
                 .attr("d", d3.line()
                     .x(function(d) {
@@ -178,6 +194,13 @@ var WeaLine = function() {
                 .attr("cx", function(d) { return x(d.key.split(",")[1]) })
                 .attr("cy", function(d) { return y(d.value) })
                 .attr("r", 3)
+            u.selectAll(".line-circle")
+                .on("mouseover", function(d) {
+                    tip.show(d)
+                })
+                .on("mouseout", function(d) {
+                    tip.hide(d)
+                })
 
 
             // // Add the line
@@ -198,7 +221,7 @@ var WeaLine = function() {
         }
 
 
-
+        // svg.selectAll("circle") // Add a new circle for each new elements
 
 
 

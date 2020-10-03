@@ -88,61 +88,79 @@
                         Weapons requests by category
                     </div>
                     <div class="card-body">
-                        <div style="background-color: rgb(20, 20, 20);" id="my_dataviz">
+                        <div class="rounded" style="background-color: rgb(20, 20, 20);" id="my_dataviz">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 my-col-up" style="padding-left: 2px; padding-right: 2px;">
+            <div class="col-md-6-5 " style="padding-left: 2px; padding-right: 2px;">
                 <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue;">
                     <div class="card-header d-flex align-items-center justify-content-center  text-center" id="scatter_title">
                         Deliver density for year/weapon model
                     </div>
                     <div class="card-body">
 
-                        <div style="background-color: rgb(20, 20, 20);" id="scatter_viz">
+                        <div class="rounded" style="background-color: rgb(20, 20, 20);" id="scatter_viz">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 " style="padding-left: 2px; padding-right: 2px;">
-                <div class=" card bg-dark text-center" style="color:aliceblue">
-                    <div class="card-header   d-flex align-items-center justify-content-center  text-center" id="barchart_title">
-                        Weapons news
+            <div class="col-md-auto " style="padding-left: 18px; padding-right: 2px;">
+                <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue; ">
+                    <div class="card-header d-flex align-items-center
+                    justify-content-center  text-center" id="line-header">
+                        Select a model
+
                     </div>
                     <div class="card-body">
-                        <div style="background-color: rgb(20, 20, 20);">
-                            <!-- Obtained from https://publish.twitter.com/ -->
-                            <a class="twitter-timeline" data-lang="en" data-width="300" data-height="500" data-dnt="true" data-theme="dark" href="https://twitter.com/WarNewsUpdates?ref_src=twsrc%5Etfw">Tweets by WarNewsUpdates</a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <div class="rounded" style="background-color: rgb(20, 20, 20);" id="wea-line-svg">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row my-row">
 
-            <div class="col my-col-up">
-                <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue; ">
-                    <div class="card-header d-flex align-items-center justify-content-center  text-center">
+        <div class="row my-row">
+            <div class="col-md-3 " style="padding-left: 35px; padding-right: 2px;">
+                <div class="card bg-dark text-center " style=" height:300px;display: inline-block; color:aliceblue; ">
+                    <div class="card-header d-flex align-items-center
+                    justify-content-center  text-center" style="width:350px" id="weapon_desc_head">
                         Weapon Description
                     </div>
-                    <div class="card-body">
-                        <div style="background-color: rgb(20, 20, 20);" id="weapon_description">
+                    <div class="card-body" style="height:300px">
+                        <div class=" rounded  overflow-auto" style="height:255px;background-color: rgb(20, 20,20);" id="weapon_description">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col my-col-up">
-                <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue; ">
-                    <div class="card-header d-flex align-items-center
-                    justify-content-center  text-center" id="line-header">
+
+
+            <div class="col-md-auto my-col-up" style="padding-left: 2px; padding-right: 2px;">
+                <div class="card bg-dark text-center " style=" height:300px;display: inline-block; color:aliceblue; ">
+                    <div class="card-header d-flex align-items-center justify-content-center  text-center">
+                        Transactions Table
                     </div>
                     <div class="card-body">
-                        <div style="background-color: rgb(20, 20, 20);" id="wea-line-svg">
+                        <div class="container table-responsive  rounded shadow overflow-auto" style="margin-left:2px;height:255px;width: 835px; background-color: rgb(20, 20, 20);" id="weapon_table">
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-auto " style="padding-top:10px; padding-left: 2px; padding-right:2px;">
+
+                <a class="twitter-timeline" data-lang="en" data-width="500" data-height="300" data-dnt="true" data-theme="dark" href="https://twitter.com/WarNewsUpdates?ref_src=twsrc%5Etfw">Tweets by WarNewsUpdates</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <!-- 
+                <div class=" card bg-dark text-center" style="height:300px;color:aliceblue">
+
+                    <div class="card-header   d-flex align-items-center justify-content-center  text-center" id="barchart_title">
+                        Weapons news
+                    </div>
+                    <div class="card-body">
+                        <div class="container rounded shadow " style="height:255px;background-color: rgb(20, 20,20);">
+                        </div>
+                    </div>
+                </div> -->
             </div>
 
         </div>
@@ -156,16 +174,35 @@
         var savedGrouped;
         var savedModelList;
         var modelChosen;
+        var clickedModelChosen;
         var sliderTimer;
         var is_first_draw = true
         var oldTick = "";
+        var prev_rect;
+        var old_font_size;
+
+        const columns = ["Supplier",
+            "Recipient", "Ordered", "Weapon model", "Weapon category",
+            "Ordered year", "Delivered year", "Delivered num.", "Comments",
+            // "latS", "longS", "codeS", "latR", "longR", "codeR"
+        ]
+        NUM_CATEGORIES = 15
+        chosen_category = ""
+
 
         /****
          * DRAW BAR CHART
          ****/
-        NUM_CATEGORIES = 15
-        chosen_category = ""
+
+
         var wl = WeaLine()
+
+        var table = d3.select('#weapon_table')
+            .append('table')
+        table.attr("id", "#tableTransactions")
+            .attr("class", "table table-fixed tableTrans")
+            .style("color", "white")
+
 
         // set the dimensions and margins of the graph
         var margin = {
@@ -180,6 +217,9 @@
         document.body.onload = function() {
             txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
             $("#weapon_description").html(txt)
+            d3.select("#weapon_desc_head").text("Weapon description: ")
+                .append("span")
+                .text("\u00A0" + chosen_category).style("color", "orange")
         }
 
         // append the svg object to the body of the page
@@ -228,11 +268,12 @@
                 .padding(0.2);
 
             svg.append("g")
+                .attr("id", "x-bar-axis")
                 .attr("class", "wtext")
                 .attr("transform", "translate(0," + height + ")")
                 .call(d3.axisBottom(x))
                 .selectAll("text")
-                .attr("transform", "translate(-10,0)rotate(-45)")
+                .attr("transform", "translate(-10,0)rotate(-60)")
                 .style("text-anchor", "end")
 
             var imageTip = d3.tip()
@@ -245,15 +286,37 @@
 
             svg.call(imageTip);
 
-
-            d3.selectAll(".tick")
+            svg.selectAll(".tick")
                 .on('mouseover', function(d) {
                     // console.log(this)
 
                     d3.select(this).style("font-size", "20px")
-                    if (d3.select(this).text() != chosen_category)
-                        d3.select(this).select('g > text')
+                    d3.select(this).select('g > line')
+                        .style("stroke", "rgba(17,222,222,1)");
+                    d3.select(this).select('g > text')
                         .style("fill", "rgba(17,222,222,1)");
+                    // .style("fill", "orange");
+
+                })
+                .on('mouseout', function(d) {
+                    d3.select(this).style("font-size", "11px")
+                    d3.select(this).select('g > line').style("stroke", "white");
+
+                    d3.select(this).select('g > text').style("fill", "white");
+                })
+
+            svg.select("#x-bar-axis").selectAll(".tick")
+                .on('mouseover', function(d) {
+                    // console.log(this)
+
+                    d3.select(this).style("font-size", "20px")
+                    if (d3.select(this).text() != chosen_category) {
+                        d3.select(this).select('g > line')
+                            .style("stroke", "rgba(17,222,222,1)");
+
+                        d3.select(this).select('g > text')
+                            .style("fill", "rgba(17,222,222,1)");
+                    }
                     // .style("fill", "orange");
 
                     imageTip.show(d)
@@ -261,30 +324,41 @@
                 .on('mouseout', function(d) {
 
                     d3.select(this).style("font-size", "14px")
-                    if (d3.select(this).text() != chosen_category)
+                    if (d3.select(this).text() != chosen_category) {
+                        d3.select(this).select('g > line').style("stroke", "white");
                         d3.select(this).select('g > text').style("fill", "white");
-                    else
-                        d3.select(this).select('g > text').style("fill", "red");
-
+                    } else {
+                        d3.select(this).select('g > line').style("stroke", "orange");
+                        d3.select(this).select('g > text').style("fill", "orange");
+                    }
                     imageTip.hide(d)
                 })
                 .on("click", function() {
                     //alert("click")
-                    d3.selectAll(".tick")
+                    svg.selectAll(".tick")
                         .filter(function() {
                             return d3.select(this).text() == chosen_category
                         })
                         .select('g > text')
                         .style("fill", "white")
 
+                    svg.selectAll(".tick")
+                        .filter(function() {
+                            return d3.select(this).text() == chosen_category
+                        })
+                        .select('g > line')
+                        .style("stroke", "white")
+
                     chosen_category = d3.select(this).text()
 
-                    d3.select("#scatter_title").text("Weapons by model: ")
+                    d3.select("#scatter_title").text("Models in category: ")
                         .append("span")
-                        .text("\u00A0" + chosen_category).style("color", "red")
+                        .text("\u00A0" + chosen_category).style("color", "orange")
                         // d3.select("#scatter_svg").remove()
                         //drawScatter()
+                    d3.selectAll(".bar-rect").style("fill", "#69b3a2")
 
+                    svg.select("#bar-" + chosen_category).style("fill", "orange")
                     heatmapTransition()
                         // console.log("Plot recomputed")
 
@@ -293,7 +367,9 @@
                     if (txt == "" || txt == null || txt == undefined)
                         txt = "Not available at the moment."
                     $("#weapon_description").html(txt)
-
+                    d3.select("#weapon_desc_head").text("Weapon description: ")
+                        .append("span")
+                        .text("\u00A0" + chosen_category).style("color", "orange")
 
                 })
             var tip = d3.tip()
@@ -306,16 +382,16 @@
 
             svg.call(tip);
 
-            d3.selectAll(".tick")
+            svg.selectAll(".tick")
                 .filter(function() {
                     return d3.select(this).text() == chosen_category
                 })
                 .select('g > text')
-                .style("fill", "red")
+                .style("fill", "orange")
 
-            d3.select("#scatter_title").text("Weapons by model: ")
+            d3.select("#scatter_title").text("Models in category: ")
                 .append("span")
-                .text("\u00A0" + chosen_category).style("color", "red")
+                .text("\u00A0" + chosen_category).style("color", "orange")
             $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
 
             txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
@@ -333,15 +409,23 @@
                 .call(d3.axisLeft(y));
 
             // Bars
-            svg.selectAll("mybar")
+            bs = svg.selectAll("mybar")
                 .data(orderedWeapons)
                 .enter()
                 .append("rect")
+                .attr("class", "bar-rect")
+                .attr("id", d => "bar-" + d.key)
                 .attr("x", function(d) {
                     return x(d.key);
                 })
                 .attr("width", x.bandwidth())
-                .attr("fill", "#69b3a2")
+                .attr("fill", dd => {
+                    if (dd.key == orderedWeapons[0].key) {
+                        return "orange"
+                    } else
+                        return "#69b3a2"
+
+                })
                 // no bar at the beginning thus:
                 .attr("height", function(d) {
                     return height - y(0);
@@ -349,8 +433,41 @@
                 .attr("y", function(d) {
                     return y(0);
                 })
-                .on('mouseover', tip.show)
+
+            // prev_rect = d3.select("#bar-" + orderedWeapons[0].key)
+
+            svg.selectAll(".bar-rect").on('mouseover', tip.show)
                 .on('mouseout', tip.hide)
+                .on("click", function(d) {
+                    // if (prev_rect)
+                    //     prev_rect.attr("fill", "#69b3a2")
+                    chosen_category = d.key
+
+                    svg.selectAll("rect").attr("fill", "#69b3a2")
+                    d3.select("#scatter_title").text("Weapons by model: ")
+                        .append("span")
+                        .text("\u00A0" + chosen_category).style("color", "orange")
+                    console.log(d3.select(this))
+                    d3.select(this).attr("fill", "orange")
+                    svg.select("#x-bar-axis").selectAll(".tick")
+                        .select('g > line')
+                        .style("stroke", d => {
+                            return (d == chosen_category) ? "orange" : "white"
+                        })
+
+                    svg.select("#x-bar-axis").selectAll(".tick")
+                        .select('g > text')
+                        .style("fill", d => {
+                            if (d == chosen_category)
+                                return "orange"
+                            else
+                                return "white"
+
+                        })
+
+                    heatmapTransition()
+
+                })
 
             // Animation
             svg.selectAll("rect")
@@ -414,11 +531,11 @@
             var margin = {
                     top: 10,
                     right: 10,
-                    bottom: 80,
+                    bottom: 120,
                     left: 40
                 },
                 width = 1000 - margin.left - margin.right,
-                height = 450 - margin.top - margin.bottom;
+                height = 500 - margin.top - margin.bottom;
             // append the svg object to the body of the page
             svg2 = d3.select("#scatter_viz")
                 .append("svg")
@@ -431,6 +548,7 @@
 
             //Read the data
             d3.csv("static/data/merged1990.csv", function(data) {
+
                 filteredModels = data
                     .filter(function(d) {
                         return d["Weapon category"] == chosen_category
@@ -439,7 +557,7 @@
                 modelList = Array.from(new Set(filteredModels.map(function(d) {
                     return d["Weapon model"];
                 })))
-
+                console.log("f0,", filteredModels)
 
 
                 groupedModels = d3.nest()
@@ -464,7 +582,7 @@
                 // Build color scale
                 var myColor = d3.scaleLog()
                     .clamp(true)
-                    .range(["white", "black"])
+                    .range(["white", "red"])
                     .domain([10, d3.max(groupedModels, function(d) {
                         return d.value
                     })])
@@ -495,8 +613,6 @@
                         }
                     }
                 }
-                savedGrouped = groupedModels
-                console.log("ff,", groupedModels)
 
                 // Build X scales and axis:
                 x = d3.scaleBand()
@@ -508,27 +624,69 @@
                     .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(x))
                     .selectAll("text")
+                    .style("fill", d => {
+                        return d == modelList[0] ? "red" : "white"
+                    })
                     .attr("transform", "rotate(-45)")
                     .style("text-anchor", "end");
 
+                savedGrouped = groupedModels
+                console.log("ff,", groupedModels)
+
+                instant_chosen_model(modelList[0])
+
+                superFilteredModels = filteredModels.filter(d => d["Weapon model"] == clickedModelChosen)
+                tabulate(superFilteredModels, columns, true, false)
+
+                // old_font_size = svg2.select("#x-heat-axis").selectAll(".tick").selectAll("g > text").filter(d => d3.select(d).style("font-size") != "20px").style("font-size")
+                // if (old_font_size == null)
+                old_font_size = "11px"
+                console.log("drawHeatmap", old_font_size)
                 svg2.select("#x-heat-axis").selectAll(".tick")
                     .on('mouseover', function(d) {
                         // console.log(this)
-                        if (oldTick != "") {
-                            oldTick.style("font-size", "14px")
-                            oldTick.select('g > text').style("fill", "white");
+                        svg2.select("#x-heat-axis").selectAll(".tick").select("g > text")
+                            .filter(d => d.text != modelChosen && d.text != clickedModelChosen)
+                            .style("font-size", old_font_size)
+                            .attr("fill", "white");
 
-                        }
+
                         d3.select(this).style("font-size", "20px")
                         if (d3.select(this).text() != modelChosen) {
                             // d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
-                            d3.select(this).select('g > text').style("fill", "orange");
+                            d3.select(this).select('g > text').style("font-size", "20px").style("fill", "red");
                         }
                         start_timer_chosen_model(d3.select(this).text())
+
                         oldTick = d3.select(this)
                     })
                     .on('mouseout', function(d) {
+                        svg2.select("#x-heat-axis").selectAll(".tick").select("g > line")
+                            .style("stroke", d => d != clickedModelChosen ? "white" : "red");
+                        svg2.select("#x-heat-axis").selectAll(".tick").select("g > text")
+                            .style("font-size", d => d != clickedModelChosen ? old_font_size : "20px")
+                            .style("fill", d => d != clickedModelChosen ? "white" : "red");
 
+                        if (d3.select(this).text() != clickedModelChosen) {
+                            start_timer_chosen_model(clickedModelChosen)
+                        }
+                    })
+                    .on('click', function(d) {
+                        svg2.select("#x-heat-axis").selectAll(".tick").select("g > line")
+                            .style("stroke", "white");
+
+                        svg2.select("#x-heat-axis").selectAll(".tick").select("g > text")
+                            .filter(d => d.text != modelChosen)
+                            .style("font-size", old_font_size)
+                            .attr("fill", "white");
+
+                        if (d3.select(this).text() != clickedModelChosen) {
+                            // d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
+                            d3.select(this).select('g > text').style("fill", "red");
+                            d3.select(this).style("font-size", "20px")
+                            start_timer_chosen_model(d3.select(this).text(), "click")
+
+                        }
                     })
 
 
@@ -563,6 +721,13 @@
 
                 svg2.selectAll(".heatSquare")
                     .on('mouseover', d => {
+                        svg2.select("x-heat-axis").selectAll(".tick")
+                            .select('g > line').style("stroke", function(dd) {
+                                return dd == d.d.key.split(",")[0] ? "red" : "white"
+                            })
+                            .select('g > text').style("fill", function(dd) {
+                                return dd == d.d.key.split(",")[0] ? "red" : "white"
+                            })
                         heatTip.show(d);
                         start_timer_chosen_model(d.key.split(",")[0])
                     })
@@ -572,6 +737,12 @@
         }
 
         drawHeatmap()
+
+
+        /************************
+         * CONFUSION TRANSITION *
+         ************************/
+
 
         function heatmapTransition() {
 
@@ -628,7 +799,6 @@
 
             savedGrouped = groupedModels
 
-
             var myColor = d3.scaleLog()
                 .range(["white", "red"])
                 .domain([1, d3.max(groupedModels, function(d) {
@@ -641,28 +811,70 @@
                 .duration(2000)
                 .call(d3.axisBottom(x))
                 .selectAll("text")
+                .style("fill", d => d == modelList[0] ? "red" : "white")
                 .attr("transform", "rotate(-45)")
                 .style("text-anchor", "end")
+
+
+            instant_chosen_model(modelList[0])
+
+
+            superFilteredModels = filteredModels.filter(d => d["Weapon model"] == clickedModelChosen)
+            tabulate(superFilteredModels, columns, true, false)
+
 
             svg2.select("#x-heat-axis")
                 .selectAll(".tick")
                 .on('mouseover', function(d) {
                     // console.log(this)
-                    if (oldTick != "") {
-                        oldTick.style("font-size", "14px")
-                        oldTick.select('g > text').style("fill", "white");
+                    svg2.select("#x-heat-axis").selectAll(".tick").select("g > line")
+                        .style("stroke", "white");
+                    svg2.select("#x-heat-axis").selectAll(".tick").select("g > text")
+                        .filter(d => d.text != modelChosen && d.text != clickedModelChosen)
+                        .style("font-size", old_font_size)
+                        .attr("fill", "white");
 
-                    }
+
                     d3.select(this).style("font-size", "20px")
                     if (d3.select(this).text() != modelChosen) {
-                        // d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
-                        d3.select(this).select('g > text').style("fill", "orange");
+                        // d3.select(this).select('g > text').style("fill",
+                        // "rgba(17,222,222,1)");
+                        d3.select(this).select('g > line').style("stroke", "red");
+
+                        d3.select(this).select('g > text').style("font-size", "20px").style("fill", "red");
                     }
                     start_timer_chosen_model(d3.select(this).text())
                     oldTick = d3.select(this)
                 })
-                .on('mouseout', )
+                .on('mouseout', function(d) {
+                    svg2.select("#x-heat-axis").selectAll(".tick").select("g > line")
+                        .style("stroke", d => d != clickedModelChosen ? "white" : "red");
 
+                    svg2.select("#x-heat-axis").selectAll(".tick").select("g > text")
+                        .style("font-size", d => d != clickedModelChosen ? old_font_size : "20px")
+                        .style("fill", d => d != clickedModelChosen ? "white" : "red");
+
+                    if (d3.select(this).text() != clickedModelChosen) {
+                        start_timer_chosen_model(clickedModelChosen)
+                    }
+                })
+                .on('click', function(d) {
+                    svg2.select("#x-heat-axis").selectAll(".tick").select("g > line")
+                        .attr("fill", "white");
+                    svg2.select("#x-heat-axis").selectAll(".tick").select("g > text")
+                        .filter(d => d.text != modelChosen)
+                        .style("font-size", old_font_size)
+                        .attr("fill", "white");
+
+                    if (d3.select(this).text() != clickedModelChosen) {
+                        // d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
+                        d3.select(this).select('g > line').style("stroke", "red");
+                        d3.select(this).select('g > text').style("fill", "red");
+                        d3.select(this).style("font-size", "20px")
+                        start_timer_chosen_model(d3.select(this).text(), "click")
+
+                    }
+                })
 
 
 
@@ -706,24 +918,152 @@
 
         }
 
-        function start_timer_chosen_model(d) {
+
+        function instant_chosen_model(d) {
             d3.select("#line-header")
-                .text("Model traded values: ")
+                .text("Num. exchanged for model: ")
                 .append("span")
-                .text("\u00A0" + d).style("color", "orange");
-            // .text("Model traded values: " + d)
+                .text("\u00A0" + d).style("color", "red");
+            svg2.selectAll(".tick").selectAll("g > line").style("stroke", dd => dd == d ? "red" : "white")
+            svg2.selectAll(".tick").selectAll("g > text").attr("fill", dd => dd == d ? "red" : "white").style("font-size", dd => dd == d ? "20px" : old_font_size)
+                // .text("Model traded values: " + d)
             if (sliderTimer != undefined)
                 clearTimeout(sliderTimer)
             if (d != modelChosen) {
+                clickedModelChosen = d
+                modelChosen = d;
+                console.log(d);
+                wl.drawChart()
 
-                sliderTimer = setTimeout(function() {
-
-                    modelChosen = d;
-                    console.log(d);
-                    wl.drawChart()
-                }, 250);
             }
+        }
 
+
+        function start_timer_chosen_model(d, type = "nonClick") {
+            d3.select("#line-header")
+                .text("Num. exchanged of model: ")
+                .append("span")
+                .text("\u00A0" + d).style("color", "red");
+            // .text("Model traded values: " + d)
+            if (sliderTimer != undefined)
+                clearTimeout(sliderTimer)
+            if (type == "click") {
+                if (d != clickedModelChosen) {
+                    svg2.selectAll(".tick").selectAll("g > line").style("stroke", dd => dd == d ? "red" : "white")
+                    svg2.selectAll(".tick").selectAll("g > text").attr("fill", dd => dd == d ? "red" : "white")
+                    sliderTimer = setTimeout(function() {
+
+                        modelChosen = d;
+                        clickedModelChosen = d
+                        console.log(d);
+                        wl.drawChart()
+                    }, 250);
+                }
+            } else {
+                if (d != modelChosen) {
+
+                    sliderTimer = setTimeout(function() {
+
+                        modelChosen = d;
+                        console.log(d);
+                        wl.drawChart()
+                    }, 250);
+
+                }
+
+            }
+            superFilteredModels = filteredModels.filter(d => d["Weapon model"] == clickedModelChosen)
+            tabulate(superFilteredModels, columns, true, false)
+        }
+
+
+        function tabulate(data, columns, redraw = false, append = false) {
+            redcolor = "#d00101"
+            greencolor = "#009344"
+            yellowcolor = "#f6ff00"
+
+
+            if (redraw) {
+                d3.selectAll(".tableTrans").remove()
+            }
+            var table = d3.select('#weapon_table')
+                .append('table')
+            table.attr("id", "#tableTransactions")
+                .attr("class", "table table-fixed tableTrans")
+                .style("color", "white")
+            if (!append) {
+                var thead = table.append('thead')
+
+                thead.append('tr')
+                    .selectAll('th')
+                    .data(columns)
+                    .enter()
+                    .append('th')
+                    .text(function(d) {
+                        return d
+                    })
+            }
+            var tbody = table.append('tbody')
+
+
+            var rows = tbody.selectAll('tr')
+                .data(data)
+                .enter()
+                .append('tr')
+
+            if (!append) {
+                var cells = rows.selectAll('td')
+                    .data(function(row) {
+                        return columns.map(function(column) {
+                            return {
+                                column: column,
+                                value: row[column]
+                            }
+                        })
+                    })
+                    .enter()
+                    .append('td')
+                    .text(function(d) {
+                        return d.value
+                    })
+                    .style("color", function(d) {
+                        // console.log(d);
+                        if (d.column == "Weapon category")
+                            return "orange"
+                        else if (d.column == "Weapon model")
+                            return "red"
+                        else
+                            return "white"
+                    })
+                    .style("font-size", 8)
+            } else {
+
+                var cells = rows.selectAll('td')
+                    .data(function(row) {
+                        return columns.map(function(column) {
+                            return {
+                                column: column,
+                                value: row[column]
+                            }
+                        })
+                    })
+                    .enter()
+                    .append('td')
+                    .text(function(d) {
+                        return d.value
+                    })
+                    .style("color", function(d) {
+                        // console.log(d);
+                        if (d.column == "Weapon category")
+                            return "orange"
+                        else if (d.column == "Weapon model")
+                            return "red"
+                        else
+                            return "white"
+                    })
+                    .style("font-size", 8)
+            }
+            return table;
         }
     </script>
 
