@@ -55,18 +55,660 @@
 
             <div class="row" style="float:left;   margin-left: auto;
             margin-right: auto;">
-
-                <img src="static/icons/valogo.png" width="50" style="" />
-                <h4 style="    margin-left: 15px;color: aliceblue;">WarInspector</h4>
+                <h2 style="    position:absolute;top:20px;left:
+                230px;stroke:red;color:aliceblue;">WEAPONS PAGE</h2>
+                <img src="static/icons/valogo.png" width="50" style="    bottom:5px;position:absolute;left: 580px" />
+                <h4 style="    margin-left: 310px;color: aliceblue;">WarInspector</h4>
             </div>
 
             <div class="row" style="float: right;margin-right: 10px;">
                 <!-- <img width="30px" src="static/icons/search.png" /> -->
 
                 <div data-icon="ei-search" data-size="m" style="    margin-left: 100px;"></div>
-                <select id="selectNation" class="selectpicker" data-width="800px" multiple data-live-search="true" data-size="4" data-actions-box="true" title="Choose one or more country..." onchange="clickedNation()">
-                <option value=ZYY>🏳  (multiple sellers)</option><option value=AFG>🇦🇫  Afghanistan</option><option value=ALB>🇦🇱  Albania</option><option value=DZA>🇩🇿  Algeria</option><option value=ASM>🇦🇸  American Samoa</option><option value=AND>🇦🇩  Andorra</option><option value=AGO>🇦🇴  Angola</option><option value=AIA>🇦🇮  Anguilla</option><option value=ATG>🇦🇬  Antigua & Barbuda</option><option value=ARG>🇦🇷  Argentina</option><option value=ARM>🇦🇲  Armenia</option><option value=ABW>🇦🇼  Aruba</option><option value=AUS>🇦🇺  Australia</option><option value=AUT>🇦🇹  Austria</option><option value=AZE>🇦🇿  Azerbaijan</option><option value=BHS>🇧🇸  Bahamas</option><option value=BHR>🇧🇭  Bahrain</option><option value=BGD>🇧🇩  Bangladesh</option><option value=BRB>🇧🇧  Barbados</option><option value=BLR>🇧🇾  Belarus</option><option value=BEL>🇧🇪  Belgium</option><option value=BLZ>🇧🇿  Belize</option><option value=BEN>🇧🇯  Benin</option><option value=BMU>🇧🇲  Bermuda</option><option value=BTN>🇧🇹  Bhutan</option><option value=BTN>🇧🇹  Bhutan</option><option value=BOL>🇧🇴  Bolivia</option><option value=BIH>🇧🇦  Bosnia-Herzegovina</option><option value=BWA>🇧🇼  Botswana</option><option value=BRA>🇧🇷  Brazil</option><option value=BRN>🇧🇳  Brunei</option><option value=BGR>🇧🇬  Bulgaria</option><option value=BFA>🇧🇫  Burkina Faso</option><option value=BDI>🇧🇮  Burundi</option><option value=KHM>🇰🇭  Cambodia</option><option value=CMR>🇨🇲  Cameroon</option><option value=CAN>🇨🇦  Canada</option><option value=ZKK>🇮🇨  Canary Islands</option><option value=CPV>🇨🇻  Cape Verde</option><option value=CYM>🇰🇾  Cayman Islands</option><option value=CAF>🇨🇫  Central African Republic</option><option value=TCD>🇹🇩  Chad</option><option value=CHL>🇨🇱  Chile</option><option value=CHN>🇨🇳  China</option><option value=CXR>🇨🇽  Christmas Island</option><option value=COL>🇨🇴  Colombia</option><option value=COM>🇰🇲  Comoros</option><option value=COK>🇨🇰  Cook Islands</option><option value=CRI>🇨🇷  Costa Rica</option><option value=HRV>🇭🇷  Croatia</option><option value=CUB>🇨🇺  Cuba</option><option value=CYP>🇨🇾  Cyprus</option><option value=CZE>🇨🇿  Czechia</option><option value=COD>🇨🇩  Democratic Republic Of Congo</option><option value=DNK>🇩🇰  Denmark</option><option value=DJI>🇩🇯  Djibouti</option><option value=DMA>🇩🇲  Dominica</option><option value=DMA>🇩🇴  Dominican Republic</option><option value=DOM>🇩🇴 <option value=DMA>🇩🇴  Dominican Republic</option></option><option value=TLS>🇹🇱  East Timor</option><option value=ECU>🇪🇨  Ecuador</option><option value=EGY>🇪🇬  Egypt</option><option value=GBR>🏴󠁧󠁢󠁥󠁮󠁧󠁿  England</option><option value=GIN>🇬🇶  Equatorial Guinea</option><option value=GNQ>🇬🇶 <option value=GIN>🇬🇶  Equatorial Guinea</option></option><option value=ERI>🇪🇷  Eritrea</option><option value=EST>🇪🇪  Estonia</option><option value=ETH>🇪🇹  Ethiopia</option><option value=ZZZ>🏳  Europe multi-state</option><option value=ZZZ>🇪🇺  European Union</option><option value=GBR>🇫🇰  Falkland Islands</option><option value=FRO>🇫🇴  Faroe Islands</option><option value=FJI>🇫🇯  Fiji</option><option value=FIN>🇫🇮  Finland</option><option value=FRA>🇫🇷  France</option><option value=PYF>🇵🇫  French Polynesia</option><option value=GAB>🇬🇦  Gabon</option><option value=GMB>🇬🇲  Gambia</option><option value=GEO>🇬🇪  Georgia</option><option value=DEU>🇩🇪  Germany</option><option value=GHA>🇬🇭  Ghana</option><option value=GIB>🇬🇮  Gibraltar</option><option value=GRC>🇬🇷  Greece</option><option value=GRL>🇬🇱  Greenland</option><option value=GRD>🇬🇩  Grenada</option><option value=GUM>🇬🇺  Guam</option><option value=GTM>🇬🇹  Guatemala</option><option value=GGY>🇬🇬  Guernsey</option><option value=GIN>🇬🇳  Guinea</option><option value=GUY>🇬🇾  Guyana</option><option value=HTI>🇭🇹  Haiti</option><option value=USA>🇺🇸  Hawaii</option><option value=HND>🇭🇳  Honduras</option><option value=HKG>🇭🇰  Hong Kong</option><option value=HUN>🇭🇺  Hungary</option><option value=ISL>🇮🇸  Iceland</option><option value=IND>🇮🇳  India</option><option value=IDN>🇮🇩  Indonesia</option><option value=IRN>🇮🇷  Iran</option><option value=IRQ>🇮🇶  Iraq</option><option value=IRL>🇮🇪  Ireland</option><option value=IMN>🇮🇲  Isle of Man</option><option value=ISR>🇮🇱  Israel</option><option value=ITA>🇮🇹  Italy</option><option value=JAM>🇯🇲  Jamaica</option><option value=JPN>🇯🇵  Japan</option><option value=JEY>🇯🇪  Jersey</option><option value=JOR>🇯🇴  Jordan</option><option value=KAZ>🇰🇿  Kazakhstan</option><option value=KEN>🇰🇪  Kenya</option><option value=KIR>🇰🇮  Kiribati</option><option value=XKX>🇽🇰  Kosovo</option><option value=KWT>🇰🇼  Kuwait</option><option value=KGZ>🇰🇬  Kyrgyzstan</option><option value=LAO>🇱🇦  Laos</option><option value=LVA>🇱🇻  Latvia</option><option value=LBN>🇱🇧  Lebanon</option><option value=LSO>🇱🇸  Lesotho</option><option value=LBR>🇱🇷  Liberia</option><option value=LBY>🇱🇾  Libya</option><option value=LIE>🇱🇮  Liechtenstein</option><option value=LTU>🇱🇹  Lithuania</option><option value=LUX>🇱🇺  Luxembourg</option><option value=MDG>🇲🇬  Madagascar</option><option value=MWI>🇲🇼  Malawi</option><option value=MYS>🇲🇾  Malaysia</option><option value=MDV>🇲🇻  Maldives</option><option value=MLI>🇲🇱  Mali</option><option value=MLT>🇲🇹  Malta</option><option value=MTQ>🇲🇶  Martinique</option><option value=MRT>🇲🇷  Mauritania</option><option value=MUS>🇲🇺  Mauritius</option><option value=MEX>🇲🇽  Mexico</option><option value=FSM>🇫🇲  Micronesia</option><option value=MDA>🇲🇩  Moldova</option><option value=MCO>🇲🇨  Monaco</option><option value=MNG>🇲🇳  Mongolia</option><option value=MNE>🇲🇪  Montenegro</option><option value=MSR>🇲🇸  Montserrat</option><option value=MAR>🇲🇦  Morocco</option><option value=MOZ>🇲🇿  Mozambique</option><option value=NAM>🇳🇦  Namibia</option><option value=NAT>🏳  Nato</option><option value=NRU>🇳🇷  Nauru</option><option value=NPL>🇳🇵  Nepal</option><option value=NLD>🇳🇱  Netherlands</option><option value=NZL>🇳🇿  New Zealand</option><option value=NIC>🇳🇮  Nicaragua</option><option value=NER>🇳🇪  Niger</option><option value=NER>🇳🇬  Nigeria</option><option value=NGA>🇳🇬 <option value=NER>🇳🇬  Nigeria</option></option><option value=NIU>🇳🇺  Niue</option><option value=NFK>🇳🇫  Norfolk Island</option><option value=PRK>🇰🇵  North Korea</option><option value=NOR>🇳🇴  Norway</option><option value=OMN>🇴🇲  Oman</option><option value=PAK>🇵🇰  Pakistan</option><option value=PLW>🇵🇼  Palau</option><option value=PSE>🏳  Palestine</option><option value=PAN>🇵🇦  Panama</option><option value=GIN>🇵🇬  Papua New Guinea</option><option value=PNG>🇵🇬 <option value=GIN>🇵🇬  Papua New Guinea</option></option><option value=PRY>🇵🇾  Paraguay</option><option value=PER>🇵🇪  Peru</option><option value=PHL>🇵🇭  Philippines</option><option value=PCN>🇵🇳  Pitcairn Islands</option><option value=POL>🇵🇱  Poland</option><option value=POL>🇵🇱  Poland</option><option value=PRT>🇵🇹  Portugal</option><option value=PRI>🇵🇷  Puerto Rico</option><option value=QAT>🇶🇦  Qatar</option><option value=COD>🇨🇬  Republic Of Congo</option><option value=ROU>🇷🇴  Romania</option><option value=RUS>🇷🇺  Russia</option><option value=RWA>🇷🇼  Rwanda</option><option value=SLV>🇸🇻  El Salvador</option><option value=SLV>🇸🇻  El Salvador</option><option value=WSM>🇼🇸  Samoa</option><option value=SMR>🇸🇲  San Marino</option><option value=SAU>🇸🇦  Saudi Arabia</option><option value=GBR>🏴󠁧󠁢󠁳󠁣󠁴󠁿  Scotland</option><option value=SEN>🇸🇳  Senegal</option><option value=SRB>🇷🇸  Serbia</option><option value=SYC>🇸🇨  Seychelles</option><option value=SLE>🇸🇱  Sierra Leone</option><option value=SGP>🇸🇬  Singapore</option><option value=ZKY>🇸🇽  Sint Maarten</option><option value=SVK>🇸🇰  Slovakia</option><option value=SVN>🇸🇮  Slovenia</option><option value=SLB>🇸🇧  Solomon Islands</option><option value=SOM>🇸🇴  Somalia</option><option value=SOM>🏳  Somaliland</option><option value=ZAF>🇿🇦  South Africa</option><option value=KOR>🇰🇷  South Korea</option><option value=SDN>🇸🇸  South Sudan</option><option value=SDN>🇸🇸 <option value=SDN>🇸🇸  South Sudan</option></option><option value=ESP>🇪🇸  Spain</option><option value=LKA>🇱🇰  Sri Lanka</option><option value=SDN>🇸🇩  Sudan</option><option value=code3>🇸🇷  Suriname</option><option value=SUR>🇸🇷 <option value=code3>🇸🇷  Suriname</option></option><option value=SWZ>🇸🇿  Swaziland</option><option value=SWE>🇸🇪  Sweden</option><option value=CHE>🇨🇭  Switzerland</option><option value=SYR>🇸🇾  Syria</option><option value=TWN>🇹🇼  Taiwan</option><option value=TJK>🇹🇯  Tajikistan</option><option value=TZA>🇹🇿  Tanzania</option><option value=THA>🇹🇭  Thailand</option><option value=CHN>🏳  Tibet</option><option value=TGO>🇹🇬  Togo</option><option value=TKL>🇹🇰  Tokelau</option><option value=TON>🇹🇴  Tonga</option><option value=TTO>🇹🇹  Trinidad & Tobago</option><option value=TUN>🇹🇳  Tunisia</option><option value=TUR>🇹🇷  Turkey</option><option value=TKM>🇹🇲  Turkmenistan</option><option value=TCA>🇹🇨  Turks And Caicos Islands</option><option value=TUV>🇹🇻  Tuvalu</option><option value=ARE>🇦🇪  United Arab Emirates</option><option value=ARE>🇦🇪  United Arab Emirates</option><option value=UGA>🇺🇬  Uganda</option><option value=UKR>🇺🇦  Ukraine</option><option value=GBR>🇬🇧  United Kingdom</option><option value=ONU>🇺🇳  United Nations</option><option value=USA>🇺🇸  United States</option><option value=ZXX>🏳  Unknown supplier(s)</option><option value=URY>🇺🇾  Uruguay</option><option value=UZB>🇺🇿  Uzbekistan</option><option value=VUT>🇻🇺  Vanuatu</option><option value=VAT>🇻🇦  Vatican City</option><option value=VEN>🇻🇪  Venezuela</option><option value=VNM>🇻🇳  Vietnam</option><option value=GBR>🏴󠁧󠁢󠁷󠁬󠁳󠁿  Wales</option><option value=ESH>🇪🇭  Western Sahara</option><option value=YEM>🇾🇪  Yemen</option><option value=ZMB>🇿🇲  Zambia</option><option value=ZWE>🇿🇼  Zimbabwe</option>                
-            </select>
+                <select id="selectModel" class="selectpicker show-tip" data-width="600px" data-live-search="true" onchange="selectedModel(this)">
+                    <optgroup label="APC">
+                        <option>M-3/M-5 Half-track</option>
+                        <option>Bushmaster</option>
+                        <option>S-600</option>
+                        <option>Pandur</option>
+                        <option>Pandur-2</option>
+                        <option>4K-7FA</option>
+                        <option>MMV</option>
+                        <option>Survivor-2</option>
+                        <option>Pinzgauer 6x6</option>
+                        <option>BTR-80</option>
+                        <option>BTR-70</option>
+                        <option>AIFV-APC</option>
+                        <option>M-113</option>
+                        <option>M-108 VBCL</option>
+                        <option>Spartan</option>
+                        <option>AMX-VCI</option>
+                        <option>BDX</option>
+                        <option>VBTP Guarani</option>
+                        <option>AV-VBL</option>
+                        <option>MT-LB</option>
+                        <option>BTR-60PB</option>
+                        <option>BTR-60P</option>
+                        <option>Piranha</option>
+                        <option>Piranha-3</option>
+                        <option>Huron</option>
+                        <option>Typhoon</option>
+                        <option>LAPV</option>
+                        <option>LAV-700</option>
+                        <option>Type-86</option>
+                        <option>YW-531/Type-63</option>
+                        <option>WZ-551</option>
+                        <option>Type-85</option>
+                        <option>ZFB-05</option>
+                        <option>Type-07</option>
+                        <option>WZ-523</option>
+                        <option>CS/VP3</option>
+                        <option>Type-89/ZSD-89</option>
+                        <option>Hunter TR-12</option>
+                        <option>OT-64A</option>
+                        <option>OT-64C</option>
+                        <option>OT-90</option>
+                        <option>Fahd</option>
+                        <option>AMV</option>
+                        <option>XA-180</option>
+                        <option>XA-200</option>
+                        <option>TITUS</option>
+                        <option>Griffon VBMR</option>
+                        <option>VAB-VTT</option>
+                        <option>VLRA TPK-BL</option>
+                        <option>M-3 VTT</option>
+                        <option>Higuard</option>
+                        <option>ACMAT APC</option>
+                        <option>Aravis</option>
+                        <option>ARIVE</option>
+                        <option>Dingo-2</option>
+                        <option>Boxer</option>
+                        <option>Fuchs-2</option>
+                        <option>Waran</option>
+                        <option>BTR-40</option>
+                        <option>Tpz-1 Fuchs</option>
+                        <option>TM-170 Hermelin</option>
+                        <option>Condor</option>
+                        <option>PMMC G-5</option>
+                        <option>Aditya</option>
+                        <option>Casspir</option>
+                        <option>P-2</option>
+                        <option>Rakhsh</option>
+                        <option>Navigator</option>
+                        <option>Golan</option>
+                        <option>Thunder</option>
+                        <option>Wolf</option>
+                        <option>EE-11 Urutu</option>
+                        <option>Rhino</option>
+                        <option>ACV-1.1</option>
+                        <option>Type-6614</option>
+                        <option>M-113 Arisgator</option>
+                        <option>MPV-VTTM</option>
+                        <option>VBM Freccia</option>
+                        <option>Al-Wahsh</option>
+                        <option>Al-Mared</option>
+                        <option>Mbombe</option>
+                        <option>Al-Jawad</option>
+                        <option>Puma</option>
+                        <option>Buffel</option>
+                        <option>YP-408</option>
+                        <option>CV-90</option>
+                        <option>Nimer-1</option>
+                        <option>Talha</option>
+                        <option>RN-94</option>
+                        <option>BT-3F</option>
+                        <option>BPM-97</option>
+                        <option>GAZ-3937 Vodnik</option>
+                        <option>Taifun-K-53949</option>
+                        <option>BOV M11</option>
+                        <option>Bronco</option>
+                        <option>Tatrapan</option>
+                        <option>Casspir-6</option>
+                        <option>Mbombe-6</option>
+                        <option>Marauder</option>
+                        <option>Mamba</option>
+                        <option>RG-31 Nyala</option>
+                        <option>Matador</option>
+                        <option>Gila</option>
+                        <option>Puma M-26</option>
+                        <option>Ratel</option>
+                        <option>Maverick</option>
+                        <option>Al Kaser</option>
+                        <option>N35</option>
+                        <option>Barracuda</option>
+                        <option>LVTP-7</option>
+                        <option>K-200 KIFV</option>
+                        <option>AAV-7A1</option>
+                        <option>Scout-SV</option>
+                        <option>BvS-10</option>
+                        <option>M/42 SKPF</option>
+                        <option>Bv-206S</option>
+                        <option>DURO-3</option>
+                        <option>Piranha-5</option>
+                        <option>Pars</option>
+                        <option>ARMA</option>
+                        <option>Ejder</option>
+                        <option>ACV-S</option>
+                        <option>Ejder Yalcin</option>
+                        <option>Amazon</option>
+                        <option>M-113A300</option>
+                        <option>Commando V-150</option>
+                        <option>Vuran</option>
+                        <option>VCR-TT</option>
+                        <option>Shrek</option>
+                        <option>Warrior</option>
+                        <option>Caiman</option>
+                        <option>MaxxPro</option>
+                        <option>BTR-3</option>
+                        <option>BTR-50</option>
+                        <option>BTR-4K</option>
+                        <option>Simba</option>
+                        <option>Tactica</option>
+                        <option>AT-105 Saxon</option>
+                        <option>Stormer</option>
+                        <option>Saracen</option>
+                        <option>FV-432</option>
+                        <option>M-113A3</option>
+                        <option>MTVL</option>
+                        <option>TAPV</option>
+                        <option>Cougar</option>
+                        <option>ASV-150/M-1117</option>
+                        <option>AAV-7RAM/RS</option>
+                        <option>RG-33</option>
+                        <option>PKSV</option>
+                        <option>V-300</option>
+                        <option>Guardian</option>
+                        <option>Pitbull VX</option>
+                        <option>Dragoon</option>
+                        <option>Terrier LT-79</option>
+                        <optgroup label="IFV">
+                        <option>Pandur-2</option>
+                        <option>Pandur</option>
+                        <option>BMP-1</option>
+                        <option>BMP-2</option>
+                        <option>AIFV</option>
+                        <option>Piranha/LAV-25</option>
+                        <option>LAV-700 IFV</option>
+                        <option>Type-07P/VN-1</option>
+                        <option>WZ-523/Type-05</option>
+                        <option>WZ-551/Type-92</option>
+                        <option>Type-85 IFV</option>
+                        <option>WZ-551/Type-90</option>
+                        <option>ZBD-05/VN-18</option>
+                        <option>AMV-IFV</option>
+                        <option>Aravis</option>
+                        <option>VAB-VCI</option>
+                        <option>AMX-10P</option>
+                        <option>Boxer</option>
+                        <option>Marder-1A3</option>
+                        <option>Type-86</option>
+                        <option>BTR-94</option>
+                        <option>Ratel-23</option>
+                        <option>CV-9035</option>
+                        <option>BTR-80A</option>
+                        <option>BMP-3</option>
+                        <option>BTR-82A</option>
+                        <option>Mbombe-6</option>
+                        <option>Ratel-20</option>
+                        <option>Black Fox</option>
+                        <option>CV-9030</option>
+                        <option>Piranha-5</option>
+                        <option>Pars IFV-25</option>
+                        <option>Rabdan</option>
+                        <option>Pars IFV-30</option>
+                        <option>BTR-3U Guardian</option>
+                        <option>BMP-1U</option>
+                        <option>BTR-4</option>
+                        <option>MT-LBMSh</option>
+                        <option>MCV-80 Warrior</option>
+                        <option>M-2 Bradley</option>
+                        <option>Desert Chameleon</option>
+                        <optgroup label="Tank">
+                        <option>M-60A1 Patton-2</option>
+                        <option>T-55AM-2</option>
+                        <option>T-72M1</option>
+                        <option>T-55</option>
+                        <option>T-72B</option>
+                        <option>T-80</option>
+                        <option>Leopard-1A1</option>
+                        <option>T-62</option>
+                        <option>Type-85-IIM</option>
+                        <option>Type-90-2M/MBT-2000</option>
+                        <option>Type-69</option>
+                        <option>Type-59G</option>
+                        <option>Type-69-IIG</option>
+                        <option>Type-59</option>
+                        <option>Type-59D</option>
+                        <option>VT-4</option>
+                        <option>T-72</option>
+                        <option>AMX-30B</option>
+                        <option>AMX-30B2</option>
+                        <option>Leclerc</option>
+                        <option>TAM</option>
+                        <option>Leopard-2A6</option>
+                        <option>Leopard-2A5</option>
+                        <option>Leopard-2</option>
+                        <option>Leopard-1A5</option>
+                        <option>Leopard-2A4</option>
+                        <option>Leopard-1A3</option>
+                        <option>Leopard-2A7</option>
+                        <option>M-48A5 Patton</option>
+                        <option>T-72Z</option>
+                        <option>Ti-67S</option>
+                        <option>Sabra-3</option>
+                        <option>M-60A3 Patton-2</option>
+                        <option>Leopard-1V</option>
+                        <option>PT-91M</option>
+                        <option>T-90S</option>
+                        <option>T-72B3</option>
+                        <option>T-80U</option>
+                        <option>T-54</option>
+                        <option>MMWT</option>
+                        <option>T-64A</option>
+                        <option>T-84 Oplot</option>
+                        <option>Challenger</option>
+                        <option>MBT Mk-3</option>
+                        <option>Challenger-2</option>
+                        <option>M-1A1 Abrams</option>
+                        <option>M-1A2 Abrams</option>
+                        <option>K-1 ROKIT</option>
+                        <option>K-1A1</option>
+                        <option>M-48H Brave Tiger</option>
+                        <option>M-1A2S</option>
+                        <option>M-84</option>
+                        <optgroup label="Portable SAM">
+                        <option>Igla/SA-18</option>
+                        <option>Mistral</option>
+                        <option>Strela-2/SA-7</option>
+                        <option>Igla-1/SA-16</option>
+                        <option>FN-6</option>
+                        <option>QW-1 Vanguard</option>
+                        <option>QW-11</option>
+                        <option>HN-5A</option>
+                        <option>QW-2</option>
+                        <option>QW-3</option>
+                        <option>FIM-92 Stinger</option>
+                        <option>Strela-3/SA-14</option>
+                        <option>FIM-43C Redeye</option>
+                        <option>Misagh-2</option>
+                        <option>RBS-70</option>
+                        <option>Grom-2</option>
+                        <option>Igla-S/SA-24</option>
+                        <option>Verba/SA-25</option>
+                        <option>Chiron</option>
+                        <option>RBS-70 Mk-3 Bolide</option>
+                        <option>Javelin</option>
+                        <option>Starburst</option>
+                        <option>Starstreak</option>
+                        <option>HN-5</option>
+                        <optgroup label="Diesel engine">
+                        <option>M-16</option>
+                        <option>M-14</option>
+                        <option>ABC V-12</option>
+                        <option>BF6</option>
+                        <option>T3C-928-90</option>
+                        <option>Tatra V-12</option>
+                        <option>B&W-8L</option>
+                        <option>MAN-9L27</option>
+                        <option>B&W-16V40/45</option>
+                        <option>W-18</option>
+                        <option>W-12</option>
+                        <option>W-16</option>
+                        <option>UD-23</option>
+                        <option>6L46</option>
+                        <option>12PA6</option>
+                        <option>16PC2.5</option>
+                        <option>20PA6</option>
+                        <option>10PC4</option>
+                        <option>MIDR</option>
+                        <option>16PA4</option>
+                        <option>12PA4</option>
+                        <option>Saviem-798</option>
+                        <option>HS-115</option>
+                        <option>D-2848</option>
+                        <option>MTU-1163</option>
+                        <option>MAN-3240</option>
+                        <option>BF8L</option>
+                        <option>BF-12L413</option>
+                        <option>MTU-396</option>
+                        <option>MTU-956</option>
+                        <option>MTU-8000</option>
+                        <option>RK-280</option>
+                        <option>OM-352</option>
+                        <option>MTU-871</option>
+                        <option>D-2848L</option>
+                        <option>MTU-538</option>
+                        <option>MTU-199</option>
+                        <option>MAN-280</option>
+                        <option>MTU-493</option>
+                        <option>BT-6L</option>
+                        <option>MTU-183</option>
+                        <option>MTU-595</option>
+                        <option>MTU-4000</option>
+                        <option>LA-6</option>
+                        <option>MTU-106</option>
+                        <option>OM-924</option>
+                        <option>MTU-838</option>
+                        <option>MAN V6</option>
+                        <option>MAN-8L-48</option>
+                        <option>MTU-881</option>
+                        <option>TBD-620</option>
+                        <option>D2862</option>
+                        <option>OM-366</option>
+                        <option>MTU-883</option>
+                        <option>BFM-2015</option>
+                        <option>BF6M</option>
+                        <option>Deutz V-10</option>
+                        <option>OM-926</option>
+                        <option>MAN-12V28</option>
+                        <option>MTU-833</option>
+                        <option>MTU-N-90</option>
+                        <option>MTU-6R-106</option>
+                        <option>MTU-2000</option>
+                        <option>RK-270</option>
+                        <option>Tata Diesel</option>
+                        <option>Cursor-9</option>
+                        <option>Cursor-8</option>
+                        <option>YaMZ-238</option>
+                        <option>V-46</option>
+                        <option>KAMAZ-7403</option>
+                        <option>M-520</option>
+                        <option>V-55</option>
+                        <option>DS-14</option>
+                        <option>MD5</option>
+                        <option>DC13</option>
+                        <option>D9</option>
+                        <option>6TD</option>
+                        <option>5TDF</option>
+                        <option>Condor CV-12</option>
+                        <option>Phaser</option>
+                        <option>TV-8-640</option>
+                        <option>12VP-185</option>
+                        <option>Caterpillar-3612</option>
+                        <option>Caterpillar-3616</option>
+                        <option>6V-53</option>
+                        <option>Caterpillar-3126</option>
+                        <option>6BT</option>
+                        <option>C-9</option>
+                        <option>C-7</option>
+                        <option>Power Stroke</option>
+                        <option>ISC</option>
+                        <option>ISB5.9</option>
+                        <option>AVDS-1790</option>
+                        <option>Caterpillar-3516</option>
+                        <option>C280-16</option>
+                        <option>E-9</option>
+                        <option>VT-400</option>
+                        <option>C13</option>
+                        <option>8V-92TA</option>
+                        <option>VTA-903</option>
+                        <option>ISB4</option>
+                        <option>CAT-3508</option>
+                        <option>12V-71</option>
+                        <option>ISL</option>
+                        <option>ISB6.7</option>
+                        <option>6V-92</option>
+                        <option>C32</option>
+                        <option>C280-12</option>
+                        <optgroup label="APV">
+                        <option>Gurkha</option>
+                        <option>Tiger</option>
+                        <option>VN-3</option>
+                        <option>Sherpa</option>
+                        <option>VBL</option>
+                        <option>VAP</option>
+                        <option>Didgori</option>
+                        <option>Terrier LAU</option>
+                        <option>SandCat</option>
+                        <option>Sufa</option>
+                        <option>RAM</option>
+                        <option>Musketeer</option>
+                        <option>Combat Guard</option>
+                        <option>LMV</option>
+                        <option>Puma</option>
+                        <option>Nimr Armored</option>
+                        <option>Cougar</option>
+                        <option>Land Cruiser</option>
+                        <option>Interceptor</option>
+                        <option>Mohafiz</option>
+                        <option>Dzik</option>
+                        <option>Tigr</option>
+                        <option>M-ATV</option>
+                        <option>Qutaish-2</option>
+                        <option>Fox</option>
+                        <option>RG-32 Scout</option>
+                        <option>Leopard</option>
+                        <option>VAMTAC BN3</option>
+                        <option>Eagle</option>
+                        <option>Cobra</option>
+                        <option>Shorland</option>
+                        <option>Akrep/Scorpion</option>
+                        <option>NMS</option>
+                        <option>Panthera T6</option>
+                        <option>Dozor-B</option>
+                        <option>Ferret</option>
+                        <option>Transac GS</option>
+                        <option>MXT-MV</option>
+                        <option>HMMWV Up-Armoured</option>
+                        <option>David</option>
+                        <option>L-ATV</option>
+                        <option>BearCat</option>
+                        <optgroup label="SAM">
+                        <option>3M9/SA-6</option>
+                        <option>ADATS LOS-FH</option>
+                        <option>FM-90</option>
+                        <option>HHQ-10</option>
+                        <option>HQ-2/CSA-1</option>
+                        <option>R-440 Crotale</option>
+                        <option>KS-1A</option>
+                        <option>LY-80</option>
+                        <option>HQ-9</option>
+                        <option>Roland</option>
+                        <option>ASTER-15 SAAM</option>
+                        <option>VT-1</option>
+                        <option>R-460 Shahine</option>
+                        <option>ASTER-30</option>
+                        <option>RIM-116A RAM</option>
+                        <option>IRIS-T SLM</option>
+                        <option>9M33/SA-8</option>
+                        <option>MIM-104A Patriot</option>
+                        <option>MIM-104C PAC-2</option>
+                        <option>Barak-8</option>
+                        <option>Barak-8ER</option>
+                        <option>Barak-1</option>
+                        <option>RIM-162 ESSM</option>
+                        <option>RIM-66B Standard-1MR</option>
+                        <option>MIM-23B HAWK</option>
+                        <option>48N6/SA-10</option>
+                        <option>57E6</option>
+                        <option>9M317/SA-17 Grizzly</option>
+                        <option>3M8M1/SA-4</option>
+                        <option>5V55U/SA-10</option>
+                        <option>9M338/SA-15</option>
+                        <option>9M38/SA-11</option>
+                        <option>5V55R/SA-10B</option>
+                        <option>9M311/SA-19</option>
+                        <option>9M82M/SA-23A</option>
+                        <option>9M83M/SA-23B</option>
+                        <option>V-601/SA-3B</option>
+                        <option>Umkhonto-IR</option>
+                        <option>Umkhonto-R</option>
+                        <option>Strela-10/SA-13</option>
+                        <option>S-200/SA-5</option>
+                        <option>Rapier-2</option>
+                        <option>Seawolf</option>
+                        <option>CAMM</option>
+                        <option>CAMM-ER</option>
+                        <option>Sea Cat</option>
+                        <option>RIM-162 ESSM Block-2</option>
+                        <option>Standard Missile-2MR</option>
+                        <option>MIM-72C Chaparral</option>
+                        <option>Standard Missile-1ER</option>
+                        <option>AMRAAM-ER</option>
+                        <option>Rapier-1</option>
+                        <optgroup label="Anti-tank missile">
+                        <option>9M114 Shturm/AT-6</option>
+                        <option>9M111 Fagot/AT-4</option>
+                        <option>9M113 Konkurs/AT-5</option>
+                        <option>9M115 Metis/AT-7</option>
+                        <option>Red Arrow-8</option>
+                        <option>Blue Arrow-7</option>
+                        <option>Red Arrow-9</option>
+                        <option>Red Arrow-73</option>
+                        <option>BGM-71 TOW</option>
+                        <option>MILAN</option>
+                        <option>Eryx</option>
+                        <option>HOT-2</option>
+                        <option>HOT</option>
+                        <option>HOT-3</option>
+                        <option>9M14M/AT-3</option>
+                        <option>Spike-ER</option>
+                        <option>Spike-MR/LR</option>
+                        <option>Spike-SR</option>
+                        <option>LAHAT</option>
+                        <option>MAPATS</option>
+                        <option>9M119 Svir/AT-11</option>
+                        <option>Kornet/AT-14</option>
+                        <option>9M131 Metis-M/AT-13</option>
+                        <option>9M120 Ataka/AT-9</option>
+                        <option>9M117 Bastion/AT-10</option>
+                        <option>9M123/AT-15</option>
+                        <option>9A1472 Vikhr/AT-16</option>
+                        <option>Ingwe</option>
+                        <option>Raybolt</option>
+                        <option>NLAW</option>
+                        <option>RBS-56 Bill</option>
+                        <option>RBS-56B Bill-2</option>
+                        <option>R-2</option>
+                        <option>Combat</option>
+                        <option>Swingfire</option>
+                        <option>FGM-148 Javelin</option>
+                        <option>BGM-71F TOW-2B</option>
+                        <option>AGM-114A HELLFIRE</option>
+                        <option>AGM-114L HELLFIRE</option>
+                        <option>AGM-114K HELLFIRE</option>
+                        <optgroup label="ASM">
+                        <option>AGM-65 Maverick</option>
+                        <option>AR-1</option>
+                        <option>CM-502KG</option>
+                        <option>YJ-9E</option>
+                        <option>AASM</option>
+                        <option>Storm Shadow/SCALP</option>
+                        <option>AS-30L</option>
+                        <option>Apache</option>
+                        <option>Taurus KEPD-350</option>
+                        <option>AGM-142A/Popeye-1</option>
+                        <option>JSM</option>
+                        <option>PJ-10 BrahMos-A</option>
+                        <option>Kh-59/AS-13</option>
+                        <option>Kh-29/AS-14 Kedge</option>
+                        <option>Kh-59ME Ovod/AS-18</option>
+                        <option>Kh-59M/AS-18 Kazoo</option>
+                        <option>Al-Tariq</option>
+                        <option>Raptor-2</option>
+                        <option>SOM</option>
+                        <option>CIRIT</option>
+                        <option>Brimstone</option>
+                        <option>PGM-500/PGM-2000</option>
+                        <option>AGM-158A JASSM</option>
+                        <option>WGU-59 APKWS</option>
+                        <option>AGM-158B JASSM-ER</option>
+                        <option>AGM-84H SLAM-ER</option>
+                        <option>Talon</option>
+                        <optgroup label="BVRAAM">
+                        <option>PL-11/FD-60</option>
+                        <option>PL-12/SD-10</option>
+                        <option>AIM-7M Sparrow</option>
+                        <option>MICA</option>
+                        <option>Super-530D</option>
+                        <option>Meteor</option>
+                        <option>Super-530F</option>
+                        <option>R-27/AA-10</option>
+                        <option>Python-4</option>
+                        <option>Derby</option>
+                        <option>Python-5</option>
+                        <option>AIM-120C AMRAAM</option>
+                        <option>RVV-AE/AA-12 Adder</option>
+                        <option>R-23/AA-7</option>
+                        <option>R-40/AA-6</option>
+                        <option>Skyflash</option>
+                        <option>AIM-7F Sparrow</option>
+                        <option>AIM-120B AMRAAM</option>
+                        <option>AIM-7P Sparrow</option>
+                        <option>AIM-120D AMRAAM</option>
+                        <option>AIM-7E Sparrow</option>
+                        <option>AIM-120A AMRAAM</option>
+                        <optgroup label="SRAAM">
+                        <option>R-60/AA-8</option>
+                        <option>PL-2</option>
+                        <option>PL-7</option>
+                        <option>PL-9</option>
+                        <option>TY-90</option>
+                        <option>PL-5B</option>
+                        <option>PL-5E</option>
+                        <option>Python-3</option>
+                        <option>R-550 Magic-2</option>
+                        <option>R-550 Magic-1</option>
+                        <option>IRIS-T</option>
+                        <option>AIM-9L/I Sidewinder</option>
+                        <option>AIM-9L Sidewinder</option>
+                        <option>R-73/AA-11</option>
+                        <option>AIM-9B Sidewinder</option>
+                        <option>AIM-9D Sidewinder</option>
+                        <option>K-13M/AA-2C</option>
+                        <option>AIM-9X Sidewinder</option>
+                        <option>AIM-9J/P Sidewinder</option>
+                        <optgroup label="APC turret">
+                        <option>BTM</option>
+                        <option>Type-606</option>
+                        <option>ORCWS</option>
+                        <option>WS4 Panther</option>
+                        <option>Samson Mini</option>
+                        <option>Protector</option>
+                        <option>MCT</option>
+                        <option>Rogue</option>
+                        <option>Thales ROTSS</option>
+                        <option>SWARM</option>
+                        <option>Textron turret</option>
+                        <option>Raven R-400 SRWS</option>
+                        <optgroup label="Guided bomb">
+                        <option>SMKB</option>
+                        <option>FT-9</option>
+                        <option>LS-3</option>
+                        <option>LS-6-500</option>
+                        <option>LT-2</option>
+                        <option>BGL</option>
+                        <option>Lizard</option>
+                        <option>Griffin</option>
+                        <option>SPICE</option>
+                        <option>NG-LGB</option>
+                        <option>OPHER</option>
+                        <option>K029E</option>
+                        <option>K08BE</option>
+                        <option>Sejeel</option>
+                        <option>Paveway</option>
+                        <option>JDAM</option>
+                        <option>AGM-154 JSOW</option>
+                        <option>GBU-53/B StormBreaker</option>
+                        <option>GBU-39 SDB</option>
+                        <option>CBU-97 SFW</option>
+                        <option>GBU-28</option>
+                        <optgroup label="Guided rocket">
+                        <option>AccuLAR</option>
+                        <option>TRG-300 300mm</option>
+                        <option>GMLRS</option>
+                        <optgroup label="Guided shell">
+                        <option>DM-702 SMART-155</option>
+                        <option>DART</option>
+                        <option>Krasnopol-M</option>
+                        <option>BONUS-2</option>
+                        <option>M-982 Excalibur</option>
+                        <option>M-1156 PGK</option>
+                        <option>M-712 Copperhead</option>
+                        
+                                          </select>
+
+
 
             </div>
 
@@ -257,7 +899,7 @@
             chosen_category = ((orderedWeapons.length > 0) ? orderedWeapons[0]["key"] : null)
 
             // console.log(orderedWeapons.length)
-            console.log(orderedWeapons);
+            console.log("ORD", data);
 
             // X axis
             var x = d3.scaleBand()
@@ -443,12 +1085,12 @@
                     //     prev_rect.attr("fill", "#69b3a2")
                     chosen_category = d.key
 
-                    svg.selectAll("rect").attr("fill", "#69b3a2")
+                    svg.selectAll("rect").style("fill", "#69b3a2")
                     d3.select("#scatter_title").text("Weapons by model: ")
                         .append("span")
                         .text("\u00A0" + chosen_category).style("color", "orange")
                     console.log(d3.select(this))
-                    d3.select(this).attr("fill", "orange")
+                    d3.select(this).style("fill", "orange")
                     svg.select("#x-bar-axis").selectAll(".tick")
                         .select('g > line')
                         .style("stroke", d => {
@@ -464,6 +1106,10 @@
                                 return "white"
 
                         })
+                    $("#weapon_description").html(txt)
+                    d3.select("#weapon_desc_head").text("Weapon description: ")
+                        .append("span")
+                        .text("\u00A0" + chosen_category).style("color", "orange")
 
                     heatmapTransition()
 
@@ -575,6 +1221,7 @@
                     .entries(filteredModels)
                 console.log("f,", groupedModels)
                 savedModelList = modelList
+                console.log("drawHeatmap -> modelList", modelList)
                     //console.log("groupedModels", groupedModels);
 
 
@@ -744,7 +1391,7 @@
          ************************/
 
 
-        function heatmapTransition() {
+        function heatmapTransition(isFromSelectPicker = false) {
 
             filteredModels = savedDataset
                 .filter(function(d) {
@@ -811,13 +1458,19 @@
                 .duration(2000)
                 .call(d3.axisBottom(x))
                 .selectAll("text")
-                .style("fill", d => d == modelList[0] ? "red" : "white")
+                .style("fill", d => {
+                    if (isFromSelectPicker)
+                        return d == modelChosen ? "red" : "white"
+                    else
+                        return d == modelList[0] ? "red" : "white"
+                })
                 .attr("transform", "rotate(-45)")
                 .style("text-anchor", "end")
 
-
-            instant_chosen_model(modelList[0])
-
+            if (!isFromSelectPicker)
+                instant_chosen_model(modelList[0])
+            else
+                instant_chosen_model(modelChosen)
 
             superFilteredModels = filteredModels.filter(d => d["Weapon model"] == clickedModelChosen)
             tabulate(superFilteredModels, columns, true, false)
@@ -976,6 +1629,54 @@
             tabulate(superFilteredModels, columns, true, false)
         }
 
+        function chosen_category_model(cat, model) {
+            chosen_category = cat
+            modelChosen = model
+            d3.selectAll(".bar-rect").style("fill", d => d.key == chosen_category ? "orange" : "#69b3a2")
+            d3.select("#bar-" + cat).style("fill", "orange")
+            d3.select("#scatter_title").text("Weapons by model: ")
+                .append("span")
+                .text("\u00A0" + chosen_category).style("color", "orange")
+            svg.select("#x-bar-axis").selectAll(".tick")
+                .select('g > line')
+                .style("stroke", d => {
+                    return (d == chosen_category) ? "orange" : "white"
+                })
+
+            svg.select("#x-bar-axis").selectAll(".tick")
+                .select('g > text')
+                .style("fill", d => {
+                    if (d == chosen_category)
+                        return "orange"
+                    else
+                        return "white"
+                })
+
+            heatmapTransition(true)
+
+            $("#weapon_description").html(txt)
+            d3.select("#weapon_desc_head").text("Weapon description: ")
+                .append("span")
+                .text("\u00A0" + chosen_category).style("color", "orange")
+            start_timer_chosen_model(model, "click")
+        }
+
+        function selectedModel(sel) {
+            // $("#selectModel").change(function() {
+            //     $("#selectModel option:selected").each(function() {
+            //         console.log(cat, model)
+            //     })
+            // })
+
+            cat = $(sel.options[sel.selectedIndex]).closest('optgroup').attr('label')
+            model = sel.options[sel.selectedIndex].text
+            chosen_category_model(cat, model)
+            console.log("Selected cat and mod", cat, model)
+
+            // cat = $(sel).prevAll('optgroup').attr('label')
+            // console.log("Clicked nation " + ids)
+
+        }
 
         function tabulate(data, columns, redraw = false, append = false) {
             redcolor = "#d00101"
@@ -1104,9 +1805,9 @@
                 <li style="background-color: #79aefe;">
                     <a href="/weapons ">Weapons</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="/countries ">Countries info</a>
-                </li>
+                </li> -->
 
                 <li>
                     <a href="/about ">About</a>
