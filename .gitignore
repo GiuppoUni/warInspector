@@ -1,8 +1,4 @@
-./mds-heroku/images/*
-
-# documentation's temp files
-*.aux
-*.dvi
-*.log
-*.out
-*.synctex.gz
+venv
+*.pyc
+.DS_Store
+.env
