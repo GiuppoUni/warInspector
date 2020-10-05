@@ -1,5 +1,5 @@
 var DivergingBarChartManager = function() {
-    var margin = { top: 20, right: 80, bottom: 40, left: 40 };
+    var margin = { top: 20, right: 100, bottom: 40, left: 40 };
 
     var width = 600 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;

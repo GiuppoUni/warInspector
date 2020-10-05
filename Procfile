@@ -1,1 +1,1 @@
-web: flask; web: gunicorn src.app:app --log-file=-
+web: python3 application.py;
