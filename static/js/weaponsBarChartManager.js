@@ -5,7 +5,7 @@ var weaponsBarChartManager = function() {
 
     // set the dimensions and margins of the graph
     var margin = {
-            top: 10,
+            top: 20,
             right: 10,
             bottom: 100,
             left: 70
@@ -25,6 +25,16 @@ var weaponsBarChartManager = function() {
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
     // Add Y axis
+
+    svg.append("text")
+        .attr("text-anchor", "end")
+        .attr("x", -38)
+        .attr("y", -8)
+        .style("fill", "white")
+        .text("Weapon units")
+        .style("font-size", "11px")
+        .attr("text-anchor", "start")
+
     var y = d3v4.scaleLinear()
         .domain([0, 1000])
         .range([height, 0]);

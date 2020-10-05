@@ -693,7 +693,8 @@ Charts
     }
     
     path.domain {
-        display: none;
+        /* display: none; */
+        stroke: white
     }
     /* Grid Layout */
     

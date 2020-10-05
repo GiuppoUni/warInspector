@@ -170,9 +170,18 @@ var DivergingBarChartManager = function() {
             x.domain(d3v4.keys(data).map(function(d) { return d; }));
             const maxUp = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalS"]; });
             const maxDown = d3v4.max(d3v4.entries(data), function(d) { return d.value["totalR"]; });
-            const max = Math.max(maxUp, maxDown)
+            const max = Math.max(maxUp + 100, maxDown + 100)
                 // console.log(maxUp, maxDown)
             colour.domain([0, max]);
+
+            svg.append("text")
+                .attr("text-anchor", "end")
+                .attr("x", -38)
+                .attr("y", -8)
+                .style("fill", "white")
+                .text("Weapon units")
+                .style("font-size", "11px")
+                .attr("text-anchor", "start")
 
             y.domain([0, max + 10])
             yDown.domain([max + 10, 0])
@@ -443,7 +452,7 @@ var DivergingBarChartManager = function() {
         x.domain(d3v4.keys(data_structure).map(function(d) { return d; }));
         const maxUp = d3v4.max(d3v4.entries(data_structure), function(d) { return d.value["totalS"]; });
         const maxDown = d3v4.max(d3v4.entries(data_structure), function(d) { return d.value["totalR"]; });
-        const max = Math.max(maxUp, maxDown)
+        const max = Math.max(maxUp + 100, maxDown + 100)
             // console.log(data_structure)
             // console.log(typeof(data_structure));
         console.log("data", d3v4.keys(data_structure).map(function(d) { return d; }))
