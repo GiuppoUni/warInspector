@@ -1,5 +1,4 @@
 iso3166==1.0.1
-mpld3==0.3.1.dev1
 matplotlib==3.2.2
 Flask==1.1.2
 selenium==3.141.0

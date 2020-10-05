@@ -11,15 +11,12 @@
 print(__doc__)
 import numpy as np
 import pandas as pd
-from sklearn import manifold
 from numpy import dot
 from numpy.linalg import norm
 
 from flask import Flask, flash, redirect, render_template, request, session, abort,send_from_directory,send_file,jsonify
-import pandas as pd
 
 import json
-import time
 import matplotlib.pyplot as plt, mpld3
 
 
