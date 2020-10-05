@@ -33,10 +33,14 @@ from selenium.common.exceptions import TimeoutException
 PCA_WIDTH="300"
 PCA_HEIGHT="250"
 
+GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+
 folder="static/data/"
 op = webdriver.ChromeOptions()
 op.add_argument('headless')
-driver = webdriver.Chrome('/usr/bin/chromedriver',options=op)
+# driver = webdriver.Chrome('/usr/bin/chromedriver',options=op)
+driver = webdriver.Chrome(CHROMEDRIVER_PATH,options=op)
 
 #1. Declare application
 # application= Flask(__name__)
