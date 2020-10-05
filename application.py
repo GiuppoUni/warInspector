@@ -17,7 +17,6 @@ from numpy.linalg import norm
 from flask import Flask, flash, redirect, render_template, request, session, abort,send_from_directory,send_file,jsonify
 
 import json
-import matplotlib.pyplot as plt, mpld3
 
 
 from sklearn.preprocessing import StandardScaler
