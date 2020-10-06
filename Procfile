@@ -1,1 +1,1 @@
-web: python applicationHeroku.py;
+web: python application-deploy.py;
