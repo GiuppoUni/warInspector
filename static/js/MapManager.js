@@ -104,7 +104,7 @@ var MapManager = function() {
 
         d3v4.queue()
             .defer(d3v4.csv, "static/data/merged1990.csv")
-            .defer(d3v4.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
+            .defer(d3v4.json, "https://enjalot.github.io/wwsd/data/world/world-110m.geojson")
             .defer(d3v4.csv, "static/data/conflictsMerged3.csv")
             .await(ready)
 
