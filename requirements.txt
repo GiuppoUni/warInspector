@@ -6,3 +6,4 @@ selenium==3.141.0
 pandas==1.0.3
 beautifulsoup4==4.9.3
 scikit_learn==0.22.2
+gunicorn
