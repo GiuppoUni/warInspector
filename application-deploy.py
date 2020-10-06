@@ -37,10 +37,10 @@ GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
 CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 
 folder="static/data/"
-op = webdriver.ChromeOptions()
-op.add_argument('headless')
+# op = webdriver.ChromeOptions()
+# op.add_argument('headless')
 # driver = webdriver.Chrome('/usr/bin/chromedriver',options=op)
-driver = webdriver.Chrome(CHROMEDRIVER_PATH,options=op)
+# driver = webdriver.Chrome(CHROMEDRIVER_PATH,options=op)
 
 #1. Declare application
 # application= Flask(__name__)
@@ -436,25 +436,25 @@ def returnPCAData():
 
 @application.route("/get-news",methods=["POST"])
 def returnNews():
-    # oldlink = "https://www.cfr.org/global-conflict-tracker/?category=us&conflictType=1099&vm=grid"
-    link = "https://www.crisisgroup.org/crisiswatch"
-    driver.get(link)
-    content = driver.page_source
-    soup = BeautifulSoup(content,"html.parser")
-    # alert = soup.find('span', attrs={'class':'gct-alerts__latest-alert'})
-    alert_parent = soup.find('p', attrs={'class':'[ u-mar-b0 u-mar-t15 ] [ u-fs13 u-lh15 u-fwl u-c-white:link ]'})
-    alert = alert_parent.findAll('a', attrs={'class':'js-scrollTo'})
-    # if(alert.text=="..."):
-    #     driver.get(link)
-    #     content = driver.page_source
-    #     soup = BeautifulSoup(content,"html.parser")
+    # # oldlink = "https://www.cfr.org/global-conflict-tracker/?category=us&conflictType=1099&vm=grid"
+    # link = "https://www.crisisgroup.org/crisiswatch"
+    # # driver.get(link)
+    # content = driver.page_source
+    # soup = BeautifulSoup(content,"html.parser")
+    # # alert = soup.find('span', attrs={'class':'gct-alerts__latest-alert'})
+    # alert_parent = soup.find('p', attrs={'class':'[ u-mar-b0 u-mar-t15 ] [ u-fs13 u-lh15 u-fwl u-c-white:link ]'})
+    # alert = alert_parent.findAll('a', attrs={'class':'js-scrollTo'})
+    # # if(alert.text=="..."):
+    # #     driver.get(link)
+    # #     content = driver.page_source
+    # #     soup = BeautifulSoup(content,"html.parser")
 
-    last_update_parent = soup.find('h3', attrs={'class':'[ u-fs12 ]'})
-    last_update = last_update_parent.find('span')
-    country_array = [a.text for a in alert] 
-    print(alert,last_update)
-    alert = str(alert).replace(",",", ").replace("[","").replace("]","").replace('href="/crisiswatch#','href="https://www.crisisgroup.org/crisiswatch#')
-    return jsonify(alert,str("Updated on: "+last_update.text),str(country_array))
+    # last_update_parent = soup.find('h3', attrs={'class':'[ u-fs12 ]'})
+    # last_update = last_update_parent.find('span')
+    # country_array = [a.text for a in alert] 
+    # print(alert,last_update)
+    # alert = str(alert).replace(",",", ").replace("[","").replace("]","").replace('href="/crisiswatch#','href="https://www.crisisgroup.org/crisiswatch#')
+    return jsonify("","No alerts available")
 # Other routes
 @application.route('/about')
 def about():
