@@ -55,7 +55,7 @@ var WeaLine = function() {
             return
         localSavedGrouped = localSavedGrouped.sort(function(a, b) { return d3.descending(a.key.split(",")[1], b.key.split(",")[1]); });
 
-        console.log("after", modelChosen, localSavedGrouped, savedModelList)
+        // console.log("after", modelChosen, localSavedGrouped, savedModelList)
         y.domain([0, d3.max(localSavedGrouped, function(d) { return d.value }) + 1000])
         svg.select("#y-line-axis")
             .transition()

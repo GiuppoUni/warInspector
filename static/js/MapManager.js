@@ -22,9 +22,20 @@ var MapManager = function() {
         .scaleExtent([1, 8])
         .on('zoom', zoomed);
 
-    var z = d3v4.scaleSqrt()
-        .domain([1, 6])
-        .range([10, 30]);
+    // var z = d3v4.scaleSqrt()
+    //     .domain([0, 7])
+    //     .range([5, 35]);
+    function zz(d) {
+        d = parseInt(d)
+        return 5 + d * (5)
+            // if (d == 1)
+            //     return 10
+            // else if (d == 2)
+            //     return 15
+            // else if (d == 3)
+            //     return 20
+
+    }
 
 
     var redScale = d3v4.scaleThreshold()
@@ -52,7 +63,17 @@ var MapManager = function() {
     var sphere_imp = stateGroup_imp.append("g")
     var heatsGroup_imp = stateGroup_imp.append("g")
 
+    var selectedCircle = 6
+    var selectedCircle2 = 6
 
+    var tipConflict = d3v4.tip()
+        .attr('class', 'd3-tip2')
+        .offset([-10, 0])
+        .html(function(d) {
+            // console.log(d.mag)
+            return '<div class="tip-map">' + d.states + "</br>" + d.description + '<br/>' + d.begin +
+                "-" + d.end + "</div>";
+        });
 
     //EXPORT map
     const svg = exp_section
@@ -69,11 +90,10 @@ var MapManager = function() {
     var g = svg.append('g');
     var stateGroup = g.append('g');
     var sphere = stateGroup.append("g")
-    var heatsGroup = stateGroup.append("g")
+        // var heatsGroup = stateGroup.append("g")
 
     var svgTransform;
     var svgStroke;
-    var svgRadius;
 
     var savedWars;
 
@@ -132,7 +152,7 @@ var MapManager = function() {
 
 
             savedWars = allWars
-            wars = allWars.filter(d => filterWar(d));
+            wars = allWars.filter(d => filterWar(d)).filter(d => parseInt(d.mag) <= selectedCircle);
 
 
             // const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
@@ -203,35 +223,29 @@ var MapManager = function() {
 
 
             svg
-                .selectAll("expWarDots")
+                .selectAll(".war-dot.exp")
                 .data(wars)
                 .enter()
                 .append("circle")
-                .attr("class", function(d) { return "war-dot exp" })
+                .attr("class", "war-dot exp")
                 .attr("cx", function(d) { return projection([d.lon, d.lat])[0] })
                 .attr("cy", function(d) { return projection([d.lon, d.lat])[1] })
                 // .attr("transform", function(d) {
                 //     return "translate(" + projection(d.coordinates) + ")";
                 // })
-                .attr("r", d =>
-                    z(d.mag))
-                // return z(wars[index].mag);
+                .attr("r", function(d) { return zz(d.mag) })
+                // return zz(wars[index].mag);
                 .style("fill", "white")
                 .style("stroke", "black")
                 .style("opacity", .5)
-
-            var tip = d3v4.tip()
-                .attr('class', 'd3-tip')
-                .offset([-10, 0])
-                .html(function(d) {
-                    return '<div class="tip-map">' + d.states + "</br>" + d.description + '<br/>' + d.begin +
-                        "-" + d.end + "</div>";
+                .on('mouseover', function(d) {
+                    console.log(d3v4.select(this).attr("r"));
+                    tipConflict.show(d)
                 })
-            heatsGroup_imp.call(tip);
+                .on('mouseout', tipConflict.hide)
 
-            d3v4.selectAll(".war-dot")
-                .on('mouseover', d => tip.show(d))
-                .on('mouseout', tip.hide)
+            svg.call(tipConflict);
+
 
 
             // // land.remove()
@@ -242,7 +256,9 @@ var MapManager = function() {
             //
             //
             //
-            // DRAW IMPORT NOW
+            /**********************
+             * // DRAW IMPORT NOW *
+             **********************/
             //
             ////
             //
@@ -276,10 +292,6 @@ var MapManager = function() {
                 const element = grouped[i];
                 data.set(element.key, +element.value)
             }
-            console.log(wars)
-            wars = wars.filter(d =>
-                parseInt(d.begin.replace(/\(|\)/g, "")) >= years[0] &&
-                parseInt(d.end.replace(/\(|\)/g, "")) <= years[1]);
 
 
             const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
@@ -348,7 +360,6 @@ var MapManager = function() {
             svg2.select(".legendThreshold")
                 .call(legend);
 
-            wars = savedWars.filter(d => filterWar(d));
 
             svg2
                 .selectAll(".war-dot.imp")
@@ -361,32 +372,26 @@ var MapManager = function() {
                 // .attr("transform", function(d) {
                 //     return "translate(" + projection(d.coordinates) + ")";
                 // })
-                .attr("r", d => z(d.mag))
-                // return z(wars[index].mag);
+                .attr("r", function(d) { return zz(d.mag) })
+                // return zz(wars[index].mag);
                 .style("fill", "white")
                 .style("stroke", "black")
                 .style("opacity", .5)
-
-            var tip = d3v4.tip()
-                .attr('class', 'd3-tip')
-                .offset([-10, 0])
-                .html(function(d) {
-                    return '<div class="tip-map">' + d.states + "</br>" + d.description + '<br/>' + d.begin +
-                        "-" + d.end + "</div>";
+                .on('mouseover', function(d) {
+                    tipConflict.show(d)
                 })
-            heatsGroup_imp.call(tip);
+                .on('mouseout', tipConflict.hide)
 
-            d3v4.selectAll(".war-dot")
-                .on('mouseover', d => tip.show(d))
-                .on('mouseout', tip.hide)
+            svg2.call(tipConflict);
+
 
 
             //LEGEND CIRCLES EXP
-            const valuesToShow = [1, 3, 6]
+            const valuesToShow = [6, 3, 1]
             const xCircle = 55
             const xLabel = 53
 
-            function heightCircles(d) { return height + 90 - 230 - (z(d)) }
+            function heightCircles(d) { return height + 90 - 230 - (zz(d)) }
             svg
                 .selectAll("legend")
                 .data(valuesToShow)
@@ -395,9 +400,33 @@ var MapManager = function() {
                 .attr("class", "circleLegend")
                 .attr("cx", xCircle)
                 .attr("cy", function(d, i) { return heightCircles(d) })
-                .attr("r", function(d) { return z(d) })
-                .style("fill", "none")
-                .attr("stroke", "white")
+                .attr("r", function(d) { return zz(d) })
+                .style("fill", "transparent")
+                .style("stroke", d => d == selectedCircle ? "yellow" : "white")
+                .style("stroke-width", "2px")
+                .on("mouseover", function(d) {
+                    d3v4.select(this).style("stroke", "yellow")
+                        // console.log("in")
+
+                })
+                .on("mouseout", function(d) {
+                    if (selectedCircle != d) {
+                        d3v4.select(this).style("stroke", "white")
+                            // console.log("out")
+                    }
+                })
+                .on("click", function(d) {
+                    var oldMag = selectedCircle
+                    if (selectedCircle !== d) {
+                        selectedCircle = d
+                        svg.selectAll(".circleLegend").filter("circle").style("stroke", "white")
+                        d3v4.select(this).style("stroke", "yellow")
+                        transitionCircles(oldMag, "exp")
+                    } else {
+
+                    }
+                    console.log(selectedCircle)
+                })
             svg
                 .selectAll("legend")
                 .data(valuesToShow)
@@ -405,7 +434,7 @@ var MapManager = function() {
                 .append("text")
                 .attr("class", "circleLegend")
                 .attr('x', xLabel)
-                .attr('y', function(d) { return height - 147 - (z(d) * 2) })
+                .attr('y', function(d) { return height - 147 - (zz(d) * 2) })
                 .text(function(d) { return d })
                 .style("font-size", 10)
                 .attr('alignment-baseline', 'middle')
@@ -440,9 +469,34 @@ var MapManager = function() {
                 .attr("class", "circleLegend")
                 .attr("cx", xCircle)
                 .attr("cy", function(d, i) { return heightCircles(d) })
-                .attr("r", function(d) { return z(d) })
-                .style("fill", "none")
-                .attr("stroke", "white")
+                .attr("r", function(d) { return zz(d) })
+                .style("fill", "transparent")
+                .style("stroke", d => d == selectedCircle2 ? "yellow" : "white")
+                .style("stroke-width", "2px")
+                .on("mouseover", function(d) {
+                    d3v4.select(this).style("stroke", "yellow")
+                        // console.log("in")
+
+                })
+                .on("mouseout", function(d) {
+                    if (selectedCircle2 != d) {
+                        d3v4.select(this).style("stroke", "white")
+                            // console.log("out")
+                    }
+                })
+                .on("click", function(d) {
+                    var oldMag = selectedCircle2
+                    if (selectedCircle2 !== d) {
+                        selectedCircle2 = d
+                        svg.selectAll(".circleLegend").filter("circle").style("stroke", "white")
+                        d3v4.select(this).style("stroke", "yellow")
+                        transitionCircles(oldMag, "imp")
+                    } else {
+
+                    }
+                    console.log(selectedCircle2)
+                })
+
             svg2
                 .selectAll("legend")
                 .data(valuesToShow)
@@ -450,7 +504,7 @@ var MapManager = function() {
                 .append("text")
                 .attr("class", "circleLegend")
                 .attr('x', xLabel)
-                .attr('y', function(d) { return height - 147 - (z(d) * 2) })
+                .attr('y', function(d) { return height - 147 - (zz(d) * 2) })
                 .text(function(d) { return d })
                 .style("font-size", 10)
                 .attr('alignment-baseline', 'middle')
@@ -748,9 +802,9 @@ var MapManager = function() {
 
     }
 
-    function stopped() {
-        if (d3v4.event.defaultPrevented) d3v4.event.stopPropagation();
-    }
+    // function stopped() {
+    //     if (d3v4.event.defaultPrevented) d3v4.event.stopPropagation();
+    // }
 
 
     var resetZoom = function() {
@@ -785,143 +839,183 @@ var MapManager = function() {
     var sliderTransition = function() {
 
         var impData = d3v4.map();
-        d3v4.queue()
-            .defer(d3v4.csv, "static/data/merged1990.csv")
-            .await(ready)
 
-        function ready(error, transactions) {
+        // CALL TRANSACTION ON DIV BAR CHART
+        transitionDivBarChart(savedTransactions)
+        var filteredTransationsImp = savedTransactions
+            // .forEach(d => console.log("fil", selected_group.includes(d.codeR), d.codeR))
+            .filter(d => selected_group.includes(d.codeR))
+            // .map(d => {
+            //     console.log( stripYear(d["Delivered year"]));
 
-            // CALL TRANSACTION ON DIV BAR CHART
-            transitionDivBarChart(transactions)
-            var filteredTransationsImp = transactions
-                // .forEach(d => console.log("fil", selected_group.includes(d.codeR), d.codeR))
-                .filter(d => selected_group.includes(d.codeR))
-                // .map(d => {
-                //     console.log( stripYear(d["Delivered year"]));
+        // })
+        .filter(d => stripYear(d["Delivered year"]) >= years[0] &&
+            stripYear(d["Delivered year"]) <= years[1]
+        )
 
-            // })
-            .filter(d => stripYear(d["Delivered year"]) >= years[0] &&
-                stripYear(d["Delivered year"]) <= years[1]
-            )
-
-            console.log("sad", filteredTransationsImp)
+        console.log("sad", filteredTransationsImp)
 
 
-            // FOR IMPORT MAP
-            var impData = d3v4.map()
-            var groupedImp = d3v4
-                .nest()
-                .key(function(d) { return d.codeS; })
-                //.rollup(function(v) { return v.length; })
-                .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
-                .entries(filteredTransationsImp);
-            for (let i = 0; i < groupedImp.length; i++) {
-                const element = groupedImp[i];
-                impData.set(element.key, +element.value)
-            }
-            svg2.selectAll(".country.imp")
-                .transition()
-                .duration(2000)
-                .attr("fill", function(d) {
-                    // Pull data for this country
-                    d.total = impData.get(d.id) || 0;
-                    // console.log("TOTAL", d.total)
-                    // Set the color
-                    return d.total == 0 ? "#696969" : redScale(d.total);
-                })
-
-            // FOR EXPORT MAP
-            var expData = d3v4.map()
-            var filteredTransactionsExp = transactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
-                stripYear(d["Delivered year"]) >= years[0] &&
-                stripYear(d["Delivered year"]) <= years[1])
-            var groupedExp = d3v4
-                .nest()
-                .key(function(d) { return d.codeR; })
-                //.rollup(function(v) { return v.length; })
-                .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
-                .entries(filteredTransactionsExp);
-
-            for (let i = 0; i < groupedExp.length; i++) {
-                const element = groupedExp[i];
-                expData.set(element.key, +element.value)
-            }
-
-            svg.selectAll(".country.exp")
-                .transition()
-                .duration(1000)
-                .attr("fill", function(d) {
-                    // Pull data for this country
-                    d.total = expData.get(d.id) || 0;
-                    // Set the color
-                    return d.total == 0 ? "#696969" : greenScale(d.total);
-                })
-
-
-
-            wars = savedWars.filter(d => filterWar(d));
-            console.log("w", wars);
-            tabulate(filteredTransactionsExp, columns, true, false);
-            tabulate(filteredTransationsImp, columns, false, true)
-
-            var u = svg.selectAll(".war-dot.exp")
-                .data(wars)
-            u
-                .enter()
-                .append("circle") // Add a new circle for each new elements
-                .merge(u) // get the already existing elements as well
-                .transition()
-                .duration(1000)
-                .attr("transform", svgTransform)
-                .attr("class", "war-dot exp")
-                .attr("cx", d => projection([d.lon, d.lat])[0])
-                .attr("cy", d => projection([d.lon, d.lat])[1])
-                .attr("r", d => z(d.mag))
-                .style("fill", "white")
-                .style("stroke", "black")
-                .style("stroke-width", 1.5 / svgStroke + "px")
-                .style("opacity", .5)
-
-
-            u.exit()
-                .transition() // and apply changes to all of them
-                .duration(1000)
-                .style("opacity", 0)
-                .remove()
-
-
-            var u2 = svg2.selectAll(".war-dot.imp")
-                .data(wars)
-            u2.enter()
-                .append("circle") // Add a new circle for each new element
-                .merge(u2) // get the already existing elements as well
-                .transition()
-                .duration(1000)
-                .attr("class", "war-dot imp")
-                .attr("cx", d => projection([d.lon, d.lat])[0])
-                .attr("cy", d => projection([d.lon, d.lat])[1])
-                .attr("r", d => z(d.mag))
-                .attr("transform", svgTransform)
-                .style("stroke-width", 1.5 / svgStroke + "px")
-                .style("fill", "white")
-                .style("stroke", "black")
-                .style("opacity", .5)
-
-            u2.exit()
-                .transition() // and apply changes to all of them
-                .duration(1000)
-                .style("opacity", 0)
-                .remove()
-
-
+        // FOR IMPORT MAP
+        var impData = d3v4.map()
+        var groupedImp = d3v4
+            .nest()
+            .key(function(d) { return d.codeS; })
+            //.rollup(function(v) { return v.length; })
+            .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
+            .entries(filteredTransationsImp);
+        for (let i = 0; i < groupedImp.length; i++) {
+            const element = groupedImp[i];
+            impData.set(element.key, +element.value)
         }
+        svg2.selectAll(".country.imp")
+            .transition()
+            .duration(2000)
+            .attr("fill", function(d) {
+                // Pull data for this country
+                d.total = impData.get(d.id) || 0;
+                // console.log("TOTAL", d.total)
+                // Set the color
+                return d.total == 0 ? "#696969" : redScale(d.total);
+            })
+
+        // FOR EXPORT MAP
+        var expData = d3v4.map()
+        var filteredTransactionsExp = savedTransactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
+            stripYear(d["Delivered year"]) >= years[0] &&
+            stripYear(d["Delivered year"]) <= years[1])
+        var groupedExp = d3v4
+            .nest()
+            .key(function(d) { return d.codeR; })
+            //.rollup(function(v) { return v.length; })
+            .rollup(function(v) { return d3v4.sum(v, function(d) { return d["Delivered num."].replace(/\(|\)/g, ""); }) })
+            .entries(filteredTransactionsExp);
+
+        for (let i = 0; i < groupedExp.length; i++) {
+            const element = groupedExp[i];
+            expData.set(element.key, +element.value)
+        }
+
+        svg.selectAll(".country.exp")
+            .transition()
+            .duration(1000)
+            .attr("fill", function(d) {
+                // Pull data for this country
+                d.total = expData.get(d.id) || 0;
+                // Set the color
+                return d.total == 0 ? "#696969" : greenScale(d.total);
+            })
+
+
+
+        wars = savedWars.filter(d => filterWar(d)).filter(d => parseInt(d.mag) <= selectedCircle);
+        console.log("w", wars);
+        tabulate(filteredTransactionsExp, columns, true, false);
+        tabulate(filteredTransationsImp, columns, false, true)
+
+        var u = svg.selectAll(".war-dot.exp")
+            .data(wars)
+        u
+            .enter()
+            .append("circle") // Add a new circle for each new elements
+            // .merge(u) // get the already existing elements as well
+            .transition()
+            .duration(1000)
+            .attr("transform", svgTransform)
+            .attr("class", "war-dot exp")
+            .attr("cx", d => projection([d.lon, d.lat])[0])
+            .attr("cy", d => projection([d.lon, d.lat])[1])
+            .attr("r", function(d) { return zz(d.mag) })
+            .style("fill", "white")
+            .style("stroke", "black")
+            .style("stroke-width", 1.5 / svgStroke + "px")
+            .style("opacity", .5)
+
+
+        u.exit()
+            .transition() // and apply changes to all of them
+            .duration(1000)
+            .style("opacity", 0)
+            .remove()
+
+
+        var u2 = svg2.selectAll(".war-dot.imp")
+            .data(wars)
+        u2.enter()
+            .append("circle") // Add a new circle for each new element
+            // .merge(u2) // get the already existing elements as well
+            .transition()
+            .duration(1000)
+            .attr("class", "war-dot imp")
+            .attr("cx", d => projection([d.lon, d.lat])[0])
+            .attr("cy", d => projection([d.lon, d.lat])[1])
+            .attr("r", function(d) { return zz(d.mag) })
+            .attr("transform", svgTransform)
+            .style("stroke-width", 1.5 / svgStroke + "px")
+            .style("fill", "white")
+            .style("stroke", "black")
+            .style("opacity", .5)
+
+        u2.exit()
+            .transition() // and apply changes to all of them
+            .duration(1000)
+            .style("opacity", 0)
+            .remove()
+
+
+
 
         // If less group in the new dataset, I delete the ones not in use anymore
 
     }
 
 
+    function transitionCircles(oldMag, type) {
 
+        const tranWars = savedWars.filter(d => filterWar(d))
+            .filter(d => (parseInt(d.mag) <= (type == "exp" ? selectedCircle : selectedCircle2)))
+        console.log(tranWars)
+        var u;
+        if (type == "exp")
+            u = svg.selectAll(".war-dot.exp").filter("circle")
+            .data(tranWars)
+        else
+            u = svg2.selectAll(".war-dot.imp").filter("circle")
+            .data(tranWars)
+
+
+        uu = u.enter()
+            .append("circle") // Add a new circle for each new element
+            // if (oldMag < (type == "exp" ? selectedCircle : selectedCircle2))
+            //     uu.merge(u)
+
+        uu.transition()
+            .duration(1000)
+            .attr("class", "war-dot " + (type == "exp" ? "exp" : "imp"))
+            .attr("cx", d => projection([d.lon, d.lat])[0])
+            .attr("cy", d => projection([d.lon, d.lat])[1])
+            .attr("r", function(d) { return zz(d.mag) })
+            .attr("transform", svgTransform)
+            .style("stroke-width", 1.5 / svgStroke + "px")
+            .style("fill", "white")
+            .style("stroke", "black")
+            .style("opacity", .5)
+
+        u.exit()
+            .transition() // and apply changes to all of them
+            .duration(1000)
+            .style("opacity", 0)
+            .remove()
+
+        d3v4.selectAll(".war-dot." + (type == "exp" ? "exp" : "imp")).filter("circle")
+            .on('mouseover', function(d) {
+                console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag))
+                tipConflict.show(d)
+            })
+            .on('mouseout', tipConflict.hide)
+
+
+    }
 
     function filterWar(d) {
         start = d.begin
@@ -1006,6 +1100,8 @@ var MapManager = function() {
         }
     }
 
+
+
     var toggleCircles = function(status, type) {
         if (type == "exp") {
 
@@ -1035,46 +1131,44 @@ var MapManager = function() {
 
     }
 
-    var toggleRisky = function(status, type) {
-        if (type == "exp") {
-            if (status == "on") {
-                risky.forEach(d => {
-                    if (d != undefined) {
-                        // add overlay path
-                        s = svg.select("#c-exp-" + d)
-                        console.log("asddassd", s, d)
-                        svg.append("path")
-                            .attr("class", "exp-overlay")
-                            .attr("d", function(dd) { return s.attr("d") })
-                            .fill("url(#circles-7)")
+    // var toggleRisky = function(status, type) {
+    //     if (type == "exp") {
+    //         if (status == "on") {
+    //             risky.forEach(d => {
+    //                 if (d != undefined) {
+    //                     // add overlay path
+    //                     s = svg.select("#c-exp-" + d)
+    //                     console.log("asddassd", s, d)
+    //                     svg.append("path")
+    //                         .attr("class", "exp-overlay")
+    //                         .attr("d", function(dd) { return s.attr("d") })
+    //                         .fill("url(#circles-7)")
 
 
-                    }
-                })
+    //                 }
+    //             })
 
-            } else {}
+    //         } else {}
 
-        } else {
-            if (status == "on") {
-                svg2.selectAll(".war-dot.imp")
-                    .transition().duration(1000)
-                    .style("opacity", status == "on" ? .5 : 0)
-                svg2
-                    .selectAll(".circleLegend")
-                    .transition().duration(1000)
-                    .style("opacity", status == "on" ? 1 : 0)
-                    .attr("pointer-events", status == "on" ? "auto" : "none")
-            } else {
+    //     } else {
+    //         if (status == "on") {
+    //             svg2.selectAll(".war-dot.imp")
+    //                 .transition().duration(1000)
+    //                 .style("opacity", status == "on" ? .5 : 0)
+    //             svg2
+    //                 .selectAll(".circleLegend")
+    //                 .transition().duration(1000)
+    //                 .style("opacity", status == "on" ? 1 : 0)
+    //                 .attr("pointer-events", status == "on" ? "auto" : "none")
+    //         } else {
 
-            }
-        }
+    //         }
+    //     }
 
-    }
+    // }
 
 
-    var selectedWeaponTransition = function() {
 
-    }
 
 
     var tabulate = function(data, columns, redraw = false, append = false) {
@@ -1165,7 +1259,7 @@ var MapManager = function() {
         resetZoom: resetZoom,
         selected: selected,
         toggleCircles: toggleCircles,
-        toggleRisky: toggleRisky,
+        // toggleRisky: toggleRisky,
 
     }
 }

@@ -6,7 +6,6 @@
 \usepackage[a4paper]{geometry}
 \usepackage{datetime}
 \usepackage[font=small,labelfont=it]{caption}
-\usepackage{graphicx}
 \usepackage{mathpazo} % use palatino
 \usepackage[scaled]{helvet} % helvetica
 \usepackage{microtype}
@@ -16,7 +15,7 @@
 \usepackage[export]{adjustbox}
 \usepackage{multicol}% http://ctan.org/pkg/multicols
 
-
+\usepackage{graphicx} 
 % Letterspacing macros
 \newcommand{\spacecaps}[1]{\textls[200]{\MakeUppercase{#1}}}
 \newcommand{\spacesc}[1]{\textls[50]{\textsc{\MakeLowercase{#1}}}}
@@ -27,35 +26,38 @@
 %\date{\today\\\currenttime}%
 \date{\today}
 
+
+
 \begin{document}
 \maketitle
+\begin{abstract}
 
+In this report, we present results and design process from "WarMonopoly", an html local page embedding D3.js to visualize some SIPRI (Stockholm International Peace Research Institute) datasets. The page contains user interactive views as barcharts, choropleth map and arc map due to the geographical nature of the data involved. It is present also a scatter plot result of MDS (Multi-Dimensional scaling), computed in python and visualized on the same
+ page, not to preprocess the data but to add new informations to the user. Python program to compute and visualize in real-time MDS depending on user parameters, is hosted on an "Heroku dyno" (a cloud container to host python codes).
+3
 
+%
+\end{abstract}
+
+    
 
 
 %%% Big Figure
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.25,center]{fig/va.png}
+\includegraphics[scale=0.25,center]{./fig/va.png}
    \label{fig:va}
     \caption{System interface of the web application homepage. I1, I2, I3 are interactive elements whereas V1, V2 are visual elements. }
 
 \end{figure}
     
-    
-\begin{abstract}
-%
-In this report, we present results and design process from "WarMonopoly", an html local page embedding D3.js to visualize some SIPRI (Stockholm International Peace Research Institute) datasets. The page contains user interactive views as barcharts, choropleth map and arc map due to the geographical nature of the data involved. It is present also a scatter plot result of MDS (Multi-Dimensional scaling), computed in python and visualized on the same page, not to preprocess the data but to add new informations to the user. Python program to compute and visualize in real-time MDS depending on user parameters, is hosted on an "Heroku dyno" (a cloud container to host python codes).
 
-
-%
-\end{abstract}
 
 \begin{multicols}{2}
 
 \section{Introduction}
 %
-In order to offer a data visualization work that would have been interisting in his results, we chose to think of a dataset that could involve the entire planet and containing useful information. Searching the web SIPRI website stood out cause of the possibility it offers to analyze and visualize datasets regarding military trade (from official reports of NATO and every single country which participates to this initiative) among countries. The dataset contains these information: suppliers and recipients, the type and number of weapon systems ordered and delivered, the years of deliveries and the financial value of the deal (but only in some cases). 
+In order to offer a data visualization work that would have been interesting in his results, we chose to think of a dataset that could involve the entire planet and containing useful information. Searching the web SIPRI website stood out cause of the possibility it offers to analyze and visualize datasets regarding military trade (from official reports of NATO and every single country which participates to this initiative) among countries. The dataset contains these information: suppliers and recipients, the type and number of weapon systems ordered and delivered, the years of deliveries and the financial value of the deal (but only in some cases). 
 
 
 We started from this to think of what visual analytics technique would have fit best our purpose and our data.

@@ -37,6 +37,28 @@ function main() {
     //     openRightMenu();
     // };
 
+    d3v4.json("/get-news")
+        .get(function(error, root) {
+            document.getElementById("floatBarsG").remove()
+            $('#alert-data').html(root[1]).fadeIn("slow")
+
+            // document.getElementById("alert-data").innerHTML = root[1]
+            document.getElementById("alert").innerHTML += "<br>" + root[0]
+            root[2].split(",").forEach(d => {
+                d = d.replaceAll(/^ |'|\[|\]/g, '');;
+                console.log("news from", d)
+                risky.push(getCountryIsoByName(d))
+            })
+            $('.myCheckBox2').each(function() {
+                this.disabled = false;
+            });
+            // boxAlert = '<div class="checkBoxShowAlerts">\
+            // <input type="checkbox" class="myCheckBox" id="cbAlert" name="alert checkbox" value="alert" checked="false" onclick="showAlertClick(this);">\
+            // <label style="font-size:10px" for="cbAlert"> Show on map</label>\
+            // </div>'
+            // document.getElementById("spanAlert").innerHTML += " " + boxAlert
+        })
+
     mcm = MapComponentsManager();
     dbcm = DivergingBarChartManager();
     mm = MapManager();
@@ -162,6 +184,9 @@ function getDataFromPost(isCreated) {
 
     $("div[id*='fig']").remove();
     $(".lds-facebook").fadeIn()
+
+
+
     d3v4.json(url)
         .post(data, function(error, root) {
 
@@ -199,27 +224,7 @@ function getDataFromPost(isCreated) {
                     // pcam.drawBasicChart(root[3], "IMP")
                     // pcam.drawBasicChart(root[4], "EXP")
 
-                d3v4.json("/get-news")
-                    .post(data, function(error, root) {
-                        document.getElementById("floatBarsG").remove()
-                        $('#alert-data').html(root[1]).fadeIn("slow")
 
-                        // document.getElementById("alert-data").innerHTML = root[1]
-                        document.getElementById("alert").innerHTML += "<br>" + root[0]
-                        root[2].split(",").forEach(d => {
-                            d = d.replaceAll(/^ |'|\[|\]/g, '');;
-                            console.log("news from", d)
-                            risky.push(getCountryIsoByName(d))
-                        })
-                        $('.myCheckBox2').each(function() {
-                            this.disabled = false;
-                        });
-                        // boxAlert = '<div class="checkBoxShowAlerts">\
-                        // <input type="checkbox" class="myCheckBox" id="cbAlert" name="alert checkbox" value="alert" checked="false" onclick="showAlertClick(this);">\
-                        // <label style="font-size:10px" for="cbAlert"> Show on map</label>\
-                        // </div>'
-                        // document.getElementById("spanAlert").innerHTML += " " + boxAlert
-                    })
 
 
 

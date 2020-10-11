@@ -9,11 +9,20 @@
         /* font-family: Archivo, Verdana, Tahoma; */
     }
     
+    html {
+        margin: 0;
+        /* height: 100%; */
+        overflow-y: hidden;
+    }
+    
     body {
         padding-top: 70px;
         background-color: #000;
         /* hide vertical */
+        /* margin: 0; */
+        height: 100%;
         overflow-y: hidden;
+        overflow: hidden;
     }
     
     p {
@@ -32,10 +41,6 @@
         background: #c3effd;
         color: #000;
         /* Firefox */
-    }
-    
-    html {
-        overflow-y: scroll;
     }
     
     input[type=submit],

@@ -45,7 +45,7 @@
 
     <div class="pos-f-t">
 
-        <nav class="navbar fixed-top navbar-dark bg-dark">
+        <nav class="navbar fixed-top navbar-dark bg-dark" style="height: 65px;">
             <button type="button" onclick="toggler()" id="hamburger" class=" btn btn-dark navbar-toggler " type="button" data-toggle="offcanvas" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars" style="color: aliceblue;;" aria-hidden="true"><div style="display: inline;">&nbspMenu</div> </i>
                 
@@ -53,18 +53,18 @@
             <a class="navbar-brand" href="#"></a>
 
 
-            <div class="row" style="float:left;   margin-left: auto;
+            <div class="row" style="float:left;   margin-left: 15px;
             margin-right: auto;">
-                <h2 style="    position:absolute;top:20px;left:
+                <h2 style="    position:absolute;top:15px;left:
                 230px;stroke:red;color:aliceblue;">WEAPONS PAGE</h2>
-                <img src="static/icons/valogo.png" width="50" style="    bottom:5px;position:absolute;left: 580px" />
-                <h4 style="    margin-left: 310px;color: aliceblue;">WarInspector</h4>
+                <img src="static/icons/valogo.png" width="50" style="    bottom:7px;position:absolute;left: 580px" />
+                <h4 style=" position:absolute;  top:20px;left: 420px;
+margin-left: 310px;color: aliceblue;">WarInspector</h4>
             </div>
 
-            <div class="row" style="float: right;margin-right: 10px;">
+            <div class="row" style="position: absolute;top:15px;left: 1220px;">
                 <!-- <img width="30px" src="static/icons/search.png" /> -->
 
-                <div data-icon="ei-search" data-size="m" style="    margin-left: 100px;"></div>
                 <select id="selectModel" class="selectpicker show-tip" data-width="600px" data-live-search="true" onchange="selectedModel(this)">
                     <optgroup label="APC">
                         <option>M-3/M-5 Half-track</option>
@@ -711,6 +711,7 @@
 
 
             </div>
+            <img id="search" style="position: absolute;top:11px;;left: 1155px;;" width="45" src="static/icons/whiteSearch.svg" />
 
         </nav>
     </div>
@@ -876,7 +877,7 @@
         // Parse the Data
         d3.csv("static/data/merged1990.csv", function(data) {
             savedDataset = data;
-            console.log(data)
+            // console.log(data)
             orderedWeapons = d3.nest()
                 .key(function(d) {
                     // if (!cats.includes(d["Weapon category"]))
@@ -1003,7 +1004,7 @@
 
                     svg.select("#bar-" + chosen_category).style("fill", "orange")
                     heatmapTransition()
-                        // console.log("Plot recomputed")
+                    console.log("Plot recomputed")
 
                     console.log(chosen_category)
                     txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
@@ -1202,9 +1203,9 @@
                     })
 
                 modelList = Array.from(new Set(filteredModels.map(function(d) {
-                    return d["Weapon model"];
-                })))
-                console.log("f0,", filteredModels)
+                        return d["Weapon model"];
+                    })))
+                    // console.log("f0,", filteredModels)
 
 
                 groupedModels = d3.nest()
@@ -1220,6 +1221,25 @@
 
                     })
                     .entries(filteredModels)
+
+                const ordGroup = d3.nest()
+                    .key(function(d) {
+                        return d.key.split(",")[0];
+                    })
+                    .rollup(function(v) {
+                        return d3.sum(v, function(d) {
+                            // console.log(parseInt(d["Delivered num."].replace(/\(|\)/g, "")))
+                            del = d.value
+                            return isNaN(del) ? 0 : del;
+                        })
+
+                    })
+                    .entries(groupedModels).sort(function(x, y) {
+                        return d3.descending(x.value, y.value);
+                    })
+
+                modelList = ordGroup.map(d => d.key)
+
                 console.log("f,", groupedModels)
                 savedModelList = modelList
                 console.log("drawHeatmap -> modelList", modelList)
@@ -1332,9 +1352,10 @@
                             // d3.select(this).select('g > text').style("fill", "rgba(17,222,222,1)");
                             d3.select(this).select('g > text').style("fill", "red");
                             d3.select(this).style("font-size", "20px")
+                            console.log("clicked")
                             start_timer_chosen_model(d3.select(this).text(), "click")
-
                         }
+
                     })
 
 
@@ -1345,6 +1366,9 @@
                     .padding(0.01);
                 svg2.append("g")
                     .call(d3.axisLeft(y));
+
+
+                console.log("gggg", groupedModels)
                 svg2.selectAll()
                     .data(groupedModels)
                     .enter()
@@ -1393,7 +1417,7 @@
 
 
         function heatmapTransition(isFromSelectPicker = false) {
-
+            // console.log("Transition")
             filteredModels = savedDataset
                 .filter(function(d) {
                     return d["Weapon category"] == chosen_category
@@ -1445,6 +1469,24 @@
                 }
             }
 
+            const ordGroup = d3.nest()
+                .key(function(d) {
+                    return d.key.split(",")[0];
+                })
+                .rollup(function(v) {
+                    return d3.sum(v, function(d) {
+                        // console.log(parseInt(d["Delivered num."].replace(/\(|\)/g, "")))
+                        del = d.value
+                        return isNaN(del) ? 0 : del;
+                    })
+
+                })
+                .entries(groupedModels).sort(function(x, y) {
+                    return d3.descending(x.value, y.value);
+                })
+
+            modelList = ordGroup.map(d => d.key)
+
             savedGrouped = groupedModels
 
             var myColor = d3.scaleLog()
@@ -1472,6 +1514,8 @@
                 instant_chosen_model(modelList[0])
             else
                 instant_chosen_model(modelChosen)
+
+
 
             superFilteredModels = filteredModels.filter(d => d["Weapon model"] == clickedModelChosen)
             tabulate(superFilteredModels, columns, true, false)
@@ -1588,7 +1632,7 @@
                 modelChosen = d;
                 $("#selectModel").val(d)
                 $("#selectModel").selectpicker("refresh");
-                console.log(d);
+                // console.log(d);
                 wl.drawChart()
 
             }
@@ -1613,8 +1657,9 @@
                         clickedModelChosen = d
                         $("#selectModel").val(d)
                         $("#selectModel").selectpicker("refresh");
-                        console.log(d);
+                        // console.log(d);
                         wl.drawChart()
+
                     }, 250);
                 }
             } else {
@@ -1624,7 +1669,7 @@
 
                         modelChosen = d;
                         // $("#selectModel").val(d)
-                        console.log(d);
+                        // console.log(d);
                         wl.drawChart()
                     }, 250);
 
@@ -1633,6 +1678,7 @@
             }
             superFilteredModels = filteredModels.filter(d => d["Weapon model"] == clickedModelChosen)
             tabulate(superFilteredModels, columns, true, false)
+
         }
 
         function chosen_category_model(cat, model) {

@@ -429,7 +429,7 @@ def returnPCAData():
 
     return jsonify(data.CountryName,data.Year1,data.Year2,data_to_d3 )
 
-@application.route("/get-news",methods=["POST"])
+@application.route("/get-news",methods=["GET"])
 def returnNews():
     # oldlink = "https://www.cfr.org/global-conflict-tracker/?category=us&conflictType=1099&vm=grid"
     link = "https://www.crisisgroup.org/crisiswatch"
