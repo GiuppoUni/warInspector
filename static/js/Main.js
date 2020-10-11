@@ -37,6 +37,8 @@ function main() {
     //     openRightMenu();
     // };
 
+
+
     d3v4.json("/get-news")
         .get(function(error, root) {
             document.getElementById("floatBarsG").remove()
@@ -57,6 +59,16 @@ function main() {
             // <label style="font-size:10px" for="cbAlert"> Show on map</label>\
             // </div>'
             // document.getElementById("spanAlert").innerHTML += " " + boxAlert
+            $(function() {
+                $("#alertIcon")
+                    .popover({ title: root[0], content: root[1] })
+                    .blur(function() {
+                        $(this).popover('hide');
+                    });
+            });
+            $("#alertIcon").removeAttr("disabled")
+
+
         })
 
     mcm = MapComponentsManager();
@@ -461,4 +473,8 @@ function stripYear(input) {
 
 function getCountryIsoByName(name) {
     return isos[name];
+}
+
+function toWeapons() {
+    document.location.href = '/weapons?years=' + years + "&countries=" + selected_group;
 }

@@ -13,6 +13,7 @@
         margin: 0;
         /* height: 100%; */
         overflow-y: hidden;
+        overflow-x: hidden;
     }
     
     body {
@@ -23,6 +24,7 @@
         height: 100%;
         overflow-y: hidden;
         overflow: hidden;
+        overflow-x: hidden;
     }
     
     p {
@@ -150,6 +152,7 @@
         border-radius: 6px;
         /* Position the tooltip text - see examples below! */
         position: absolute;
+        right: 50px;
         z-index: 1;
         pointer-events: none;
     }
@@ -787,7 +790,7 @@ Charts
     }
     
     #sidebar-wrapper {
-        z-index: 1000;
+        z-index: 500;
         left: 220px;
         width: 0;
         height: 100%;

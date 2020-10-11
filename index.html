@@ -94,6 +94,16 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
 
     </div>
 
+    <div class="bg-dark rounded" style="right: 125px;top:80px; position:absolute">
+        <div class="tooltiptext">Focus on weapons market</div>
+        <input type="image" id="weaponIcon" style="padding-left: 2px;
+        padding-top: 2px; position:relative" width="50" src="static/icons/tank.svg" onclick="toWeapons()" />
+    </div>
+    <div class="bg-dark rounded" style="right: 50px;top:80px; position:absolute">
+        <div class="tooltiptext">Show current alerts</div>
+        <input type="image" id="alertIcon" style="padding-left: 2px;
+        padding-top: 2px; position:relative" width="50" src="static/icons/newspaper.svg" data-html="true" disabled/>
+    </div>
 
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
         <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
