@@ -1,8 +1,11 @@
 var WeaLine = function() {
-    var margin = { top: 10, right: 0, bottom: 50, left: 40 },
-        width = 430 - margin.left - margin.right,
+    var margin = { top: 10, right: 10, bottom: 50, left: 40 },
+        width = 440 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
+    var parseTime = d3.timeParse("%Y");
+    var fixedScale = true;
+    var maxY;
     // append the svg object to the body of the page
     var svg = d3.select("#wea-line-svg")
         .append("svg")
@@ -11,21 +14,25 @@ var WeaLine = function() {
         .append("g")
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
-    var x = d3.scaleBand()
+    var x = d3.scaleTime()
+        .domain([new Date(1990, 0, 1), new Date(2019, 0, 1)])
         .range([0, width])
-        .domain(Array.from(Array(30), (_, i) => i + 1990))
-        .padding(0.01)
+        // .domain(Array.from(Array(30), (_, i) => i + 1990))
+        // .padding(0.01)
+        // .round(false)
 
-
+    var xAxis = d3.axisBottom(x)
+        .tickFormat(d3.timeFormat("%Y"))
+        .ticks(d3.timeYear.every(1));
     svg.append("g")
-        .call(d3.axisBottom(x))
-        .attr("transform", "translate(-9," + height + ")")
+        .call(xAxis)
+        .attr("transform", "translate(0," + height + ")")
         .selectAll("text")
         .attr("transform", "rotate(-45)")
         .style("text-anchor", "end");;
     // Add Y axis
     var y = d3.scaleLinear()
-        .domain([0, 10000])
+        .domain([0, 50000])
         .range([height, 0])
     svg.append("g")
         .attr("id", "y-line-axis")
@@ -56,7 +63,12 @@ var WeaLine = function() {
         localSavedGrouped = localSavedGrouped.sort(function(a, b) { return d3.descending(a.key.split(",")[1], b.key.split(",")[1]); });
 
         // console.log("after", modelChosen, localSavedGrouped, savedModelList)
-        y.domain([0, d3.max(localSavedGrouped, function(d) { return d.value }) + 1000])
+        maxY = d3.max(localSavedGrouped, function(d) { return d.value })
+        if (!fixedScale)
+            y.domain([0, maxY + 1000])
+        else
+            y.domain([0, 50000])
+
         svg.select("#y-line-axis")
             .transition()
             .duration(2000)
@@ -74,7 +86,7 @@ var WeaLine = function() {
                 .attr("d", d3.area()
                     .x(function(d) {
                         // console.log(d); 
-                        return x(d.key.split(",")[1])
+                        return x(parseTime(d.key.split(",")[1]))
                     })
                     .y0(height)
                     .y1(function(d) { return y(d.value) })
@@ -89,7 +101,7 @@ var WeaLine = function() {
                 .attr("d", d3.line()
                     .x(function(d) {
                         // console.log(d.key.split(",")[1], d.key.split(",")[0]);
-                        return x(d.key.split(",")[1])
+                        return x(parseTime(d.key.split(",")[1]))
                     })
                     .y(function(d) { return y(d.value) })
                 )
@@ -105,7 +117,7 @@ var WeaLine = function() {
                 .attr("class", "line-circle")
                 .attr("fill", "red")
                 .attr("stroke", "none")
-                .attr("cx", function(d) { return x(d.key.split(",")[1]) })
+                .attr("cx", function(d) { return x(parseTime(d.key.split(",")[1])) })
                 .attr("cy", function(d) { return y(d.value) })
                 .attr("r", 3)
                 .on("mouseover", function(d) {
@@ -138,7 +150,7 @@ var WeaLine = function() {
                 .attr("d", d3.area()
                     .x(function(d) {
                         // console.log(d); 
-                        return x(d.key.split(",")[1])
+                        return x(parseTime(d.key.split(",")[1]))
                     })
                     .y0(height)
                     .y1(function(d) { return y(d.value) })
@@ -164,7 +176,7 @@ var WeaLine = function() {
                 .attr("d", d3.line()
                     .x(function(d) {
                         // console.log(d.key.split(",")[1], d.key.split(",")[0]);
-                        return x(d.key.split(",")[1])
+                        return x(parseTime(d.key.split(",")[1]))
                     })
                     .y(function(d) { return y(d.value) })
                 )
@@ -191,7 +203,7 @@ var WeaLine = function() {
                 .attr("fill", "red")
                 .attr("class", "line-circle")
                 .attr("stroke", "none")
-                .attr("cx", function(d) { return x(d.key.split(",")[1]) })
+                .attr("cx", function(d) { return x(parseTime(d.key.split(",")[1])) })
                 .attr("cy", function(d) { return y(d.value) })
                 .attr("r", 3)
             u.selectAll(".line-circle")
@@ -214,7 +226,7 @@ var WeaLine = function() {
             //     .duration(3000)
             //     .attr("fill", "red")
             //     .attr("stroke", "none")
-            //     .attr("cx", function(d) { return x(d.key.split(",")[1]) })
+            //     .attr("cx", function(d) { return x(parseTime(d.key.split(",")[1])) })
             //     .attr("cy", function(d) { return y(d.value) })
             //     .attr("r", 3)
 
@@ -227,8 +239,13 @@ var WeaLine = function() {
 
     }
 
+    function changeScale(d) {
+        fixedScale = !fixedScale
+        drawChart()
+    }
     return {
         drawChart: drawChart,
+        changeScale: changeScale,
         // resetZoom: resetZoom,
         // transition: transition,
         // selectCountryTransition: selectCountryTransition,

@@ -748,7 +748,7 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-md-auto " style="padding-left: 18px; padding-right: 2px;">
+            <div class="col-md-auto " style="padding-left: 10px; padding-right: 2px;">
                 <div class="card bg-dark text-center " style=" display: inline-block; color:aliceblue; ">
                     <div class="card-header d-flex align-items-center
                     justify-content-center  text-center" id="line-header">
@@ -757,6 +757,10 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
                     </div>
                     <div class="card-body">
                         <div class="rounded" style="background-color: rgb(20, 20, 20);" id="wea-line-svg">
+                        </div>
+                        <div id="checkBoxWl">
+                            <input type="checkbox" class="myCheckBox" id="cb" name="cb" value="" checked="true" onclick='wlChangeScale(this);'>
+                            <label for="cb" style="font-size: 11px;"> Fixed y scale</label>
                         </div>
                     </div>
                 </div>
@@ -1820,6 +1824,10 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
                     .style("font-size", 8)
             }
             return table;
+        }
+
+        function wlChangeScale(d) {
+            wl.changeScale(d)
         }
     </script>
 
