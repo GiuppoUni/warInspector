@@ -22,6 +22,9 @@ var MapManager = function() {
         .scaleExtent([1, 8])
         .on('zoom', zoomed);
 
+    var cntInvImp;
+    var cntInvExp;
+
     // var z = d3v4.scaleSqrt()
     //     .domain([0, 7])
     //     .range([5, 35]);
@@ -111,6 +114,9 @@ var MapManager = function() {
     Draw cloropleth on map  EXPORT
     */
     var drawCloroExp = function() {
+        var cntInvImp = []
+        var cntInvExp = []
+
         // land.remove()
         // boundaries.remove()
         resetZoom()
@@ -187,8 +193,13 @@ var MapManager = function() {
                 .on('click', selected)
                 .attr("id", d => "c-exp-" + d.id)
                 .append("title")
-                .text(d => `To ${d.properties.name}
-        ${data.has(d.id) ? data.get(d.id) : "0"}`);
+                .attr("class", "title-exp")
+                .text(function(d) {
+                    if (data.has(d.id))
+                        cntInvExp.push(d.properties.name)
+                    return `To ${d.properties.name}
+        ${data.has(d.id) ? data.get(d.id) : "0"}`
+                });
 
 
 
@@ -221,6 +232,10 @@ var MapManager = function() {
 
             // WARS DOTS NOW
 
+            $("#numConfExp").text(wars.length)
+            var sumMagExp = 0;
+            wars.forEach(d => sumMagExp += parseInt(d.mag))
+            $("#sumMagExp").text(sumMagExp)
 
             svg
                 .selectAll(".war-dot.exp")
@@ -245,7 +260,6 @@ var MapManager = function() {
                 .on('mouseout', tipConflict.hide)
 
             svg.call(tipConflict);
-
 
 
             // // land.remove()
@@ -327,7 +341,10 @@ var MapManager = function() {
                 .on('click', selected)
                 .attr("id", d => "c-imp-" + d.id)
                 .append("title")
+                .attr("class", "title-imp")
                 .text(d => {
+                    if (data.has(d.id))
+                        cntInvImp.push(d.properties.name)
                     return `From ${d.properties.name}
                     ${data.has(d.id) ? data.get(d.id) : "0"}`
                 });
@@ -360,6 +377,10 @@ var MapManager = function() {
             svg2.select(".legendThreshold")
                 .call(legend);
 
+            $("#numConfImp").text(wars.length)
+            var sumMagImp = 0;
+            wars.forEach(d => sumMagImp += parseInt(d.mag))
+            $("#sumMagImp").text(sumMagImp)
 
             svg2
                 .selectAll(".war-dot.imp")
@@ -531,7 +552,8 @@ var MapManager = function() {
                 .style("fill", "white")
                 .attr("text-anchor", "middle")
 
-
+            $("#cntInvolvedExp").text(cntInvExp.join(", "))
+            $("#cntInvolvedImp").text(cntInvImp.join(", "))
         }
     }
 
@@ -593,7 +615,6 @@ var MapManager = function() {
 
 
     function selected(country_id = null) {
-
         isSelected = false
         el = null
         if (country_id == null) {
@@ -666,6 +687,10 @@ var MapManager = function() {
         // pcam.selectCountry(country_id)
         pcam.selectCountryTransition(country_id, isSelected)
         dbcm.transitionSlider(savedTransactions)
+
+        $("#selectNation").val(selected_group)
+        $('.selectpicker').selectpicker('refresh')
+
     }
 
 
@@ -837,6 +862,8 @@ var MapManager = function() {
 
 
     var sliderTransition = function() {
+        cntInvExp = []
+        cntInvImp = []
 
         var impData = d3v4.map();
 
@@ -878,6 +905,15 @@ var MapManager = function() {
                 // Set the color
                 return d.total == 0 ? "#696969" : redScale(d.total);
             })
+        svg2.selectAll
+
+        d3v4.selectAll(".title-imp")
+            .text(function(d) {
+                if (impData.has(d.id))
+                    cntInvImp.push(d.properties.name)
+                return `To ${d.properties.name}
+${impData.has(d.id) ? impData.get(d.id) : "0"}`
+            });
 
         // FOR EXPORT MAP
         var expData = d3v4.map()
@@ -906,12 +942,21 @@ var MapManager = function() {
                 return d.total == 0 ? "#696969" : greenScale(d.total);
             })
 
+        d3v4.selectAll(".title-exp")
+            .text(function(d) {
+                if (expData.has(d.id))
+                    cntInvExp.push(d.properties.name)
+                return `To ${d.properties.name}
+${expData.has(d.id) ? expData.get(d.id) : "0"}`
+            });
+
 
 
         wars = savedWars.filter(d => filterWar(d)).filter(d => parseInt(d.mag) <= selectedCircle);
         console.log("w", wars);
         tabulate(filteredTransactionsExp, columns, true, false);
         tabulate(filteredTransationsImp, columns, false, true)
+        $("#numConfExp").text(wars.length)
 
         var u = svg.selectAll(".war-dot.exp")
             .data(wars)
@@ -938,6 +983,13 @@ var MapManager = function() {
             .style("opacity", 0)
             .remove()
 
+        $("#numConfExp").text(wars.length)
+        var sumMagExp = 0;
+        wars.forEach(d => sumMagExp += parseInt(d.mag))
+        $("#sumMagExp").text(sumMagExp)
+
+        wars = savedWars.filter(d => filterWar(d)).filter(d => parseInt(d.mag) <= selectedCircle2);
+        $("#numConfImp").text(wars.length)
 
         var u2 = svg2.selectAll(".war-dot.imp")
             .data(wars)
@@ -962,10 +1014,16 @@ var MapManager = function() {
             .style("opacity", 0)
             .remove()
 
-
+        $("#numConfImp").text(wars.length)
+        var sumMagImp = 0;
+        wars.forEach(d => sumMagImp += parseInt(d.mag))
+        $("#sumMagImp").text(sumMagImp)
 
 
         // If less group in the new dataset, I delete the ones not in use anymore
+        $("#cntInvolvedExp").text(cntInvExp.join(", "))
+        $("#cntInvolvedImp").text(cntInvImp.join(", "))
+
 
     }
 
@@ -976,13 +1034,26 @@ var MapManager = function() {
             .filter(d => (parseInt(d.mag) <= (type == "exp" ? selectedCircle : selectedCircle2)))
         console.log(tranWars)
         var u;
-        if (type == "exp")
+        if (type == "exp") {
             u = svg.selectAll(".war-dot.exp").filter("circle")
-            .data(tranWars)
-        else
-            u = svg2.selectAll(".war-dot.imp").filter("circle")
-            .data(tranWars)
+                .data(tranWars)
 
+            $("#numConfExp").text(tranWars.length)
+            var sumMagExp = 0;
+            tranWars.forEach(d => sumMagExp += parseInt(d.mag))
+            $("#sumMagExp").text(sumMagExp)
+
+            $("#numConfExp").text(tranWars.length)
+
+        } else {
+            u = svg2.selectAll(".war-dot.imp").filter("circle")
+                .data(tranWars)
+            $("#numConfImp").text(tranWars.length)
+            var sumMagImp = 0;
+            tranWars.forEach(d => sumMagImp += parseInt(d.mag))
+            $("#sumMagImp").text(sumMagImp)
+            $("#numConfImp").text(tranWars.length)
+        }
 
         uu = u.enter()
             .append("circle") // Add a new circle for each new element
@@ -1033,6 +1104,8 @@ var MapManager = function() {
 
 
     var selectedTransition = function() {
+        cntInvImp = [];
+        cntInvExp = [];
 
         var impData = d3v4.map();
         d3v4.queue()
@@ -1067,6 +1140,14 @@ var MapManager = function() {
                     return d.total == 0 ? "#696969" : redScale(d.total);
                 })
 
+            d3v4.selectAll(".title-imp")
+                .text(function(d) {
+                    if (impData.has(d.id))
+                        cntInvImp.push(d.properties.name)
+                    return `To ${d.properties.name}
+    ${impData.has(d.id) ? impData.get(d.id) : "0"}`
+                });
+
             var filteredTransactionsExp = transactions.filter(d => selected_group.includes(d.codeS)).filter(d =>
                 stripYear(d["Delivered year"]) >= years[0] &&
                 stripYear(d["Delivered year"]) <= years[1])
@@ -1094,9 +1175,18 @@ var MapManager = function() {
                     return d.total == 0 ? "#696969" : greenScale(d.total);
                 })
 
+            d3v4.selectAll(".title-exp")
+                .text(function(d) {
+                    if (expData.has(d.id))
+                        cntInvExp.push(d.properties.name)
+                    return `To ${d.properties.name}
+    ${expData.has(d.id) ? expData.get(d.id) : "0"}`
+                });
+
             tabulate(filteredTransactionsExp, columns, true, false)
             tabulate(filteredTransationsImp, columns, false, true)
-
+            $("#cntInvolvedExp").text(cntInvExp.join(", "))
+            $("#cntInvolvedImp").text(cntInvImp.join(", "))
         }
     }
 

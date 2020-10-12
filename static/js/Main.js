@@ -41,11 +41,11 @@ function main() {
 
     d3v4.json("/get-news")
         .get(function(error, root) {
-            document.getElementById("floatBarsG").remove()
-            $('#alert-data').html(root[1]).fadeIn("slow")
+            // document.getElementById("floatBarsG").remove()
+            // $('#alert-data').html(root[1]).fadeIn("slow")
 
             // document.getElementById("alert-data").innerHTML = root[1]
-            document.getElementById("alert").innerHTML += "<br>" + root[0]
+            // document.getElementById("alert").innerHTML += "<br>" + root[0]
             root[2].split(",").forEach(d => {
                 d = d.replaceAll(/^ |'|\[|\]/g, '');;
                 console.log("news from", d)

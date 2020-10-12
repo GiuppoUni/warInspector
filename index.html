@@ -94,8 +94,8 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
 
     </div>
 
-    <div class="bg-dark rounded" style="right: 125px;top:80px; position:absolute">
-        <div class="tooltiptext">Focus on weapons market</div>
+    <div class="bg-dark rounded" style="right: 110px;top:80px; position:absolute">
+        <div class="tooltiptext">Go to weapons view</div>
         <input type="image" id="weaponIcon" style="padding-left: 2px;
         padding-top: 2px; position:relative" width="50" src="static/icons/tank.svg" onclick="toWeapons()" />
     </div>
@@ -116,7 +116,7 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
 
     <div id="slider-range" style="left:600px"></div>
     <div class="card-body bg-dark rounded" style="width:530px;height:65px;position: absolute; left:45px; top:73px ">
-        <span id="spanAlert">
+        <!-- <span id="spanAlert">
             <h6 style="color:Orange;padding:0;margin:0">CONFLICT RISK ALERTS
             </h6>
             <div id="floatBarsG">
@@ -135,7 +135,38 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
 
             <a id="alert-data" style="color:white;font-size:10px; margin: 0;padding:0;">
             </a>
-        </p>
+        </p> -->
+        <div class="container table-responsive  rounded shadow " style="width:
+        100%;height:100%;background-color: rgb(20, 20,
+        20);color:white" id="statContainer">
+            <div class="row">
+                <div class="col" style="border: solid rgba(155,155,155,0.28) 1px;">
+                    <p style="font-size:12px">
+                        Countries involved in import map:
+                        <p style="font-size:11px;color:yellow" id="cntInvolvedImp"></p>
+                    </p>
+                    <p style="font-size:12px">
+                        Countries involved in export map:
+                        <p style="font-size:11px;color:yellow" id="cntInvolvedExp" class="flex-container"></p>
+                    </p>
+                </div>
+                <div class="col" style="border: solid rgba(155,155,155,0.28) 1px;">
+                    <p style="font-size:12px">
+                        Num. conflicts in import map: <span style="font-size:11px;color:yellow" id="numConfImp"></span>
+                    </p>
+                    <p style="font-size:12px">
+                        Num. conflicts in export map: <span style="font-size:11px;color:yellow" id="numConfExp"></span>
+                    </p>
+                    <p style="font-size:12px">
+                        Summed magnitude conflicts in import map: <span style="font-size:11px;color:yellow" id="sumMagImp"></span>
+                    </p>
+                    <p style="font-size:12px">
+                        Summed magnitude conflicts in export map: <span style="font-size:11px;color:yellow" id="sumMagExp"></span>
+                    </p>
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container-fluid my-container">

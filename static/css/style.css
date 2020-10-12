@@ -1407,3 +1407,14 @@ Charts
     #scatter_viz path {
         display: none;
     }
+    
+    .container p {
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+    
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: inherit;
+    }
