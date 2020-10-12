@@ -2,3 +2,12 @@ venv
 *.pyc
 .DS_Store
 .env
+
+# Ignore LaTeX temp files 
+Doc/*.aux
+Doc/*.bbl
+Doc/*.blg
+Doc/*.dvi
+Doc/*.log
+Doc/*.out
+Doc/*.synctex.gz
