@@ -6,6 +6,7 @@ var MapManager = function() {
     const imp_section = d3v4.select('#map-imp-col')
     const exp_section = d3v4.select('#map-exp-col')
     const instr = "You can zoom in/out and move using the mouse."
+    const elem = document.getElementById('transaction_table');
 
     const width = 700;
     const height = 360;
@@ -43,11 +44,11 @@ var MapManager = function() {
 
     var redScale = d3v4.scaleThreshold()
         .domain([1, 10, 100, 1000, 10000, 100000])
-        .range(["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"])
+        .range(colorsImport)
 
     var greenScale = d3v4.scaleThreshold()
         .domain([1, 10, 100, 1000, 10000, 100000])
-        .range(["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"])
+        .range(colorsExport)
 
 
     // IMPORT map
@@ -1078,12 +1079,16 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             .style("opacity", 0)
             .remove()
 
+
+
         d3v4.selectAll(".war-dot." + (type == "exp" ? "exp" : "imp")).filter("circle")
             .on('mouseover', function(d) {
                 console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag))
+                d3v4.select(this).attr("r", zz(d.mag))
                 tipConflict.show(d)
             })
             .on('mouseout', tipConflict.hide)
+            .attr("r", d => zz(d.mag))
 
 
     }
@@ -1267,7 +1272,7 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
         yellowcolor = "#f6ff00"
 
         if (redraw) {
-            d3v4.selectAll(".tableTrans").remove()
+            d3v4.selectAll(".tableTrans").transition().delay(1000).remove()
         }
         var table = d3v4.select('#transaction_table')
             .append('table')
@@ -1329,7 +1334,11 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
                         return "white"
                 })
                 .style("font-size", 8)
+            elem.scrollTop = elem.scrollHeight;
+
+
         }
+
         return table;
     }
 

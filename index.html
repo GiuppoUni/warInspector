@@ -447,12 +447,20 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
 
 
     <!------ Include the above in your HEAD tag ---------->
-
+    <div class="bg-dark rounded" style=" position:absolute;right: 8px;top:20px;
+    z-index: 11101;">
+        <div class="tooltiptext">Color blindeness</div>
+        <input type="image" id="eyeIcon" style="padding-left: 2px;
+        padding-top: 2px; position:relative" width="30" src="static/icons/eye.svg" onclick="colorSwitch()" val="off" />
+    </div>
     <div id="wrapper">
         <div class="overlay"></div>
 
         <!-- Sidebar -->
         <nav class="navbar fixed-top navbar-dark bg-dark" id="sidebar-wrapper" role="navigation">
+
+
+
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
@@ -480,8 +488,9 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
         <!-- Page Content -->
 
         <!-- /#page-content-wrapper -->
-
     </div>
+
+
     <script>
         $(window).on("load", function() {
             // $(".bs-select-all").on('click', function() {

@@ -457,10 +457,15 @@ def about():
 
 @application.route('/weapons')
 def weapons():
-    years = request.args.get('years').split(",") #if key doesn't exist, returns None
-    countries = request.args.get('countries').split(",") #if key doesn't exist, returns None
+    years = request.args.get('years')
+    if(years!=None):
+        years = years.split(",") #if key doesn't exist, returns None
+    countries = request.args.get('countries')
+    if(countries != None):
+        countries = countries.split(",") #if key doesn't exist, returns None
+        countries = ",".join(countries)
     print("---------",years,jsonify(str(countries)))
-    return render_template('static/html/weapons.html',years=years,countries=",".join(countries) )
+    return render_template('static/html/weapons.html',years=years,countries=countries)
 
 @application.route('/countries')
 def countries():

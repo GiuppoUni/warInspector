@@ -23,6 +23,12 @@ var oldStatesClicked;
 
 var savedTransactions;
 
+// const colorsExport = ["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"]
+// const colorsImport = ["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"]
+const colorsExport = ["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"]
+const colorsImport = ["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"]
+
+
 function main() {
     // $(function() {
     //     $('select').selectpicker();
@@ -477,4 +483,14 @@ function getCountryIsoByName(name) {
 
 function toWeapons() {
     document.location.href = '/weapons?years=' + years + "&countries=" + selected_group;
+}
+
+
+function colorSwitch() {
+    if ($("#eyeIcon").attr("src") == "static/icons/barEye.svg") {
+        $("#eyeIcon").attr("src", "static/icons/eye.svg")
+    } else {
+        $("#eyeIcon").attr("src", "static/icons/barEye.svg")
+
+    }
 }

@@ -2,17 +2,17 @@ var PcaScatterManager = function() {
     // var country_selected = ["ITA"];
 
 
-    var margin = { top: 15, right: 30, bottom: 50, left: 30 },
-        width = 400 - margin.left - margin.right,
+    var margin = { top: 10, right: 15, bottom: 44, left: 10 },
+        width = 450 - margin.left - margin.right,
         height = 290 - margin.top - margin.bottom;
 
     var greenColorScale = d3v4.scaleThreshold()
         .domain([1, 10, 100, 1000, 10000, 100000])
-        .range(["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"])
+        .range(colorsExport)
 
     var redColorScale = d3v4.scaleThreshold()
         .domain([1, 10, 100, 500, 2000, 4000])
-        .range(["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"])
+        .range(colorsImport)
 
     // append the svg object to the body of the page
     var svg = d3v4.select("#pca-col")
@@ -187,7 +187,7 @@ var PcaScatterManager = function() {
             .enter()
             .append("circle")
             .attr("class", "legendDot")
-            .attr("cx", width * 2 / 3 + 35)
+            .attr("cx", width * 2 / 3 + 25)
             .attr("cy", function(d, i) { return margin.top + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 3)
             .style("fill", function(d) {
@@ -208,7 +208,7 @@ var PcaScatterManager = function() {
             .enter()
             .append("text")
             .attr("class", "legendText")
-            .attr("x", width * 2 / 3 + 35 + size * .8)
+            .attr("x", width * 2 / 3 + 25 + size * .8)
             .attr("y", function(d, i) { return margin.top + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d) {
                 if (d != "selected")

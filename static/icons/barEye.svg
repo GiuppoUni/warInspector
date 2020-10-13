@@ -1,0 +1,17 @@
+<svg width="288" height="288" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g transform="matrix(0.9167,0,0,0.9167,11.995599588584895,11.995200000000011) " id="SvgjsG1008">
+   <svg id="svg_1" height="288" width="288" viewBox="0 0 512 512" class="ionicon">
+    <path id="svg_2" class="colorStrokecurrentColor svgStroke" d="m255.66,112c-77.94,0 -157.89,45.11 -220.83,135.33a16,16 0 0 0 -0.27,17.77c48.36,75.7 127.24,134.9 221.1,134.9c92.84,0 173.34,-59.38 221.79,-135.25a16.14,16.14 0 0 0 0,-17.47c-48.56,-75 -129.65,-135.28 -221.79,-135.28z" stroke-width="32" stroke-linejoin="round" stroke-linecap="round" stroke="#ffffff" fill="none"/>
+    <circle id="svg_3" class="colorStrokecurrentColor svgStroke" stroke-width="32" stroke-miterlimit="10" stroke="#ffffff" fill="none" r="80" cy="256" cx="256"/>
+   </svg>
+  </g>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="270" x2="241" y1="22" x1="41" stroke-width="20" stroke="#fff" fill="none"/>
+ </g>
+</svg>

@@ -192,7 +192,7 @@ var weaponsBarChartManager = function() {
                         return x(d.key);
                     })
                     .attr("width", x.bandwidth())
-                    .attr("fill", "#69b3a2")
+                    .style("fill", "#69b3a2")
                     // no bar at the beginning thus:
                     .attr("height", function(d) {
                         return height - y(0);
@@ -200,6 +200,7 @@ var weaponsBarChartManager = function() {
                     .attr("y", function(d) {
                         return y(0);
                     })
+                    // .style("stroke", "black")
                     .style("stroke", "black")
                     .on('mouseover', tip.show)
                     .on('mouseout', tip.hide)
