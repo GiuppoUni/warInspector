@@ -129,7 +129,7 @@ var PcaScatterManager = function() {
         })
 
         var tip = d3v4.tip()
-            .attr('class', 'd3-tip')
+            .attr('class', 'd3-tip2')
             .offset([-10, 0])
             .html(function(d) {
 
@@ -316,7 +316,6 @@ var PcaScatterManager = function() {
             .duration(2000)
             .style("fill", function(d) {
                 // console.log(d[4])
-
                 if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
                     return redColorScale(d[5])
 
@@ -377,17 +376,12 @@ var PcaScatterManager = function() {
                 } else
                     return "#f6ff00"
             })
-        /*
-        svg.selectAll(".pca-dots")
-            .each(d => {
-                if (d[4]) {
-                    d
-                        .attr("class", "dot-selected")
-                        //.classed("dot-selected", true)
-                    pulse((d3v4.select(this)))
-                }
-            })
-        */
+
+        d3v4.selectAll(".pca-dots")
+            .each(function(d) { if (d[4]) pulse(d3v4.select(this), true) })
+
+
+
     }
 
     var resetZoom = function(type) {
@@ -418,7 +412,7 @@ var PcaScatterManager = function() {
                         //     return "#ff9c00"
                 })
                 .attr("r", 4.5)
-            
+
             pulse(svg.select("#dot-" + country_id));
         } else {
             svg.select("#dot-" + country_id)
@@ -431,12 +425,53 @@ var PcaScatterManager = function() {
         }
     }
 
-    function pulse(circle) {
+    function pulse(circle, isStarted = false) {
         (function repeat() {
-            if (circle.classed("dot-selected")) {
+            if (circle.classed("dot-selected") || isStarted) {
+                if (isStarted) {
+                    circle.classed("dot-selected", true)
+                    isStarted = false
+                    circle
+                        .transition()
+                        .duration(2000)
+                        .style("fill", function(d) {
+                            // console.log(d[4])
+                            if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
+                                return redColorScale(d[5])
+
+                            else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
+                                return greenColorScale(d[6])
+                            else
+                                return "white"
+
+                            // "#d00101" : "#009344"
+                            // return "#f6ff00"
+
+                        })
+                        .style("stroke", function(d) {
+
+                            if (d[4])
+                                return "#f6ff00"
+                            else
+                                return "black"
+                        })
+
+                    .duration(2000)
+                        // .delay(function(d, i) { return (i * 3) })
+                        .attr("cx", function(d) {
+                            return new_xScale(d[0]);
+                        })
+                        .attr("cy", function(d) {
+                            return new_yScale(d[1]);
+                        })
+                        .attr("r", function(d) { return !d[4] ? 3 : 4.5 })
+
+
+                }
                 circle
                     .transition()
                     .duration(500)
+                    .delay(2050)
                     .style("stroke", "#f6ff00")
                     .attr("stroke-width", 0)
                     .attr('stroke-opacity', 0)
@@ -448,15 +483,14 @@ var PcaScatterManager = function() {
                     .duration(1000)
                     .attr("stroke-width", 30)
                     .attr('stroke-opacity', 0)
-                    .ease(d3v4.easeLinear) 
+                    .ease(d3v4.easeLinear)
                     .on("end", repeat);
-            }
-            else {
+            } else {
                 circle
                     .transition()
                     .duration(1000)
                     .style("stroke", "black")
-                    .attr("stroke-width", 1)
+                    .style("stroke-width", 1)
                     .attr("r", 3.0)
             }
         })();

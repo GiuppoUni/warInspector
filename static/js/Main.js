@@ -241,6 +241,7 @@ function getDataFromPost(isCreated) {
                 }
                 // console.log("calling pca")
                 pcam.transition(root[3][0])
+                pcam.resetZoom()
                     // pcam.drawBasicChart(root[3], "IMP")
                     // pcam.drawBasicChart(root[4], "EXP")
 
@@ -495,16 +496,22 @@ function colorSwitch() {
         colorsExport = colorsExportBlind
         mcm.updateOnSliderChange()
         mm.legendTransition()
+        dbcm.changeColor()
         $("#eyeIcon").attr("src", "static/icons/eye.svg")
         $("#statusEyeIcon").text(" on ")
+
+        $(".colorTextExp").attr("style", "color:" + colorsExport.slice(-2)[0])
+        $(".colorTextImp").attr("style", "color:" + colorsImport.slice(-2)[0])
     } else {
         // Blind off
         colorsImport = colorsImportNotBlind
         colorsExport = colorsExportNotBlind
         mcm.updateOnSliderChange()
         mm.legendTransition()
+        dbcm.changeColor()
         $("#eyeIcon").attr("src", "static/icons/barEye.svg")
         $("#statusEyeIcon").text(" off ")
-
+        $(".colorTextExp").attr("style", "color:" + colorsExport.slice(-2)[0])
+        $(".colorTextImp").attr("style", "color:" + colorsImport.slice(-2)[0])
     }
 }

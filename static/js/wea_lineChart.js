@@ -1,5 +1,5 @@
 var WeaLine = function() {
-    var margin = { top: 10, right: 10, bottom: 50, left: 40 },
+    var margin = { top: 30, right: 10, bottom: 50, left: 45 },
         width = 440 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
@@ -20,7 +20,14 @@ var WeaLine = function() {
         // .domain(Array.from(Array(30), (_, i) => i + 1990))
         // .padding(0.01)
         // .round(false)
-
+    svg.append("text")
+        .attr("text-anchor", "end")
+        .attr("x", -38)
+        .attr("y", -8)
+        .style("fill", "white")
+        .text("Weapon units")
+        .style("font-size", "11px")
+        .attr("text-anchor", "start")
     var xAxis = d3.axisBottom(x)
         .tickFormat(d3.timeFormat("%Y"))
         .ticks(d3.timeYear.every(1));

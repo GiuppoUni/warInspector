@@ -238,7 +238,7 @@ var DivergingBarChartManager = function() {
 
             .style("fill", function(d) {
                     // return colour(d.value["totalS"])
-                    return "#007a12"
+                    return colorsExport.slice(-2)[0]
                 })
                 // .on('mouseenter', function(actual, i) {
                 //     d3v4.selectAll('.value')
@@ -316,7 +316,7 @@ var DivergingBarChartManager = function() {
                 .style("stroke", "black")
                 .style("fill", function(d) {
                     // return colorRed(d.value["totalR"])
-                    return "#7a0000"
+                    return colorsImport.slice(-2)[0]
                 });
 
             svg.call(tipExp);
@@ -519,7 +519,7 @@ var DivergingBarChartManager = function() {
                 })
                 .style("fill", function(d) {
                     // return colour(d.value["totalS"])
-                    return "#007a12"
+                    return colorsExport.slice(-2)[0]
                 })
                 .style("stroke", function(d) {
                     // return colour(d.value["totalS"])
@@ -554,7 +554,7 @@ var DivergingBarChartManager = function() {
                 })
                 .style("fill", function(d) {
                     // return colorRed(d.value["totalR"])
-                    return "#7a0000"
+                    return colorsImport.slice(-2)[0]
                 })
                 .style("stroke", function(d) {
                     // return colour(d.value["totalS"])
@@ -648,9 +648,25 @@ var DivergingBarChartManager = function() {
             // addBars(() => console.log("2"))
             // drawSelBars()
     }
+
+    function changeColor() {
+        console.log("change colors")
+        svg.selectAll(".div-bars-exp")
+            .transition()
+            .duration(500)
+            .style("fill", colorsExport.slice(-2)[0])
+
+
+        svg.selectAll(".div-bars-imp")
+            .transition()
+            .duration(500)
+            .style("fill", colorsImport.slice(-2)[0])
+    }
+
     return {
         drawChart: drawChart,
         transitionSlider: transitionSlider,
+        changeColor: changeColor
     }
 
 

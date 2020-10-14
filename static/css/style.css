@@ -1401,8 +1401,14 @@ Charts
     
     #checkBoxWl {
         position: absolute;
-        top: 510px;
-        right: 345px;
+        top: 37px;
+        right: 35px;
+    }
+    
+    #checkBoxWb {
+        position: absolute;
+        top: 37px;
+        left: 250px;
     }
     
     #scatter_viz path {
