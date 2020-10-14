@@ -1,5 +1,6 @@
 var PcaScatterManager = function() {
     // var country_selected = ["ITA"];
+    var firstTimeDot = true;
 
 
     var margin = { top: 10, right: 15, bottom: 44, left: 10 },
@@ -373,6 +374,17 @@ var PcaScatterManager = function() {
                 } else
                     return "#f6ff00"
             })
+        /*
+        svg.selectAll(".pca-dots")
+            .each(d => {
+                if (d[4]) {
+                    d
+                        .attr("class", "dot-selected")
+                        //.classed("dot-selected", true)
+                    pulse((d3v4.select(this)))
+                }
+            })
+        */
     }
 
     var resetZoom = function(type) {
@@ -393,6 +405,7 @@ var PcaScatterManager = function() {
     var selectCountryTransition = function(country_id, isSelected) {
         if (isSelected) {
             svg.select("#dot-" + country_id)
+                .classed("dot-selected", true)
                 .transition()
                 .duration(1000)
                 .style("stroke", function() {
@@ -402,14 +415,50 @@ var PcaScatterManager = function() {
                         //     return "#ff9c00"
                 })
                 .attr("r", 4.5)
+            
+            pulse(svg.select("#dot-" + country_id));
         } else {
             svg.select("#dot-" + country_id)
+                .classed("dot-selected", false)
                 .transition()
                 .duration(1000)
                 .style("stroke", "black")
+                .attr("stroke-width", 1)
                 .attr("r", 3.0)
         }
     }
+
+    function pulse(circle) {
+        (function repeat() {
+            if (circle.classed("dot-selected")) {
+                circle
+                    .transition()
+                    .duration(500)
+                    .style("stroke", "#f6ff00")
+                    .attr("stroke-width", 0)
+                    .attr('stroke-opacity', 0)
+                    .transition()
+                    .duration(500)
+                    .attr("stroke-width", 0)
+                    .attr('stroke-opacity', 0.5)
+                    .transition()
+                    .duration(1000)
+                    .attr("stroke-width", 30)
+                    .attr('stroke-opacity', 0)
+                    .ease(d3v4.easeLinear) 
+                    .on("end", repeat);
+            }
+            else {
+                circle
+                    .transition()
+                    .duration(1000)
+                    .style("stroke", "black")
+                    .attr("stroke-width", 1)
+                    .attr("r", 3.0)
+            }
+        })();
+    }
+
     return {
         drawChart: drawChart,
         resetZoom: resetZoom,
