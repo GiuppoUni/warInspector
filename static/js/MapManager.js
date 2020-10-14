@@ -41,6 +41,8 @@ var MapManager = function() {
 
     }
 
+    var legend;
+    var legendImp;
 
     var redScale = d3v4.scaleThreshold()
         .domain([1, 10, 100, 1000, 10000, 100000])
@@ -160,7 +162,7 @@ var MapManager = function() {
 
             savedWars = allWars
             wars = allWars.filter(d => filterWar(d)).filter(d => parseInt(d.mag) <= selectedCircle);
-
+            console.log("ready -> wars", wars)
 
             // const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
 
@@ -222,7 +224,7 @@ var MapManager = function() {
             //     .text("Weapon units " + country_selected + " EXPORTED to nation during " + years[0] + "-" + years[1]);
 
             var labels = ['>=	 1', ">= 10", ">= 100", ">= 1000", ">= 10000", ">= 100000"];
-            var legend = d3v4.legendColor()
+            legend = d3v4.legendColor()
                 .labels(function(d) { return labels[d.i]; })
                 .shapePadding(4)
                 .scale(greenScale);
@@ -249,13 +251,20 @@ var MapManager = function() {
                 // .attr("transform", function(d) {
                 //     return "translate(" + projection(d.coordinates) + ")";
                 // })
-                .attr("r", function(d) { return zz(d.mag) })
+                .attr("r", function(d) {
+                    // if (d.states == "Cameroon")
+                    //     console.log("-->", d3v4.select(this))
+                    return zz(d.mag)
+                })
+                .attr("transform", svgTransform)
+                .style("stroke-width", 1.5 / svgStroke + "px")
                 // return zz(wars[index].mag);
                 .style("fill", "white")
                 .style("stroke", "black")
                 .style("opacity", .5)
                 .on('mouseover', function(d) {
-                    console.log(d3v4.select(this).attr("r"));
+
+                    // console.log(d3v4.select(this).attr("r"));
                     tipConflict.show(d)
                 })
                 .on('mouseout', tipConflict.hide)
@@ -370,13 +379,13 @@ var MapManager = function() {
             //     .text("Weapon units " + country_selected + " IMPORTED to nation during " + years[0] + "-" + years[1]);
 
             var labels = ['>=	 1', ">= 10", ">= 100", ">= 1000", ">= 10000", ">= 100000"];
-            var legend = d3v4.legendColor()
+            legendImp = d3v4.legendColor()
                 .labels(function(d) { return labels[d.i]; })
                 .shapePadding(4)
                 .scale(redScale);
 
             svg2.select(".legendThreshold")
-                .call(legend);
+                .call(legendImp);
 
             $("#numConfImp").text(wars.length)
             var sumMagImp = 0;
@@ -389,8 +398,8 @@ var MapManager = function() {
                 .enter()
                 .append("circle")
                 .attr("class", function(d) { return "war-dot imp" })
-                .attr("cx", d => projection([d.lon, d.lat])[0])
-                .attr("cy", d => projection([d.lon, d.lat])[1])
+                .attr("cx", function(d) { return projection([d.lon, d.lat])[0] })
+                .attr("cy", function(d) { return projection([d.lon, d.lat])[1] })
                 // .attr("transform", function(d) {
                 //     return "translate(" + projection(d.coordinates) + ")";
                 // })
@@ -510,7 +519,7 @@ var MapManager = function() {
                     var oldMag = selectedCircle2
                     if (selectedCircle2 !== d) {
                         selectedCircle2 = d
-                        svg.selectAll(".circleLegend").filter("circle").style("stroke", "white")
+                        svg2.selectAll(".circleLegend").filter("circle").style("stroke", "white")
                         d3v4.select(this).style("stroke", "yellow")
                         transitionCircles(oldMag, "imp")
                     } else {
@@ -555,6 +564,17 @@ var MapManager = function() {
 
             $("#cntInvolvedExp").text(cntInvExp.join(", "))
             $("#cntInvolvedImp").text(cntInvImp.join(", "))
+
+
+
+            svg.transition()
+                .duration(100)
+                .call(zoom.transform, svgTransform);
+
+            svg2.transition()
+                .duration(100)
+                .call(zoom.transform, svgTransform);
+
         }
     }
 
@@ -800,7 +820,7 @@ var MapManager = function() {
                         $("#" + country_id + "-line").remove()
                         var newRowContent = '<tr id="' + country_id + '-line">\
             <td class="col-xs-1" style="color:yellow">' + country_name + " (" + country_id + ')</td>\
-            <td class="col-xs-3">' + average(gdps) + '</td>\
+            <td class="col-xs-3">' + average(gdps) + " USD" + '</td>\
             <td class="col-xs-3">' + average(pops) + '</td>\
             <td class="col-xs-3">' + average(armies) + '</td>\
             </tr>'
@@ -863,6 +883,12 @@ var MapManager = function() {
 
 
     var sliderTransition = function() {
+
+        greenScale.range(colorsExport)
+        redScale.range(colorsImport)
+
+
+
         cntInvExp = []
         cntInvImp = []
 
@@ -969,8 +995,8 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             .duration(1000)
             .attr("transform", svgTransform)
             .attr("class", "war-dot exp")
-            .attr("cx", d => projection([d.lon, d.lat])[0])
-            .attr("cy", d => projection([d.lon, d.lat])[1])
+            .attr("cx", function(d) { return projection([d.lon, d.lat])[0] })
+            .attr("cy", function(d) { return projection([d.lon, d.lat])[1] })
             .attr("r", function(d) { return zz(d.mag) })
             .style("fill", "white")
             .style("stroke", "black")
@@ -1000,8 +1026,8 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             .transition()
             .duration(1000)
             .attr("class", "war-dot imp")
-            .attr("cx", d => projection([d.lon, d.lat])[0])
-            .attr("cy", d => projection([d.lon, d.lat])[1])
+            .attr("cx", function(d) { return projection([d.lon, d.lat])[0] })
+            .attr("cy", function(d) { return projection([d.lon, d.lat])[1] })
             .attr("r", function(d) { return zz(d.mag) })
             .attr("transform", svgTransform)
             .style("stroke-width", 1.5 / svgStroke + "px")
@@ -1025,18 +1051,38 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
         $("#cntInvolvedExp").text(cntInvExp.join(", "))
         $("#cntInvolvedImp").text(cntInvImp.join(", "))
 
+        d3v4.selectAll(".war-dot")
+            .on('mouseover', function(d) {
+                // console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag))
+                // d3v4.select(this).attr("r", zz(d.mag))
+                tipConflict.show(d)
+            })
+            .on('mouseout', tipConflict.hide)
+            .attr("r", function(d) { return zz(d.mag) })
+            .attr("transform", svgTransform)
+            .style("stroke-width", 1.5 / svgStroke + "px")
+            .style("fill", "white")
+            .style("stroke", "black")
+            .style("opacity", .5)
 
+        svg.transition()
+            .duration(1000)
+            .call(zoom.transform, svgTransform);
+        svg2.transition()
+            .duration(1000)
+            .call(zoom.transform, svgTransform);
     }
 
 
     function transitionCircles(oldMag, type) {
-
+        console.log("Transition circles")
         const tranWars = savedWars.filter(d => filterWar(d))
             .filter(d => (parseInt(d.mag) <= (type == "exp" ? selectedCircle : selectedCircle2)))
         console.log(tranWars)
         var u;
-        if (type == "exp") {
-            u = svg.selectAll(".war-dot.exp").filter("circle")
+        if (type === "exp") {
+
+            u = svg.selectAll(".war-dot.exp")
                 .data(tranWars)
 
             $("#numConfExp").text(tranWars.length)
@@ -1047,6 +1093,8 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             $("#numConfExp").text(tranWars.length)
 
         } else {
+
+
             u = svg2.selectAll(".war-dot.imp").filter("circle")
                 .data(tranWars)
             $("#numConfImp").text(tranWars.length)
@@ -1056,16 +1104,25 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             $("#numConfImp").text(tranWars.length)
         }
 
-        uu = u.enter()
+
+
+        var uu = u.enter()
             .append("circle") // Add a new circle for each new element
             // if (oldMag < (type == "exp" ? selectedCircle : selectedCircle2))
-            //     uu.merge(u)
-
-        uu.transition()
+            .on('mouseover', function(d) {
+                // console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag),
+                //     d.lon, d.lat, projection([d.lon, d.lat])[0], projection([d.lon, d.lat])[1], d3v4.select(this).attr("cx"))
+                // d3v4.select(this).attr("r", zz(d.mag))
+                tipConflict.show(d)
+            })
+            .on('mouseout', tipConflict.hide)
+            .merge(u)
+            .transition()
+            // uu.transition()
             .duration(1000)
             .attr("class", "war-dot " + (type == "exp" ? "exp" : "imp"))
-            .attr("cx", d => projection([d.lon, d.lat])[0])
-            .attr("cy", d => projection([d.lon, d.lat])[1])
+            .attr("cx", function(d) { return projection([d.lon, d.lat])[0] })
+            .attr("cy", function(d) { return projection([d.lon, d.lat])[1] })
             .attr("r", function(d) { return zz(d.mag) })
             .attr("transform", svgTransform)
             .style("stroke-width", 1.5 / svgStroke + "px")
@@ -1073,22 +1130,37 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             .style("stroke", "black")
             .style("opacity", .5)
 
+
+
         u.exit()
             .transition() // and apply changes to all of them
             .duration(1000)
             .style("opacity", 0)
             .remove()
 
+        // u
+        //     .attr("cx", function(d) { return projection([d.lon, d.lat])[0] })
+        //     .attr("cy", function(d) { return projection([d.lon, d.lat])[1] })
+        //     .attr("r", function(d) { return zz(d.mag) })
 
 
-        d3v4.selectAll(".war-dot." + (type == "exp" ? "exp" : "imp")).filter("circle")
+
+        d3v4.selectAll(".war-dot")
             .on('mouseover', function(d) {
-                console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag))
-                d3v4.select(this).attr("r", zz(d.mag))
+                // console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag),
+                //     d.lon, d.lat, projection([d.lon, d.lat])[0], projection([d.lon, d.lat])[1], d3v4.select(this).attr("cx"))
+                // d3v4.select(this).attr("r", zz(d.mag))
                 tipConflict.show(d)
             })
             .on('mouseout', tipConflict.hide)
-            .attr("r", d => zz(d.mag))
+
+
+        svg.transition()
+            .duration(1000)
+            .call(zoom.transform, svgTransform);
+        svg2.transition()
+            .duration(1000)
+            .call(zoom.transform, svgTransform);
 
 
     }
@@ -1111,6 +1183,13 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
     var selectedTransition = function() {
         cntInvImp = [];
         cntInvExp = [];
+        redScale = d3v4.scaleThreshold()
+            .domain([1, 10, 100, 1000, 10000, 100000])
+            .range(colorsImport)
+
+        greenScale = d3v4.scaleThreshold()
+            .domain([1, 10, 100, 1000, 10000, 100000])
+            .range(colorsExport)
 
         var impData = d3v4.map();
         d3v4.queue()
@@ -1342,10 +1421,24 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
         return table;
     }
 
+    function legendTransition() {
+        legendImp.scale(redScale)
+
+        svg2.select(".legendThreshold")
+            .call(legendImp)
+
+        legend.scale(greenScale)
+        svg.select(".legendThreshold")
+            .call(legend)
+
+
+    }
+
     return {
         drawCloroExp: drawCloroExp,
         // drawCloroImp: drawCloroImp,
         sliderTransition: sliderTransition,
+        legendTransition: legendTransition,
         selectedTransition: selectedTransition,
         getYearsInterval: getYearsInterval,
         setYearInterval: setYearInterval,

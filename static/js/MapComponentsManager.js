@@ -97,6 +97,7 @@ var MapComponentsManager = function() {
 
     return {
         drawSlider: drawSlider,
+        updateOnSliderChange: updateOnSliderChange,
 
 
     };

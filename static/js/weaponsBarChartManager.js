@@ -7,7 +7,7 @@ var weaponsBarChartManager = function() {
     var margin = {
             top: 20,
             right: 10,
-            bottom: 100,
+            bottom: 110,
             left: 70
         },
         width = 370 - margin.left - margin.right,

@@ -23,11 +23,12 @@ var oldStatesClicked;
 
 var savedTransactions;
 
-const colorsExport = ["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"]                 // Green Normal
-const colorsImport = ["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"]                 // Red Normal
-
-// const colorsExportBlind = ["#f7f7f7","#e6f5d0","#b8e186","#7fbc41","#4d9221","#276419"]              // Green colorblind safe
-// const colorsImportBlind = ["#f7f7f7", "#fde0ef", "#f1b6da", "#de77ae", "#c51b7d", "#8e0152"]         // Magenta colorblind safe
+const colorsExportNotBlind = ["#c7e9c0", "#a1d99b", "#74c476", "#31a354", "#006d2c", "#002c09"] // Green Normal
+const colorsImportNotBlind = ["#ffbaba", "#ff7b7b", "#ff5252", "#b72626", "#8e0505", "#620000"] // Red Normal
+const colorsExportBlind = ["#f7f7f7", "#e6f5d0", "#b8e186", "#7fbc41", "#4d9221", "#276419"] // Green colorblind safe
+const colorsImportBlind = ["#f7f7f7", "#fde0ef", "#f1b6da", "#de77ae", "#c51b7d", "#8e0152"] // Magenta colorblind safe
+var colorsImport = colorsImportNotBlind
+var colorsExport = colorsExportNotBlind
 
 
 function main() {
@@ -212,7 +213,7 @@ function getDataFromPost(isCreated) {
             if (error != null) {
                 console.log("Error: ", error)
             } else if (root != null) {
-                $('.pca-svg').remove()
+                // $('.pca-svg').remove()
 
 
                 // console.log("Data: ", root)
@@ -489,9 +490,21 @@ function toWeapons() {
 
 function colorSwitch() {
     if ($("#eyeIcon").attr("src") == "static/icons/barEye.svg") {
+        // Blind on
+        colorsImport = colorsImportBlind
+        colorsExport = colorsExportBlind
+        mcm.updateOnSliderChange()
+        mm.legendTransition()
         $("#eyeIcon").attr("src", "static/icons/eye.svg")
+        $("#statusEyeIcon").text(" on ")
     } else {
+        // Blind off
+        colorsImport = colorsImportNotBlind
+        colorsExport = colorsExportNotBlind
+        mcm.updateOnSliderChange()
+        mm.legendTransition()
         $("#eyeIcon").attr("src", "static/icons/barEye.svg")
+        $("#statusEyeIcon").text(" off ")
 
     }
 }

@@ -195,10 +195,10 @@ var PcaScatterManager = function() {
                 if (d != "selected") {
 
                     if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
-                        return "#d00101"
+                        return colorsImport.slice(-1)[0]
 
                     else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
-                        return "#009344"
+                        return colorsExport.slice(-1)[0]
                 } else
                     return "#f6ff00"
             })
@@ -213,7 +213,7 @@ var PcaScatterManager = function() {
             .attr("y", function(d, i) { return margin.top + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
             .style("fill", function(d) {
                 if (d != "selected")
-                    return type === "IMP" ? "#d00101" : "#009344"
+                    return type === "IMP" ? colorsImport.slice(-1)[0] : colorsExport.slice(-1)[0]
                 else
                     return "#f6ff00"
             })
@@ -307,6 +307,9 @@ var PcaScatterManager = function() {
     // }
 
     var transition = function(data) {
+        greenColorScale.range(colorsExport)
+        redColorScale.range(colorsImport)
+
         svg.selectAll(".pca-dots")
             .data(data)
             .transition()
@@ -352,10 +355,10 @@ var PcaScatterManager = function() {
                 if (d != "selected") {
 
                     if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
-                        return "#d00101"
+                        return colorsImport.slice(-1)[0]
 
                     else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
-                        return "#009344"
+                        return colorsExport.slice(-1)[0]
                 } else
                     return "#f6ff00"
             })
@@ -367,10 +370,10 @@ var PcaScatterManager = function() {
                 if (d != "selected") {
 
                     if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
-                        return "#d00101"
+                        return colorsImport.slice(-1)[0]
 
                     else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
-                        return "#009344"
+                        return colorsExport.slice(-1)[0]
                 } else
                     return "#f6ff00"
             })
