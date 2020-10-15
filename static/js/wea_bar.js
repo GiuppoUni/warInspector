@@ -132,7 +132,7 @@ var wea_bar = function() {
                 })
                 .on('mouseout', function(d) {
 
-                    mouseOutText(this)
+                    mouseOutText(this, d)
                 })
                 .on("click", function() {
                     //alert("click")
@@ -231,6 +231,9 @@ var wea_bar = function() {
                                 return "white"
 
                         })
+                    txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+                    if (txt == "" || txt == null || txt == undefined)
+                        txt = "Not available at the moment."
                     $("#weapon_description").html(txt)
                     d3.select("#weapon_desc_head").text("Weapon description: ")
                         .append("span")
@@ -309,6 +312,7 @@ var wea_bar = function() {
 
         saved_local_ordered = local_ordered
 
+        wc.chosen_category_only(local_ordered[0].key)
 
         if (fixedScale && saved_local_ordered != undefined)
             y.domain([0, orderedWeapons[0].value + 100000])
@@ -419,7 +423,7 @@ var wea_bar = function() {
         }
     }
 
-    function mouseOutText(questo) {
+    function mouseOutText(questo, d) {
 
         d3.select(questo).style("font-size", "14px")
         if (d3.select(questo).text() != chosen_category) {

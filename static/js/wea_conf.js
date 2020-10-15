@@ -262,6 +262,7 @@ var wea_conf = function() {
 
 
     function heatmapTransition(isFromSelectPicker = false) {
+
         // console.log("Transition")
         filteredModels = savedDataset
             .filter(function(d) {
@@ -371,6 +372,7 @@ var wea_conf = function() {
             instant_chosen_model(modelChosen)
 
 
+        // console.log("asd", modelList[0])
 
         superFilteredModels = filteredModels.filter(d => d["Weapon model"] == clickedModelChosen)
         tabulate(superFilteredModels, columns, true, false)
@@ -449,6 +451,7 @@ var wea_conf = function() {
             .attr("width", x.bandwidth())
             .attr("height", y.bandwidth())
             .style("fill", function(d) {
+                console.log("asd", parseInt(d.value))
                 return myColor(parseInt(d.value))
             })
 
@@ -463,8 +466,6 @@ var wea_conf = function() {
                 heatTip.show(d)
             })
             .on('mouseout', heatTip.hide)
-
-
 
 
 
@@ -545,13 +546,13 @@ var wea_conf = function() {
         d3.select("#scatter_title").text("Weapons by model: ")
             .append("span")
             .text("\u00A0" + chosen_category).style("color", "orange")
-        svg.select("#x-bar-axis").selectAll(".tick")
+        d3.select("#x-bar-axis").selectAll(".tick")
             .select('g > line')
             .style("stroke", d => {
                 return (d == chosen_category) ? "orange" : "white"
             })
 
-        svg.select("#x-bar-axis").selectAll(".tick")
+        d3.select("#x-bar-axis").selectAll(".tick")
             .select('g > text')
             .style("fill", d => {
                 if (d == chosen_category)
@@ -562,6 +563,9 @@ var wea_conf = function() {
 
         wc.heatmapTransition(true)
 
+        txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+        if (txt == "" || txt == null || txt == undefined)
+            txt = "Not available at the moment."
         $("#weapon_description").html(txt)
         d3.select("#weapon_desc_head").text("Weapon description: ")
             .append("span")
@@ -573,12 +577,48 @@ var wea_conf = function() {
     }
 
 
+    function chosen_category_only(cat) {
+
+        chosen_category = cat
+        d3.selectAll(".bar-rect").style("fill", d => d.key == chosen_category ? "orange" : "#69b3a2")
+        d3.select("#bar-" + cat).style("fill", "orange")
+        d3.select("#scatter_title").text("Weapons by model: ")
+            .append("span")
+            .text("\u00A0" + chosen_category).style("color", "orange")
+        d3.select("#x-bar-axis").selectAll(".tick")
+            .select('g > line')
+            .style("stroke", d => {
+                return (d == chosen_category) ? "orange" : "white"
+            })
+
+        d3.select("#x-bar-axis").selectAll(".tick")
+            .select('g > text')
+            .style("fill", d => {
+                if (d == chosen_category)
+                    return "orange"
+                else
+                    return "white"
+            })
+
+        heatmapTransition(false)
+
+        txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+        if (txt == "" || txt == null || txt == undefined)
+            txt = "Not available at the moment."
+        $("#weapon_description").html(txt)
+        d3.select("#weapon_desc_head").text("Weapon description: ")
+            .append("span")
+            .text("\u00A0" + chosen_category).style("color", "orange")
+
+    }
+
     return {
         drawHeatmap: drawHeatmap,
         heatmapTransition: heatmapTransition,
         chosen_category_model: chosen_category_model,
         start_timer_chosen_model: start_timer_chosen_model,
         instant_chosen_model: instant_chosen_model,
+        chosen_category_only: chosen_category_only,
     };
 
 }

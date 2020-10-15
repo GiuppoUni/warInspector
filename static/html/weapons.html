@@ -73,6 +73,7 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
                   <input type="radio" name="options" id="option2"
                   autocomplete="off" onchange="filterWea()">
                   Filter by query
+                  <img src="/static/icons/tank.svg" width=25>
                 </label>
 
             </div>
@@ -880,24 +881,12 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
 
 
 
-        /*************************
-         * DRAW CONFUSION MATRIX *
-         *************************/
-
         //drawScatter()
         const yearsList = Array.from(Array(30), (_, i) => i + 1990)
 
         wb.drawBar()
 
         wc.drawHeatmap()
-
-
-        /************************
-         * CONFUSION TRANSITION *
-         ************************/
-
-
-
 
 
         function selectedModel(sel) {
@@ -1013,14 +1002,14 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
         function filterWea() {
             isFiltered = true
             wb.transitionBar()
-            wc.heatmapTransition()
+                //            wc.heatmapTransition()
 
         }
 
         function unFilterWea() {
             isFiltered = false
             wb.transitionBar()
-            wc.heatmapTransition()
+                //       wc.heatmapTransition()
 
         }
 
