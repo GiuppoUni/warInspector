@@ -455,6 +455,7 @@ def returnNews():
     # print(alert,last_update)
     # alert = str(alert).replace(",",", ").replace("[","").replace("]","").replace('href="/crisiswatch#','href="https://www.crisisgroup.org/crisiswatch#')
     return jsonify("","No alerts available")
+
 # Other routes
 @application.route('/about')
 def about():
@@ -462,8 +463,16 @@ def about():
 
 @application.route('/weapons')
 def weapons():
-    return render_template('static/html/weapons.html')
-
+    years = request.args.get('years')
+    if(years!=None):
+        years = years.split(",") #if key doesn't exist, returns None
+    countries = request.args.get('countries')
+    if(countries != None):
+        countries = countries.split(",") #if key doesn't exist, returns None
+        countries = ",".join(countries)
+    print("---------",years,jsonify(str(countries)))
+    return render_template('static/html/weapons.html',years=years,countries=countries)
+    
 @application.route('/countries')
 def countries():
     return render_template('static/html/countries.html')

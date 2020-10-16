@@ -21,6 +21,7 @@ var wea_conf = function() {
 
     var x;
     var y;
+    var heatColor = "red"
 
 
     const heatTip = d3.tip()
@@ -346,7 +347,7 @@ var wea_conf = function() {
         savedGrouped = groupedModels
 
         var myColor = d3.scaleLog()
-            .range(["white", "red"])
+            .range(["white", heatColor])
             .domain([1, d3.max(groupedModels, function(d) {
                 return d.value
             })])

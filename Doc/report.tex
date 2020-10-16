@@ -32,8 +32,8 @@
 \maketitle
 \begin{abstract}
 
-In this report, we present results and design process from "WarMonopoly", an html local page embedding D3.js to visualize some SIPRI (Stockholm International Peace Research Institute) datasets. The page contains user interactive views as barcharts, choropleth map and arc map due to the geographical nature of the data involved. It is present also a scatter plot result of MDS (Multi-Dimensional scaling), computed in python and visualized on the same
- page, not to preprocess the data but to add new informations to the user. Python program to compute and visualize in real-time MDS depending on user parameters, is hosted on an "Heroku dyno" (a cloud container to host python codes).
+In this report we present user scenarios and design choices moved from them for "WarInspector", a web application embedding D3.js framework to visualize and let analyze data regarding world weapons trading . The page contains user interactive visualizations all coordinated on change. There is also a scatter plot result of PCA (Principal Component Analysis), computed on the backend server and visualized not to preprocess the data but to add new information to the user. The app is composed of two interconnected pages using the same datasets reflecting the two main user cases we identified:  analysis on geopolitical and militar influences between countries on one side and analysis on weapons traded.
+
 3
 
 %
@@ -64,7 +64,7 @@ We started from this to think of what visual analytics technique would have fit 
 
 
 
-\section{Dataset}
+\section{Dataset and sources}
 %
 
 
@@ -142,11 +142,6 @@ Australia &    13  & ...   & 47   & 44   & 2    & 49   & 14   & 18   & 26   & 80
 \section{Design process}
 %
 
-We started from the general layout of the website using a framework called azle.js to easily divide the page into different panels that will later contain the views.
-Due to the nature of the data, that involve countries from all around the world and time series data, we chose to start from a map visualization.
-From related works on the field we though that a directed graph having countries as nodes could be less user friendly than a map showing the user exactly from where and to where the expeditions went. In that way user can see clearly expeditions that involved countries very far away. In future implementations this map could be used to let user explore the single transactions, to analyze them one-by-one just after clicking on the arrow corresponding to the related supplier and recipient.
-
-The arc map shows which country traded with, in a user defined range of years between 1980-2018, but this doesn’t give any information about the amount of weapons or the monetary value involved in the transaction. So we chose to introduce a second world map, that is this time a choropleth map (from Greek χῶρος "area/region" and πλῆθος "multitude") that is a type of thematic map in which areas are shaded or patterned in proportion to a variable that represents an aggregate summary of a geographic characteristic within each area, such as population density or per-capita income. In this case selecting a country, the other countries with which the selected country traded with, always in the same user defined range of years of before, are colored in proportion to the amount of units delivered  to them.
 This was a critical part of our work in which we tried to find economic data to merge with our model, in order to relate economic value to traded weapons, and do more reasonable comparisons. The website of SIPRI talks about an economic value associated to the transaction but we discovered it is not present in each entry. Despite that the already mentioned TIV value could have been useful for this purpose in this particular dataset SIPRI didn’t included it at all. So with an expert in the field and some additional data, or with direct access to TIV values, a linear combination could solve the problem in the future.
 Then we chose to add also a barchart in the bottom panel to ease the comparison between data. Here new information are presented, for the supplier country selected by the user we chose to plot, the total number of ordered weapons on the y axis, and the year in which they have been ordered on the x axis (always in the range specified by the user).
 

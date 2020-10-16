@@ -450,6 +450,7 @@ def returnNews():
     print(alert,last_update)
     alert = str(alert).replace(",",", ").replace("[","").replace("]","").replace('href="/crisiswatch#','href="https://www.crisisgroup.org/crisiswatch#')
     return jsonify(alert,str("Updated on: "+last_update.text),str(country_array))
+
 # Other routes
 @application.route('/about')
 def about():

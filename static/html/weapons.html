@@ -54,7 +54,15 @@
             </button>
             <a class="navbar-brand" href="#"></a>
 
+            <!-- <div class="bg-dark rounded" style=" position:absolute;right: 8px;top:20px;
+            z-index: 11101;">
+                <div class="tooltiptext">Turn
+                    <span id="statusEyeIcon"> on </span>color blindness protection
 
+                </div>
+                <input type="image" id="eyeIcon" style="right:4px;padding-left: 2px;
+                padding-top: 2px; position: absolute;;" width="30" src="static/icons/barEye.svg" onclick="colorSwitch()" val="off" />
+            </div> -->
             <div class="row" style="float:left;   margin-left: 15px;
             margin-right: auto;">
                 <h2 style="    position:absolute;top:15px;left:
@@ -1032,6 +1040,36 @@ margin-left: 310px;color: aliceblue;">WarInspector</h4>
 
         function wbChangeScale() {
             wb.changeScale();
+        }
+
+
+        function colorSwitch() {
+            if ($("#eyeIcon").attr("src") == "static/icons/barEye.svg") {
+                // Blind on
+                colorsImport = colorsImportBlind
+                colorsExport = colorsExportBlind
+                mcm.updateOnSliderChange()
+                mm.legendTransition()
+                dbcm.changeColor()
+                $("#eyeIcon").attr("src", "static/icons/eye.svg")
+                $("#statusEyeIcon").text(" on ")
+
+                $(".colorTextExp").attr("style", "color:" + colorsExport.slice(-2)[0])
+                $(".colorTextImp").attr("style", "color:" + colorsImport.slice(-2)[0])
+            } else {
+                // Blind off
+                colorsImport = colorsImportNotBlind
+                colorsExport = colorsExportNotBlind
+                mcm.updateOnSliderChange()
+                mm.legendTransition()
+                dbcm.changeColor()
+                $("#eyeIcon").attr("src", "static/icons/barEye.svg")
+                $("#statusEyeIcon").text(" off ")
+                $(".colorTextExp").attr("style", "color:" + colorsExport.slice(-2)[0])
+                $(".colorTextImp").attr("style", "color:" + colorsImport.slice(-2)[0])
+            }
+
+
         }
     </script>
 

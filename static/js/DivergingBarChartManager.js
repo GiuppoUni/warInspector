@@ -38,6 +38,11 @@ var DivergingBarChartManager = function() {
     var new_yScale = y
     var new_yScaleDown = yDown
 
+    var labels = ["Imports", "Exports"]
+    var lgndColors = d3v4.scaleThreshold()
+        .domain([0, 1])
+        .range([colorsImport.slice(-2)[0], colorsExport.slice(-2)[0]])
+
     const my_colors = ["blue", "yellow", "red"]
 
     var svg = d3v4.select("#diverging-card").append("svg")
@@ -296,7 +301,35 @@ var DivergingBarChartManager = function() {
             // })
 
 
+            svg.append("rect")
+                .attr("id", "lgExp")
+                .style("fill", colorsExport.slice(-2)[0])
+                .attr("opacity", "0.5")
+                .attr("x", 250)
+                .attr("y", 0)
+                .attr("width", 15)
+                .attr("height", 15)
 
+            svg.append("text")
+                .style("fill", "white")
+                .text("Export")
+                .attr("transform", "translate(280,10)")
+                .style("font-size", "11px")
+
+            svg.append("rect")
+                .attr("id", "lgImp")
+                .style("fill", colorsImport.slice(-2)[0])
+                .attr("x", 150)
+                .attr("opacity", "0.5")
+                .attr("y", 0)
+                .attr("width", 15)
+                .attr("height", 15)
+
+            svg.append("text")
+                .style("fill", "white")
+                .text("Import")
+                .attr("transform", "translate(180,10)")
+                .style("font-size", "11px")
 
 
             // BARRE INFERIORI
@@ -333,10 +366,6 @@ var DivergingBarChartManager = function() {
             d3v4.selectAll(".div-bars-imp")
                 .on('mouseover', d => tipImp.show(d))
                 .on('mouseout', tipImp.hide)
-
-
-            var labels = svg.append("g")
-                .attr("class", "labels");
 
 
 
@@ -656,11 +685,22 @@ var DivergingBarChartManager = function() {
             .duration(500)
             .style("fill", colorsExport.slice(-2)[0])
 
+        svg.select("#lgExp")
+            .transition()
+            .duration(500)
+            .style("fill", colorsExport.slice(-2)[0])
 
         svg.selectAll(".div-bars-imp")
             .transition()
             .duration(500)
             .style("fill", colorsImport.slice(-2)[0])
+
+        svg.select("#lgImp")
+            .transition()
+            .duration(500)
+            .style("fill", colorsImport.slice(-2)[0])
+
+
     }
 
     return {

@@ -3,17 +3,20 @@ var PcaScatterManager = function() {
     var firstTimeDot = true;
 
 
-    var margin = { top: 10, right: 15, bottom: 44, left: 10 },
-        width = 450 - margin.left - margin.right,
+    var margin = { top: 10, right: 10, bottom: 44, left: 10 },
+        width = 400 - margin.left - margin.right,
         height = 290 - margin.top - margin.bottom;
 
     var greenColorScale = d3v4.scaleThreshold()
         .domain([1, 10, 100, 1000, 10000, 100000])
         .range(colorsExport)
+    var greenLabels = ['>=	 1', ">= 10", ">= 100", ">= 1000", ">= 10000", ">= 100000"];
+
 
     var redColorScale = d3v4.scaleThreshold()
         .domain([1, 10, 100, 500, 2000, 4000])
         .range(colorsImport)
+    var redLabels = ['>=	 1', ">= 10", ">= 100", ">= 500", ">= 2000", ">= 4000"];
 
     // append the svg object to the body of the page
     var svg = d3v4.select("#pca-col")
@@ -35,6 +38,8 @@ var PcaScatterManager = function() {
 
     var new_xScale = x
     var new_yScale = y
+
+    var squareLegend;
 
     var drawChart = function(dataset, type) {
         // if (dataset == null) {
@@ -160,6 +165,39 @@ var PcaScatterManager = function() {
         //     .style("font-family", "Ubuntu")
         //     .style("font-size", "20px")
         //     .attr("fill", "white")
+
+
+        // Legend
+
+        svg.append("text")
+            .style("fill", "white")
+            .attr("id", "pca-lg-t")
+            .text("Delivered weapons")
+            .attr("transform", "translate(305,120)")
+            .style("font-size", "11px")
+
+
+        var lgnd = svg
+            .append("g")
+            .attr("class", "legendThreshold")
+            .attr("id", "legendThreshold")
+            .attr("transform", "translate(320,128)")
+            .style("font-size", "10px")
+
+
+
+        squareLegend = d3v4.legendColor()
+            .labels(function(d) { return redLabels[d.i]; })
+            .shapePadding(0.3)
+            .scale(redColorScale);
+
+        svg.select(".legendThreshold")
+            .call(squareLegend);
+
+        svg.selectAll(".swatch")
+            .attr("width", "10")
+            .attr("height", "10")
+
 
         var tipText = d3v4.tip()
             .attr('class', 'd3-tip')
@@ -381,6 +419,11 @@ var PcaScatterManager = function() {
             .each(function(d) { if (d[4]) pulse(d3v4.select(this), true) })
 
 
+        if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
+            legendTransition("imp")
+
+        else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
+            legendTransition("exp")
 
     }
 
@@ -496,10 +539,42 @@ var PcaScatterManager = function() {
         })();
     }
 
+    function legendTransition(type) {
+        if (type == "exp") {
+            squareLegend = d3v4.legendColor()
+                .labels(function(d) { return greenLabels[d.i]; })
+                .shapePadding(0.3)
+                .scale(greenColorScale);
+
+            svg.select(".legendThreshold")
+                .call(squareLegend)
+
+
+            svg.selectAll(".swatch")
+                .attr("width", "10")
+                .attr("height", "10")
+
+        } else {
+            squareLegend = d3v4.legendColor()
+                .labels(function(d) { return redLabels[d.i]; })
+                .shapePadding(0.3)
+                .scale(redColorScale);
+
+            svg.select(".legendThreshold")
+                .call(squareLegend);
+
+            svg.selectAll(".swatch")
+                .attr("width", "10")
+                .attr("height", "10")
+
+        }
+    }
+
     return {
         drawChart: drawChart,
         resetZoom: resetZoom,
         transition: transition,
         selectCountryTransition: selectCountryTransition,
+        legendTransition: legendTransition,
     }
 }
