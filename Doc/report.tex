@@ -32,9 +32,8 @@
 \maketitle
 \begin{abstract}
 
-In this report we present user scenarios and design choices moved from them for "WarInspector", a web application embedding D3.js framework to visualize and let analyze data regarding world weapons trading . The page contains user interactive visualizations all coordinated on change. There is also a scatter plot result of PCA (Principal Component Analysis), computed on the backend server and visualized not to preprocess the data but to add new information to the user. The app is composed of two interconnected pages using the same datasets reflecting the two main user cases we identified:  analysis on geopolitical and militar influences between countries on one side and analysis on weapons traded.
-
-3
+In this report we present you "WarInspector", a web application embedding D3.js framework to visualize and let analyze data regarding world weapons trading. The web pages contain user interactive visualizations all coordinated on change. Among the visualizations we have PCA (Principal Component Analysis) data, computed on the back-end server and visualized not to preprocess the original dataset but to add new information to the user. The app is composed of two interconnected pages using the same datasets but focusing on the two main study cases we identified:  analysis on geopolitical and military influences between countries on one side and analysis on models of weapons traded. A demo of the application can be found at:
+\url{https://war-inspector.herokuapp.com/}. The code is available at: \url{https://war-inspector.herokuapp.com/}
 
 %
 \end{abstract}
@@ -42,25 +41,29 @@ In this report we present user scenarios and design choices moved from them for 
     
 
 
-%%% Big Figure
-\begin{figure}[ht!]
-\centering
-\includegraphics[scale=0.25,center]{./fig/va.png}
-   \label{fig:va}
-    \caption{System interface of the web application homepage. I1, I2, I3 are interactive elements whereas V1, V2 are visual elements. }
 
-\end{figure}
     
 
+%%% Big Figure
+
+    
 
 \begin{multicols}{2}
 
-\section{Introduction}
+\section*{Introduction}
 %
-In order to offer a data visualization work that would have been interesting in his results, we chose to think of a dataset that could involve the entire planet and containing useful information. Searching the web SIPRI website stood out cause of the possibility it offers to analyze and visualize datasets regarding military trade (from official reports of NATO and every single country which participates to this initiative) among countries. The dataset contains these information: suppliers and recipients, the type and number of weapon systems ordered and delivered, the years of deliveries and the financial value of the deal (but only in some cases). 
+The war has characterized the human being since the prehistory. Human beings have always tried to impose their strength and knowledge on other animals but also on their fellow animals. Only a few centuries ago, however, war has also become a business, where national war industries or more generally countries can do business and get rich without the use of military force. Our project aims to explore this theme, offering the user a visual analysis tool to better understand the dynamics behind this increasingly profitable market.
 
+We developed a web application that is designed for all possible war or investigative operators or journalists who want to understand how this market moves, in particular by analysing the trading of arms between countries and how conflicts can be geographically or diplomatically related or unrelated. This tool makes it possible to understand both from a quantitative point of view, evaluating the numbers of arms traded (imported or exported), but also how these can be somehow influenced by other parameters of the country, which at first glance may seem detached from this area. 
+From a qualitative point of view, on the other hand, the application also analyses the types and individual models of weapons that are exchanged. This allows a hypothetical arms producer to understand which ones are the most traded in a certain historical period or in a certain region. 
+For both cases the single transactions can be finely filtered to explore interesting or suspicious transactions.
 
-We started from this to think of what visual analytics technique would have fit best our purpose and our data.
+The paper is organized as follows: in the first section we are going to explain the content of our datasets, the sources and how we have combined them together; in the second section we will discuss the study cases from which we designed the app; in the third section instead we will focus on the taken design choices; then in the fourth and fith sections we will focus on the details of the views; finally we will conclude with a discussion on the results and some food for thoughts.
+
+\section{Use cases}
+The first study case we thought of was the one of an investigation regarding geopolitical relations among countries. Weapons transactions from one country to another in a particular year or range of years could explain some known or hidden alliances, or the attempts to circumvent restrictions imposed on the arms trading toward particular countries ( weapons can be sold to countries bordering to banned countries to then carry secretly by land).  Moreover the presence of consistent weapon transactions in an area related to past conflicts may reveal the risk of a future new conflict. For this purpose a banner in the upper right corner can be displayed on button press to see countries currently considered at risk of conflict.
+
+The second study case is more focused on the economic nature of the transactions, a market survey can be conducted integrating the first page of WarInspector with the second one, in which weapons are grouped by category and then on select by model to see which were the most traded weapons in certain situations. 
 
 
 
@@ -68,7 +71,9 @@ We started from this to think of what visual analytics technique would have fit 
 %
 
 
-To have a dataset ready to be visualized easily we needed a well formatted file, a CSV (Comma Separated Values) would have been ideal, but the only format offered for our specific dataset of interest (the army transfer database) was RTF (Rich Text Format), that is better to visualize a text due to the presence of text formatting elements, less for storing and visualize a dataset. So we downloaded from: \url{http://armstrade.sipri.org/armstrade/page/trade_register.php} selecting all suppliers and all recipients from 2000 to 2018 (2019 was not present at the time), all weapon system and from supplier register. So after a quick analyis of its content, some Python scripts helped us to reach our CSV file containing a dataset with this format [Table 1]:
+In order to offer a data visualization work that would have been interesting in his results, we chose to think of a dataset that could involve the entire planet and containing useful information. Searching on the web the SIPRI website stood out cause of the possibility it offers to analyze and visualize datasets regarding military trade (from official reports of NATO and every single country which participates to this initiative) among countries. The dataset contains these information: suppliers and recipients, the type and number of weapon systems ordered and delivered, the years of deliveries and the financial value of the deal (but only for a few entries). 
+
+To have a dataset ready to be visualized easily we needed a well formatted file, a CSV (Comma Separated Values) would have been ideal, but the only format offered for our specific dataset of interest (the army transfer database) was RTF (Rich Text Format), that is better to visualize a text due to the presence of text formatting elements, less for storing and visualize a dataset. So we downloaded from: \url{http://armstrade.sipri.org/armstrade/page/trade_register.php} selecting all suppliers, all recipients from 1990 to 2018 (2019 was not present at the time), all weapon systems and clicking onto "from supplier register". So after a quick analysis of its content, some Python scripts helped us to reach our CSV file containing a dataset with this format [Table 1]:
 \begin{itemize}
 \item \textbf{Ordered}: the number of items ordered under the deal
 \item \textbf{Weapon model}: the designation of the weapon system concerned
@@ -82,9 +87,13 @@ To have a dataset ready to be visualized easily we needed a well formatted file,
 
 
 
-In a second phase in order to draw arrows from a supplier country towards the Recipients we joined the upper dataset with a second one containing only latitude-longitude coordinates and country code for both Supplier and Recipient. This new attributes have been used exclusively for visualization purpose.
+In a second phase in order to better interact with the map we joined the said dataset with a second one containing only latitude-longitude coordinates and country code for both Supplier and Recipient. This new attributes have been used exclusively for visualization purpose.
 
-In order to apply a dimensionality reduction technique, comparing different distance measures and analyzing useful results we used a second dataset [Table 2] from SIPRI, that is obtained using a trend-indicator value (TIV) in order to have for each year an integer number representing how many weapons a country exported. This value takes into account several factors in order to have a consistent measure to compare trades different for number of units, type of weapon ecc.
+To increase the dimensionality of our dataset, to be later computed a PCA, we introduced other information for each country and for each year integrating the previous dataset with information as GDP, population, army dimensions, number of escaped refugees taken from open data website: \url{https://data.worldbank.org/}. 
+Together with these features we have import or export numbers
+that are taken from two different SIPRI datasets [Table 2]. This because they contain a trend-indicator value (TIV) in order to have for each year an exact number representing efficiently how many weapons a country exported/imported. This value takes into account several factors in order to have a consistent measure to compare trades different for number of units, type of weapon ecc.
+Finally we added a removable bubble plot overlay on maps to display conflicts happened in a certain region, this data has been obtained from the website: \url{http://www.systemicpeace.org/warlist/warlist.htm} along with an alert banner containing countries with high risk of a new conflict, taken from:  \url{https://www.crisisgroup.org/crisiswatch}.  
+
 
 
 
@@ -106,7 +115,7 @@ Supplier & Recipient & Ordered & Weapon model & Weapon category & Ordered year &
 \end{tabular}}
 
 \label{tab: d1}
-\caption { \label { tab:d1} Attributes of dataset in \texttt{Trade-Register-2010-2018.csv} file.  }
+\caption { \label { tab:d1} Attributes of dataset in \texttt{Trade-Register-1990-2018.csv} file.  }
 
 \end{table*}
 \end{center}
@@ -127,7 +136,7 @@ Australia &    13  & ...   & 47   & 44   & 2    & 49   & 14   & 18   & 26   & 80
 ...       &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &      &     \\
 \hline
 
-\end{tabular}
+\end{tabular}[hbt!]
 }
 \label{tab:d2}
 
@@ -138,67 +147,98 @@ Australia &    13  & ...   & 47   & 44   & 2    & 49   & 14   & 18   & 26   & 80
 
 \end{center}
 
+\subsection{About the sources}
+More Information on the sources and methods used in SIPRI collection of the data, and explanations of the conventions, abbreviations and acronyms, can be found at: \url{https://www.sipri.org/databases/milex/sources-and-methods}.
 
-\section{Design process}
+
+\section{Design choices}
 %
 
-This was a critical part of our work in which we tried to find economic data to merge with our model, in order to relate economic value to traded weapons, and do more reasonable comparisons. The website of SIPRI talks about an economic value associated to the transaction but we discovered it is not present in each entry. Despite that the already mentioned TIV value could have been useful for this purpose in this particular dataset SIPRI didn’t included it at all. So with an expert in the field and some additional data, or with direct access to TIV values, a linear combination could solve the problem in the future.
-Then we chose to add also a barchart in the bottom panel to ease the comparison between data. Here new information are presented, for the supplier country selected by the user we chose to plot, the total number of ordered weapons on the y axis, and the year in which they have been ordered on the x axis (always in the range specified by the user).
+In this section we will discuss our design choices for the two main connected pages that compose the web app. The first is the homepage, focusing on geopolitical relations between nations while the second one is more focused on weapons market trends.
 
-To select supplier country and range of years we though first at slider but then this kind of input was left only to choose range of years and buttons were introduced where each button is the flag of the corresponding country. 
+\subsection{First page}
+Due to the nature of the data, that involve countries from all around the world and time series data, we chose to start from a map visualization.
 
-Finally we chose to add MDS analysis using a the already mentioned second dataset and using three different distance measures (1)(2)(3) to compose the dissimilarity matrix.
 
-\begin{align}
-    distance_{i,j}^{[1]} &= | d_i-d_j | \label{eq:distance 1}
-\end{align}
-\begin{align}
-    distance_{i,j}^{[2]} &= \frac{|d_i-d_j|}{(d_i+d_j)}\label{eq:distance 1}
-\end{align}
-\begin{align}
-    distance_{i,j}^{[3]} &= \frac{|d_i-d_j|}{(d_i+d_j)/2} \label{eq:distance 1}
-\end{align}
+The cloropleth maps show how much the user selected countries have exported/imported to/from other countries in a user defined range of years between 1990-2018. The cloropleth map (from Greek χῶρος "area/region" and πλῆθος "multitude") is a type of thematic map in which areas are shaded or patterned in proportion to a variable that represents an aggregate summary of a geographic characteristic within each area, such as population density or per-capita income. In this case selecting a country, the other countries with which the selected country traded with, always in the same user defined range of years of before, are colored in proportion to the amount of units delivered  to them for the export map view, while received from them for the import view.
+This was a critical part of our work in which we tried to find economic data to merge with our model, in order to relate economic value to traded weapons, and do more reasonable comparisons. The website of SIPRI talks about an economic value associated to the transaction but we discovered it is not present in each entry. Despite that the already mentioned TIV value could have been useful for this purpose in this particular dataset SIPRI didn’t included it at all. So with an expert in the field and some additional data, or with direct access to TIV values, a linear combination could solve the problem in the future. However these considerations do not invalidate the main purpose of the analysis.
+These maps along with a table showing the selected countries and some general information about them as gdp, army dimension and population (as average for the selected range of years) compose the upper part of the page while at the bottom we can see a diverging bar chart showing at the same time the total number of exported weapons and imported ones for a determined year inside the user selected range. 
+On its right we have the PCA view, where computation of PCA is made using the already mentioned datasets. PCA is able to transform a selected number of features (min. three) dimensions space into a two dimensions space, letting explore cases in which we can identify the presence of clusters. Then continuing in this direction a barchart view shows the top fifteen most delivered weapon categories for the user selected range of years. Clicking one category text is possibile to see a brief description about its characteristics but more details are contained in the second page that we will discuss later. Finally is always possible to look at filtered data inside the view containing the details about transactions.
 
+%%% Big Figure
+\begin{figure*}[ht!]
+	\centering
+	\includegraphics[scale=0.25,center]{./fig/screen1.png}
+	\label{fig:va}
+	\caption{System interface of the homepage of WarInspector.}
+	
+\end{figure*}
+
+\subsection{Second page}
+In the second page we wanted the user to be able to explore the dataset analyzing which are the most traded models and categories of weapons, with also a view on the possible trends of deliveries for a weapon model in specific ranges of years.
+To do so we inserted three visualizations on the upper part of the page that show data analytics in a top-bottom fashion from left to right, where we start from macro categories of weapons and we move to single models. The first visualization is a barchart showing the most delivered weapon categories while on the right we emphasized the density of traded weapons for each year using  a heatmap. Interacting with the heatmap lets the user access the third visualization which is a connected scatterplot showing possible trends in the deliveries of a specific weapon through the years. 
+This page is connected to the homepage by the presence of radio buttons that let the user switch from a global view of the trading of weapons to a dataset that is filtered according to the choices made on the homepage (years and countries of interest). 
+
+
+\begin{figure*}[tb]
+\centering
+\includegraphics[scale=0.25,center]{./fig/screen2.png}
+   \label{fig:va2}
+    \caption{System interface of the weapons page of WarInspector.}
+
+\end{figure*}
 
 \section{Visualization}
-\subsection{Arc map}
-The Arc map (which is the one showed on main page)shows a world map using Mercator projection object to draw states and keep proportions when a zoom or a drag on the map is applied. We chose to use an high contrast palette to make easier to see yellow arrows connecting the different states. Countries have been drawn using \textit{topojson} mesh of a local file. Then at start and every time a slider/button changes the range of years and/or the supplier country of interest, a \textit{drawArches} function is called, to remove any possible previous arc and add to the svg new d3 elements which are the arrows (a path with the coordinates of its start and end point) and the text corresponding to each transaction that is covered by the filtering. In a second moment a circle was added to make easier to distinguish the state from which the order was shipped from.
-
+All the visualizations are contained inside card-like views, some of them like the maps and PCA enable zooming and panning and the possibility to reset to the start zoom and pan state.
+Below we will discuss the main aspects of these visualizations.  
 \subsection{Cloropleth map}
-The clorepleth map uses the same method of the map presented above to draw the different states but instead of arches here we chose to color each state with different gradient of green proportional to the sum of the number of delivered units (computed using a group by and storing the result in a data structure) from the specified supplier to each state, always respecting the filtering. The range of colors, written also on the legend visible to the user, is written in (4). Several colors have been considered to be used, but green was chosen at the end for the ability of every user to see it clearly more than any other colors, but it has the drawback to give the user an implicit idea of “positive message” (whereas we are talking about war trading and in this case, possible military alliances, even with not democratic countries), but also a color like red one could have sent the opposite message (whereas not every possible alliance should be considered dangerous, e.g. with border countries or in the same continent).
+The two world maps use Mercator projection object to draw states and keep proportions when a zoom or a drag on the map is applied. We chose to use an high contrast palette to make easier to see yellow arrows connecting the different states. Countries have been drawn using \textit{topojson} mesh of a local file. Then at start and every time a slider/button changes the range of years and/or the supplier country of interest, a transition starts to fill the country with the correct color shade. In a second moment a bubble scatter was added to show conflicts happened through these years, where the radius of each circle represents the magnitude of the conflict.  
+
+Import map countries are filled with different gradients of red  color proportional to the sum of the number of delivered units (computed using a group by and storing the result in a data structure) from the specified supplier to each state, always respecting the filtering. The range of colors, shown also in the legend visible to the user, is written in (4). Several colors have been considered to be used, but green and red were chosen at the end, these two colors could express the economic nature of the transaction considering that exportations mean an economic entrance for the country (represented with green) while for importations is the opposite.
+The drawbacks could be to give the user an implicit idea of “positive message” for green (whereas we are talking about war trading and in this case, possible military alliances, even with not democratic countries), while red could send the opposite message (whereas not every possible alliance should be considered dangerous, e.g. with border countries or in the same continent) and the problem of color blind subjects. To solve the last problem we introduced two diverging and color blindness safe colors, activated on button press, where the green turns to a lighter green color and the red to pink color.
+
 \begin{align}
 	range=\{1,10,100,1000,10000,100000\}
 \end{align}
 
+\subsection{Diverging bar chart}
 
-\subsection{Bar chart}
+The bar chart view was introduced to make possible a more clear comparison and it uses the same dataset of the other two views. Initially we introduced two distinct barcharts but later we gained some space on the page collapsing the two into one single diverging barchart where the upper bars show the user the total exports for a group of countries while the lower ones show the total imports. In this way the user can immediately see  if a certain year has more imports than export or viceversa, then looking at the maps and at the right barchart investigate the locations and weapons involved. The color tones are the same used in the maps (green for exports,...) without any color scale but monotone colors.  
 
-The bar chart view was introduced to make possible a more clear comparison and it uses the same dataset of the other two views. Here 
-
-\subsection{Mds}
+\subsection{PCA}
+Using Principal component analysis we transform the coordinate space $X_s \subset R^n$ into a new one $Y_s \subset R^m$ where we know that this linear transformation preserves distances but can introduce false positives. The dimensions of sets is: $|R^n|=$ number of selected features, while $|R^m|=2$.
+A deeper study about the best hyper-parameters could be done in this direction. 
+Every point of the scatter plot is filled with a color scale that express the total number of exported/imported delivered units for a country.
 
 \section{Interaction}
-User can interact with both views (V1,V2 on \textit{Figure 1}) that are coordinated, acting on buttons (I2 on \textit{Figure 1}) to select the country he wants to choose as the supplier of transaction and on slider to choose the years between which the transactions happened (I2 on \textit{Figure 1}). Also, a $<$select$>$ HTML element is present on top of the page (I1 on \textit{Figure 1}), clicking it will display a two elements drop-down list to choose between arc map and cloropleth map. Other possible interactions for the user are  to act on both maps using the mouse, dragging (moving while click down) to move and zooming (using the mouse wheel) in or out. 
+User can interact with all the views 
+% (V1,V2 on \textit{Figure 1}) 
+that are coordinated, acting both on the plots elements (bar for barplots and country surface for the maps,...) for the countries he wants to select and on the slider to choose the years between which the transactions happened.
+%(I2 on \textit{Figure 1})
+Also, a $<$select$>$ HTML element is present in both the pages on the top right corner of the page to select or deselect a country from a list showing the respective flag and name. Other possible interactions for the user are to act on both maps using the mouse, dragging (moving while click down) to move and zooming (using the mouse wheel) in or out. 
 
+The top right corner is dedicated to buttons, here we have the
+button guaranteeing the aforementioned possibility to switch the colors of the views to color blindness safe ones. Then we have a button to display the country considered at risks in the reference month and the button that redirects to the second page (focused on weapons) passing as parameters the features that can be used as filters.
+For this purpose in the top middle portion of the screen the second page the possibility to filter or filter out the dataset using the passed parameters through the use of radio buttons.
 
 
 \section{Discussion}
 
 This section discusses the implications and limitations of our work and some design lessons we learned.
 \subsection{Implications}
-To the best of our knowledge, WarMonopoly is the first visual analytics interactive system that efficiently incorporates  global data of world arms trading. The availability of WarMonopoly together with some improvements and further SIPRI data could 
-significantly promotes the exploration of global military trading in order to increase trasparency in this field and show possible alliances that should move public opinion. 
+To the best of our knowledge, WarInspector is the first visual analytics interactive system that efficiently incorporates  global data of world arms trading. The availability of WarMonopoly together with some improvements and further SIPRI data could 
+significantly promotes the exploration of global military trading in order to increase transparency in this field and show possible historical conclusion that could move public opinion, revealing unsuspected influences of external countries in a conflict and maybe even predict some future events. 
 
 \subsection{Limitations}
 
-Some limitations are observed in our work. First, data found on SIPRI can be considered highly accurate but it is missing data from some countries (e.g. North Korea) that are unavailable for different reasons or deliberately distorted data. Second, MDS analysis uses rough distance measures that could show some patterns when big countries (e.g United States) stand out as expected but could not  give room to deeper analysis.
-Third, as already mentioned in our work we sum up number of delivered units without considering the value of the units (e.g. hundreds of portable radio equipment is worth much less than one single fighter jet). This could lead easily, especially comparing low number exporter/importer to false considerations. However should be considered how just a simple economic analisys and report about the economic value of a weapon model or category could significantly improve the results.
+Some limitations are observed in our work. First, data found on SIPRI is considered highly accurate but it is naturally missing data from some countries (e.g. North Korea) that are unavailable for different reasons or distorted deliberately. Then PCA analysis uses rough distance measures that could show some patterns when big countries (e.g United States) stand out as expected but could not give enough room to deeper analysis.
+As already mentioned in our work we sum up number of delivered units without considering the value of the units (e.g. hundreds of portable radio equipment is worth much less than one single fighter jet). This could lead easily, especially comparing low number exporter/importer, to false considerations. However it should be considered how just a simple economic analysis and report about the economic values of a weapon model or category could significantly improve the results.
 
 
 
 
 \section{Conclusion}
-Through the development of this project we learned more about the considerations and design choices that take place when working on a visual analitycs but also we faced the importance of a well formatted data to make comparisons and analysis easier and more reasonable.
+Through the development of this project we learned more about the considerations and design choices that take place when working on a visual analitycs project but also we faced the importance of a well formatted data to make comparisons and analysis easier and more reasonable.
 
 \end{multicols}
 
