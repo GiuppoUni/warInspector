@@ -29,7 +29,7 @@ var wea_bar = function() {
         })
 
     document.body.onload = function() {
-        txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+        txt = $("#" + chosen_category.replace(" ", "_").replace("/", "_") + "_desc").text()
         $("#weapon_description").html(txt)
         d3.select("#weapon_desc_head").text("Weapon description: ")
             .append("span")
@@ -160,7 +160,7 @@ var wea_bar = function() {
                 .text("\u00A0" + chosen_category).style("color", "orange")
             $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
 
-            txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+            txt = $("#" + chosen_category.replace(" ", "_").replace("/", "_") + "_desc").text()
             if (txt == "" || txt == null || txt == undefined)
                 txt = "Not available at the moment."
             $("#weapon_description").html(txt)
@@ -181,7 +181,7 @@ var wea_bar = function() {
                 .enter()
                 .append("rect")
                 .attr("class", "bar-rect")
-                .attr("id", d => "bar-" + d.key)
+                .attr("id", d => "bar-" + d.key.replace(" ", "-").replace("/", "-"))
                 .attr("x", function(d) {
                     return x(d.key);
                 })
@@ -231,7 +231,7 @@ var wea_bar = function() {
                                 return "white"
 
                         })
-                    txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+                    txt = $("#" + chosen_category.replace(" ", "_").replace("/", "_") + "_desc").text()
                     if (txt == "" || txt == null || txt == undefined)
                         txt = "Not available at the moment."
                     $("#weapon_description").html(txt)
@@ -338,8 +338,10 @@ var wea_bar = function() {
                 return x(d.key);
             })
             .attr("width", x.bandwidth())
-            .attr("fill", dd => {
+            .style("fill", dd => {
                 if (dd.key == orderedWeapons[0].key) {
+                    console.log("filling", orderedWeapons[0], dd)
+
                     return "orange"
                 } else
                     return "#69b3a2"
@@ -368,6 +370,40 @@ var wea_bar = function() {
             .attr("transform", "translate(-10,0)rotate(-60)")
             .style("text-anchor", "end")
 
+        svg.selectAll(".tick")
+            .select('g > text')
+            .style("fill", function() {
+                if (d3.select(this).text() == chosen_category)
+                    return "orange"
+                else
+                    return "white"
+            })
+            .on('mouseover', function(d) {
+                // console.log(this)
+
+                mouseOverText(this)
+                    // .style("fill", "orange");
+
+                imageTip.show(d)
+            })
+            .on('mouseout', function(d) {
+
+                mouseOutText(this, d)
+            })
+            .on("click", function() {
+                //alert("click")
+                clickText(this)
+            })
+
+        svg.selectAll(".tick")
+            .select('g > line')
+            .style("stroke", function() {
+                if (d3.select(this).text() == chosen_category)
+                    return "orange"
+                else
+                    return "white"
+            })
+
     }
 
 
@@ -376,14 +412,15 @@ var wea_bar = function() {
 
         svg.selectAll(".tick")
             .filter(function() {
-                return d3.select(questo).text() == chosen_category
+                console.log(chosen_category)
+                return d3.select(questo).text() != chosen_category
             })
             .select('g > text')
             .style("fill", "white")
 
         svg.selectAll(".tick")
             .filter(function() {
-                return d3.select(questo).text() == chosen_category
+                return d3.select(questo).text() != chosen_category
             })
             .select('g > line')
             .style("stroke", "white")
@@ -397,12 +434,12 @@ var wea_bar = function() {
             //drawScatter()
         d3.selectAll(".bar-rect").style("fill", "#69b3a2")
 
-        svg.select("#bar-" + chosen_category).style("fill", "orange")
+        svg.select("#bar-" + chosen_category.replace(" ", "-").replace("/", "-")).style("fill", "orange")
         wc.heatmapTransition()
         console.log("Plot recomputed")
 
         console.log(chosen_category)
-        txt = $("#" + chosen_category.replace(" ", "_") + "_desc").text()
+        txt = $("#" + chosen_category.replace(" ", "_").replace("/", "_") + "_desc").text()
         if (txt == "" || txt == null || txt == undefined)
             txt = "Not available at the moment."
         $("#weapon_description").html(txt)

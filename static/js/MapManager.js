@@ -991,6 +991,13 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             .enter()
             .append("circle") // Add a new circle for each new elements
             // .merge(u) // get the already existing elements as well
+            .on('mouseover', function(d) {
+                // console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag),
+                //     d.lon, d.lat, projection([d.lon, d.lat])[0], projection([d.lon, d.lat])[1], d3v4.select(this).attr("cx"))
+                // d3v4.select(this).attr("r", zz(d.mag))
+                tipConflict.show(d)
+            })
+            .on('mouseout', tipConflict.hide)
             .transition()
             .duration(1000)
             .attr("transform", svgTransform)
@@ -1023,6 +1030,13 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
         u2.enter()
             .append("circle") // Add a new circle for each new element
             // .merge(u2) // get the already existing elements as well
+            .on('mouseover', function(d) {
+                // console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag),
+                //     d.lon, d.lat, projection([d.lon, d.lat])[0], projection([d.lon, d.lat])[1], d3v4.select(this).attr("cx"))
+                // d3v4.select(this).attr("r", zz(d.mag))
+                tipConflict.show(d)
+            })
+            .on('mouseout', tipConflict.hide)
             .transition()
             .duration(1000)
             .attr("class", "war-dot imp")
@@ -1064,6 +1078,9 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             .style("fill", "white")
             .style("stroke", "black")
             .style("opacity", .5)
+
+        svg.call(tipConflict);
+        svg2.call(tipConflict);
 
         svg.transition()
             .duration(1000)
@@ -1138,6 +1155,10 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             .style("opacity", 0)
             .remove()
 
+        svg.call(tipConflict);
+        svg2.call(tipConflict);
+
+
         // u
         //     .attr("cx", function(d) { return projection([d.lon, d.lat])[0] })
         //     .attr("cy", function(d) { return projection([d.lon, d.lat])[1] })
@@ -1145,14 +1166,14 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
 
 
 
-        d3v4.selectAll(".war-dot")
-            .on('mouseover', function(d) {
-                // console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag),
-                //     d.lon, d.lat, projection([d.lon, d.lat])[0], projection([d.lon, d.lat])[1], d3v4.select(this).attr("cx"))
-                // d3v4.select(this).attr("r", zz(d.mag))
-                tipConflict.show(d)
-            })
-            .on('mouseout', tipConflict.hide)
+        // d3v4.selectAll(".war-dot")
+        //     .on('mouseover', function(d) {
+        //         // console.log(d3v4.select(this).attr("r"), d.mag, zz(d.mag),
+        //         //     d.lon, d.lat, projection([d.lon, d.lat])[0], projection([d.lon, d.lat])[1], d3v4.select(this).attr("cx"))
+        //         // d3v4.select(this).attr("r", zz(d.mag))
+        //         tipConflict.show(d)
+        //     })
+        //     .on('mouseout', tipConflict.hide)
 
 
         svg.transition()

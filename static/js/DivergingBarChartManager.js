@@ -53,14 +53,14 @@ var DivergingBarChartManager = function() {
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var tipExp = d3v4.tip()
-        .attr('class', 'd3-tip')
+        .attr('class', 'd3-tip2')
         .offset([-10, 0])
         .html(function(d) {
             return '<strong>Exported: ' + d.value["totalS"] + '</strong>'
         })
 
     var tipImp = d3v4.tip()
-        .attr('class', 'd3-tip')
+        .attr('class', 'd3-tip2')
         .offset([-10, 0])
         .html(function(d) {
             return '<strong>Imported: ' + d.value["totalR"] + '</strong>';
@@ -534,6 +534,8 @@ var DivergingBarChartManager = function() {
                 .data(d3v4.entries(data_structure))
 
             u.enter().append("rect")
+                .on('mouseover', d => tipExp.show(d))
+                .on('mouseout', tipExp.hide)
                 .merge(u)
                 .transition()
                 .duration(2000)
@@ -568,6 +570,8 @@ var DivergingBarChartManager = function() {
             u2
                 .enter()
                 .append("rect")
+                .on('mouseover', d => tipImp.show(d))
+                .on('mouseout', tipImp.hide)
                 .merge(u2)
                 .transition()
                 .duration(2000)
@@ -604,71 +608,81 @@ var DivergingBarChartManager = function() {
             console.log("d", data_structure)
 
 
+
+
+            svg.selectAll(".div-bars-imp").filter("rect")
+                .on('mouseover', d => tipImp.show(d))
+                .on('mouseout', tipImp.hide)
+
+            svg.call(tipExp);
+
+            svg.call(tipImp);
+
             // _callback()
         }
 
         function drawSelBars() {
 
-            var selExpTip = d3v4.tip()
-                .attr('class', 'd3-tip')
-                .offset([-10, 0])
-                .html(function(d) {
-                    return '<strong>' + d.key + ": " + d.value["exp"] + '</strong>'
-                })
-            svg.call(selExpTip);
+            // var selExpTip = d3v4.tip()
+            //     .attr('class', 'd3-tip')
+            //     .offset([-10, 0])
+            //     .html(function(d) {
+            //         return '<strong>' + d.key + ": " + d.value["exp"] + '</strong>'
+            //     })
+            // svg.call(selExpTip);
 
-            console.log("drawing sel bars")
-            d3v4.entries(data_structure).forEach(
+            // console.log("drawing sel bars")
+            // d3v4.entries(data_structure).forEach(
 
-                function(bar) {
-                    // Year locked
-                    year = bar.key
-                    var base = 0
-                    var i = 0
-                    d3v4.entries(bar.value).forEach(function(d) {
-                        if (d.key[0] == d.key[0].toUpperCase()) { // Allora è un paese tipo ITA
-                            console.log(year, d)
-                            var emptyBar = emptyBars.selectAll("mySelBar")
-                                .data([d])
-                                .enter()
-                                .append("rect")
-                                .attr("class", "div-sel-bars-exp")
-                                .attr("y", function(dd) {
-                                    return y(dd.value["exp"])
-                                })
-                                .attr("height", function(dd) {
-                                    // if (base != 0) {
-                                    //     base = height / 2 - (y(dd.value["exp"]))
-                                    //     return 0;
-                                    // }
-                                    var h = height / 2 - (y(dd.value["exp"]) + base);
-                                    base = h
-                                    console.log("SEL COL", i, dd, h)
-                                    return h;
-                                })
-                                .attr("x", x(year))
-                                .attr("width", x.bandwidth())
+            //     function(bar) {
+            //         // Year locked
+            //         year = bar.key
+            //         var base = 0
+            //         var i = 0
+            //         d3v4.entries(bar.value).forEach(function(d) {
+            //             if (d.key[0] == d.key[0].toUpperCase()) { // Allora è un paese tipo ITA
+            //                 console.log(year, d)
+            //                 var emptyBar = emptyBars.selectAll("mySelBar")
+            //                     .data([d])
+            //                     .enter()
+            //                     .append("rect")
+            //                     .attr("class", "div-sel-bars-exp")
+            //                     .attr("y", function(dd) {
+            //                         return y(dd.value["exp"])
+            //                     })
+            //                     .attr("height", function(dd) {
+            //                         // if (base != 0) {
+            //                         //     base = height / 2 - (y(dd.value["exp"]))
+            //                         //     return 0;
+            //                         // }
+            //                         var h = height / 2 - (y(dd.value["exp"]) + base);
+            //                         base = h
+            //                         console.log("SEL COL", i, dd, h)
+            //                         return h;
+            //                     })
+            //                     .attr("x", x(year))
+            //                     .attr("width", x.bandwidth())
 
-                            .style("fill", my_colors[i % 3])
-                                .style("opacity", 0.5)
-                                .style("stroke", "black")
-                                // .style("stroke-dasharray", 2.5)
+            //                 .style("fill", my_colors[i % 3])
+            //                     .style("opacity", 0.5)
+            //                     .style("stroke", "black")
+            //                     // .style("stroke-dasharray", 2.5)
 
-                            emptyBar
-                                .on('mouseover', d => selExpTip.show(d))
-                                .on('mouseout', selExpTip.hide)
-                            i++;
-                        }
+            //                 emptyBar
+            //                     .on('mouseover', d => selExpTip.show(d))
+            //                     .on('mouseout', selExpTip.hide)
+            //                 i++;
+            //             }
 
-                    })
+            //         })
 
-                })
+            //     })
 
-            d3v4.selectAll(".div-bars-imp")
-                .style("pointer-events", "none")
+            // d3v4.selectAll(".div-bars-imp")
+            //     .style("pointer-events", "none")
 
-            d3v4.selectAll(".div-bars-exp")
-                .style("pointer-events", "none")
+            // d3v4.selectAll(".div-bars-exp")
+            //     .style("pointer-events", "none")
 
         }
 
