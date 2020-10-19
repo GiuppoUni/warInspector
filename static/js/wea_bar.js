@@ -339,8 +339,8 @@ var wea_bar = function() {
             })
             .attr("width", x.bandwidth())
             .style("fill", dd => {
-                if (dd.key == orderedWeapons[0].key) {
-                    console.log("filling", orderedWeapons[0], dd)
+                if (dd.key == local_ordered[0].key) {
+                    console.log("filling", local_ordered[0], dd)
 
                     return "orange"
                 } else
