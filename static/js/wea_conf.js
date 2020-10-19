@@ -152,7 +152,7 @@ var wea_conf = function() {
                 .style("text-anchor", "end");
 
             savedGrouped = groupedModels
-            console.log("ff,", groupedModels)
+                // console.log("ff,", groupedModels)
 
             instant_chosen_model(modelList[0])
 
@@ -221,7 +221,7 @@ var wea_conf = function() {
                 .call(d3.axisLeft(y));
 
 
-            console.log("gggg", groupedModels)
+            // console.log("gggg", groupedModels)
             svg2.selectAll()
                 .data(groupedModels)
                 .enter()
@@ -452,7 +452,7 @@ var wea_conf = function() {
             .attr("width", x.bandwidth())
             .attr("height", y.bandwidth())
             .style("fill", function(d) {
-                console.log("asd", parseInt(d.value))
+                // console.log("asd", parseInt(d.value))
                 return myColor(parseInt(d.value))
             })
 

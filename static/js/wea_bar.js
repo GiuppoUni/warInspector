@@ -302,7 +302,7 @@ var wea_bar = function() {
 
 
         }
-        console.log("=>", local_ordered)
+        // console.log("=>", local_ordered)
         x.range([0, width])
             .domain(local_ordered.map(function(d) {
                 return d.key;

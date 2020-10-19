@@ -162,7 +162,7 @@ var MapManager = function() {
 
             savedWars = allWars
             wars = allWars.filter(d => filterWar(d)).filter(d => parseInt(d.mag) <= selectedCircle);
-            console.log("ready -> wars", wars)
+            // console.log("ready -> wars", wars)
 
             // const max_from_grouped = Math.max.apply(Math, grouped.map(function(o) { return o.value; }))
 
