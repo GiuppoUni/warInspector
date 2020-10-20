@@ -18,6 +18,8 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 
 import json
 
+from operator import itemgetter
+
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
@@ -351,7 +353,9 @@ def pcaMain(year1=2016,year2=2019,countries=["ITA"],features = ['IMPORT_TOTAL',"
         +list(zip(pc1Sel,pc2Sel,namesSel,namesSel2,selected_labels,impSel,expSel))]
 
     data_imp = pca_plot(df_mrgd)
-
+    # print("data_imp",data_imp)
+    data_imp = [sorted( data_imp[0], key=itemgetter(2))]
+    print("data_imp",data_imp)
     return data_imp
 
 

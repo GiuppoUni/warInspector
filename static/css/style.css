@@ -1287,12 +1287,11 @@ Charts
         bottom: 0;
         width: 100%;
     }
-    
-    .line {
+    /* .line {
         fill: none;
         stroke: steelblue;
         stroke-width: 2px;
-    }
+    } */
     
     .grid line {
         stroke: lightgrey;

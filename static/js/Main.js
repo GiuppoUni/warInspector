@@ -15,7 +15,7 @@ const allCountriesAlpha3 = ['', 'ZZZ', 'ZZZ', 'ZZZ', 'ZYY', 'ZXY', 'ZXX', 'ZYX',
 const risky = []
 var years = [2016, 2018];
 var selected_group = ["ITA"]
-var pca_features = ['IMPORT_TOTAL', "EXPORT_TOTAL", 'ARMY_TOTAL', 'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
+var pca_features = ['IMPORT_TOTAL', 'ARMY_TOTAL', 'REF_TOTAL', 'GDP_TOTAL', 'POP_TOTAL']
 
 var synchro_mode = true
 
@@ -191,6 +191,8 @@ $('.selectpicker').on('change', function() {
 
 
 function getDataFromPost(isCreated) {
+
+    // d3v4.selectAll(".pca-dots").each(d => pcam.selectCountryTransition(d[2], false))
     url = "/get-data"
         // url+="?country="+country_selected
         // url+="&year1="+years[0]+"&year2="+years[1]
@@ -237,10 +239,10 @@ function getDataFromPost(isCreated) {
                 $(".lds-facebook").fadeOut()
                 if (!isCreated) {
                     pcam.drawChart(root[3][0], "IMP")
-                    isCreated = true
                 }
                 // console.log("calling pca")
                 pcam.transition(root[3][0])
+                    // console.log(root[3][0])
                 pcam.resetZoom()
                     // pcam.drawBasicChart(root[3], "IMP")
                     // pcam.drawBasicChart(root[4], "EXP")
@@ -361,16 +363,18 @@ function handleClick(cb) {
     checkMinFeaturesPCA()
 }
 
-function handleRadioClick(rb) {
-    if (rb.id = "cbImp") {
+function handleRadioClick(rb, type) {
+    var toRemove;
+    if (rb.id == "cbImp") {
         toRemove = "EXPORT_TOTAL"
 
-    } else if (rb.id = "cbExp") {
+    } else if (rb.id == "cbExp") {
         toRemove = "IMPORT_TOTAL"
     } else {
         throw Error
     }
-    // REMOVE THE OTHER
+    console.log("to", toRemove)
+        // REMOVE THE OTHER
     const index = pca_features.indexOf(toRemove);
     if (index > -1) {
         pca_features.splice(index, 1);

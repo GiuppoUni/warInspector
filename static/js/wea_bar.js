@@ -102,26 +102,9 @@ var wea_bar = function() {
 
             svg.call(imageTip);
 
-            svg.selectAll(".tick")
-                .on('mouseover', function(d) {
-                    // console.log(this)
-
-                    d3.select(this).style("font-size", "20px")
-                    d3.select(this).select('g > line')
-                        .style("stroke", "rgba(17,222,222,1)");
-                    d3.select(this).select('g > text')
-                        .style("fill", "rgba(17,222,222,1)");
-                    // .style("fill", "orange");
-
-                })
-                .on('mouseout', function(d) {
-                    d3.select(this).style("font-size", "11px")
-                    d3.select(this).select('g > line').style("stroke", "white");
-
-                    d3.select(this).select('g > text').style("fill", "white");
-                })
 
             svg.select("#x-bar-axis").selectAll(".tick")
+                .select("g > text")
                 .on('mouseover', function(d) {
                     // console.log(this)
 
@@ -148,11 +131,10 @@ var wea_bar = function() {
 
             svg.call(tip);
 
-            svg.selectAll(".tick")
+            svg.selectAll(".tick").select("g > text")
                 .filter(function() {
                     return d3.select(this).text() == chosen_category
                 })
-                .select('g > text')
                 .style("fill", "orange")
 
             d3.select("#scatter_title").text("Models in category: ")
@@ -411,27 +393,30 @@ var wea_bar = function() {
     function clickText(questo) {
 
         svg.selectAll(".tick")
-            .filter(function() {
-                return d3.select(questo).text() != chosen_category
-            })
-            .select('g > text')
+
+        .select('g > text')
             .style("fill", "white")
 
         svg.selectAll(".tick")
-            .filter(function() {
-                return d3.select(questo).text() != chosen_category
-            })
-            .select('g > line')
+
+        .select('g > line')
             .style("stroke", "white")
 
+        d3.selectAll(".bar-rect").style("fill", "#69b3a2")
         chosen_category = d3.select(questo).text()
+
+        d3.select(questo).style("fill", "orange")
+            // console.log(svg.select(questo))
+            // svg.select(questo.parentNode)
+            //     .select('g > line')
+            //     .style("stroke", "orange")
+
 
         d3.select("#scatter_title").text("Models in category: ")
             .append("span")
             .text("\u00A0" + chosen_category).style("color", "orange")
             // d3.select("#scatter_svg").remove()
             //drawScatter()
-        d3.selectAll(".bar-rect").style("fill", "#69b3a2")
 
         d3.select("#bar-" + chosen_category.replace(/ /g, "_").replace(/\//g, "_")).style("fill", "orange")
         wc.heatmapTransition()
@@ -451,10 +436,10 @@ var wea_bar = function() {
     function mouseOverText(questo) {
         d3.select(questo).style("font-size", "20px")
         if (d3.select(questo).text() != chosen_category) {
-            d3.select(questo).select('g > line')
+            d3.select(questo.parentNode).select('g > line')
                 .style("stroke", "rgba(17,222,222,1)");
 
-            d3.select(questo).select('g > text')
+            d3.select(questo)
                 .style("fill", "rgba(17,222,222,1)");
         }
     }
@@ -464,10 +449,10 @@ var wea_bar = function() {
         d3.select(questo).style("font-size", "14px")
         if (d3.select(questo).text() != chosen_category) {
             d3.select(questo).select('g > line').style("stroke", "white");
-            d3.select(questo).select('g > text').style("fill", "white");
+            d3.select(questo).style("fill", "white");
         } else {
-            d3.select(questo).select('g > line').style("stroke", "orange");
-            d3.select(questo).select('g > text').style("fill", "orange");
+            d3.select(questo.parentNode).select('g > line').style("stroke", "orange");
+            d3.select(questo).style("fill", "orange");
         }
         imageTip.hide(d)
     }

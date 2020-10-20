@@ -3,18 +3,18 @@ var PcaScatterManager = function() {
     var firstTimeDot = true;
 
 
-    var margin = { top: 10, right: 10, bottom: 44, left: 10 },
+    var margin = { top: 20, right: 10, bottom: 44, left: 25 },
         width = 400 - margin.left - margin.right,
         height = 290 - margin.top - margin.bottom;
 
     var greenColorScale = d3v4.scaleThreshold()
-        .domain([1, 10, 100, 1000, 10000, 100000])
+        .domain([0, 10, 100, 1000, 10000, 100000])
         .range(colorsExport)
     var greenLabels = ['>=	 1', ">= 10", ">= 100", ">= 1000", ">= 10000", ">= 100000"];
 
 
     var redColorScale = d3v4.scaleThreshold()
-        .domain([1, 10, 100, 500, 2000, 4000])
+        .domain([0, 10, 100, 500, 2000, 4000])
         .range(colorsImport)
     var redLabels = ['>=	 1', ">= 10", ">= 100", ">= 500", ">= 2000", ">= 4000"];
 
@@ -30,6 +30,7 @@ var PcaScatterManager = function() {
     var zoom;
 
     var x = d3v4.scaleLinear()
+        .domain([-1.5, 3.0])
         .range([0, width]);
 
     var y = d3v4.scaleLinear()
@@ -41,6 +42,22 @@ var PcaScatterManager = function() {
 
     var squareLegend;
 
+    var svgTransform;
+
+    var tip = d3v4.tip()
+        .attr('class', 'd3-tip2')
+        .offset([-10, 0])
+        .html(function(d) {
+
+            s = '<div style="text-align:center"> <strong >' + d[3] + '</strong> </div>'
+
+            if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
+                s += "<br> <h6> Imported (TIV): " + d[5] + "</h6>"
+            else
+                s += "<br> <h6> Exported (TIV): " + d[6] + "</h6>"
+            return s
+        })
+
     var drawChart = function(dataset, type) {
         // if (dataset == null) {
         //     $("#pca-svg").remove()
@@ -50,10 +67,6 @@ var PcaScatterManager = function() {
         // id = "#pca-col"
         //     // set the dimensions and margins of the graph
 
-
-        svg.append("g")
-            .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")")
 
         // Pan and zoom
         zoom = d3v4.zoom()
@@ -81,16 +94,18 @@ var PcaScatterManager = function() {
         var xAxis = d3v4.axisBottom(x)
         var gX = svg.append("g")
             .attr("class", "myXaxis") // Note that here we give a class to the X axis, to be able to call it later and modify it
-            .attr("transform", "translate(0," + height + ")")
+            .attr("transform", "translate(" + (margin.left) + "," + height + ")")
             .call(xAxis)
-            .attr("opacity", "0")
 
         // Add Y axis
 
 
         var yAxis = d3v4.axisLeft(y)
         var gY = svg.append("g")
-            .call(yAxis);
+            .attr("transform", "translate(" + (margin.left) + ",0)")
+            .attr("class", "myXaxis")
+            .attr("id", "pca-y-axis")
+            .call(yAxis)
 
         // Add dots
         var scatter = svg.append('g')
@@ -133,26 +148,12 @@ var PcaScatterManager = function() {
             callSelected(d[2])
         })
 
-        var tip = d3v4.tip()
-            .attr('class', 'd3-tip2')
-            .offset([-10, 0])
-            .html(function(d) {
-
-                return '<strong>' + d[3] + '</strong>';
-            })
-        svg.call(tip);
 
         d3v4.selectAll(".pca-dots")
-            .on('mouseover', d => tip.show(d))
+            .on('mouseover', function(d) { tip.show(d) })
             .on('mouseout', tip.hide)
 
-        // new X axis
-        x.domain([-2, 13])
-        svg.select(".myXaxis")
-            // .transition()
-            // .duration(2000)
-            .attr("opacity", "1")
-            .call(d3v4.axisBottom(x));
+        svg.call(tip);
 
 
         // svg.append("text")
@@ -277,79 +278,31 @@ var PcaScatterManager = function() {
             // update axes
             gX.call(xAxis.scale(new_xScale));
             gY.call(yAxis.scale(new_yScale));
-            scatter.data(dataset)
-
-            .attr('cx', function(d) { return new_xScale(d[0]) })
+            svg.selectAll(".pca-dots")
+                // .transition()
+                // .duration(50)
+                .attr('cx', function(d) { return new_xScale(d[0]) })
                 .attr('cy', function(d) { return new_yScale(d[1]) });
         }
     }
 
 
-    // function drawBasicChart(data, type) {
-    //     id = ""
-    //     if (type === "IMP")
-    //         id = "#pca-test"
-    //     else if (type === "EXP")
-    //         id = "#pca-export-col"
-    //     else
-    //         alert("ERROR from post")
-
-    //     // set the dimensions and margins of the graph
-    //     var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-    //         width = 460 - margin.left - margin.right,
-    //         height = 400 - margin.top - margin.bottom;
-
-    //     // append the svg object to the body of the page
-    //     var svg = d3v4.select("#my_dataviz")
-    //         .append("svg")
-    //         .attr("width", width + margin.left + margin.right)
-    //         .attr("height", height + margin.top + margin.bottom)
-    //         .append("g")
-    //         .attr("transform",
-    //             "translate(" + margin.left + "," + margin.top + ")");
-
-
-    //     // Add X axis
-    //     var x = d3v4.scaleLinear()
-    //         .domain([-1, 1])
-    //         .range([0, width]);
-    //     var xAxis = d3v4.axisBottom(x)
-    //     var gX = svg.append("g")
-    //         .attr("transform", "translate(0," + height + ")")
-    //         .call(xAxis);
-
-    //     // Add Y axis
-    //     var y = d3v4.scaleLinear()
-    //         .domain([-1, 1])
-    //         .range([height, 0]);
-    //     var yAxis = d3v4.axisLeft(y)
-    //     var gY = svg.append("g")
-    //         .call(yAxis);
-
-    //     // Add dots
-    //     svg.append('g')
-    //         .selectAll("dot")
-    //         .data(data)
-    //         .enter()
-    //         .append("circle")
-    //         .attr("cx", function(d) { return x(d[0]); })
-    //         .attr("cy", function(d) {
-    //             return y(d[1]);
-    //         })
-    //         .attr("r", 3)
-    //         .style("fill", type === "IMP" ? "#d00101" : "#009344")
-    //         .style("stroke", "black")
-
-
-
-    // }
+    /**********************
+     *      //     _      *
+     * //     TRANSITIONS *
+     *        // _        *
+     **********************/
 
     var transition = function(data) {
+        console.log("transitioning")
+
         greenColorScale.range(colorsExport)
         redColorScale.range(colorsImport)
 
         svg.selectAll(".pca-dots")
             .data(data)
+            .on('mouseover', d => tip.show(d))
+            .on('mouseout', tip.hide)
             .transition()
             .duration(2000)
             .style("fill", function(d) {
@@ -368,13 +321,13 @@ var PcaScatterManager = function() {
             })
             .style("stroke", function(d) {
 
-                if (d[4])
-                    return "#f6ff00"
-                else
+                if (d[4]) {
+                    // console.log(d3v4.select(this), d, true)
+                    // pulse(d3v4.select("#dot-" + d[2]), true)
+                    return "black"
+                } else
                     return "black"
             })
-
-        .duration(2000)
             // .delay(function(d, i) { return (i * 3) })
             .attr("cx", function(d) {
                 return new_xScale(d[0]);
@@ -416,7 +369,12 @@ var PcaScatterManager = function() {
             })
 
         d3v4.selectAll(".pca-dots")
-            .each(function(d) { if (d[4]) pulse(d3v4.select(this), true) })
+            .each(function(d) {
+                if (d[4]) {
+                    console.log("->", d, d[4])
+                    selectCountryTransition(d[2], true)
+                }
+            })
 
 
         if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
@@ -424,6 +382,12 @@ var PcaScatterManager = function() {
 
         else if ($(":radio[value='EXPORT_TOTAL']").prop("checked"))
             legendTransition("exp")
+
+
+        // svg.call(tip)
+
+
+        svg.call(tip);
 
     }
 
@@ -456,7 +420,7 @@ var PcaScatterManager = function() {
                 })
                 .attr("r", 4.5)
 
-            pulse(svg.select("#dot-" + country_id));
+            pulse(svg.select("#dot-" + country_id), true);
         } else {
             svg.select("#dot-" + country_id)
                 .classed("dot-selected", false)
@@ -468,15 +432,17 @@ var PcaScatterManager = function() {
         }
     }
 
+
+
     function pulse(circle, isStarted = false) {
-        (function repeat() {
+        console.log("pulsing", circle);
+
+        function repeat() {
             if (circle.classed("dot-selected") || isStarted) {
                 if (isStarted) {
                     circle.classed("dot-selected", true)
-                    isStarted = false
+                    isStarted = false //to do just first time
                     circle
-                        .transition()
-                        .duration(2000)
                         .style("fill", function(d) {
                             // console.log(d[4])
                             if ($(":radio[value='IMPORT_TOTAL']").prop("checked"))
@@ -499,9 +465,8 @@ var PcaScatterManager = function() {
                                 return "black"
                         })
 
-                    .duration(2000)
-                        // .delay(function(d, i) { return (i * 3) })
-                        .attr("cx", function(d) {
+                    // .delay(function(d, i) { return (i * 3) })
+                    .attr("cx", function(d) {
                             return new_xScale(d[0]);
                         })
                         .attr("cy", function(d) {
@@ -536,7 +501,9 @@ var PcaScatterManager = function() {
                     .style("stroke-width", 1)
                     .attr("r", 3.0)
             }
-        })();
+        }
+
+        repeat();
     }
 
     function legendTransition(type) {
