@@ -29,7 +29,7 @@ var wea_bar = function() {
         })
 
     document.body.onload = function() {
-        txt = $("#" + chosen_category.replace(" ", "_").replace("/", "_") + "_desc").text()
+        txt = $("#" + chosen_category.replace(/ /g, "_").replace(/\//g, "_") + "_desc").text()
         $("#weapon_description").html(txt)
         d3.select("#weapon_desc_head").text("Weapon description: ")
             .append("span")
@@ -139,7 +139,7 @@ var wea_bar = function() {
                     clickText(this)
                 })
             var tip = d3.tip()
-                .attr('class', 'd3-tip')
+                .attr('class', 'd3-tip2')
                 .offset([-10, 0])
                 .html(function(d) {
                     return "<strong>Ordered:</strong> <span style='color:red'>" + d.value + "</span>";
@@ -160,7 +160,7 @@ var wea_bar = function() {
                 .text("\u00A0" + chosen_category).style("color", "orange")
             $("#barchart_title").html("Weapons requests by top " + NUM_CATEGORIES + " categories")
 
-            txt = $("#" + chosen_category.replace(" ", "_").replace("/", "_") + "_desc").text()
+            txt = $("#" + chosen_category.replace(/ /g, "_").replace(/\//g, "_") + "_desc").text()
             if (txt == "" || txt == null || txt == undefined)
                 txt = "Not available at the moment."
             $("#weapon_description").html(txt)
@@ -181,7 +181,7 @@ var wea_bar = function() {
                 .enter()
                 .append("rect")
                 .attr("class", "bar-rect")
-                .attr("id", d => "bar-" + d.key.replace(" ", "-").replace("/", "-"))
+                .attr("id", d => "bar-" + d.key.replace(/ /g, "_").replace(/\//g, "_"))
                 .attr("x", function(d) {
                     return x(d.key);
                 })
@@ -231,7 +231,7 @@ var wea_bar = function() {
                                 return "white"
 
                         })
-                    txt = $("#" + chosen_category.replace(" ", "_").replace("/", "_") + "_desc").text()
+                    txt = $("#" + chosen_category.replace(/ /g, "_").replace(/\//g, "_") + "_desc").text()
                     if (txt == "" || txt == null || txt == undefined)
                         txt = "Not available at the moment."
                     $("#weapon_description").html(txt)
@@ -333,7 +333,7 @@ var wea_bar = function() {
             .delay(100)
             .duration(1000)
             .attr("class", "bar-rect")
-            .attr("id", d => "bar-" + d.key)
+            .attr("id", d => "bar-" + d.key.replace(/ /g, "_").replace(/\//g, "_"))
             .attr("x", function(d) {
                 return x(d.key);
             })
@@ -412,7 +412,6 @@ var wea_bar = function() {
 
         svg.selectAll(".tick")
             .filter(function() {
-                console.log(chosen_category)
                 return d3.select(questo).text() != chosen_category
             })
             .select('g > text')
@@ -434,12 +433,12 @@ var wea_bar = function() {
             //drawScatter()
         d3.selectAll(".bar-rect").style("fill", "#69b3a2")
 
-        svg.select("#bar-" + chosen_category.replace(" ", "-").replace("/", "-")).style("fill", "orange")
+        d3.select("#bar-" + chosen_category.replace(/ /g, "_").replace(/\//g, "_")).style("fill", "orange")
         wc.heatmapTransition()
         console.log("Plot recomputed")
 
         console.log(chosen_category)
-        txt = $("#" + chosen_category.replace(" ", "_").replace("/", "_") + "_desc").text()
+        txt = $("#" + chosen_category.replace(/ /g, "_").replace(/\//g, "_") + "_desc").text()
         if (txt == "" || txt == null || txt == undefined)
             txt = "Not available at the moment."
         $("#weapon_description").html(txt)
