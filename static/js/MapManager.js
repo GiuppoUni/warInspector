@@ -207,10 +207,15 @@ var MapManager = function() {
 
 
             // Legend
-            var lgnd = svg.append("g")
+            var lgnd = svg
+                .append("g")
                 .attr("class", "legendThreshold")
                 .attr("id", "legendThreshold")
-                .attr("transform", "translate(20,20)");
+                .attr("transform", "translate(20,20)")
+                .append("text")
+                .text("Delivered units")
+                .attr("fill", "white")
+                .attr("transform", "translate(-5,-4)");
 
             // lgnd.append("text")
             //     .attr('class', 'title')
@@ -365,7 +370,11 @@ var MapManager = function() {
             var lgnd = svg2.append("g")
                 .attr("class", "legendThreshold")
                 .attr("id", "legendThreshold2")
-                .attr("transform", "translate(20,20)");
+                .attr("transform", "translate(20,20)")
+                .append("text")
+                .text("Delivered units")
+                .attr("fill", "white")
+                .attr("transform", "translate(-5,-4)");
 
             // lgnd.append("text")
             //     .attr('class', 'title')
@@ -973,7 +982,7 @@ ${impData.has(d.id) ? impData.get(d.id) : "0"}`
             .text(function(d) {
                 if (expData.has(d.id))
                     cntInvExp.push(d.properties.name)
-                return `To ${d.properties.name}
+                return `From ${d.properties.name}
 ${expData.has(d.id) ? expData.get(d.id) : "0"}`
             });
 
@@ -1284,7 +1293,7 @@ ${expData.has(d.id) ? expData.get(d.id) : "0"}`
                 .text(function(d) {
                     if (expData.has(d.id))
                         cntInvExp.push(d.properties.name)
-                    return `To ${d.properties.name}
+                    return `From ${d.properties.name}
     ${expData.has(d.id) ? expData.get(d.id) : "0"}`
                 });
 
