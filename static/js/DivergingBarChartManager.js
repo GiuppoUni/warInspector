@@ -415,7 +415,6 @@ var DivergingBarChartManager = function() {
 
         data_structure = new Map();
 
-
         for (let i = 0; i < transactions.length; i++) {
             var row = transactions[i];
 
@@ -477,51 +476,53 @@ var DivergingBarChartManager = function() {
         console.log("data", data_structure)
             // data_structure
             // NEW AXIS
+        if (transactions != undefined && transactions != []) {
+            x.domain(d3v4.keys(data_structure).map(function(d) { return d; }));
+            const maxUp = d3v4.max(d3v4.entries(data_structure), function(d) { return d.value["totalS"]; });
+            const maxDown = d3v4.max(d3v4.entries(data_structure), function(d) { return d.value["totalR"]; });
+            const max = Math.max(maxUp + 100, maxDown + 100)
+                // console.log(data_structure)
+                // console.log(typeof(data_structure));
+            console.log("data", d3v4.keys(data_structure).map(function(d) { return d; }))
 
-        x.domain(d3v4.keys(data_structure).map(function(d) { return d; }));
-        const maxUp = d3v4.max(d3v4.entries(data_structure), function(d) { return d.value["totalS"]; });
-        const maxDown = d3v4.max(d3v4.entries(data_structure), function(d) { return d.value["totalR"]; });
-        const max = Math.max(maxUp + 100, maxDown + 100)
-            // console.log(data_structure)
-            // console.log(typeof(data_structure));
-        console.log("data", d3v4.keys(data_structure).map(function(d) { return d; }))
+            function changeAxis(_callback) {
+                y.domain([0, max + 10])
+                yDown.domain([max + 10, 0])
+                    // y.domain([0, 100])
+                    // yDown.domain([0, 100])
 
-        function changeAxis(_callback) {
-            y.domain([0, max + 10])
-            yDown.domain([max + 10, 0])
-                // y.domain([0, 100])
-                // yDown.domain([0, 100])
+                const yAxisTicks = y.ticks()
+                    .filter(Number.isInteger);
+                const yDownAxisTicks = yDown.ticks()
+                    .filter(Number.isInteger);
+                console.log(svg.select('#y-div-axis'))
 
-            const yAxisTicks = y.ticks()
-                .filter(Number.isInteger);
-            const yDownAxisTicks = yDown.ticks()
-                .filter(Number.isInteger);
-            console.log(svg.select('#y-div-axis'))
+                svg.select('#y-div-axis')
+                    .transition()
+                    .duration(2000)
+                    .call(d3v4.axisLeft(y)
+                        .tickValues(yAxisTicks)
+                        .tickFormat(d3v4.format('d')))
 
-            svg.select('#y-div-axis')
-                .transition()
-                .duration(2000)
-                .call(d3v4.axisLeft(y)
-                    .tickValues(yAxisTicks)
-                    .tickFormat(d3v4.format('d')))
+                svg.select("#y-down-div-axis")
+                    .transition()
+                    .duration(2000)
+                    .call(d3v4.axisLeft(yDown)
+                        .tickValues(yDownAxisTicks)
+                        .tickFormat(d3v4.format('d')))
 
-            svg.select("#y-down-div-axis")
-                .transition()
-                .duration(2000)
-                .call(d3v4.axisLeft(yDown)
-                    .tickValues(yDownAxisTicks)
-                    .tickFormat(d3v4.format('d')))
+                svg.select("#x-div-axis")
+                    .transition()
+                    .duration(2000)
+                    .attr("transform", "translate(0," + (height + cfg.xAxisMargin) + ")")
+                    .call(d3v4.axisBottom(x).tickSizeOuter(0))
+                    .selectAll("text")
+                    .attr("transform", "translate(-10,0)rotate(-45)")
+                    .style("text-anchor", "end");
 
-            svg.select("#x-div-axis")
-                .transition()
-                .duration(2000)
-                .attr("transform", "translate(0," + (height + cfg.xAxisMargin) + ")")
-                .call(d3v4.axisBottom(x).tickSizeOuter(0))
-                .selectAll("text")
-                .attr("transform", "translate(-10,0)rotate(-45)")
-                .style("text-anchor", "end");
+                _callback()
 
-            _callback()
+            }
         }
 
         //Transition on bars

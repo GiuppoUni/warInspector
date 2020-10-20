@@ -266,14 +266,15 @@ function resetSelect() {
 
     d3v4.selectAll(".country").classed("selected", false)
 
-    d3v4.selectAll(".heatmap").remove()
-    d3v4.selectAll(".legendThreshold").remove()
-    d3v4.selectAll(".legendCells").remove()
+    // d3v4.selectAll(".heatmap").remove()
+    // d3v4.selectAll(".legendThreshold").remove()
+    // d3v4.selectAll(".legendCells").remove()
 
     // mm.drawCloroExp()
     // mm.drawCloroImp()
-    dbcm.drawChart()
-    pcam.drawChart()
+    dbcm.transitionSlider([])
+        // pcam.drawChart()
+    d3v4.selectAll(".pca-dots").classed("dot-selected", false)
 
 }
 // function postSubmitted(){

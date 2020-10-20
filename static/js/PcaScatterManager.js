@@ -108,6 +108,7 @@ var PcaScatterManager = function() {
             .call(yAxis)
 
         // Add dots
+        console.log("dataset", dataset)
         var scatter = svg.append('g')
             .selectAll("dot")
             .data(dataset)

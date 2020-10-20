@@ -720,7 +720,6 @@ var MapManager = function() {
 
         $("#selectNation").val(selected_group)
         $('.selectpicker').selectpicker('refresh')
-
     }
 
 
@@ -749,7 +748,7 @@ var MapManager = function() {
                 for (var i = 1; i < allTextLines.length; i++) {
                     var data = allTextLines[i].split(',');
                     if (data.length == headers.length) {
-
+                        console.log(data[1], country_id)
                         if (data[1] == country_id) {
                             country_name = data[0]
                             for (var j = years[0] - 1958; j <= years[1] - 1958; j++) {
