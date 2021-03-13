@@ -1,7 +1,5 @@
-# WarInspector
-<img src="static/icons/valogo.png" width="50px"> </br>
+# WarInspector <img src="static/icons/valogo.png" width="50px"> </br>
 
-## Description
 WarInspector is a web application for the Visual Analytics course at Sapienza Università di Roma. </br>
 It provides an insight into the arms trade that takes place between the different countries of the world, both quantitatively, 
 by analysing how many are exported or imported, and qualitatively, by analysing the trade according to different categories or individual models. </br>
