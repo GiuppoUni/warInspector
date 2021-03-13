@@ -27,7 +27,6 @@ The code is under Apache License 2.0, visible [here]{LICENSE}.
 Flag icons are taken from [here](https://www.flaticon.com/packs/countrys-flags).
 
 ## Demo
-</br>
-**WarInspector is hosted on Heroku and is accessible [here](https://war-inspector.herokuapp.com/).
-</br>
+<center> <b align="center" > WarInspector is hosted on Heroku and is accessible<a href="https://war-inspector.herokuapp.com">here</a></b> </center>
+
 <img src="static/images/Screenshot (249).png">
