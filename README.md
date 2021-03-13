@@ -1,5 +1,5 @@
 # WarInspector
-<img src="https://www.dis.uniroma1.it/sites/default/files/marchio%20logo%20eng%20jpg.jpg"> </br>
+<img src="static/icons/valogo.png"> </br>
 
 ## Description
 WarInspector is a web application for the Visual Analytics course at Sapienza Università di Roma. </br>
