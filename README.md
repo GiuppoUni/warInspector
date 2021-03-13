@@ -28,5 +28,5 @@ Flag icons are taken from [here](https://www.flaticon.com/packs/countrys-flags).
 
 ## Demo
 <center> <b align="center" > WarInspector is hosted on Heroku and is accessible <a href="https://war-inspector.herokuapp.com">here</a></b> </center>
-\
+<br>
 <img src="static/images/Screenshot (249).png">
