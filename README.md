@@ -1,4 +1,4 @@
-# WarInspector <img src="static/icons/valogo.png" width="50px"> </br>
+# WarInspector <img src="static/icons/valogo.png" width="50px"> 
 
 WarInspector is a web application for the Visual Analytics course at Sapienza Università di Roma. </br>
 It provides an insight into the arms trade that takes place between the different countries of the world, both quantitatively, 
@@ -27,4 +27,7 @@ The code is under Apache License 2.0, visible [here]{LICENSE}.
 Flag icons are taken from [here](https://www.flaticon.com/packs/countrys-flags).
 
 ## Demo
-WarInspector is hosted on Heroku and is accessible [here](https://war-inspector.herokuapp.com/).
+</br>
+**WarInspector is hosted on Heroku and is accessible [here](https://war-inspector.herokuapp.com/).
+</br>
+<img src="static/images/Screenshot (249).png">
